@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m6h-1e-t91">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="87S-5S-eFj">
+            <objects>
+                <viewController storyboardIdentifier="LogIn" id="m6h-1e-t91" customClass="LogInViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zYG-cv-dFK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogIn background" translatesAutoresizingMaskIntoConstraints="NO" id="wIl-pe-I8i">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-C6-XZs">
+                                <rect key="frame" x="138" y="73" width="98" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wIl-pe-I8i" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" id="7cM-ZM-G4b"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="wIl-pe-I8i" secondAttribute="trailing" id="CrY-Y1-wU3"/>
+                            <constraint firstItem="wIl-pe-I8i" firstAttribute="top" secondItem="zYG-cv-dFK" secondAttribute="top" id="Kbn-8O-4An"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="wIl-pe-I8i" secondAttribute="bottom" id="e9P-3M-Unh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zJX-vI-2kz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-Wb-dpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="-402"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogIn background" width="313" height="313"/>
+    </resources>
+</document>
