@@ -17,6 +17,7 @@
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
 		C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C92C2152399200BDB0CE /* Assets.xcassets */; };
+		C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		C8F8C92C2152399200BDB0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaExtraBlackItalic.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 				C8F8C92C2152399200BDB0CE /* Assets.xcassets */,
 				C8215FE12151FAB8006BC7A3 /* Info.plist */,
 				C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */,
+				C8F8C9302152574A00BDB0CE /* View */,
+				C8F8C931215278E900BDB0CE /* fonts */,
 			);
 			path = CosTogether;
 			sourceTree = "<group>";
@@ -122,6 +126,22 @@
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C8F8C9302152574A00BDB0CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C8F8C931215278E900BDB0CE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */,
+			);
+			name = fonts;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,

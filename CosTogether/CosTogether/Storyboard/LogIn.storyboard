@@ -17,33 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogIn background" translatesAutoresizingMaskIntoConstraints="NO" id="wIl-pe-I8i">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-C6-XZs">
-                                <rect key="frame" x="138" y="73" width="98" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-C6-XZs">
+                                <rect key="frame" x="139" y="100" width="97" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.94509803921568625" green="0.0" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-8c-DqD">
+                                <rect key="frame" x="87.5" y="442" width="200" height="45"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.24313725490196078" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="JhZ-DP-pAT"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZCw-i9-TQJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Facebook 登入">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-PQ-BmP">
+                                <rect key="frame" x="87.5" y="517" width="200" height="45"/>
+                                <color key="backgroundColor" red="0.82668665210000003" green="0.82668665210000003" blue="0.82668665210000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Pd2-8H-vow"/>
+                                    <constraint firstAttribute="width" constant="200" id="UDo-B4-aqd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                <state key="normal" title="匿名登入">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wIl-pe-I8i" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" id="7cM-ZM-G4b"/>
-                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="wIl-pe-I8i" secondAttribute="trailing" id="CrY-Y1-wU3"/>
-                            <constraint firstItem="wIl-pe-I8i" firstAttribute="top" secondItem="zYG-cv-dFK" secondAttribute="top" id="Kbn-8O-4An"/>
-                            <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="wIl-pe-I8i" secondAttribute="bottom" id="e9P-3M-Unh"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="dVT-PQ-BmP" secondAttribute="bottom" constant="105" id="1eX-wR-C2a"/>
+                            <constraint firstItem="mtz-C6-XZs" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="top" constant="80" id="P25-YF-gah"/>
+                            <constraint firstItem="lY1-8c-DqD" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="RBK-WR-J3X"/>
+                            <constraint firstItem="dVT-PQ-BmP" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="jdL-hL-SiA"/>
+                            <constraint firstItem="mtz-C6-XZs" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="lih-9l-CIV"/>
+                            <constraint firstItem="dVT-PQ-BmP" firstAttribute="top" secondItem="lY1-8c-DqD" secondAttribute="bottom" constant="30" id="tvf-fg-5ak"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zJX-vI-2kz"/>
                     </view>
+                    <connections>
+                        <outlet property="anonymousLogInBot" destination="dVT-PQ-BmP" id="gej-Gh-r6R"/>
+                        <outlet property="facebookLoginBot" destination="lY1-8c-DqD" id="1k2-qU-n6W"/>
+                        <outlet property="titleLbl" destination="mtz-C6-XZs" id="j7N-25-ixt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-Wb-dpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="-402"/>
+            <point key="canvasLocation" x="496.80000000000001" y="-402.54872563718146"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LogIn background" width="313" height="313"/>
-    </resources>
 </document>
