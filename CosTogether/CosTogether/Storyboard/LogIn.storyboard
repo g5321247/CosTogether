@@ -8,11 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="FuturaExtraBlackItalic.ttf">
-            <string>FuturaBT-ExtraBlackCondItalic</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Log In View Controller-->
         <scene sceneID="87S-5S-eFj">
@@ -22,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-C6-XZs">
-                                <rect key="frame" x="67" y="100" width="241" height="60"/>
-                                <fontDescription key="fontDescription" name="FuturaBT-ExtraBlackCondItalic" family="Futura" pointSize="50"/>
-                                <color key="textColor" red="0.94509803921568625" green="0.0" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-8c-DqD">
                                 <rect key="frame" x="87.5" y="442" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.24313725490196078" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,14 +41,31 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CosTogether" translatesAutoresizingMaskIntoConstraints="NO" id="HYQ-NM-W1a">
+                                <rect key="frame" x="20" y="140" width="335" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HYQ-NM-W1a" secondAttribute="height" multiplier="5:2" id="47w-t5-xc8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gold_Star.svg" translatesAutoresizingMaskIntoConstraints="NO" id="xRo-hT-bhs">
+                                <rect key="frame" x="120" y="284" width="135" height="64.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xRo-hT-bhs" secondAttribute="height" multiplier="187:89" id="MEV-Tn-NeK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="dVT-PQ-BmP" secondAttribute="bottom" constant="105" id="1eX-wR-C2a"/>
-                            <constraint firstItem="mtz-C6-XZs" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="top" constant="80" id="P25-YF-gah"/>
+                            <constraint firstItem="xRo-hT-bhs" firstAttribute="top" secondItem="HYQ-NM-W1a" secondAttribute="bottom" constant="10" id="2Z9-K0-bkO"/>
+                            <constraint firstItem="xRo-hT-bhs" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" constant="120" id="9Xx-ad-8Hf"/>
+                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" constant="20" id="E4Z-gl-R8W"/>
+                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="top" constant="120" id="Fbq-gh-a8m"/>
+                            <constraint firstItem="xRo-hT-bhs" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="P5V-5l-vNn"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="HYQ-NM-W1a" secondAttribute="trailing" constant="20" id="PkZ-10-qgQ"/>
                             <constraint firstItem="lY1-8c-DqD" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="RBK-WR-J3X"/>
+                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="aOK-gA-3gD"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="jdL-hL-SiA"/>
-                            <constraint firstItem="mtz-C6-XZs" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="lih-9l-CIV"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="top" secondItem="lY1-8c-DqD" secondAttribute="bottom" constant="30" id="tvf-fg-5ak"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zJX-vI-2kz"/>
@@ -67,7 +73,6 @@
                     <connections>
                         <outlet property="anonymousLogInBot" destination="dVT-PQ-BmP" id="gej-Gh-r6R"/>
                         <outlet property="facebookLoginBot" destination="lY1-8c-DqD" id="1k2-qU-n6W"/>
-                        <outlet property="titleLbl" destination="mtz-C6-XZs" id="j7N-25-ixt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-Wb-dpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,4 +80,8 @@
             <point key="canvasLocation" x="496.80000000000001" y="-402.54872563718146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CosTogether" width="250" height="100"/>
+        <image name="Gold_Star.svg" width="512" height="512"/>
+    </resources>
 </document>
