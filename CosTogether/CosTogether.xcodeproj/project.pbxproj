@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
+		C8154387215352A500B3446D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154386215352A500B3446D /* FirebaseManager.swift */; };
 		C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */; };
 		C8215FD82151FAB6006BC7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD72151FAB6006BC7A3 /* ViewController.swift */; };
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		69B08EB91AF6B59E4F5A2856 /* Pods-CosTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8154384215340A800B3446D /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
+		C8154386215352A500B3446D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C8215FD22151FAB6006BC7A3 /* CosTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8215FD72151FAB6006BC7A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		C81543822153406700B3446D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8154388215352AC00B3446D /* Firebase */,
 				C81543832153409100B3446D /* Facebook */,
 			);
 			name = Model;
@@ -84,6 +87,14 @@
 				C8154384215340A800B3446D /* FacebookManager.swift */,
 			);
 			path = Facebook;
+			sourceTree = "<group>";
+		};
+		C8154388215352AC00B3446D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C8154386215352A500B3446D /* FirebaseManager.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		C8215FC92151FAB6006BC7A3 = {
@@ -108,12 +119,12 @@
 			isa = PBXGroup;
 			children = (
 				C81543822153406700B3446D /* Model */,
-				C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */,
 				C8215FD72151FAB6006BC7A3 /* ViewController.swift */,
 				C8F8C9272152338400BDB0CE /* ViewController */,
 				C8F8C928215233A700BDB0CE /* Storyboard */,
 				C8F8C92B2152387100BDB0CE /* Extension */,
 				C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */,
+				C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */,
 				C8F8C92C2152399200BDB0CE /* Assets.xcassets */,
 				C8215FE12151FAB8006BC7A3 /* Info.plist */,
 				C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */,
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */,
 				C8215FD82151FAB6006BC7A3 /* ViewController.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,

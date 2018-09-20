@@ -30,7 +30,7 @@ struct FacebookManager {
     let facebookManager = FBSDKLoginManager()
     
     func facebookLogIn(
-        controller: UIViewController? = nil,
+        fromController: UIViewController? = nil,
         sucess: @escaping (String) -> Void,
         failure: @escaping (Error) -> Void
         ) {
@@ -40,7 +40,7 @@ struct FacebookManager {
             PermissionKey.email.rawValue,
             PermissionKey.publicProfile.rawValue
             ],
-            from: controller) { (result, error) in
+            from: fromController) { (result, error) in
             
             guard error == nil else {
                 
