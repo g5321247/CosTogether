@@ -45,6 +45,19 @@ class LogInViewController: UIViewController {
         },
             failure: { (error) in
                 
+                guard let error = error as? FBError else {
+                    
+                    return
+                    
+                }
+                
+                self.present(
+                    UIAlertController.errorMessage(errorType: error),
+                    animated: true,
+                    completion: nil
+                )
+                
+                
         })
         
     }
@@ -58,6 +71,8 @@ class LogInViewController: UIViewController {
             }
             
         }) { (error) in
+            
+            // TODO:
             
         }
         

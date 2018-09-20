@@ -15,6 +15,7 @@
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
 		C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */; };
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
+		C83870752153AA8200E64493 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83870742153AA8200E64493 /* UIAlertController.swift */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
@@ -35,6 +36,7 @@
 		C8215FDF2151FAB8006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8215FE12151FAB8006BC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C83870742153AA8200E64493 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
+				C83870742153AA8200E64493 /* UIAlertController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */,
 				C8215FD82151FAB6006BC7A3 /* ViewController.swift in Sources */,
+				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
