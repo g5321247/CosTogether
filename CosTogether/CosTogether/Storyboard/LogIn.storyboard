@@ -28,6 +28,9 @@
                                 <state key="normal" title="Facebook 登入">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInFB:" destination="m6h-1e-t91" eventType="touchUpInside" id="Cry-XK-H4A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-PQ-BmP">
                                 <rect key="frame" x="87.5" y="517" width="200" height="45"/>

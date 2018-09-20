@@ -13,7 +13,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var facebookLoginBot: UIButton!
     
     @IBOutlet weak var anonymousLogInBot: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +29,13 @@ class LogInViewController: UIViewController {
         anonymousLogInBot.layer.cornerRadius = 10
         anonymousLogInBot.layer.borderWidth = 1
         anonymousLogInBot.layer.borderColor = UIColor.lightGray.cgColor
+        
+    }
+    
+    
+    @IBAction func logInFB(_ sender: UIButton) {
+        
+        
         
     }
     

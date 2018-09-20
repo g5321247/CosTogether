@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +19,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
+        
         FirebaseApp.configure()
+        
+        FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         switchLogIn()
         
         return true
     }
     
+    // MARK: Facebook Setting
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        return FBSDKAppEvents.activateApp()
+    }
+    
+    private func application(
+        application: UIApplication,
+        openURL url: URL,
+        sourceApplication: String,
+        annotation: Any?
+        ) -> Bool {
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation
+        )
+    }
+    
+    // MARK: Switch  Setting
+
     func switchLogIn() {
         
        window?.rootViewController = UIStoryboard.logInStoryboard().instantiateInitialViewController()
