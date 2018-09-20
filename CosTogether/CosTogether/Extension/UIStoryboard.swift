@@ -16,4 +16,10 @@ extension UIStoryboard {
 
     }
     
+    static func mainStoryboard() -> UIStoryboard {
+        
+        return UIStoryboard(name: "Main", bundle: nil)
+        
+    }
+    
 }

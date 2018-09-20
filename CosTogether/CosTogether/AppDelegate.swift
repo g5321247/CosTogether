@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // swiftlint:disable force_cast
+    static let shared = UIApplication.shared.delegate as! AppDelegate
+    // swiftlint:enable force_cast
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -27,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             didFinishLaunchingWithOptions: launchOptions
         )
         
-        switchLogIn()
+        if UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil {
+
+//            switchMainPage()
+
+        }
         
         return true
     }
@@ -53,11 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
     }
     
-    // MARK: Switch  Setting
+    // MARK: Switch Page
 
     func switchLogIn() {
         
        window?.rootViewController = UIStoryboard.logInStoryboard().instantiateInitialViewController()
+        
+    }
+    
+    func switchMainPage() {
+        
+        window?.rootViewController = UIStoryboard.mainStoryboard().instantiateInitialViewController()
         
     }
 

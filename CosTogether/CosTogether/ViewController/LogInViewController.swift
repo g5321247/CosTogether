@@ -45,19 +45,21 @@ class LogInViewController: UIViewController {
         },
             failure: { (error) in
                 
-                
         })
         
     }
     
     private func signInFirebase(token: String) {
         
-        firebaseManager.logInFirebase(token: token, sucess: { (user) in
-            <#code#>
-        }) { (<#Error#>) in
-            <#code#>
+        firebaseManager.logInFirebase(token: token, sucess: { (userInfo) in
+            
+            DispatchQueue.main.async {
+                AppDelegate.shared.switchMainPage()
+            }
+            
+        }) { (error) in
+            
         }
-        
         
     }
     

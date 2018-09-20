@@ -24,6 +24,12 @@ enum FirebaseError: Error {
     
 }
 
+enum FirebaseType: String {
+    
+    case uuid
+    
+}
+
 struct FirebaseManager {
     
     func logInFirebase(
@@ -56,6 +62,8 @@ struct FirebaseManager {
                 let user = firebaseResult.user
                 let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!)
                 
+                UserDefaults.standard.set(user.uid, forKey: FirebaseType.uuid.rawValue)
+
                 sucess(userInfo)
                 
         }
