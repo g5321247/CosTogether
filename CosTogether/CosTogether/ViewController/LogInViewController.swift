@@ -56,25 +56,37 @@ class LogInViewController: UIViewController {
                     animated: true,
                     completion: nil
                 )
-                
-                
+                                
         })
         
     }
     
     private func signInFirebase(token: String) {
         
-        firebaseManager.logInFirebase(token: token, sucess: { (userInfo) in
+        firebaseManager.logInFirebase(
+            token: token,
+            sucess: { (userInfo) in
             
             DispatchQueue.main.async {
                 AppDelegate.shared.switchMainPage()
             }
+        
+        },
+            faliure: { (error) in
             
-        }) { (error) in
-            
-            // TODO:
-            
-        }
+                guard let error = error as? FBError else {
+                    
+                    return
+                    
+                }
+                
+                self.present(
+                    UIAlertController.errorMessage(errorType: error),
+                    animated: true,
+                    completion: nil
+                )
+
+        })
         
     }
     

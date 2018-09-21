@@ -17,13 +17,6 @@ struct UserInfo {
 
 }
 
-enum FirebaseError: Error {
-    
-    case system(String)
-    case unrecognized(String)
-    
-}
-
 enum FirebaseType: String {
     
     case uuid

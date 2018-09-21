@@ -16,15 +16,6 @@ enum PermissionKey: String {
     
 }
 
-enum FBError: Error {
-    
-    case system(String)
-    case unrecognized(String)
-    case cancelled
-    case permissionDeclined
-    
-}
-
 struct FacebookManager {
     
     let facebookManager = FBSDKLoginManager()
@@ -32,7 +23,7 @@ struct FacebookManager {
     func facebookLogIn(
         fromController: UIViewController? = nil,
         sucess: @escaping (String) -> Void,
-        failure: @escaping (Error) -> Void
+        failure: @escaping (ErrorComment) -> Void
         ) {
         
         facebookManager.logIn(
@@ -48,10 +39,10 @@ struct FacebookManager {
                 return
                 
             }
-            
+
             guard let fbResult = result else {
                 
-                failure(FBError.unrecognized("FB data lost"))
+                failure(FBError.unrecognized("no such facebook data"))
                 
                 return
             }
