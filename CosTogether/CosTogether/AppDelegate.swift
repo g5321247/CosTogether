@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil {
 
-//            switchMainPage()
+            switchMainPage()
 
         }
         
@@ -72,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func switchMainPage() {
         
         window?.rootViewController = UIStoryboard.mainStoryboard().instantiateInitialViewController()
-        
     }
 
 }

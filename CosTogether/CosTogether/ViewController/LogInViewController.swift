@@ -38,12 +38,12 @@ class LogInViewController: UIViewController {
         
         fbManager.facebookLogIn(
             fromController: self,
-            sucess: { (token) in
+            sucess: { [weak self ] (token) in
                 
-                self.signInFirebase(token: token)
+                self?.signInFirebase(token: token)
                 
         },
-            failure: { (error) in
+            failure: { [weak self ] (error) in
                 
                 guard let error = error as? FBError else {
                     
@@ -51,7 +51,7 @@ class LogInViewController: UIViewController {
                     
                 }
                 
-                self.present(
+                self?.present(
                     UIAlertController.errorMessage(errorType: error),
                     animated: true,
                     completion: nil
@@ -72,7 +72,7 @@ class LogInViewController: UIViewController {
             }
         
         },
-            faliure: { (error) in
+            faliure: { [weak self ] (error) in
             
                 guard let error = error as? FBError else {
                     
@@ -80,7 +80,7 @@ class LogInViewController: UIViewController {
                     
                 }
                 
-                self.present(
+                self?.present(
                     UIAlertController.errorMessage(errorType: error),
                     animated: true,
                     completion: nil

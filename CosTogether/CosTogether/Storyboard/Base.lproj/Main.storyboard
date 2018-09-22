@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wco-3w-hwD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--揪團-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" sceneMemberID="viewController">
@@ -19,9 +19,101 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="揪團" image="shopping" id="JzN-U7-vR7"/>
+                    <navigationItem key="navigationItem" id="2of-zg-Mby"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1638" y="469"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dh7-Ci-ZNo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Wco-3w-hwD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uxR-Um-HMK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Njm-Dt-Z2Y" kind="relationship" relationship="viewControllers" id="Ecz-Yv-sCu"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ag1-rr-MKJ"/>
+                        <segue destination="RXb-pM-YxB" kind="relationship" relationship="viewControllers" id="Nkm-4Q-t2C"/>
+                        <segue destination="WM1-qg-yGR" kind="relationship" relationship="viewControllers" id="A20-5m-cFG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaR-Pq-aSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--個人資料-->
+        <scene sceneID="oE7-3w-noA">
+            <objects>
+                <viewController id="WM1-qg-yGR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iOw-fz-6R9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="個人資料" image="Profile" id="jSO-JQ-WR2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7go-Vs-SWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="1108"/>
+        </scene>
+        <!--訊息-->
+        <scene sceneID="xul-We-tBa">
+            <objects>
+                <viewController id="RXb-pM-YxB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P6a-ln-DU3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nhE-s9-uZD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="訊息" image="Message" id="8Zr-vs-rlz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yJ-10-fm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="1146"/>
+        </scene>
+        <!--找團-->
+        <scene sceneID="FL6-6k-UE8">
+            <objects>
+                <viewController storyboardIdentifier="FindGroup" id="Njm-Dt-Z2Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YVn-cT-1xh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="EU4-u3-SgO">
+                                <rect key="frame" x="87.5" y="40" width="200" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="c62-rE-lJA"/>
+                                    <constraint firstAttribute="width" constant="200" id="oVG-Sz-EPj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EU4-u3-SgO" firstAttribute="centerX" secondItem="YVn-cT-1xh" secondAttribute="centerX" id="B7e-Qb-7Jn"/>
+                            <constraint firstItem="EU4-u3-SgO" firstAttribute="top" secondItem="gvK-E9-Ud5" secondAttribute="top" constant="20" id="atA-uT-ldg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gvK-E9-Ud5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="找團" image="searching" id="LLJ-HE-Dv8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCA-yi-gfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="-297"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Message" width="16" height="16"/>
+        <image name="Profile" width="16" height="16"/>
+        <image name="searching" width="16" height="16"/>
+        <image name="shopping" width="16" height="16"/>
+        <image name="title" width="222" height="47"/>
+    </resources>
 </document>
