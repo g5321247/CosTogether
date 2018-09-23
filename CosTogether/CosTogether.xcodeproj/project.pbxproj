@@ -11,7 +11,6 @@
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
 		C8154387215352A500B3446D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154386215352A500B3446D /* FirebaseManager.swift */; };
 		C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */; };
-		C8215FD82151FAB6006BC7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD72151FAB6006BC7A3 /* ViewController.swift */; };
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
 		C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */; };
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
@@ -19,6 +18,10 @@
 		C8497505215670AF00555855 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8497504215670AF00555855 /* TabViewController.swift */; };
 		C84975142157742A00555855 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975132157742A00555855 /* MainPageViewController.swift */; };
 		C84975162157758D00555855 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975152157758D00555855 /* UISearchBar.swift */; };
+		C8497518215780EF00555855 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8497517215780EF00555855 /* UIButton.swift */; };
+		C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975192157913E00555855 /* UISegmentedControl.swift */; };
+		C849751C2157918600555855 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751B2157918600555855 /* UIImage.swift */; };
+		C849751F21579BFE00555855 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751E21579BFE00555855 /* Fonts.swift */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
 		C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
@@ -36,7 +39,6 @@
 		C8154386215352A500B3446D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C8215FD22151FAB6006BC7A3 /* CosTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8215FD72151FAB6006BC7A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8215FDA2151FAB6006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8215FDF2151FAB8006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8215FE12151FAB8006BC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		C849750C2156811300555855 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C84975132157742A00555855 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPageViewController.swift; path = /Users/georgeliu/Desktop/CosTogether/CosTogether/CosTogether/ViewController/MainPageViewController.swift; sourceTree = "<absolute>"; };
 		C84975152157758D00555855 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		C8497517215780EF00555855 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		C84975192157913E00555855 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
+		C849751B2157918600555855 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = /Users/georgeliu/Desktop/CosTogether/CosTogether/CosTogether/Extension/UIImage.swift; sourceTree = "<absolute>"; };
+		C849751E21579BFE00555855 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageStoryboard.storyboard; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -90,9 +96,10 @@
 		C81543822153406700B3446D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C849751D21579BDD00555855 /* Fonts */,
+				C81543832153409100B3446D /* Facebook */,
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
-				C81543832153409100B3446D /* Facebook */,
 			);
 			name = Model;
 			path = ..;
@@ -136,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				C81543822153406700B3446D /* Model */,
-				C8215FD72151FAB6006BC7A3 /* ViewController.swift */,
 				C8F8C9272152338400BDB0CE /* ViewController */,
 				C849750F215762A300555855 /* View */,
 				C8F8C928215233A700BDB0CE /* Storyboard */,
@@ -158,6 +164,14 @@
 			);
 			name = View;
 			path = Storyboard/View;
+			sourceTree = "<group>";
+		};
+		C849751D21579BDD00555855 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C849751E21579BFE00555855 /* Fonts.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C85D4F1E2154CF9800D73D8F /* Error */ = {
@@ -193,6 +207,9 @@
 			children = (
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
 				C84975152157758D00555855 /* UISearchBar.swift */,
+				C8497517215780EF00555855 /* UIButton.swift */,
+				C84975192157913E00555855 /* UISegmentedControl.swift */,
+				C849751B2157918600555855 /* UIImage.swift */,
 				C83870742153AA8200E64493 /* UIAlertController.swift */,
 			);
 			path = Extension;
@@ -364,17 +381,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */,
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
-				C8215FD82151FAB6006BC7A3 /* ViewController.swift in Sources */,
+				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,
 				C84975162157758D00555855 /* UISearchBar.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
+				C8497518215780EF00555855 /* UIButton.swift in Sources */,
+				C849751C2157918600555855 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,13 +11,22 @@ class MainPageViewController: UIViewController {
 
     @IBOutlet weak var searchThingBar: UISearchBar!
     
+    @IBOutlet weak var locationBot: UIButton!
+    @IBOutlet weak var productTypeSC: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchThingBar.setSearchBar()
+        locationBot.setButton(color: UIColor.gray)
+        productTypeSC.addUnderlineForSelectedSegment()
         
     }
     
+    @IBAction func switchProductType(_ sender: Any) {
+        
+        productTypeSC.changeUnderlinePosition()
+        
+    }
     
-
 }

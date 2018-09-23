@@ -118,7 +118,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-gX-cu7">
-                                <rect key="frame" x="301" y="36" width="34" height="36"/>
+                                <rect key="frame" x="275" y="36" width="70" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="E5Z-0g-ewp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <state key="normal" title="地區">
                                     <color key="titleColor" red="0.61053089256990778" green="0.62729836698092512" blue="0.66400407546739626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,27 +131,68 @@
                                 <rect key="frame" x="0.0" y="86" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ezQ-IA-nGW">
+                                <rect key="frame" x="0.0" y="325" width="375" height="293"/>
+                                <connections>
+                                    <segue destination="Hgx-q6-bDu" kind="embed" id="jL2-EA-vwP"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-56-6AI">
+                                <rect key="frame" x="0.0" y="167" width="375" height="29"/>
+                                <segments>
+                                    <segment title="食"/>
+                                    <segment title="衣"/>
+                                    <segment title="住"/>
+                                    <segment title="行"/>
+                                </segments>
+                                <color key="tintColor" red="0.14117647058823529" green="0.32156862745098042" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="switchProductType:" destination="Njm-Dt-Z2Y" eventType="valueChanged" id="4bl-i3-NUq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jzf-56-6AI" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="75X-hw-IqN"/>
+                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="ezQ-IA-nGW" secondAttribute="trailing" id="7Fh-yi-0jX"/>
                             <constraint firstItem="EU4-u3-SgO" firstAttribute="centerX" secondItem="YVn-cT-1xh" secondAttribute="centerX" id="B7e-Qb-7Jn"/>
                             <constraint firstItem="uAy-uO-EUr" firstAttribute="top" secondItem="hXr-gX-cu7" secondAttribute="bottom" constant="14" id="I8C-vu-9gA"/>
                             <constraint firstItem="uAy-uO-EUr" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="NhC-0l-60b"/>
-                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="hXr-gX-cu7" secondAttribute="trailing" constant="40" id="YuW-hV-vJh"/>
+                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="bottom" secondItem="ezQ-IA-nGW" secondAttribute="bottom" id="Pn2-90-fl5"/>
+                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="hXr-gX-cu7" secondAttribute="trailing" constant="30" id="YuW-hV-vJh"/>
                             <constraint firstItem="EU4-u3-SgO" firstAttribute="top" secondItem="gvK-E9-Ud5" secondAttribute="top" constant="20" id="atA-uT-ldg"/>
+                            <constraint firstItem="ezQ-IA-nGW" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="g2C-6z-dmN"/>
                             <constraint firstItem="hXr-gX-cu7" firstAttribute="centerY" secondItem="EU4-u3-SgO" secondAttribute="centerY" id="npV-T8-5yO"/>
+                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="jzf-56-6AI" secondAttribute="trailing" id="udK-sd-Nnp"/>
+                            <constraint firstItem="jzf-56-6AI" firstAttribute="top" secondItem="uAy-uO-EUr" secondAttribute="bottom" constant="25" id="wxH-8O-exN"/>
                             <constraint firstItem="uAy-uO-EUr" firstAttribute="trailing" secondItem="gvK-E9-Ud5" secondAttribute="trailing" id="zHL-Px-7CA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvK-E9-Ud5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="找分購" image="searching" id="LLJ-HE-Dv8"/>
                     <connections>
+                        <outlet property="locationBot" destination="hXr-gX-cu7" id="aeA-PH-6Mu"/>
+                        <outlet property="productTypeSC" destination="jzf-56-6AI" id="CzQ-DU-y2p"/>
                         <outlet property="searchThingBar" destination="uAy-uO-EUr" id="FGZ-9Q-Hqn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCA-yi-gfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-297.30134932533736"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RNY-BT-F4y">
+            <objects>
+                <viewController id="Hgx-q6-bDu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dwi-xF-pWn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kD1-8O-4N0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="-845"/>
         </scene>
     </scenes>
     <resources>
