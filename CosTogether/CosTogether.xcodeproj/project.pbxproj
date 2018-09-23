@@ -22,6 +22,10 @@
 		C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975192157913E00555855 /* UISegmentedControl.swift */; };
 		C849751C2157918600555855 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751B2157918600555855 /* UIImage.swift */; };
 		C849751F21579BFE00555855 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751E21579BFE00555855 /* Fonts.swift */; };
+		C84975212157BAB100555855 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975202157BAB100555855 /* ProductViewController.swift */; };
+		C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */; };
+		C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */; };
+		C849752B2157C25D00555855 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849752A2157C25D00555855 /* Product.swift */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
 		C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
@@ -55,6 +59,10 @@
 		C84975192157913E00555855 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
 		C849751B2157918600555855 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = /Users/georgeliu/Desktop/CosTogether/CosTogether/CosTogether/Extension/UIImage.swift; sourceTree = "<absolute>"; };
 		C849751E21579BFE00555855 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C84975202157BAB100555855 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		C849752A2157C25D00555855 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageStoryboard.storyboard; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 				C81543832153409100B3446D /* Facebook */,
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
+				C849752C2157C27000555855 /* Product */,
 			);
 			name = Model;
 			path = ..;
@@ -161,6 +170,7 @@
 		C849750F215762A300555855 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C84975252157BCF600555855 /* ProductCell */,
 			);
 			name = View;
 			path = Storyboard/View;
@@ -174,6 +184,48 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C84975222157BABC00555855 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				C84975132157742A00555855 /* MainPageViewController.swift */,
+				C84975202157BAB100555855 /* ProductViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		C84975232157BAD900555855 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C8497504215670AF00555855 /* TabViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C84975242157BAF200555855 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				C8F8C92521522AC200BDB0CE /* LogInViewController.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		C84975252157BCF600555855 /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */,
+				C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */,
+			);
+			path = ProductCell;
+			sourceTree = "<group>";
+		};
+		C849752C2157C27000555855 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				C849752A2157C25D00555855 /* Product.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		C85D4F1E2154CF9800D73D8F /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,9 +237,9 @@
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C84975132157742A00555855 /* MainPageViewController.swift */,
-				C8497504215670AF00555855 /* TabViewController.swift */,
-				C8F8C92521522AC200BDB0CE /* LogInViewController.swift */,
+				C84975222157BABC00555855 /* MainPage */,
+				C84975232157BAD900555855 /* TabBar */,
+				C84975242157BAF200555855 /* LogIn */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -302,6 +354,7 @@
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
+				C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */,
 				C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,8 +435,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
+				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
+				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
+				C849752B2157C25D00555855 /* Product.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */,
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,

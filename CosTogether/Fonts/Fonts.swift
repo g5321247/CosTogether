@@ -18,6 +18,3 @@ enum Fonts: String {
     }
     
 }
-
-
-
