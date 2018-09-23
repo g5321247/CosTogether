@@ -18,6 +18,8 @@ class TabViewController: UITabBarController {
     
     func setTabBar() {
         
+        // MARK: Tabbar shadow
+        
         let tabGradientView = UIView(frame: self.tabBar.bounds)
         tabGradientView.backgroundColor = UIColor.white
         
@@ -35,6 +37,7 @@ class TabViewController: UITabBarController {
         self.tabBar.clipsToBounds = false
         self.tabBar.backgroundImage = UIImage()
         self.tabBar.shadowImage = UIImage()
+        
     }
     
 }

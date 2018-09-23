@@ -42,7 +42,11 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>中文仿宋體.ttf</string>
+		<string>宋體 繁.ttc</string>
 		<string>FuturaExtraBlackItalic.ttf</string>
+		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -8,8 +8,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--揪團-->
+        <!--開團-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" sceneMemberID="viewController">
@@ -19,7 +24,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="揪團" image="shopping" id="JzN-U7-vR7"/>
+                    <tabBarItem key="tabBarItem" title="開團" id="JzN-U7-vR7"/>
                     <navigationItem key="navigationItem" id="2of-zg-Mby"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -39,6 +44,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Njm-Dt-Z2Y" kind="relationship" relationship="viewControllers" id="Ecz-Yv-sCu"/>
+                        <segue destination="may-54-hWL" kind="relationship" relationship="viewControllers" id="vh1-qQ-0vO"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ag1-rr-MKJ"/>
                         <segue destination="RXb-pM-YxB" kind="relationship" relationship="viewControllers" id="Nkm-4Q-t2C"/>
                         <segue destination="WM1-qg-yGR" kind="relationship" relationship="viewControllers" id="A20-5m-cFG"/>
@@ -62,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7go-Vs-SWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="1108"/>
+            <point key="canvasLocation" x="-217" y="1267"/>
         </scene>
         <!--訊息-->
         <scene sceneID="xul-We-tBa">
@@ -78,12 +84,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yJ-10-fm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="1146"/>
+            <point key="canvasLocation" x="388" y="1863"/>
         </scene>
-        <!--找團-->
+        <!--我的揪團-->
+        <scene sceneID="oDd-GF-qX4">
+            <objects>
+                <viewController id="may-54-hWL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQE-58-6PI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lXH-TL-Loy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我的揪團" image="shopping" id="stK-AV-ZB2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgm-hl-vge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="1057"/>
+        </scene>
+        <!--找分購-->
         <scene sceneID="FL6-6k-UE8">
             <objects>
-                <viewController storyboardIdentifier="FindGroup" id="Njm-Dt-Z2Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindGroup" id="Njm-Dt-Z2Y" customClass="MainPageViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YVn-cT-1xh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,19 +117,38 @@
                                     <constraint firstAttribute="width" constant="200" id="oVG-Sz-EPj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-gX-cu7">
+                                <rect key="frame" x="301" y="36" width="34" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
+                                <state key="normal" title="地區">
+                                    <color key="titleColor" red="0.61053089256990778" green="0.62729836698092512" blue="0.66400407546739626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <searchBar contentMode="redraw" text="" placeholder="輸入尋找商品" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-uO-EUr">
+                                <rect key="frame" x="0.0" y="86" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EU4-u3-SgO" firstAttribute="centerX" secondItem="YVn-cT-1xh" secondAttribute="centerX" id="B7e-Qb-7Jn"/>
+                            <constraint firstItem="uAy-uO-EUr" firstAttribute="top" secondItem="hXr-gX-cu7" secondAttribute="bottom" constant="14" id="I8C-vu-9gA"/>
+                            <constraint firstItem="uAy-uO-EUr" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="NhC-0l-60b"/>
+                            <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="hXr-gX-cu7" secondAttribute="trailing" constant="40" id="YuW-hV-vJh"/>
                             <constraint firstItem="EU4-u3-SgO" firstAttribute="top" secondItem="gvK-E9-Ud5" secondAttribute="top" constant="20" id="atA-uT-ldg"/>
+                            <constraint firstItem="hXr-gX-cu7" firstAttribute="centerY" secondItem="EU4-u3-SgO" secondAttribute="centerY" id="npV-T8-5yO"/>
+                            <constraint firstItem="uAy-uO-EUr" firstAttribute="trailing" secondItem="gvK-E9-Ud5" secondAttribute="trailing" id="zHL-Px-7CA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvK-E9-Ud5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="找團" image="searching" id="LLJ-HE-Dv8"/>
+                    <tabBarItem key="tabBarItem" title="找分購" image="searching" id="LLJ-HE-Dv8"/>
+                    <connections>
+                        <outlet property="searchThingBar" destination="uAy-uO-EUr" id="FGZ-9Q-Hqn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCA-yi-gfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="-297"/>
+            <point key="canvasLocation" x="1232.8" y="-297.30134932533736"/>
         </scene>
     </scenes>
     <resources>

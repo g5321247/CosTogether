@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Log In View Controller-->
         <scene sceneID="87S-5S-eFj">
@@ -24,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="45" id="JhZ-DP-pAT"/>
                                     <constraint firstAttribute="width" constant="200" id="ZCw-i9-TQJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Facebook 登入">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -39,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="45" id="Pd2-8H-vow"/>
                                     <constraint firstAttribute="width" constant="200" id="UDo-B4-aqd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <state key="normal" title="匿名登入">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
