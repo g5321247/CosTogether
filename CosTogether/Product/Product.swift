@@ -42,4 +42,6 @@ struct Product {
     
     let tagLocation: String
     
+    let postDate: Int
+    
 }

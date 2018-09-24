@@ -124,7 +124,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <state key="normal" title="地區">
-                                    <color key="titleColor" red="0.61053089256990778" green="0.62729836698092512" blue="0.66400407546739626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.61176470588235299" green="0.62745098039215685" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <searchBar contentMode="redraw" text="" placeholder="輸入尋找商品" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-uO-EUr">

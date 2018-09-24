@@ -8,19 +8,62 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="CosTogether" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="116" height="154"/>
+            <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="116" height="154"/>
+                <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T36-zE-wgs">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-zH-kFH">
+                                <rect key="frame" x="8" y="8" width="154" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="HN7-L7-PfI"/>
+                                    <constraint firstAttribute="width" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="11:10" id="Uxy-CR-ock"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我好棒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-ly-8bu">
+                                <rect key="frame" x="8" y="168" width="154" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ymq-zH-kFH" firstAttribute="top" secondItem="T36-zE-wgs" secondAttribute="top" constant="8" id="5fL-ph-D9U"/>
+                            <constraint firstAttribute="trailing" secondItem="x8d-ly-8bu" secondAttribute="trailing" constant="8" id="DIs-Go-4VR"/>
+                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="20" id="c4o-e7-dw7"/>
+                            <constraint firstItem="x8d-ly-8bu" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="8" id="h8d-2v-VGj"/>
+                            <constraint firstItem="ymq-zH-kFH" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="8" id="pf8-BM-j0P"/>
+                            <constraint firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" constant="8" id="ykg-oR-Oxb"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="T36-zE-wgs" secondAttribute="bottom" id="BmA-EW-APT"/>
+                <constraint firstItem="T36-zE-wgs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="J8N-rN-Mz3"/>
+                <constraint firstAttribute="trailing" secondItem="T36-zE-wgs" secondAttribute="trailing" id="fOh-Ob-vh6"/>
+                <constraint firstItem="T36-zE-wgs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kDQ-Eq-grm"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="116" height="154"/>
             <point key="canvasLocation" x="190.40000000000001" y="194.30284857571215"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="test" width="554" height="739"/>
+    </resources>
 </document>

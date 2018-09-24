@@ -17,10 +17,6 @@ extension UIButton {
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = 1
         
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOpacity = 0.3
     }
     
 }
