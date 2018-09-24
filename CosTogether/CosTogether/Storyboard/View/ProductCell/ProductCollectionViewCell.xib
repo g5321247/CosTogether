@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NotoSans-Regular.ttf">
-            <string>NotoSans-Regular</string>
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -27,27 +27,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-zH-kFH">
-                                <rect key="frame" x="8" y="8" width="154" height="140"/>
+                                <rect key="frame" x="12" y="12" width="146" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="HN7-L7-PfI"/>
-                                    <constraint firstAttribute="width" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="11:10" id="Uxy-CR-ock"/>
+                                    <constraint firstAttribute="width" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="73:70" id="nkB-y2-9Y7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我好棒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-ly-8bu">
-                                <rect key="frame" x="8" y="168" width="154" height="22"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="16"/>
+                                <rect key="frame" x="8" y="167" width="154" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ymq-zH-kFH" firstAttribute="top" secondItem="T36-zE-wgs" secondAttribute="top" constant="8" id="5fL-ph-D9U"/>
+                            <constraint firstItem="ymq-zH-kFH" firstAttribute="top" secondItem="T36-zE-wgs" secondAttribute="top" constant="12" id="5fL-ph-D9U"/>
                             <constraint firstAttribute="trailing" secondItem="x8d-ly-8bu" secondAttribute="trailing" constant="8" id="DIs-Go-4VR"/>
-                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="20" id="c4o-e7-dw7"/>
+                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="15" id="c4o-e7-dw7"/>
                             <constraint firstItem="x8d-ly-8bu" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="8" id="h8d-2v-VGj"/>
-                            <constraint firstItem="ymq-zH-kFH" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="8" id="pf8-BM-j0P"/>
-                            <constraint firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" constant="8" id="ykg-oR-Oxb"/>
+                            <constraint firstItem="ymq-zH-kFH" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="12" id="pf8-BM-j0P"/>
+                            <constraint firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" constant="12" id="ykg-oR-Oxb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -60,6 +60,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="116" height="154"/>
+            <connections>
+                <outlet property="photoImage" destination="ymq-zH-kFH" id="NCJ-9p-I0e"/>
+                <outlet property="titleLbl" destination="x8d-ly-8bu" id="YiD-2i-TFS"/>
+            </connections>
             <point key="canvasLocation" x="190.40000000000001" y="194.30284857571215"/>
         </collectionViewCell>
     </objects>

@@ -43,7 +43,10 @@ extension ProductViewController: UICollectionViewDataSource {
 //            products.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+        ) -> UICollectionViewCell {
         
        guard let cell = collectionView.dequeueReusableCell(
         withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
@@ -69,7 +72,7 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
         
         let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 200
+        let height = width / 185.0 * 200 + 10
         
         return CGSize(width: width, height: height)
     }
@@ -79,7 +82,7 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 15, left: 12, bottom: 0, right: 12)
+        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 12)
     }
     
     func collectionView(

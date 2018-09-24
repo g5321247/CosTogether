@@ -24,5 +24,5 @@ extension UIImage {
         
         return rectangleImage!
     }
-    
+        
 }

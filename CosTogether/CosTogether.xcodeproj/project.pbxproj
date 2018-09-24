@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
+		C810BB3521592A3D0064A656 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB3421592A3D0064A656 /* UIImageView.swift */; };
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
 		C8154387215352A500B3446D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154386215352A500B3446D /* FirebaseManager.swift */; };
 		C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		33ED0C0E585EB4AE1778949B /* Pods-CosTogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.release.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.release.xcconfig"; sourceTree = "<group>"; };
 		69B08EB91AF6B59E4F5A2856 /* Pods-CosTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C810BB3421592A3D0064A656 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C8154384215340A800B3446D /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		C8154386215352A500B3446D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C8215FD22151FAB6006BC7A3 /* CosTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +264,7 @@
 				C8497517215780EF00555855 /* UIButton.swift */,
 				C84975192157913E00555855 /* UISegmentedControl.swift */,
 				C849751B2157918600555855 /* UIImage.swift */,
+				C810BB3421592A3D0064A656 /* UIImageView.swift */,
 				C83870742153AA8200E64493 /* UIAlertController.swift */,
 			);
 			path = Extension;
@@ -444,6 +447,7 @@
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,
+				C810BB3521592A3D0064A656 /* UIImageView.swift in Sources */,
 				C84975162157758D00555855 /* UISearchBar.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
