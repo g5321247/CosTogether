@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     
-    func setButton(color: UIColor) {
+    func setCornerRadius(color: UIColor) {
         
         self.layer.cornerRadius = 5
         

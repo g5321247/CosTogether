@@ -16,13 +16,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photoImage.viewSetUp()
+        photoImage.cornerSetup(cornerRadius: 2)
+        photoImage.shadowSetup()
+        
         setCellShadow()
     }
 
     func setCellShadow() {
         
-        // 為何 cornerRadius 這邊的角度後和 view 有差
+        // 要 clipBounds
         
         self.contentView.layer.cornerRadius = 2.0
         self.contentView.layer.borderWidth = 1.0
@@ -33,7 +35,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(
             roundedRect: self.bounds,
             cornerRadius: self.contentView.layer.cornerRadius
-            ).cgPath
+        ).cgPath
         
         // 為何 shadowOffset 偏移有差
         

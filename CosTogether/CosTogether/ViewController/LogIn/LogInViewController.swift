@@ -32,6 +32,8 @@ class LogInViewController: UIViewController {
         anonymousLogInBot.layer.borderWidth = 1
         anonymousLogInBot.layer.borderColor = UIColor.lightGray.cgColor
         
+        
+        
     }
     
     @IBAction func logInFB(_ sender: UIButton) {
