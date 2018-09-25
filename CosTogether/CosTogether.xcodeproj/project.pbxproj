@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
 		C810BB3521592A3D0064A656 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB3421592A3D0064A656 /* UIView.swift */; };
+		C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB382159E4630064A656 /* MainNavigationViewController.swift */; };
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
 		C8154387215352A500B3446D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154386215352A500B3446D /* FirebaseManager.swift */; };
 		C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		69B08EB91AF6B59E4F5A2856 /* Pods-CosTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C810BB3421592A3D0064A656 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C810BB382159E4630064A656 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		C8154384215340A800B3446D /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		C8154386215352A500B3446D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C8215FD22151FAB6006BC7A3 /* CosTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			children = (
 				C84975132157742A00555855 /* MainPageViewController.swift */,
 				C84975202157BAB100555855 /* ProductViewController.swift */,
+				C810BB382159E4630064A656 /* MainNavigationViewController.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
+				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,
