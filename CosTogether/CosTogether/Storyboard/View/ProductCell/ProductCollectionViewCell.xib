@@ -34,19 +34,28 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我好棒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-ly-8bu">
-                                <rect key="frame" x="8" y="167" width="154" height="20.5"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                <rect key="frame" x="8" y="167" width="154" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testUser" translatesAutoresizingMaskIntoConstraints="NO" id="aHq-gz-Ghy">
+                                <rect key="frame" x="6" y="132" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aHq-gz-Ghy" secondAttribute="height" multiplier="1:1" id="LGs-39-fJ8"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="aHq-gz-Ghy" secondAttribute="bottom" constant="3" id="1W6-W9-exq"/>
                             <constraint firstItem="ymq-zH-kFH" firstAttribute="top" secondItem="T36-zE-wgs" secondAttribute="top" constant="12" id="5fL-ph-D9U"/>
                             <constraint firstAttribute="trailing" secondItem="x8d-ly-8bu" secondAttribute="trailing" constant="8" id="DIs-Go-4VR"/>
-                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="15" id="c4o-e7-dw7"/>
+                            <constraint firstItem="aHq-gz-Ghy" firstAttribute="height" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="8:35" id="UH4-Ud-c7y"/>
+                            <constraint firstItem="aHq-gz-Ghy" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="-20" id="W0f-oi-xBc"/>
                             <constraint firstItem="x8d-ly-8bu" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="8" id="h8d-2v-VGj"/>
                             <constraint firstItem="ymq-zH-kFH" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="12" id="pf8-BM-j0P"/>
+                            <constraint firstItem="aHq-gz-Ghy" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="6" id="rc4-dE-qOt"/>
                             <constraint firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" constant="12" id="ykg-oR-Oxb"/>
                         </constraints>
                     </view>
@@ -61,6 +70,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="116" height="154"/>
             <connections>
+                <outlet property="authorImage" destination="aHq-gz-Ghy" id="wXu-Do-Gvq"/>
                 <outlet property="photoImage" destination="ymq-zH-kFH" id="NCJ-9p-I0e"/>
                 <outlet property="titleLbl" destination="x8d-ly-8bu" id="YiD-2i-TFS"/>
             </connections>
@@ -69,5 +79,6 @@
     </objects>
     <resources>
         <image name="test" width="554" height="739"/>
+        <image name="testUser" width="155" height="81"/>
     </resources>
 </document>

@@ -11,20 +11,27 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var authorImage: UIImageView!
+    
     @IBOutlet weak var titleLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photoImage.cornerSetup(cornerRadius: 2)
-        photoImage.shadowSetup()
+        photoImage.cornerSetup(cornerRadius: 4)
+        
+        authorImage.cornerSetup(
+            cornerRadius: authorImage.frame.width / 2,
+            borderWidth: 4,
+            borderColor: UIColor.white.cgColor
+        )
         
         setCellShadow()
     }
 
     func setCellShadow() {
         
-        // 要 clipBounds
+        // 要 masksToBounds，不然圓角不會出來
         
         self.contentView.layer.cornerRadius = 2.0
         self.contentView.layer.borderWidth = 1.0
