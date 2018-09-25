@@ -12,7 +12,9 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var products: [Product] = []
+//    var products: [Product] = []
+    var products: [Int] = [1]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,20 @@ class ProductViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard products.count != 0 else {
+            
+            collectionView.isHidden = true
+            
+            return
+        }
+        
+        collectionView.isHidden = false
+
+    }
+    
 }
 
 extension ProductViewController: UICollectionViewDataSource {
@@ -39,7 +55,8 @@ extension ProductViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        
+        return 10
 //            products.count
     }
 
@@ -48,7 +65,7 @@ extension ProductViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
         ) -> UICollectionViewCell {
         
-       guard let cell = collectionView.dequeueReusableCell(
+        guard let cell = collectionView.dequeueReusableCell(
         withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
         for: indexPath
         ) as? ProductCollectionViewCell else {
@@ -101,20 +118,20 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
         return 8
     }
     
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        didSelectItemAt indexPath: IndexPath) {
-//
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//
-//        guard let controller = UIStoryboard.articleStoryboard().instantiateViewController(
-//            withIdentifier: String(describing: ArticleDetailViewController.self)
-//            ) as? ArticleDetailViewController else { return }
-//
-//        controller.article = articles[indexPath.row]
-//
-//        show(controller, sender: nil)
-//    }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
 
-    
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self)
+            ) as? DetailViewController else { return }
+        
+        controller.loadViewIfNeeded()
+//        controller.article = articles[indexPath.row]
+
+        show(controller, sender: nil)
+    }
+
 }

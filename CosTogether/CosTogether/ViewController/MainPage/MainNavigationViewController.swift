@@ -15,5 +15,4 @@ class MainNavigationViewController: UINavigationController {
         navigationBar.barTintColor = UIColor.white
     }
     
-
 }
