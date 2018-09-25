@@ -13,7 +13,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInputMessage() 
+        setInputMessage()
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setInputMessage() {
