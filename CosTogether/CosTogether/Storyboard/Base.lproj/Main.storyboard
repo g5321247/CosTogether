@@ -209,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="202.5" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="205" width="192" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -264,43 +264,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g7L-5I-h9J">
-                                <rect key="frame" x="0.0" y="222.5" width="375" height="165.5"/>
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="174.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;標題&gt; 不要說我帥，太沈重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-Bi-Euz">
-                                <rect key="frame" x="20" y="36" width="335" height="35"/>
+                                <rect key="frame" x="20" y="36" width="335" height="29.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文時間: 1998/12/21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5O-j2-6l0">
-                                <rect key="frame" x="20" y="185" width="167.5" height="23.5"/>
+                                <rect key="frame" x="20" y="179.5" width="164.5" height="20"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ueU-jr-Opg">
-                                <rect key="frame" x="92" y="143" width="18" height="18"/>
+                                <rect key="frame" x="92" y="137.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Jbk-CS-L7j"/>
                                     <constraint firstAttribute="width" secondItem="ueU-jr-Opg" secondAttribute="height" multiplier="1:1" id="j0L-SU-sGn"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="oSa-Iv-dD1">
-                                <rect key="frame" x="200" y="143" width="18" height="18"/>
+                                <rect key="frame" x="200" y="137.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oSa-Iv-dD1" secondAttribute="height" multiplier="1:1" id="JLl-ek-2sX"/>
                                     <constraint firstAttribute="height" constant="18" id="bwo-5R-eMo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-mH-a4X">
-                                <rect key="frame" x="120" y="138.5" width="40" height="27.5"/>
+                                <rect key="frame" x="120" y="135" width="40" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="20"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xl-it-o8y">
-                                <rect key="frame" x="228" y="138.5" width="20" height="27.5"/>
+                                <rect key="frame" x="228" y="135" width="20" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="20"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -339,14 +339,14 @@
                                 </connections>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testUser" translatesAutoresizingMaskIntoConstraints="NO" id="Ooy-Yi-gJB">
-                                <rect key="frame" x="20" y="101" width="60" height="60"/>
+                                <rect key="frame" x="20" y="95.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ooy-Yi-gJB" secondAttribute="height" multiplier="1:1" id="4xE-JU-mjH"/>
                                     <constraint firstAttribute="width" constant="60" id="YhT-GM-UW2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金城武" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBJ-gx-3sU">
-                                <rect key="frame" x="92" y="101" width="273" height="33"/>
+                                <rect key="frame" x="92" y="95.5" width="273" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -394,6 +394,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2H-aP-0ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3900" y="-520.38980509745136"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0sl-fN-Vgg">
+            <objects>
+                <viewController id="cXf-1q-bmC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="icN-of-7Yb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GAs-eH-fHD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLb-TZ-Jbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4647" y="-591"/>
         </scene>
         <!--找分購-->
         <scene sceneID="0Wz-46-6fn">
