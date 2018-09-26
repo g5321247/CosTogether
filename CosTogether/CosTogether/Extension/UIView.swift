@@ -10,9 +10,13 @@ import UIKit
 
 extension UIView {
     
-    func cornerSetup(cornerRadius: CGFloat, borderWidth: CGFloat = 0, borderColor: CGColor? = nil) {
+    func cornerSetup(
+        cornerRadius: CGFloat,
+        borderWidth: CGFloat = 0,
+        borderColor: CGColor? = nil,
+        maskToBounds: Bool = true) {
         
-        self.layer.masksToBounds = true
+        self.layer.masksToBounds = maskToBounds
         self.layer.cornerRadius = cornerRadius
         
         self.layer.borderWidth = borderWidth

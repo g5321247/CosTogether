@@ -30,7 +30,7 @@ class MessageView: UIView {
     private func setupImageView() {
         
         messgaeTxtView.cornerSetup(cornerRadius: 4)
-        messgaeTxtView.text = "留下你的意見"
+        messgaeTxtView.text = "跟主揪說點什麼吧..."
         messgaeTxtView.textColor = UIColor.lightGray
         
         authorImage.cornerSetup(cornerRadius: authorImage.frame.width / 2)
@@ -55,7 +55,7 @@ extension MessageView: UITextViewDelegate {
         
         if textView.text.isEmpty {
             
-            textView.text = "留下你的意見"
+            textView.text = "跟主揪說點什麼吧..."
             textView.textColor = UIColor.lightGray
             
         }
