@@ -14,7 +14,6 @@ class ProductViewController: UIViewController {
     
 //    var products: [Product] = []
     var products: [Int] = [1]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

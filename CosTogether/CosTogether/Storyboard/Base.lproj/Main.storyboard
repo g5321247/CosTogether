@@ -209,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="205" width="192" height="28"/>
+                                <rect key="frame" x="91.5" y="202.5" width="192" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -255,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="3076" y="-519.04047976011998"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="e6W-qb-Hhw">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="gPq-pX-E9F" customClass="DetailViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="gPq-pX-E9F" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cs2-JR-iI6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,24 +382,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CAO-F5-hDj"/>
                     </view>
-                    <connections>
-                        <outlet property="messageView" destination="sgH-1d-Q3P" id="kW9-8s-ZTU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2H-aP-0ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3900" y="-520.38980509745136"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="0sl-fN-Vgg">
             <objects>
-                <viewController id="cXf-1q-bmC" sceneMemberID="viewController">
+                <viewController id="cXf-1q-bmC" customClass="DetailViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="icN-of-7Yb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4r-zp-wFr">
-                                <rect key="frame" x="24" y="60" width="30" height="15"/>
+                                <rect key="frame" x="24" y="80" width="30" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="OWY-2K-4cv"/>
                                     <constraint firstAttribute="width" secondItem="c4r-zp-wFr" secondAttribute="height" multiplier="2:1" id="cQ1-0W-UPP"/>
@@ -407,33 +404,39 @@
                                 <state key="normal" image="arrow"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEH-ss-QQQ" customClass="ProductPicView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="375" height="405"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="390"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIX-qf-gND">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="405"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-zq-KQR" customClass="FSPagerView" customModule="FSPagerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
                                         <subviews>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SQM-rm-MLd">
-                                                <rect key="frame" x="168" y="347" width="39" height="37"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-rX-jGX" customClass="FSPageControl" customModule="FSPagerView">
+                                                <rect key="frame" x="167.5" y="350" width="40" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="37" id="vUC-yo-jbS"/>
+                                                    <constraint firstAttribute="height" constant="30" id="VCf-86-sDk"/>
+                                                    <constraint firstAttribute="width" constant="40" id="ej7-Z3-BeJ"/>
                                                 </constraints>
-                                                <color key="pageIndicatorTintColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="currentPageIndicatorTintColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </pageControl>
+                                            </view>
                                         </subviews>
-                                    </scrollView>
+                                        <constraints>
+                                            <constraint firstItem="rvc-rX-jGX" firstAttribute="centerX" secondItem="yqs-zq-KQR" secondAttribute="centerX" id="70U-Vt-HA6"/>
+                                            <constraint firstAttribute="bottom" secondItem="rvc-rX-jGX" secondAttribute="bottom" constant="10" id="co8-ML-pDe"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="PEH-ss-QQQ" id="35Z-a7-ca8"/>
+                                            <outlet property="delegate" destination="PEH-ss-QQQ" id="Vv9-L8-x2t"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="SIX-qf-gND" firstAttribute="leading" secondItem="PEH-ss-QQQ" secondAttribute="leading" id="Ewf-K0-dZb"/>
-                                    <constraint firstItem="SIX-qf-gND" firstAttribute="top" secondItem="PEH-ss-QQQ" secondAttribute="top" id="Is2-Ks-qbX"/>
-                                    <constraint firstAttribute="bottom" secondItem="SQM-rm-MLd" secondAttribute="bottom" constant="10" id="Mz1-kM-ho3"/>
-                                    <constraint firstAttribute="width" secondItem="PEH-ss-QQQ" secondAttribute="height" multiplier="125:135" id="aqP-tp-xuK"/>
-                                    <constraint firstAttribute="bottom" secondItem="SIX-qf-gND" secondAttribute="bottom" id="bUU-pz-yUC"/>
-                                    <constraint firstItem="SQM-rm-MLd" firstAttribute="centerX" secondItem="PEH-ss-QQQ" secondAttribute="centerX" id="iCY-Sy-ufX"/>
-                                    <constraint firstAttribute="trailing" secondItem="SIX-qf-gND" secondAttribute="trailing" id="rUp-UH-Y2O"/>
+                                    <constraint firstAttribute="trailing" secondItem="yqs-zq-KQR" secondAttribute="trailing" id="EC3-W2-bgs"/>
+                                    <constraint firstItem="yqs-zq-KQR" firstAttribute="leading" secondItem="PEH-ss-QQQ" secondAttribute="leading" id="JCz-0m-fzx"/>
+                                    <constraint firstAttribute="width" secondItem="PEH-ss-QQQ" secondAttribute="height" multiplier="125:130" id="aqP-tp-xuK"/>
+                                    <constraint firstAttribute="bottom" secondItem="yqs-zq-KQR" secondAttribute="bottom" id="jNR-Qa-arz"/>
+                                    <constraint firstItem="yqs-zq-KQR" firstAttribute="top" secondItem="PEH-ss-QQQ" secondAttribute="top" id="wlD-ob-9Lx"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="scrollView" destination="SIX-qf-gND" id="aSY-e0-KrD"/>
+                                    <outlet property="pageControl" destination="rvc-rX-jGX" id="hPg-5j-8d4"/>
+                                    <outlet property="pagerView" destination="yqs-zq-KQR" id="bNo-kn-3Y8"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -441,8 +444,8 @@
                         <constraints>
                             <constraint firstItem="c4r-zp-wFr" firstAttribute="leading" secondItem="icN-of-7Yb" secondAttribute="leading" constant="24" id="AKa-xW-fD7"/>
                             <constraint firstItem="PEH-ss-QQQ" firstAttribute="trailing" secondItem="GAs-eH-fHD" secondAttribute="trailing" id="CFX-0I-woN"/>
-                            <constraint firstItem="c4r-zp-wFr" firstAttribute="top" secondItem="icN-of-7Yb" secondAttribute="top" constant="60" id="DIJ-qb-NFQ"/>
-                            <constraint firstItem="PEH-ss-QQQ" firstAttribute="top" secondItem="c4r-zp-wFr" secondAttribute="bottom" constant="25" id="axu-pQ-gmj"/>
+                            <constraint firstItem="c4r-zp-wFr" firstAttribute="top" secondItem="icN-of-7Yb" secondAttribute="top" constant="80" id="DIJ-qb-NFQ"/>
+                            <constraint firstItem="PEH-ss-QQQ" firstAttribute="top" secondItem="c4r-zp-wFr" secondAttribute="bottom" constant="20" id="axu-pQ-gmj"/>
                             <constraint firstItem="PEH-ss-QQQ" firstAttribute="leading" secondItem="GAs-eH-fHD" secondAttribute="leading" id="rai-XN-RlW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GAs-eH-fHD"/>
@@ -450,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLb-TZ-Jbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4645.6000000000004" y="-591.45427286356824"/>
+            <point key="canvasLocation" x="5033" y="-767"/>
         </scene>
         <!--找分購-->
         <scene sceneID="0Wz-46-6fn">

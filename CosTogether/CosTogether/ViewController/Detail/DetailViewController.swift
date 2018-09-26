@@ -6,27 +6,14 @@
 //
 
 import UIKit
+import FSPagerView
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var messageView: MessageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInputMessage()
         
-        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = true
     }
     
-    private func setInputMessage() {
-        
-        messageView.sendMessageBot.addTarget(self, action: #selector (sendMessage), for: .touchUpInside)
-        
-    }
-
-    @objc func sendMessage() {
-        
-        print("yes")
-        
-    }
 }
