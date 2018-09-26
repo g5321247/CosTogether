@@ -38,7 +38,7 @@
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
 		C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C92C2152399200BDB0CE /* Assets.xcassets */; };
 		C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */; };
-		C8FCA3AF215BC5AB008724A3 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfo.swift */; };
+		C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,7 @@
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		C8F8C92C2152399200BDB0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaExtraBlackItalic.ttf; sourceTree = "<group>"; };
-		C8FCA3AE215BC5AB008724A3 /* ArticleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfo.swift; sourceTree = "<group>"; };
+		C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,7 +332,7 @@
 		C8FCA3AD215BC557008724A3 /* ArticleInfo */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCA3AE215BC5AB008724A3 /* ArticleInfo.swift */,
+				C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */,
 			);
 			path = ArticleInfo;
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,
-				C8FCA3AF215BC5AB008724A3 /* ArticleInfo.swift in Sources */,
+				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView.swift in Sources */,
 				C84975162157758D00555855 /* UISearchBar.swift in Sources */,

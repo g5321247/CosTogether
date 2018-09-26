@@ -77,9 +77,9 @@ class ProductPicView: UIView {
                          maskToBounds: false)
         
         self.shadowSetup(
-        cgSize: CGSize(width: 1, height: 1),
-        shadowRadius: 2,
-        shadowOpacity: 0.2
+        cgSize: CGSize(width: 2, height: 2),
+        shadowRadius: 4,
+        shadowOpacity: 0.4
         )
         
     }

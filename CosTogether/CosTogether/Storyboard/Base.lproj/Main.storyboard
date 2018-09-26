@@ -452,8 +452,8 @@
                                 </constraints>
                                 <state key="normal" image="chat"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-7y-wDY">
-                                <rect key="frame" x="0.0" y="376.5" width="375" height="164.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-7y-wDY" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="380.5" width="375" height="164.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;標題&gt; 不要說我帥，太沈重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alg-R8-rWe">
                                         <rect key="frame" x="20" y="25" width="335" height="34.5"/>
@@ -531,9 +531,17 @@
                                     <constraint firstItem="6DO-Zi-4KK" firstAttribute="leading" secondItem="E8I-Cm-hsh" secondAttribute="trailing" constant="10" id="zZi-5M-FJ0"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="Kgl-1f-Qn0"/>
+                                <connections>
+                                    <outlet property="articleTitleLbl" destination="alg-R8-rWe" id="VjU-o3-dWS"/>
+                                    <outlet property="authorImage" destination="nvP-Rt-Rw8" id="b5t-dI-7L7"/>
+                                    <outlet property="authorNameLbl" destination="JkK-Oy-GT4" id="Lqd-5d-O8W"/>
+                                    <outlet property="locationLbl" destination="E8I-Cm-hsh" id="uVJ-hn-Z2e"/>
+                                    <outlet property="postDateLbl" destination="2mj-oB-cvc" id="Tce-66-jeW"/>
+                                    <outlet property="tagLbl" destination="wlu-Ww-WyY" id="EFR-5V-j7H"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-fX-yx5">
-                                <rect key="frame" x="0.0" y="541" width="375" height="126"/>
+                                <rect key="frame" x="0.0" y="545" width="375" height="122"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -545,13 +553,12 @@
                             <constraint firstItem="c4r-zp-wFr" firstAttribute="top" secondItem="icN-of-7Yb" secondAttribute="top" constant="60" id="DIJ-qb-NFQ"/>
                             <constraint firstAttribute="bottom" secondItem="yB3-fX-yx5" secondAttribute="bottom" id="DJ9-5e-Gp5"/>
                             <constraint firstItem="XM4-qK-QT0" firstAttribute="centerY" secondItem="bpV-su-6Qs" secondAttribute="centerY" id="Fvx-Qg-vGJ"/>
-                            <constraint firstItem="WTP-7y-wDY" firstAttribute="top" secondItem="PEH-ss-QQQ" secondAttribute="bottom" id="Ixp-ea-vTo"/>
+                            <constraint firstItem="WTP-7y-wDY" firstAttribute="top" secondItem="PEH-ss-QQQ" secondAttribute="bottom" constant="4" id="Ixp-ea-vTo"/>
                             <constraint firstItem="yB3-fX-yx5" firstAttribute="leading" secondItem="GAs-eH-fHD" secondAttribute="leading" id="KVQ-sY-W5L"/>
                             <constraint firstItem="bpV-su-6Qs" firstAttribute="centerX" secondItem="icN-of-7Yb" secondAttribute="centerX" id="M77-OZ-hmG"/>
                             <constraint firstItem="yB3-fX-yx5" firstAttribute="top" secondItem="WTP-7y-wDY" secondAttribute="bottom" id="ZXp-fy-Buq"/>
                             <constraint firstItem="PEH-ss-QQQ" firstAttribute="top" secondItem="c4r-zp-wFr" secondAttribute="bottom" constant="20" id="axu-pQ-gmj"/>
                             <constraint firstItem="GAs-eH-fHD" firstAttribute="trailing" secondItem="XM4-qK-QT0" secondAttribute="trailing" constant="24" id="eob-Tw-kb0"/>
-                            <constraint firstItem="WTP-7y-wDY" firstAttribute="top" secondItem="PEH-ss-QQQ" secondAttribute="bottom" id="iVC-Tr-fGy"/>
                             <constraint firstItem="WTP-7y-wDY" firstAttribute="leading" secondItem="GAs-eH-fHD" secondAttribute="leading" id="ly4-Oq-ojG"/>
                             <constraint firstItem="bpV-su-6Qs" firstAttribute="centerY" secondItem="c4r-zp-wFr" secondAttribute="centerY" id="q2A-Qd-MCj"/>
                             <constraint firstItem="PEH-ss-QQQ" firstAttribute="leading" secondItem="GAs-eH-fHD" secondAttribute="leading" id="rai-XN-RlW"/>
