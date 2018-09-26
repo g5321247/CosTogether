@@ -39,6 +39,8 @@
 		C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C92C2152399200BDB0CE /* Assets.xcassets */; };
 		C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */; };
 		C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */; };
+		C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3B0215BCD61008724A3 /* ProductItemTableViewCell.swift */; };
+		C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FCA3B1215BCD61008724A3 /* ProductItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		C8F8C92C2152399200BDB0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaExtraBlackItalic.ttf; sourceTree = "<group>"; };
 		C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoView.swift; sourceTree = "<group>"; };
+		C8FCA3B0215BCD61008724A3 /* ProductItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemTableViewCell.swift; sourceTree = "<group>"; };
+		C8FCA3B1215BCD61008724A3 /* ProductItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,10 +210,11 @@
 		C849750F215762A300555855 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C8FCA3B5215BCD99008724A3 /* TableViewCell */,
 				C8FCA3AD215BC557008724A3 /* ArticleInfo */,
 				C8378BD0215B610100CBAA51 /* ProductPic */,
 				C82FA862215A3CF400B75284 /* Message */,
-				C84975252157BCF600555855 /* ProductCell */,
+				C8FCA3B4215BCD75008724A3 /* CollectionViewCell */,
 			);
 			name = View;
 			path = Storyboard/View;
@@ -337,6 +342,31 @@
 			path = ArticleInfo;
 			sourceTree = "<group>";
 		};
+		C8FCA3B4215BCD75008724A3 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C84975252157BCF600555855 /* ProductCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C8FCA3B5215BCD99008724A3 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8FCA3B6215BCDBE008724A3 /* ProductItem */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C8FCA3B6215BCDBE008724A3 /* ProductItem */ = {
+			isa = PBXGroup;
+			children = (
+				C8FCA3B1215BCD61008724A3 /* ProductItemTableViewCell.xib */,
+				C8FCA3B0215BCD61008724A3 /* ProductItemTableViewCell.swift */,
+			);
+			path = ProductItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,6 +434,7 @@
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
+				C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */,
 				C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */,
 				C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */,
 			);
@@ -506,6 +537,7 @@
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
+				C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */,
 				C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */,
 				C8497518215780EF00555855 /* UIButton.swift in Sources */,
 				C849751C2157918600555855 /* UIImage.swift in Sources */,

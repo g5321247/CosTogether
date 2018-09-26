@@ -26,11 +26,17 @@ class ArticleInfoView: UIView {
     private func setup() {
         
         setupImageView()
+        setupView()
     }
     
     private func setupImageView() {
         
         authorImage.cornerSetup(cornerRadius: authorImage.frame.width / 2)
+    }
+    
+    private func setupView() {
+        
+        self.shadowSetup()
     }
 
 }

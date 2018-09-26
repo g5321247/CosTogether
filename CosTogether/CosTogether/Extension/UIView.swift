@@ -24,9 +24,9 @@ extension UIView {
     }
 
     func shadowSetup(
-        cgSize: CGSize = CGSize(width: 18, height: 18),
-        shadowRadius: CGFloat = 8,
-        shadowOpacity: Float = 0.9
+        cgSize: CGSize = CGSize(width: 1, height: 1),
+        shadowRadius: CGFloat = 4,
+        shadowOpacity: Float = 0.2
         ) {
         
         self.layer.shadowOffset = cgSize
