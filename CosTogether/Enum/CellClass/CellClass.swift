@@ -13,6 +13,7 @@ enum CellClass {
     case productPic
     case articleInfo
     case productItems(Int)
+    case order
     
     func numberOfRow() -> Int {
         
@@ -29,7 +30,10 @@ enum CellClass {
         case .productItems(let number):
             
             return number
+        
+        case .order:
             
+            return 1
         }
     }
 }

@@ -18,7 +18,11 @@ class MainPageViewController: UIViewController {
         super.viewDidLoad()
 
         searchThingBar.setSearchBar()
-        locationBot.setCornerRadius(color: UIColor.gray)
+        locationBot.cornerSetup(cornerRadius: 5,
+                                borderWidth: 1,
+                                borderColor: UIColor.lightGray.cgColor
+        )
+        
         productTypeSC.addUnderlineForSelectedSegment()
         
     }

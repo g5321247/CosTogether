@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
     #warning ("TODO: Delete this")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     
-    private lazy var sections: [CellClass] = [.productPic, .articleInfo, .productItems(testArray.count)]
+    private lazy var sections: [CellClass] = [.productPic, .articleInfo, .productItems(testArray.count), .order]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,6 +36,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         registerTableViewCell(identifier: String(describing: ProductItemTableViewCell.self))
         registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
         registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
+        registerTableViewCell(identifier: String(describing: OrderTableViewCell.self))
 
     }
     
@@ -74,6 +75,10 @@ extension DetailViewController: UITableViewDelegate {
         case .productItems:
             
             return 120
+        
+        case .order:
+            
+            return 85
             
         default:
             
@@ -120,7 +125,13 @@ extension DetailViewController: UITableViewDataSource {
             
         case .productPic:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductPicTableViewCell.self)) as? ProductPicTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: ProductPicTableViewCell.self)
+                ) as? ProductPicTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
             
             cell.view.delegate = self
 
@@ -130,16 +141,40 @@ extension DetailViewController: UITableViewDataSource {
             
         case .articleInfo:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ArticleInfoTableViewCell.self)) as? ArticleInfoTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
+                ) as? ArticleInfoTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
             
             return cell
 
         case .productItems:
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductItemTableViewCell.self)) as? ProductItemTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: ProductItemTableViewCell.self)
+            ) as? ProductItemTableViewCell else {
+                
+                return UITableViewCell()
+                
+        }
                     
             cell.productImage.image = testArray[indexPath.row]
         
+            return cell
+        
+        case .order:
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: OrderTableViewCell.self)
+            ) as? OrderTableViewCell else {
+                    
+                return UITableViewCell()
+                    
+        }
+                        
             return cell
             
         default:
