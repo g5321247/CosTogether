@@ -19,6 +19,8 @@
 		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
 		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
 		C82BA99C215CB04500996B11 /* CellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA99B215CB04500996B11 /* CellClass.swift */; };
+		C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */; };
+		C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */; };
 		C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA85D215A17D000B75284 /* DetailViewController.swift */; };
 		C82FA861215A3CED00B75284 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA860215A3CED00B75284 /* MessageView.swift */; };
 		C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8378BCE215B60F700CBAA51 /* ProductPicView.swift */; };
@@ -65,6 +67,8 @@
 		C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicTableViewCell.swift; sourceTree = "<group>"; };
 		C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductPicTableViewCell.xib; sourceTree = "<group>"; };
 		C82BA99B215CB04500996B11 /* CellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellClass.swift; sourceTree = "<group>"; };
+		C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C82FA85D215A17D000B75284 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 			children = (
 				C82BA99A215C892700996B11 /* ProductPic */,
 				C8FCA3B6215BCDBE008724A3 /* ProductItem */,
+				C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */,
+				C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
 				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
@@ -558,6 +565,7 @@
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
+				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
 				C82BA99C215CB04500996B11 /* CellClass.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,

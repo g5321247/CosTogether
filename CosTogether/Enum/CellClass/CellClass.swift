@@ -11,7 +11,7 @@ import Foundation
 enum CellClass {
     
     case productPic
-    case authorInfo
+    case articleInfo
     case productItems(Int)
     
     func numberOfRow() -> Int {
@@ -22,7 +22,7 @@ enum CellClass {
             
             return 1
         
-        case .authorInfo:
+        case .articleInfo:
             
             return 1
         

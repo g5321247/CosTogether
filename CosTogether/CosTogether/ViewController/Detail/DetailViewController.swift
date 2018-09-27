@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
     #warning ("TODO: Delete this")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     
-    private lazy var sections: [CellClass] = [.productPic, .authorInfo, .productItems(testArray.count)]
+    private lazy var sections: [CellClass] = [.productPic, .articleInfo, .productItems(testArray.count)]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,8 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+//        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         
         setUpCell()
         
@@ -32,6 +34,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         
         registerTableViewCell(identifier: String(describing: ProductItemTableViewCell.self))
         registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
+        registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
 
     }
     
@@ -49,7 +52,22 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 120
         
-        return 300
+        switch sections[indexPath.section] {
+            
+        case .productPic:
+
+            return self.view.frame.width * (14 / 19)
+            
+        case .articleInfo:
+            
+            return self.view.frame.width * (164 / 375)
+            
+        default:
+            
+            return 300
+            
+        }
+        
     }
     
 }
@@ -78,7 +96,14 @@ extension DetailViewController: UITableViewDataSource {
             cell.reloadProductPicView()
             
             return cell
+            
+        case .articleInfo:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ArticleInfoTableViewCell.self)) as? ArticleInfoTableViewCell else { return UITableViewCell()}
+            
+            return cell
 
+            
         default:
             return UITableViewCell()
         }
