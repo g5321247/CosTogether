@@ -16,6 +16,8 @@
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
 		C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */; };
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
+		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
+		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
 		C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA85D215A17D000B75284 /* DetailViewController.swift */; };
 		C82FA861215A3CED00B75284 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA860215A3CED00B75284 /* MessageView.swift */; };
 		C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8378BCE215B60F700CBAA51 /* ProductPicView.swift */; };
@@ -59,6 +61,8 @@
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Didot HTFB96 Bold.otf"; sourceTree = "<group>"; };
 		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
+		C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicTableViewCell.swift; sourceTree = "<group>"; };
+		C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductPicTableViewCell.xib; sourceTree = "<group>"; };
 		C82FA85D215A17D000B75284 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 				C8F8C931215278E900BDB0CE /* fonts */,
 			);
 			path = CosTogether;
+			sourceTree = "<group>";
+		};
+		C82BA99A215C892700996B11 /* ProductPicCell */ = {
+			isa = PBXGroup;
+			children = (
+				C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */,
+				C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */,
+			);
+			path = ProductPicCell;
 			sourceTree = "<group>";
 		};
 		C82FA85F215A180900B75284 /* Detail */ = {
@@ -357,6 +370,7 @@
 		C8FCA3B5215BCD99008724A3 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C82BA99A215C892700996B11 /* ProductPicCell */,
 				C8FCA3B6215BCDBE008724A3 /* ProductItem */,
 			);
 			path = TableViewCell;
@@ -436,6 +450,7 @@
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
+				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
 				C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */,
@@ -530,6 +545,7 @@
 				C849752B2157C25D00555855 /* Product.swift in Sources */,
 				C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */,
+				C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */,
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,

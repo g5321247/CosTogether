@@ -21,18 +21,23 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let identifier = String(describing: ProductItemTableViewCell.self)
+        setUpCell()
         
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setUpCell() {
+        
+        registerTableViewCell(identifier: String(describing: ProductItemTableViewCell.self))
+        registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
+
+    }
+    
+    private func registerTableViewCell(identifier: String) {
+
         let nibCell = UINib(nibName: identifier, bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: identifier)
         
-        #warning ("記得刪除 font 查詢")
-//        UIFont.familyNames.forEach({ familyName in
-//            let fontNames = UIFont.fontNames(forFamilyName: familyName)
-//            print(familyName, fontNames)
-//        })
-        
-        self.navigationController?.navigationBar.isHidden = true
     }
     
 }
@@ -40,7 +45,9 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+//        return 120
+        
+        return 300
     }
     
 }
@@ -53,9 +60,13 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductItemTableViewCell.self)) as? ProductItemTableViewCell else { return UITableViewCell()}
         
-        cell.productImage.image = testArray[indexPath.row]
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductItemTableViewCell.self)) as? ProductItemTableViewCell else { return UITableViewCell()}
+//
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductPicTableViewCell.self)) as? ProductPicTableViewCell else { return UITableViewCell()}
+        
+//        cell.productImage.image = testArray[indexPath.row]
         
         return cell
         

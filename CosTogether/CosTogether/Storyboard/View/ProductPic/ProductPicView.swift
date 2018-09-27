@@ -11,36 +11,17 @@ import FSPagerView
 
 protocol ProductPicDelegate: AnyObject {
     
-    var products: [Product] { get set }
-    
+//    var products: [Product] { get set }
+    var testArray: [UIImage] { get set }
+
 }
 
 class ProductPicView: UIView {
-
-    #warning ("TODO: 刪掉")
-    var testArray: [UIImage] = [#imageLiteral(resourceName: "test"),#imageLiteral(resourceName: "test2")]
     
     weak var delegate: ProductPicDelegate?
     
-    @IBOutlet weak var pagerView: FSPagerView! {
-        
-        didSet {
-            
-            setPagerView()
-            
-            self.pagerView.bringSubviewToFront(self.pageControl)
-
-        }
-    }
-  
-    @IBOutlet weak var pageControl: FSPageControl! {
-        
-        didSet {
-            
-            setPageControl()
-
-        }
-    }
+    @IBOutlet weak var pagerView: FSPagerView!
+    @IBOutlet weak var pageControl: FSPageControl!
     
     var imageView: UIImageView!
     
@@ -48,10 +29,16 @@ class ProductPicView: UIView {
         super.awakeFromNib()
     
         setup()
-
+        
     }
     
     private func setup() {
+        
+        setPageControl()
+
+        setPagerView()
+        
+        self.pagerView.bringSubviewToFront(self.pageControl)
         
         setupBackgroundImageView()
 
@@ -60,7 +47,7 @@ class ProductPicView: UIView {
     private func setupBackgroundImageView() {
         
         self.cornerSetup(cornerRadius: 0,
-                         borderWidth: 0.8,
+                         borderWidth: 0.2,
                          borderColor: UIColor.gray.cgColor,
                          maskToBounds: false)
         
@@ -71,8 +58,6 @@ class ProductPicView: UIView {
         )
         
     }
-    
-    
     
     private func setPagerView() {
         
@@ -87,11 +72,10 @@ class ProductPicView: UIView {
     private func setPageControl() {
         
         #warning ("TODO: numberOfPage 要改成 delegate.products.count")
-        self.pageControl.numberOfPages = testArray.count
+        self.pageControl.numberOfPages = delegate?.testArray.count ?? 1
         
         pageControl.setFillColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
         pageControl.setFillColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
-        
         
         pageControl.itemSpacing = 10
         pageControl.interitemSpacing = 6
@@ -106,10 +90,11 @@ extension ProductPicView: FSPagerViewDataSource {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         
-        guard let numberOfItem = delegate?.products.count else {
+        #warning ("TODO: testArray 改成 products ")
+
+        guard let numberOfItem = delegate?.testArray.count else {
             
-            #warning ("TODO: 改成 0")
-            return testArray.count
+            return 0
         }
         
         return numberOfItem
@@ -121,7 +106,7 @@ extension ProductPicView: FSPagerViewDataSource {
         
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
-        cell.imageView?.image = testArray[index]
+        cell.imageView?.image = delegate?.testArray[index]
         
         return cell
     }
