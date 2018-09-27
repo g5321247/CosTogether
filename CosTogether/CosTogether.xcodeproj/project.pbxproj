@@ -221,6 +221,15 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		C82BA9A5215CE44900996B11 /* ArticleInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */,
+				C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */,
+			);
+			path = ArticleInfoView;
+			sourceTree = "<group>";
+		};
 		C82FA85F215A180900B75284 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +386,7 @@
 		C8FCA3AD215BC557008724A3 /* ArticleInfo */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */,
+				C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */,
 			);
 			path = ArticleInfo;
 			sourceTree = "<group>";
@@ -395,8 +404,7 @@
 			children = (
 				C82BA99A215C892700996B11 /* ProductPic */,
 				C8FCA3B6215BCDBE008724A3 /* ProductItem */,
-				C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */,
-				C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */,
+				C82BA9A5215CE44900996B11 /* ArticleInfoView */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";

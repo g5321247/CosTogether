@@ -80,7 +80,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .productItems:
             
-            return 20
+            return self.view.frame.width * (40 / 375)
             
         default:
             return 0
