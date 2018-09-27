@@ -28,7 +28,7 @@ class ProductPicView: UIView {
             
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             
-            pagerView.isInfinite = false
+            pagerView.isInfinite = true
             
             self.pagerView.transformer = FSPagerViewTransformer(type: .zoomOut)
             self.pagerView.bringSubviewToFront(self.pageControl)
@@ -79,7 +79,7 @@ class ProductPicView: UIView {
         self.shadowSetup(
         cgSize: CGSize(width: 2, height: 2),
         shadowRadius: 4,
-        shadowOpacity: 0.4
+        shadowOpacity: 0.2
         )
         
     }
