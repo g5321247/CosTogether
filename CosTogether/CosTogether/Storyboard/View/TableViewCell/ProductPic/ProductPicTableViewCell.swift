@@ -8,21 +8,22 @@
 
 import UIKit
 
-class ProductPicTableViewCell: UITableViewCell,ProductPicDelegate {
-    
-    var testArray: [UIImage] = [#imageLiteral(resourceName: "test"),#imageLiteral(resourceName: "test2")]
-
-//    var products: [Product] = []
+class ProductPicTableViewCell: UITableViewCell{
     
     @IBOutlet weak var view: ProductPicView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    func reloadProductPicView() {
+        
+        view.setup()
+        
     }
     
 }

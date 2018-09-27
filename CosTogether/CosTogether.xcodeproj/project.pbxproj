@@ -18,6 +18,7 @@
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
 		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
 		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
+		C82BA99C215CB04500996B11 /* CellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA99B215CB04500996B11 /* CellClass.swift */; };
 		C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA85D215A17D000B75284 /* DetailViewController.swift */; };
 		C82FA861215A3CED00B75284 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA860215A3CED00B75284 /* MessageView.swift */; };
 		C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8378BCE215B60F700CBAA51 /* ProductPicView.swift */; };
@@ -63,6 +64,7 @@
 		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
 		C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicTableViewCell.swift; sourceTree = "<group>"; };
 		C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductPicTableViewCell.xib; sourceTree = "<group>"; };
+		C82BA99B215CB04500996B11 /* CellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellClass.swift; sourceTree = "<group>"; };
 		C82FA85D215A17D000B75284 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		C81543822153406700B3446D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C849751D21579BDD00555855 /* Fonts */,
+				C82BA99E215CB06A00996B11 /* Enum */,
 				C81543832153409100B3446D /* Facebook */,
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
@@ -189,13 +191,30 @@
 			path = CosTogether;
 			sourceTree = "<group>";
 		};
-		C82BA99A215C892700996B11 /* ProductPicCell */ = {
+		C82BA99A215C892700996B11 /* ProductPic */ = {
 			isa = PBXGroup;
 			children = (
 				C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */,
 				C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */,
 			);
-			path = ProductPicCell;
+			path = ProductPic;
+			sourceTree = "<group>";
+		};
+		C82BA99D215CB04900996B11 /* CellClass */ = {
+			isa = PBXGroup;
+			children = (
+				C82BA99B215CB04500996B11 /* CellClass.swift */,
+			);
+			path = CellClass;
+			sourceTree = "<group>";
+		};
+		C82BA99E215CB06A00996B11 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C849751D21579BDD00555855 /* Fonts */,
+				C82BA99D215CB04900996B11 /* CellClass */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		C82FA85F215A180900B75284 /* Detail */ = {
@@ -370,7 +389,7 @@
 		C8FCA3B5215BCD99008724A3 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C82BA99A215C892700996B11 /* ProductPicCell */,
+				C82BA99A215C892700996B11 /* ProductPic */,
 				C8FCA3B6215BCDBE008724A3 /* ProductItem */,
 			);
 			path = TableViewCell;
@@ -540,6 +559,7 @@
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
+				C82BA99C215CB04500996B11 /* CellClass.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,

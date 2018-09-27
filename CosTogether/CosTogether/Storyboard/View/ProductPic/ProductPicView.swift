@@ -32,11 +32,11 @@ class ProductPicView: UIView {
         
     }
     
-    private func setup() {
+     func setup() {
+        
+        setPagerView()
         
         setPageControl()
-
-        setPagerView()
         
         self.pagerView.bringSubviewToFront(self.pageControl)
         
