@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         tableView.delegate = self
         tableView.dataSource = self
         
-//        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         
         setUpCell()
         
@@ -62,12 +62,34 @@ extension DetailViewController: UITableViewDelegate {
             
             return self.view.frame.width * (164 / 375)
             
+        case .productItems:
+            
+            return 120
+            
         default:
             
             return 300
             
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        switch sections[section] {
+            
+        case .productItems:
+            
+            return 20
+            
+        default:
+            return 0
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     
 }
@@ -103,19 +125,18 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
 
+        case .productItems:
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductItemTableViewCell.self)) as? ProductItemTableViewCell else { return UITableViewCell()}
+                    
+            cell.productImage.image = testArray[indexPath.row]
+        
+            return cell
             
         default:
             return UITableViewCell()
         }
         
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductItemTableViewCell.self)) as? ProductItemTableViewCell else { return UITableViewCell()}
-//
-        
-        
-        
-//        cell.productImage.image = testArray[indexPath.row]
-        
-        return UITableViewCell()
     }
     
 }
