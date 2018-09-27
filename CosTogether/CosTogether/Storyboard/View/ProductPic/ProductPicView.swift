@@ -26,11 +26,8 @@ class ProductPicView: UIView {
         
         didSet {
             
-            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            setPagerView()
             
-            pagerView.isInfinite = true
-            
-            self.pagerView.transformer = FSPagerViewTransformer(type: .zoomOut)
             self.pagerView.bringSubviewToFront(self.pageControl)
 
         }
@@ -40,17 +37,7 @@ class ProductPicView: UIView {
         
         didSet {
             
-            #warning ("TODO: numberOfPage 要改成 delegate.products.count")
-            self.pageControl.numberOfPages = testArray.count
-            
-            pageControl.setFillColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
-            pageControl.setFillColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
-            
-            
-            pageControl.itemSpacing = 10
-            pageControl.interitemSpacing = 6
-            
-            pageControl.contentHorizontalAlignment = .center
+            setPageControl()
 
         }
     }
@@ -82,6 +69,34 @@ class ProductPicView: UIView {
         shadowRadius: 4,
         shadowOpacity: 0.2
         )
+        
+    }
+    
+    
+    
+    private func setPagerView() {
+        
+        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        pagerView.isInfinite = true
+        
+        self.pagerView.transformer = FSPagerViewTransformer(type: .zoomOut)
+
+    }
+    
+    private func setPageControl() {
+        
+        #warning ("TODO: numberOfPage 要改成 delegate.products.count")
+        self.pageControl.numberOfPages = testArray.count
+        
+        pageControl.setFillColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
+        pageControl.setFillColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+        
+        
+        pageControl.itemSpacing = 10
+        pageControl.interitemSpacing = 6
+        
+        pageControl.contentHorizontalAlignment = .center
         
     }
     
