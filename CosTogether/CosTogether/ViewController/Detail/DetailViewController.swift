@@ -26,6 +26,12 @@ class DetailViewController: UIViewController {
         let nibCell = UINib(nibName: identifier, bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: identifier)
         
+        #warning ("記得刪除 font 查詢")
+//        UIFont.familyNames.forEach({ familyName in
+//            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+//            print(familyName, fontNames)
+//        })
+        
         self.navigationController?.navigationBar.isHidden = true
     }
     

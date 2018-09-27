@@ -57,6 +57,8 @@
 		C8215FDF2151FAB8006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8215FE12151FAB8006BC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Didot HTFB96 Bold.otf"; sourceTree = "<group>"; };
+		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
 		C82FA85D215A17D000B75284 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
@@ -325,9 +327,11 @@
 			isa = PBXGroup;
 			children = (
 				C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */,
+				C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */,
 				C849750621567C1B00555855 /* 中文仿宋體.ttf */,
 				C849750721567C2100555855 /* 宋體 繁.ttc */,
 				C849750C2156811300555855 /* NotoSans-Regular.ttf */,
+				C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */,
 				C849750821567FDB00555855 /* NotoSans-Bold.ttf */,
 			);
 			name = fonts;

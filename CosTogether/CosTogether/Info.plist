@@ -42,6 +42,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>New Baskerville BT.ttf</string>
+		<string>Didot HTFB96 Bold.otf</string>
 		<string>中文仿宋體.ttf</string>
 		<string>宋體 繁.ttc</string>
 		<string>FuturaExtraBlackItalic.ttf</string>
