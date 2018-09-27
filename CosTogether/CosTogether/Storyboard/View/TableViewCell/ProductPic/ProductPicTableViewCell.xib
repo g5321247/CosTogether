@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rx-2b-ST4" customClass="ProductPicView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="10" y="10" width="360" height="259.5"/>
+                        <rect key="frame" x="10" y="0.0" width="360" height="269.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNc-2p-mlF" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="259.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="269.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-32-DYO" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="160" y="219.5" width="40" height="30"/>
+                                        <rect key="frame" x="160" y="229.5" width="40" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="ffG-Kg-Odb"/>
                                             <constraint firstAttribute="height" constant="30" id="oQW-cO-rhm"/>
@@ -59,7 +59,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0Rx-2b-ST4" secondAttribute="trailing" constant="10" id="Buz-dP-Oxh"/>
                     <constraint firstItem="0Rx-2b-ST4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="DvU-pC-IRo"/>
-                    <constraint firstItem="0Rx-2b-ST4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="SwW-xb-Uhu"/>
+                    <constraint firstItem="0Rx-2b-ST4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SwW-xb-Uhu"/>
                     <constraint firstAttribute="bottom" secondItem="0Rx-2b-ST4" secondAttribute="bottom" constant="10" id="pbl-jK-CRq"/>
                 </constraints>
             </tableViewCellContentView>

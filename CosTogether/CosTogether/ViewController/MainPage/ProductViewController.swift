@@ -125,7 +125,11 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
 
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
-            ) as? DetailViewController else { return }
+            ) as? DetailViewController else {
+                
+                return
+                
+        }
         
 //        controller.loadViewIfNeeded()
 //        controller.article = articles[indexPath.row]

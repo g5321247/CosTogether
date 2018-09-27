@@ -20,14 +20,15 @@ class DetailViewController: UIViewController, ProductPicDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-        
-        setUpCell()
+        setup()
         
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setup() {
+        
+        setUpCell()
+        tableViewSetup()
     }
     
     private func setUpCell() {
@@ -45,6 +46,14 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         
     }
     
+    private func tableViewSetup() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        tableView.allowsSelection = false
+    }
+    
 }
 
 extension DetailViewController: UITableViewDelegate {
@@ -56,11 +65,11 @@ extension DetailViewController: UITableViewDelegate {
             
         case .productPic:
 
-            return self.view.frame.width * (14 / 19)
+            return self.view.frame.width * (3 / 5)
             
         case .articleInfo:
             
-            return self.view.frame.width * (164 / 375)
+            return self.view.frame.width * (6 / 15)
             
         case .productItems:
             
