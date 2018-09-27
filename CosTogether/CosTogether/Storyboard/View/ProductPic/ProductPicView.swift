@@ -46,6 +46,7 @@ class ProductPicView: UIView {
             pageControl.setFillColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
             pageControl.setFillColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
             
+            
             pageControl.itemSpacing = 10
             pageControl.interitemSpacing = 6
             
@@ -103,6 +104,8 @@ extension ProductPicView: FSPagerViewDataSource {
         
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
         cell.imageView?.image = testArray[index]
         
         return cell

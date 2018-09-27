@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wco-3w-hwD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cXf-1q-bmC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -158,11 +158,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="CosTogether" id="KMc-Dk-vqe">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="xrU-ix-PKN">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hXr-gX-cu7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hXr-gX-cu7">
                                 <rect key="frame" x="289" y="4" width="70" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="E5Z-0g-ewp"/>
+                                    <constraint firstAttribute="width" constant="60" id="E5Z-0g-ewp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <state key="normal" title="地區">
@@ -229,7 +229,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ozw-mo-2p2" id="Vd9-uY-Kwg"/>
-                        <segue destination="gPq-pX-E9F" kind="show" id="D7j-EU-Wso"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kD1-8O-4N0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,7 +240,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="gPq-pX-E9F" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cs2-JR-iI6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-41-6Wp">
@@ -250,45 +249,45 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;標題&gt; 不要說我帥，太沈重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-Bi-Euz">
-                                <rect key="frame" x="20" y="36" width="335" height="34.5"/>
+                                <rect key="frame" x="20" y="56" width="335" height="34.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文時間: 1998/12/21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5O-j2-6l0">
-                                <rect key="frame" x="20" y="184.5" width="167.5" height="23.5"/>
+                                <rect key="frame" x="20" y="204.5" width="167.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ueU-jr-Opg">
-                                <rect key="frame" x="92" y="142.5" width="18" height="18"/>
+                                <rect key="frame" x="92" y="162.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Jbk-CS-L7j"/>
                                     <constraint firstAttribute="width" secondItem="ueU-jr-Opg" secondAttribute="height" multiplier="1:1" id="j0L-SU-sGn"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="oSa-Iv-dD1">
-                                <rect key="frame" x="200" y="142.5" width="18" height="18"/>
+                                <rect key="frame" x="200" y="162.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oSa-Iv-dD1" secondAttribute="height" multiplier="1:1" id="JLl-ek-2sX"/>
                                     <constraint firstAttribute="height" constant="18" id="bwo-5R-eMo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-mH-a4X">
-                                <rect key="frame" x="120" y="138" width="40" height="27.5"/>
+                                <rect key="frame" x="120" y="158" width="40" height="27.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="20"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xl-it-o8y">
-                                <rect key="frame" x="228" y="138" width="20" height="27.5"/>
+                                <rect key="frame" x="228" y="158" width="20" height="27.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="20"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgH-1d-Q3P" customClass="MessageView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="388" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wfB-GA-rSr">
                                         <rect key="frame" x="8" y="8" width="303" height="34"/>
@@ -321,14 +320,14 @@
                                 </connections>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testUser" translatesAutoresizingMaskIntoConstraints="NO" id="Ooy-Yi-gJB">
-                                <rect key="frame" x="20" y="100.5" width="60" height="60"/>
+                                <rect key="frame" x="20" y="120.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ooy-Yi-gJB" secondAttribute="height" multiplier="1:1" id="4xE-JU-mjH"/>
                                     <constraint firstAttribute="width" constant="60" id="YhT-GM-UW2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金城武" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBJ-gx-3sU">
-                                <rect key="frame" x="92" y="100.5" width="273" height="33"/>
+                                <rect key="frame" x="92" y="120.5" width="273" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -363,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2H-aP-0ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="-520.38980509745136"/>
+            <point key="canvasLocation" x="5063" y="-602"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="0sl-fN-Vgg">
@@ -394,7 +393,8 @@
                                     <constraint firstAttribute="width" constant="30" id="OWY-2K-4cv"/>
                                     <constraint firstAttribute="width" secondItem="c4r-zp-wFr" secondAttribute="height" multiplier="2:1" id="cQ1-0W-UPP"/>
                                 </constraints>
-                                <state key="normal" image="arrow"/>
+                                <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" image="back"/>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEH-ss-QQQ" customClass="ProductPicView" customModule="CosTogether" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="95" width="375" height="281.5"/>
@@ -447,7 +447,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;標題&gt; 不要說我帥，太沈重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alg-R8-rWe">
                                         <rect key="frame" x="20" y="25" width="335" height="35"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="F3Z-aC-XDP">
@@ -564,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLb-TZ-Jbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5032.8000000000002" y="-767.76611694152928"/>
+            <point key="canvasLocation" x="4022" y="-533"/>
         </scene>
         <!--找分購-->
         <scene sceneID="0Wz-46-6fn">
@@ -589,7 +589,7 @@
     <resources>
         <image name="Message" width="16" height="16"/>
         <image name="Profile" width="16" height="16"/>
-        <image name="arrow" width="764" height="331"/>
+        <image name="back" width="764" height="331"/>
         <image name="chat" width="32" height="32"/>
         <image name="location" width="16" height="16"/>
         <image name="searching" width="16" height="16"/>
