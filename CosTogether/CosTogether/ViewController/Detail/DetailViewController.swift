@@ -18,7 +18,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         .articleInfo,
         .joinGroup,
         .productItems(testArray.count),
-        .order
+        .order,
+        .productDetail
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -46,7 +47,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
         registerTableViewCell(identifier: String(describing: OrderTableViewCell.self))
         registerTableViewCell(identifier: String(describing: JoinGroupTableViewCell.self))
-
+        registerTableViewCell(identifier: String(describing: ProductDetailTableViewCell.self))
     }
     
     private func registerTableViewCell(identifier: String) {
@@ -85,6 +86,12 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @objc func authorPhotoTapping(_ sender: UIButton) {
         
     }
+    
+    #warning ("點作者進入個人資料")
+
+    @objc func memberPhotoTapping(_ sender: UIButton) {
+        
+    }
 
 }
 
@@ -114,14 +121,18 @@ extension DetailViewController: UITableViewDelegate {
         case .joinGroup:
             
             return 100
+        
+        case .productDetail:
             
-        default:
-            
-            return 0
+            return UITableView.automaticDimension
             
         }
         
     }
+    
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
@@ -222,6 +233,18 @@ extension DetailViewController: UITableViewDataSource {
                     
         }
                         
+            return cell
+            
+        case .productDetail:
+            
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: ProductDetailTableViewCell.self)
+                ) as? ProductDetailTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
+            
             return cell
             
         }

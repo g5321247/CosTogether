@@ -44,6 +44,8 @@
 		C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */; };
 		C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */; };
 		C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */; };
+		C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF0DC215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift */; };
+		C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BCF0DD215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
@@ -102,6 +104,8 @@
 		C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinGroupTableViewCell.xib; sourceTree = "<group>"; };
 		C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
+		C8BCF0DC215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
+		C8BCF0DD215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailTableViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -236,7 +240,7 @@
 		C82BA9A5215CE44900996B11 /* ArticleInfo */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */,
+				C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */,
 				C82BA9A2215CD76000996B11 /* ArticleInfoTableViewCell.xib */,
 			);
 			path = ArticleInfo;
@@ -374,6 +378,15 @@
 			path = Member;
 			sourceTree = "<group>";
 		};
+		C8BCF0E0215E9CE200A2B1B8 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C8BCF0DC215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift */,
+				C8BCF0DD215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,7 +446,7 @@
 		C8FCA3AD215BC557008724A3 /* ArticleInfo */ = {
 			isa = PBXGroup;
 			children = (
-				C82BA9A1215CD76000996B11 /* ArticleInfoTableViewCell.swift */,
+				C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */,
 			);
 			path = ArticleInfo;
 			sourceTree = "<group>";
@@ -455,6 +468,7 @@
 				C82BA9A5215CE44900996B11 /* ArticleInfo */,
 				C87F8B0F215D42C10060EA72 /* Order */,
 				C87F8B16215DD22D0060EA72 /* JoinGroup */,
+				C8BCF0E0215E9CE200A2B1B8 /* ProductDetail */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -534,6 +548,7 @@
 				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
+				C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
 				C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */,
@@ -650,6 +665,7 @@
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
 				C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */,
+				C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,
 				C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */,
 				C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */,

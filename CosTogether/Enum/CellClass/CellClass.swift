@@ -15,6 +15,7 @@ enum CellClass {
     case productItems(Int)
     case joinGroup
     case order
+    case productDetail
     
     func numberOfRow() -> Int {
         
@@ -39,6 +40,11 @@ enum CellClass {
         case .order:
             
             return 1
+        
+        case .productDetail:
+            
+            return 1
+            
         }
     }
 }
