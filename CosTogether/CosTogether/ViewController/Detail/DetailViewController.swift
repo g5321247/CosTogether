@@ -13,7 +13,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     #warning ("TODO: Delete this")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     
-    private lazy var sections: [CellClass] = [.productPic, .articleInfo, .productItems(testArray.count), .order]
+    private lazy var sections: [CellClass] = [
+        .productPic,
+        .articleInfo,
+        .joinGroup,
+        .productItems(testArray.count),
+        .order
+    ]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
@@ -39,6 +45,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
         registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
         registerTableViewCell(identifier: String(describing: OrderTableViewCell.self))
+        registerTableViewCell(identifier: String(describing: JoinGroupTableViewCell.self))
 
     }
     
@@ -104,9 +111,13 @@ extension DetailViewController: UITableViewDelegate {
             
             return 85
             
+        case .joinGroup:
+            
+            return 200
+            
         default:
             
-            return 300
+            return 0
             
         }
         
@@ -174,6 +185,18 @@ extension DetailViewController: UITableViewDataSource {
             }
             
             return cell
+        
+        case .joinGroup:
+            
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: JoinGroupTableViewCell.self)
+                ) as? JoinGroupTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
+            
+            return cell
 
         case .productItems:
         
@@ -201,8 +224,6 @@ extension DetailViewController: UITableViewDataSource {
                         
             return cell
             
-        default:
-            return UITableViewCell()
         }
         
     }

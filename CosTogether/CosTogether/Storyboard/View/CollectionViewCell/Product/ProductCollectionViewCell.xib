@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我好棒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-ly-8bu">
-                                <rect key="frame" x="8" y="167" width="154" height="27.5"/>
+                                <rect key="frame" x="8" y="172" width="154" height="27.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="aHq-gz-Ghy" secondAttribute="bottom" constant="3" id="1W6-W9-exq"/>
+                            <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="aHq-gz-Ghy" secondAttribute="bottom" constant="8" id="1W6-W9-exq"/>
                             <constraint firstItem="ymq-zH-kFH" firstAttribute="top" secondItem="T36-zE-wgs" secondAttribute="top" constant="12" id="5fL-ph-D9U"/>
                             <constraint firstAttribute="trailing" secondItem="x8d-ly-8bu" secondAttribute="trailing" constant="8" id="DIs-Go-4VR"/>
                             <constraint firstItem="aHq-gz-Ghy" firstAttribute="height" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="8:35" id="UH4-Ud-c7y"/>

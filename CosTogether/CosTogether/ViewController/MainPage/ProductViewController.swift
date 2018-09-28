@@ -18,21 +18,18 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        setup()
         
-        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-        
-        let identifier = String(describing: ProductCollectionViewCell.self)
-        
-        let xibCell = UINib(nibName: identifier, bundle: nil)
-        
-        collectionView.register(xibCell, forCellWithReuseIdentifier: identifier)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = false
+
+    }
+    
+    private func countProduct() {
         
         guard products.count != 0 else {
             
@@ -42,9 +39,33 @@ class ProductViewController: UIViewController {
         }
         
         collectionView.isHidden = false
-
+        
     }
     
+    private func setup() {
+        
+        setColletionView()
+        
+    }
+    
+    private func setColletionView() {
+     
+        registerTableViewCell(identifier: String(describing: ProductCollectionViewCell.self))
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        
+    }
+    
+    private func registerTableViewCell(identifier: String) {
+        
+        let nibCell = UINib(nibName: identifier, bundle: nil)
+        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+
+    }
+
 }
 
 extension ProductViewController: UICollectionViewDataSource {
@@ -88,7 +109,7 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
         
         let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 200 + 10
+        let height = width / 185.0 * 220
         
         return CGSize(width: width, height: height)
     }

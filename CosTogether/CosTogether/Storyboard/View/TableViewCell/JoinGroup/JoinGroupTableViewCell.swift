@@ -10,8 +10,15 @@ import UIKit
 
 class JoinGroupTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    #warning ("改 user")
+    var users: [Int] = [1,2,3]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        setup()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -19,4 +26,120 @@ class JoinGroupTableViewCell: UITableViewCell {
 
     }
     
+    private func setup() {
+        
+        setColletionView()
+        
+    }
+    
+    private func setColletionView() {
+        
+        #warning ("改 cell")
+        registerTableViewCell(identifier: String(describing: MemberCollectionViewCell.self))
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        
+    }
+    
+    private func registerTableViewCell(identifier: String) {
+        
+        let nibCell = UINib(nibName: identifier, bundle: nil)
+        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+        
+    }
+
+}
+
+extension JoinGroupTableViewCell: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return users.count
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+        ) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: String(describing: MemberCollectionViewCell.self),
+            for: indexPath
+            ) as? MemberCollectionViewCell else {
+
+                print("No such cell")
+                return UICollectionViewCell()
+
+        }
+
+        return cell
+    }
+}
+
+extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = 50 / 375.0 * Double(UIScreen.main.bounds.width)
+        
+        let height = width
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 5
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
+        
+        //        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        #warning ("改成 user profile")
+        //        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        //            withIdentifier: String(describing: DetailViewController.self)
+        //            ) as? DetailViewController else {
+        //
+        //                return
+        //
+        //        }
+        
+        //        controller.loadViewIfNeeded()
+        //        controller.article = articles[indexPath.row]
+        
+        //        show(controller, sender: nil)
+    }
+
 }

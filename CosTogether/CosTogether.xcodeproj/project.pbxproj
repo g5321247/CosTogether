@@ -42,6 +42,8 @@
 		C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B0C215D42BA0060EA72 /* OrderTableViewCell.xib */; };
 		C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B12215DD2230060EA72 /* JoinGroupTableViewCell.swift */; };
 		C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */; };
+		C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */; };
+		C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
@@ -98,6 +100,8 @@
 		C87F8B0C215D42BA0060EA72 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		C87F8B12215DD2230060EA72 /* JoinGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewCell.swift; sourceTree = "<group>"; };
 		C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinGroupTableViewCell.xib; sourceTree = "<group>"; };
+		C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -310,13 +314,13 @@
 			path = LogIn;
 			sourceTree = "<group>";
 		};
-		C84975252157BCF600555855 /* ProductCell */ = {
+		C84975252157BCF600555855 /* Product */ = {
 			isa = PBXGroup;
 			children = (
 				C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */,
 				C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */,
 			);
-			path = ProductCell;
+			path = Product;
 			sourceTree = "<group>";
 		};
 		C849752C2157C27000555855 /* Product */ = {
@@ -359,6 +363,15 @@
 				C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */,
 			);
 			path = JoinGroup;
+			sourceTree = "<group>";
+		};
+		C8BCF0D9215E230F00A2B1B8 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */,
+				C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
@@ -428,7 +441,8 @@
 		C8FCA3B4215BCD75008724A3 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C84975252157BCF600555855 /* ProductCell */,
+				C84975252157BCF600555855 /* Product */,
+				C8BCF0D9215E230F00A2B1B8 /* Member */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -515,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */,
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
 				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
@@ -582,6 +597,7 @@
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -593,6 +609,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -614,6 +631,7 @@
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
 				C82BA99C215CB04500996B11 /* CellClass.swift in Sources */,
+				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,

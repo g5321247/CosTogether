@@ -12,5 +12,6 @@ target 'CosTogether' do
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'FSPagerView'
+  pod 'IQKeyboardManagerSwift'
 
 end
