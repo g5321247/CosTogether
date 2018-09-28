@@ -11,6 +11,7 @@ import UIKit
 class JoinGroupTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var baseView: UIView!
     
     #warning ("改 user")
     var users: [Int] = [1,2,3]
@@ -29,7 +30,7 @@ class JoinGroupTableViewCell: UITableViewCell {
     private func setup() {
         
         setColletionView()
-        
+        setupBaseView()
     }
     
     private func setColletionView() {
@@ -48,6 +49,12 @@ class JoinGroupTableViewCell: UITableViewCell {
         
         let nibCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+        
+    }
+    
+    private func setupBaseView() {
+        
+        baseView.shadowSetup(cgSize: CGSize(width: 0.5, height: 0.5), shadowRadius: 2, shadowOpacity: 0.2)
         
     }
 
@@ -90,7 +97,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 50 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 45 / 375.0 * Double(UIScreen.main.bounds.width)
         
         let height = width
         
@@ -118,7 +125,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 5
+        return 10
     }
     
     func collectionView(

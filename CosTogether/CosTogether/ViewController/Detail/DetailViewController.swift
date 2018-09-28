@@ -113,7 +113,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .joinGroup:
             
-            return 200
+            return 100
             
         default:
             
@@ -127,9 +127,9 @@ extension DetailViewController: UITableViewDelegate {
         
         switch sections[section] {
             
-        case .productItems:
-            
-            return self.view.frame.width * (40 / 375)
+//        case .productItems:
+//
+//            return self.view.frame.width * (40 / 375)
             
         default:
             return 0

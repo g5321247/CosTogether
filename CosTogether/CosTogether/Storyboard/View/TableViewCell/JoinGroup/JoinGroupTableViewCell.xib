@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jIH-K7-15d">
-                                <rect key="frame" x="0.0" y="40" width="320" height="100.5"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="95.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ffv-uO-e5J">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,9 +43,9 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="jIH-K7-15d" secondAttribute="bottom" id="HBx-dC-oyv"/>
+                            <constraint firstAttribute="bottom" secondItem="jIH-K7-15d" secondAttribute="bottom" constant="5" id="HBx-dC-oyv"/>
                             <constraint firstItem="EvI-5W-s62" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" constant="8" id="QKH-cw-WzQ"/>
                             <constraint firstItem="EvI-5W-s62" firstAttribute="top" secondItem="D75-aG-TaZ" secondAttribute="top" constant="8" id="TfO-vg-akS"/>
                             <constraint firstItem="jIH-K7-15d" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" id="aOc-VU-GL0"/>
@@ -63,6 +63,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="baseView" destination="D75-aG-TaZ" id="qNo-KM-Lgo"/>
                 <outlet property="collectionView" destination="jIH-K7-15d" id="Hof-Td-m2G"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="155.17241379310346"/>

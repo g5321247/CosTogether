@@ -29,7 +29,7 @@ class MemberCollectionViewCell: UICollectionViewCell {
         baseView.cornerSetup(
             cornerRadius: bounds.width / 2,
             borderWidth: 0.5,
-            borderColor: UIColor.lightGray.cgColor,
+            borderColor: UIColor.black.cgColor,
             maskToBounds: true
         )
         

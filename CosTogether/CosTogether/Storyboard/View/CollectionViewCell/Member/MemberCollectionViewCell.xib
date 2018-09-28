@@ -23,7 +23,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-AX-hvX">
                                 <rect key="frame" x="0.0" y="0.0" width="152" height="148"/>
-                                <state key="normal" image="testUser"/>
+                                <state key="normal" image="testUser2"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,6 +52,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="testUser" width="155" height="81"/>
+        <image name="testUser2" width="222" height="219"/>
     </resources>
 </document>
