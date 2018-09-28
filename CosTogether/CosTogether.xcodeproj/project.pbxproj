@@ -40,6 +40,8 @@
 		C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B08215D235A0060EA72 /* TopLogoView.swift */; };
 		C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B0B215D42BA0060EA72 /* OrderTableViewCell.swift */; };
 		C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B0C215D42BA0060EA72 /* OrderTableViewCell.xib */; };
+		C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B12215DD2230060EA72 /* JoinGroupTableViewCell.swift */; };
+		C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard.swift */; };
@@ -94,6 +96,8 @@
 		C87F8B08215D235A0060EA72 /* TopLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoView.swift; sourceTree = "<group>"; };
 		C87F8B0B215D42BA0060EA72 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		C87F8B0C215D42BA0060EA72 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		C87F8B12215DD2230060EA72 /* JoinGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewCell.swift; sourceTree = "<group>"; };
+		C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinGroupTableViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -348,6 +352,15 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
+		C87F8B16215DD22D0060EA72 /* JoinGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C87F8B12215DD2230060EA72 /* JoinGroupTableViewCell.swift */,
+				C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */,
+			);
+			path = JoinGroup;
+			sourceTree = "<group>";
+		};
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +440,7 @@
 				C82BA99A215C892700996B11 /* ProductPic */,
 				C82BA9A5215CE44900996B11 /* ArticleInfo */,
 				C87F8B0F215D42C10060EA72 /* Order */,
+				C87F8B16215DD22D0060EA72 /* JoinGroup */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -511,6 +525,7 @@
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
 				C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */,
+				C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */,
 				C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */,
 				C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */,
 			);
@@ -618,6 +633,7 @@
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
 				C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,
+				C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */,
 				C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */,
 				C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */,
 				C849751C2157918600555855 /* UIImage.swift in Sources */,

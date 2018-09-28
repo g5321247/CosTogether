@@ -10,7 +10,7 @@ import UIKit
 
 class ArticleInfoView: UIView {
     
-    @IBOutlet weak var authorImage: UIImageView!
+    @IBOutlet weak var authorImageBot: UIButton!
     @IBOutlet weak var authorNameLbl: UILabel!
     @IBOutlet weak var postDateLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -31,7 +31,9 @@ class ArticleInfoView: UIView {
     
     private func setupImageView() {
         
-        authorImage.cornerSetup(cornerRadius: authorImage.frame.width / 2)
+        authorImageBot.cornerSetup(cornerRadius: authorImageBot.frame.width / 2)
+        
+        authorImageBot.imageView?.contentMode = .scaleAspectFill
     }
     
     private func setupView() {

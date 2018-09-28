@@ -30,13 +30,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-YZ-tzv">
-                        <rect key="frame" x="354.5" y="15" width="10.5" height="21"/>
+                        <rect key="frame" x="349.5" y="15" width="10.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ora-65-4Kq">
-                        <rect key="frame" x="295" y="46" width="70" height="36"/>
+                        <rect key="frame" x="290" y="46" width="70" height="36"/>
                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="Orq-za-cae"/>
@@ -47,10 +47,10 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="ora-65-4Kq" firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" id="00m-6E-NoM"/>
                     <constraint firstItem="Zhr-YZ-tzv" firstAttribute="centerY" secondItem="hRl-Dh-6N9" secondAttribute="centerY" id="5uf-pr-OgT"/>
                     <constraint firstItem="hRl-Dh-6N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Gh0-Ki-Nlk"/>
-                    <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="10" id="NzK-Ia-qfX"/>
-                    <constraint firstAttribute="trailing" secondItem="ora-65-4Kq" secondAttribute="trailing" constant="10" id="swk-wL-IgW"/>
+                    <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="15" id="NzK-Ia-qfX"/>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="top" secondItem="Zhr-YZ-tzv" secondAttribute="bottom" constant="10" id="uFe-js-6uu"/>
                     <constraint firstItem="hRl-Dh-6N9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yaG-W8-ksC"/>
                 </constraints>

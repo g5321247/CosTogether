@@ -190,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="205" width="192" height="28"/>
+                                <rect key="frame" x="91.5" y="202.5" width="192" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -410,6 +410,10 @@
                                     <constraint firstAttribute="trailing" secondItem="XP8-8p-Rsd" secondAttribute="trailing" constant="24" id="vHm-IO-iih"/>
                                     <constraint firstItem="XP8-8p-Rsd" firstAttribute="centerY" secondItem="T3v-vS-lby" secondAttribute="centerY" id="x7x-Vc-1EK"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="backToPageBot" destination="tur-OC-qGB" id="Uq9-dj-TWt"/>
+                                    <outlet property="sendMessageBot" destination="XP8-8p-Rsd" id="zLW-8M-Hw1"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-xc-ffJ">
                                 <rect key="frame" x="0.0" y="95" width="375" height="343"/>
@@ -431,6 +435,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="lFo-xc-ffJ" id="zZz-jl-NOg"/>
+                        <outlet property="topLogView" destination="Nn9-mv-nDr" id="31E-gD-4dz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeM-yt-p40" userLabel="First Responder" sceneMemberID="firstResponder"/>

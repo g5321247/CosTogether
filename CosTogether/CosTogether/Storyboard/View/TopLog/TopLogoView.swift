@@ -10,6 +10,9 @@ import UIKit
 
 class TopLogoView: UIView {
 
+    @IBOutlet weak var backToPageBot: UIButton!
+    @IBOutlet weak var sendMessageBot: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,8 +26,6 @@ class TopLogoView: UIView {
     }
     
     private func setupView() {
-        
-    
         
     }
 

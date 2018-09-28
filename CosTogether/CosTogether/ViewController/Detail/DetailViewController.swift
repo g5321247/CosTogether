@@ -8,7 +8,7 @@
 import UIKit
 import FSPagerView
 
-class DetailViewController: UIViewController, ProductPicDelegate{
+class DetailViewController: UIViewController, ProductPicDelegate {
     
     #warning ("TODO: Delete this")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
     private lazy var sections: [CellClass] = [.productPic, .articleInfo, .productItems(testArray.count), .order]
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topLogView: TopLogoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         
         setUpCell()
         tableViewSetup()
+        topLogViewSetup()
     }
     
     private func setUpCell() {
@@ -55,6 +57,28 @@ class DetailViewController: UIViewController, ProductPicDelegate{
         tableView.allowsSelection = false
     }
     
+    private func topLogViewSetup() {
+        
+        topLogView.backToPageBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
+        topLogView.sendMessageBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
+    }
+    
+    @objc func backBotTapping(_ sender: UIButton) {
+        
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
+    #warning ("點選後直接進入與該使用者聊天")
+    @objc func sendMessageBotTapping(_ sender: UIButton) {
+        
+    }
+    
+    #warning ("點作者進入個人資料")
+    @objc func authorPhotoTapping(_ sender: UIButton) {
+        
+    }
+
 }
 
 extension DetailViewController: UITableViewDelegate {

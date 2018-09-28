@@ -58,13 +58,6 @@
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testUser" translatesAutoresizingMaskIntoConstraints="NO" id="s8e-rT-SAT">
-                                <rect key="frame" x="20" y="74.5" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="WjU-YV-orT"/>
-                                    <constraint firstAttribute="width" secondItem="s8e-rT-SAT" secondAttribute="height" multiplier="1:1" id="vdx-yw-lGc"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="金城武" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-Bb-fdz">
                                 <rect key="frame" x="92" y="74.5" width="132" height="34"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
@@ -77,33 +70,41 @@
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eod-xo-0Kw">
+                                <rect key="frame" x="20" y="74.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eod-xo-0Kw" secondAttribute="height" multiplier="1:1" id="VD8-6T-rY5"/>
+                                    <constraint firstAttribute="width" constant="60" id="WZn-DO-ZvT"/>
+                                </constraints>
+                                <state key="normal" image="testUser"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="s8e-rT-SAT" secondAttribute="top" id="4Yv-uJ-SkT"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="w2L-qR-b2b" secondAttribute="bottom" constant="25" id="1Q5-6m-oyX"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="leading" secondItem="ELb-I3-ssh" secondAttribute="trailing" constant="10" id="GBb-fr-CIb"/>
-                            <constraint firstItem="s8e-rT-SAT" firstAttribute="top" secondItem="w2L-qR-b2b" secondAttribute="bottom" constant="25" id="JKv-Un-AbW"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="w2L-qR-b2b" secondAttribute="trailing" constant="20" id="L1i-om-leX"/>
-                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="s8e-rT-SAT" secondAttribute="trailing" constant="12" id="PhV-9O-0oj"/>
+                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="leading" id="NO1-5q-qsr"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="centerY" secondItem="ELb-I3-ssh" secondAttribute="centerY" id="SSt-db-qqk"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="Vou-hs-kT9"/>
+                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="eod-xo-0Kw" secondAttribute="top" id="X6V-Ym-OQv"/>
+                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" id="cni-9M-Zlh"/>
                             <constraint firstItem="ELb-I3-ssh" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="h4Y-IR-dtj"/>
                             <constraint firstItem="KyB-WL-fb5" firstAttribute="leading" secondItem="f44-xr-eaN" secondAttribute="trailing" constant="10" id="hvL-pt-uWX"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="leading" secondItem="KyB-WL-fb5" secondAttribute="trailing" constant="5" id="mKC-SD-QSX"/>
                             <constraint firstItem="KyB-WL-fb5" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="mWD-ib-n5q"/>
                             <constraint firstItem="w2L-qR-b2b" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="r1k-TG-udC"/>
                             <constraint firstItem="w2L-qR-b2b" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" constant="15" id="rCK-gZ-8Xo"/>
-                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="s8e-rT-SAT" secondAttribute="bottom" id="rLx-vf-0om"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
                             <constraint firstAttribute="trailing" secondItem="hCF-iM-QxS" secondAttribute="trailing" constant="20" id="uPR-Nb-Uqo"/>
-                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="s8e-rT-SAT" secondAttribute="trailing" constant="12" id="uqC-5i-NVj"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="centerY" secondItem="KyB-WL-fb5" secondAttribute="centerY" id="vEf-8t-oHy"/>
-                            <constraint firstItem="s8e-rT-SAT" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="x64-jP-l8D"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="trailing" constant="-132" id="xQ8-ir-C0P"/>
+                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="eod-xo-0Kw" secondAttribute="trailing" constant="12" id="zhr-vC-Bfg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZQg-8P-u8I"/>
                         <connections>
                             <outlet property="articleTitleLbl" destination="w2L-qR-b2b" id="LAT-uZ-57C"/>
-                            <outlet property="authorImage" destination="s8e-rT-SAT" id="OT5-68-uLN"/>
+                            <outlet property="authorImageBot" destination="eod-xo-0Kw" id="lPr-X6-U1z"/>
                             <outlet property="authorNameLbl" destination="HkW-Bb-fdz" id="dmE-wb-SlB"/>
                             <outlet property="locationLbl" destination="f44-xr-eaN" id="M5T-3b-9TU"/>
                             <outlet property="postDateLbl" destination="mxi-9Y-Fi5" id="XDY-On-kJI"/>
@@ -122,7 +123,7 @@
             <connections>
                 <outlet property="articleInfoView" destination="T0h-Gt-4L9" id="Sdo-9C-HIV"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="129.53523238380811"/>
+            <point key="canvasLocation" x="136.80000000000001" y="129.53523238380811"/>
         </tableViewCell>
     </objects>
     <resources>
