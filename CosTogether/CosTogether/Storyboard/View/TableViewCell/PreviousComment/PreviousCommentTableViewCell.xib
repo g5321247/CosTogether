@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="PreviousCommentTableViewCell" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InW-Aj-RWA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN6-m7-hv7">
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KN6-m7-hv7" secondAttribute="height" multiplier="1:1" id="0TK-ka-W2g"/>
+                                    <constraint firstAttribute="width" constant="48" id="ESf-AF-hx8"/>
+                                </constraints>
+                                <state key="normal" image="testUser2"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
+                                <rect key="frame" x="71" y="8" width="241" height="14.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
+                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主揪很帥" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1R-0dM">
+                                <rect key="frame" x="71" y="37.5" width="241" height="27"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="leading" secondItem="Fdy-ME-rVz" secondAttribute="leading" id="97B-xH-Why"/>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="37.5" id="GyR-Ks-qL9"/>
+                            <constraint firstAttribute="trailing" secondItem="hiL-1R-0dM" secondAttribute="trailing" constant="8" id="OzR-fe-bx0"/>
+                            <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="VDm-mm-2dF"/>
+                            <constraint firstItem="Fdy-ME-rVz" firstAttribute="leading" secondItem="KN6-m7-hv7" secondAttribute="trailing" constant="15" id="VsP-gc-2qt"/>
+                            <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="15" id="d1K-cM-B0T"/>
+                            <constraint firstItem="KN6-m7-hv7" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="8" id="fZR-n3-Xje"/>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="Fdy-ME-rVz" secondAttribute="bottom" constant="15" id="gPr-dv-Key"/>
+                            <constraint firstItem="Fdy-ME-rVz" firstAttribute="top" secondItem="KN6-m7-hv7" secondAttribute="top" id="gpI-1F-zNh"/>
+                            <constraint firstAttribute="trailing" secondItem="Fdy-ME-rVz" secondAttribute="trailing" constant="8" id="rAy-XJ-bjU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="InW-Aj-RWA" secondAttribute="bottom" id="3IJ-te-5oe"/>
+                    <constraint firstItem="InW-Aj-RWA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="La4-X0-Ylc"/>
+                    <constraint firstAttribute="trailing" secondItem="InW-Aj-RWA" secondAttribute="trailing" id="ZKm-2i-PJ9"/>
+                    <constraint firstItem="InW-Aj-RWA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yuA-JO-pJ7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="baseView" destination="InW-Aj-RWA" id="Lwx-W4-nGu"/>
+                <outlet property="commentLbl" destination="hiL-1R-0dM" id="8a9-oz-6KT"/>
+                <outlet property="commenterBot" destination="KN6-m7-hv7" id="pec-yt-z2q"/>
+                <outlet property="commenterNameLbl" destination="Fdy-ME-rVz" id="37S-8D-agp"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="testUser2" width="222" height="219"/>
+    </resources>
+</document>

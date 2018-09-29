@@ -10,8 +10,9 @@ import FSPagerView
 
 class DetailViewController: UIViewController, ProductPicDelegate {
     
-    #warning ("TODO: Delete this")
+    #warning ("TODO: 改成 Struct")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
+    var testComment:[String] = ["123", "主揪好帥", "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"]
     
     private lazy var sections: [CellClass] = [
         .productPic,
@@ -19,7 +20,9 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         .joinGroup,
         .productItems(testArray.count),
         .order,
-        .productDetail
+        .productDetail,
+        .commnetTitle,
+        .previousComment(testComment.count)
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -43,11 +46,21 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     private func setUpCell() {
         
         registerTableViewCell(identifier: String(describing: ProductItemTableViewCell.self))
+        
         registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
+        
         registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
+        
         registerTableViewCell(identifier: String(describing: OrderTableViewCell.self))
+        
         registerTableViewCell(identifier: String(describing: JoinGroupTableViewCell.self))
+        
         registerTableViewCell(identifier: String(describing: ProductDetailTableViewCell.self))
+        
+        registerTableViewCell(identifier: String(describing: PreviousCommentTableViewCell.self))
+        
+        registerTableViewCell(identifier: String(describing: CommonTitleTableViewCell.self))
+
     }
     
     private func registerTableViewCell(identifier: String) {
@@ -98,7 +111,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 120
         
         switch sections[indexPath.section] {
             
@@ -112,46 +124,49 @@ extension DetailViewController: UITableViewDelegate {
             
         case .productItems:
             
-            return 120
+            return  self.view.frame.width * (120 / 375)
         
         case .order:
             
-            return 85
+            return  self.view.frame.width * (85 / 375)
             
         case .joinGroup:
             
-            return 100
+            return  self.view.frame.width * (100 / 375)
         
         case .productDetail:
             
             return UITableView.automaticDimension
+        
+        case .commnetTitle:
             
+            return  self.view.frame.width * (35 / 375)
+        
+        case .previousComment:
+            
+            return  UITableView.automaticDimension
         }
         
     }
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         switch sections[section] {
             
-//        case .productItems:
-//
-//            return self.view.frame.width * (40 / 375)
+        case .productDetail:
+
+            return self.view.frame.width * (15 / 375)
+            
+        case .commnetTitle:
+
+            return self.view.frame.width * (15 / 375)
             
         default:
             return 0
         }
         
     }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
+            
 }
 
 extension DetailViewController: UITableViewDataSource {
@@ -246,7 +261,33 @@ extension DetailViewController: UITableViewDataSource {
             }
             
             return cell
+        
+        case .commnetTitle:
             
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: CommonTitleTableViewCell.self)
+                ) as? CommonTitleTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
+            
+            return cell
+
+        case .previousComment:
+            
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: PreviousCommentTableViewCell.self)
+                ) as? PreviousCommentTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
+            
+            cell.commentLbl.text = testComment[indexPath.row]
+            
+            return cell
+
         }
         
     }

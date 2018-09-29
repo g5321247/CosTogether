@@ -51,11 +51,11 @@ class ProductPicView: UIView {
                          borderColor: UIColor.gray.cgColor,
                          maskToBounds: false)
         
-        self.shadowSetup(
-        cgSize: CGSize(width: 2, height: 2),
-        shadowRadius: 4,
-        shadowOpacity: 0.2
-        )
+//        self.shadowSetup(
+//        cgSize: CGSize(width: 2, height: 2),
+//        shadowRadius: 4,
+//        shadowOpacity: 0.2
+//        )
         
     }
     
