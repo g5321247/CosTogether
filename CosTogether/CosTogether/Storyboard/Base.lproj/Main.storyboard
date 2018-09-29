@@ -74,7 +74,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zO-ZE6">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zO-ZE6">
                                         <rect key="frame" x="24" y="60" width="30" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Tix-ZT-4df"/>
@@ -108,10 +108,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qs-Lo-skD">
-                                <rect key="frame" x="60" y="110" width="255" height="255"/>
+                                <rect key="frame" x="70" y="125" width="235" height="235"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-x1-ufB">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testUser3" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-x1-ufB">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="235"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,20 +123,32 @@
                                     <constraint firstItem="1bI-x1-ufB" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="top" id="Llz-mL-n1y"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="諾威斯基" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-KR-GbR">
+                                <rect key="frame" x="127.5" y="390" width="120" height="41"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1qs-Lo-skD" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="15" id="0z2-bw-bFK"/>
+                            <constraint firstItem="1qs-Lo-skD" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="30" id="0z2-bw-bFK"/>
                             <constraint firstItem="1qs-Lo-skD" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="3w8-Vy-oiG"/>
-                            <constraint firstItem="kpO-x4-AM6" firstAttribute="trailing" secondItem="1qs-Lo-skD" secondAttribute="trailing" constant="60" id="FB6-KN-E4e"/>
+                            <constraint firstItem="kpO-x4-AM6" firstAttribute="trailing" secondItem="1qs-Lo-skD" secondAttribute="trailing" constant="70" id="FB6-KN-E4e"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="top" secondItem="iOw-fz-6R9" secondAttribute="top" id="FZk-jz-QOC"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="HIi-nF-20q"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="Iqd-Te-b63"/>
-                            <constraint firstItem="1qs-Lo-skD" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" constant="60" id="qxW-hu-t9C"/>
+                            <constraint firstItem="hcm-KR-GbR" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="Jqh-8x-qd6"/>
+                            <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="bottom" constant="30" id="hVB-NR-CnB"/>
+                            <constraint firstItem="1qs-Lo-skD" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" constant="70" id="qxW-hu-t9C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="個人資料" image="Profile" id="jSO-JQ-WR2"/>
+                    <connections>
+                        <outlet property="userImage" destination="1bI-x1-ufB" id="1cs-jm-OUt"/>
+                        <outlet property="userPicBaseView" destination="1qs-Lo-skD" id="nsZ-TT-EcO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7go-Vs-SWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -537,5 +549,6 @@
         <image name="shopping" width="16" height="16"/>
         <image name="tag" width="16" height="16"/>
         <image name="testUser" width="155" height="81"/>
+        <image name="testUser3" width="600" height="400"/>
     </resources>
 </document>
