@@ -51,6 +51,7 @@ class ProductPicView: UIView {
                          borderColor: UIColor.gray.cgColor,
                          maskToBounds: false)
         
+        #warning ("comment")
 //        self.shadowSetup(
 //        cgSize: CGSize(width: 2, height: 2),
 //        shadowRadius: 4,

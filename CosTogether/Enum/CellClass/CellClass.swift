@@ -18,7 +18,7 @@ enum CellClass {
     case productDetail
     case commnetTitle
     case previousComment(Int)
-//    case comment
+    case sendComment
     
     func numberOfRow() -> Int {
         
@@ -55,9 +55,9 @@ enum CellClass {
         case .commnetTitle:
             
             return 1
-//        case .comment:
-//            
-//            return 1
+        case .sendComment:
+            
+            return 1
             
         }
     }

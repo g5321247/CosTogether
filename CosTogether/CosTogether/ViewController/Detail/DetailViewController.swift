@@ -22,7 +22,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         .order,
         .productDetail,
         .commnetTitle,
-        .previousComment(testComment.count)
+        .previousComment(testComment.count),
+        .sendComment
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -45,29 +46,30 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     private func setUpCell() {
         
-        registerTableViewCell(identifier: String(describing: ProductItemTableViewCell.self))
+        registerTableViewCell(identifiers: [
+            String(describing: ProductItemTableViewCell.self),
+            String(describing: ProductPicTableViewCell.self),
+            String(describing: ArticleInfoTableViewCell.self),
+            String(describing: OrderTableViewCell.self),
+            String(describing: JoinGroupTableViewCell.self),
+            String(describing: ProductDetailTableViewCell.self),
+            String(describing: PreviousCommentTableViewCell.self),
+            String(describing: CommonTitleTableViewCell.self),
+            String(describing: SendCommentTableViewCell.self)
+            ])
         
-        registerTableViewCell(identifier: String(describing: ProductPicTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: ArticleInfoTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: OrderTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: JoinGroupTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: ProductDetailTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: PreviousCommentTableViewCell.self))
-        
-        registerTableViewCell(identifier: String(describing: CommonTitleTableViewCell.self))
-
     }
     
-    private func registerTableViewCell(identifier: String) {
+    private func registerTableViewCell(identifiers: [String]) {
 
-        let nibCell = UINib(nibName: identifier, bundle: nil)
-        tableView.register(nibCell, forCellReuseIdentifier: identifier)
+        let identifierArray = identifiers
         
+        for identifier in identifierArray {
+            
+            let nibCell = UINib(nibName: identifier, bundle: nil)
+            tableView.register(nibCell, forCellReuseIdentifier: identifier)
+
+        }
     }
     
     private func tableViewSetup() {
@@ -145,6 +147,11 @@ extension DetailViewController: UITableViewDelegate {
         case .previousComment:
             
             return  UITableView.automaticDimension
+        case .sendComment:
+            
+            tableView.layoutIfNeeded()
+            return UITableView.automaticDimension
+
         }
         
     }
@@ -286,6 +293,18 @@ extension DetailViewController: UITableViewDataSource {
             
             cell.commentLbl.text = testComment[indexPath.row]
             
+            return cell
+
+        case .sendComment:
+            
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: SendCommentTableViewCell.self)
+                ) as? SendCommentTableViewCell else {
+                    
+                    return UITableViewCell()
+                    
+            }
+                        
             return cell
 
         }
