@@ -23,7 +23,6 @@ class JoinGroupTableViewCell: UITableViewCell {
     weak var delegate: JoinGroupDelegate?
     
     #warning ("改 user")
-    var users: [Int] = [1,2,3]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,6 +65,25 @@ class JoinGroupTableViewCell: UITableViewCell {
         baseView.shadowSetup(cgSize: CGSize(width: 0.5, height: 0.5), shadowRadius: 2, shadowOpacity: 0.2)
         
     }
+    
+    @objc func memberPicTapping(_ sender: UIButton) {
+        
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self)
+            ) as? ProfileViewController else {
+                
+                return
+                
+        }
+        
+        controller.loadViewIfNeeded()
+//        controller.userNameLbl.text = delegate?.members[indexPath.row]
+        
+
+        
+        delegate?.showTheView(controller: controller)
+        
+    }
 
 }
 
@@ -94,6 +112,13 @@ extension JoinGroupTableViewCell: UICollectionViewDataSource {
                 return UICollectionViewCell()
 
         }
+        
+        cell.groupMemberBot.addTarget(
+            UIStoryboard.mainStoryboard().instantiateViewController(
+                withIdentifier: String(describing: DetailViewController.self)),
+            action: #selector (memberPicTapping(_:)),
+            for: .touchUpInside
+        )
 
         return cell
     }
@@ -141,7 +166,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
         
-        collectionView.deselectItem(at: indexPath, animated: true)
+//        collectionView.deselectItem(at: indexPath, animated: true)
         
         #warning ("改成 user profile")
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(

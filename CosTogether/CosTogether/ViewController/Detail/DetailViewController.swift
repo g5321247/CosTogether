@@ -8,12 +8,16 @@
 import UIKit
 import FSPagerView
 
+struct Name {
+    let name: String
+}
+
 class DetailViewController: UIViewController, ProductPicDelegate {
     
     #warning ("TODO: 改成 Struct")
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     var testComment:[String] = ["123", "主揪好帥", "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"]
-    
+        
     private lazy var sections: [CellClass] = [
         .productPic,
         .articleInfo,
@@ -29,14 +33,20 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
-    var authorID: String?
+    var author = UserDataModel(
+        userImage: "testUser",
+        userName: "金城武",
+        numberOfEvaluation: 2,
+        buyNumber: 3,
+        averageEvaluation: 5.0
+        )
+    
     var members: [String] = ["1", "2", "3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
-        
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -85,7 +95,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     private func topLogViewSetup() {
         
-        topLogView.rightBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
+        topLogView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
         topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
     }
     
@@ -100,11 +110,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-//    #warning ("點作者進入個人資料")
-//    @objc func authorPhotoTapping(_ sender: UIButton) {
-//
-//    }
-    
+    #warning ("如何用在同一個 function")
     @objc func photoTapping(_ sender: UIButton) {
         
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
@@ -115,11 +121,12 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
-            
-            return
-        }
         
+//        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
+//
+//            return
+//        }
+        controller.otherUserInfo = author
         controller.userType = .otherUser
         
         controller.loadViewIfNeeded()
@@ -127,6 +134,31 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         show(controller, sender: nil)
 
     }
+    
+    @objc func photoTwoTapping(_ sender: UIButton) {
+        
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self)
+            ) as? ProfileViewController else {
+                
+                return
+                
+        }
+        
+        
+        //        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
+        //
+        //            return
+        //        }
+        controller.otherUserInfo = author
+        controller.userType = .otherUser
+        
+        controller.loadViewIfNeeded()
+        
+        show(controller, sender: nil)
+        
+    }
+
 
 }
 
@@ -346,7 +378,9 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: JoinGroupDelegate {
     
     func showTheView(controller: UIViewController) {
-        showTheView(controller: controller)
+        
+        show(controller, sender: nil)
+        
     }
     
 }

@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     var userType: UserType = .currentUser
     
     #warning ("改成 user struct")
-    var otherUserInfo: UserProvider?
+    var otherUserInfo: UserDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,9 @@ class ProfileViewController: UIViewController {
             
             userImage.image = UIImage(named: otherUser.userImage)
             userNameLbl.text = otherUser.userName
+            numberOfEvaluationLbl.text = String(otherUser.numberOfEvaluation)
+            buyNumberLbl.text = String(otherUser.buyNumber)
+            averageEvaluationLbl.text = String(otherUser.averageEvaluation)
             
             return
         }
