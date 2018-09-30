@@ -134,14 +134,22 @@ class ProfileViewController: UIViewController {
         
         #warning ("跳到聊天頁面")
         case .otherUser:
+            
+            guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
+                withIdentifier: String(describing: ChatRoomViewController.self)
+                ) as? ChatRoomViewController else {
+                    
+                    return
+                    
+            }
+            
+            show(controller, sender: nil)
+            
             return
         }
         
     }
-    
-    @IBAction func rightBotTapping(_ sender: UIButton) {
-    }
-    
+        
     @IBAction func leftBotTapping(_ sender: UIButton) {
         
         navigationController?.popViewController(animated: true)       

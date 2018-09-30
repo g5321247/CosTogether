@@ -79,6 +79,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageLbl" destination="spE-zs-bPA" id="Qjw-Qb-HC9"/>
+                <outlet property="snedDateLbl" destination="2BE-CL-uu2" id="1u8-rj-chh"/>
+                <outlet property="userNameLbl" destination="0V2-rs-Srd" id="DE7-s3-tbQ"/>
+                <outlet property="userPhotoBot" destination="aCt-Az-NnE" id="hcf-x2-ig4"/>
+            </connections>
             <point key="canvasLocation" x="46.399999999999999" y="104.34782608695653"/>
         </tableViewCell>
     </objects>

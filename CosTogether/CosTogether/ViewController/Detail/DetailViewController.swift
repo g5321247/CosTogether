@@ -109,8 +109,17 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-    #warning ("點選後直接進入與該使用者聊天")
     @objc func sendMessageBotTapping(_ sender: UIButton) {
+        
+        guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ChatRoomViewController.self)
+            ) as? ChatRoomViewController else {
+                
+                return
+                
+        }
+        
+        show(controller, sender: nil)
         
     }
     

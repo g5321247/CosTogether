@@ -10,6 +10,11 @@ import UIKit
 
 class OhterMessageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var userPhotoBot: UIButton!
+    @IBOutlet weak var snedDateLbl: UILabel!
+     @IBOutlet weak var userNameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

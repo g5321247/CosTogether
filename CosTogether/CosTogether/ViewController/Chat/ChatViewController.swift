@@ -19,7 +19,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setup() {

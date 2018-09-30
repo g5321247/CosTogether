@@ -45,9 +45,11 @@ class ChatRoomViewController: UIViewController {
     }
     
     @objc func backBotTapping(_ sender: UIButton) {
+
+        navigationController?.popViewController(animated: true)
         
-        dismiss(animated: true, completion: nil)
     }
+    
     private func tableViewSetup() {
         
         tableView.delegate = self
@@ -80,7 +82,7 @@ extension ChatRoomViewController: UITableViewDataSource {
                 
         }
         
-//        cell.commentLbl.text = chats[indexPath.row]
+        cell.messageLbl.text = chats[indexPath.row]
         
         return cell
         
