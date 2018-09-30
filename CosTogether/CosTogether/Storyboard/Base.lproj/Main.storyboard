@@ -125,12 +125,85 @@
                                     <constraint firstAttribute="height" constant="210" id="dan-c5-5y4"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="諾威斯基" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-KR-GbR">
-                                <rect key="frame" x="127.5" y="365" width="120" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-KR-GbR">
+                                <rect key="frame" x="108" y="365" width="159" height="41"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-qp-RJd">
+                                <rect key="frame" x="0.0" y="426" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO8-Z9-yqe">
+                                        <rect key="frame" x="166.5" y="28" width="42" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVK-fU-DCR">
+                                        <rect key="frame" x="129" y="31" width="13.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcU-wp-rsl">
+                                        <rect key="frame" x="232.5" y="31" width="13.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評價" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-NA-UZJ">
+                                        <rect key="frame" x="170.5" y="64" width="34" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlC-rP-txr">
+                                        <rect key="frame" x="49" y="28" width="30" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分購數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4L-zH-HMZ">
+                                        <rect key="frame" x="38.5" y="64" width="51" height="24"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Np-pX-ctA">
+                                        <rect key="frame" x="296" y="28" width="30" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評價數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhp-hX-oPo">
+                                        <rect key="frame" x="285.5" y="64" width="51" height="24"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="HVK-fU-DCR" firstAttribute="leading" secondItem="wlC-rP-txr" secondAttribute="trailing" constant="50" id="82Z-es-2Ud"/>
+                                    <constraint firstItem="U4L-zH-HMZ" firstAttribute="centerY" secondItem="CoW-NA-UZJ" secondAttribute="centerY" id="8j8-ur-VMz"/>
+                                    <constraint firstItem="lO8-Z9-yqe" firstAttribute="leading" secondItem="HVK-fU-DCR" secondAttribute="trailing" constant="24" id="9Jo-4a-VYR"/>
+                                    <constraint firstItem="lO8-Z9-yqe" firstAttribute="centerY" secondItem="lXy-qp-RJd" secondAttribute="centerY" id="A7Z-xC-p6U"/>
+                                    <constraint firstItem="lO8-Z9-yqe" firstAttribute="centerX" secondItem="lXy-qp-RJd" secondAttribute="centerX" id="DVf-d9-jJf"/>
+                                    <constraint firstAttribute="width" secondItem="lXy-qp-RJd" secondAttribute="height" multiplier="375:90" id="H9S-gZ-e09"/>
+                                    <constraint firstItem="U4L-zH-HMZ" firstAttribute="centerX" secondItem="wlC-rP-txr" secondAttribute="centerX" id="Hh0-R7-W3Z"/>
+                                    <constraint firstItem="CoW-NA-UZJ" firstAttribute="top" secondItem="lO8-Z9-yqe" secondAttribute="bottom" constant="2" id="NjJ-Cw-nzW"/>
+                                    <constraint firstItem="CoW-NA-UZJ" firstAttribute="centerX" secondItem="lO8-Z9-yqe" secondAttribute="centerX" id="XxC-kM-fBv"/>
+                                    <constraint firstItem="HVK-fU-DCR" firstAttribute="centerY" secondItem="lO8-Z9-yqe" secondAttribute="centerY" constant="10" id="gsx-ny-ecY"/>
+                                    <constraint firstItem="PcU-wp-rsl" firstAttribute="leading" secondItem="lO8-Z9-yqe" secondAttribute="trailing" constant="24" id="hZD-TF-maT"/>
+                                    <constraint firstItem="rhp-hX-oPo" firstAttribute="centerX" secondItem="8Np-pX-ctA" secondAttribute="centerX" id="jlt-Q5-mYQ"/>
+                                    <constraint firstItem="8Np-pX-ctA" firstAttribute="centerY" secondItem="lO8-Z9-yqe" secondAttribute="centerY" id="neR-pQ-1uS"/>
+                                    <constraint firstItem="wlC-rP-txr" firstAttribute="centerY" secondItem="lO8-Z9-yqe" secondAttribute="centerY" id="qVa-9F-MEe"/>
+                                    <constraint firstItem="PcU-wp-rsl" firstAttribute="centerY" secondItem="lO8-Z9-yqe" secondAttribute="centerY" constant="10" id="tHN-In-54o"/>
+                                    <constraint firstItem="rhp-hX-oPo" firstAttribute="centerY" secondItem="CoW-NA-UZJ" secondAttribute="centerY" id="uax-xB-AR2"/>
+                                    <constraint firstItem="8Np-pX-ctA" firstAttribute="leading" secondItem="PcU-wp-rsl" secondAttribute="trailing" constant="50" id="ukN-B8-dTk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,6 +213,9 @@
                             <constraint firstItem="y1d-x3-swe" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="HIi-nF-20q"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="Iqd-Te-b63"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="Jqh-8x-qd6"/>
+                            <constraint firstItem="lXy-qp-RJd" firstAttribute="top" secondItem="hcm-KR-GbR" secondAttribute="bottom" constant="20" id="KhK-27-Xw2"/>
+                            <constraint firstItem="lXy-qp-RJd" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="U9y-2Y-7Rr"/>
+                            <constraint firstItem="lXy-qp-RJd" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="bNs-k5-ibb"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="bottom" constant="30" id="hVB-NR-CnB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
@@ -147,6 +223,9 @@
                     <tabBarItem key="tabBarItem" title="個人資料" image="Profile" id="jSO-JQ-WR2"/>
                     <connections>
                         <outlet property="baseViewWidth" destination="6aE-Wl-x9t" id="lbA-fv-1Im"/>
+                        <outlet property="buyNumberLbl" destination="wlC-rP-txr" id="kf5-bf-4bx"/>
+                        <outlet property="evaluationLbl" destination="lO8-Z9-yqe" id="bOR-wz-l7A"/>
+                        <outlet property="numberOfEvaluationLbl" destination="8Np-pX-ctA" id="XVD-rX-2fc"/>
                         <outlet property="topView" destination="y1d-x3-swe" id="Xd8-lx-j4Q"/>
                         <outlet property="userImage" destination="1bI-x1-ufB" id="1cs-jm-OUt"/>
                         <outlet property="userNameLbl" destination="hcm-KR-GbR" id="HJR-OW-R7D"/>
@@ -155,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7go-Vs-SWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462" y="1234"/>
+            <point key="canvasLocation" x="-463.19999999999999" y="1233.7331334332835"/>
         </scene>
         <!--訊息-->
         <scene sceneID="xul-We-tBa">

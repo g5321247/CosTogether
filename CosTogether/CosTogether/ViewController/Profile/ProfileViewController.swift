@@ -18,9 +18,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var baseViewWidth: NSLayoutConstraint!
     @IBOutlet weak var userNameLbl: UILabel!
-    
+    @IBOutlet weak var buyNumberLbl: UILabel!
+    @IBOutlet weak var evaluationLbl: UILabel!
+    @IBOutlet weak var numberOfEvaluationLbl: UILabel!
+
     #warning ("判斷使用者資料")
     var userType: UserType = .currentUser
+    
+    #warning ("改成 user struct")
+    var otherUserInfo:
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +77,8 @@ class ProfileViewController: UIViewController {
         
         userPicBaseView.cornerSetup(
             cornerRadius: userPicBaseView.frame.width / 2,
-            borderWidth: 2,
-            borderColor: UIColor.gray.cgColor,
+            borderWidth: 0.5,
+            borderColor: UIColor.lightGray.cgColor,
             maskToBounds: true
         )
         
