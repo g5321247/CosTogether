@@ -10,7 +10,7 @@ import UIKit
 
 protocol JoinGroupDelegate: AnyObject {
     
-    var members: [String] { get set }
+    var members: [UserDataModel] { get set }
     
     func showTheView(controller: UIViewController)
 }
@@ -21,8 +21,6 @@ class JoinGroupTableViewCell: UITableViewCell {
     @IBOutlet weak var baseView: UIView!
     
     weak var delegate: JoinGroupDelegate?
-    
-    #warning ("改 user")
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,25 +64,6 @@ class JoinGroupTableViewCell: UITableViewCell {
         
     }
     
-    @objc func memberPicTapping(_ sender: UIButton) {
-        
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
-            withIdentifier: String(describing: ProfileViewController.self)
-            ) as? ProfileViewController else {
-                
-                return
-                
-        }
-        
-        controller.loadViewIfNeeded()
-//        controller.userNameLbl.text = delegate?.members[indexPath.row]
-        
-
-        
-        delegate?.showTheView(controller: controller)
-        
-    }
-
 }
 
 extension JoinGroupTableViewCell: UICollectionViewDataSource {
@@ -113,13 +92,10 @@ extension JoinGroupTableViewCell: UICollectionViewDataSource {
 
         }
         
-        cell.groupMemberBot.addTarget(
-            UIStoryboard.mainStoryboard().instantiateViewController(
-                withIdentifier: String(describing: DetailViewController.self)),
-            action: #selector (memberPicTapping(_:)),
-            for: .touchUpInside
-        )
-
+        cell.memberImage.image = UIImage(
+            named: delegate!.members[indexPath.row].userImage
+        ) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
+        
         return cell
     }
 }
@@ -166,7 +142,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
         
-//        collectionView.deselectItem(at: indexPath, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
         
         #warning ("改成 user profile")
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
@@ -177,10 +153,26 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         }
         
-        controller.loadViewIfNeeded()
-        controller.userNameLbl.text = delegate?.members[indexPath.row]
+        guard let delegate = delegate else {
+            
+            return
+        }
         
-        delegate?.showTheView(controller: controller)
+        controller.loadViewIfNeeded()
+        
+        controller.averageEvaluationLbl.text = String(delegate.members[indexPath.row].averageEvaluation)
+        
+        controller.userImage.image = UIImage(named: delegate.members[indexPath.row].userImage) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
+        
+        controller.buyNumberLbl.text = String(delegate.members[indexPath.row].buyNumber)
+        
+        controller.userNameLbl.text = delegate.members[indexPath.row].userName
+        
+        controller.numberOfEvaluationLbl.text =  String(delegate.members[indexPath.row].numberOfEvaluation)
+
+        controller.userType = .otherUser
+        
+        delegate.showTheView(controller: controller)
     }
 
 }

@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var topView: TopLogoView!
     @IBOutlet weak var userPicBaseView: UIView!
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var baseViewWidth: NSLayoutConstraint!
     @IBOutlet weak var userNameLbl: UILabel!

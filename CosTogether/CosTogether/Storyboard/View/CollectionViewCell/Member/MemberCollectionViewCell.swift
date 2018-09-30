@@ -11,8 +11,7 @@ import UIKit
 class MemberCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var baseView: UIView!
-    
-    @IBOutlet weak var groupMemberBot: UIButton!
+    @IBOutlet weak var memberImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +20,7 @@ class MemberCollectionViewCell: UICollectionViewCell {
     
     private func setUp() {
          viewSetup()
-         groupMemberSetup()
+         memberSetup()
     }
     
     private func viewSetup() {
@@ -35,10 +34,9 @@ class MemberCollectionViewCell: UICollectionViewCell {
         
     }
 
-    private func groupMemberSetup() {
+    private func memberSetup() {
 
-        groupMemberBot.cornerSetup(cornerRadius: bounds.width / 2)
-        groupMemberBot.imageView?.contentMode = .scaleAspectFill
+        memberImage.cornerSetup(cornerRadius: bounds.width / 2)
     }
 
     override func layoutSubviews() {

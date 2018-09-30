@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
-    var author = UserDataModel(
+    var author: UserDataModel = UserDataModel(
         userImage: "testUser",
         userName: "金城武",
         numberOfEvaluation: 2,
@@ -41,7 +41,23 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         averageEvaluation: 5.0
         )
     
-    var members: [String] = ["1", "2", "3"]
+    var members: [UserDataModel] = [
+        UserDataModel(
+            userImage: "testUser2",
+            userName: "林志玲",
+            numberOfEvaluation: 100,
+            buyNumber: 4,
+            averageEvaluation: 5.0
+        ),
+        UserDataModel(
+            userImage: "",
+            userName: "白目",
+            numberOfEvaluation: 1000,
+            buyNumber: 999,
+            averageEvaluation: 1.2
+        )]
+    
+    var comment: [Comment] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,30 +151,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
     }
     
-    @objc func photoTwoTapping(_ sender: UIButton) {
-        
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
-            withIdentifier: String(describing: ProfileViewController.self)
-            ) as? ProfileViewController else {
-                
-                return
-                
-        }
-        
-        
-        //        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
-        //
-        //            return
-        //        }
-        controller.otherUserInfo = author
-        controller.userType = .otherUser
-        
-        controller.loadViewIfNeeded()
-        
-        show(controller, sender: nil)
-        
-    }
-
 
 }
 
@@ -287,8 +279,6 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
-            #warning ("加入點擊後跳頁")
-            
             cell.delegate = self
             
             return cell
@@ -366,7 +356,7 @@ extension DetailViewController: UITableViewDataSource {
                     return UITableViewCell()
                     
             }
-                        
+            
             return cell
 
         }

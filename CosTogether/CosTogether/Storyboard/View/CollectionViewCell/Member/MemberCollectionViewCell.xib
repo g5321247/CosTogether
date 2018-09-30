@@ -21,17 +21,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5u-DB-TJn">
                         <rect key="frame" x="0.0" y="0.0" width="152" height="148"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-AX-hvX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sticker_placeholder02" translatesAutoresizingMaskIntoConstraints="NO" id="VOq-5D-D4V">
                                 <rect key="frame" x="0.0" y="0.0" width="152" height="148"/>
-                                <state key="normal" image="testUser2"/>
-                            </button>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="d3r-AX-hvX" firstAttribute="top" secondItem="Y5u-DB-TJn" secondAttribute="top" id="6Go-qQ-wys"/>
-                            <constraint firstAttribute="trailing" secondItem="d3r-AX-hvX" secondAttribute="trailing" id="Ka3-5m-e02"/>
-                            <constraint firstItem="d3r-AX-hvX" firstAttribute="leading" secondItem="Y5u-DB-TJn" secondAttribute="leading" id="azn-6h-jin"/>
-                            <constraint firstAttribute="bottom" secondItem="d3r-AX-hvX" secondAttribute="bottom" id="ceG-uM-JqV"/>
+                            <constraint firstAttribute="trailing" secondItem="VOq-5D-D4V" secondAttribute="trailing" id="BZn-f2-QIt"/>
+                            <constraint firstItem="VOq-5D-D4V" firstAttribute="leading" secondItem="Y5u-DB-TJn" secondAttribute="leading" id="JYz-dl-S8E"/>
+                            <constraint firstItem="VOq-5D-D4V" firstAttribute="top" secondItem="Y5u-DB-TJn" secondAttribute="top" id="gQq-PY-LM0"/>
+                            <constraint firstAttribute="bottom" secondItem="VOq-5D-D4V" secondAttribute="bottom" id="kji-aj-CjO"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,12 +44,12 @@
             <size key="customSize" width="158" height="149"/>
             <connections>
                 <outlet property="baseView" destination="Y5u-DB-TJn" id="CY0-8P-ds0"/>
-                <outlet property="groupMemberBot" destination="d3r-AX-hvX" id="YvH-Om-gVu"/>
+                <outlet property="memberImage" destination="VOq-5D-D4V" id="3pa-Yf-DwH"/>
             </connections>
             <point key="canvasLocation" x="224" y="171.81409295352324"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="testUser2" width="222" height="219"/>
+        <image name="profile_sticker_placeholder02" width="256" height="256"/>
     </resources>
 </document>

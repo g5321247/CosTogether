@@ -19,4 +19,5 @@ struct UserDataModel {
     let buyNumber: Int
     
     let averageEvaluation: Double
+    
 }
