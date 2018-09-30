@@ -10,6 +10,7 @@ import UIKit
 
 class PreviousCommentTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var sendDataLbl: UILabel!
     @IBOutlet weak var commenterNameLbl: UILabel!
     @IBOutlet weak var commentLbl: UILabel!
     @IBOutlet weak var baseView: UIView!

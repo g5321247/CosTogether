@@ -46,15 +46,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7月14日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozW-M9-c70">
+                                <rect key="frame" x="249" y="5" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="leading" secondItem="Fdy-ME-rVz" secondAttribute="leading" id="97B-xH-Why"/>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="37.5" id="GyR-Ks-qL9"/>
                             <constraint firstAttribute="trailing" secondItem="hiL-1R-0dM" secondAttribute="trailing" constant="8" id="OzR-fe-bx0"/>
+                            <constraint firstAttribute="trailing" secondItem="ozW-M9-c70" secondAttribute="trailing" constant="8" id="Qcr-oT-QGn"/>
                             <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="VDm-mm-2dF"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="leading" secondItem="KN6-m7-hv7" secondAttribute="trailing" constant="15" id="VsP-gc-2qt"/>
                             <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="15" id="d1K-cM-B0T"/>
+                            <constraint firstItem="ozW-M9-c70" firstAttribute="centerY" secondItem="Fdy-ME-rVz" secondAttribute="centerY" id="eSg-ZE-YHD"/>
                             <constraint firstItem="KN6-m7-hv7" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="8" id="fZR-n3-Xje"/>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="Fdy-ME-rVz" secondAttribute="bottom" constant="15" id="gPr-dv-Key"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="top" secondItem="KN6-m7-hv7" secondAttribute="top" id="gpI-1F-zNh"/>
@@ -75,6 +83,7 @@
                 <outlet property="commentLbl" destination="hiL-1R-0dM" id="8a9-oz-6KT"/>
                 <outlet property="commenterBot" destination="KN6-m7-hv7" id="pec-yt-z2q"/>
                 <outlet property="commenterNameLbl" destination="Fdy-ME-rVz" id="37S-8D-agp"/>
+                <outlet property="sendDataLbl" destination="ozW-M9-c70" id="TvP-fX-Tni"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
         </tableViewCell>

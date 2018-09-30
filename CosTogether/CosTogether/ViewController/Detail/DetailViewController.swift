@@ -75,7 +75,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     private func setUpCell() {
         
-        registerTableViewCell(identifiers: [
+        tableView.registerTableViewCell(identifiers: [
             String(describing: ProductItemTableViewCell.self),
             String(describing: ProductPicTableViewCell.self),
             String(describing: ArticleInfoTableViewCell.self),
@@ -87,18 +87,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             String(describing: SendCommentTableViewCell.self)
             ])
         
-    }
-    
-    private func registerTableViewCell(identifiers: [String]) {
-
-        let identifierArray = identifiers
-        
-        for identifier in identifierArray {
-            
-            let nibCell = UINib(nibName: identifier, bundle: nil)
-            tableView.register(nibCell, forCellReuseIdentifier: identifier)
-
-        }
     }
     
     private func tableViewSetup() {
@@ -151,7 +139,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
     }
     
-
 }
 
 extension DetailViewController: UITableViewDelegate {

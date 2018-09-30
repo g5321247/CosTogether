@@ -63,6 +63,12 @@
 		C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C92C2152399200BDB0CE /* Assets.xcassets */; };
 		C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */; };
 		C8FB98B62160FCD100C78926 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98B52160FCD100C78926 /* Comment.swift */; };
+		C8FB98B8216103CC00C78926 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98B7216103CC00C78926 /* ChatViewController.swift */; };
+		C8FB98BB2161110E00C78926 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98BA2161110E00C78926 /* UIViewController.swift */; };
+		C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */; };
+		C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */; };
+		C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */; };
+		C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */; };
 		C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */; };
 		C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3B0215BCD61008724A3 /* ProductItemTableViewCell.swift */; };
 		C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FCA3B1215BCD61008724A3 /* ProductItemTableViewCell.xib */; };
@@ -135,6 +141,12 @@
 		C8F8C92C2152399200BDB0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8F8C932215279E300BDB0CE /* FuturaExtraBlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaExtraBlackItalic.ttf; sourceTree = "<group>"; };
 		C8FB98B52160FCD100C78926 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		C8FB98B7216103CC00C78926 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C8FB98BA2161110E00C78926 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
+		C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhterMessageTableViewCell.swift; sourceTree = "<group>"; };
+		C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OhterMessageTableViewCell.xib; sourceTree = "<group>"; };
 		C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoView.swift; sourceTree = "<group>"; };
 		C8FCA3B0215BCD61008724A3 /* ProductItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemTableViewCell.swift; sourceTree = "<group>"; };
 		C8FCA3B1215BCD61008724A3 /* ProductItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -477,6 +489,7 @@
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C8FB98B9216103D800C78926 /* Chat */,
 				C82FA85F215A180900B75284 /* Detail */,
 				C84975222157BABC00555855 /* MainPage */,
 				C84975232157BAD900555855 /* TabBar */,
@@ -490,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */,
 				C8F8C923215227FA00BDB0CE /* LogIn.storyboard */,
 				C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */,
 			);
@@ -499,6 +513,7 @@
 		C8F8C92B2152387100BDB0CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C8FB98BA2161110E00C78926 /* UIViewController.swift */,
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
 				C84975152157758D00555855 /* UISearchBar.swift */,
 				C84975192157913E00555855 /* UISegmentedControl.swift */,
@@ -531,6 +546,24 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		C8FB98B9216103D800C78926 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				C8FB98B7216103CC00C78926 /* ChatViewController.swift */,
+				C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		C8FB98C62161245300C78926 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */,
+				C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		C8FCA3AD215BC557008724A3 /* ArticleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +594,7 @@
 				C87F8B16215DD22D0060EA72 /* JoinGroup */,
 				C8BCF0E0215E9CE200A2B1B8 /* ProductDetail */,
 				C8C2B482215FA12B0033FB28 /* Segment */,
+				C8FB98C62161245300C78926 /* Message */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -639,6 +673,7 @@
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
 				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
+				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */,
 				C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */,
@@ -646,6 +681,7 @@
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
 				C8C2B477215F2B000033FB28 /* PreviousCommentTableViewCell.xib in Resources */,
+				C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */,
 				C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
@@ -741,6 +777,7 @@
 				C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
+				C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
@@ -749,6 +786,7 @@
 				C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */,
 				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
+				C8FB98BB2161110E00C78926 /* UIViewController.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,
 				C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */,
@@ -756,6 +794,7 @@
 				C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */,
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */,
+				C8FB98B8216103CC00C78926 /* ChatViewController.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController.swift in Sources */,
 				C8C2B476215F2B000033FB28 /* PreviousCommentTableViewCell.swift in Sources */,
 				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
@@ -771,6 +810,7 @@
 				C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */,
 				C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,
+				C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */,
 				C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */,
 				C8FB98B62160FCD100C78926 /* Comment.swift in Sources */,
 				C8860982215FA649006B736A /* SendCommentTableViewCell.swift in Sources */,
