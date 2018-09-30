@@ -32,12 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             didFinishLaunchingWithOptions: launchOptions
         )
         
-        if UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil {
+        guard UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil else {
 
-            switchMainPage()
-
+            switchLogIn()
+            
+            return true
         }
         
+        switchMainPage()
+
         IQKeyboardManager.shared.enable = true
         
         return true
@@ -75,6 +78,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func switchMainPage() {
         
         window?.rootViewController = UIStoryboard.mainStoryboard().instantiateInitialViewController()
+    }
+    
+    func backLoginPage() {
+        
+        window?.rootViewController = UIStoryboard.logInStoryboard().instantiateInitialViewController()
     }
 
 }

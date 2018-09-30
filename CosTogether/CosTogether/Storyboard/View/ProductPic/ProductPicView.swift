@@ -13,7 +13,7 @@ protocol ProductPicDelegate: AnyObject {
     
 //    var products: [Product] { get set }
     var testArray: [UIImage] { get set }
-
+    
 }
 
 class ProductPicView: UIView {

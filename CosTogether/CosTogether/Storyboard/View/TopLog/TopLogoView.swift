@@ -10,8 +10,8 @@ import UIKit
 
 class TopLogoView: UIView {
 
-    @IBOutlet weak var backToPageBot: UIButton!
-    @IBOutlet weak var sendMessageBot: UIButton!
+    @IBOutlet weak var leftBot: UIButton!
+    @IBOutlet weak var rightBot: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

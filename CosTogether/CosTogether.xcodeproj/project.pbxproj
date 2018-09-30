@@ -16,6 +16,7 @@
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
 		C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */; };
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
+		C827FAD8216080DA008AB665 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827FAD7216080DA008AB665 /* Users.swift */; };
 		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
 		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
 		C82BA99C215CB04500996B11 /* CellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA99B215CB04500996B11 /* CellClass.swift */; };
@@ -79,6 +80,7 @@
 		C8215FDF2151FAB8006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8215FE12151FAB8006BC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C827FAD7216080DA008AB665 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Didot HTFB96 Bold.otf"; sourceTree = "<group>"; };
 		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
 		C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicTableViewCell.swift; sourceTree = "<group>"; };
@@ -229,6 +231,14 @@
 			path = CosTogether;
 			sourceTree = "<group>";
 		};
+		C827FAD921608108008AB665 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C827FAD7216080DA008AB665 /* Users.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		C82BA99A215C892700996B11 /* ProductPic */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		C82BA99E215CB06A00996B11 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				C827FAD921608108008AB665 /* Users */,
 				C849751D21579BDD00555855 /* Fonts */,
 				C82BA99D215CB04900996B11 /* CellClass */,
 			);
@@ -684,6 +695,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -696,6 +708,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -734,6 +747,7 @@
 				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView.swift in Sources */,
+				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
 				C84975162157758D00555855 /* UISearchBar.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,

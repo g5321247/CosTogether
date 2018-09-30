@@ -82,8 +82,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     private func topLogViewSetup() {
         
-        topLogView.backToPageBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
-        topLogView.sendMessageBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
+        topLogView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
+        topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
     }
     
     @objc func backBotTapping(_ sender: UIButton) {
