@@ -19,14 +19,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var baseViewWidth: NSLayoutConstraint!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var buyNumberLbl: UILabel!
-    @IBOutlet weak var evaluationLbl: UILabel!
+    @IBOutlet weak var averageEvaluationLbl: UILabel!
     @IBOutlet weak var numberOfEvaluationLbl: UILabel!
 
-    #warning ("判斷使用者資料")
     var userType: UserType = .currentUser
     
     #warning ("改成 user struct")
-    var otherUserInfo:
+    var otherUserInfo: UserProvider?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +40,7 @@ class ProfileViewController: UIViewController {
     private func setup() {
         userImageSetup(user: userType)
         userPicBaseViewSetup()
-        topBottonStyle(user: userType)
+        topBotSetup(user: userType)
     }
 
     private func userImageSetup(user: UserType) {
@@ -65,6 +64,14 @@ class ProfileViewController: UIViewController {
             
         case .otherUser:
             
+            guard let otherUser = otherUserInfo else {
+                
+                return
+            }
+            
+            userImage.image = UIImage(named: otherUser.userImage)
+            userNameLbl.text = otherUser.userName
+            
             return
         }
 
@@ -86,27 +93,31 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func topBottonStyle(user: UserType) {
-        
-        topView.leftBot.isEnabled = true
+    func topBotSetup(user: UserType) {
         
         switch user {
             
         case .currentUser:
             
-            topView.leftBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
+            topView.rightBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
+            
+            topView.leftBot.isEnabled = false
+            topView.leftBot.isHidden = true
             
         case .otherUser:
             
-            topView.leftBot.setImage(#imageLiteral(resourceName: "chat"), for: UIControl.State.normal)
+            topView.rightBot.setImage(#imageLiteral(resourceName: "chat"), for: UIControl.State.normal)
             
+            topView.leftBot.isEnabled = true
+            topView.leftBot.isHidden = false
+
         }
         
-        topView.rightBot.addTarget(self, action: #selector (self.topBotton(_:)), for: .touchUpInside)
+        topView.rightBot.addTarget(self, action: #selector (self.topRigthBotTapping(_:)), for: .touchUpInside)
 
     }
     
-    @objc func topBotton(_ sender: UIButton) {
+    @objc func topRigthBotTapping(_ sender: UIButton) {
         
         switch userType {
             
@@ -124,7 +135,12 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func rightBotTapping(_ sender: UIButton) {
+    }
     
-    
+    @IBAction func leftBotTapping(_ sender: UIButton) {
+        
+        navigationController?.popViewController(animated: true)       
+    }
     
 }

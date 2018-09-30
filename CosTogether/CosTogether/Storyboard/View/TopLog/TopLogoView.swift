@@ -10,8 +10,8 @@ import UIKit
 
 class TopLogoView: UIView {
 
-    @IBOutlet weak var leftBot: UIButton!
     @IBOutlet weak var rightBot: UIButton!
+    @IBOutlet weak var leftBot: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

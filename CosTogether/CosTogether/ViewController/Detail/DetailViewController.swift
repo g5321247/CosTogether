@@ -29,6 +29,9 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
+    var authorID: String?
+    var members: [String] = ["1", "2", "3"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +85,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     private func topLogViewSetup() {
         
-        topLogView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
+        topLogView.rightBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
         topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
     }
     
@@ -97,15 +100,32 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-    #warning ("點作者進入個人資料")
-    @objc func authorPhotoTapping(_ sender: UIButton) {
-        
-    }
+//    #warning ("點作者進入個人資料")
+//    @objc func authorPhotoTapping(_ sender: UIButton) {
+//
+//    }
     
-    #warning ("點作者進入個人資料")
-
-    @objc func memberPhotoTapping(_ sender: UIButton) {
+    @objc func photoTapping(_ sender: UIButton) {
         
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self)
+            ) as? ProfileViewController else {
+                
+                return
+                
+        }
+        
+        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
+            
+            return
+        }
+        
+        controller.userType = .otherUser
+        
+        controller.loadViewIfNeeded()
+        
+        show(controller, sender: nil)
+
     }
 
 }
@@ -217,6 +237,12 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
+            cell.articleInfoView.authorImageBot.addTarget(
+                self,
+                action: #selector (photoTapping(_:)),
+                for: .touchUpInside
+            )
+            
             return cell
         
         case .joinGroup:
@@ -228,6 +254,10 @@ extension DetailViewController: UITableViewDataSource {
                     return UITableViewCell()
                     
             }
+            
+            #warning ("加入點擊後跳頁")
+            
+            cell.delegate = self
             
             return cell
 
@@ -309,6 +339,14 @@ extension DetailViewController: UITableViewDataSource {
 
         }
         
+    }
+    
+}
+
+extension DetailViewController: JoinGroupDelegate {
+    
+    func showTheView(controller: UIViewController) {
+        showTheView(controller: controller)
     }
     
 }

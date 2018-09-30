@@ -10,7 +10,7 @@ import UIKit
 
 class ArticleInfoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var articleInfoView: UIView!
+    @IBOutlet weak var articleInfoView: ArticleInfoView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
