@@ -12,6 +12,7 @@ class TopLogoView: UIView {
 
     @IBOutlet weak var rightBot: UIButton!
     @IBOutlet weak var leftBot: UIButton!
+    @IBOutlet weak var logoLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

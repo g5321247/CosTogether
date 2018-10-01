@@ -24,8 +24,9 @@ class JoinGroupTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         setup()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

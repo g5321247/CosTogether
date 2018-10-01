@@ -25,8 +25,8 @@ class ProfileViewController: UIViewController {
 
     var userType: UserType = .currentUser
     
-    #warning ("改成 user struct")
-    var otherUserInfo: UserDataModel?
+    #warning ("userInfo == current 的 uuid 時，才為 current user")
+    var userInfo: UserDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,11 @@ class ProfileViewController: UIViewController {
     }
     
     private func setup() {
+        
         userImageSetup(user: userType)
         userPicBaseViewSetup()
         topBotSetup(user: userType)
+        
     }
 
     private func userImageSetup(user: UserType) {
@@ -65,7 +67,7 @@ class ProfileViewController: UIViewController {
             
         case .otherUser:
             
-            guard let otherUser = otherUserInfo else {
+            guard let otherUser = userInfo else {
                 
                 return
             }
@@ -149,7 +151,7 @@ class ProfileViewController: UIViewController {
         }
         
     }
-        
+    
     @IBAction func leftBotTapping(_ sender: UIButton) {
         
         navigationController?.popViewController(animated: true)       

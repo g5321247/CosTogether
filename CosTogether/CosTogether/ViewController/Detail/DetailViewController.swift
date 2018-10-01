@@ -7,6 +7,7 @@
 
 import UIKit
 import FSPagerView
+import Firebase
 
 struct Name {
     let name: String
@@ -123,6 +124,26 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
+    @objc func buyProduct(_ sender: UIButton) {
+        
+        guard let currentUser =  Auth.auth().currentUser else {
+            
+            return
+            
+        }
+        
+        members.append(
+            UserDataModel(
+                userImage: currentUser.photoURL!.absoluteString,
+                userName: currentUser.displayName!,
+                numberOfEvaluation: 2,
+                buyNumber: 3,
+                averageEvaluation: 5.0
+            )
+        )
+        
+    }
+    
     #warning ("如何用在同一個 function")
     @objc func photoTapping(_ sender: UIButton) {
         
@@ -139,7 +160,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 //
 //            return
 //        }
-        controller.otherUserInfo = author
+        controller.userInfo = author
         controller.userType = .otherUser
         
         controller.loadViewIfNeeded()
@@ -257,7 +278,7 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
-            cell.articleInfoView.authorImageBot.addTarget(
+            cell.articleInfoView.authorImageBot?.addTarget(
                 self,
                 action: #selector (photoTapping(_:)),
                 for: .touchUpInside
@@ -281,13 +302,13 @@ extension DetailViewController: UITableViewDataSource {
 
         case .productItems:
         
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: ProductItemTableViewCell.self)
-            ) as? ProductItemTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: ProductItemTableViewCell.self)
+                ) as? ProductItemTableViewCell else {
                 
                 return UITableViewCell()
                 
-        }
+            }
                     
             cell.productImage.image = testArray[indexPath.row]
         
@@ -295,14 +316,16 @@ extension DetailViewController: UITableViewDataSource {
         
         case .order:
         
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: OrderTableViewCell.self)
-            ) as? OrderTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: OrderTableViewCell.self)
+                ) as? OrderTableViewCell else {
                     
                 return UITableViewCell()
                     
-        }
-                        
+            }
+        
+            cell.orderBot.addTarget(self, action: #selector (buyProduct(_:)), for: .touchUpInside)
+            
             return cell
             
         case .productDetail:

@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0h-Gt-4L9" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;標題&gt; 不要說我帥，太沈重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-qR-b2b">
                                 <rect key="frame" x="20" y="15" width="335" height="34.5"/>
@@ -113,7 +113,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="T0h-Gt-4L9" secondAttribute="bottom" constant="5" id="06y-qr-oRi"/>
+                    <constraint firstAttribute="bottom" secondItem="T0h-Gt-4L9" secondAttribute="bottom" id="06y-qr-oRi"/>
                     <constraint firstItem="T0h-Gt-4L9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Up2-gp-4eJ"/>
                     <constraint firstItem="T0h-Gt-4L9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eo5-79-0lt"/>
                     <constraint firstAttribute="trailing" secondItem="T0h-Gt-4L9" secondAttribute="trailing" id="urK-HJ-wl6"/>
