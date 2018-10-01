@@ -56,6 +56,17 @@ class MyGroupViewController: UIViewController {
 
 extension MyGroupViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self))
+            as? DetailViewController else {
+            
+            return
+        }
+        
+        show(controller, sender: nil)
+    }
     
 }
 
