@@ -50,6 +50,26 @@ class MyGroupViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+
+    }
+
+    @objc func evaluateUser(_ sender: UIButton) {
+        
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self))
+            as? ProfileViewController else {
+                
+                return
+        }
+        
+        controller.loadViewIfNeeded()
+        
+        controller.userType = .otherUser
+        controller.evaluateButton.isHidden = false
+        controller.evaluateButton.isEnabled = true
+        
+        
+        show(controller, sender: nil)
     }
 
 }
@@ -86,8 +106,8 @@ extension MyGroupViewController: UITableViewDataSource {
                 
         }
         
-//        cell.messageLbl.text = chats[indexPath.row]
-                
+        cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
+        
         return cell
         
     }

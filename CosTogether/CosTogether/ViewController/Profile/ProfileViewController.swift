@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var averageEvaluationLbl: UILabel!
     @IBOutlet weak var numberOfEvaluationLbl: UILabel!
 
+    @IBOutlet weak var evaluateButton: UIButton!
+    
     var userType: UserType = .currentUser
     
     #warning ("userInfo == current 的 uuid 時，才為 current user")
@@ -43,9 +45,16 @@ class ProfileViewController: UIViewController {
         userImageSetup(user: userType)
         userPicBaseViewSetup()
         topBotSetup(user: userType)
-        
+        evaluateButtonSetup()
+            
     }
 
+    private func evaluateButtonSetup() {
+        
+        evaluateButton.cornerSetup(cornerRadius: evaluateButton.frame.width / 2)
+        
+    }
+    
     private func userImageSetup(user: UserType) {
 
         switch user {

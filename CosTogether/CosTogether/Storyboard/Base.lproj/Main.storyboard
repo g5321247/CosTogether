@@ -204,6 +204,17 @@
                                     <constraint firstItem="8Np-pX-ctA" firstAttribute="leading" secondItem="PcU-wp-rsl" secondAttribute="trailing" constant="50" id="ukN-B8-dTk"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6n-Lp-hau">
+                                <rect key="frame" x="157.5" y="498" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0Uh-Oc-zyI"/>
+                                    <constraint firstAttribute="width" constant="60" id="IXM-pb-WO5"/>
+                                </constraints>
+                                <state key="normal" title="評價">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -213,10 +224,12 @@
                             <constraint firstItem="y1d-x3-swe" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="HIi-nF-20q"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="Iqd-Te-b63"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="Jqh-8x-qd6"/>
+                            <constraint firstItem="o6n-Lp-hau" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="K6p-cI-1V9"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="top" secondItem="hcm-KR-GbR" secondAttribute="bottom" constant="20" id="KhK-27-Xw2"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="U9y-2Y-7Rr"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="bNs-k5-ibb"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="bottom" constant="30" id="hVB-NR-CnB"/>
+                            <constraint firstItem="kpO-x4-AM6" firstAttribute="bottom" secondItem="o6n-Lp-hau" secondAttribute="bottom" constant="60" id="oRB-Jt-xgB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
                     </view>
@@ -225,6 +238,7 @@
                         <outlet property="averageEvaluationLbl" destination="lO8-Z9-yqe" id="FG0-Yb-VBa"/>
                         <outlet property="baseViewWidth" destination="6aE-Wl-x9t" id="lbA-fv-1Im"/>
                         <outlet property="buyNumberLbl" destination="wlC-rP-txr" id="kf5-bf-4bx"/>
+                        <outlet property="evaluateButton" destination="o6n-Lp-hau" id="Y3u-FM-pVs"/>
                         <outlet property="numberOfEvaluationLbl" destination="8Np-pX-ctA" id="XVD-rX-2fc"/>
                         <outlet property="topView" destination="y1d-x3-swe" id="Xd8-lx-j4Q"/>
                         <outlet property="userImage" destination="1bI-x1-ufB" id="1cs-jm-OUt"/>

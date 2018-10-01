@@ -32,7 +32,7 @@ class ArticleInfoView: UIView {
     private func setupImageView() {
         
         authorImageBot.cornerSetup(cornerRadius: authorImageBot.frame.width / 2)
-        
+                
         authorImageBot.imageView?.contentMode = .scaleAspectFill
     }
     
