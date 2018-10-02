@@ -73,16 +73,16 @@ class ProductItemTableViewCell: UITableViewCell {
             return
         }
         
+        guard  let totalNumber = Int(buyNumberLbl.text!) else {
+            return
+        }
+        
+        guard let price = Int(itemPrice.text!) else {
+            return
+        }
+        
         buyNumberLbl.text = numberOfProductTxF.text
-        
-        guard  let totalNumber = Int.parse(from: buyNumberLbl.text!) else {
-            return
-        }
-        
-        guard let price = Int.parse(from: itemPrice.text!) else {
-            return
-        }
-        
+
         totalPriceLbl.text = "\(totalNumber * price)"
 
     }
@@ -148,8 +148,8 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        guard let number = Int.parse(from: textField.text!), number > 0,
-            let totalQuantity = Int.parse(from: amoutQuantity.text!), number <= totalQuantity else {
+        guard let number = Int(textField.text!), number > 0,
+            let totalQuantity = Int(amoutQuantity.text!), number <= totalQuantity else {
             
             textField.text = ""
             caculation()
