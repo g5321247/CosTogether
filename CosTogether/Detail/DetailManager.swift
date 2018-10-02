@@ -61,13 +61,14 @@ extension DetailManager: UITableViewDataSource {
             
         case .articleInfo:
             
-            guard let articleCell = cell as? ArticleInfoTableViewCell else {
+            guard let articleCell = cell as? ArticleInfoTableViewCell,
+            let articleModel = user.data.first as? ArticleModel else {
                 
                 return cell
                 
             }
             
-            articleCell.articleInfoView.updateArticle(article: user.data.first as! ArticleModel)
+            articleCell.articleInfoView.updateArticle(article: articleModel)
             
         case .joinGroup:
             
@@ -117,25 +118,23 @@ extension DetailManager: UITableViewDataSource {
                 return cell
             }
             
-            productCell.view.
-            
         case .productItems:
             
-            guard let productItemCell = cell as? ProductItemTableViewCell else {
+            guard let productItemCell = cell as? ProductItemTableViewCell,
+                let productModel = user.data as? [ProductModel] else {
                 
                 return cell
             }
             
-            productItemCell.imageView = 
-
+            productItemCell.updateView(product: productModel[indexPath.row])
+         
+        default:
+            
+            return cell
         }
-        
+    
         return cell
         
     }
-    
-    
-    
-    
-}
 
+}

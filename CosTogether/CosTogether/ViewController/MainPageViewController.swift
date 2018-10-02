@@ -15,7 +15,6 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchThingBar.setSearchBar()
         locationBot.cornerSetup(cornerRadius: 5,
                                 borderWidth: 1,
                                 borderColor: UIColor.lightGray.cgColor

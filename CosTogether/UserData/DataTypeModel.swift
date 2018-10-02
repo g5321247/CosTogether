@@ -28,7 +28,7 @@ struct ArticleModel: DataProtocol {
     
     let postDate: Date
     
-    let tag: String
+    let productTag: String
     
     let user: UserModel
 
@@ -62,11 +62,11 @@ struct ProductModel: DataProtocol {
     
     var productImage: String
     
-    var numberOfItem: String
+    var numberOfItem: Int
     
     var expiredDate: Date
     
-    var price: String
+    var price: Int
     
 }
 

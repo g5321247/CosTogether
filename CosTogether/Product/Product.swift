@@ -26,22 +26,3 @@ enum Location: String {
     
 }
 
-struct Product {
-    
-    let price: Int
-    
-    let productPicURL: String
-    
-    let number: Int
-    
-    let name: String
-    
-    let productTag: String
-    
-    let location: String
-    
-    let tagLocation: String
-    
-    let postDate: Int
-    
-}

@@ -27,6 +27,7 @@
 		C82FA861215A3CED00B75284 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA860215A3CED00B75284 /* MessageView.swift */; };
 		C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8378BCE215B60F700CBAA51 /* ProductPicView.swift */; };
 		C83870752153AA8200E64493 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83870742153AA8200E64493 /* UIAlertController.swift */; };
+		C84853ED2163BA5300EBCDFB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84853EC2163BA5300EBCDFB /* Int.swift */; };
 		C8497505215670AF00555855 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8497504215670AF00555855 /* TabViewController.swift */; };
 		C84975142157742A00555855 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975132157742A00555855 /* MainPageViewController.swift */; };
 		C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975192157913E00555855 /* UISegmentedControl.swift */; };
@@ -104,6 +105,7 @@
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
 		C83870742153AA8200E64493 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		C84853EC2163BA5300EBCDFB /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C8497504215670AF00555855 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		C849750621567C1B00555855 /* 中文仿宋體.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "中文仿宋體.ttf"; sourceTree = "<group>"; };
 		C849750721567C2100555855 /* 宋體 繁.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "宋體 繁.ttc"; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		C8F8C92B2152387100BDB0CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C84853EC2163BA5300EBCDFB /* Int.swift */,
 				C8FB98BA2161110E00C78926 /* UIViewController.swift */,
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
 				C84975192157913E00555855 /* UISegmentedControl.swift */,
@@ -849,6 +852,7 @@
 				C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */,
 				C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */,
 				C8FB98B62160FCD100C78926 /* Comment.swift in Sources */,
+				C84853ED2163BA5300EBCDFB /* Int.swift in Sources */,
 				C8860982215FA649006B736A /* SendCommentTableViewCell.swift in Sources */,
 				C8FCA3B2215BCD61008724A3 /* ProductItemTableViewCell.swift in Sources */,
 				C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */,

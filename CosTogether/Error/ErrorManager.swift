@@ -14,6 +14,21 @@ protocol ErrorComment: Error {
     
 }
 
+enum UserMiscouductError: ErrorComment {
+    
+    case putStrInPrice
+    
+    func errorMessage() -> String {
+        
+        switch self {
+        case .putStrInPrice:
+            return "請輸入數字"
+        }
+        
+    }
+    
+}
+
 enum FBError: ErrorComment {
     
     case system(String)

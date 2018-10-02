@@ -63,7 +63,16 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             )
     ]
     
-    var products: [ProductModel] = []
+    var products: [ProductModel] = [
+        ProductModel(
+            productName: "好吃ㄉ",
+            productImage: "123",
+            numberOfItem: 2,
+            expiredDate: Date(),
+            price: 999
+            )
+    ]
+    
     var productDetail: [DescriptionModel] = []
     var comments: [CommentModel] = []
     
@@ -268,14 +277,14 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: UITableViewDataSource {
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return allData.count
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return allData.count
+    }
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return allData[section].dataType.numberOfRow()
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return allData[section].dataType.numberOfRow()
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -297,37 +306,37 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
             
-//        case .articleInfo:
+        case .articleInfo:
             
-//            guard let cell = tableView.dequeueReusableCell(
-//                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
-//                ) as? ArticleInfoTableViewCell else {
-//
-//                    return UITableViewCell()
-//
-//            }
-//
-//            cell.articleInfoView.authorImageBot?.addTarget(
-//                self,
-//                action: #selector (photoTapping(_:)),
-//                for: .touchUpInside
-//            )
-//
-//            return cell
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
+                ) as? ArticleInfoTableViewCell else {
+
+                    return UITableViewCell()
+
+            }
+
+            cell.articleInfoView.authorImageBot?.addTarget(
+                self,
+                action: #selector (photoTapping(_:)),
+                for: .touchUpInside
+            )
+
+            return cell
         
-//        case .joinGroup:
-//
-//            guard let cell = tableView.dequeueReusableCell(
-//                withIdentifier: String(describing: JoinGroupTableViewCell.self)
-//                ) as? JoinGroupTableViewCell else {
-//
-//                    return UITableViewCell()
-//
-//            }
-//
-//            cell.delegate = self
-//
-//            return cell
+        case .joinGroup:
+
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: JoinGroupTableViewCell.self)
+                ) as? JoinGroupTableViewCell else {
+
+                    return UITableViewCell()
+
+            }
+
+            cell.delegate = self
+
+            return cell
 
         case .productItems:
         
@@ -369,17 +378,17 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
         
-//        case .commnetTitle:
-//
-//            guard let cell = tableView.dequeueReusableCell(
-//                withIdentifier: String(describing: CommonTitleTableViewCell.self)
-//                ) as? CommonTitleTableViewCell else {
-//
-//                    return UITableViewCell()
-//
-//            }
-//
-//            return cell
+        case .commnetTitle:
+
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: CommonTitleTableViewCell.self)
+                ) as? CommonTitleTableViewCell else {
+
+                    return UITableViewCell()
+
+            }
+
+            return cell
 
         case .previousComments:
             

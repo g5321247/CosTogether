@@ -37,7 +37,7 @@ class ArticleInfoView: UIView {
         locationLbl.text = article.location
         
         #warning ("改成 Array")
-        tagLbl.text = article.tag
+        tagLbl.text = article.productTag
         
         articleTitleLbl.text = article.articleTitle
         
