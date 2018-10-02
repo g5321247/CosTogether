@@ -20,7 +20,6 @@ class DetailManager: NSObject, UITableViewDelegate {
     
     var tableView: UITableView?
     
-   
 }
 
 extension DetailManager: UITableViewDataSource {

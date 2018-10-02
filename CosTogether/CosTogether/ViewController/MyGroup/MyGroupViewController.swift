@@ -68,7 +68,6 @@ class MyGroupViewController: UIViewController {
         controller.evaluateButton.isHidden = false
         controller.evaluateButton.isEnabled = true
         
-        
         show(controller, sender: nil)
     }
 
@@ -108,6 +107,8 @@ extension MyGroupViewController: UITableViewDataSource {
         
         cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
         
+        cell.selectionStyle = .none
+
         return cell
         
     }

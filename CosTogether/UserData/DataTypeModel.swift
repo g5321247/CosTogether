@@ -75,4 +75,3 @@ struct DescriptionModel: DataProtocol {
     var description: String
     
 }
-
