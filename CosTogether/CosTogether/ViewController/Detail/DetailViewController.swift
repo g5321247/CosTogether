@@ -35,7 +35,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var topLogView: TopLogoView!
     
     var author: [UserModel] = [
-        UserModel.init(
+        UserModel(
         userImage: "testUser",
         userName: "金城武",
         numberOfEvaluation: 2,
@@ -76,7 +76,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         DataType(dataType: .productDetail, data: productDetail),
         DataType(dataType: .commnetTitle, data: []),
         DataType(dataType: .previousComments(comments.count), data: comments),
-        DataType(dataType: .sendComment, data: []),
+        DataType(dataType: .sendComment, data: [])
     ]
     
     override func viewDidLoad() {
@@ -268,14 +268,14 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return allData.count
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return allData.count
+//    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return allData[section].dataType.numberOfRow()
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        return allData[section].dataType.numberOfRow()
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -297,37 +297,37 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
             
-        case .articleInfo:
+//        case .articleInfo:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
-                ) as? ArticleInfoTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
-            
-            cell.articleInfoView.authorImageBot?.addTarget(
-                self,
-                action: #selector (photoTapping(_:)),
-                for: .touchUpInside
-            )
-            
-            return cell
+//            guard let cell = tableView.dequeueReusableCell(
+//                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
+//                ) as? ArticleInfoTableViewCell else {
+//
+//                    return UITableViewCell()
+//
+//            }
+//
+//            cell.articleInfoView.authorImageBot?.addTarget(
+//                self,
+//                action: #selector (photoTapping(_:)),
+//                for: .touchUpInside
+//            )
+//
+//            return cell
         
-        case .joinGroup:
-            
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: JoinGroupTableViewCell.self)
-                ) as? JoinGroupTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
-            
-            cell.delegate = self
-            
-            return cell
+//        case .joinGroup:
+//
+//            guard let cell = tableView.dequeueReusableCell(
+//                withIdentifier: String(describing: JoinGroupTableViewCell.self)
+//                ) as? JoinGroupTableViewCell else {
+//
+//                    return UITableViewCell()
+//
+//            }
+//
+//            cell.delegate = self
+//
+//            return cell
 
         case .productItems:
         
@@ -369,17 +369,17 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
         
-        case .commnetTitle:
-            
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: CommonTitleTableViewCell.self)
-                ) as? CommonTitleTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
-            
-            return cell
+//        case .commnetTitle:
+//
+//            guard let cell = tableView.dequeueReusableCell(
+//                withIdentifier: String(describing: CommonTitleTableViewCell.self)
+//                ) as? CommonTitleTableViewCell else {
+//
+//                    return UITableViewCell()
+//
+//            }
+//
+//            return cell
 
         case .previousComments:
             

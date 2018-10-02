@@ -8,17 +8,31 @@
 
 import UIKit
 
-protocol DetailManagerDelegate: AnyObject {
+protocol DetailManagerDelegate: JoinGroupDelegate {
     
     var allData: [DataType] { get set }
     
 }
 
-class DetailManager: NSObject, UITableViewDelegate, UITableViewDataSource {
+class DetailManager: NSObject, UITableViewDelegate {
     
     weak var delegate: DetailManagerDelegate?
     
     var tableView: UITableView?
+    
+   
+}
+
+extension DetailManager: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+       
+        guard let delegate = delegate else {
+            return 0
+        }
+
+        return delegate.allData.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -26,10 +40,12 @@ class DetailManager: NSObject, UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         
-        return delegate.allData.count
+        return delegate.allData[section].dataType.numberOfRow()
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath
+        ) -> UITableViewCell {
         
         guard let delegate = delegate else {
             
@@ -45,57 +61,47 @@ class DetailManager: NSObject, UITableViewDelegate, UITableViewDataSource {
             
         case .articleInfo:
             
-            guard cell is ProductPicTableViewCell else {
+            guard let articleCell = cell as? ArticleInfoTableViewCell else {
                 
                 return cell
                 
             }
             
-            break
-            
-        case .commnetTitle:
-            
-            guard cell is ProductPicTableViewCell else {
-                
-                return cell
-                
-            }
-            
-            break
+            articleCell.articleInfoView.updateArticle(article: user.data.first as! ArticleModel)
             
         case .joinGroup:
             
-            guard cell is JoinGroupTableViewCell else {
+            guard let joinGroupCell = cell as? JoinGroupTableViewCell else {
                 
                 return cell
+                
             }
             
-            break
+            joinGroupCell.delegate = delegate
             
         case .order:
             
-            guard cell is ProductItemTableViewCell else {
+            guard let orderCell = cell as? OrderTableViewCell else {
                 
                 return cell
+                
             }
+
             
         case .productDetail:
             
-            guard cell is ProductDetailTableViewCell else {
+            guard let productGroupCell = cell as? JoinGroupTableViewCell else {
                 
                 return cell
+                
             }
-            
-            break
-            
+
         case .previousComments:
             
             guard cell is PreviousCommentTableViewCell else {
                 
                 return cell
             }
-            
-            break
             
         case .sendComment:
             
@@ -104,29 +110,32 @@ class DetailManager: NSObject, UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
             
-            break
         case .productPic:
             
-            guard cell is ProductPicTableViewCell else {
+            guard let productCell = cell as? ProductPicTableViewCell else {
                 
                 return cell
             }
             
-            break
+            productCell.view.
             
         case .productItems:
             
-            guard cell is ProductItemTableViewCell else {
+            guard let productItemCell = cell as? ProductItemTableViewCell else {
                 
                 return cell
             }
             
-            break
-            
+            productItemCell.imageView = 
+
         }
         
         return cell
-
+        
     }
     
+    
+    
+    
 }
+

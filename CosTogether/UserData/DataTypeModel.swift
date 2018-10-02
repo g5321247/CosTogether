@@ -28,6 +28,8 @@ struct ArticleModel: DataProtocol {
     
     let postDate: Date
     
+    let tag: String
+    
     let user: UserModel
 
 }
@@ -46,11 +48,11 @@ struct UserModel: DataProtocol {
     
     let userName: String
     
-    let numberOfEvaluation: Int
+    var numberOfEvaluation: Int? = nil
     
-    let buyNumber: Int
+    var buyNumber: Int? = nil
     
-    let averageEvaluation: Double
+    var averageEvaluation: Double? = nil
     
 }
 
@@ -65,7 +67,7 @@ struct ProductModel: DataProtocol {
     var expiredDate: Date
     
     var price: String
-
+    
 }
 
 struct DescriptionModel: DataProtocol {

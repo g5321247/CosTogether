@@ -29,7 +29,6 @@
 		C83870752153AA8200E64493 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83870742153AA8200E64493 /* UIAlertController.swift */; };
 		C8497505215670AF00555855 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8497504215670AF00555855 /* TabViewController.swift */; };
 		C84975142157742A00555855 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975132157742A00555855 /* MainPageViewController.swift */; };
-		C84975162157758D00555855 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975152157758D00555855 /* UISearchBar.swift */; };
 		C849751A2157913E00555855 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975192157913E00555855 /* UISegmentedControl.swift */; };
 		C849751C2157918600555855 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751B2157918600555855 /* UIImage.swift */; };
 		C849751F21579BFE00555855 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849751E21579BFE00555855 /* Fonts.swift */; };
@@ -111,7 +110,6 @@
 		C849750821567FDB00555855 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		C849750C2156811300555855 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C84975132157742A00555855 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPageViewController.swift; path = /Users/georgeliu/Desktop/CosTogether/CosTogether/CosTogether/ViewController/MainPageViewController.swift; sourceTree = "<absolute>"; };
-		C84975152157758D00555855 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		C84975192157913E00555855 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
 		C849751B2157918600555855 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = /Users/georgeliu/Desktop/CosTogether/CosTogether/CosTogether/Extension/UIImage.swift; sourceTree = "<absolute>"; };
 		C849751E21579BFE00555855 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -533,7 +531,6 @@
 			children = (
 				C8FB98BA2161110E00C78926 /* UIViewController.swift */,
 				C8F8C9292152375900BDB0CE /* UIStoryboard.swift */,
-				C84975152157758D00555855 /* UISearchBar.swift */,
 				C84975192157913E00555855 /* UISegmentedControl.swift */,
 				C849751B2157918600555855 /* UIImage.swift */,
 				C810BB3421592A3D0064A656 /* UIView.swift */,
@@ -842,7 +839,6 @@
 				C810BB3521592A3D0064A656 /* UIView.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
 				C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */,
-				C84975162157758D00555855 /* UISearchBar.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,

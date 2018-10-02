@@ -14,6 +14,7 @@ class ProductItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var decreaseNumBot: UIButton!
     @IBOutlet weak var increaseNumBot: UIButton!
+    @IBOutlet weak var numberOfProductTxF: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +43,29 @@ class ProductItemTableViewCell: UITableViewCell {
             borderWidth: 2,
             borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         )
+    }
+    
+    @IBAction func increaseBotTapping(_ sender: UIButton) {
+        
+        guard  let number = Int(numberOfProductTxF.text!)  else {
+            return
+        }
+        
+        
+        numberOfProductTxF.text = "\(number + 1)"
+        
+    }
+    
+    @IBAction func decreaseBotTapping(_ sender: UIButton) {
+        
+        guard  let number = Int(numberOfProductTxF.text!)  else {
+            return
+        }
+        
+        
+        numberOfProductTxF.text = "\(number - 1)"
+
+        
     }
     
 }

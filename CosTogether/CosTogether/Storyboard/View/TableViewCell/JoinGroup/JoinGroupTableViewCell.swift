@@ -166,15 +166,15 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         controller.loadViewIfNeeded()
         
-        controller.averageEvaluationLbl.text = String(delegate.joinMember[indexPath.row].averageEvaluation)
+        controller.averageEvaluationLbl.text = String(delegate.joinMember[indexPath.row].averageEvaluation!)
         
         controller.userImage.image = UIImage(named: delegate.joinMember[indexPath.row].userImage) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
         
-        controller.buyNumberLbl.text = String(delegate.joinMember[indexPath.row].buyNumber)
+        controller.buyNumberLbl.text = String(delegate.joinMember[indexPath.row].buyNumber!)
         
         controller.userNameLbl.text = delegate.joinMember[indexPath.row].userName
         
-        controller.numberOfEvaluationLbl.text =  String(delegate.joinMember[indexPath.row].numberOfEvaluation)
+        controller.numberOfEvaluationLbl.text =  String(delegate.joinMember[indexPath.row].numberOfEvaluation!)
 
         controller.userType = .otherUser
         

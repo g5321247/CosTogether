@@ -11,6 +11,7 @@ import UIKit
 class OrderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var orderBot: UIButton!
+    @IBOutlet weak var amoutLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,5 +33,14 @@ class OrderTableViewCell: UITableViewCell {
         orderBot.cornerSetup(cornerRadius: 3)
         
     }
+    
+    #warning ("update to the bill,扣掉原單的數量,reload 整個 tableView")
+    
+    @IBAction func orderTapping(_ sender: UIButton) {
+        
+        
+        
+    }
+    
     
 }

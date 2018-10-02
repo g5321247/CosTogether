@@ -11,15 +11,35 @@ import UIKit
 class ArticleInfoView: UIView {
     
     @IBOutlet weak var authorImageBot: UIButton!
-    @IBOutlet weak var authorNameLbl: UILabel?
     @IBOutlet weak var postDateLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var tagLbl: UILabel!
     @IBOutlet weak var articleTitleLbl: UILabel!
-    @IBOutlet weak var productImage: UIImageView?
     
+    // 同一個 view 的判斷
+    @IBOutlet weak var productImage: UIImageView?
+    @IBOutlet weak var authorNameLbl: UILabel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+    }
+    
+    func updateArticle(article: ArticleModel) {
+        
+        #warning ("用 sd 去設定 image")
+//        authorImageBot.imageView?.image
+        
+        authorNameLbl?.text = article.user.userName
+        
+//        postDateLbl.text = article.postDate
+        
+        locationLbl.text = article.location
+        
+        #warning ("改成 Array")
+        tagLbl.text = article.tag
+        
+        articleTitleLbl.text = article.articleTitle
         
     }
     

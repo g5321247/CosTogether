@@ -453,18 +453,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" text="" placeholder="輸入尋找商品" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-uO-EUr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezQ-IA-nGW">
-                                <rect key="frame" x="0.0" y="180" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
                                 <connections>
                                     <segue destination="Hgx-q6-bDu" kind="embed" id="jL2-EA-vwP"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-56-6AI">
-                                <rect key="frame" x="0.0" y="120" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="u0y-TI-aOe"/>
                                 </constraints>
@@ -485,14 +481,11 @@
                         <constraints>
                             <constraint firstItem="jzf-56-6AI" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="75X-hw-IqN"/>
                             <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="ezQ-IA-nGW" secondAttribute="trailing" id="7Fh-yi-0jX"/>
-                            <constraint firstItem="uAy-uO-EUr" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="NhC-0l-60b"/>
+                            <constraint firstItem="jzf-56-6AI" firstAttribute="top" secondItem="gvK-E9-Ud5" secondAttribute="top" id="LbV-ou-RcX"/>
                             <constraint firstItem="gvK-E9-Ud5" firstAttribute="bottom" secondItem="ezQ-IA-nGW" secondAttribute="bottom" id="Pn2-90-fl5"/>
                             <constraint firstItem="ezQ-IA-nGW" firstAttribute="leading" secondItem="gvK-E9-Ud5" secondAttribute="leading" id="g2C-6z-dmN"/>
                             <constraint firstItem="ezQ-IA-nGW" firstAttribute="top" secondItem="jzf-56-6AI" secondAttribute="bottom" constant="20" id="oQo-aX-0gr"/>
                             <constraint firstItem="gvK-E9-Ud5" firstAttribute="trailing" secondItem="jzf-56-6AI" secondAttribute="trailing" id="udK-sd-Nnp"/>
-                            <constraint firstItem="uAy-uO-EUr" firstAttribute="top" secondItem="gvK-E9-Ud5" secondAttribute="top" id="wD5-N1-RQd"/>
-                            <constraint firstItem="jzf-56-6AI" firstAttribute="top" secondItem="uAy-uO-EUr" secondAttribute="bottom" id="wxH-8O-exN"/>
-                            <constraint firstItem="uAy-uO-EUr" firstAttribute="trailing" secondItem="gvK-E9-Ud5" secondAttribute="trailing" id="zHL-Px-7CA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvK-E9-Ud5"/>
                     </view>
@@ -511,7 +504,6 @@
                     <connections>
                         <outlet property="locationBot" destination="hXr-gX-cu7" id="aeA-PH-6Mu"/>
                         <outlet property="productTypeSC" destination="jzf-56-6AI" id="CzQ-DU-y2p"/>
-                        <outlet property="searchThingBar" destination="uAy-uO-EUr" id="FGZ-9Q-Hqn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCA-yi-gfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -523,17 +515,17 @@
             <objects>
                 <viewController id="Hgx-q6-bDu" customClass="ProductViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwi-xF-pWn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="202.5" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="230.5" width="192" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-mo-2p2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wkN-XX-dH9">
                                     <size key="itemSize" width="50" height="50"/>
@@ -578,7 +570,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="udu-e5-3uc" customClass="DetailViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2w-AY-NCo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-mv-nDr" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
@@ -624,7 +616,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-xc-ffJ">
-                                <rect key="frame" x="0.0" y="95" width="375" height="343"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -690,7 +682,6 @@
         <!--我的揪團-->
         <scene sceneID="xup-TF-g87">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ah-OZ-iZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXb-6p-dV0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的揪團" image="shopping" id="stK-AV-ZB2"/>
                     <toolbarItems/>
@@ -703,6 +694,7 @@
                         <segue destination="may-54-hWL" kind="relationship" relationship="rootViewController" id="9Sk-cW-TGA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ah-OZ-iZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="1360.569715142429"/>
         </scene>

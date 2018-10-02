@@ -8,8 +8,6 @@
 import UIKit
 
 class MainPageViewController: UIViewController {
-
-    @IBOutlet weak var searchThingBar: UISearchBar!
     
     @IBOutlet weak var locationBot: UIButton!
     @IBOutlet weak var productTypeSC: UISegmentedControl!

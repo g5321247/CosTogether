@@ -25,6 +25,7 @@ class PreviousCommentTableViewCell: UITableViewCell {
 
     }
     
+    
     private func setup() {
         
         commenterBotSetup()

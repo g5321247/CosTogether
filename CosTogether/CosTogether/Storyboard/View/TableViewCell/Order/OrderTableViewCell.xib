@@ -44,6 +44,9 @@
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="下單"/>
+                        <connections>
+                            <action selector="orderTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z03-dG-ys1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -57,6 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amoutLbl" destination="Zhr-YZ-tzv" id="oXv-Ml-ucC"/>
                 <outlet property="orderBot" destination="ora-65-4Kq" id="6Up-hA-VUT"/>
             </connections>
             <point key="canvasLocation" x="119.2" y="56.671664167916049"/>
