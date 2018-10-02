@@ -50,7 +50,10 @@ extension SendCommentTableViewCell: UITextViewDelegate {
     func adjustTextViewHeight() {
         
         let fixedWidth = baseView.messgaeTxtView.frame.size.width
-        let newSize = baseView.messgaeTxtView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = baseView.messgaeTxtView.sizeThatFits(
+            CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
+            )
+            
         baseView.textHeightConstraint.constant = newSize.height
                 
         self.layoutIfNeeded()

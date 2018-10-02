@@ -6,9 +6,11 @@
 //  Copyright © 2018 George Liu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum CellClass {
+    
+    #warning ("把 comment 弄回來")
     
     case productPic
     case articleInfo
@@ -17,48 +19,82 @@ enum CellClass {
     case order
     case productDetail
     case commnetTitle
-    case previousComment(Int)
+    case previousComments(Int)
     case sendComment
     
     func numberOfRow() -> Int {
         
         switch self {
-            
-        case .productPic:
-            
-            return 1
-        
-        case .articleInfo:
-            
-            return 1
-        
-        case .productItems(let number):
-            
-            return number
-        
-        case .joinGroup:
-            
-            return 1
-            
-        case .order:
-            
-            return 1
-        
-        case .productDetail:
-            
-            return 1
-        
-        case .previousComment(let number):
+
+        case .productItems (let number):
             
             return number
             
-        case .commnetTitle:
+        case .previousComments (let number):
+            
+            return number
+            
+        default:
             
             return 1
-        case .sendComment:
+        }
+    }
+    
+    func cellForTableView(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        
+        switch self {
             
-            return 1
+        default :
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: identified(), for: indexPath)
+            
+            return cell
             
         }
     }
+    
+    func identified() -> String {
+        
+        switch self {
+            
+        case .productPic:
+            
+            return String(describing: ProductPicTableViewCell.self)
+        
+        case .articleInfo:
+        
+            return String(describing: ArticleInfoTableViewCell.self)
+
+        case .joinGroup:
+            
+            return String(describing: JoinGroupTableViewCell.self)
+
+        case .productItems:
+            
+            return String(describing: ProductItemTableViewCell.self)
+            
+        case .order:
+            
+            return String(describing: OrderTableViewCell.self)
+            
+        case .productDetail:
+            
+            return String(describing: ProductDetailTableViewCell.self)
+        
+        case .commnetTitle:
+            
+            return String(describing: CommonTitleTableViewCell.self)
+        
+        case .previousComments:
+            
+            return String(describing: SendCommentTableViewCell.self)
+            
+        case .sendComment:
+            
+            return String(describing: SendCommentTableViewCell.self)
+            
+        }
+        
+    }
+    
 }

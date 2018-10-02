@@ -19,46 +19,65 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     var testComment:[String] = ["123", "主揪好帥", "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"]
         
-    private lazy var sections: [CellClass] = [
-        .productPic,
-        .articleInfo,
-        .joinGroup,
-        .productItems(testArray.count),
-        .order,
-        .productDetail,
-        .commnetTitle,
-        .previousComment(testComment.count),
-        .sendComment
-    ]
+//    private lazy var sections: [CellClass] = [
+//        .productPic,
+//        .articleInfo,
+//        .joinGroup,
+//        .productItems(testArray.count),
+//        .order,
+//        .productDetail,
+//        .commnetTitle,
+//        .previousComment(testComment.count),
+//        .sendComment
+//    ]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
-    var author: UserDataModel = UserDataModel(
+    var author: [UserModel] = [
+        UserModel.init(
         userImage: "testUser",
         userName: "金城武",
         numberOfEvaluation: 2,
         buyNumber: 3,
         averageEvaluation: 5.0
         )
+    ]
     
-    var members: [UserDataModel] = [
-        UserDataModel(
+    var article: [ArticleModel] = []
+    
+    var joinMember: [UserModel] = [
+        UserModel(
             userImage: "testUser2",
             userName: "林志玲",
             numberOfEvaluation: 100,
             buyNumber: 4,
             averageEvaluation: 5.0
         ),
-        UserDataModel(
+        UserModel(
             userImage: "",
             userName: "白目",
             numberOfEvaluation: 1000,
             buyNumber: 999,
             averageEvaluation: 1.2
-        )]
+            )
+    ]
     
-    var comment: [Comment] = []
+    var products: [ProductModel] = []
+    var productDetail: [DescriptionModel] = []
+    var comments: [CommentModel] = []
+    
+    lazy var allData: [DataType] = [
+        DataType(dataType: .productPic, data: author),
+        DataType(dataType: .articleInfo, data: article),
+        DataType(dataType: .joinGroup, data: joinMember),
+        DataType(dataType: .productItems(products.count), data: products),
+        DataType(dataType: .order, data: []),
+        DataType(dataType: .productDetail, data: productDetail),
+        DataType(dataType: .commnetTitle, data: []),
+        DataType(dataType: .previousComments(comments.count), data: comments),
+        DataType(dataType: .sendComment, data: []),
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,8 +151,16 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
-        members.append(
-            UserDataModel(
+//        guard let cell = tableView.dequeueReusableCell(
+//            withIdentifier: String(describing: JoinGroupTableViewCell.self)
+//            ) as? JoinGroupTableViewCell else {
+//
+//                return
+//
+//        }
+        
+        joinMember.append(
+            UserModel(
                 userImage: currentUser.photoURL!.absoluteString,
                 userName: currentUser.displayName!,
                 numberOfEvaluation: 2,
@@ -141,6 +168,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 averageEvaluation: 5.0
             )
         )
+        
+//        cell.collectionView.reloadData()
         
     }
     
@@ -160,7 +189,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 //
 //            return
 //        }
-        controller.userInfo = author
+        controller.userInfo = author.first
         controller.userType = .otherUser
         
         controller.loadViewIfNeeded()
@@ -175,7 +204,7 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch sections[indexPath.section] {
+        switch  allData[indexPath.section].dataType {
             
         case .productPic:
 
@@ -205,7 +234,7 @@ extension DetailViewController: UITableViewDelegate {
             
             return  self.view.frame.width * (35 / 375)
         
-        case .previousComment:
+        case .previousComments:
             
             return  UITableView.automaticDimension
         case .sendComment:
@@ -219,7 +248,7 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        switch sections[section] {
+        switch allData[section].dataType {
             
         case .productDetail:
 
@@ -240,17 +269,17 @@ extension DetailViewController: UITableViewDelegate {
 extension DetailViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return allData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return sections[section].numberOfRow()
+        return allData[section].dataType.numberOfRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch sections[indexPath.section] {
+        switch allData[indexPath.section].dataType {
             
         case .productPic:
             
@@ -352,7 +381,7 @@ extension DetailViewController: UITableViewDataSource {
             
             return cell
 
-        case .previousComment:
+        case .previousComments:
             
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: String(describing: PreviousCommentTableViewCell.self)

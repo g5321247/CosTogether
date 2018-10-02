@@ -10,7 +10,7 @@ import UIKit
 
 protocol JoinGroupDelegate: AnyObject {
     
-    var members: [UserDataModel] { get set }
+    var joinMember: [UserModel] { get set }
     
     func showTheView(controller: UIViewController)
 }
@@ -28,7 +28,7 @@ class JoinGroupTableViewCell: UITableViewCell {
         setup()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -65,6 +65,11 @@ class JoinGroupTableViewCell: UITableViewCell {
         
     }
     
+    func reloadCollectionCell() {
+        
+        collectionView.reloadData()
+    }
+    
 }
 
 extension JoinGroupTableViewCell: UICollectionViewDataSource {
@@ -75,7 +80,7 @@ extension JoinGroupTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return delegate?.members.count ?? 0
+        return delegate?.joinMember.count ?? 0
     }
     
     func collectionView(
@@ -94,7 +99,7 @@ extension JoinGroupTableViewCell: UICollectionViewDataSource {
         }
         
         cell.memberImage.image = UIImage(
-            named: delegate!.members[indexPath.row].userImage
+            named: delegate!.joinMember[indexPath.row].userImage
         ) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
         
         return cell
@@ -161,15 +166,15 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         controller.loadViewIfNeeded()
         
-        controller.averageEvaluationLbl.text = String(delegate.members[indexPath.row].averageEvaluation)
+        controller.averageEvaluationLbl.text = String(delegate.joinMember[indexPath.row].averageEvaluation)
         
-        controller.userImage.image = UIImage(named: delegate.members[indexPath.row].userImage) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
+        controller.userImage.image = UIImage(named: delegate.joinMember[indexPath.row].userImage) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
         
-        controller.buyNumberLbl.text = String(delegate.members[indexPath.row].buyNumber)
+        controller.buyNumberLbl.text = String(delegate.joinMember[indexPath.row].buyNumber)
         
-        controller.userNameLbl.text = delegate.members[indexPath.row].userName
+        controller.userNameLbl.text = delegate.joinMember[indexPath.row].userName
         
-        controller.numberOfEvaluationLbl.text =  String(delegate.members[indexPath.row].numberOfEvaluation)
+        controller.numberOfEvaluationLbl.text =  String(delegate.joinMember[indexPath.row].numberOfEvaluation)
 
         controller.userType = .otherUser
         

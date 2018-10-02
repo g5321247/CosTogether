@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     var userType: UserType = .currentUser
     
     #warning ("userInfo == current 的 uuid 時，才為 current user")
-    var userInfo: UserDataModel?
+    var userInfo: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
