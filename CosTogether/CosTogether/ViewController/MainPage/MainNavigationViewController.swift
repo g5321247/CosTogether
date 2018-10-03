@@ -13,8 +13,6 @@ class MainNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.barTintColor = UIColor.white
-        
         setFont()
     }
     

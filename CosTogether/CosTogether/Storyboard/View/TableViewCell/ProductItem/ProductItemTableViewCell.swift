@@ -128,7 +128,10 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        guard textField.text != "" else {
+        guard let productModel = productModel,
+            let number = Int(textField.text!),
+            number > 0 && number <= productModel.numberOfItem,
+            textField.text != "" else {
             
             textField.text = "0"
             caculation(price: 0, quntity: 0)
@@ -136,5 +139,7 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
             return
         }
         
+        caculation(price: productModel.price, quntity: number)
+
     }
 }

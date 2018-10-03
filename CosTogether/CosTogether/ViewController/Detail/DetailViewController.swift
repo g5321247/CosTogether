@@ -92,7 +92,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         super.viewDidLoad()
         
         setup()
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setup() {
