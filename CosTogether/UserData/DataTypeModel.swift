@@ -44,15 +44,24 @@ struct CommentModel: DataProtocol {
 
 struct UserModel: DataProtocol {
     
+    #warning ("uuid 記得加")
+//    let uuid:
+    
     let userImage: String
     
     let userName: String
     
-    var numberOfEvaluation: Int? = nil
+    var numberOfEvaluation: Int?
     
-    var buyNumber: Int? = nil
+    var buyNumber: Int?
     
-    var averageEvaluation: Double? = nil
+    var averageEvaluation: Double?
+    
+    static func groupMember(image: String, name: String) -> UserModel {
+        
+        return UserModel(userImage: image, userName: name, numberOfEvaluation: nil, buyNumber: nil, averageEvaluation: nil)
+        
+    }
     
 }
 
@@ -60,13 +69,19 @@ struct ProductModel: DataProtocol {
     
     var productName: String
     
-    var productImage: String
+    var productImage: String?
     
     var numberOfItem: Int
     
-    var expiredDate: Date
+    var expiredDate: Date?
     
     var price: Int
+    
+    static func purchasingProduct(name: String,number: Int, totalCost: Int) -> ProductModel {
+        
+        return ProductModel(productName: name, productImage: nil, numberOfItem: number, expiredDate: nil, price: totalCost)
+        
+    }
     
 }
 

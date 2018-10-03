@@ -76,9 +76,6 @@
                         <state key="normal" title="+">
                             <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
-                        <connections>
-                            <action selector="increaseBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zda-7x-O9i"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-Va-8je">
                         <rect key="frame" x="180.5" y="42.5" width="30" height="30"/>
@@ -89,9 +86,6 @@
                         <state key="normal" title="-">
                             <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
-                        <connections>
-                            <action selector="decreaseBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6UN-bj-yvN"/>
-                        </connections>
                     </button>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ed2-gs-P8W">
                         <rect key="frame" x="220.5" y="42.5" width="50" height="30"/>

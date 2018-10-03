@@ -8,8 +8,17 @@
 
 import UIKit
 
+protocol CellDelegate: AnyObject {
+    
+    func cellButtonTapping(_ cell: UITableViewCell)
+}
+
 class OrderTableViewCell: UITableViewCell {
 
+    weak var delegate: CellDelegate?
+    
+    var totalCost: Int = 0
+    
     @IBOutlet weak var orderBot: UIButton!
     @IBOutlet weak var amoutLbl: UILabel!
     
@@ -34,13 +43,19 @@ class OrderTableViewCell: UITableViewCell {
         
     }
     
+    func updateTotalPrice(purchasing: ProductModel) {
+        
+        totalCost += purchasing.price
+        
+        amoutLbl.text = String(totalCost)
+    }
+    
     #warning ("update to the bill,扣掉原單的數量,reload 整個 tableView")
     
     @IBAction func orderTapping(_ sender: UIButton) {
         
-        
-        
+        delegate?.cellButtonTapping(self)
+        amoutLbl.text = "0"
     }
-    
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CellClass {
+enum CellClass: Equatable {
     
     #warning ("把 comment 弄回來")
     

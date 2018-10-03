@@ -42,8 +42,9 @@ extension DetailManager: UITableViewDataSource {
         return delegate.allData[section].dataType.numberOfRow()
     }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
         ) -> UITableViewCell {
         
         guard let delegate = delegate else {

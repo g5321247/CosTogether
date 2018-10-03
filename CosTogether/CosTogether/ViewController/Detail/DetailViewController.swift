@@ -65,16 +65,24 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     var products: [ProductModel] = [
         ProductModel(
-            productName: "好吃ㄉ",
+            productName: "好吃的",
             productImage: "123",
             numberOfItem: 2,
             expiredDate: Date(),
-            price: 999
-            )
+            price: 20
+        ),  ProductModel (
+            productName: "難吃的",
+            productImage: "123",
+            numberOfItem: 4,
+            expiredDate: Date(),
+            price: 10
+        )
+
     ]
     
     var productDetail: [DescriptionModel] = []
     var comments: [CommentModel] = []
+    var totalCost: Int = 0
     
     lazy var allData: [DataType] = [
         DataType(dataType: .productPic, data: author),
@@ -150,14 +158,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         show(controller, sender: nil)
         
     }
-    
-    @objc func buyProduct(_ sender: UIButton) {
-        
-        guard let currentUser =  Auth.auth().currentUser else {
-            
-            return
-            
-        }
         
 //        guard let cell = tableView.dequeueReusableCell(
 //            withIdentifier: String(describing: JoinGroupTableViewCell.self)
@@ -167,19 +167,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 //
 //        }
         
-        joinMember.append(
-            UserModel(
-                userImage: currentUser.photoURL!.absoluteString,
-                userName: currentUser.displayName!,
-                numberOfEvaluation: 2,
-                buyNumber: 3,
-                averageEvaluation: 5.0
-            )
-        )
+    
         
 //        cell.collectionView.reloadData()
         
-    }
+
     
     #warning ("如何用在同一個 function")
     @objc func photoTapping(_ sender: UIButton) {
@@ -352,6 +344,18 @@ extension DetailViewController: UITableViewDataSource {
             cell.productModel = data
             cell.updateView(product: data)
             
+            cell.updatePurchasing { [weak self] (purchase) in
+                
+                guard let index = self?.allData.firstIndex(where: {$0.dataType == .order}),
+                    let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? OrderTableViewCell else {
+                    
+                    return
+                }
+                    
+                cell.updateTotalPrice(purchasing: purchase)
+                
+            }
+            
             return cell
         
         case .order:
@@ -363,8 +367,8 @@ extension DetailViewController: UITableViewDataSource {
                 return UITableViewCell()
                     
             }
-        
-            cell.orderBot.addTarget(self, action: #selector (buyProduct(_:)), for: .touchUpInside)
+            
+            cell.delegate = self
             
             return cell
             
@@ -432,4 +436,41 @@ extension DetailViewController: JoinGroupDelegate {
         
     }
     
+}
+
+extension DetailViewController: CellDelegate {
+    
+    func cellButtonTapping(_ cell: UITableViewCell) {
+        
+//        tableView.indexPath(for: cell)
+        
+        guard let currentUser =  Auth.auth().currentUser else {
+            
+            return
+            
+        }
+        
+        //        guard let cell = tableView.dequeueReusableCell(
+        //            withIdentifier: String(describing: JoinGroupTableViewCell.self)
+        //            ) as? JoinGroupTableViewCell else {
+        //
+        //                return
+        //
+        //        }
+        
+        joinMember.append(
+            UserModel(
+                userImage: currentUser.photoURL!.absoluteString,
+                userName: currentUser.displayName!,
+                numberOfEvaluation: 2,
+                buyNumber: 3,
+                averageEvaluation: 5.0
+            )
+        )
+
+        #warning ("更新資料")
+        
+        self.tableView.reloadData()
+    }
+
 }

@@ -24,6 +24,8 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBOutlet weak var numberOfProductTxF: UITextField!
     
     var productModel: ProductModel?
+    var purchasingProduct: ProductModel?
+    var handler: ((ProductModel) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,12 +69,19 @@ class ProductItemTableViewCell: UITableViewCell {
         )
     }
     
-    private func caculation(price: Int, quntity: Int) {
+    private func caculation(price: Int, quantity: Int, productName: String) {
         
-        buyNumberLbl.text = String(quntity)
+        buyNumberLbl.text = String(quantity)
         
-        totalPriceLbl.text = "\(price * quntity)"
-
+        purchasingProduct = ProductModel.purchasingProduct(
+            name: productName,
+            number: quantity,
+            totalCost: (price * quantity)
+            )
+        
+        totalPriceLbl.text = "\(price * quantity)"
+        
+        handler?(purchasingProduct!)
     }
     
     @IBAction func increaseBotTapping(_ sender: UIButton) {
@@ -82,13 +91,19 @@ class ProductItemTableViewCell: UITableViewCell {
             number < (productModel.numberOfItem) else {
                 
                 numberOfProductTxF.text = "0"
-                caculation(price: 0, quntity: 0)
+                caculation(price: 0, quantity: 0, productName: "")
 
                 return
         }
         
         numberOfProductTxF.text = "\(number + 1)"
-        caculation(price: productModel.price, quntity: number + 1)
+        
+        caculation(
+            price: productModel.price,
+            quantity: number + 1,
+            productName: productModel.productName
+        )
+        
     }
     
     @IBAction func decreaseBotTapping(_ sender: UIButton) {
@@ -97,13 +112,23 @@ class ProductItemTableViewCell: UITableViewCell {
             let number = Int(numberOfProductTxF.text!),
             number > 0 else {
             
-            caculation(price: 0, quntity: 0)
-            
+            caculation(price: 0, quantity: 0, productName: "")
+
             return
         }
         
         numberOfProductTxF.text = "\(number - 1)"
-        caculation(price: productModel.price, quntity: number - 1)
+        caculation(
+            price: productModel.price,
+            quantity: number - 1,
+            productName: productModel.productName
+        )
+        
+    }
+    
+    func updatePurchasing(purchasing: @escaping (ProductModel) -> Void) {
+        
+        handler = purchasing
     }
     
 }
@@ -117,12 +142,16 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
             number <= (productModel.numberOfItem) else {
             
             textField.text = ""
-            caculation(price: 0, quntity: 0)
-                
+            caculation(price: 0, quantity: 0, productName: "")
+
             return
         }
         
-        caculation(price: productModel.price, quntity: number)
+        caculation(
+            price: productModel.price,
+            quantity: number,
+            productName: productModel.productName
+        )
 
     }
     
@@ -134,12 +163,17 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
             textField.text != "" else {
             
             textField.text = "0"
-            caculation(price: 0, quntity: 0)
+            caculation(price: 0, quantity: 0, productName: "")
 
             return
         }
         
-        caculation(price: productModel.price, quntity: number)
+        caculation(
+            price: productModel.price,
+            quantity: number,
+            productName: productModel.productName
+        )
 
     }
+    
 }
