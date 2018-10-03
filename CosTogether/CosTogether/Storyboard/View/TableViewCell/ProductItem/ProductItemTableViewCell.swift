@@ -21,11 +21,11 @@ class ProductItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var decreaseNumBot: UIButton!
     @IBOutlet weak var increaseNumBot: UIButton!
-    @IBOutlet weak var numberOfProductTxF: UITextField!
     
     var productModel: ProductModel?
-    var purchasingProduct: ProductModel?
     var handler: ((ProductModel) -> Void)?
+    var totalCost: Int = 0
+    var totalQuantity: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +50,6 @@ class ProductItemTableViewCell: UITableViewCell {
     private func setup() {
         
         setButtonView()
-        numberOfProductTxF.delegate = self
         
     }
     
@@ -67,40 +66,42 @@ class ProductItemTableViewCell: UITableViewCell {
             borderWidth: 2,
             borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         )
+        
     }
     
     private func caculation(price: Int, quantity: Int, productName: String) {
         
-        buyNumberLbl.text = String(quantity)
+        totalCost += (price * quantity)
+        totalQuantity += quantity
         
-        purchasingProduct = ProductModel.purchasingProduct(
-            name: productName,
-            number: quantity,
-            totalCost: (price * quantity)
-            )
+        buyNumberLbl.text = String(totalQuantity)
+
+            handler?(
+                ProductModel.purchasingProduct(
+                name: productName,
+                number: quantity,
+                totalCost: (price * quantity)
+                )
+        )
+
+        totalPriceLbl.text = "\(totalCost)"
         
-        totalPriceLbl.text = "\(price * quantity)"
-        
-        handler?(purchasingProduct!)
     }
     
     @IBAction func increaseBotTapping(_ sender: UIButton) {
         
         guard let productModel = productModel,
-            let number = Int(numberOfProductTxF.text!),
+            let number = Int(buyNumberLbl.text!),
             number < (productModel.numberOfItem) else {
                 
-                numberOfProductTxF.text = "0"
-                caculation(price: 0, quantity: 0, productName: "")
-
                 return
         }
         
-        numberOfProductTxF.text = "\(number + 1)"
+        buyNumberLbl.text = "\(number + 1)"
         
         caculation(
             price: productModel.price,
-            quantity: number + 1,
+            quantity: 1,
             productName: productModel.productName
         )
         
@@ -109,7 +110,7 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBAction func decreaseBotTapping(_ sender: UIButton) {
         
         guard let productModel = productModel,
-            let number = Int(numberOfProductTxF.text!),
+            let number = Int(buyNumberLbl.text!),
             number > 0 else {
             
             caculation(price: 0, quantity: 0, productName: "")
@@ -117,10 +118,10 @@ class ProductItemTableViewCell: UITableViewCell {
             return
         }
         
-        numberOfProductTxF.text = "\(number - 1)"
+        buyNumberLbl.text = "\(number - 1)"
         caculation(
             price: productModel.price,
-            quantity: number - 1,
+            quantity: -1,
             productName: productModel.productName
         )
         
@@ -129,51 +130,6 @@ class ProductItemTableViewCell: UITableViewCell {
     func updatePurchasing(purchasing: @escaping (ProductModel) -> Void) {
         
         handler = purchasing
-    }
-    
-}
-
-extension ProductItemTableViewCell: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        guard let number = Int(textField.text!), number > 0,
-            let productModel = productModel,
-            number <= (productModel.numberOfItem) else {
-            
-            textField.text = ""
-            caculation(price: 0, quantity: 0, productName: "")
-
-            return
-        }
-        
-        caculation(
-            price: productModel.price,
-            quantity: number,
-            productName: productModel.productName
-        )
-
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        guard let productModel = productModel,
-            let number = Int(textField.text!),
-            number > 0 && number <= productModel.numberOfItem,
-            textField.text != "" else {
-            
-            textField.text = "0"
-            caculation(price: 0, quantity: 0, productName: "")
-
-            return
-        }
-        
-        caculation(
-            price: productModel.price,
-            quantity: number,
-            productName: productModel.productName
-        )
-
     }
     
 }

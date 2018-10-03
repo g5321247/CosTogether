@@ -351,7 +351,7 @@ extension DetailViewController: UITableViewDataSource {
                     
                     return
                 }
-                    
+                
                 cell.updateTotalPrice(purchasing: purchase)
                 
             }
