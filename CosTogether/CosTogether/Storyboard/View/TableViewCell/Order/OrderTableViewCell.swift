@@ -47,15 +47,19 @@ class OrderTableViewCell: UITableViewCell {
         
         totalCost += purchasing.price
         
-        amoutLbl.text = String(totalCost)
+        amoutLbl.text = String(totalCost) + " 元"
     }
     
     #warning ("update to the bill,扣掉原單的數量,reload 整個 tableView")
     
     @IBAction func orderTapping(_ sender: UIButton) {
         
+        guard Int.parse(from: amoutLbl.text!) != 0 else {
+            return
+        }
+        
         delegate?.cellButtonTapping(self)
-        amoutLbl.text = "0"
+        amoutLbl.text = "0 元"
     }
     
 }

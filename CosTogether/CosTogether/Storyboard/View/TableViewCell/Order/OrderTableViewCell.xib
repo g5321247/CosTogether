@@ -17,26 +17,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="OrderTableViewCell" customModule="CosTogether" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="416" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="416" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總計" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-Dh-6N9">
-                        <rect key="frame" x="10" y="15" width="35" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-YZ-tzv">
-                        <rect key="frame" x="349.5" y="15" width="10.5" height="21"/>
+                        <rect key="frame" x="371" y="10" width="35" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ora-65-4Kq">
-                        <rect key="frame" x="290" y="46" width="70" height="36"/>
+                        <rect key="frame" x="15" y="32" width="70" height="36"/>
                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="Orq-za-cae"/>
@@ -48,14 +42,21 @@
                             <action selector="orderTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z03-dG-ys1"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-YZ-tzv">
+                        <rect key="frame" x="77" y="33.5" width="329" height="33"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ora-65-4Kq" firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" id="00m-6E-NoM"/>
-                    <constraint firstItem="Zhr-YZ-tzv" firstAttribute="centerY" secondItem="hRl-Dh-6N9" secondAttribute="centerY" id="5uf-pr-OgT"/>
-                    <constraint firstItem="hRl-Dh-6N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Gh0-Ki-Nlk"/>
-                    <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="15" id="NzK-Ia-qfX"/>
-                    <constraint firstItem="ora-65-4Kq" firstAttribute="top" secondItem="Zhr-YZ-tzv" secondAttribute="bottom" constant="10" id="uFe-js-6uu"/>
-                    <constraint firstItem="hRl-Dh-6N9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yaG-W8-ksC"/>
+                    <constraint firstItem="ora-65-4Kq" firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="leading" constant="8" id="00m-6E-NoM"/>
+                    <constraint firstItem="hRl-Dh-6N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Gh0-Ki-Nlk"/>
+                    <constraint firstItem="Zhr-YZ-tzv" firstAttribute="centerY" secondItem="ora-65-4Kq" secondAttribute="centerY" id="OzA-oB-BED"/>
+                    <constraint firstItem="ora-65-4Kq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="TB0-ZI-VxT"/>
+                    <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="10" id="YPN-u8-a9C"/>
+                    <constraint firstItem="ora-65-4Kq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eEg-97-LmS"/>
+                    <constraint firstAttribute="trailing" secondItem="hRl-Dh-6N9" secondAttribute="trailing" constant="10" id="w5S-Hc-psm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -63,7 +64,7 @@
                 <outlet property="amoutLbl" destination="Zhr-YZ-tzv" id="oXv-Ml-ucC"/>
                 <outlet property="orderBot" destination="ora-65-4Kq" id="6Up-hA-VUT"/>
             </connections>
-            <point key="canvasLocation" x="119.2" y="56.671664167916049"/>
+            <point key="canvasLocation" x="110.40000000000001" y="56.671664167916049"/>
         </tableViewCell>
     </objects>
 </document>
