@@ -23,6 +23,8 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBOutlet weak var increaseNumBot: UIButton!
     @IBOutlet weak var numberOfProductTxF: UITextField!
     
+    var productModel: ProductModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -33,19 +35,21 @@ class ProductItemTableViewCell: UITableViewCell {
 
     }
     
-    func updateView(product: ProductModel) {
+     func updateView(product: ProductModel) {
         
         #warning ("照片更新")
 //        productImage.sd_setImage(with: , completed: )
         productNameLbl.text = product.productName
         itemPrice.text = String(product.price)
-        amoutQuantity.text = String(product.numberOfItem)
-        
+        amoutQuantity.text = "總數 \(product.numberOfItem)"
+        expiredDate.text = "有效期限 \(product.expiredDate)"
     }
     
     private func setup() {
+        
         setButtonView()
         numberOfProductTxF.delegate = self
+        
     }
     
     private func setButtonView() {
@@ -63,83 +67,43 @@ class ProductItemTableViewCell: UITableViewCell {
         )
     }
     
-    private func caculation() {
+    private func caculation(price: Int, quntity: Int) {
         
-        guard numberOfProductTxF.text != "" else {
-            
-            buyNumberLbl.text = "0"
-            totalPriceLbl.text = "0"
-            
-            return
-        }
+        buyNumberLbl.text = String(quntity)
         
-        guard  let totalNumber = Int(buyNumberLbl.text!) else {
-            return
-        }
-        
-        guard let price = Int(itemPrice.text!) else {
-            return
-        }
-        
-        buyNumberLbl.text = numberOfProductTxF.text
-
-        totalPriceLbl.text = "\(totalNumber * price)"
+        totalPriceLbl.text = "\(price * quntity)"
 
     }
     
     @IBAction func increaseBotTapping(_ sender: UIButton) {
         
-        guard numberOfProductTxF.text! != "" else {
-            
-            numberOfProductTxF.text! = "0"
-            return
-        }
-        
-        guard  let number = Int.parse(from: numberOfProductTxF.text!)  else {
-            
-            #warning ("通知 controller present")
-//            self.present(
-//                UIAlertController.errorMessage(errorType:
-//                    UserMiscouductError.putStrInPrice),
-//                animated: true,
-//                completion: nil
-//            )
-            
-            return
-        }
-        
-        guard let quantity = Int.parse(from: amoutQuantity.text!) else {
-            return
-        }
-        
-        guard number < quantity else {
-            
-            numberOfProductTxF.text = "0"
-            return
+        guard let productModel = productModel,
+            let number = Int(numberOfProductTxF.text!),
+            number < (productModel.numberOfItem) else {
+                
+                numberOfProductTxF.text = "0"
+                caculation(price: 0, quntity: 0)
+
+                return
         }
         
         numberOfProductTxF.text = "\(number + 1)"
-        caculation()
+        caculation(price: productModel.price, quntity: number + 1)
     }
     
     @IBAction func decreaseBotTapping(_ sender: UIButton) {
         
-        if numberOfProductTxF.text! == "" {
+        guard let productModel = productModel,
+            let number = Int(numberOfProductTxF.text!),
+            number > 0 else {
             
-            numberOfProductTxF.text! = "0"
-        }
-        
-        guard  let number = Int.parse(from: numberOfProductTxF.text!) else {
-            return
-        }
-        
-        guard number > 0 else {
+            caculation(price: 0, quntity: 0)
             
             return
         }
-
+        
         numberOfProductTxF.text = "\(number - 1)"
-        caculation()
+        caculation(price: productModel.price, quntity: number - 1)
     }
     
 }
@@ -149,25 +113,28 @@ extension ProductItemTableViewCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         guard let number = Int(textField.text!), number > 0,
-            let totalQuantity = Int(amoutQuantity.text!), number <= totalQuantity else {
+            let productModel = productModel,
+            number <= (productModel.numberOfItem) else {
             
             textField.text = ""
-            caculation()
+            caculation(price: 0, quntity: 0)
+                
             return
         }
         
-        caculation()
+        caculation(price: productModel.price, quntity: number)
 
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if textField.text == "" {
+        guard textField.text != "" else {
+            
             textField.text = "0"
-            caculation()
+            caculation(price: 0, quntity: 0)
+
+            return
         }
         
-        caculation()
-
     }
 }

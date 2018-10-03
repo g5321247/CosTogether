@@ -15,11 +15,13 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.isHidden = true
+        
         locationBot.cornerSetup(cornerRadius: 5,
                                 borderWidth: 1,
                                 borderColor: UIColor.lightGray.cgColor
         )
-        
+    
         productTypeSC.addUnderlineForSelectedSegment()
         
     }

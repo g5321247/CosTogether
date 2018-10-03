@@ -125,7 +125,7 @@ extension DetailManager: UITableViewDataSource {
                 return cell
             }
             
-            productItemCell.updateView(product: productModel[indexPath.row])
+            productItemCell.productModel = productModel[indexPath.row]
          
         default:
             

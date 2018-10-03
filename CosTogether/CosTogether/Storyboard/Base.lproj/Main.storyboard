@@ -462,7 +462,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-56-6AI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="u0y-TI-aOe"/>
+                                    <constraint firstAttribute="width" secondItem="jzf-56-6AI" secondAttribute="height" multiplier="75:8" id="uRr-h1-YaE"/>
                                 </constraints>
                                 <segments>
                                     <segment title="所有商品"/>

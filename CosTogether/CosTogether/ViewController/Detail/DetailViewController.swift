@@ -348,8 +348,11 @@ extension DetailViewController: UITableViewDataSource {
                 
             }
                     
-            cell.productImage.image = testArray[indexPath.row]
-        
+            guard let data =  allData[indexPath.section].data[indexPath.row] as? ProductModel else { return cell }
+            
+            cell.productModel = data
+            cell.updateView(product: data)
+            
             return cell
         
         case .order:
