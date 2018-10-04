@@ -37,9 +37,9 @@ struct ArticleModel: DataProtocol {
 struct CommentModel: DataProtocol {
     
     let postDate: Date
-    
     let user: UserModel
-    
+    let comment: String
+
 }
 
 struct UserModel: DataProtocol {

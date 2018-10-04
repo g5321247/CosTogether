@@ -25,7 +25,6 @@ class PreviousCommentTableViewCell: UITableViewCell {
 
     }
     
-    
     private func setup() {
         
         commenterBotSetup()
@@ -47,4 +46,13 @@ class PreviousCommentTableViewCell: UITableViewCell {
         setup()
     }
     
+    func updateComment(comment: CommentModel) {
+        
+        sendDataLbl.text = String(describing: comment.postDate)
+        commentLbl.text = comment.comment
+        commenterNameLbl.text = comment.user.userName
+        
+        #warning ("設定照片")
+//        commenterBot.imageView?.sd_setImage
+    }
 }

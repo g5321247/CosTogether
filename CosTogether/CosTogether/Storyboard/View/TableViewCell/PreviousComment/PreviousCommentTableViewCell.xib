@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="KN6-m7-hv7" secondAttribute="height" multiplier="1:1" id="0TK-ka-W2g"/>
                                     <constraint firstAttribute="width" constant="48" id="ESf-AF-hx8"/>
                                 </constraints>
-                                <state key="normal" image="testUser2"/>
+                                <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
                                 <rect key="frame" x="71" y="8" width="241" height="14.5"/>
@@ -89,6 +89,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="testUser2" width="222" height="219"/>
+        <image name="profile_sticker_placeholder02" width="256" height="256"/>
     </resources>
 </document>

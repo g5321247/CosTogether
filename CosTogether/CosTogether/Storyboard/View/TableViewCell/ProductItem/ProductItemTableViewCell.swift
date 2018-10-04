@@ -45,6 +45,8 @@ class ProductItemTableViewCell: UITableViewCell {
         itemPrice.text = String(product.price)
         amoutQuantity.text = "總數 \(product.numberOfItem)"
         expiredDate.text = "有效期限 \(product.expiredDate)"
+        
+        buyNumberLbl.text = "0"
     }
     
     private func setup() {

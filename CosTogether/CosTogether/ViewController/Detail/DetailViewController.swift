@@ -82,8 +82,17 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     var order: [ProductModel] = []
     
     var productDetail: [DescriptionModel] = []
-    var comments: [CommentModel] = []
-    var totalCost: Int = 0
+    var comments: [CommentModel] = [
+        CommentModel(
+            postDate: Date(),
+            user: UserModel.groupMember(image: "123", name: "喬丹"),
+            comment: "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"
+        ), CommentModel(
+            postDate: Date(),
+            user: UserModel.groupMember(image: "123", name: "王哥"),
+            comment: "嘿嘿"
+        )
+    ]
     
     lazy var allData: [DataType] = [
         DataType(dataType: .productPic, data: author),
@@ -435,7 +444,7 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
-            cell.commentLbl.text = testComment[indexPath.row]
+            cell.updateComment(comment: comments[indexPath.row])
             
             return cell
 
@@ -481,6 +490,27 @@ extension DetailViewController: CellDelegate {
         
         #warning ("update 這邊 order 的 data")
         
+        guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .productItems(products.count)}) else {
+                
+                return
+        }
+        
+        for (index) in products.indices {
+            
+            guard let cell = tableView.cellForRow(
+                at: IndexPath(row: index, section: sectionIndex)
+                ) as? ProductItemTableViewCell else {
+                
+                return
+            }
+            
+            products[index].numberOfItem -= order[index].numberOfItem
+            order[index].numberOfItem = 0
+            
+            cell.updateView(product: products[index])
+
+        }
+
         #warning ("更新 firebase 的資料後重新 fetch")
         joinMember.append(
             UserModel(
@@ -491,15 +521,24 @@ extension DetailViewController: CellDelegate {
                 averageEvaluation: 5.0
             )
         )
-
-        guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
-            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {
-                
-                return
-        }
-
-        cell.collectionView.reloadData()
         
+        self.present(
+            UIAlertController.orderMessage(title: "加團成功", message: "詳細資訊請到歷史紀錄區查詢"),
+            animated: true,
+            completion: nil
+        )
+
+        #warning ("加團失敗的警告")
+
+//        guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
+//            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {
+//
+//                return
+//        }
+//
+//        cell.collectionView.reloadData()
+        
+        tableView.reloadData()
     }
 
 }

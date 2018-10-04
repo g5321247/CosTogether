@@ -30,5 +30,10 @@ extension UIAlertController {
        return alertMessage(message: errorType.errorMessage())
         
     }
+    
+    static func orderMessage(title: String, message: String) -> UIAlertController {
+        
+        return alertMessage(title: title, message: message)
+    }
 
 }
