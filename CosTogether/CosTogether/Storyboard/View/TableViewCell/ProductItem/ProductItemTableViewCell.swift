@@ -23,9 +23,8 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBOutlet weak var increaseNumBot: UIButton!
     
     var productModel: ProductModel?
+    
     var handler: ((ProductModel) -> Void)?
-    var totalCost: Int = 0
-    var totalQuantity: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +36,7 @@ class ProductItemTableViewCell: UITableViewCell {
 
     }
     
-     func updateView(product: ProductModel) {
+    func updateView(product: ProductModel) {
         
         #warning ("照片更新")
 //        productImage.sd_setImage(with: , completed: )
@@ -51,6 +50,9 @@ class ProductItemTableViewCell: UITableViewCell {
         
         setButtonView()
         
+        guard  let productModel = productModel else {
+            return
+        }
     }
     
     private func setButtonView() {
@@ -71,20 +73,17 @@ class ProductItemTableViewCell: UITableViewCell {
     
     private func caculation(price: Int, quantity: Int, productName: String) {
         
-        totalCost += (price * quantity)
-        totalQuantity += quantity
+        buyNumberLbl.text = String(quantity)
         
-        buyNumberLbl.text = String(totalQuantity)
-
             handler?(
                 ProductModel.purchasingProduct(
                 name: productName,
                 number: quantity,
-                totalCost: (price * quantity)
+                totalCost: price
                 )
         )
 
-        totalPriceLbl.text = "\(totalCost)"
+        totalPriceLbl.text = "\(price * quantity)"
         
     }
     
@@ -101,7 +100,7 @@ class ProductItemTableViewCell: UITableViewCell {
         
         caculation(
             price: productModel.price,
-            quantity: 1,
+            quantity: number + 1,
             productName: productModel.productName
         )
         
@@ -121,7 +120,7 @@ class ProductItemTableViewCell: UITableViewCell {
         buyNumberLbl.text = "\(number - 1)"
         caculation(
             price: productModel.price,
-            quantity: -1,
+            quantity: number - 1,
             productName: productModel.productName
         )
         

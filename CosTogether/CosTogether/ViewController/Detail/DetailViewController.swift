@@ -70,7 +70,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             numberOfItem: 2,
             expiredDate: Date(),
             price: 20
-        ),  ProductModel (
+        ), ProductModel (
             productName: "難吃的",
             productImage: "123",
             numberOfItem: 4,
@@ -80,6 +80,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
     ]
     
+    var order: [ProductModel] = []
+    
     var productDetail: [DescriptionModel] = []
     var comments: [CommentModel] = []
     var totalCost: Int = 0
@@ -88,8 +90,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         DataType(dataType: .productPic, data: author),
         DataType(dataType: .articleInfo, data: article),
         DataType(dataType: .joinGroup, data: joinMember),
-        DataType(dataType: .order, data: []),
         DataType(dataType: .productItems(products.count), data: products),
+        DataType(dataType: .order, data: order),
         DataType(dataType: .productDetail, data: productDetail),
         DataType(dataType: .commnetTitle, data: []),
         DataType(dataType: .previousComments(comments.count), data: comments),
@@ -107,6 +109,15 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         setUpCell()
         tableViewSetup()
         topLogViewSetup()
+        
+        #warning ("記得刪掉")
+        order.append(contentsOf: products)
+        
+        for (index, _) in order.enumerated() {
+            
+            order[index].price = 0
+            order[index].numberOfItem = 0
+        }
     }
     
     private func setUpCell() {
@@ -166,9 +177,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 //                return
 //
 //        }
-        
     
-        
 //        cell.collectionView.reloadData()
         
 
@@ -183,7 +192,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 return
                 
         }
-        
         
 //        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
 //
@@ -276,7 +284,9 @@ extension DetailViewController: UITableViewDataSource {
 
         return allData[section].dataType.numberOfRow()
     }
-    
+
+    // swiftlint:disable cyclomatic_complexity
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch allData[indexPath.section].dataType {
@@ -338,22 +348,31 @@ extension DetailViewController: UITableViewDataSource {
                 return UITableViewCell()
                 
             }
-                    
-            guard let data =  allData[indexPath.section].data[indexPath.row] as? ProductModel else { return cell }
             
-            cell.productModel = data
-            cell.updateView(product: data)
+            cell.productModel = products[indexPath.row]
+            cell.updateView(product: products[indexPath.row])
             
             cell.updatePurchasing { [weak self] (purchase) in
                 
+                self?.order[indexPath.row] = purchase
+            
                 guard let index = self?.allData.firstIndex(where: {$0.dataType == .order}),
-                    let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? OrderTableViewCell else {
+                    let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? OrderTableViewCell,
+                let order = self?.order else {
                     
                     return
                 }
                 
-                cell.updateTotalPrice(purchasing: purchase)
+                var totalCost = 0
+
+                for value in order {
+                    
+                    totalCost += (value.price * value.numberOfItem)
+
+                }
                 
+                cell.updateTotalPrice(totalCost: totalCost)
+
             }
             
             return cell
@@ -370,6 +389,16 @@ extension DetailViewController: UITableViewDataSource {
             
             cell.delegate = self
             
+            var totalCost = 0
+            
+            for value in order {
+                
+                totalCost += (value.price * value.numberOfItem)
+                
+            }
+            
+            cell.updateTotalPrice(totalCost: totalCost)
+        
             return cell
             
         case .productDetail:
@@ -426,6 +455,8 @@ extension DetailViewController: UITableViewDataSource {
         
     }
     
+    // swiftlint:enable cyclomatic_complexity
+
 }
 
 extension DetailViewController: JoinGroupDelegate {
@@ -442,22 +473,15 @@ extension DetailViewController: CellDelegate {
     
     func cellButtonTapping(_ cell: UITableViewCell) {
         
-//        tableView.indexPath(for: cell)
-        
         guard let currentUser =  Auth.auth().currentUser else {
             
             return
             
         }
         
-        //        guard let cell = tableView.dequeueReusableCell(
-        //            withIdentifier: String(describing: JoinGroupTableViewCell.self)
-        //            ) as? JoinGroupTableViewCell else {
-        //
-        //                return
-        //
-        //        }
+        #warning ("update 這邊 order 的 data")
         
+        #warning ("更新 firebase 的資料後重新 fetch")
         joinMember.append(
             UserModel(
                 userImage: currentUser.photoURL!.absoluteString,
@@ -468,9 +492,14 @@ extension DetailViewController: CellDelegate {
             )
         )
 
-        #warning ("更新資料")
+        guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {
+                
+                return
+        }
+
+        cell.collectionView.reloadData()
         
-        self.tableView.reloadData()
     }
 
 }
