@@ -10,6 +10,7 @@ import UIKit
 
 class ProductItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
@@ -49,10 +50,12 @@ class ProductItemTableViewCell: UITableViewCell {
     private func setup() {
         
         setButtonView()
-        
+        setBaseView()
+
         guard  let productModel = productModel else {
             return
         }
+        
     }
     
     private func setButtonView() {
@@ -71,6 +74,17 @@ class ProductItemTableViewCell: UITableViewCell {
         
     }
     
+    private func setBaseView() {
+        
+        baseView.cornerSetup(
+            cornerRadius: 0,
+            borderWidth: 1,
+            borderColor: UIColor.lightGray.cgColor,
+            maskToBounds: false
+        )
+        
+    }
+    
     private func caculation(price: Int, quantity: Int, productName: String) {
         
         buyNumberLbl.text = String(quantity)
@@ -83,7 +97,7 @@ class ProductItemTableViewCell: UITableViewCell {
                 )
         )
 
-        totalPriceLbl.text = "\(price * quantity)"
+        totalPriceLbl.text = "$\(price * quantity)"
         
     }
     

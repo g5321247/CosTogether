@@ -16,7 +16,6 @@ struct Name {
 class DetailViewController: UIViewController, ProductPicDelegate {
     
     #warning ("TODO: 改成 Struct")
-    var testArray: [UIImage] = [#imageLiteral(resourceName: "test"), #imageLiteral(resourceName: "test2")]
     var testComment:[String] = ["123", "主揪好帥", "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"]
         
 //    private lazy var sections: [CellClass] = [
@@ -348,6 +347,7 @@ extension DetailViewController: UITableViewDataSource {
                 return UITableViewCell()
                 
             }
+            
             
             cell.productModel = products[indexPath.row]
             cell.updateView(product: products[indexPath.row])

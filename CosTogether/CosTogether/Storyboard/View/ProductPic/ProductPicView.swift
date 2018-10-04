@@ -11,8 +11,7 @@ import FSPagerView
 
 protocol ProductPicDelegate: AnyObject {
     
-//    var products: [Product] { get set }
-    var testArray: [UIImage] { get set }
+    var products: [ProductModel] { get set }
     
 }
 
@@ -72,8 +71,7 @@ class ProductPicView: UIView {
     
     private func setPageControl() {
         
-        #warning ("TODO: numberOfPage 要改成 delegate.products.count")
-        self.pageControl.numberOfPages = delegate?.testArray.count ?? 1
+        self.pageControl.numberOfPages = delegate?.products.count ?? 1
         
         pageControl.setFillColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
         pageControl.setFillColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
@@ -91,9 +89,7 @@ extension ProductPicView: FSPagerViewDataSource {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         
-        #warning ("TODO: testArray 改成 products ")
-
-        guard let numberOfItem = delegate?.testArray.count else {
+        guard let numberOfItem = delegate?.products.count else {
             
             return 0
         }
@@ -107,7 +103,10 @@ extension ProductPicView: FSPagerViewDataSource {
         
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
-        cell.imageView?.image = delegate?.testArray[index]
+        
+
+        #warning("sd set image")
+//        cell.imageView?.image = delegate?.products[index].productImage
         
         return cell
     }
