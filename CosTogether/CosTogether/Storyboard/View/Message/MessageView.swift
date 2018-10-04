@@ -13,7 +13,9 @@ class MessageView: UIView {
     @IBOutlet weak var messgaeTxtView: UITextView!
     @IBOutlet weak var sendMessageBot: UIButton!
     @IBOutlet weak var textHeightConstraint: NSLayoutConstraint!
-        
+    
+    weak var delegate: CellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +32,20 @@ class MessageView: UIView {
         messgaeTxtView.cornerSetup(cornerRadius: 4)
         messgaeTxtView.text = "跟主揪說點什麼吧..."
         messgaeTxtView.textColor = UIColor.lightGray
+        
+    }
+    
+    @IBAction func sendCommentTappng(_ sender: Any) {
+        
+        guard messgaeTxtView.text != "",
+        let text = messgaeTxtView.text else {
+            
+            return
+        }
+        
+        delegate?.updateLocalData(data: text)
+        
+        messgaeTxtView.text = ""
         
     }
     

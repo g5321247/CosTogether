@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--開團-->
+        <!--開團Go-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="開團" image="open" id="JzN-U7-vR7"/>
+                    <tabBarItem key="tabBarItem" title="開團Go" image="open" id="JzN-U7-vR7"/>
                     <navigationItem key="navigationItem" id="2of-zg-Mby"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -465,11 +465,8 @@
                                     <constraint firstAttribute="height" constant="40" id="u0y-TI-aOe"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="所有商品"/>
-                                    <segment title="食"/>
-                                    <segment title="衣"/>
-                                    <segment title="住"/>
-                                    <segment title="行"/>
+                                    <segment title="找分購"/>
+                                    <segment title="求代購"/>
                                 </segments>
                                 <color key="tintColor" red="0.14117647058823529" green="0.32156862745098042" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -675,11 +672,11 @@
             </objects>
             <point key="canvasLocation" x="3844" y="-519"/>
         </scene>
-        <!--找分購-->
+        <!--找團Go-->
         <scene sceneID="0Wz-46-6fn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhg-G7-U6f" customClass="MainNavigationViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="找分購" image="searching" id="LLJ-HE-Dv8"/>
+                    <tabBarItem key="tabBarItem" title="找團Go" image="searching" id="LLJ-HE-Dv8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b8t-ex-l5u">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

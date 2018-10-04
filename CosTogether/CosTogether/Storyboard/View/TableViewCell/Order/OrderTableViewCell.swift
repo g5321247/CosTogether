@@ -12,7 +12,8 @@ import Firebase
 protocol CellDelegate: AnyObject {
     
     func cellButtonTapping(_ cell: UITableViewCell)
-    
+    func reloadData()
+    func updateLocalData(data: Any)
 }
 
 class OrderTableViewCell: UITableViewCell {

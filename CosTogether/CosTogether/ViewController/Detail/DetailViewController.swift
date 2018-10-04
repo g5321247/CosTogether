@@ -15,9 +15,6 @@ struct Name {
 
 class DetailViewController: UIViewController, ProductPicDelegate {
     
-    #warning ("TODO: 改成 Struct")
-    var testComment:[String] = ["123", "主揪好帥", "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"]
-        
 //    private lazy var sections: [CellClass] = [
 //        .productPic,
 //        .articleInfo,
@@ -177,7 +174,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         show(controller, sender: nil)
         
     }
-        
+    
 //        guard let cell = tableView.dequeueReusableCell(
 //            withIdentifier: String(describing: JoinGroupTableViewCell.self)
 //            ) as? JoinGroupTableViewCell else {
@@ -188,7 +185,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
 //        cell.collectionView.reloadData()
         
-
+    
     
     #warning ("如何用在同一個 function")
     @objc func photoTapping(_ sender: UIButton) {
@@ -357,7 +354,6 @@ extension DetailViewController: UITableViewDataSource {
                 
             }
             
-            
             cell.productModel = products[indexPath.row]
             cell.updateView(product: products[indexPath.row])
             
@@ -458,6 +454,9 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
+            cell.delegate = self
+            cell.baseView.delegate = self
+            
             return cell
 
         }
@@ -479,6 +478,39 @@ extension DetailViewController: JoinGroupDelegate {
 }
 
 extension DetailViewController: CellDelegate {
+    
+    func updateLocalData(data: Any) {
+        
+        guard let text = data as? String else {
+            
+            return
+        }
+        
+        guard let currentUser =  Auth.auth().currentUser else {
+            
+            return
+            
+        }
+        
+        #warning ("改view")
+        
+        comments.append(
+            CommentModel(
+                postDate: Date(),
+                user: UserModel.groupMember(
+                    image: "currentUser.photoURL",
+                    name: currentUser.displayName!
+                ),
+                comment: text
+            )
+        )
+        
+        self.tableView.reloadData()
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
     
     func cellButtonTapping(_ cell: UITableViewCell) {
         
@@ -530,13 +562,13 @@ extension DetailViewController: CellDelegate {
 
         #warning ("加團失敗的警告")
 
-//        guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
-//            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {
-//
-//                return
-//        }
-//
-//        cell.collectionView.reloadData()
+        guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {
+
+                return
+        }
+
+        cell.collectionView.reloadData()
         
         tableView.reloadData()
     }

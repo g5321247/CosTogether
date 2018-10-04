@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             didFinishLaunchingWithOptions: launchOptions
         )
         
+        IQKeyboardManager.shared.enable = true
+        
         guard UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil else {
 
             switchLogIn()
@@ -41,8 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         switchMainPage()
 
-        IQKeyboardManager.shared.enable = true
-        
         return true
     }
     

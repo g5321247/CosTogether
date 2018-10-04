@@ -37,15 +37,18 @@
                                     <constraint firstAttribute="width" constant="32" id="Xbp-lj-uoN"/>
                                 </constraints>
                                 <state key="normal" image="send-button"/>
+                                <connections>
+                                    <action selector="sendCommentTappng:" destination="2Kh-9O-xqQ" eventType="touchUpInside" id="0DH-S0-AM2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82668665210000003" green="0.82668665210000003" blue="0.82668665210000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Wm-ps-Xna" firstAttribute="leading" secondItem="2Kh-9O-xqQ" secondAttribute="leading" constant="8" id="CZB-oG-1aU"/>
                             <constraint firstAttribute="bottom" secondItem="5Wm-ps-Xna" secondAttribute="bottom" constant="8" id="MRo-1O-Jtd"/>
+                            <constraint firstAttribute="trailing" secondItem="5Wm-ps-Xna" secondAttribute="trailing" constant="64" id="TNj-AX-tEa"/>
                             <constraint firstItem="OvI-1z-3jC" firstAttribute="leading" secondItem="5Wm-ps-Xna" secondAttribute="trailing" constant="16" id="Vkq-IK-0nM"/>
                             <constraint firstItem="OvI-1z-3jC" firstAttribute="centerY" secondItem="5Wm-ps-Xna" secondAttribute="centerY" id="Y4V-Y5-3sv"/>
-                            <constraint firstAttribute="trailing" secondItem="OvI-1z-3jC" secondAttribute="trailing" constant="16" id="fcR-VB-mrM"/>
                             <constraint firstItem="5Wm-ps-Xna" firstAttribute="top" secondItem="2Kh-9O-xqQ" secondAttribute="top" constant="8" id="neA-79-nnP"/>
                         </constraints>
                         <connections>

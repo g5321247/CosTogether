@@ -10,7 +10,6 @@ import UIKit
 
 class ProductItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
@@ -52,7 +51,6 @@ class ProductItemTableViewCell: UITableViewCell {
     private func setup() {
         
         setButtonView()
-        setBaseView()
 
         guard  let productModel = productModel else {
             return
@@ -72,17 +70,6 @@ class ProductItemTableViewCell: UITableViewCell {
             cornerRadius: decreaseNumBot.frame.width / 2,
             borderWidth: 2,
             borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
-        )
-        
-    }
-    
-    private func setBaseView() {
-        
-        baseView.cornerSetup(
-            cornerRadius: 0,
-            borderWidth: 1,
-            borderColor: UIColor.lightGray.cgColor,
-            maskToBounds: false
         )
         
     }

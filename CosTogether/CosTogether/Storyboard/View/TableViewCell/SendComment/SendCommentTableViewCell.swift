@@ -12,6 +12,8 @@ class SendCommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var baseView: MessageView!
     
+    weak var delegate: CellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         baseView.messgaeTxtView.delegate = self
@@ -19,6 +21,12 @@ class SendCommentTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func reloadTextViewIfNeed() {
+        
+        delegate?.reloadData()
+        
     }
     
 }
@@ -50,17 +58,27 @@ extension SendCommentTableViewCell: UITextViewDelegate {
     func adjustTextViewHeight() {
         
         let fixedWidth = baseView.messgaeTxtView.frame.size.width
+        
         let newSize = baseView.messgaeTxtView.sizeThatFits(
             CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
             )
-            
+        
         baseView.textHeightConstraint.constant = newSize.height
-                
+        
         self.layoutIfNeeded()
+        
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        
         self.adjustTextViewHeight()
+        
+//        if textView.contentSize.height > textView.frame.size.height {
+//
+//            reloadTextViewIfNeed()
+//
+//        }
+
     }
     
 }

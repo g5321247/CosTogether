@@ -11,7 +11,7 @@ import UIKit
 protocol DetailManagerDelegate: JoinGroupDelegate {
     
     var allData: [DataType] { get set }
-    
+
 }
 
 class DetailManager: NSObject, UITableViewDelegate {
@@ -110,6 +110,8 @@ extension DetailManager: UITableViewDataSource {
                 
                 return cell
             }
+            
+        
             
         case .productPic:
             
