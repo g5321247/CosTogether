@@ -495,16 +495,6 @@ extension DetailViewController: CellDelegate {
         
         #warning ("改view")
         
-//        allData[7].data.append(
-//            CommentModel(
-//                postDate: Date(),
-//                user: UserModel.groupMember(
-//                    image: "currentUser.photoURL",
-//                    name: currentUser.displayName!
-//                ),
-//                comment: text
-//            )
-//        )
         comments.append(
             CommentModel(
                 postDate: Date(),
@@ -522,19 +512,8 @@ extension DetailViewController: CellDelegate {
     func reszing(heightGap: CGFloat) {
         
         tableView.contentInset.bottom += heightGap
-        
-        guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .sendComment}) else {
-            
-            return
-        }
-        
-        guard let cell = tableView.cellForRow(
-            at: IndexPath(row: 0, section: sectionIndex)
-            ) as? SendCommentTableViewCell else {
-                
-                return
-        }
-
+    
+        tableView.contentOffset.y += heightGap
         
     }
     

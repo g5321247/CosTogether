@@ -35,12 +35,13 @@ extension SendCommentTableViewCell: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if textView.textColor == UIColor.lightGray {
-            
-            textView.text = nil
-            textView.textColor = UIColor.black
-            
-        }
+//        if textView.textColor == UIColor.lightGray {
+//
+//            textView.text = nil
+//            textView.textColor = UIColor.black
+//
+//        }
+        
         
     }
     
@@ -67,6 +68,9 @@ extension SendCommentTableViewCell: UITextViewDelegate {
             
             let heightGap = newSize.height - baseView.messgaeTxtView.frame.size.height
             
+            self.frame.size.height += heightGap
+
+            
             baseView.messgaeTxtView.frame.size.height = newSize.height
             baseView.frame.size.height += heightGap
 
@@ -79,8 +83,6 @@ extension SendCommentTableViewCell: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         
         self.adjustTextViewHeight()
-        
-
         
     }
     
