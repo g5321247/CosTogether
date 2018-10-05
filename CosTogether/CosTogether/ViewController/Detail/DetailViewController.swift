@@ -15,18 +15,6 @@ struct Name {
 
 class DetailViewController: UIViewController, ProductPicDelegate {
     
-//    private lazy var sections: [CellClass] = [
-//        .productPic,
-//        .articleInfo,
-//        .joinGroup,
-//        .productItems(testArray.count),
-//        .order,
-//        .productDetail,
-//        .commnetTitle,
-//        .previousComment(testComment.count),
-//        .sendComment
-//    ]
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
@@ -495,6 +483,11 @@ extension DetailViewController: CellDelegate {
         
         #warning ("改view")
         
+        guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .previousComments(comments.count)}) else {
+            
+            return
+        }
+
         comments.append(
             CommentModel(
                 postDate: Date(),
@@ -505,14 +498,17 @@ extension DetailViewController: CellDelegate {
                 comment: text
             )
         )
-        
+
+        allData[sectionIndex] = DataType(
+            dataType: .previousComments(comments.count),
+            data: comments)
+
         self.tableView.reloadData()
     }
     
     func reszing(heightGap: CGFloat) {
         
         tableView.contentInset.bottom += heightGap
-    
         tableView.contentOffset.y += heightGap
         
     }
