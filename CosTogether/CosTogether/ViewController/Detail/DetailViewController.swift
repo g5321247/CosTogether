@@ -8,10 +8,7 @@
 import UIKit
 import FSPagerView
 import Firebase
-
-struct Name {
-    let name: String
-}
+import NotificationBannerSwift
 
 class DetailViewController: UIViewController, ProductPicDelegate {
     
@@ -554,12 +551,9 @@ extension DetailViewController: CellDelegate {
                 averageEvaluation: 5.0
             )
         )
-        
-        self.present(
-            UIAlertController.orderMessage(title: "加團成功", message: "詳細資訊請到歷史紀錄區查詢"),
-            animated: true,
-            completion: nil
-        )
+
+        let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success)
+        banner.show()
 
         #warning ("加團失敗的警告")
 
