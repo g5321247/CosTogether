@@ -8,15 +8,12 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
-
+class HelpBuyViewController: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
-//    var products: [Product] = []
-    var shareBuy: [Int] = [1]
-    var helpBuy: [Int] = []
     
-    var openGroupType: OpenGroupType = .shareBuy
-    
+    var products: [DataProtocol] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,44 +21,14 @@ class ProductViewController: UIViewController {
         
     }
     
-    private func countProduct() {
-        
-        switch openGroupType {
-            
-        case .shareBuy:
-            
-            guard shareBuy.count != 0 else {
-                
-                collectionView.isHidden = true
-                
-                return
-            }
-            
-            collectionView.isHidden = false
-            
-        case .helpBuy:
-            
-            guard helpBuy.count != 0 else {
-                
-                collectionView.isHidden = true
-                
-                return
-            }
-            
-            collectionView.isHidden = false
-        }
-        
-    }
-    
     private func setup() {
         
-        countProduct()
         setColletionView()
         
     }
     
     private func setColletionView() {
-     
+        
         registerTableViewCell(identifier: String(describing: ProductCollectionViewCell.self))
         
         collectionView.delegate = self
@@ -75,36 +42,44 @@ class ProductViewController: UIViewController {
         
         let nibCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
-
+        
     }
-
+    
 }
 
-extension ProductViewController: UICollectionViewDataSource {
-
+extension HelpBuyViewController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 10
-//            products.count
-    }
 
+        guard products.count > 0 else {
+            
+            collectionView.isHidden = true
+            return 0
+        }
+        
+        collectionView.isHidden = false
+
+        
+        return products.count
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
         ) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
-        for: indexPath
-        ) as? ProductCollectionViewCell else {
-            
-            print("No such cell")
-            return UICollectionViewCell()
-            
+            withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
+            for: indexPath
+            ) as? ProductCollectionViewCell else {
+                
+                print("No such cell")
+                return UICollectionViewCell()
+                
         }
         
         return cell
@@ -112,8 +87,8 @@ extension ProductViewController: UICollectionViewDataSource {
     
 }
 
-extension ProductViewController: UICollectionViewDelegateFlowLayout {
-
+extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -153,9 +128,9 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
-
-//        collectionView.deselectItem(at: indexPath, animated: true)
-
+        
+        //        collectionView.deselectItem(at: indexPath, animated: true)
+        
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
             ) as? DetailViewController else {
@@ -164,10 +139,10 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
                 
         }
         
-//        controller.loadViewIfNeeded()
-//        controller.article = articles[indexPath.row]
-
+        //        controller.loadViewIfNeeded()
+        //        controller.article = articles[indexPath.row]
+        
         show(controller, sender: nil)
     }
-
+    
 }

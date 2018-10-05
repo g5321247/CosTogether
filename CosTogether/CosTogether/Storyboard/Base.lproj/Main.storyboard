@@ -553,10 +553,10 @@
             </objects>
             <point key="canvasLocation" x="2172" y="-297.30134932533736"/>
         </scene>
-        <!--Product View Controller-->
+        <!--Share Buy View Controller-->
         <scene sceneID="RNY-BT-F4y">
             <objects>
-                <viewController id="Hgx-q6-bDu" customClass="ProductViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hgx-q6-bDu" customClass="ShareBuyViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwi-xF-pWn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="463"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -740,14 +740,20 @@
             </objects>
             <point key="canvasLocation" x="1740" y="1360.569715142429"/>
         </scene>
-        <!--Product View Controller-->
+        <!--Help Buy View Controller-->
         <scene sceneID="vCs-sc-q3g">
             <objects>
-                <viewController id="UYd-ar-TPp" customClass="ProductViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UYd-ar-TPp" customClass="HelpBuyViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YAI-jh-fDG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="483"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
+                                <rect key="frame" x="91.5" y="225" width="192" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-RM-ZXC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -769,13 +775,16 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95686274509803926" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5UO-RM-ZXC" firstAttribute="top" secondItem="YAI-jh-fDG" secondAttribute="top" id="Lnm-Ha-a34"/>
                             <constraint firstItem="5UO-RM-ZXC" firstAttribute="leading" secondItem="YAI-jh-fDG" secondAttribute="leading" id="MnN-ad-IPQ"/>
                             <constraint firstAttribute="trailing" secondItem="5UO-RM-ZXC" secondAttribute="trailing" id="U1q-WU-akV"/>
                             <constraint firstAttribute="bottom" secondItem="5UO-RM-ZXC" secondAttribute="bottom" id="Won-uD-PGI"/>
+                            <constraint firstItem="T2X-sT-mDT" firstAttribute="centerX" secondItem="YAI-jh-fDG" secondAttribute="centerX" id="bo9-Wh-3WM"/>
+                            <constraint firstItem="T2X-sT-mDT" firstAttribute="centerY" secondItem="YAI-jh-fDG" secondAttribute="centerY" id="v6K-L9-UPj"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="lHU-4m-l7z"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="5UO-RM-ZXC" id="kno-Dv-sRe"/>

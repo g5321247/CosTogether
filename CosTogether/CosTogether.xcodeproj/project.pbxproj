@@ -17,6 +17,8 @@
 		C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FD92151FAB6006BC7A3 /* Main.storyboard */; };
 		C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8215FDE2151FAB8006BC7A3 /* LaunchScreen.storyboard */; };
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
+		C823A25F21675AA60066D635 /* ShareBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A25E21675AA60066D635 /* ShareBuyViewController.swift */; };
+		C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A26021675B1C0066D635 /* HelpBuyViewController.swift */; };
 		C827FAD8216080DA008AB665 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827FAD7216080DA008AB665 /* Users.swift */; };
 		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
 		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
@@ -94,6 +96,8 @@
 		C8215FDF2151FAB8006BC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8215FE12151FAB8006BC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C823A25E21675AA60066D635 /* ShareBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBuyViewController.swift; sourceTree = "<group>"; };
+		C823A26021675B1C0066D635 /* HelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpBuyViewController.swift; sourceTree = "<group>"; };
 		C827FAD7216080DA008AB665 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Didot HTFB96 Bold.otf"; sourceTree = "<group>"; };
 		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
@@ -267,6 +271,15 @@
 			path = CosTogether;
 			sourceTree = "<group>";
 		};
+		C823A25D21675A770066D635 /* GroupBuy */ = {
+			isa = PBXGroup;
+			children = (
+				C823A25E21675AA60066D635 /* ShareBuyViewController.swift */,
+				C823A26021675B1C0066D635 /* HelpBuyViewController.swift */,
+			);
+			path = GroupBuy;
+			sourceTree = "<group>";
+		};
 		C827FAD921608108008AB665 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +374,7 @@
 		C84975222157BABC00555855 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				C823A25D21675A770066D635 /* GroupBuy */,
 				C84975132157742A00555855 /* MainPageViewController.swift */,
 				C84975202157BAB100555855 /* ProductViewController.swift */,
 				C810BB382159E4630064A656 /* MainNavigationViewController.swift */,
@@ -834,9 +848,11 @@
 				C8FB98CF2161951A00C78926 /* GroupTableViewCell.swift in Sources */,
 				C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */,
 				C82BA99C215CB04500996B11 /* CellClass.swift in Sources */,
+				C823A25F21675AA60066D635 /* ShareBuyViewController.swift in Sources */,
 				C87B44722167017300283767 /* OpenGroupType.swift in Sources */,
 				C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */,
 				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,
+				C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8FB98BB2161110E00C78926 /* UITableView+.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,

@@ -46,8 +46,8 @@ class MainPageViewController: UIViewController {
             
         case 1:
             
-            shareBuyView.isHidden = false
-            helpBuyView.isHidden = true
+            shareBuyView.isHidden = true
+            helpBuyView.isHidden = false
             
         default:
             break

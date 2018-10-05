@@ -20,6 +20,12 @@ protocol DataProtocol {
     
 }
 
+struct MainPageViewModel: DataProtocol {
+    
+    let user: UserModel
+    let producet: ProductModel
+}
+
 struct ArticleModel: DataProtocol {
     
     let articleTitle: String
