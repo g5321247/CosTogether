@@ -65,13 +65,15 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             productImage: "123",
             numberOfItem: 2,
             expiredDate: Date(),
-            price: 20
+            price: 20,
+            openType: .helpBuy
         ), ProductModel (
             productName: "難吃的",
             productImage: "123",
             numberOfItem: 4,
             expiredDate: Date(),
-            price: 10
+            price: 10,
+            openType: .helpBuy
         )
 
     ]
@@ -118,7 +120,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         #warning ("記得刪掉")
         order.append(contentsOf: products)
         
-        for (index, _) in order.enumerated() {
+        for (index) in order.indices {
             
             order[index].price = 0
             order[index].numberOfItem = 0
@@ -252,8 +254,7 @@ extension DetailViewController: UITableViewDelegate {
             return  UITableView.automaticDimension
         case .sendComment:
             
-            tableView.layoutIfNeeded()
-            return UITableView.automaticDimension
+            return   self.view.frame.width * (53 / 375)
 
         }
         
@@ -286,7 +287,7 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return allData[section].dataType.numberOfRow()
     }
 
@@ -494,6 +495,16 @@ extension DetailViewController: CellDelegate {
         
         #warning ("改view")
         
+//        allData[7].data.append(
+//            CommentModel(
+//                postDate: Date(),
+//                user: UserModel.groupMember(
+//                    image: "currentUser.photoURL",
+//                    name: currentUser.displayName!
+//                ),
+//                comment: text
+//            )
+//        )
         comments.append(
             CommentModel(
                 postDate: Date(),
@@ -508,8 +519,23 @@ extension DetailViewController: CellDelegate {
         self.tableView.reloadData()
     }
     
-    func reloadData() {
-        tableView.reloadData()
+    func reszing(heightGap: CGFloat) {
+        
+        tableView.contentInset.bottom += heightGap
+        
+        guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .sendComment}) else {
+            
+            return
+        }
+        
+        guard let cell = tableView.cellForRow(
+            at: IndexPath(row: 0, section: sectionIndex)
+            ) as? SendCommentTableViewCell else {
+                
+                return
+        }
+
+        
     }
     
     func cellButtonTapping(_ cell: UITableViewCell) {

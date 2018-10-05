@@ -74,7 +74,12 @@ class ProductItemTableViewCell: UITableViewCell {
         
     }
     
-    private func caculation(price: Int, quantity: Int, productName: String) {
+    private func caculation(
+        price: Int,
+        quantity: Int,
+        productName: String,
+        openType: OpenGroupType
+        ) {
         
         buyNumberLbl.text = String(quantity)
         
@@ -82,7 +87,8 @@ class ProductItemTableViewCell: UITableViewCell {
                 ProductModel.purchasingProduct(
                 name: productName,
                 number: quantity,
-                totalCost: price
+                totalCost: price,
+                openType: openType
                 )
         )
 
@@ -104,18 +110,26 @@ class ProductItemTableViewCell: UITableViewCell {
         caculation(
             price: productModel.price,
             quantity: number + 1,
-            productName: productModel.productName
+            productName: productModel.productName,
+            openType: productModel.openType
         )
         
     }
     
     @IBAction func decreaseBotTapping(_ sender: UIButton) {
         
-        guard let productModel = productModel,
-            let number = Int(buyNumberLbl.text!),
+        guard let productModel = productModel else {
+            return
+        }
+        guard let number = Int(buyNumberLbl.text!),
             number > 0 else {
             
-            caculation(price: 0, quantity: 0, productName: "")
+                caculation(
+                    price: 0,
+                    quantity: 0,
+                    productName: "",
+                    openType: productModel.openType
+                )
 
             return
         }
@@ -124,7 +138,8 @@ class ProductItemTableViewCell: UITableViewCell {
         caculation(
             price: productModel.price,
             quantity: number - 1,
-            productName: productModel.productName
+            productName: productModel.productName,
+            openType: productModel.openType
         )
         
     }

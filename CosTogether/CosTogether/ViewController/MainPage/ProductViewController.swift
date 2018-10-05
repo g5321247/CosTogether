@@ -13,7 +13,10 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
 //    var products: [Product] = []
-    var products: [Int] = [1]
+    var shareBuy: [Int] = [1]
+    var helpBuy: [Int] = []
+    
+    var openGroupType: OpenGroupType = .shareBuy
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +27,36 @@ class ProductViewController: UIViewController {
     
     private func countProduct() {
         
-        guard products.count != 0 else {
+        switch openGroupType {
             
-            collectionView.isHidden = true
+        case .shareBuy:
             
-            return
+            guard shareBuy.count != 0 else {
+                
+                collectionView.isHidden = true
+                
+                return
+            }
+            
+            collectionView.isHidden = false
+            
+        case .helpBuy:
+            
+            guard helpBuy.count != 0 else {
+                
+                collectionView.isHidden = true
+                
+                return
+            }
+            
+            collectionView.isHidden = false
         }
-        
-        collectionView.isHidden = false
         
     }
     
     private func setup() {
         
+        countProduct()
         setColletionView()
         
     }

@@ -59,7 +59,13 @@ struct UserModel: DataProtocol {
     
     static func groupMember(image: String, name: String) -> UserModel {
         
-        return UserModel(userImage: image, userName: name, numberOfEvaluation: nil, buyNumber: nil, averageEvaluation: nil)
+        return UserModel(
+            userImage: image,
+            userName: name,
+            numberOfEvaluation: nil,
+            buyNumber: nil,
+            averageEvaluation: nil
+        )
         
     }
     
@@ -77,9 +83,22 @@ struct ProductModel: DataProtocol {
     
     var price: Int
     
-    static func purchasingProduct(name: String,number: Int, totalCost: Int) -> ProductModel {
+    var openType: OpenGroupType
+    
+    static func purchasingProduct(
+        name: String,
+        number: Int,
+        totalCost: Int,
+        openType: OpenGroupType) -> ProductModel {
         
-        return ProductModel(productName: name, productImage: nil, numberOfItem: number, expiredDate: nil, price: totalCost)
+        return ProductModel(
+            productName: name,
+            productImage: nil,
+            numberOfItem: number,
+            expiredDate: nil,
+            price: totalCost,
+            openType: openType
+        )
         
     }
     

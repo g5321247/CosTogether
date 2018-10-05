@@ -33,14 +33,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-I3-ssh">
-                                <rect key="frame" x="299" y="82.5" width="18" height="18"/>
+                                <rect key="frame" x="297" y="82.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ELb-I3-ssh" secondAttribute="height" multiplier="1:1" id="88e-BG-LPi"/>
                                     <constraint firstAttribute="height" constant="18" id="bnI-Uu-l6Q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f44-xr-eaN">
-                                <rect key="frame" x="327" y="77.5" width="40" height="28"/>
+                                <rect key="frame" x="325" y="77.5" width="40" height="28"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -65,23 +65,40 @@
                                 </constraints>
                                 <state key="normal" image="testUser"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分購" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-iM-QxS">
+                                <rect key="frame" x="325" y="108.5" width="40" height="28"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
+                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-G9-i3p">
+                                <rect key="frame" x="299" y="114.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="NMH-Iw-6L2"/>
+                                    <constraint firstAttribute="height" constant="16" id="c4r-ce-9Je"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="w2L-qR-b2b" secondAttribute="bottom" constant="25" id="1Q5-6m-oyX"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="leading" secondItem="ELb-I3-ssh" secondAttribute="trailing" constant="10" id="GBb-fr-CIb"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="w2L-qR-b2b" secondAttribute="trailing" constant="20" id="L1i-om-leX"/>
+                            <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="f44-xr-eaN" secondAttribute="trailing" constant="10" id="LS2-Y4-JQf"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="leading" id="NO1-5q-qsr"/>
+                            <constraint firstAttribute="trailing" secondItem="hCF-iM-QxS" secondAttribute="trailing" constant="10" id="RXZ-z5-Hal"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="centerY" secondItem="ELb-I3-ssh" secondAttribute="centerY" id="SSt-db-qqk"/>
+                            <constraint firstItem="hCF-iM-QxS" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="TNG-xw-Jlx"/>
                             <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="Vou-hs-kT9"/>
                             <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="eod-xo-0Kw" secondAttribute="top" id="X6V-Ym-OQv"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" id="cni-9M-Zlh"/>
-                            <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="f44-xr-eaN" secondAttribute="trailing" constant="8" id="eNS-5x-fhc"/>
+                            <constraint firstItem="hCF-iM-QxS" firstAttribute="leading" secondItem="kvd-G9-i3p" secondAttribute="trailing" constant="10" id="fvS-OT-HYm"/>
                             <constraint firstItem="ELb-I3-ssh" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="h4Y-IR-dtj"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" constant="29" id="jf1-Cd-oPv"/>
                             <constraint firstItem="w2L-qR-b2b" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="r1k-TG-udC"/>
                             <constraint firstItem="w2L-qR-b2b" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" constant="15" id="rCK-gZ-8Xo"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
+                            <constraint firstItem="kvd-G9-i3p" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="vZV-aV-ae9"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="trailing" constant="-132" id="xQ8-ir-C0P"/>
                             <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="eod-xo-0Kw" secondAttribute="trailing" constant="12" id="zhr-vC-Bfg"/>
                         </constraints>
@@ -92,6 +109,8 @@
                             <outlet property="authorNameLbl" destination="HkW-Bb-fdz" id="dmE-wb-SlB"/>
                             <outlet property="locationLbl" destination="f44-xr-eaN" id="M5T-3b-9TU"/>
                             <outlet property="postDateLbl" destination="mxi-9Y-Fi5" id="XDY-On-kJI"/>
+                            <outlet property="productImage" destination="kvd-G9-i3p" id="xTS-ft-keI"/>
+                            <outlet property="tagLbl" destination="hCF-iM-QxS" id="a3W-xK-QuY"/>
                         </connections>
                     </view>
                 </subviews>
@@ -111,6 +130,7 @@
     </objects>
     <resources>
         <image name="location" width="16" height="16"/>
+        <image name="tag" width="16" height="16"/>
         <image name="testUser" width="155" height="81"/>
     </resources>
 </document>

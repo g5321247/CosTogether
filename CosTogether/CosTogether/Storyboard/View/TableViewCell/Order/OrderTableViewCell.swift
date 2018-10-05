@@ -12,7 +12,7 @@ import Firebase
 protocol CellDelegate: AnyObject {
     
     func cellButtonTapping(_ cell: UITableViewCell)
-    func reloadData()
+    func reszing(heightGap: CGFloat)
     func updateLocalData(data: Any)
 }
 

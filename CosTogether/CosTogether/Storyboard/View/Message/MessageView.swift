@@ -12,7 +12,6 @@ class MessageView: UIView {
     
     @IBOutlet weak var messgaeTxtView: UITextView!
     @IBOutlet weak var sendMessageBot: UIButton!
-    @IBOutlet weak var textHeightConstraint: NSLayoutConstraint!
     
     weak var delegate: CellDelegate?
     

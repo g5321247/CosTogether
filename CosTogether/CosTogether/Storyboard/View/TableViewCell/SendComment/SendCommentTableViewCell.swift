@@ -23,9 +23,9 @@ class SendCommentTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func reloadTextViewIfNeed() {
+    func resizeTextView(heightGap: CGFloat) {
         
-        delegate?.reloadData()
+        delegate?.reszing(heightGap: heightGap)
         
     }
     
@@ -63,22 +63,25 @@ extension SendCommentTableViewCell: UITextViewDelegate {
             CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
             )
         
-        baseView.textHeightConstraint.constant = newSize.height
-        
-        self.layoutIfNeeded()
-        
+        if baseView.messgaeTxtView.contentSize.height > baseView.messgaeTxtView.frame.size.height {
+            
+            let heightGap = newSize.height - baseView.messgaeTxtView.frame.size.height
+            
+            baseView.messgaeTxtView.frame.size.height = newSize.height
+            baseView.frame.size.height += heightGap
+
+            delegate?.reszing(heightGap: heightGap)
+
+        }
+
     }
     
     func textViewDidChange(_ textView: UITextView) {
         
         self.adjustTextViewHeight()
         
-//        if textView.contentSize.height > textView.frame.size.height {
-//
-//            reloadTextViewIfNeed()
-//
-//        }
 
+        
     }
     
 }
