@@ -131,7 +131,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         
         //        collectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
             ) as? DetailViewController else {
                 

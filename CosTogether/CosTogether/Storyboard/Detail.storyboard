@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rO2-ml-OBB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="jc1-tq-gxz">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="rO2-ml-OBB" customClass="DetailViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ida-mf-6LP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LY2-O3-h5M" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-Ry-Stz">
+                                        <rect key="frame" x="116" y="53.5" width="143" height="28"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-PA-pVd">
+                                        <rect key="frame" x="24" y="60" width="30" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CbF-PA-pVd" secondAttribute="height" multiplier="2:1" id="5SK-sF-pnA"/>
+                                            <constraint firstAttribute="width" constant="30" id="ku4-uI-Qzt"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBu-dO-D1O">
+                                        <rect key="frame" x="301" y="42.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="P5b-VC-a8A"/>
+                                            <constraint firstAttribute="width" secondItem="nBu-dO-D1O" secondAttribute="height" multiplier="1:1" id="uJz-5v-6gU"/>
+                                        </constraints>
+                                        <state key="normal" image="chat"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nBu-dO-D1O" firstAttribute="centerY" secondItem="iBO-Ry-Stz" secondAttribute="centerY" id="5Rn-r3-UXy"/>
+                                    <constraint firstItem="iBO-Ry-Stz" firstAttribute="centerX" secondItem="LY2-O3-h5M" secondAttribute="centerX" id="DpE-nn-5Sp"/>
+                                    <constraint firstAttribute="trailing" secondItem="nBu-dO-D1O" secondAttribute="trailing" constant="24" id="Pbx-45-QZS"/>
+                                    <constraint firstItem="CbF-PA-pVd" firstAttribute="leading" secondItem="LY2-O3-h5M" secondAttribute="leading" constant="24" id="Uqt-to-Ed3"/>
+                                    <constraint firstAttribute="width" secondItem="LY2-O3-h5M" secondAttribute="height" multiplier="75:19" id="YRM-W9-ceS"/>
+                                    <constraint firstAttribute="bottom" secondItem="CbF-PA-pVd" secondAttribute="bottom" constant="20" id="jkK-MF-H2z"/>
+                                    <constraint firstItem="iBO-Ry-Stz" firstAttribute="centerY" secondItem="CbF-PA-pVd" secondAttribute="centerY" id="ycY-hb-D72"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="leftBot" destination="CbF-PA-pVd" id="mEv-m5-p1s"/>
+                                    <outlet property="rightBot" destination="nBu-dO-D1O" id="MXm-2J-tJI"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zI4-01-1FE">
+                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LY2-O3-h5M" firstAttribute="top" secondItem="Ida-mf-6LP" secondAttribute="top" id="KtS-Dk-n8y"/>
+                            <constraint firstItem="LY2-O3-h5M" firstAttribute="leading" secondItem="Nle-6R-9cu" secondAttribute="leading" id="U43-Ni-XIE"/>
+                            <constraint firstItem="zI4-01-1FE" firstAttribute="leading" secondItem="Nle-6R-9cu" secondAttribute="leading" id="ZCf-On-FGs"/>
+                            <constraint firstItem="Nle-6R-9cu" firstAttribute="trailing" secondItem="zI4-01-1FE" secondAttribute="trailing" id="bza-BA-zCM"/>
+                            <constraint firstItem="Nle-6R-9cu" firstAttribute="bottom" secondItem="zI4-01-1FE" secondAttribute="bottom" id="e65-Uo-gUi"/>
+                            <constraint firstItem="LY2-O3-h5M" firstAttribute="trailing" secondItem="Nle-6R-9cu" secondAttribute="trailing" id="pqr-df-DhP"/>
+                            <constraint firstItem="zI4-01-1FE" firstAttribute="top" secondItem="LY2-O3-h5M" secondAttribute="bottom" id="zWI-Dx-1TV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nle-6R-9cu"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zI4-01-1FE" id="6Hu-iC-ek3"/>
+                        <outlet property="topLogView" destination="LY2-O3-h5M" id="akZ-85-fkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCb-IT-9Zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3844" y="-519"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="764" height="331"/>
+        <image name="chat" width="32" height="32"/>
+    </resources>
+</document>

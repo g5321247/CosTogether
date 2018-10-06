@@ -148,15 +148,14 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         
         //        collectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
             ) as? DetailViewController else {
                 
                 return
                 
         }
-        
-        
+
         #warning ("傳姪過去")
         //        controller.loadViewIfNeeded()
         //        controller.article = articles[indexPath.row]

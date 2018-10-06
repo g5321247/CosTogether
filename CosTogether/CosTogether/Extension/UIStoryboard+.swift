@@ -26,5 +26,10 @@ extension UIStoryboard {
         
         return UIStoryboard(name: "ChatRoom", bundle: nil)
     }
+ 
+    static func detailStoryboard() -> UIStoryboard {
         
+        return UIStoryboard(name: "Detail", bundle: nil)
+        
+    }
 }
