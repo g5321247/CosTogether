@@ -21,6 +21,7 @@
 		C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A26021675B1C0066D635 /* HelpBuyViewController.swift */; };
 		C823A263216768820066D635 /* OpenGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A262216768820066D635 /* OpenGroupViewController.swift */; };
 		C823A2662168B1A50066D635 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C823A2652168B1A50066D635 /* Detail.storyboard */; };
+		C823A26A2169049D0066D635 /* CreateArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A2692169049D0066D635 /* CreateArticleView.swift */; };
 		C827FAD8216080DA008AB665 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827FAD7216080DA008AB665 /* Users.swift */; };
 		C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BA996215C891E00996B11 /* ProductPicTableViewCell.swift */; };
 		C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82BA997215C891E00996B11 /* ProductPicTableViewCell.xib */; };
@@ -102,6 +103,7 @@
 		C823A26021675B1C0066D635 /* HelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpBuyViewController.swift; sourceTree = "<group>"; };
 		C823A262216768820066D635 /* OpenGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupViewController.swift; sourceTree = "<group>"; };
 		C823A2652168B1A50066D635 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		C823A2692169049D0066D635 /* CreateArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticleView.swift; sourceTree = "<group>"; };
 		C827FAD7216080DA008AB665 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C82BA994215C74B800996B11 /* Didot HTFB96 Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Didot HTFB96 Bold.otf"; sourceTree = "<group>"; };
 		C82BA995215C78CB00996B11 /* New Baskerville BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Baskerville BT.ttf"; sourceTree = "<group>"; };
@@ -292,6 +294,14 @@
 			path = OpenGroup;
 			sourceTree = "<group>";
 		};
+		C823A26B216904D40066D635 /* CreateArticle */ = {
+			isa = PBXGroup;
+			children = (
+				C823A2692169049D0066D635 /* CreateArticleView.swift */,
+			);
+			path = CreateArticle;
+			sourceTree = "<group>";
+		};
 		C827FAD921608108008AB665 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +374,7 @@
 		C849750F215762A300555855 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C823A26B216904D40066D635 /* CreateArticle */,
 				C87F8B0A215D23640060EA72 /* TopLog */,
 				C8FCA3B5215BCD99008724A3 /* TableViewCell */,
 				C8FCA3AD215BC557008724A3 /* ArticleInfo */,
@@ -900,6 +911,7 @@
 				C823A263216768820066D635 /* OpenGroupViewController.swift in Sources */,
 				C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,
+				C823A26A2169049D0066D635 /* CreateArticleView.swift in Sources */,
 				C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */,
 				C87F8B14215DD2230060EA72 /* JoinGroupTableViewCell.swift in Sources */,
 				C8FB98B62160FCD100C78926 /* Comment.swift in Sources */,
