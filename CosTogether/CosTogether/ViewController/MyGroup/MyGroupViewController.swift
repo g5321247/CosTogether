@@ -13,7 +13,7 @@ class MyGroupViewController: UIViewController {
     @IBOutlet weak var groupTypeSC: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var group: [UIImage] = [#imageLiteral(resourceName: "test")]
+    var group: [UIImage] = [#imageLiteral(resourceName: "test"),#imageLiteral(resourceName: "test")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,8 @@ class MyGroupViewController: UIViewController {
     
     private func tableViewSetup() {
         
+        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -75,8 +77,16 @@ class MyGroupViewController: UIViewController {
 
 extension MyGroupViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 130
+
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        #warning ("改成到購買資訊的地方")
+
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self))
             as? DetailViewController else {

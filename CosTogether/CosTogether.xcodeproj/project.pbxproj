@@ -284,12 +284,12 @@
 			path = GroupBuy;
 			sourceTree = "<group>";
 		};
-		C823A264216768880066D635 /* OpenGroupViewController */ = {
+		C823A264216768880066D635 /* OpenGroup */ = {
 			isa = PBXGroup;
 			children = (
 				C823A262216768820066D635 /* OpenGroupViewController.swift */,
 			);
-			path = OpenGroupViewController;
+			path = OpenGroup;
 			sourceTree = "<group>";
 		};
 		C827FAD921608108008AB665 /* Users */ = {
@@ -550,7 +550,7 @@
 				C84975242157BAF200555855 /* LogIn */,
 				C8B91E73215FC79700F7CA3A /* Profile */,
 				C8FB98C92161870100C78926 /* MyGroup */,
-				C823A264216768880066D635 /* OpenGroupViewController */,
+				C823A264216768880066D635 /* OpenGroup */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

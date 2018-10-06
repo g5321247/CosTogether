@@ -11,6 +11,7 @@ import UIKit
 class GroupTableViewCell: UITableViewCell {
 
     @IBOutlet weak var baseView: ArticleInfoView!
+    @IBOutlet weak var shadowView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +19,29 @@ class GroupTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
+    private func setup() {
+        cornerCell()
+        setShadow()
+    }
+    
+    private func cornerCell() {
+        
+        baseView.cornerup()
+        
+    }
+    
+    private func setShadow() {
+        
+        shadowView.shadowSetup()
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setup()
+    }
 }

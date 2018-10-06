@@ -43,6 +43,12 @@ class ArticleInfoView: UIView {
         
     }
     
+    func cornerup() {
+        
+        self.cornerSetup(cornerRadius: 8)
+        
+    }
+    
     private func setup() {
         
         setupImageView()
