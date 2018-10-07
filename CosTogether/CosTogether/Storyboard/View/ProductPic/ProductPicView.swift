@@ -103,7 +103,6 @@ extension ProductPicView: FSPagerViewDataSource {
         
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
-        
 
         #warning("sd set image")
 //        cell.imageView?.image = delegate?.products[index].productImage

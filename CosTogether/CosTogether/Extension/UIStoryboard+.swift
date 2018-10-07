@@ -32,4 +32,9 @@ extension UIStoryboard {
         return UIStoryboard(name: "Detail", bundle: nil)
         
     }
+    
+    static func appendProductItemStoryboard() -> UIStoryboard {
+        
+        return UIStoryboard(name: "AppendProductItem", bundle: nil)
+    }
 }

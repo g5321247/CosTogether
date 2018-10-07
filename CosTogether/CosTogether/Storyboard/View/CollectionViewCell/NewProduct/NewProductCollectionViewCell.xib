@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="khR-GY-L1I" customClass="NewProductCollectionViewCell" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-bI-hqp">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP0-eM-mZw" customClass="NewProductView" customModule="CosTogether" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2z-VW-Yf5">
+                                        <rect key="frame" x="15" y="60" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="D2z-VW-Yf5" secondAttribute="height" multiplier="1:1" id="Evd-nl-3ZO"/>
+                                            <constraint firstAttribute="height" constant="120" id="UBg-YM-dZ9"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="dotted-line"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 加入商品照片、相關訊息" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-aS-jxA">
+                                        <rect key="frame" x="23" y="97" width="104" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EaA-aS-jxA" firstAttribute="trailing" secondItem="D2z-VW-Yf5" secondAttribute="trailing" constant="-8" id="9zp-Ny-F3o"/>
+                                    <constraint firstItem="EaA-aS-jxA" firstAttribute="centerY" secondItem="D2z-VW-Yf5" secondAttribute="centerY" id="Ire-86-6Sd"/>
+                                    <constraint firstItem="D2z-VW-Yf5" firstAttribute="centerX" secondItem="HP0-eM-mZw" secondAttribute="centerX" id="clu-4L-sp0"/>
+                                    <constraint firstItem="EaA-aS-jxA" firstAttribute="leading" secondItem="D2z-VW-Yf5" secondAttribute="leading" constant="8" id="fTn-qQ-4QV"/>
+                                    <constraint firstItem="D2z-VW-Yf5" firstAttribute="centerY" secondItem="HP0-eM-mZw" secondAttribute="centerY" id="wFa-K5-6hV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="appendProductBot" destination="D2z-VW-Yf5" id="dV5-xp-aB6"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HP0-eM-mZw" firstAttribute="top" secondItem="zlw-bI-hqp" secondAttribute="top" id="0kc-ir-KeD"/>
+                            <constraint firstItem="HP0-eM-mZw" firstAttribute="leading" secondItem="zlw-bI-hqp" secondAttribute="leading" id="8eb-qi-EZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="HP0-eM-mZw" secondAttribute="trailing" id="TFx-LP-d7J"/>
+                            <constraint firstAttribute="bottom" secondItem="HP0-eM-mZw" secondAttribute="bottom" id="g4l-GT-mj1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zlw-bI-hqp" secondAttribute="trailing" id="5rV-I4-cmS"/>
+                <constraint firstItem="zlw-bI-hqp" firstAttribute="leading" secondItem="khR-GY-L1I" secondAttribute="leading" id="Iyo-Vb-E6c"/>
+                <constraint firstItem="zlw-bI-hqp" firstAttribute="top" secondItem="khR-GY-L1I" secondAttribute="top" id="i2g-nO-YoZ"/>
+                <constraint firstAttribute="bottom" secondItem="zlw-bI-hqp" secondAttribute="bottom" id="l5y-3w-vCa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="p9l-Uh-wP9"/>
+            <size key="customSize" width="116" height="154"/>
+            <point key="canvasLocation" x="190.40000000000001" y="194.30284857571215"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="dotted-line" width="256" height="256"/>
+    </resources>
+</document>

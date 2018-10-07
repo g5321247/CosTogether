@@ -50,6 +50,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 4.0
         self.layer.shadowOpacity = 0.5
         self.layer.masksToBounds = false
+        
     }
     
 }

@@ -36,7 +36,6 @@ class CreateArticleView: UIView {
         contentTextView.text = "請輸入揪團詳細資訊內容..."
         contentTextView.textColor = UIColor.lightGray
 
-        
         titleTxf.cornerSetup(
             cornerRadius: 4,
             borderWidth: 1,

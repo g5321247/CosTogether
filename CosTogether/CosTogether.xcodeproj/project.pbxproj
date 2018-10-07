@@ -52,6 +52,11 @@
 		C8860982215FA649006B736A /* SendCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8860980215FA649006B736A /* SendCommentTableViewCell.swift */; };
 		C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8860981215FA649006B736A /* SendCommentTableViewCell.xib */; };
 		C888DB28216619010091F6F0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C888DB27216619010091F6F0 /* UIImage+.swift */; };
+		C8B77AFE2169B34F0067AC21 /* NewProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */; };
+		C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */; };
+		C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77B012169BDA70067AC21 /* NewProductView.swift */; };
+		C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */; };
+		C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77B052169DDEC0067AC21 /* AppendNewItemViewController.swift */; };
 		C8B91E72215FC79200F7CA3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B91E71215FC79200F7CA3A /* ProfileViewController.swift */; };
 		C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */; };
 		C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */; };
@@ -140,6 +145,11 @@
 		C8860980215FA649006B736A /* SendCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C8860981215FA649006B736A /* SendCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C888DB27216619010091F6F0 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		C8B77B012169BDA70067AC21 /* NewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductView.swift; sourceTree = "<group>"; };
+		C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppendProductItem.storyboard; sourceTree = "<group>"; };
+		C8B77B052169DDEC0067AC21 /* AppendNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendNewItemViewController.swift; sourceTree = "<group>"; };
 		C8B91E71215FC79200F7CA3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C8BCF0D5215E10A500A2B1B8 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8BCF0D6215E10A500A2B1B8 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -298,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				C823A2692169049D0066D635 /* CreateArticleView.swift */,
+				C8B77B012169BDA70067AC21 /* NewProductView.swift */,
 			);
 			path = CreateArticle;
 			sourceTree = "<group>";
@@ -498,6 +509,23 @@
 			path = UserData;
 			sourceTree = "<group>";
 		};
+		C8B77B002169B3590067AC21 /* NewProduct */ = {
+			isa = PBXGroup;
+			children = (
+				C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */,
+				C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */,
+			);
+			path = NewProduct;
+			sourceTree = "<group>";
+		};
+		C8B77B072169DDF00067AC21 /* AppendNewItem */ = {
+			isa = PBXGroup;
+			children = (
+				C8B77B052169DDEC0067AC21 /* AppendNewItemViewController.swift */,
+			);
+			path = AppendNewItem;
+			sourceTree = "<group>";
+		};
 		C8B91E73215FC79700F7CA3A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +590,7 @@
 				C8B91E73215FC79700F7CA3A /* Profile */,
 				C8FB98C92161870100C78926 /* MyGroup */,
 				C823A264216768880066D635 /* OpenGroup */,
+				C8B77B072169DDF00067AC21 /* AppendNewItem */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -570,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */,
 				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */,
 				C8F8C923215227FA00BDB0CE /* LogIn.storyboard */,
@@ -662,6 +692,7 @@
 			children = (
 				C84975252157BCF600555855 /* Product */,
 				C8BCF0D9215E230F00A2B1B8 /* Member */,
+				C8B77B002169B3590067AC21 /* NewProduct */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -761,11 +792,13 @@
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
+				C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */,
 				C823A2662168B1A50066D635 /* Detail.storyboard in Resources */,
 				C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */,
 				C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
+				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
 				C8C2B477215F2B000033FB28 /* PreviousCommentTableViewCell.xib in Resources */,
 				C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */,
@@ -868,10 +901,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */,
 				C8FB98C8216186F800C78926 /* MyGroupViewController.swift in Sources */,
 				C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
+				C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */,
 				C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
@@ -903,6 +938,7 @@
 				C810BB3521592A3D0064A656 /* UIView+.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
 				C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */,
+				C8B77AFE2169B34F0067AC21 /* NewProductCollectionViewCell.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
@@ -1068,6 +1104,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6BWKV47PKT;
 				INFOPLIST_FILE = CosTogether/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,6 +1124,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6BWKV47PKT;
 				INFOPLIST_FILE = CosTogether/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

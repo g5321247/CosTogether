@@ -79,7 +79,6 @@ extension ShareBuyViewController: UICollectionViewDataSource {
         
         collectionView.isHidden = false
         
-        
         return products.count
 
     }
