@@ -12,6 +12,7 @@ class ProductSettingView: UIView {
     
     @IBOutlet weak var decreaseNumBot: UIButton!
     @IBOutlet weak var increaseNumBot: UIButton!
+    @IBOutlet weak var productQuantityLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

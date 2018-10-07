@@ -12,6 +12,9 @@
         <array key="NotoSans-Bold.ttf">
             <string>NotoSans-Bold</string>
         </array>
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Append New Item View Controller-->
@@ -40,13 +43,16 @@
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <state key="normal" image="back"/>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-l2-bOM">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-l2-bOM">
                                         <rect key="frame" x="301" y="42.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nHt-l2-bOM" secondAttribute="height" multiplier="1:1" id="Hpa-pu-GOG"/>
                                             <constraint firstAttribute="height" constant="50" id="fd0-nk-wRQ"/>
                                         </constraints>
-                                        <state key="normal" image="chat"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
+                                        <state key="normal" image="add">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,6 +171,7 @@
                                 <connections>
                                     <outlet property="decreaseNumBot" destination="Rrv-Ca-Dhx" id="8ul-GM-lNl"/>
                                     <outlet property="increaseNumBot" destination="NoF-mA-Dgt" id="0cN-av-5QS"/>
+                                    <outlet property="productQuantityLbl" destination="Tmz-eS-06l" id="Pne-Hg-RhD"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-wI-mrL">
@@ -196,6 +203,7 @@
                     </view>
                     <connections>
                         <outlet property="newProductPicBot" destination="1PT-wI-mrL" id="zpq-UG-0rb"/>
+                        <outlet property="prodctSettingView" destination="TyJ-vj-b37" id="pC5-8A-tTs"/>
                         <outlet property="remindChosePicLbl" destination="2Na-89-Fim" id="wWk-NX-5lR"/>
                         <outlet property="topView" destination="yZz-6a-6V4" id="8yF-bU-BGm"/>
                     </connections>
@@ -206,9 +214,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="32" height="32"/>
         <image name="back" width="764" height="331"/>
         <image name="calendar" width="256" height="256"/>
-        <image name="chat" width="32" height="32"/>
         <image name="productName" width="490" height="475"/>
         <image name="shopping-cart" width="256" height="256"/>
     </resources>

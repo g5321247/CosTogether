@@ -15,6 +15,8 @@ class AppendNewItemViewController: UIViewController {
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     
+    var productQuantity: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,13 +33,17 @@ class AppendNewItemViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        newProductPicBotSetup()
+        bottnSetup()
 
     }
     
-    private func newProductPicBotSetup() {
+    private func bottnSetup() {
         
         newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), lineWidth: 3)
+        
+        prodctSettingView.decreaseNumBot.addTarget(self, action: #selector (quantityBotTapping(_:)), for: .touchUpInside)
+        prodctSettingView.increaseNumBot.addTarget(self, action: #selector ((quantityBotTapping(_:))), for: .touchUpInside)
+
     }
     
     private func leftButtonSetup() {
@@ -77,6 +83,34 @@ class AppendNewItemViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         return alertController
+    }
+    
+    @objc func quantityBotTapping(_ sender: UIButton) {
+        
+        if sender == prodctSettingView.increaseNumBot {
+            
+            guard productQuantity < 99 else {
+                
+                return
+            }
+            
+            productQuantity += 1
+            
+            prodctSettingView.productQuantityLbl.text = "\(productQuantity)"
+            
+        } else if sender == prodctSettingView.decreaseNumBot {
+            
+            guard productQuantity > 0 else {
+                
+                return
+            }
+            
+            productQuantity -= 1
+            
+            prodctSettingView.productQuantityLbl.text = "\(productQuantity)"
+
+        }
+        
     }
     
 }
