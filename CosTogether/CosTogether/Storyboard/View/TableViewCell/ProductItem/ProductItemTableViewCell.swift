@@ -77,8 +77,7 @@ class ProductItemTableViewCell: UITableViewCell {
     private func caculation(
         price: Int,
         quantity: Int,
-        productName: String,
-        openType: OpenGroupType
+        productName: String
         ) {
         
         buyNumberLbl.text = String(quantity)
@@ -87,8 +86,7 @@ class ProductItemTableViewCell: UITableViewCell {
                 ProductModel.purchasingProduct(
                 name: productName,
                 number: quantity,
-                totalCost: price,
-                openType: openType
+                totalCost: price
                 )
         )
 
@@ -110,8 +108,7 @@ class ProductItemTableViewCell: UITableViewCell {
         caculation(
             price: productModel.price,
             quantity: number + 1,
-            productName: productModel.productName,
-            openType: productModel.openType
+            productName: productModel.productName
         )
         
     }
@@ -127,8 +124,7 @@ class ProductItemTableViewCell: UITableViewCell {
                 caculation(
                     price: 0,
                     quantity: 0,
-                    productName: "",
-                    openType: productModel.openType
+                    productName: ""
                 )
 
             return
@@ -138,8 +134,7 @@ class ProductItemTableViewCell: UITableViewCell {
         caculation(
             price: productModel.price,
             quantity: number - 1,
-            productName: productModel.productName,
-            openType: productModel.openType
+            productName: productModel.productName
         )
         
     }

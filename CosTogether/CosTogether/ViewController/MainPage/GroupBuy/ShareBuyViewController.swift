@@ -26,8 +26,7 @@ class ShareBuyViewController: UIViewController {
                 productImage: "123",
                 numberOfItem: 2,
                 expiredDate: Date(),
-                price: 20,
-                openType: .helpBuy
+                price: 20
             )
         )
     ]

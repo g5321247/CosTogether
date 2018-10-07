@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import NotificationBannerSwift
+
+protocol ProductSettingDelegate: AnyObject {
+    
+    func getProductSetting(product: ProductModel)
+    
+}
 
 class ProductSettingView: UIView {
     
     @IBOutlet weak var decreaseNumBot: UIButton!
     @IBOutlet weak var increaseNumBot: UIButton!
     @IBOutlet weak var productQuantityLbl: UILabel!
+    @IBOutlet weak var productNameTxf: UITextField!
+    @IBOutlet weak var productPriceTxf: UITextField!
+    @IBOutlet weak var calenderTxf: UITextField!
+    
+    var productQuantity: Int = 0
+    
+    weak var delegate: ProductSettingDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +36,7 @@ class ProductSettingView: UIView {
     
     private func setup() {
         viewSetup()
-        setButtonView()
+        setButton()
     }
     
     private func viewSetup() {
@@ -35,7 +49,7 @@ class ProductSettingView: UIView {
         )
     }
     
-    private func setButtonView() {
+    private func setButton() {
         
         decreaseNumBot.cornerSetup(
             cornerRadius: decreaseNumBot.frame.width / 2,
@@ -49,6 +63,90 @@ class ProductSettingView: UIView {
             borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         )
         
-    }
+        decreaseNumBot.addTarget(
+            self,
+            action: #selector (quantityBotTapping(_:)),
+            for: .touchUpInside
+        )
+        increaseNumBot.addTarget(
+            self,
+            action: #selector ((quantityBotTapping(_:))),
+            for: .touchUpInside
+        )
 
+    }
+    
+    @objc func quantityBotTapping(_ sender: UIButton) {
+        
+        if sender == increaseNumBot {
+            
+            guard productQuantity < 99 else {
+                
+                return
+            }
+            
+            productQuantity += 1
+            
+            productQuantityLbl.text = "\(productQuantity)"
+            
+        } else if sender == decreaseNumBot {
+            
+            guard productQuantity > 0 else {
+                
+                return
+            }
+            
+            productQuantity -= 1
+            
+            productQuantityLbl.text = "\(productQuantity)"
+            
+        }
+        
+    }
+    
+    func updateProductInfo() {
+        
+        guard let productName = productNameTxf.text,
+          productName != "" else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入商品名稱")
+            return
+        }
+        
+        guard let productPrice = Int(productPriceTxf.text!) else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
+            return
+        }
+        
+        guard productPrice > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得為零")
+            return
+        }
+        
+        guard productQuantity > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
+            return
+        }
+        
+        #warning ("改成 expiredDate: calenderTxf.text ?? ")
+        
+        let product = ProductModel(
+            productName: productName,
+            productImage: "",
+            numberOfItem: productQuantity,
+            expiredDate: Date(),
+            price: productPrice
+            )
+
+        guard  let delegate = delegate else {
+            return
+        }
+        
+        delegate.getProductSetting(product: product)
+        
+    }
+    
 }

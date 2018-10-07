@@ -50,15 +50,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             productImage: "123",
             numberOfItem: 2,
             expiredDate: Date(),
-            price: 20,
-            openType: .helpBuy
+            price: 20
         ), ProductModel (
             productName: "難吃的",
             productImage: "123",
             numberOfItem: 4,
             expiredDate: Date(),
-            price: 10,
-            openType: .helpBuy
+            price: 10
         )
 
     ]

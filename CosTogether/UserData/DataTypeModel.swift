@@ -20,6 +20,13 @@ protocol DataProtocol {
     
 }
 
+struct GroupType: DataProtocol {
+    
+    let openType: OpenGroupType
+    let mainPageViewModel: MainPageViewModel
+    
+}
+
 struct MainPageViewModel: DataProtocol {
     
     let user: UserModel
@@ -89,21 +96,18 @@ struct ProductModel: DataProtocol {
     
     var price: Int
     
-    var openType: OpenGroupType
-    
     static func purchasingProduct(
         name: String,
         number: Int,
-        totalCost: Int,
-        openType: OpenGroupType) -> ProductModel {
+        totalCost: Int
+        ) -> ProductModel {
         
         return ProductModel(
             productName: name,
             productImage: nil,
             numberOfItem: number,
             expiredDate: nil,
-            price: totalCost,
-            openType: openType
+            price: totalCost
         )
         
     }

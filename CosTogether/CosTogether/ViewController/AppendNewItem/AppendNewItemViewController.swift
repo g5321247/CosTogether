@@ -15,7 +15,7 @@ class AppendNewItemViewController: UIViewController {
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     
-    var productQuantity: Int = 0
+    var product: ProductModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class AppendNewItemViewController: UIViewController {
     
     private func setup() {
         
-        navigationController?.navigationBar.isHidden = true
-        leftButtonSetup()
+        navigationController?.navigationBar.isHidden = false
+        topViewButtonSetup()
         
     }
     
@@ -41,15 +41,12 @@ class AppendNewItemViewController: UIViewController {
         
         newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), lineWidth: 3)
         
-        prodctSettingView.decreaseNumBot.addTarget(self, action: #selector (quantityBotTapping(_:)), for: .touchUpInside)
-        prodctSettingView.increaseNumBot.addTarget(self, action: #selector ((quantityBotTapping(_:))), for: .touchUpInside)
-
     }
     
-    private func leftButtonSetup() {
+    private func topViewButtonSetup() {
         
         topView.leftBot.addTarget(self, action: #selector (backToController(_:)), for: .touchUpInside)
-        
+        topView.rightBot.addTarget(self, action: #selector (saveBotTapping(_:)), for: .touchUpInside)
     }
 
     @objc func backToController(_ sneder: UIButton) {
@@ -85,32 +82,21 @@ class AppendNewItemViewController: UIViewController {
         return alertController
     }
     
-    @objc func quantityBotTapping(_ sender: UIButton) {
+    
+    @objc func saveBotTapping(_ sender: UIButton) {
+        #warning ("將值傳回上個controller")
         
-        if sender == prodctSettingView.increaseNumBot {
-            
-            guard productQuantity < 99 else {
-                
-                return
-            }
-            
-            productQuantity += 1
-            
-            prodctSettingView.productQuantityLbl.text = "\(productQuantity)"
-            
-        } else if sender == prodctSettingView.decreaseNumBot {
-            
-            guard productQuantity > 0 else {
-                
-                return
-            }
-            
-            productQuantity -= 1
-            
-            prodctSettingView.productQuantityLbl.text = "\(productQuantity)"
-
-        }
-        
+        prodctSettingView.updateProductInfo()
     }
     
+    func getProductSetting(product: ProductModel) {
+        
+        self.product = product
+        
+        #warning ("把 view 塞進去")
+//        self.product?.productImage =
+//
+//        newProductPicBot.imageView.set
+    }
+
 }

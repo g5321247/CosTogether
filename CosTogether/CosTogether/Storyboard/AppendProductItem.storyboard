@@ -76,10 +76,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyJ-vj-b37" customClass="ProductSettingView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="20" y="333.5" width="335" height="213.5"/>
+                                <rect key="frame" x="20" y="333.5" width="335" height="243"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AUQ-FF-xzV">
-                                        <rect key="frame" x="15" y="15" width="45" height="183.5"/>
+                                        <rect key="frame" x="15" y="15" width="45" height="213"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productName" translatesAutoresizingMaskIntoConstraints="NO" id="WRx-A1-GAU">
                                                 <rect key="frame" x="4.5" y="0.0" width="36" height="36"/>
@@ -88,15 +88,22 @@
                                                     <constraint firstAttribute="width" constant="36" id="AiS-nk-re0"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-5v-2Hg">
+                                                <rect key="frame" x="4.5" y="59" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="EpR-hs-MjA"/>
+                                                    <constraint firstAttribute="height" constant="36" id="vga-DT-t2c"/>
+                                                </constraints>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-cart" translatesAutoresizingMaskIntoConstraints="NO" id="HvV-NA-ijC">
-                                                <rect key="frame" x="4.5" y="74" width="36" height="36"/>
+                                                <rect key="frame" x="4.5" y="118" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="Hqd-96-hSC"/>
                                                     <constraint firstAttribute="height" constant="36" id="v85-4H-kBs"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-eO-Rm1">
-                                                <rect key="frame" x="4.5" y="147.5" width="36" height="36"/>
+                                                <rect key="frame" x="4.5" y="177" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="cJH-M8-Wv4"/>
                                                     <constraint firstAttribute="width" constant="36" id="rdf-0n-1dJ"/>
@@ -107,14 +114,14 @@
                                             <constraint firstAttribute="width" constant="45" id="uim-k1-bGX"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入商品名稱..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUn-mz-OtB">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入商品名稱..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUn-mz-OtB">
                                         <rect key="frame" x="80" y="18" width="235" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="x05-5c-iGu">
-                                        <rect key="frame" x="102.5" y="92" width="190.5" height="30"/>
+                                        <rect key="frame" x="102.5" y="136" width="190.5" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-Ca-Dhx">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -146,8 +153,14 @@
                                             <constraint firstItem="NoF-mA-Dgt" firstAttribute="width" secondItem="NoF-mA-Dgt" secondAttribute="height" multiplier="1:1" id="rqH-cR-jVp"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY/MM/DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NoU-NY-Nnf">
-                                        <rect key="frame" x="80" y="165.5" width="235" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY/MM/DD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NoU-NY-Nnf">
+                                        <rect key="frame" x="80" y="195" width="235" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入商品單價..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRh-gr-iGK">
+                                        <rect key="frame" x="80" y="77" width="235" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -155,12 +168,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="jRh-gr-iGK" firstAttribute="centerY" secondItem="3cf-5v-2Hg" secondAttribute="centerY" id="5P4-r8-91j"/>
                                     <constraint firstAttribute="bottom" secondItem="AUQ-FF-xzV" secondAttribute="bottom" constant="15" id="6g5-hi-9N5"/>
                                     <constraint firstItem="zUn-mz-OtB" firstAttribute="leading" secondItem="AUQ-FF-xzV" secondAttribute="trailing" constant="20" id="6rm-Ps-7em"/>
                                     <constraint firstAttribute="trailing" secondItem="zUn-mz-OtB" secondAttribute="trailing" constant="20" id="9pL-Jg-UcI"/>
+                                    <constraint firstAttribute="trailing" secondItem="jRh-gr-iGK" secondAttribute="trailing" constant="20" id="G0z-uX-GfY"/>
+                                    <constraint firstItem="jRh-gr-iGK" firstAttribute="leading" secondItem="AUQ-FF-xzV" secondAttribute="trailing" constant="20" id="HRB-LB-fxg"/>
                                     <constraint firstItem="AUQ-FF-xzV" firstAttribute="leading" secondItem="TyJ-vj-b37" secondAttribute="leading" constant="15" id="M1V-wr-KbW"/>
                                     <constraint firstItem="NoU-NY-Nnf" firstAttribute="leading" secondItem="AUQ-FF-xzV" secondAttribute="trailing" constant="20" id="NWt-fE-euK"/>
-                                    <constraint firstAttribute="width" secondItem="TyJ-vj-b37" secondAttribute="height" multiplier="69:44" id="OBT-D7-BVv"/>
+                                    <constraint firstAttribute="width" secondItem="TyJ-vj-b37" secondAttribute="height" multiplier="69:50" id="OBT-D7-BVv"/>
                                     <constraint firstItem="x05-5c-iGu" firstAttribute="centerX" secondItem="zUn-mz-OtB" secondAttribute="centerX" id="Va1-6o-7ZX"/>
                                     <constraint firstItem="AUQ-FF-xzV" firstAttribute="top" secondItem="TyJ-vj-b37" secondAttribute="top" constant="15" id="csD-0t-xfm"/>
                                     <constraint firstAttribute="trailing" secondItem="NoU-NY-Nnf" secondAttribute="trailing" constant="20" id="dAI-FO-vAi"/>
@@ -169,8 +185,11 @@
                                     <constraint firstItem="x05-5c-iGu" firstAttribute="centerY" secondItem="HvV-NA-ijC" secondAttribute="centerY" id="tAa-f1-hIL"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="calenderTxf" destination="NoU-NY-Nnf" id="KwK-Dl-2sO"/>
                                     <outlet property="decreaseNumBot" destination="Rrv-Ca-Dhx" id="8ul-GM-lNl"/>
                                     <outlet property="increaseNumBot" destination="NoF-mA-Dgt" id="0cN-av-5QS"/>
+                                    <outlet property="productNameTxf" destination="zUn-mz-OtB" id="pAf-QD-2Jw"/>
+                                    <outlet property="productPriceTxf" destination="jRh-gr-iGK" id="bQ4-GQ-4fY"/>
                                     <outlet property="productQuantityLbl" destination="Tmz-eS-06l" id="Pne-Hg-RhD"/>
                                 </connections>
                             </view>
@@ -217,6 +236,7 @@
         <image name="add" width="32" height="32"/>
         <image name="back" width="764" height="331"/>
         <image name="calendar" width="256" height="256"/>
+        <image name="dollar" width="512" height="512"/>
         <image name="productName" width="490" height="475"/>
         <image name="shopping-cart" width="256" height="256"/>
     </resources>

@@ -10,6 +10,7 @@
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
 		C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A71E92162298D00ED4FE9 /* DetailManager.swift */; };
 		C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61EE216A10E100A59F28 /* ProductSettingView.swift */; };
+		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
 		C810BB3521592A3D0064A656 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB3421592A3D0064A656 /* UIView+.swift */; };
 		C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB382159E4630064A656 /* MainNavigationViewController.swift */; };
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
@@ -96,6 +97,7 @@
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80A71E92162298D00ED4FE9 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		C80B61EE216A10E100A59F28 /* ProductSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSettingView.swift; sourceTree = "<group>"; };
+		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
 		C810BB3421592A3D0064A656 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C810BB382159E4630064A656 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		C8154384215340A800B3446D /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 		C8F8C92B2152387100BDB0CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */,
 				C888DB27216619010091F6F0 /* UIImage+.swift */,
 				C84853EC2163BA5300EBCDFB /* Int+.swift */,
 				C8FB98BA2161110E00C78926 /* UITableView+.swift */,
@@ -917,6 +920,7 @@
 				C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */,
 				C8FB98C8216186F800C78926 /* MyGroupViewController.swift in Sources */,
 				C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */,
+				C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
 				C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */,
