@@ -71,6 +71,3 @@ extension CreateArticleView: UITextViewDelegate {
     }
 
 }
-
-
-

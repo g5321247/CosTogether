@@ -11,6 +11,7 @@ import UIKit
 class AppendNewItemViewController: UIViewController {
 
     @IBOutlet weak var topView: TopLogoView!
+    @IBOutlet weak var prodctSettingView: ProductSettingView!
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     
@@ -60,15 +61,16 @@ class AppendNewItemViewController: UIViewController {
         
         let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
             
-            
         }
         
         let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
             
-            
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        cameraAction.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
+        chosePicAction.setValue(#imageLiteral(resourceName: "picture"), forKey: "image")
         
         alertController.addAction(cameraAction)
         alertController.addAction(chosePicAction)
