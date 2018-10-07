@@ -36,4 +36,25 @@ extension UIView {
         
     }
     
+    func addDashdeBorderLayer(color: UIColor, lineWidth width: CGFloat) {
+        
+        let shapeLayer = CAShapeLayer()
+        let size = self.frame.size
+        
+        let shapeRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = width
+        shapeLayer.lineJoin = CAShapeLayerLineJoin.round
+    
+        shapeLayer.lineDashPattern = [20, 20]
+        let path = UIBezierPath(roundedRect: shapeRect, cornerRadius: 0)
+        shapeLayer.path = path.cgPath
+        self.layer.addSublayer(shapeLayer)
+        
+    }
+
 }

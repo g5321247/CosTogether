@@ -15,5 +15,6 @@ target 'CosTogether' do
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
   pod 'NotificationBannerSwift'
-
+  pod 'XLActionController'
+  
 end

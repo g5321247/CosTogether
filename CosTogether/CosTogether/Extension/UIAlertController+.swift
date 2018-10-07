@@ -12,11 +12,10 @@ extension UIAlertController {
     
     private static func alertMessage(
         title: String? = "錯誤",
-        message: String,
-        preferredStyle: UIAlertController.Style? = UIAlertController.Style.alert
+        message: String
         ) -> UIAlertController {
         
-    let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle!)
+    let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: "確定", style: .default, handler: nil)
 
@@ -35,5 +34,5 @@ extension UIAlertController {
         
         return alertMessage(title: title, message: message)
     }
-
+    
 }
