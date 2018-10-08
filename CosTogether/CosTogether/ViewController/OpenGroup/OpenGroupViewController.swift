@@ -8,24 +8,17 @@
 
 import UIKit
 import NotificationBannerSwift
+import FSPagerView
 
 class OpenGroupViewController: UIViewController {
 
-    @IBOutlet weak var topView: TopLogoView!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     
-    var products: [String] = ["1"]
+    var products: [ProductModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.isHidden = true
         
         setup()
 
@@ -35,27 +28,29 @@ class OpenGroupViewController: UIViewController {
         setColletionView()
         newProductBotSetup()
         
-        guard products.count > 0 else {
-            
-            inCollectionViewLbl.isHidden = false
-            
-            return
-        }
+//        guard products.count > 0 else {
+//
+//            inCollectionViewLbl.isHidden = false
+//
+//            return
+//        }
+//
+//        inCollectionViewLbl.isHidden = true
         
-        inCollectionViewLbl.isHidden = true
-
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.clipsToBounds = true
     }
     
     private func setColletionView() {
         
-        registerTableViewCell(identifier: String(describing: NewProductCollectionViewCell.self))
-        
-        collectionView.cornerSetup(cornerRadius: 4, borderWidth: 1, borderColor: UIColor.lightGray.cgColor)
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+//        registerTableViewCell(identifier: String(describing: NewProductCollectionViewCell.self))
+//
+//        collectionView.cornerSetup(cornerRadius: 4, borderWidth: 1, borderColor: UIColor.lightGray.cgColor)
+//
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//
+//        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         
     }
     
@@ -67,17 +62,25 @@ class OpenGroupViewController: UIViewController {
     private func registerTableViewCell(identifier: String) {
         
         let nibCell = UINib(nibName: identifier, bundle: nil)
-        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
-        
+//        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+//
     }
 
     //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
 
     @IBAction func newProductBotTapping(_ sender: UIButton) {
         
-        guard let controller = UIStoryboard.appendProductItemStoryboard().instantiateInitialViewController() else {
+        guard let controller = UIStoryboard.appendProductItemStoryboard()
+            .instantiateInitialViewController()
+            as? AppendNewItemViewController else {
             
             return
+        }
+        
+        controller.appendProduct { (product) in
+            
+            #warning ("要把 update image 上傳至 firebase ")
+            self.products.append(product)
         }
         
         show(controller, sender: nil)

@@ -31,7 +31,6 @@ class AppendNewItemViewController: UIViewController {
     
     private func setup() {
         
-        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         prodctSettingView.delegate = self
@@ -74,6 +73,10 @@ class AppendNewItemViewController: UIViewController {
         }
         
         passProductInfo(product)
+        
+        BaseNotificationBanner.sucessBanner(subtitle: "商品新增成功")
+        
+        navigationController?.popViewController(animated: true)
         
     }
     

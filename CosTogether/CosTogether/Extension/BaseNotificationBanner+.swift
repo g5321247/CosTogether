@@ -23,5 +23,15 @@ extension BaseNotificationBanner {
 
     }
     
-
+    static func sucessBanner(
+        title: String = "成功",
+        subtitle: String,
+        style: BannerStyle = .success
+        ) {
+        
+        let banner = NotificationBanner(title: title, subtitle: subtitle, style: style)
+        
+        banner.show()
+        
+    }
 }
