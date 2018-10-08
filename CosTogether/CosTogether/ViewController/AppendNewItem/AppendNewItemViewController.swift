@@ -16,7 +16,11 @@ class AppendNewItemViewController: UIViewController {
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     
+    let imagePicker = UIImagePickerController()
+    
     var product: ProductModel?
+    var passProductInfo: ((ProductModel) -> Void)?
+    var productImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +32,9 @@ class AppendNewItemViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = false
         topViewButtonSetup()
+        
         prodctSettingView.delegate = self
+        imagePicker.delegate = self
         
     }
     
@@ -66,10 +72,16 @@ class AppendNewItemViewController: UIViewController {
         
         let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
             
+            self.imagePicker.sourceType = .camera
+
         }
         
         let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
             
+            self.imagePicker.sourceType = .photoLibrary
+            
+            self.present(self.imagePicker, animated: true, completion: nil)
+
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -88,8 +100,14 @@ class AppendNewItemViewController: UIViewController {
         
         prodctSettingView.updateProductInfo()
         
-        #warning ("將值傳回上個controller")
-
+        #warning ("將值傳回上個controller,用 closure")
+        
+    }
+    
+    func appendProduct(product: @escaping (ProductModel) -> Void) {
+        
+        passProductInfo = product
+        
     }
     
 }
@@ -107,6 +125,37 @@ extension AppendNewItemViewController: ProductSettingDelegate{
         }
         
         self.product!.updateImage = productImage
+    }
+    
+}
+
+extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+        ) {
+        
+        guard let tempImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請上傳有效照片")
+
+            return
+        }
+        
+        newProductPicBot.cornerSetup(
+            cornerRadius: 4,
+            borderWidth: 4,
+            borderColor: UIColor.white.cgColor,
+            maskToBounds: true
+        )
+        
+        productImage = tempImage
+    
+        newProductPicBot.setImage(tempImage, for: .normal)
+        newProductPicBot.imageView?.cornerSetup(cornerRadius: 12)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

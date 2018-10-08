@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var evaluateButton: UIButton!
     
     var userType: UserType = .currentUser
-    
     #warning ("userInfo == current 的 uuid 時，才為 current user")
     var userInfo: UserModel?
     

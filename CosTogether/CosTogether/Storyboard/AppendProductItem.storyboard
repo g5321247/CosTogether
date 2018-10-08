@@ -30,9 +30,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-Pp-rfM">
                                         <rect key="frame" x="116" y="53.5" width="143" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="FIZ-Pp-rfM" secondAttribute="height" multiplier="143:28" id="0Fb-uh-deo"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -196,11 +193,15 @@
                                     <outlet property="productQuantityLbl" destination="Tmz-eS-06l" id="Pne-Hg-RhD"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-wI-mrL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-wI-mrL">
                                 <rect key="frame" x="25" y="93" width="325" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1PT-wI-mrL" secondAttribute="height" multiplier="69:44" id="yNG-ei-oYw"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="chosePicBotTapping:" destination="VDK-Ou-W6Z" eventType="touchUpInside" id="wCI-y8-OYA"/>
                                 </connections>
@@ -239,7 +240,7 @@
         <image name="add" width="32" height="32"/>
         <image name="back" width="764" height="331"/>
         <image name="calendar" width="256" height="256"/>
-        <image name="dollar" width="512" height="512"/>
+        <image name="dollar" width="256" height="256"/>
         <image name="productName" width="490" height="475"/>
         <image name="shopping-cart" width="256" height="256"/>
     </resources>

@@ -28,7 +28,6 @@ struct FacebookManager {
         
         facebookManager.logIn(
             withReadPermissions: [
-            PermissionKey.email.rawValue,
             PermissionKey.publicProfile.rawValue
             ],
             from: fromController) { (result, error) in
