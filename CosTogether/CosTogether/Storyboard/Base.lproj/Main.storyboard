@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7f-Ur-8EC" customClass="CreateArticleView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="285" width="375" height="303"/>
+                                <rect key="frame" x="0.0" y="318" width="375" height="270"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="揪團標題..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOt-Fh-0pd">
-                                        <rect key="frame" x="20" y="74" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="69" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O24-Tf-SKx">
-                                        <rect key="frame" x="20" y="124" width="335" height="164"/>
+                                        <rect key="frame" x="20" y="119" width="335" height="136"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -51,9 +51,9 @@
                                         </constraints>
                                     </imageView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="huY-do-t97">
-                                        <rect key="frame" x="20" y="4" width="120" height="41"/>
+                                        <rect key="frame" x="20" y="9" width="120" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="GTJ-4m-MQ8"/>
+                                            <constraint firstAttribute="height" constant="30" id="GTJ-4m-MQ8"/>
                                             <constraint firstAttribute="width" constant="120" id="t78-aG-L90"/>
                                         </constraints>
                                         <segments>
@@ -73,7 +73,7 @@
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Nwa-wp-Vp8"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="top" secondItem="eOt-Fh-0pd" secondAttribute="bottom" constant="20" id="PpS-FP-QyT"/>
                                     <constraint firstItem="fgt-Tv-u51" firstAttribute="top" secondItem="H7f-Ur-8EC" secondAttribute="top" constant="15" id="QoC-Xy-dw9"/>
-                                    <constraint firstAttribute="width" secondItem="H7f-Ur-8EC" secondAttribute="height" multiplier="125:101" id="SJs-0W-Bke"/>
+                                    <constraint firstAttribute="width" secondItem="H7f-Ur-8EC" secondAttribute="height" multiplier="125:90" id="SJs-0W-Bke"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Tsi-k6-xHs"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="centerY" secondItem="uQn-uq-A4D" secondAttribute="centerY" id="eQW-So-Cuq"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="h5G-qx-yEA"/>
@@ -86,10 +86,10 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-hn-bYs">
-                                <rect key="frame" x="15" y="74" width="80" height="45"/>
+                                <rect key="frame" x="15" y="84" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="B1C-kE-AM0"/>
-                                    <constraint firstAttribute="height" constant="45" id="CpO-Ue-cgM"/>
+                                    <constraint firstAttribute="height" constant="40" id="CpO-Ue-cgM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <state key="normal" title="新增商品">
@@ -99,33 +99,44 @@
                                     <action selector="newProductBotTapping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J00-eC-x51"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRM-re-wvA">
-                                <rect key="frame" x="15" y="158" width="345" height="112"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
-                                        <rect key="frame" x="4.5" y="42" width="336" height="28"/>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
-                                        <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-qM-eor">
+                                <rect key="frame" x="15" y="139" width="345" height="164"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="dx7-fe-h63" firstAttribute="centerY" secondItem="WRM-re-wvA" secondAttribute="centerY" id="Pco-Go-yaE"/>
-                                    <constraint firstItem="dx7-fe-h63" firstAttribute="centerX" secondItem="WRM-re-wvA" secondAttribute="centerX" id="c8Z-E4-wC3"/>
-                                </constraints>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="czq-Nx-I6d">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FEH-Eq-PqA">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
+                                <rect key="frame" x="19" y="207" width="336" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
+                                <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="15" id="9Ua-os-Xx2"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="JLE-WZ-ZSO"/>
-                            <constraint firstItem="WRM-re-wvA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Jvc-qJ-nEX"/>
+                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="15" id="Kvs-B5-adE"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LiO-bE-XfZ"/>
-                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="WRM-re-wvA" secondAttribute="bottom" constant="15" id="M82-0J-oxV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="30" id="Th8-dJ-OzD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WRM-re-wvA" secondAttribute="trailing" constant="15" id="WKv-6E-btI"/>
-                            <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dNE-89-XWf"/>
-                            <constraint firstItem="WRM-re-wvA" firstAttribute="top" secondItem="2aD-hn-bYs" secondAttribute="bottom" constant="39" id="dkg-zV-H7s"/>
+                            <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XRP-Jn-kI6"/>
+                            <constraint firstItem="1vA-qM-eor" firstAttribute="top" secondItem="2aD-hn-bYs" secondAttribute="bottom" constant="15" id="bQC-1O-STo"/>
+                            <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dNE-89-XWf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" id="uxR-tP-iXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -165,6 +176,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="1vA-qM-eor" id="kXa-hq-Px1"/>
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
                     </connections>
@@ -705,7 +717,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -816,7 +828,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

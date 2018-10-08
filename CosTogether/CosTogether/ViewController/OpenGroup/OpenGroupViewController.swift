@@ -14,28 +14,37 @@ class OpenGroupViewController: UIViewController {
 
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var inCollectionViewLbl: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var products: [ProductModel] = []
-    
+//    var products: [ProductModel] = []
+    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         setup()
+        collectionView.reloadData()
 
     }
     
     private func setup() {
-        setColletionView()
-        newProductBotSetup()
         
-//        guard products.count > 0 else {
-//
-//            inCollectionViewLbl.isHidden = false
-//
-//            return
-//        }
-//
-//        inCollectionViewLbl.isHidden = true
+        newProductBotSetup()
+        setColletionView()
+        
+        guard products.count > 0 else {
+
+            inCollectionViewLbl.isHidden = false
+
+            return
+        }
+
+        inCollectionViewLbl.isHidden = true
         
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.clipsToBounds = true
@@ -43,29 +52,33 @@ class OpenGroupViewController: UIViewController {
     
     private func setColletionView() {
         
-//        registerTableViewCell(identifier: String(describing: NewProductCollectionViewCell.self))
-//
-//        collectionView.cornerSetup(cornerRadius: 4, borderWidth: 1, borderColor: UIColor.lightGray.cgColor)
-//
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//
-//        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        registerTableViewCell(identifier: String(describing: NewProductCollectionViewCell.self))
         
-    }
-    
-    private func newProductBotSetup() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
-        newProductBot.cornerSetup(cornerRadius: 4, borderWidth: 2, borderColor: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), maskToBounds: true)
+        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        collectionView.cornerSetup(
+            cornerRadius: 0,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 0.6549019608, green: 0.6745098039, blue: 0.7137254902, alpha: 1),
+            maskToBounds: false
+        )
+        
     }
     
     private func registerTableViewCell(identifier: String) {
         
         let nibCell = UINib(nibName: identifier, bundle: nil)
-//        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
-//
+        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+        
     }
 
+    private func newProductBotSetup() {
+        
+        newProductBot.cornerSetup(cornerRadius: 4, borderWidth: 2, borderColor: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), maskToBounds: true)
+    }
+    
     //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
 
     @IBAction func newProductBotTapping(_ sender: UIButton) {
@@ -80,7 +93,7 @@ class OpenGroupViewController: UIViewController {
         controller.appendProduct { (product) in
             
             #warning ("要把 update image 上傳至 firebase ")
-            self.products.append(product)
+//            self.products.append(product)
         }
         
         show(controller, sender: nil)
@@ -95,16 +108,7 @@ extension OpenGroupViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        guard products.count > 0 else {
-            
-            collectionView.isHidden = true
-            return 0
-        }
-        
-        collectionView.isHidden = false
-        
-        
+                
         return products.count
         
     }
@@ -136,9 +140,9 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 150.0 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 240
+        let height = width / 185.0 * 220
         
         return CGSize(width: width, height: height)
     }
