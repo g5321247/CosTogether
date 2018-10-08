@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import NotificationBannerSwift
 
 class AppendNewItemViewController: UIViewController {
@@ -73,7 +74,8 @@ class AppendNewItemViewController: UIViewController {
         let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
             
             self.imagePicker.sourceType = .camera
-
+            self.imagePicker.modalPresentationStyle = .fullScreen
+            self.present(self.imagePicker, animated: true, completion: nil)
         }
         
         let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
@@ -112,7 +114,7 @@ class AppendNewItemViewController: UIViewController {
     
 }
 
-extension AppendNewItemViewController: ProductSettingDelegate{
+extension AppendNewItemViewController: ProductSettingDelegate {
     
     func getProductSetting(product: ProductModel) {
         
@@ -151,9 +153,10 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
         )
         
         productImage = tempImage
-    
+        
         newProductPicBot.setImage(tempImage, for: .normal)
-        newProductPicBot.imageView?.cornerSetup(cornerRadius: 12)
+        newProductPicBot.imageView?.contentMode = .scaleAspectFill
+        newProductPicBot.imageView?.cornerSetup(cornerRadius: 20)
         
         dismiss(animated: true, completion: nil)
     }

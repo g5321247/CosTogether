@@ -23,7 +23,7 @@ protocol DataProtocol {
 struct GroupType: DataProtocol {
     
     let openType: OpenGroupType
-    let mainPageViewModel: MainPageViewModel
+    let products: [ProductModel]
     
 }
 
