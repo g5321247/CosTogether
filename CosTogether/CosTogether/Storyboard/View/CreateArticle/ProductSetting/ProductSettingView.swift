@@ -130,14 +130,11 @@ class ProductSettingView: UIView {
             BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
             return
         }
-        
-        #warning ("改成 expiredDate: calenderTxf.text ?? ")
-        
+                
         let product = ProductModel(
             productName: productName,
             productImage: "",
             numberOfItem: productQuantity,
-            expiredDate: Date(),
             price: productPrice,
             updateImage: nil
             )

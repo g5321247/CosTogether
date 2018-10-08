@@ -92,8 +92,6 @@ struct ProductModel: DataProtocol {
     
     var numberOfItem: Int
     
-    var expiredDate: Date?
-    
     var price: Int
     
     var updateImage: UIImage?
@@ -102,7 +100,6 @@ struct ProductModel: DataProtocol {
         productName: String,
         productImage: String?,
         numberOfItem: Int,
-        expiredDate: Date?,
         price: Int,
         updateImage: UIImage?
         ) {
@@ -110,7 +107,6 @@ struct ProductModel: DataProtocol {
         self.productName = productName
         self.productImage = productImage
         self.numberOfItem = numberOfItem
-        self.expiredDate = expiredDate
         self.price = price
         self.updateImage = updateImage
     }
@@ -125,7 +121,6 @@ struct ProductModel: DataProtocol {
             productName: name,
             productImage: nil,
             numberOfItem: number,
-            expiredDate: nil,
             price: totalCost,
             updateImage: nil
         )
@@ -136,14 +131,12 @@ struct ProductModel: DataProtocol {
         productName: String,
         productImage: UIImage,
         numberOfItem: Int,
-        expiredDate: Date?,
         price: Int) -> ProductModel {
         
         return ProductModel(
             productName: productName,
             productImage: nil,
             numberOfItem: numberOfItem,
-            expiredDate: expiredDate ?? nil,
             price: price,
             updateImage: productImage
         )

@@ -13,7 +13,6 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
-    @IBOutlet weak var expiredDate: UILabel!
     @IBOutlet weak var amoutQuantity: UILabel!
     
     @IBOutlet weak var totalPriceLbl: UILabel!
@@ -43,7 +42,6 @@ class ProductItemTableViewCell: UITableViewCell {
         productNameLbl.text = product.productName
         itemPrice.text = String(product.price)
         amoutQuantity.text = "總數 \(product.numberOfItem)"
-        expiredDate.text = "有效期限 \(product.expiredDate)"
         
         buyNumberLbl.text = "0"
     }

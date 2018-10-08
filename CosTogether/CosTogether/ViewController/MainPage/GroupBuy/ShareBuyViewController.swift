@@ -25,7 +25,6 @@ class ShareBuyViewController: UIViewController {
                 productName: "好吃的",
                 productImage: "123",
                 numberOfItem: 2,
-                expiredDate: Date(),
                 price: 20,
                 updateImage: nil
             )
