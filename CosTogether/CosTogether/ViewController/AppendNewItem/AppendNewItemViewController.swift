@@ -12,10 +12,10 @@ import NotificationBannerSwift
 
 class AppendNewItemViewController: UIViewController {
 
-    @IBOutlet weak var topView: TopLogoView!
     @IBOutlet weak var prodctSettingView: ProductSettingView!
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
+    @IBOutlet weak var appendProductBot: UIButton!
     
     let imagePicker = UIImagePickerController()
     
@@ -32,7 +32,7 @@ class AppendNewItemViewController: UIViewController {
     private func setup() {
         
         navigationController?.navigationBar.isHidden = false
-        topViewButtonSetup()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         prodctSettingView.delegate = self
         imagePicker.delegate = self
@@ -49,22 +49,32 @@ class AppendNewItemViewController: UIViewController {
     private func bottnSetup() {
         
         newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), lineWidth: 3)
-        
+        appendProductBot.cornerSetup(cornerRadius: 2.5)
+        appendProductBot.shadowSetup()
     }
     
-    private func topViewButtonSetup() {
-        
-        topView.leftBot.addTarget(self, action: #selector (backToController(_:)), for: .touchUpInside)
-        topView.rightBot.addTarget(self, action: #selector (saveBotTapping(_:)), for: .touchUpInside)
-    }
-
-    @objc func backToController(_ sneder: UIButton) {
-        
-        dismiss(animated: true, completion: nil)
-    }
- 
     @IBAction func chosePicBotTapping(_ sender: UIButton) {
-        show(alertSheet(), sender: nil)
+        
+        self.present(
+            alertSheet(),
+            animated: true,
+            completion: nil
+        )
+
+    }
+    
+    @IBAction func appendNewProduct(_ sender: UIButton) {
+        
+        prodctSettingView.updateProductInfo()
+        
+        guard let product = product,
+        let passProductInfo = passProductInfo else {
+            
+            return
+        }
+        
+        passProductInfo(product)
+        
     }
     
     private func alertSheet() -> UIAlertController {
@@ -97,14 +107,6 @@ class AppendNewItemViewController: UIViewController {
         
         return alertController
     }
-        
-    @objc func saveBotTapping(_ sender: UIButton) {
-        
-        prodctSettingView.updateProductInfo()
-        
-        #warning ("將值傳回上個controller,用 closure")
-        
-    }
     
     func appendProduct(product: @escaping (ProductModel) -> Void) {
         
@@ -135,7 +137,7 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(
         _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
         ) {
         
         guard let tempImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {

@@ -26,7 +26,7 @@ class OpenGroupViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
-
+        
         setup()
 
     }

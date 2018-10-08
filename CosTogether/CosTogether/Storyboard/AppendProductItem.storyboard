@@ -12,9 +12,6 @@
         <array key="NotoSans-Bold.ttf">
             <string>NotoSans-Bold</string>
         </array>
-        <array key="NotoSans-Regular.ttf">
-            <string>NotoSans-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Append New Item View Controller-->
@@ -25,50 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZz-6a-6V4" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-Pp-rfM">
-                                        <rect key="frame" x="116" y="53.5" width="143" height="28"/>
-                                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-of-qNY">
-                                        <rect key="frame" x="24" y="60" width="30" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="CGs-Cg-0QS"/>
-                                            <constraint firstAttribute="width" secondItem="xEf-of-qNY" secondAttribute="height" multiplier="2:1" id="LDs-du-7aV"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <state key="normal" image="back"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-l2-bOM">
-                                        <rect key="frame" x="301" y="42.5" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="nHt-l2-bOM" secondAttribute="height" multiplier="1:1" id="Hpa-pu-GOG"/>
-                                            <constraint firstAttribute="height" constant="50" id="fd0-nk-wRQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
-                                        <state key="normal" image="add">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="FIZ-Pp-rfM" firstAttribute="centerX" secondItem="yZz-6a-6V4" secondAttribute="centerX" id="1Ft-oP-X1f"/>
-                                    <constraint firstItem="FIZ-Pp-rfM" firstAttribute="centerY" secondItem="xEf-of-qNY" secondAttribute="centerY" id="N9d-x2-dLx"/>
-                                    <constraint firstAttribute="bottom" secondItem="xEf-of-qNY" secondAttribute="bottom" constant="20" id="NfN-0J-R6l"/>
-                                    <constraint firstAttribute="trailing" secondItem="nHt-l2-bOM" secondAttribute="trailing" constant="24" id="Sjd-Xg-LAf"/>
-                                    <constraint firstItem="xEf-of-qNY" firstAttribute="leading" secondItem="yZz-6a-6V4" secondAttribute="leading" constant="24" id="YTo-or-yRw"/>
-                                    <constraint firstItem="nHt-l2-bOM" firstAttribute="centerY" secondItem="FIZ-Pp-rfM" secondAttribute="centerY" id="ebP-0a-KFW"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="leftBot" destination="xEf-of-qNY" id="T4Q-w9-syY"/>
-                                    <outlet property="rightBot" destination="nHt-l2-bOM" id="eaC-L4-FTZ"/>
-                                </connections>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 選擇商品照片" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Na-89-Fim">
                                 <rect key="frame" x="105.5" y="180" width="164" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
@@ -88,18 +41,18 @@
                                                     <constraint firstAttribute="width" secondItem="WRx-A1-GAU" secondAttribute="height" multiplier="1:1" id="KZu-SG-tzD"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-5v-2Hg">
-                                                <rect key="frame" x="4.5" y="83.5" width="36" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="36" id="EpR-hs-MjA"/>
-                                                    <constraint firstAttribute="width" secondItem="3cf-5v-2Hg" secondAttribute="height" multiplier="1:1" id="jqT-XM-moQ"/>
-                                                </constraints>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-cart" translatesAutoresizingMaskIntoConstraints="NO" id="HvV-NA-ijC">
-                                                <rect key="frame" x="4.5" y="167" width="36" height="36"/>
+                                                <rect key="frame" x="4.5" y="83.5" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="Hqd-96-hSC"/>
                                                     <constraint firstAttribute="width" secondItem="HvV-NA-ijC" secondAttribute="height" multiplier="1:1" id="QCZ-4s-asp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-5v-2Hg">
+                                                <rect key="frame" x="4.5" y="167" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="EpR-hs-MjA"/>
+                                                    <constraint firstAttribute="width" secondItem="3cf-5v-2Hg" secondAttribute="height" multiplier="1:1" id="jqT-XM-moQ"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -114,7 +67,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="x05-5c-iGu">
-                                        <rect key="frame" x="102.5" y="190" width="190.5" height="30"/>
+                                        <rect key="frame" x="102.5" y="106.5" width="190.5" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-Ca-Dhx">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -147,7 +100,7 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入商品單價..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRh-gr-iGK">
-                                        <rect key="frame" x="80" y="106.5" width="235" height="30"/>
+                                        <rect key="frame" x="80" y="190" width="235" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -189,39 +142,66 @@
                                     <action selector="chosePicBotTapping:" destination="VDK-Ou-W6Z" eventType="touchUpInside" id="wCI-y8-OYA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpH-Ta-KGd">
+                                <rect key="frame" x="215" y="596.5" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GpH-Ta-KGd" secondAttribute="height" multiplier="140:40" id="88y-9J-gYV"/>
+                                    <constraint firstAttribute="width" constant="140" id="maZ-1i-yU6"/>
+                                </constraints>
+                                <state key="normal" title="新增商品">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendNewProduct:" destination="VDK-Ou-W6Z" eventType="touchUpInside" id="rbd-4a-CfB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1PT-wI-mrL" firstAttribute="bottom" secondItem="Um3-qx-S8d" secondAttribute="bottom" multiplier="0.45" id="55a-a4-CS2"/>
                             <constraint firstItem="2Na-89-Fim" firstAttribute="centerX" secondItem="1PT-wI-mrL" secondAttribute="centerX" id="LOH-B4-zAV"/>
-                            <constraint firstAttribute="trailing" secondItem="yZz-6a-6V4" secondAttribute="trailing" id="Mw4-Ku-ux1"/>
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="TyJ-vj-b37" secondAttribute="trailing" constant="20" id="PcW-ZH-xeS"/>
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="1PT-wI-mrL" secondAttribute="trailing" constant="25" id="QZr-IS-3Zj"/>
                             <constraint firstItem="TyJ-vj-b37" firstAttribute="top" secondItem="Um3-qx-S8d" secondAttribute="bottom" multiplier="0.5" id="VMX-vR-mqJ"/>
-                            <constraint firstItem="yZz-6a-6V4" firstAttribute="width" secondItem="yZz-6a-6V4" secondAttribute="height" multiplier="75:19" id="elK-sa-2Jn"/>
+                            <constraint firstItem="GpH-Ta-KGd" firstAttribute="top" secondItem="TyJ-vj-b37" secondAttribute="bottom" constant="20" id="Zod-rC-jYN"/>
+                            <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="GpH-Ta-KGd" secondAttribute="trailing" constant="20" id="eWs-u2-Yfi"/>
                             <constraint firstItem="1PT-wI-mrL" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" constant="25" id="gPk-mc-px1"/>
-                            <constraint firstItem="yZz-6a-6V4" firstAttribute="top" secondItem="Um3-qx-S8d" secondAttribute="top" id="h3H-6O-2Vw"/>
                             <constraint firstItem="2Na-89-Fim" firstAttribute="centerY" secondItem="1PT-wI-mrL" secondAttribute="centerY" id="mV9-ns-dqm"/>
                             <constraint firstItem="TyJ-vj-b37" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" constant="20" id="pzx-QM-ifn"/>
-                            <constraint firstItem="yZz-6a-6V4" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" id="x7r-cA-AOW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Hw-O8-Ugh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YXk-mc-ByY">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="bjk-wN-mcf">
+                            <rect key="frame" x="187.5" y="22" width="0.0" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUi-nW-sZm">
+                                    <rect key="frame" x="-72" y="-14" width="143" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </navigationItem>
                     <connections>
+                        <outlet property="appendProductBot" destination="GpH-Ta-KGd" id="1yu-nH-avq"/>
                         <outlet property="newProductPicBot" destination="1PT-wI-mrL" id="zpq-UG-0rb"/>
                         <outlet property="prodctSettingView" destination="TyJ-vj-b37" id="pC5-8A-tTs"/>
                         <outlet property="remindChosePicLbl" destination="2Na-89-Fim" id="wWk-NX-5lR"/>
-                        <outlet property="topView" destination="yZz-6a-6V4" id="8yF-bU-BGm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4c-3G-BKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370.39999999999998" y="-25.637181409295355"/>
+            <point key="canvasLocation" x="568.79999999999995" y="-25.637181409295355"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="32" height="32"/>
-        <image name="back" width="764" height="331"/>
         <image name="dollar" width="256" height="256"/>
         <image name="productName" width="490" height="475"/>
         <image name="shopping-cart" width="256" height="256"/>
