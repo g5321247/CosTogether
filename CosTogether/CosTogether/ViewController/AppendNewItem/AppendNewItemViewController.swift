@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class AppendNewItemViewController: UIViewController {
 
@@ -27,6 +28,7 @@ class AppendNewItemViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = false
         topViewButtonSetup()
+        prodctSettingView.delegate = self
         
     }
     
@@ -81,22 +83,30 @@ class AppendNewItemViewController: UIViewController {
         
         return alertController
     }
-    
-    
+        
     @objc func saveBotTapping(_ sender: UIButton) {
-        #warning ("將值傳回上個controller")
         
         prodctSettingView.updateProductInfo()
+        
+        #warning ("將值傳回上個controller")
+
     }
+    
+}
+
+extension AppendNewItemViewController: ProductSettingDelegate{
     
     func getProductSetting(product: ProductModel) {
         
         self.product = product
         
-        #warning ("把 view 塞進去")
-//        self.product?.productImage =
-//
-//        newProductPicBot.imageView.set
+        guard let productImage = newProductPicBot.imageView?.image else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請上傳商品照片")
+            return
+        }
+        
+        self.product!.updateImage = productImage
     }
-
+    
 }

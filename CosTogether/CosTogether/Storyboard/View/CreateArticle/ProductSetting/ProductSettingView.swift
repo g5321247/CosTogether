@@ -138,7 +138,8 @@ class ProductSettingView: UIView {
             productImage: "",
             numberOfItem: productQuantity,
             expiredDate: Date(),
-            price: productPrice
+            price: productPrice,
+            updateImage: nil
             )
 
         guard  let delegate = delegate else {

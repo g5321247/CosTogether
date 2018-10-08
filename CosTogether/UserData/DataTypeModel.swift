@@ -6,7 +6,7 @@
 //  Copyright © 2018 George Liu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct DataType {
     
@@ -96,6 +96,25 @@ struct ProductModel: DataProtocol {
     
     var price: Int
     
+    var updateImage: UIImage?
+    
+    init (
+        productName: String,
+        productImage: String?,
+        numberOfItem: Int,
+        expiredDate: Date?,
+        price: Int,
+        updateImage: UIImage?
+        ) {
+        
+        self.productName = productName
+        self.productImage = productImage
+        self.numberOfItem = numberOfItem
+        self.expiredDate = expiredDate
+        self.price = price
+        self.updateImage = updateImage
+    }
+    
     static func purchasingProduct(
         name: String,
         number: Int,
@@ -107,11 +126,29 @@ struct ProductModel: DataProtocol {
             productImage: nil,
             numberOfItem: number,
             expiredDate: nil,
-            price: totalCost
+            price: totalCost,
+            updateImage: nil
         )
         
     }
     
+    static func addNewProduct(
+        productName: String,
+        productImage: UIImage,
+        numberOfItem: Int,
+        expiredDate: Date?,
+        price: Int) -> ProductModel {
+        
+        return ProductModel(
+            productName: productName,
+            productImage: nil,
+            numberOfItem: numberOfItem,
+            expiredDate: expiredDate ?? nil,
+            price: price,
+            updateImage: productImage
+        )
+
+    }
 }
 
 struct DescriptionModel: DataProtocol {

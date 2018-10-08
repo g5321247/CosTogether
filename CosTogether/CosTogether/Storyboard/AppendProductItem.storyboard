@@ -30,6 +30,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-Pp-rfM">
                                         <rect key="frame" x="116" y="53.5" width="143" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FIZ-Pp-rfM" secondAttribute="height" multiplier="143:28" id="0Fb-uh-deo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
