@@ -16,6 +16,8 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
+    @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     var products: [ProductModel] = []
 
@@ -36,9 +38,17 @@ class OpenGroupViewController: UIViewController {
         
         newProductBotSetup()
         setColletionView()
+        navigationBarSetup()
        
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.clipsToBounds = true
+    }
+    
+    private func navigationBarSetup() {
+        
+        let  image = UIImage()
+
+        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = image
     }
     
     private func checkoutProductNumber() {
@@ -100,8 +110,6 @@ class OpenGroupViewController: UIViewController {
         newProductBot.cornerSetup(cornerRadius: 4, borderWidth: 2, borderColor: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), maskToBounds: true)
     }
     
-    //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
-
     @IBAction func newProductBotTapping(_ sender: UIButton) {
         
         guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
@@ -133,6 +141,18 @@ class OpenGroupViewController: UIViewController {
         }
         
         return controller
+    }
+
+    @IBAction func uploadToServer(_ sender: UIButton) {
+        
+        //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
+        
+    }
+    
+    @IBAction func cityBotTapping(_ sender: UIButton) {
+        
+        bottomConstriant.constant = -200
+        
     }
     
 }

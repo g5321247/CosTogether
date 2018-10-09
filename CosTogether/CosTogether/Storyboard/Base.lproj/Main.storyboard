@@ -37,12 +37,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-uq-A4D">
-                                        <rect key="frame" x="188" y="13.5" width="52" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="fgt-Tv-u51">
                                         <rect key="frame" x="162" y="15" width="18" height="18"/>
                                         <constraints>
@@ -62,22 +56,40 @@
                                         </segments>
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3T-QI-aTL">
+                                        <rect key="frame" x="0.0" y="290" width="345" height="216"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="hIV-JN-7Br"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-uB-8eW">
+                                        <rect key="frame" x="188" y="9" width="92" height="30"/>
+                                        <state key="normal" title="選擇面交縣市">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cityBotTapping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ji-wC-35e"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eOt-Fh-0pd" secondAttribute="trailing" constant="20" id="40s-qx-zFw"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="top" secondItem="huY-do-t97" secondAttribute="bottom" constant="30" id="5Kd-ox-L2s"/>
                                     <constraint firstAttribute="trailing" secondItem="O24-Tf-SKx" secondAttribute="trailing" constant="20" id="9BS-B1-ntY"/>
-                                    <constraint firstItem="uQn-uq-A4D" firstAttribute="leading" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="8" id="CHR-BF-mZC"/>
+                                    <constraint firstAttribute="trailing" secondItem="m3T-QI-aTL" secondAttribute="trailing" id="Gwh-Wa-6PZ"/>
                                     <constraint firstAttribute="bottom" secondItem="O24-Tf-SKx" secondAttribute="bottom" constant="15" id="Mm7-03-pfp"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Nwa-wp-Vp8"/>
+                                    <constraint firstItem="m3T-QI-aTL" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" id="PQW-JN-AqO"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="top" secondItem="eOt-Fh-0pd" secondAttribute="bottom" constant="20" id="PpS-FP-QyT"/>
+                                    <constraint firstItem="huY-do-t97" firstAttribute="top" secondItem="S7S-uB-8eW" secondAttribute="top" id="QHj-sk-ILw"/>
                                     <constraint firstItem="fgt-Tv-u51" firstAttribute="top" secondItem="H7f-Ur-8EC" secondAttribute="top" constant="15" id="QoC-Xy-dw9"/>
                                     <constraint firstAttribute="width" secondItem="H7f-Ur-8EC" secondAttribute="height" multiplier="125:105" id="SJs-0W-Bke"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Tsi-k6-xHs"/>
-                                    <constraint firstItem="huY-do-t97" firstAttribute="centerY" secondItem="uQn-uq-A4D" secondAttribute="centerY" id="eQW-So-Cuq"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="h5G-qx-yEA"/>
-                                    <constraint firstItem="uQn-uq-A4D" firstAttribute="centerY" secondItem="fgt-Tv-u51" secondAttribute="centerY" id="pJ3-7X-N9W"/>
+                                    <constraint firstItem="S7S-uB-8eW" firstAttribute="leading" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="8" id="kJP-PY-lBB"/>
+                                    <constraint firstAttribute="bottom" secondItem="m3T-QI-aTL" secondAttribute="top" id="tf9-ZX-H4E"/>
+                                    <constraint firstItem="S7S-uB-8eW" firstAttribute="centerY" secondItem="fgt-Tv-u51" secondAttribute="centerY" id="umz-Lp-7z7"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="trailing" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="-40" id="wiX-RF-LNm"/>
                                 </constraints>
                                 <connections>
@@ -175,22 +187,26 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Uzg-jw-5Mq">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uE8-7v-0Mj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uE8-7v-0Mj">
                                 <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LS4-Fs-jvk"/>
                                     <constraint firstAttribute="width" secondItem="uE8-7v-0Mj" secondAttribute="height" multiplier="1:1" id="Uu9-4o-SxQ"/>
                                 </constraints>
                                 <state key="normal" image="upload-button"/>
+                                <connections>
+                                    <action selector="uploadToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFF-1o-akQ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstriant" destination="tf9-ZX-H4E" id="FRf-U1-Bgc"/>
                         <outlet property="collectionView" destination="1vA-qM-eor" id="kXa-hq-Px1"/>
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
                         <outlet property="numberOfProductCategoryLbl" destination="ty8-i3-pxS" id="5xQ-eE-dfm"/>
+                        <outlet property="pickerView" destination="m3T-QI-aTL" id="qJ2-pv-DF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
