@@ -16,19 +16,18 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var products: [ProductModel] = []
-//    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
+//    var products: [ProductModel] = []
+    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        setup()
-        collectionView.reloadData()
 
     }
     
@@ -62,9 +61,14 @@ class OpenGroupViewController: UIViewController {
             cornerRadius: 0,
             borderWidth: 1,
             borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
-            maskToBounds: false
+            maskToBounds: true
         )
         
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        layout.scrollDirection = .horizontal
     }
     
     private func registerTableViewCell(identifier: String) {
@@ -83,9 +87,7 @@ class OpenGroupViewController: UIViewController {
 
     @IBAction func newProductBotTapping(_ sender: UIButton) {
         
-        guard let controller = UIStoryboard.appendProductItemStoryboard()
-            .instantiateInitialViewController()
-            as? AppendNewItemViewController else {
+        guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
             
             return
         }
@@ -94,9 +96,22 @@ class OpenGroupViewController: UIViewController {
             
             #warning ("要把 update image 上傳至 firebase ")
 //            self.products.append(product)
+            self.collectionView.reloadData()
         }
         
         show(controller, sender: nil)
+    }
+    
+    private func goToAppendProduct() -> UIViewController? {
+        
+        guard let controller = UIStoryboard.appendProductItemStoryboard()
+            .instantiateInitialViewController()
+            as? AppendNewItemViewController else {
+                
+                return nil
+        }
+        
+        return controller
     }
     
 }
@@ -140,9 +155,9 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = collectionView.frame.size.width - 30
         
-        let height = width / 185.0 * 220
+        let height = collectionView.frame.size.height - 30
         
         return CGSize(width: width, height: height)
     }
@@ -152,7 +167,7 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 12)
+        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
     
     func collectionView(
@@ -177,17 +192,14 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         
         //        collectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
-            withIdentifier: String(describing: DetailViewController.self)
-            ) as? DetailViewController else {
-                
-                return
-                
+        guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
+            
+            return
         }
-        
+
         #warning ("傳姪過去")
-        //        controller.loadViewIfNeeded()
-        //        controller.article = articles[indexPath.row]
+
+//        controller.product = products[indexPath.row]
         
         show(controller, sender: nil)
     }
