@@ -28,25 +28,44 @@ class OpenGroupViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-
     }
     
     private func setup() {
         
         newProductBotSetup()
         setColletionView()
-        
-        guard products.count > 0 else {
-
-            inCollectionViewLbl.isHidden = false
-
-            return
-        }
-
-        inCollectionViewLbl.isHidden = true
-        
+        checkoutProductNumber()
+       
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.clipsToBounds = true
+    }
+    
+    private func checkoutProductNumber() {
+        
+        guard products.count > 0 else {
+            
+            inCollectionViewLbl.isHidden = false
+            
+            collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+            collectionView.cornerSetup(
+                cornerRadius: 4,
+                borderWidth: 1,
+                borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
+                maskToBounds: true
+            )
+            
+            return
+        }
+        
+        inCollectionViewLbl.isHidden = true
+        collectionView.backgroundColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        collectionView.cornerSetup(
+            cornerRadius: 0,
+            borderWidth: 0,
+            borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+            maskToBounds: true
+        )
     }
     
     private func setColletionView() {
@@ -55,14 +74,6 @@ class OpenGroupViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-        collectionView.cornerSetup(
-            cornerRadius: 0,
-            borderWidth: 1,
-            borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
-            maskToBounds: true
-        )
         
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return

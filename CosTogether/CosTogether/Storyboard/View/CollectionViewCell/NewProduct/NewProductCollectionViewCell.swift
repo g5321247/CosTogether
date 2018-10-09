@@ -10,6 +10,8 @@ import UIKit
 
 class NewProductCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var newProductView: NewProductView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

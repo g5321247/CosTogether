@@ -10,7 +10,12 @@ import UIKit
 
 class NewProductView: UIView {
 
-    @IBOutlet weak var appendProductBot: UIButton!
+    @IBOutlet weak var productNameLbl: UILabel!
+    @IBOutlet weak var productPriceLbl: UILabel!
+    @IBOutlet weak var productQuntityLbl: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var priceImage: UIImageView!
+    @IBOutlet weak var quantityImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +23,7 @@ class NewProductView: UIView {
     }
     
     private func setup() {
-        
+        viewSetup()
     }
 
     override func layoutSubviews() {
@@ -28,4 +33,18 @@ class NewProductView: UIView {
 
     }
     
+    private func viewSetup() {
+        
+        productImage.cornerSetup(cornerRadius: 4)
+        
+        setViewToBeTemplate()
+    }
+    
+    private func setViewToBeTemplate() {
+        
+        priceImage.image = priceImage.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        
+        quantityImage.image = quantityImage.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        
+    }
 }

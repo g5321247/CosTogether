@@ -86,7 +86,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-hn-bYs">
-                                <rect key="frame" x="15" y="84" width="80" height="40"/>
+                                <rect key="frame" x="25" y="84" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="B1C-kE-AM0"/>
                                     <constraint firstAttribute="height" constant="40" id="CpO-Ue-cgM"/>
@@ -120,16 +120,23 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
-                                <rect key="frame" x="35" y="178.5" width="305" height="65.5"/>
+                                <rect key="frame" x="35" y="183" width="305" height="56"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共 0 樣商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-i3-pxS">
+                                <rect key="frame" x="143" y="93.5" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" id="25G-SZ-Bgi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="25" id="9Ua-os-Xx2"/>
-                            <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="JLE-WZ-ZSO"/>
+                            <constraint firstItem="ty8-i3-pxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jwq-AA-tLs"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="20" id="Kvs-B5-adE"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LiO-bE-XfZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="25" id="Th8-dJ-OzD"/>
@@ -140,6 +147,7 @@
                             <constraint firstItem="1vA-qM-eor" firstAttribute="top" secondItem="2aD-hn-bYs" secondAttribute="bottom" constant="15" id="bQC-1O-STo"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dNE-89-XWf"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" constant="10" id="g9a-QC-wrr"/>
+                            <constraint firstItem="ty8-i3-pxS" firstAttribute="centerY" secondItem="2aD-hn-bYs" secondAttribute="centerY" id="guM-jA-ZQZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" constant="15" id="uxR-tP-iXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
