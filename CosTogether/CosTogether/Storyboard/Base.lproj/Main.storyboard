@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7f-Ur-8EC" customClass="CreateArticleView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="318" width="375" height="270"/>
+                                <rect key="frame" x="15" y="303" width="345" height="290"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="揪團標題..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOt-Fh-0pd">
-                                        <rect key="frame" x="20" y="69" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="69" width="305" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O24-Tf-SKx">
-                                        <rect key="frame" x="20" y="119" width="335" height="136"/>
+                                        <rect key="frame" x="20" y="119" width="305" height="156"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -73,7 +73,7 @@
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Nwa-wp-Vp8"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="top" secondItem="eOt-Fh-0pd" secondAttribute="bottom" constant="20" id="PpS-FP-QyT"/>
                                     <constraint firstItem="fgt-Tv-u51" firstAttribute="top" secondItem="H7f-Ur-8EC" secondAttribute="top" constant="15" id="QoC-Xy-dw9"/>
-                                    <constraint firstAttribute="width" secondItem="H7f-Ur-8EC" secondAttribute="height" multiplier="125:90" id="SJs-0W-Bke"/>
+                                    <constraint firstAttribute="width" secondItem="H7f-Ur-8EC" secondAttribute="height" multiplier="125:105" id="SJs-0W-Bke"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Tsi-k6-xHs"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="centerY" secondItem="uQn-uq-A4D" secondAttribute="centerY" id="eQW-So-Cuq"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="h5G-qx-yEA"/>
@@ -100,7 +100,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-qM-eor">
-                                <rect key="frame" x="15" y="139" width="345" height="164"/>
+                                <rect key="frame" x="25" y="139" width="325" height="144"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="czq-Nx-I6d">
                                     <size key="itemSize" width="50" height="50"/>
@@ -119,9 +119,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
-                                <rect key="frame" x="19" y="207" width="336" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
+                                <rect key="frame" x="35" y="178.5" width="305" height="65.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -129,15 +128,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="15" id="9Ua-os-Xx2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="25" id="9Ua-os-Xx2"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="JLE-WZ-ZSO"/>
-                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="15" id="Kvs-B5-adE"/>
-                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LiO-bE-XfZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="30" id="Th8-dJ-OzD"/>
-                            <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XRP-Jn-kI6"/>
+                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="20" id="Kvs-B5-adE"/>
+                            <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LiO-bE-XfZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="25" id="Th8-dJ-OzD"/>
+                            <constraint firstItem="dx7-fe-h63" firstAttribute="centerY" secondItem="1vA-qM-eor" secondAttribute="centerY" id="V2L-0r-YXA"/>
+                            <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XRP-Jn-kI6"/>
+                            <constraint firstItem="dx7-fe-h63" firstAttribute="centerX" secondItem="1vA-qM-eor" secondAttribute="centerX" id="YiA-7v-gwH"/>
+                            <constraint firstItem="1vA-qM-eor" firstAttribute="trailing" secondItem="dx7-fe-h63" secondAttribute="trailing" constant="10" id="aID-lG-SQs"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="top" secondItem="2aD-hn-bYs" secondAttribute="bottom" constant="15" id="bQC-1O-STo"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dNE-89-XWf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" id="uxR-tP-iXb"/>
+                            <constraint firstItem="dx7-fe-h63" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" constant="10" id="g9a-QC-wrr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" constant="15" id="uxR-tP-iXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -717,7 +720,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
+                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -828,7 +831,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
-                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
+                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

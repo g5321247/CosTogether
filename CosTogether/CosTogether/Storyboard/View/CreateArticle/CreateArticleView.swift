@@ -22,7 +22,19 @@ class CreateArticleView: UIView {
     }
 
     private func setup() {
+        
         textSetup()
+        viewSetup()
+    }
+    
+    private func viewSetup() {
+        
+        self.cornerSetup(
+            cornerRadius: 4,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
+            maskToBounds: true
+        )
     }
     
     private func textSetup() {

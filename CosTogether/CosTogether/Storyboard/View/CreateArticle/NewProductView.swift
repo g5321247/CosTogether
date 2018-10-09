@@ -19,7 +19,6 @@ class NewProductView: UIView {
     
     private func setup() {
         
-        
     }
 
     override func layoutSubviews() {

@@ -16,8 +16,8 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    var products: [ProductModel] = []
-    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
+    var products: [ProductModel] = []
+//    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class OpenGroupViewController: UIViewController {
         collectionView.cornerSetup(
             cornerRadius: 0,
             borderWidth: 1,
-            borderColor: #colorLiteral(red: 0.6549019608, green: 0.6745098039, blue: 0.7137254902, alpha: 1),
+            borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
             maskToBounds: false
         )
         
