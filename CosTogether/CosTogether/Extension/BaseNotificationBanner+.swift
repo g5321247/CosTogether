@@ -19,8 +19,9 @@ extension BaseNotificationBanner {
         
         let banner = NotificationBanner(title: title, subtitle: subtitle, style: style)
         
+        banner.duration = 0.5
         banner.show()
-
+        banner.remove()
     }
     
     static func sucessBanner(
@@ -31,7 +32,10 @@ extension BaseNotificationBanner {
         
         let banner = NotificationBanner(title: title, subtitle: subtitle, style: style)
         
+        banner.duration = 0.5
+
         banner.show()
-        
+        banner.remove()
+
     }
 }
