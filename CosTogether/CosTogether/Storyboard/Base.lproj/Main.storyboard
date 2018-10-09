@@ -56,12 +56,6 @@
                                         </segments>
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3T-QI-aTL">
-                                        <rect key="frame" x="0.0" y="290" width="345" height="216"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="216" id="hIV-JN-7Br"/>
-                                        </constraints>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-uB-8eW">
                                         <rect key="frame" x="188" y="9" width="92" height="30"/>
                                         <state key="normal" title="選擇面交縣市">
@@ -77,10 +71,8 @@
                                     <constraint firstAttribute="trailing" secondItem="eOt-Fh-0pd" secondAttribute="trailing" constant="20" id="40s-qx-zFw"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="top" secondItem="huY-do-t97" secondAttribute="bottom" constant="30" id="5Kd-ox-L2s"/>
                                     <constraint firstAttribute="trailing" secondItem="O24-Tf-SKx" secondAttribute="trailing" constant="20" id="9BS-B1-ntY"/>
-                                    <constraint firstAttribute="trailing" secondItem="m3T-QI-aTL" secondAttribute="trailing" id="Gwh-Wa-6PZ"/>
                                     <constraint firstAttribute="bottom" secondItem="O24-Tf-SKx" secondAttribute="bottom" constant="15" id="Mm7-03-pfp"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Nwa-wp-Vp8"/>
-                                    <constraint firstItem="m3T-QI-aTL" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" id="PQW-JN-AqO"/>
                                     <constraint firstItem="O24-Tf-SKx" firstAttribute="top" secondItem="eOt-Fh-0pd" secondAttribute="bottom" constant="20" id="PpS-FP-QyT"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="top" secondItem="S7S-uB-8eW" secondAttribute="top" id="QHj-sk-ILw"/>
                                     <constraint firstItem="fgt-Tv-u51" firstAttribute="top" secondItem="H7f-Ur-8EC" secondAttribute="top" constant="15" id="QoC-Xy-dw9"/>
@@ -88,7 +80,6 @@
                                     <constraint firstItem="huY-do-t97" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="Tsi-k6-xHs"/>
                                     <constraint firstItem="eOt-Fh-0pd" firstAttribute="leading" secondItem="H7f-Ur-8EC" secondAttribute="leading" constant="20" id="h5G-qx-yEA"/>
                                     <constraint firstItem="S7S-uB-8eW" firstAttribute="leading" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="8" id="kJP-PY-lBB"/>
-                                    <constraint firstAttribute="bottom" secondItem="m3T-QI-aTL" secondAttribute="top" id="tf9-ZX-H4E"/>
                                     <constraint firstItem="S7S-uB-8eW" firstAttribute="centerY" secondItem="fgt-Tv-u51" secondAttribute="centerY" id="umz-Lp-7z7"/>
                                     <constraint firstItem="huY-do-t97" firstAttribute="trailing" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="-40" id="wiX-RF-LNm"/>
                                 </constraints>
@@ -132,7 +123,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
-                                <rect key="frame" x="35" y="178.5" width="305" height="65.5"/>
+                                <rect key="frame" x="35" y="183" width="305" height="56"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -143,16 +134,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc">
+                                <rect key="frame" x="5" y="187" width="365" height="280"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請選擇面交的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5V-au-hKw">
+                                        <rect key="frame" x="114.5" y="10" width="136" height="25"/>
+                                        <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3T-QI-aTL">
+                                        <rect key="frame" x="0.0" y="45" width="365" height="195"/>
+                                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxu-gk-F5k">
+                                        <rect key="frame" x="0.0" y="240" width="365" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YuD-bo-CL3"/>
+                                        </constraints>
+                                        <state key="normal" title="確認">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="m3T-QI-aTL" firstAttribute="top" secondItem="CD6-AT-dxc" secondAttribute="top" constant="45" id="0SE-Sh-t7I"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nxu-gk-F5k" secondAttribute="trailing" id="0p5-Rr-gZk"/>
+                                    <constraint firstItem="c5V-au-hKw" firstAttribute="top" secondItem="CD6-AT-dxc" secondAttribute="top" constant="10" id="76S-f1-3eR"/>
+                                    <constraint firstItem="Nxu-gk-F5k" firstAttribute="top" secondItem="m3T-QI-aTL" secondAttribute="bottom" id="9yY-0e-2e5"/>
+                                    <constraint firstAttribute="trailing" secondItem="m3T-QI-aTL" secondAttribute="trailing" id="DWa-K1-G6V"/>
+                                    <constraint firstItem="m3T-QI-aTL" firstAttribute="leading" secondItem="CD6-AT-dxc" secondAttribute="leading" id="JXa-jS-vKI"/>
+                                    <constraint firstAttribute="height" constant="280" id="cS6-hT-gBm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nxu-gk-F5k" secondAttribute="bottom" id="ibS-hY-YCD"/>
+                                    <constraint firstItem="c5V-au-hKw" firstAttribute="centerX" secondItem="CD6-AT-dxc" secondAttribute="centerX" id="sxa-lw-iTe"/>
+                                    <constraint firstItem="Nxu-gk-F5k" firstAttribute="leading" secondItem="CD6-AT-dxc" secondAttribute="leading" id="zNT-uI-Sd6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" id="25G-SZ-Bgi"/>
+                            <constraint firstItem="CD6-AT-dxc" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-200" id="7Gb-Rm-5gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="25" id="9Ua-os-Xx2"/>
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jwq-AA-tLs"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="20" id="Kvs-B5-adE"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LiO-bE-XfZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="25" id="Th8-dJ-OzD"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerY" secondItem="1vA-qM-eor" secondAttribute="centerY" id="V2L-0r-YXA"/>
+                            <constraint firstItem="CD6-AT-dxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="XDE-1g-Fls"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XRP-Jn-kI6"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerX" secondItem="1vA-qM-eor" secondAttribute="centerX" id="YiA-7v-gwH"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="trailing" secondItem="dx7-fe-h63" secondAttribute="trailing" constant="10" id="aID-lG-SQs"/>
@@ -160,7 +190,9 @@
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dNE-89-XWf"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" constant="10" id="g9a-QC-wrr"/>
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerY" secondItem="2aD-hn-bYs" secondAttribute="centerY" id="guM-jA-ZQZ"/>
+                            <constraint firstItem="CD6-AT-dxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="url-rK-O8V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" constant="15" id="uxR-tP-iXb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CD6-AT-dxc" secondAttribute="trailing" constant="5" id="vfM-4z-dEY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -201,7 +233,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomConstriant" destination="tf9-ZX-H4E" id="FRf-U1-Bgc"/>
                         <outlet property="collectionView" destination="1vA-qM-eor" id="kXa-hq-Px1"/>
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
@@ -745,7 +776,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -856,7 +887,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="91.5" y="226.5" width="192" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

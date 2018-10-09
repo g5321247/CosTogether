@@ -151,7 +151,7 @@ class OpenGroupViewController: UIViewController {
     
     @IBAction func cityBotTapping(_ sender: UIButton) {
         
-        bottomConstriant.constant = -200
+        bottomConstriant.constant = -20
         
     }
     
