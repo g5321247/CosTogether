@@ -52,6 +52,18 @@ class AppendNewItemViewController: UIViewController {
         appendProductBot.shadowSetup()
     }
     
+    private func pictureIsExsist() {
+        
+        newProductPicBot.cornerSetup(
+            cornerRadius: 4,
+            borderWidth: 4,
+            borderColor: UIColor.white.cgColor,
+            maskToBounds: true
+        )
+        
+        remindChosePicLbl.isHidden = true
+    }
+    
     @IBAction func chosePicBotTapping(_ sender: UIButton) {
         
         self.present(
@@ -60,6 +72,15 @@ class AppendNewItemViewController: UIViewController {
             completion: nil
         )
 
+    }
+    
+    func editProductDetail(product: ProductModel) {
+        
+        pictureIsExsist()
+        
+        prodctSettingView.updateProductDetail(product: product)
+        
+        newProductPicBot.setImage(product.updateImage, for: .normal)
     }
     
     @IBAction func appendNewProduct(_ sender: UIButton) {
@@ -150,12 +171,7 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
             return
         }
         
-        newProductPicBot.cornerSetup(
-            cornerRadius: 4,
-            borderWidth: 4,
-            borderColor: UIColor.white.cgColor,
-            maskToBounds: true
-        )
+        pictureIsExsist()
         
         productImage = tempImage
         

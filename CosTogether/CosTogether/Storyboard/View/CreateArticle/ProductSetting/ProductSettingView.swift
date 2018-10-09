@@ -22,7 +22,6 @@ class ProductSettingView: UIView {
     @IBOutlet weak var productQuantityLbl: UILabel!
     @IBOutlet weak var productNameTxf: UITextField!
     @IBOutlet weak var productPriceTxf: UITextField!
-    @IBOutlet weak var calenderTxf: UITextField!
     
     var productQuantity: Int = 0
     
@@ -74,6 +73,14 @@ class ProductSettingView: UIView {
             for: .touchUpInside
         )
 
+    }
+    
+    func updateProductDetail(product: ProductModel) {
+        
+        productQuantityLbl.text = "\(product.numberOfItem)"
+        productNameTxf.text = product.productName
+        productPriceTxf.text = "\(product.price)"
+        
     }
     
     @objc func quantityBotTapping(_ sender: UIButton) {

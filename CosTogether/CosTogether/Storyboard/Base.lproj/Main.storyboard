@@ -120,13 +120,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前並無商品，請點擊新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-fe-h63">
-                                <rect key="frame" x="35" y="183" width="305" height="56"/>
+                                <rect key="frame" x="35" y="178.5" width="305" height="65.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共 0 樣商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-i3-pxS">
-                                <rect key="frame" x="143" y="93.5" width="89" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 樣商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-i3-pxS">
+                                <rect key="frame" x="151.5" y="93.5" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,6 +190,7 @@
                         <outlet property="collectionView" destination="1vA-qM-eor" id="kXa-hq-Px1"/>
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
+                        <outlet property="numberOfProductCategoryLbl" destination="ty8-i3-pxS" id="5xQ-eE-dfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

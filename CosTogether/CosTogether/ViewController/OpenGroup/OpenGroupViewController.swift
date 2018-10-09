@@ -15,9 +15,9 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     
-//    var products: [ProductModel] = []
-    var products: [UIImage] = [#imageLiteral(resourceName: "testUser"),#imageLiteral(resourceName: "testUser2"),#imageLiteral(resourceName: "test")]
+    var products: [ProductModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,8 @@ class OpenGroupViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        checkoutProductNumber()
 
     }
     
@@ -34,7 +36,6 @@ class OpenGroupViewController: UIViewController {
         
         newProductBotSetup()
         setColletionView()
-        checkoutProductNumber()
        
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.clipsToBounds = true
@@ -106,8 +107,9 @@ class OpenGroupViewController: UIViewController {
         controller.appendProduct { (product) in
             
             #warning ("要把 update image 上傳至 firebase ")
-//            self.products.append(product)
+            self.products.append(product)
             self.collectionView.reloadData()
+            self.numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
         }
         
         show(controller, sender: nil)
@@ -153,6 +155,8 @@ extension OpenGroupViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
                 
         }
+        
+        cell.newProductView.updateProductDetail(product: products[indexPath.row])
         
         return cell
     }
@@ -207,12 +211,47 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
             
             return
         }
-
-        #warning ("傳姪過去")
-
-//        controller.product = products[indexPath.row]
         
-        show(controller, sender: nil)
+        controller.loadViewIfNeeded()
+        
+       let sheet = alertSheet(
+            controller: controller,
+            product: products[indexPath.row],
+            indexPath: indexPath
+        )
+        
+        self.present(sheet, animated: true, completion: nil)
     }
     
+    private func alertSheet(
+        controller: AppendNewItemViewController,
+        product: ProductModel,
+        indexPath: IndexPath
+        ) -> UIAlertController {
+    
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let editAction = UIAlertAction(title: "編輯商品", style: .default) { (_) in
+            
+            controller.editProductDetail(product: product)
+            self.show(controller, sender: nil)
+        }
+
+        let deleteAction = UIAlertAction(title: "刪除商品", style: .default) { (_) in
+
+            self.products.remove(at: indexPath.row)
+            self.collectionView.reloadData()
+            self.checkoutProductNumber()
+
+        }
+
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+
+        alertController.addAction(editAction)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+
+        return alertController
+    }
+
 }
