@@ -33,10 +33,19 @@ class NewProductView: UIView {
 
     }
     
+    func updateProductDetail(product: ProductModel) {
+        
+        productNameLbl.text = product.productName
+        productPriceLbl.text = "\(product.price)"
+        productQuntityLbl.text = "\(product.numberOfItem)"
+        productImage.image = product.updateImage
+    }
+    
     private func viewSetup() {
         
         productImage.cornerSetup(cornerRadius: 4)
         
+        self.shadowSetup(shadowOpacity: 0.6)
         setViewToBeTemplate()
     }
     
