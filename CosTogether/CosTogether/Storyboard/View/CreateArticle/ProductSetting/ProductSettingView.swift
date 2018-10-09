@@ -77,7 +77,8 @@ class ProductSettingView: UIView {
     
     func updateProductDetail(product: ProductModel) {
         
-        productQuantityLbl.text = "\(product.numberOfItem)"
+        productQuantity = product.numberOfItem
+        productQuantityLbl.text = "\(productQuantity)"
         productNameTxf.text = product.productName
         productPriceTxf.text = "\(product.price)"
         

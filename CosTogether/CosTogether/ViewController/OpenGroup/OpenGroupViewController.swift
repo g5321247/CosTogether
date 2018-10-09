@@ -55,6 +55,8 @@ class OpenGroupViewController: UIViewController {
                 maskToBounds: true
             )
             
+            numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
+
             return
         }
         
@@ -67,6 +69,9 @@ class OpenGroupViewController: UIViewController {
             borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
             maskToBounds: true
         )
+
+        numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
+
     }
     
     private func setColletionView() {
@@ -108,8 +113,11 @@ class OpenGroupViewController: UIViewController {
             
             #warning ("要把 update image 上傳至 firebase ")
             self.products.append(product)
+            BaseNotificationBanner.sucessBanner(subtitle: "商品新增成功")
+
             self.collectionView.reloadData()
-            self.numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
+            self.checkoutProductNumber()
+            
         }
         
         show(controller, sender: nil)
@@ -205,7 +213,7 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
         
-        //        collectionView.deselectItem(at: indexPath, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
         
         guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
             
@@ -234,6 +242,19 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         let editAction = UIAlertAction(title: "編輯商品", style: .default) { (_) in
             
             controller.editProductDetail(product: product)
+            
+            controller.appendProduct(product: { [weak self] (product) in
+                
+                self?.products[indexPath.row] = product
+                
+                BaseNotificationBanner.sucessBanner(
+                    subtitle: "商品修改成功",
+                    style: .info
+                )
+                
+                self?.collectionView.reloadData()
+            })
+            
             self.show(controller, sender: nil)
         }
 
@@ -241,6 +262,12 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
 
             self.products.remove(at: indexPath.row)
             self.collectionView.reloadData()
+            
+            BaseNotificationBanner.sucessBanner(
+                subtitle: "商品刪除成功",
+                style: .info
+            )
+
             self.checkoutProductNumber()
 
         }

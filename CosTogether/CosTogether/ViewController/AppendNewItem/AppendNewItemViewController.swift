@@ -95,8 +95,6 @@ class AppendNewItemViewController: UIViewController {
         
         passProductInfo(product)
         
-        BaseNotificationBanner.sucessBanner(subtitle: "商品新增成功")
-        
         navigationController?.popViewController(animated: true)
         
     }
