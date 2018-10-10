@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseAuth
+import Firebase
 
 struct UserInfo {
     
     var userName: String
-    var userPicUrl: URL
+    var userPicUrl: String
 
 }
 
@@ -53,13 +52,30 @@ struct FirebaseManager {
                 }
                 
                 let user = firebaseResult.user
-                let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!)
+                let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
+                
+                AppDelegate.shared.ref.child("users/\(user.uid)/userInfo/username").setValue(userInfo.userName)
+                AppDelegate.shared.ref.child("users/\(user.uid)/userInfo/userPicUrl").setValue(userInfo.userPicUrl)
                 
                 UserDefaults.standard.set(user.uid, forKey: FirebaseType.uuid.rawValue)
 
                 sucess(userInfo)
                 
         }
+    }
+    
+    func update() {
+    
+//        let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
+//
+//        let post = [
+//            "userName": userInfo.userName,
+//            "userPicUrl": userInfo.userPicUrl,
+//            ] as [String : Any]
+//
+//        AppDelegate.shared.ref.updateChildValues(["/user/\(user.uid)/": post])
+        
+        
     }
     
 }

@@ -65,7 +65,7 @@ class LogInViewController: UIViewController {
         
         firebaseManager.logInFirebase(
             token: token,
-            sucess: { (userInfo) in
+            sucess: { (_) in
             
             DispatchQueue.main.async {
                 AppDelegate.shared.switchMainPage()

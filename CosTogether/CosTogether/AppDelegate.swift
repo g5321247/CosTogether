@@ -20,12 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = UIApplication.shared.delegate as! AppDelegate
     // swiftlint:enable force_cast
 
+    // swiftlint:disable identifier_name
+
+    var ref: DatabaseReference!
+
+    // swiftlint:enable identifier_name
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
-        
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        
+        // swiftlint:disable identifier_name
+        
+        ref = Database.database().reference()
+        
+        // swiftlint:enable identifier_name
         
         FBSDKApplicationDelegate.sharedInstance().application(
             application,

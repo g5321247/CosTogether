@@ -216,11 +216,10 @@ class OpenGroupViewController: UIViewController {
         }
         
         #warning ("上傳 firebase")
+
         
-        
-        
-        
-        //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
+        BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
+
         
     }
     
