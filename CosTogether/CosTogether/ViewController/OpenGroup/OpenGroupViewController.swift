@@ -24,11 +24,12 @@ class OpenGroupViewController: UIViewController {
     
     #warning ("將資料一起塞進 Group 後上傳")
     var products: [ProductModel] = []
-    var openType: OpenGroupType = .shareBuy
     
     var openGroupType: OpenGroupType = .shareBuy
 
     var city: String?
+    
+    let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,7 +197,7 @@ class OpenGroupViewController: UIViewController {
         }
         
         let group = Group(
-            openType: openType,
+            openType: openGroupType,
             article: ArticleModel(
                 articleTitle: articleTitle,
                 location: city,
@@ -214,6 +215,11 @@ class OpenGroupViewController: UIViewController {
         guard let group = checkProductContent() else {
             return
         }
+        
+//        firebaseManager.uploadProductPics(
+//            articleTitle: group.article.articleTitle,
+//            picture: group.products[0].updateImage, sucess: <#T##(URL) -> Void#>, faliure: <#T##(Error) -> Void#>)
+//
         
         #warning ("上傳 firebase")
 

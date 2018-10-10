@@ -64,8 +64,44 @@ struct FirebaseManager {
         }
     }
     
-    func update() {
-    
+    func uploadProductPics(
+        articleTitle: String,
+        picture: Data,
+        sucess: @escaping (URL) -> Void,
+        faliure: @escaping (Error) -> Void
+        ) {
+
+
+        let storageRef = AppDelegate.shared.storage.child("group").child((Auth.auth().currentUser?.uid)!).child(articleTitle)
+        
+        storageRef.putData(picture, metadata: nil) { (data, error) in
+            
+            guard error == nil else {
+
+                faliure((FirebaseError.system(error!.localizedDescription)))
+                return
+            }
+            
+            storageRef.downloadURL(completion: { (url, error) in
+                
+                guard error == nil else {
+                    
+                    faliure((FirebaseError.system(error!.localizedDescription)))
+                    return
+                }
+
+                guard let url = url else {
+                    
+                    faliure((FirebaseError.uploadPicFail("上傳照片失敗")))
+                    return
+                }
+                
+                sucess(url)
+                
+            })
+            
+        }
+        
 //        let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
 //
 //        let post = [
@@ -77,5 +113,6 @@ struct FirebaseManager {
         
         
     }
+    
     
 }

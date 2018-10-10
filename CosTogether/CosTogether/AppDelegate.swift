@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // swiftlint:disable identifier_name
 
     var ref: DatabaseReference!
+    var storage: StorageReference!
 
     // swiftlint:enable identifier_name
 
@@ -32,11 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
-        // swiftlint:disable identifier_name
-        
         ref = Database.database().reference()
-        
-        // swiftlint:enable identifier_name
+        storage = Storage.storage().reference()
         
         FBSDKApplicationDelegate.sharedInstance().application(
             application,

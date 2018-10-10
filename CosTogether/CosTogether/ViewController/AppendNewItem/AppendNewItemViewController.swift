@@ -88,6 +88,7 @@ class AppendNewItemViewController: UIViewController {
         prodctSettingView.updateProductInfo()
         
         guard let product = product,
+        product.updateImage != nil,
         let passProductInfo = passProductInfo else {
             
             return

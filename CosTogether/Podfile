@@ -10,10 +10,11 @@ target 'CosTogether' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
   pod 'FSPagerView'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
   pod 'NotificationBannerSwift'
-  
+
 end

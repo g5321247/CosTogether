@@ -61,6 +61,7 @@ enum FirebaseError: ErrorComment {
     
     case system(String)
     case unrecognized(String)
+    case uploadPicFail(String)
     
     func errorMessage() -> String {
         
@@ -71,9 +72,12 @@ enum FirebaseError: ErrorComment {
             
         case .unrecognized(let message):
             return message
+            
+        case .uploadPicFail(let message):
+            
+            return message
         }
         
     }
-
+    
 }
-
