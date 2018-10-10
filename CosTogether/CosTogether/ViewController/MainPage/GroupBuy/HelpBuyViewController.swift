@@ -63,7 +63,6 @@ extension HelpBuyViewController: UICollectionViewDataSource {
         
         collectionView.isHidden = false
 
-        
         return products.count
     }
     
@@ -96,7 +95,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         
         let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 220
+        let height = width / 185.0 * 230
         
         return CGSize(width: width, height: height)
     }
@@ -106,7 +105,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 12)
+        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 0)
     }
     
     func collectionView(

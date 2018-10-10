@@ -17,7 +17,7 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerViewBackgroundView: UIView!
     
     var products: [ProductModel] = []
 

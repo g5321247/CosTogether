@@ -137,33 +137,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="5" y="187" width="365" height="280"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hv-fi-E2j" userLabel="PickerBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
+                                <rect key="frame" x="15" y="187" width="345" height="280"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請選擇面交的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5V-au-hKw">
-                                        <rect key="frame" x="114.5" y="10" width="136" height="25"/>
-                                        <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選擇城市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5V-au-hKw">
+                                        <rect key="frame" x="124.5" y="10" width="96" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3T-QI-aTL">
-                                        <rect key="frame" x="0.0" y="45" width="365" height="195"/>
-                                        <color key="backgroundColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="45" width="345" height="195"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxu-gk-F5k">
-                                        <rect key="frame" x="0.0" y="240" width="365" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="345" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YuD-bo-CL3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="確認">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="m3T-QI-aTL" firstAttribute="top" secondItem="CD6-AT-dxc" secondAttribute="top" constant="45" id="0SE-Sh-t7I"/>
                                     <constraint firstAttribute="trailing" secondItem="Nxu-gk-F5k" secondAttribute="trailing" id="0p5-Rr-gZk"/>
@@ -172,11 +176,13 @@
                                     <constraint firstAttribute="trailing" secondItem="m3T-QI-aTL" secondAttribute="trailing" id="DWa-K1-G6V"/>
                                     <constraint firstItem="m3T-QI-aTL" firstAttribute="leading" secondItem="CD6-AT-dxc" secondAttribute="leading" id="JXa-jS-vKI"/>
                                     <constraint firstAttribute="height" constant="280" id="cS6-hT-gBm"/>
+                                    <constraint firstItem="m3T-QI-aTL" firstAttribute="centerX" secondItem="CD6-AT-dxc" secondAttribute="centerX" id="crL-cb-fJh"/>
                                     <constraint firstAttribute="bottom" secondItem="Nxu-gk-F5k" secondAttribute="bottom" id="ibS-hY-YCD"/>
                                     <constraint firstItem="c5V-au-hKw" firstAttribute="centerX" secondItem="CD6-AT-dxc" secondAttribute="centerX" id="sxa-lw-iTe"/>
                                     <constraint firstItem="Nxu-gk-F5k" firstAttribute="leading" secondItem="CD6-AT-dxc" secondAttribute="leading" id="zNT-uI-Sd6"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="confirmBot" destination="Nxu-gk-F5k" id="qBp-mP-5NL"/>
                                     <outlet property="pickerView" destination="m3T-QI-aTL" id="zOQ-0t-45G"/>
                                 </connections>
                             </view>
@@ -189,9 +195,11 @@
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jwq-AA-tLs"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="20" id="Kvs-B5-adE"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LiO-bE-XfZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6hv-fi-E2j" secondAttribute="trailing" id="RMv-C4-U6h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="25" id="Th8-dJ-OzD"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerY" secondItem="1vA-qM-eor" secondAttribute="centerY" id="V2L-0r-YXA"/>
-                            <constraint firstItem="CD6-AT-dxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="XDE-1g-Fls"/>
+                            <constraint firstItem="6hv-fi-E2j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WzL-B1-Bza"/>
+                            <constraint firstItem="CD6-AT-dxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XDE-1g-Fls"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XRP-Jn-kI6"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerX" secondItem="1vA-qM-eor" secondAttribute="centerX" id="YiA-7v-gwH"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="trailing" secondItem="dx7-fe-h63" secondAttribute="trailing" constant="10" id="aID-lG-SQs"/>
@@ -199,9 +207,11 @@
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dNE-89-XWf"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" constant="10" id="g9a-QC-wrr"/>
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerY" secondItem="2aD-hn-bYs" secondAttribute="centerY" id="guM-jA-ZQZ"/>
+                            <constraint firstItem="6hv-fi-E2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nZH-DD-ZLm"/>
                             <constraint firstItem="CD6-AT-dxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="url-rK-O8V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7f-Ur-8EC" secondAttribute="trailing" constant="15" id="uxR-tP-iXb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CD6-AT-dxc" secondAttribute="trailing" constant="5" id="vfM-4z-dEY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CD6-AT-dxc" secondAttribute="trailing" constant="15" id="vfM-4z-dEY"/>
+                            <constraint firstAttribute="bottom" secondItem="6hv-fi-E2j" secondAttribute="bottom" id="ybT-f0-mLB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -231,9 +241,6 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uE8-7v-0Mj">
                                 <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uE8-7v-0Mj" secondAttribute="height" multiplier="1:1" id="Uu9-4o-SxQ"/>
-                                </constraints>
                                 <state key="normal" image="upload-button"/>
                                 <connections>
                                     <action selector="uploadToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFF-1o-akQ"/>
@@ -246,6 +253,7 @@
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
                         <outlet property="numberOfProductCategoryLbl" destination="ty8-i3-pxS" id="5xQ-eE-dfm"/>
+                        <outlet property="pickerViewBackgroundView" destination="6hv-fi-E2j" id="Ayo-Cj-01C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

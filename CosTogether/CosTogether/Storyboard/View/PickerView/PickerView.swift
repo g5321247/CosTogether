@@ -11,11 +11,12 @@ import UIKit
 class PickerView: UIView {
 
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var confirmBot: UIButton!
     
     var city = [
-        "台北","新北","桃園","新竹",
-        "苗栗","台中","彰化","雲林",
-        "嘉義","台南","高雄"
+        "台北", "新北", "桃園", "新竹",
+        "苗栗", "台中", "彰化", "雲林",
+        "嘉義", "台南", "高雄"
         ]
     
     override func awakeFromNib() {
@@ -33,7 +34,12 @@ class PickerView: UIView {
     private func viewSetup() {
         
         self.cornerSetup(cornerRadius: 20)
-        
+        confirmBot.cornerSetup(
+            cornerRadius: 0,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
+            maskToBounds: true
+        )
     }
     
     private func pickerViewSetup() {

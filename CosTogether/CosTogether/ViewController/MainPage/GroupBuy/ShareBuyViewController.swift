@@ -28,7 +28,24 @@ class ShareBuyViewController: UIViewController {
                 price: 20,
                 updateImage: nil
             )
+        ),
+        MainPageViewModel(
+            user: UserModel(
+                userImage: "testUser",
+                userName: "金城武",
+                numberOfEvaluation: 2,
+                buyNumber: 3,
+                averageEvaluation: 5.0
+            ),
+            producet: ProductModel(
+                productName: "好吃的",
+                productImage: "123",
+                numberOfItem: 2,
+                price: 20,
+                updateImage: nil
+            )
         )
+
     ]
     
     override func viewDidLoad() {
@@ -109,9 +126,9 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 160.0 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 220
+        let height = width / 185.0 * 230
         
         return CGSize(width: width, height: height)
     }
