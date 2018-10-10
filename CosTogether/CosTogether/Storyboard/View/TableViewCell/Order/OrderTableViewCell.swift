@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import NotificationBannerSwift
 
 protocol CellDelegate: AnyObject {
     
@@ -54,6 +55,9 @@ class OrderTableViewCell: UITableViewCell {
     @IBAction func orderTapping(_ sender: UIButton) {
         
         guard Int.parse(from: amoutLbl.text!) != 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "您未加入任何商品")
+            
             return
         }
         

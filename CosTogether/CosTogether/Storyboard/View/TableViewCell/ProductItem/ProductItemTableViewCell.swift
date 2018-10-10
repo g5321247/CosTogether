@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class ProductItemTableViewCell: UITableViewCell {
 
@@ -49,10 +50,6 @@ class ProductItemTableViewCell: UITableViewCell {
     private func setup() {
         
         setButtonView()
-
-        guard  let productModel = productModel else {
-            return
-        }
         
     }
     
@@ -98,6 +95,8 @@ class ProductItemTableViewCell: UITableViewCell {
             let number = Int(buyNumberLbl.text!),
             number < (productModel.numberOfItem) else {
                 
+                BaseNotificationBanner.warningBanner(subtitle: "數量已達上限")
+
                 return
         }
         
