@@ -40,7 +40,7 @@ struct ArticleModel: DataProtocol {
     
     let location: String
     
-    let postDate: Date
+    let postDate: String
         
 }
 
