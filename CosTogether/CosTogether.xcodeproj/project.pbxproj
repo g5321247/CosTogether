@@ -310,13 +310,6 @@
 			path = GroupBuy;
 			sourceTree = "<group>";
 		};
-		C823A264216768880066D635 /* OpenGroup */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OpenGroup;
-			sourceTree = "<group>";
-		};
 		C823A26B216904D40066D635 /* CreateArticle */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +454,14 @@
 				C849752A2157C25D00555855 /* Product.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		C84AF269216DBCAA00CF5A47 /* OpenGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C823A262216768820066D635 /* OpenGroupViewController.swift */,
+			);
+			path = OpenGroup;
 			sourceTree = "<group>";
 		};
 		C85D4F1E2154CF9800D73D8F /* Error */ = {
@@ -620,7 +621,7 @@
 				C84975242157BAF200555855 /* LogIn */,
 				C8B91E73215FC79700F7CA3A /* Profile */,
 				C8FB98C92161870100C78926 /* MyGroup */,
-				C823A264216768880066D635 /* OpenGroup */,
+				C84AF269216DBCAA00CF5A47 /* OpenGroup */,
 				C8B77B072169DDF00067AC21 /* AppendNewItem */,
 			);
 			path = ViewController;
@@ -697,7 +698,6 @@
 		C8FB98C92161870100C78926 /* MyGroup */ = {
 			isa = PBXGroup;
 			children = (
-				C823A262216768820066D635 /* OpenGroupViewController.swift */,
 				C8FB98C7216186F800C78926 /* MyGroupViewController.swift */,
 			);
 			path = MyGroup;

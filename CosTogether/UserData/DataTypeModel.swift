@@ -20,11 +20,12 @@ protocol DataProtocol {
     
 }
 
-struct GroupType: DataProtocol {
+struct Group: DataProtocol {
     
     let openType: OpenGroupType
+    let article: ArticleModel
     let products: [ProductModel]
-    
+    let userID: String
 }
 
 struct MainPageViewModel: DataProtocol {
@@ -40,11 +41,7 @@ struct ArticleModel: DataProtocol {
     let location: String
     
     let postDate: Date
-    
-    let productTag: String
-    
-    let user: UserModel
-
+        
 }
 
 struct CommentModel: DataProtocol {

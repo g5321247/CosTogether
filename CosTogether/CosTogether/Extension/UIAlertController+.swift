@@ -15,7 +15,7 @@ extension UIAlertController {
         message: String
         ) -> UIAlertController {
         
-    let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertController.Style.alert)
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: "確定", style: .default, handler: nil)
 

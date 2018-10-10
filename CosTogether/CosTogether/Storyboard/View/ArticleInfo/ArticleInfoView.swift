@@ -30,14 +30,14 @@ class ArticleInfoView: UIView {
         #warning ("用 sd 去設定 image")
 //        authorImageBot.imageView?.image
         
-        authorNameLbl?.text = article.user.userName
+//        authorNameLbl?.text = article.user.userName
         
 //        postDateLbl.text = article.postDate
         
         locationLbl.text = article.location
         
         #warning ("改成 Array")
-        tagLbl.text = article.productTag
+//        tagLbl.text = article.productTag
         
         articleTitleLbl.text = article.articleTitle
         

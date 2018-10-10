@@ -12,6 +12,7 @@ class CreateArticleView: UIView {
 
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var titleTxf: UITextField!
+    @IBOutlet weak var choseCityBot: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

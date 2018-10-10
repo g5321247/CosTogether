@@ -501,7 +501,7 @@ extension DetailViewController: CellDelegate {
         self.tableView.reloadData()
     }
     
-    func reszing(heightGap: CGFloat) {
+    func resizing(heightGap: CGFloat) {
         
         tableView.contentInset.bottom += heightGap
         tableView.contentOffset.y += heightGap

@@ -13,7 +13,7 @@ import NotificationBannerSwift
 protocol CellDelegate: AnyObject {
     
     func cellButtonTapping(_ cell: UITableViewCell)
-    func reszing(heightGap: CGFloat)
+    func resizing(heightGap: CGFloat)
     func updateLocalData(data: Any)
 }
 

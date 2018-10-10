@@ -126,7 +126,7 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 160.0 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 162.5 / 375.0 * Double(UIScreen.main.bounds.width)
         
         let height = width / 185.0 * 230
         
@@ -146,7 +146,7 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 15
+        return 10
     }
     
     func collectionView(

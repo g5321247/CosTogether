@@ -58,6 +58,9 @@
                                             <segment title="團購"/>
                                         </segments>
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="switchGroupType:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wyc-1P-qd6"/>
+                                        </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-uB-8eW">
                                         <rect key="frame" x="188" y="9" width="92" height="30"/>
@@ -87,6 +90,7 @@
                                     <constraint firstItem="huY-do-t97" firstAttribute="trailing" secondItem="fgt-Tv-u51" secondAttribute="trailing" constant="-40" id="wiX-RF-LNm"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="choseCityBot" destination="S7S-uB-8eW" id="SM1-9F-Qqd"/>
                                     <outlet property="contentTextView" destination="O24-Tf-SKx" id="Vp8-vd-iva"/>
                                     <outlet property="titleTxf" destination="eOt-Fh-0pd" id="fZT-cM-f2a"/>
                                 </connections>
@@ -142,7 +146,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="15" y="187" width="345" height="280"/>
+                                <rect key="frame" x="15" y="667" width="345" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選擇城市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5V-au-hKw">
                                         <rect key="frame" x="124.5" y="10" width="96" height="35.5"/>
@@ -190,7 +194,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" id="25G-SZ-Bgi"/>
-                            <constraint firstItem="CD6-AT-dxc" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-200" id="7Gb-Rm-5gv"/>
+                            <constraint firstItem="CD6-AT-dxc" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="280" id="7Gb-Rm-5gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="25" id="9Ua-os-Xx2"/>
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jwq-AA-tLs"/>
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="top" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="20" id="Kvs-B5-adE"/>
@@ -249,11 +253,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstriant" destination="7Gb-Rm-5gv" id="rSL-bR-9bI"/>
                         <outlet property="collectionView" destination="1vA-qM-eor" id="kXa-hq-Px1"/>
+                        <outlet property="createArticle" destination="H7f-Ur-8EC" id="C7O-wn-ZYB"/>
                         <outlet property="inCollectionViewLbl" destination="dx7-fe-h63" id="4h2-vu-KVn"/>
                         <outlet property="newProductBot" destination="2aD-hn-bYs" id="adF-tL-bTs"/>
                         <outlet property="numberOfProductCategoryLbl" destination="ty8-i3-pxS" id="5xQ-eE-dfm"/>
+                        <outlet property="pickerView" destination="CD6-AT-dxc" id="bZl-th-1Pi"/>
                         <outlet property="pickerViewBackgroundView" destination="6hv-fi-E2j" id="Ayo-Cj-01C"/>
+                        <outlet property="segmentedControl" destination="huY-do-t97" id="yLI-JB-T7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

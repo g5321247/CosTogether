@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationBannerSwift
-import FSPagerView
+import Firebase
 
 class OpenGroupViewController: UIViewController {
 
@@ -18,9 +18,18 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
     @IBOutlet weak var pickerViewBackgroundView: UIView!
+    @IBOutlet weak var createArticle: CreateArticleView!
+    @IBOutlet weak var pickerView: PickerView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    #warning ("將資料一起塞進 Group 後上傳")
     var products: [ProductModel] = []
+    var openType: OpenGroupType = .shareBuy
+    
+    var openGroupType: OpenGroupType = .shareBuy
 
+    var city: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -39,7 +48,9 @@ class OpenGroupViewController: UIViewController {
         newProductBotSetup()
         setColletionView()
         navigationBarSetup()
-       
+        pickerViewBackgroundView.isHidden = true
+        pickerView.delegate = self
+        
     }
     
     private func navigationBarSetup() {
@@ -143,7 +154,71 @@ class OpenGroupViewController: UIViewController {
         return controller
     }
 
+    func checkProductContent() -> Group? {
+        
+        guard let articleTitle = createArticle.titleTxf.text,
+            articleTitle != "" else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "請輸入標題")
+                
+                return nil
+        }
+        
+        guard let city = city else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請選擇城市")
+            
+            return nil
+
+        }
+        
+        guard let articleContent = createArticle.contentTextView.text,
+            articleContent != "" else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "請輸入詳細資訊內容")
+                
+                return nil
+        }
+        
+        guard products.count > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "商品品項不得為零")
+            
+            return nil
+
+        }
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無發文權利")
+            
+            return nil
+        }
+        
+        let group = Group(
+            openType: openType,
+            article: ArticleModel(
+                articleTitle: articleTitle,
+                location: city,
+                postDate: Date()
+            ),
+            products: products,
+            userID: userId
+            )
+        
+        return group
+    }
+    
     @IBAction func uploadToServer(_ sender: UIButton) {
+        
+        guard let group = checkProductContent() else {
+            return
+        }
+        
+        #warning ("上傳 firebase")
+        
+        
+        
         
         //   let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success) banner.show()
         
@@ -151,7 +226,34 @@ class OpenGroupViewController: UIViewController {
     
     @IBAction func cityBotTapping(_ sender: UIButton) {
         
-        bottomConstriant.constant = -20
+        pickerViewBackgroundView.isHidden = false
+
+        bottomConstriant.constant = -100
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            
+        }
+        
+    }
+    
+    @IBAction func switchGroupType(_ sender: UISegmentedControl) {
+        
+        switch segmentedControl.selectedSegmentIndex {
+            
+        case 0:
+        
+            openGroupType = .shareBuy
+            
+        case 1:
+        
+            openGroupType = .helpBuy
+            
+        default:
+            
+            openGroupType = .shareBuy
+            
+        }
         
     }
     
@@ -301,4 +403,23 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         return alertController
     }
 
+}
+
+extension OpenGroupViewController: PickerViewDelegate {
+   
+    func passCity(city: String) {
+        
+        pickerViewBackgroundView.isHidden = true
+        
+        bottomConstriant.constant = 280
+
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            
+        }
+        
+        self.city = city
+        createArticle.choseCityBot.setTitle(city, for: .normal)
+    }
+    
 }

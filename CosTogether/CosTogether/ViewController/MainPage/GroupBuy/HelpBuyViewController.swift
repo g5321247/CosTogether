@@ -93,7 +93,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 170.0 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 162.5 / 375.0 * Double(UIScreen.main.bounds.width)
         
         let height = width / 185.0 * 230
         
@@ -105,7 +105,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 0)
+        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 12)
     }
     
     func collectionView(
@@ -113,7 +113,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 15
+        return 10
     }
     
     func collectionView(

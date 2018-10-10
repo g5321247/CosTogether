@@ -25,7 +25,7 @@ class SendCommentTableViewCell: UITableViewCell {
     
     func resizeTextView(heightGap: CGFloat) {
         
-        delegate?.reszing(heightGap: heightGap)
+        delegate?.resizing(heightGap: heightGap)
         
     }
     
@@ -72,7 +72,7 @@ extension SendCommentTableViewCell: UITextViewDelegate {
             baseView.messgaeTxtView.frame.size.height = newSize.height
             baseView.frame.size.height += heightGap
 
-            delegate?.reszing(heightGap: heightGap)
+            delegate?.resizing(heightGap: heightGap)
 
         }
 
