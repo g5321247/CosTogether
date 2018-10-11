@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import FirebaseAuth
 import Firebase
+import KeychainAccess
 
 class ProfileViewController: UIViewController {
 
@@ -137,8 +138,8 @@ class ProfileViewController: UIViewController {
             
         case .currentUser:
             
-            let domain = Bundle.main.bundleIdentifier!
-            UserDefaults.standard.removePersistentDomain(forName: domain)
+            let keychain = Keychain(service: "com.george.CosTogether")
+            keychain[FirebaseType.uuid.rawValue] = nil
             
             AppDelegate.shared.switchLogIn()
         

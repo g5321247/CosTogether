@@ -12,6 +12,7 @@ import FBSDKCoreKit
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,8 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         Fabric.with([Crashlytics.self])
         
-        #warning ("keychain")
-        guard UserDefaults.standard.value(forKey: FirebaseType.uuid.rawValue) != nil else {
+        let keychain = Keychain(service: "com.george.CosTogether")
+
+        guard keychain[FirebaseType.uuid.rawValue] != nil else {
 
             switchLogIn()
             

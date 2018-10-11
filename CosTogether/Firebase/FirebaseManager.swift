@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import KeychainAccess
 
 struct UserInfo {
     
@@ -57,8 +58,9 @@ struct FirebaseManager {
                 AppDelegate.shared.ref.child("users/\(user.uid)/userInfo/username").setValue(userInfo.userName)
                 AppDelegate.shared.ref.child("users/\(user.uid)/userInfo/userPicUrl").setValue(userInfo.userPicUrl)
                 
-                UserDefaults.standard.set(user.uid, forKey: FirebaseType.uuid.rawValue)
-
+                let keychain = Keychain(service: "com.george.CosTogether")
+                keychain[FirebaseType.uuid.rawValue] = user.uid
+                
                 sucess(userInfo)
                 
         }
