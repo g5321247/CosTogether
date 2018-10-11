@@ -82,8 +82,11 @@ struct FirebaseManager {
         faliure: @escaping (Error) -> Void
         ) {
 
-
-        let storageRef = AppDelegate.shared.storage.child("group").child((Auth.auth().currentUser?.uid)!).child(articleTitle).child(productName)
+        guard  let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let storageRef = AppDelegate.shared.storage.child("group").child(userId).child(articleTitle).child(productName)
         
         storageRef.putData(picture, metadata: nil) { (data, error) in
             
@@ -140,15 +143,10 @@ struct FirebaseManager {
             return
         }
         
-        refrence.child("\(group.openType.rawValue)").child("\(key)").setValue(
-            [
-                "ownerId": group.userID,
-                ]
-        )
         
-        articleSetup(refrence: refrence, key: key, group: group)
-        
-        
+        uploadArticle(refrence: refrence, key: key, group: group)
+        uploadProduct(refrence: refrence, key: key, group: group)
+        uploadUser(refrence: refrence, key: key, group: group)
     }
     
 }
@@ -156,7 +154,7 @@ struct FirebaseManager {
 
 extension FirebaseManager {
     
-    func articleSetup(refrence: DatabaseReference, key: String, group: Group) {
+    func uploadArticle(refrence: DatabaseReference, key: String, group: Group) {
         
         refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("article").setValue(
             
@@ -167,6 +165,44 @@ extension FirebaseManager {
             ]
             
         )
+    }
+    
+    func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
+        
+        for value in group.products {
+            
+            refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("products").child(value.productName).setValue(
+                
+                [
+                    "numberOfItem": value.numberOfItem,
+                    "price" : value.price,
+                    "imageUrl": value.productImage ?? ""
+                ]
+                
+            )
+            
+        }
+        
+    }
+    
+    func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
+        
+        guard  let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+
+        refrence.child("group").child(group.openType.rawValue).child(key).setValue(
+            [
+                "ownerId": group.userID,
+            ]
+        )
+        
+        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").setValue(
+            [
+                key: key
+            ]
+        )
+
     }
     
     
