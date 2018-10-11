@@ -225,6 +225,7 @@ class OpenGroupViewController: UIViewController {
             firebaseManager.uploadProductPics(
                 
                 articleTitle: group.article.articleTitle,
+                productName: value.productName,
                 picture: imageData,
                 sucess: { (url) in
                     

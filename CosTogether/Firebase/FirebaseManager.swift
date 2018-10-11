@@ -66,13 +66,14 @@ struct FirebaseManager {
     
     func uploadProductPics(
         articleTitle: String,
+        productName: String,
         picture: Data,
         sucess: @escaping (URL) -> Void,
         faliure: @escaping (Error) -> Void
         ) {
 
 
-        let storageRef = AppDelegate.shared.storage.child("group").child((Auth.auth().currentUser?.uid)!).child(articleTitle)
+        let storageRef = AppDelegate.shared.storage.child("group").child((Auth.auth().currentUser?.uid)!).child(articleTitle).child(productName)
         
         storageRef.putData(picture, metadata: nil) { (data, error) in
             
