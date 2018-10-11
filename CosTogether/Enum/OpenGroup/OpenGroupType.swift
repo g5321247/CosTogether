@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OpenGroupType {
+enum OpenGroupType: String {
     
     case shareBuy
     case helpBuy

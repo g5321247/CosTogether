@@ -26,6 +26,22 @@ struct Group: DataProtocol {
     let article: ArticleModel
     let products: [ProductModel]
     let userID: String
+    let groupId: String?
+    
+    init(
+        openType: OpenGroupType,
+        article: ArticleModel,
+        products: [ProductModel],
+        userID: String,
+        groupId: String? = nil
+        ) {
+        
+        self.openType = openType
+        self.article = article
+        self.products = products
+        self.userID = userID
+        self.groupId = groupId
+    }
 }
 
 struct MainPageViewModel: DataProtocol {

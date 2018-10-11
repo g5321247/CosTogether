@@ -259,7 +259,7 @@ class OpenGroupViewController: UIViewController {
         
         translateProductPicsToUrl(group: group) { (uploadGroup) in
             
-            
+            self.firebaseManager.uploadGroup(group: uploadGroup)
             
         }
         
