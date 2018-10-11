@@ -7,46 +7,17 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ShareBuyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var products: [DataProtocol] = [
-        MainPageViewModel(
-            user: UserModel(
-                userImage: "testUser",
-                userName: "金城武",
-                numberOfEvaluation: 2,
-                buyNumber: 3,
-                averageEvaluation: 5.0
-            ),
-            producet: ProductModel(
-                productName: "好吃的",
-                productImage: "123",
-                numberOfItem: 2,
-                price: 20,
-                updateImage: nil
-            )
-        ),
-        MainPageViewModel(
-            user: UserModel(
-                userImage: "testUser",
-                userName: "金城武",
-                numberOfEvaluation: 2,
-                buyNumber: 3,
-                averageEvaluation: 5.0
-            ),
-            producet: ProductModel(
-                productName: "好吃的",
-                productImage: "123",
-                numberOfItem: 2,
-                price: 20,
-                updateImage: nil
-            )
-        )
-
-    ]
+    let firebaseManager = FirebaseManager()
+    
+    var openGroupType: OpenGroupType = .shareBuy
+    
+    var group: [Group] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +27,12 @@ class ShareBuyViewController: UIViewController {
     }
     
     private func setup() {
+        
         setColletionView()
+        downloadData()
+        
+        SVProgressHUD.dismiss()
+
     }
     
     private func setColletionView() {
@@ -67,6 +43,18 @@ class ShareBuyViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        
+    }
+    
+    private func downloadData() {
+        
+        SVProgressHUD.show()
+        
+        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            self.group.append(groupData)
+            self.collectionView.reloadData()
+        }
         
     }
     
@@ -87,7 +75,7 @@ extension ShareBuyViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard products.count > 0 else {
+        guard group.count > 0 else {
             
             collectionView.isHidden = true
             return 0
@@ -95,7 +83,7 @@ extension ShareBuyViewController: UICollectionViewDataSource {
         
         collectionView.isHidden = false
         
-        return products.count
+        return group.count
 
     }
     
@@ -113,6 +101,12 @@ extension ShareBuyViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
                 
         }
+        
+        cell.updateGroupInfo(
+            productUrl: group[indexPath.row].products.first?.productImage ?? "",
+            authorUrl: "",
+            title:  group[indexPath.row].article.articleTitle
+        )
         
         return cell
     }

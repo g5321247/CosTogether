@@ -12,6 +12,8 @@ class HelpBuyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var openGroupType: OpenGroupType = .helpBuy
+    
     var products: [DataProtocol] = []
 
     override func viewDidLoad() {

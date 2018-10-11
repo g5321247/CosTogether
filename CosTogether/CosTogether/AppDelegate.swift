@@ -23,22 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = UIApplication.shared.delegate as! AppDelegate
     // swiftlint:enable force_cast
 
-    // swiftlint:disable identifier_name
-
-    var ref: DatabaseReference!
-    var storage: StorageReference!
-
-    // swiftlint:enable identifier_name
-
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
-        
-        ref = Database.database().reference()
-        storage = Storage.storage().reference()
-        
+            
         FBSDKApplicationDelegate.sharedInstance().application(
             application,
             didFinishLaunchingWithOptions: launchOptions

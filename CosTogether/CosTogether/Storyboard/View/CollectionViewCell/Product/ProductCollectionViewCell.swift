@@ -62,4 +62,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
     }
     
+    func updateGroupInfo(productUrl: String, authorUrl: String, title: String) {
+        
+        let productUrl = URL(string: productUrl)
+        let authorUrl = URL(string: authorUrl)
+
+        photoImage.sd_setImage(with: productUrl)
+        authorImage.sd_setImage(with: authorUrl)
+        titleLbl.text = title
+        
+    }
+    
 }

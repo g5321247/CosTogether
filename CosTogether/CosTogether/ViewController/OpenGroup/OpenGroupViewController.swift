@@ -25,8 +25,6 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let dispatchGroup = DispatchGroup()
-
-    var group: Group?
     
     var products: [ProductModel] = []
     
@@ -201,7 +199,7 @@ class OpenGroupViewController: UIViewController {
             return nil
         }
         
-        group = Group(
+        let group = Group(
             openType: openGroupType,
             article: ArticleModel(
                 articleTitle: articleTitle,

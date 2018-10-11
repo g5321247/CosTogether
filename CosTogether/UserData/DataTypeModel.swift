@@ -26,21 +26,21 @@ struct Group: DataProtocol {
     let article: ArticleModel
     let products: [ProductModel]
     let userID: String
-    let groupId: String?
+//    let groupId: String?
     
     init(
         openType: OpenGroupType,
         article: ArticleModel,
         products: [ProductModel],
-        userID: String,
-        groupId: String? = nil
+        userID: String
+//        groupId: String? = nil
         ) {
         
         self.openType = openType
         self.article = article
         self.products = products
         self.userID = userID
-        self.groupId = groupId
+//        self.groupId = groupId
     }
 }
 
@@ -114,7 +114,7 @@ struct ProductModel: DataProtocol {
         productImage: String?,
         numberOfItem: Int,
         price: Int,
-        updateImage: UIImage?
+        updateImage: UIImage? = nil
         ) {
         
         self.productName = productName

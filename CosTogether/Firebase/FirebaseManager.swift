@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import KeychainAccess
+import NotificationBannerSwift
 
 struct UserInfo {
     
@@ -55,9 +56,7 @@ struct FirebaseManager {
                 let user = firebaseResult.user
                 let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
                 
-                guard let refrence = AppDelegate.shared.ref else {
-                    return
-                }
+                let refrence = Database.database().reference()
                 
                 refrence.child("users").child(user.uid).child("userInfo").setValue(
                     [
@@ -74,7 +73,6 @@ struct FirebaseManager {
         }
     }
     
-    
     func uploadProductPics(
         articleTitle: String,
         productName: String,
@@ -87,7 +85,7 @@ struct FirebaseManager {
             return
         }
         
-        let storageRef = AppDelegate.shared.storage.child("group").child(userId).child(articleTitle).child(productName)
+        let storageRef =  Storage.storage().reference().child("group").child(userId).child(articleTitle).child(productName)
         
         storageRef.putData(picture, metadata: nil) { (data, error) in
             
@@ -121,9 +119,7 @@ struct FirebaseManager {
     
     func uploadGroup(group: Group) {
         
-        guard let refrence = AppDelegate.shared.ref else {
-            return
-        }
+        let refrence = Database.database().reference()
         
         guard let key = refrence.child("group").child(group.openType.rawValue).childByAutoId().key else {
             
@@ -132,14 +128,86 @@ struct FirebaseManager {
             return
         }
         
-        
         uploadArticle(refrence: refrence, key: key, group: group)
         uploadProduct(refrence: refrence, key: key, group: group)
         uploadUser(refrence: refrence, key: key, group: group)
     }
     
-}
+    func downloadGroup(groupType: OpenGroupType, completion: @escaping (Group) -> Void) {
+        
+        let refrence = Database.database().reference()
+        
+        refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            guard let article = value?["article"] as? NSDictionary,
+            let location = article["location"] as? String,
+            let postDate = article["postDate"] as? String,
+                let title = article["title"] as? String else {
+                    
+                    BaseNotificationBanner.warningBanner(subtitle: "解析 article 失敗")
 
+                    return
+        
+            }
+            
+            let articleModel = ArticleModel(articleTitle: title, location: location,postDate: postDate)
+            
+            guard let products = value?["products"] as? NSDictionary,
+                let productName = products.allKeys as? [String] else {
+                    
+                    return
+            }
+            
+            var productsArray: [ProductModel] = []
+            
+            for value in productName {
+                
+                guard let product = products[value] as? NSDictionary,
+                let imageUrl = product["imageUrl"] as? String,
+                let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int else {
+                        
+                        return
+                }
+                
+                productsArray.append(
+                    ProductModel(
+                        productName: value,
+                        productImage: imageUrl,
+                        numberOfItem: numberOfItem,
+                        price: price
+                    )
+                )
+                
+            }
+
+            #warning ("使用者 id 和加團者 id")
+            
+            guard let users = value?["users"] as? NSDictionary,
+                let ownerId = users["ownerId"] as? String else {
+                    
+                    return
+            }
+            
+           let group = Group(
+                openType: groupType,
+                article: articleModel,
+                products: productsArray,
+                userID: ownerId
+            )
+            
+            completion(group)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
+}
 
 extension FirebaseManager {
     
@@ -180,7 +248,7 @@ extension FirebaseManager {
             return
         }
 
-        refrence.child("group").child(group.openType.rawValue).child(key).setValue(
+        refrence.child("group").child(group.openType.rawValue).child(key).child("users").setValue(
             [
                 "ownerId": group.userID,
             ]
