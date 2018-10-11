@@ -102,6 +102,12 @@ struct FirebaseManager {
             
         }
         
+        func uploadGroup(group: group) {
+            
+            
+            
+        }
+        
 //        let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
 //
 //        let post = [

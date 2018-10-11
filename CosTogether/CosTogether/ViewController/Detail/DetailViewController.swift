@@ -108,6 +108,9 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             order[index].price = 0
             order[index].numberOfItem = 0
         }
+        
+        Analytics.logEvent("LookProduct", parameters: nil)
+
     }
     
     private func setUpCell() {

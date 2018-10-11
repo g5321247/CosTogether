@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import  Firebase
 
 class MainPageViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class MainPageViewController: UIViewController {
 
         productTypeSC.addUnderlineForSelectedSegment()
         topView.rightBot.addTarget(self, action: #selector (mapBotTappiung(_:)), for: .touchUpInside)
+        
+        Analytics.logEvent("StayMainPage", parameters: nil)
         
     }
     

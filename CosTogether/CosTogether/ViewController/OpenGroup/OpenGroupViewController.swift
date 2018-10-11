@@ -23,6 +23,8 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     #warning ("將資料一起塞進 Group 後上傳")
+    var group: Group?
+    
     var products: [ProductModel] = []
     
     var openGroupType: OpenGroupType = .shareBuy
@@ -196,7 +198,7 @@ class OpenGroupViewController: UIViewController {
             return nil
         }
         
-        let group = Group(
+        group = Group(
             openType: openGroupType,
             article: ArticleModel(
                 articleTitle: articleTitle,
@@ -210,10 +212,52 @@ class OpenGroupViewController: UIViewController {
         return group
     }
     
+    func translateProductPicsToUrl(group: Group, completion: @escaping (Group) -> Void) {
+        
+        for (index, value) in group.products.enumerated() {
+            
+            guard let imageData = value.updateImage?.jpeg(.medium) else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "照片轉檔失敗")
+                return
+            }
+            
+            firebaseManager.uploadProductPics(
+                
+                articleTitle: group.article.articleTitle,
+                picture: imageData,
+                sucess: { (url) in
+                    
+                    self.products[index].updateImage = nil
+                    self.products[index].productImage = url.absoluteString
+                    
+                    completion(Group(
+                        openType: group.openType,
+                        article: group.article,
+                        products: self.products,
+                        userID: group.userID
+                        )
+                    )
+                    
+            }) { (error) in
+                
+                #warning ("TODO")
+                
+            }
+        }
+        
+    }
+    
     @IBAction func uploadToServer(_ sender: UIButton) {
         
         guard let group = checkProductContent() else {
             return
+        }
+        
+        translateProductPicsToUrl(group: group) { (uploadGroup) in
+            
+            
+            
         }
         
 //        firebaseManager.uploadProductPics(
