@@ -10,6 +10,7 @@ import UIKit
 import NotificationBannerSwift
 import Firebase
 import AnimatedCollectionViewLayout
+import SVProgressHUD
 
 class OpenGroupViewController: UIViewController {
 
@@ -25,7 +26,6 @@ class OpenGroupViewController: UIViewController {
     
     let dispatchGroup = DispatchGroup()
 
-    #warning ("將資料一起塞進 Group 後上傳")
     var group: Group?
     
     var products: [ProductModel] = []
@@ -38,8 +38,8 @@ class OpenGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -219,9 +219,14 @@ class OpenGroupViewController: UIViewController {
         
         for (index, value) in group.products.enumerated() {
             
+            SVProgressHUD.show()
+
             guard let imageData = value.updateImage?.jpeg(.medium) else {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "照片轉檔失敗")
+                
+                SVProgressHUD.dismiss()
+
                 return
             }
             
@@ -253,6 +258,8 @@ class OpenGroupViewController: UIViewController {
                     
             }) { (error) in
                 
+                SVProgressHUD.dismiss()
+
                 #warning ("TODO")
 
             }
@@ -266,10 +273,13 @@ class OpenGroupViewController: UIViewController {
             return
         }
         
+        SVProgressHUD.show()
+        
         translateProductPicsToUrl(group: group) { (uploadGroup) in
             
             self.firebaseManager.uploadGroup(group: uploadGroup)
             
+            SVProgressHUD.dismiss()
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
             self.resetViewWhenUploadSucess()
         }

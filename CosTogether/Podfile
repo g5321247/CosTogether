@@ -20,5 +20,6 @@ target 'CosTogether' do
   pod 'Crashlytics'
   pod 'KeychainAccess'
   pod 'AnimatedCollectionViewLayout'
-
+  pod 'SVProgressHUD'
+  
 end
