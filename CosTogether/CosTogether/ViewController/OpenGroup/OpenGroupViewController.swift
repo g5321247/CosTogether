@@ -9,6 +9,7 @@
 import UIKit
 import NotificationBannerSwift
 import Firebase
+import AnimatedCollectionViewLayout
 
 class OpenGroupViewController: UIViewController {
 
@@ -105,11 +106,12 @@ class OpenGroupViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            return
-        }
         
+        let layout = AnimatedCollectionViewLayout()
+        layout.animator = LinearCardAttributesAnimator()
         layout.scrollDirection = .horizontal
+        
+        collectionView.collectionViewLayout = layout
     }
     
     private func registerTableViewCell(identifier: String) {
@@ -350,9 +352,9 @@ extension OpenGroupViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.frame.size.width - 30
+        let width = collectionView.frame.size.width
         
-        let height = collectionView.frame.size.height - 30
+        let height = collectionView.frame.size.height
         
         return CGSize(width: width, height: height)
     }

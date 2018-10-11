@@ -19,5 +19,6 @@ target 'CosTogether' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'KeychainAccess'
+  pod 'AnimatedCollectionViewLayout'
 
 end
