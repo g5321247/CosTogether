@@ -74,6 +74,7 @@ struct FirebaseManager {
         }
     }
     
+    
     func uploadProductPics(
         articleTitle: String,
         productName: String,
@@ -115,18 +116,6 @@ struct FirebaseManager {
             })
             
         }
-        
-      
-        
-//        let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
-//
-//        let post = [
-//            "userName": userInfo.userName,
-//            "userPicUrl": userInfo.userPicUrl,
-//            ] as [String : Any]
-//
-//        AppDelegate.shared.ref.updateChildValues(["/user/\(user.uid)/": post])
-        
         
     }
     

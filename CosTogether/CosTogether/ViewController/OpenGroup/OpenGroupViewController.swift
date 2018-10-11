@@ -23,6 +23,8 @@ class OpenGroupViewController: UIViewController {
     @IBOutlet weak var pickerView: PickerView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    let dispatchGroup = DispatchGroup()
+
     #warning ("將資料一起塞進 Group 後上傳")
     var group: Group?
     
@@ -135,7 +137,6 @@ class OpenGroupViewController: UIViewController {
         
         controller.appendProduct { (product) in
             
-            #warning ("要把 update image 上傳至 firebase ")
             self.products.append(product)
             BaseNotificationBanner.sucessBanner(subtitle: "商品新增成功")
 
@@ -224,6 +225,8 @@ class OpenGroupViewController: UIViewController {
                 return
             }
             
+            dispatchGroup.enter()
+            
             firebaseManager.uploadProductPics(
                 
                 articleTitle: group.article.articleTitle,
@@ -233,19 +236,25 @@ class OpenGroupViewController: UIViewController {
                     
                     self.products[index].updateImage = nil
                     self.products[index].productImage = url.absoluteString
+            
+                    self.dispatchGroup.leave()
                     
-                    completion(Group(
-                        openType: group.openType,
-                        article: group.article,
-                        products: self.products,
-                        userID: group.userID
+                    self.dispatchGroup.notify(queue: .main) {
+                        
+                        completion(
+                            Group(
+                            openType: group.openType,
+                            article: group.article,
+                            products: self.products,
+                            userID: group.userID
+                            )
                         )
-                    )
+                    }
                     
             }) { (error) in
                 
                 #warning ("TODO")
-                
+
             }
         }
         
@@ -261,18 +270,23 @@ class OpenGroupViewController: UIViewController {
             
             self.firebaseManager.uploadGroup(group: uploadGroup)
             
+            BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
+            self.resetViewWhenUploadSucess()
         }
+    
+    }
+    
+    func resetViewWhenUploadSucess() {
         
-//        firebaseManager.uploadProductPics(
-//            articleTitle: group.article.articleTitle,
-//            picture: group.products[0].updateImage, sucess: <#T##(URL) -> Void#>, faliure: <#T##(Error) -> Void#>)
-//
+        products.removeAll()
         
-        #warning ("上傳 firebase")
-
+        checkoutProductNumber()
+        passCity(city: "選擇面交縣市")
         
-        BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
-
+        createArticle.contentTextView.text = ""
+        createArticle.titleTxf.text = ""
+        
+        collectionView.reloadData()
         
     }
     
