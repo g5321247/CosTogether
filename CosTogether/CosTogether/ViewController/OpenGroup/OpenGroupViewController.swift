@@ -49,11 +49,11 @@ class OpenGroupViewController: UIViewController {
     
     private func setup() {
         
-        newProductBotSetup()
         setColletionView()
         navigationBarSetup()
-        pickerViewBackgroundView.isHidden = true
+//        pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
+        segmentedControl.addUnderlineForSelectedSegment()
         
     }
     
@@ -74,9 +74,9 @@ class OpenGroupViewController: UIViewController {
             
             collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
             collectionView.cornerSetup(
-                cornerRadius: 4,
+                cornerRadius: 0,
                 borderWidth: 1,
-                borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
+                borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
                 maskToBounds: true
             )
             
@@ -119,11 +119,6 @@ class OpenGroupViewController: UIViewController {
         let nibCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
         
-    }
-
-    private func newProductBotSetup() {
-        
-        newProductBot.cornerSetup(cornerRadius: 4, borderWidth: 2, borderColor: #colorLiteral(red: 0.1411764706, green: 0.3215686275, blue: 0.6196078431, alpha: 1), maskToBounds: true)
     }
     
     @IBAction func newProductBotTapping(_ sender: UIButton) {
@@ -289,7 +284,7 @@ class OpenGroupViewController: UIViewController {
         products.removeAll()
         
         checkoutProductNumber()
-        passCity(city: "選擇面交縣市")
+        passCity(city: "選擇縣市")
         
         createArticle.contentTextView.text = ""
         createArticle.titleTxf.text = ""
@@ -313,6 +308,8 @@ class OpenGroupViewController: UIViewController {
     
     @IBAction func switchGroupType(_ sender: UISegmentedControl) {
         
+        segmentedControl.changeUnderlinePosition()
+
         switch segmentedControl.selectedSegmentIndex {
             
         case 0:

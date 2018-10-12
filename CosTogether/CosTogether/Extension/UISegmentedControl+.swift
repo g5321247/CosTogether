@@ -43,7 +43,7 @@ extension UISegmentedControl {
         self.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor:
-                UIColor(red: 36/255, green: 82/255, blue: 158/255, alpha: 1.0)
+                #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             ],
             for: .selected
         )
@@ -67,7 +67,7 @@ extension UISegmentedControl {
         
         let underline = UIView(frame: underlineFrame)
         
-        underline.backgroundColor = UIColor(red: 36/255, green: 82/255, blue: 158/255, alpha: 1.0)
+        underline.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         underline.tag = 1
         
         self.addSubview(underline)

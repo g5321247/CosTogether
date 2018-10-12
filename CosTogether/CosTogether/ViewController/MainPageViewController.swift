@@ -11,7 +11,7 @@ import Firebase
 class MainPageViewController: UIViewController {
     
     @IBOutlet weak var topView: TopLogoView!
-    @IBOutlet weak var productTypeSC: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var shareBuyView: UIView!
     @IBOutlet weak var helpBuyView: UIView!
@@ -22,7 +22,7 @@ class MainPageViewController: UIViewController {
         shareBuyView.isHidden = false
         helpBuyView.isHidden = true
 
-        productTypeSC.addUnderlineForSelectedSegment()
+        segmentedControl.addUnderlineForSelectedSegment()
         topView.rightBot.addTarget(self, action: #selector (mapBotTappiung(_:)), for: .touchUpInside)
         
         Analytics.logEvent("StayMainPage", parameters: nil)
@@ -38,9 +38,9 @@ class MainPageViewController: UIViewController {
     
     @IBAction func switchProductType(_ sender: Any) {
         
-        productTypeSC.changeUnderlinePosition()
+        segmentedControl.changeUnderlinePosition()
         
-        switch productTypeSC.selectedSegmentIndex {
+        switch segmentedControl.selectedSegmentIndex {
             
         case 0:
             

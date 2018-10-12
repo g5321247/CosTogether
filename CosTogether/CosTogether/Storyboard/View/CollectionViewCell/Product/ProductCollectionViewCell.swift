@@ -13,6 +13,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var locationLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,10 +63,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func updateGroupInfo(productUrl: String, authorUrl: String, title: String) {
+    func updateGroupInfo(
+        productUrl: String,
+        authorUrl: String,
+        title: String,
+        location: String
+        ) {
         
         titleLbl.text = title
-
+        locationLbl.text = location
+        
         guard productUrl != "" else {
 
             photoImage.image = #imageLiteral(resourceName: "picture")

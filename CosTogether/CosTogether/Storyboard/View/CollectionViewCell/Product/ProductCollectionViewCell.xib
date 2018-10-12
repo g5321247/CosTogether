@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我好棒" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-ly-8bu">
-                                <rect key="frame" x="8" y="172" width="154" height="20"/>
+                                <rect key="frame" x="8" y="172" width="154" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,6 +79,7 @@
             <size key="customSize" width="116" height="154"/>
             <connections>
                 <outlet property="authorImage" destination="aHq-gz-Ghy" id="wXu-Do-Gvq"/>
+                <outlet property="locationLbl" destination="fah-uw-570" id="a9z-yM-tv9"/>
                 <outlet property="photoImage" destination="ymq-zH-kFH" id="NCJ-9p-I0e"/>
                 <outlet property="titleLbl" destination="x8d-ly-8bu" id="YiD-2i-TFS"/>
             </connections>
