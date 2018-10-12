@@ -301,13 +301,17 @@ extension FirebaseManager {
         }
     }
     
-    func updateBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel) {
+    func updateBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel, buyNumber: Int) {
         
         let refrence = Database.database().reference()
         
-        //let post = ["numberOfItem": product.numberOfItem]
-        
-        let childUpdates = ["/group/分購/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem]
+        let childUpdates = [
+            "/group/分購/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
+            "/group/分購/\(groupId)/users/buyerId/\(buyerId)": buyerId,
+            "/users/\(buyerId)/userInfo/myGroup/join/\(groupId)/\(product.productName)": [
+                "numberOfItem": buyNumber
+            ]
+        ] as [String : Any]
         
         refrence.updateChildValues(childUpdates)
         

@@ -541,7 +541,8 @@ extension DetailViewController: CellDelegate {
                 buyerId: currentUser.uid,
                 groupType: article[index].openType,
                 groupId: article[index].groupId!,
-                product: products[index]
+                product: products[index],
+                buyNumber: order[index].numberOfItem
             )
             
             order[index].numberOfItem = 0
