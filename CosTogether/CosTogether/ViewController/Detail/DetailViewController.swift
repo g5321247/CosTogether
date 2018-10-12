@@ -328,7 +328,9 @@ extension DetailViewController: UITableViewDataSource {
             }
 
             cell.delegate = self
-
+            cell.checkoutUserNumber()
+            cell.collectionView.reloadData()
+            
             return cell
 
         case .productItems:
@@ -555,10 +557,7 @@ extension DetailViewController: CellDelegate {
         joinMember.append(
             UserModel(
                 userImage: currentUser.photoURL!.absoluteString,
-                userName: currentUser.displayName!,
-                numberOfEvaluation: 2,
-                buyNumber: 3,
-                averageEvaluation: 5.0
+                userName: currentUser.displayName!
             )
         )
 
@@ -572,10 +571,11 @@ extension DetailViewController: CellDelegate {
 
                 return
         }
-
+        
+        cell.checkoutUserNumber()
+        
         cell.collectionView.reloadData()
         
-        tableView.reloadData()
     }
 
 }

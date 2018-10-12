@@ -41,7 +41,7 @@ class JoinGroupTableViewCell: UITableViewCell {
         setupBaseView()
     }
     
-    private func checkoutUserNumber() {
+    func checkoutUserNumber() {
         
         guard let delegate = delegate,
             delegate.joinMember.count > 0 else {
@@ -79,12 +79,6 @@ class JoinGroupTableViewCell: UITableViewCell {
         
     }
     
-    func reloadCollectionCell() {
-        
-        checkoutUserNumber()
-        collectionView.reloadData()
-    }
-    
 }
 
 extension JoinGroupTableViewCell: UICollectionViewDataSource {
@@ -113,10 +107,15 @@ extension JoinGroupTableViewCell: UICollectionViewDataSource {
 
         }
         
-        cell.memberImage.image = UIImage(
-            named: delegate!.joinMember[indexPath.row].userImage
-        ) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
+        guard let memberUrl = delegate?.joinMember[indexPath.row].userImage else {
+            
+            cell.memberImage.image = #imageLiteral(resourceName: "profile_sticker_placeholder02")
+            return cell
+        }
         
+        let url = URL(string: memberUrl)
+        
+        cell.memberImage.sd_setImage(with: url)
         return cell
     }
 }

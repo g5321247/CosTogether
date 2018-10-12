@@ -192,20 +192,45 @@ struct FirebaseManager {
                     return
             }
             
+            guard let buyerIds = users["buyerId"] as? NSDictionary,
+                let buyerId = buyerIds.allKeys as? [String] else {
+                
+                self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+                    
+                    let group = Group(
+                        openType: groupType,
+                        article: articleModel,
+                        products: productsArray,
+                        userID: ownerId,
+                        owner: userModel,
+                        groupId: groupId
+                    )
+                    
+                    completion(group)
+                    
+                })
+                
+                return
+            }
+                        
             self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-               
+                
                 let group = Group(
                     openType: groupType,
                     article: articleModel,
                     products: productsArray,
                     userID: ownerId,
                     owner: userModel,
+                    memberID: buyerId,
                     groupId: groupId
                 )
                 
                 completion(group)
-
+                
             })
+
+            
+
             
         }) { (error) in
             print(error.localizedDescription)
