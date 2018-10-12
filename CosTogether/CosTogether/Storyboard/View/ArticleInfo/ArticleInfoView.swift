@@ -30,7 +30,7 @@ class ArticleInfoView: UIView {
         
         authorNameLbl?.text = groupArticle.owner?.userName
         
-        postDateLbl.text = "發文日期：\n" + groupArticle.article.postDate
+        postDateLbl.text = groupArticle.article.postDate
         
         locationLbl.text = groupArticle.article.location
         
@@ -47,8 +47,8 @@ class ArticleInfoView: UIView {
         }
         
         let url = URL(string: authorUrl)
-        authorImageBot.imageView?.sd_setImage(with: url)
         
+        authorImageBot.sd_setImage(with: url, for: .normal)
     }
     
     func cornerup() {
@@ -65,7 +65,7 @@ class ArticleInfoView: UIView {
     
     private func setupImageView() {
         
-        authorImageBot.cornerSetup(cornerRadius: authorImageBot.frame.width / 2)
+        authorImageBot.cornerSetup(cornerRadius: authorImageBot.bounds.width / 2)
                 
         authorImageBot.imageView?.contentMode = .scaleAspectFill
     }

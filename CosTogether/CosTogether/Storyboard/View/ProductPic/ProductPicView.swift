@@ -50,13 +50,6 @@ class ProductPicView: UIView {
                          borderColor: UIColor.gray.cgColor,
                          maskToBounds: false)
         
-        #warning ("comment")
-//        self.shadowSetup(
-//        cgSize: CGSize(width: 2, height: 2),
-//        shadowRadius: 4,
-//        shadowOpacity: 0.2
-//        )
-        
     }
     
     private func setPagerView() {
@@ -104,9 +97,14 @@ extension ProductPicView: FSPagerViewDataSource {
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
 
-        #warning("sd set image")
-//        cell.imageView?.image = delegate?.products[index].productImage
+        guard let productUrl = delegate?.products[index].productImage else {
+            return cell
+        }
         
+        let url = URL(string: productUrl)
+        
+        cell.imageView?.sd_setImage(with: url)
+                
         return cell
     }
 
