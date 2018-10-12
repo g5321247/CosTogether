@@ -141,9 +141,7 @@ struct FirebaseManager {
             
             let value = snapshot.value as? NSDictionary
             
-            guard let groupId = value?.allKeys.first as? String else {
-                return
-            }
+            let groupId = snapshot.key
             
             guard let article = value?["article"] as? NSDictionary,
             let location = article["location"] as? String,
@@ -301,6 +299,18 @@ extension FirebaseManager {
             completion(UserModel(userImage: userPicUrl, userName: userName))
             
         }
+    }
+    
+    func updateBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel) {
+        
+        let refrence = Database.database().reference()
+        
+        //let post = ["numberOfItem": product.numberOfItem]
+        
+        let childUpdates = ["/group/分購/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem]
+        
+        refrence.updateChildValues(childUpdates)
+        
     }
     
 }

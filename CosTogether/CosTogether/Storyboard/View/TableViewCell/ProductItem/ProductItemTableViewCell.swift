@@ -38,8 +38,17 @@ class ProductItemTableViewCell: UITableViewCell {
     
     func updateView(product: ProductModel) {
         
-        #warning ("照片更新")
-//        productImage.sd_setImage(with: , completed: )
+        guard let productUrl = product.productImage,
+            productUrl != "" else {
+                
+                productImage.image = #imageLiteral(resourceName: "picture")
+                
+                return
+        }
+        
+        let url = URL(string: productUrl)
+        
+        productImage.sd_setImage(with: url)
         productNameLbl.text = product.productName
         itemPrice.text = String(product.price)
         amoutQuantity.text = "總數 \(product.numberOfItem)"

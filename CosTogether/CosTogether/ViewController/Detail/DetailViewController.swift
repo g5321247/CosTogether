@@ -22,6 +22,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         productPic.append(group)
         article.append(group)
         products = group.products
+        order = group.products
+        
+        for (index, _) in order.enumerated() {
+         
+            order[index].price = 0
+            
+        }
         
         #warning ("放在最後")
         
@@ -529,6 +536,14 @@ extension DetailViewController: CellDelegate {
             }
             
             products[index].numberOfItem -= order[index].numberOfItem
+            
+            firebaseManager.updateBuyer(
+                buyerId: currentUser.uid,
+                groupType: article[index].openType,
+                groupId: article[index].groupId!,
+                product: products[index]
+            )
+            
             order[index].numberOfItem = 0
             
             cell.updateView(product: products[index])
