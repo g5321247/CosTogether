@@ -19,6 +19,7 @@ class JoinGroupTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var baseView: UIView!
+    @IBOutlet weak var noMemberJoinLbl: UILabel!
     
     weak var delegate: JoinGroupDelegate?
     
@@ -38,6 +39,19 @@ class JoinGroupTableViewCell: UITableViewCell {
         
         setColletionView()
         setupBaseView()
+    }
+    
+    private func checkoutUserNumber() {
+        
+        guard let delegate = delegate,
+            delegate.joinMember.count > 0 else {
+            
+            noMemberJoinLbl.isHidden = false
+            return
+        }
+        
+        noMemberJoinLbl.isHidden = true
+
     }
     
     private func setColletionView() {
@@ -67,6 +81,7 @@ class JoinGroupTableViewCell: UITableViewCell {
     
     func reloadCollectionCell() {
         
+        checkoutUserNumber()
         collectionView.reloadData()
     }
     

@@ -201,7 +201,7 @@ struct FirebaseManager {
                     article: articleModel,
                     products: productsArray,
                     userID: ownerId,
-                    user: userModel,
+                    owner: userModel,
                     groupId: groupId
                 )
                 
@@ -272,7 +272,11 @@ extension FirebaseManager {
     }
     
     #warning ("用使用者 id 拿資料")
-    func userIdToGetUserInfo(refrence: DatabaseReference, userId: String, completion: @escaping (UserModel) -> Void) {
+    func userIdToGetUserInfo(
+        refrence: DatabaseReference = Database.database().reference()
+        , userId: String,
+          completion: @escaping (UserModel) -> Void
+        ) {
         
         refrence.child("users").child(userId).observeSingleEvent(of: .childAdded) { (snapshot) in
            

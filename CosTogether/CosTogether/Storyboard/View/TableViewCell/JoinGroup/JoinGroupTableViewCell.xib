@@ -42,10 +42,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚無使用者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg3-bg-US4">
+                                <rect key="frame" x="15" y="77.5" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Sg3-bg-US4" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" constant="15" id="Fqr-VP-nk4"/>
                             <constraint firstAttribute="bottom" secondItem="jIH-K7-15d" secondAttribute="bottom" constant="5" id="HBx-dC-oyv"/>
+                            <constraint firstItem="Sg3-bg-US4" firstAttribute="centerY" secondItem="jIH-K7-15d" secondAttribute="centerY" id="OLs-95-0r6"/>
                             <constraint firstItem="EvI-5W-s62" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" constant="8" id="QKH-cw-WzQ"/>
                             <constraint firstItem="EvI-5W-s62" firstAttribute="top" secondItem="D75-aG-TaZ" secondAttribute="top" constant="8" id="TfO-vg-akS"/>
                             <constraint firstItem="jIH-K7-15d" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" id="aOc-VU-GL0"/>
@@ -65,6 +73,7 @@
             <connections>
                 <outlet property="baseView" destination="D75-aG-TaZ" id="qNo-KM-Lgo"/>
                 <outlet property="collectionView" destination="jIH-K7-15d" id="Hof-Td-m2G"/>
+                <outlet property="noMemberJoinLbl" destination="Sg3-bg-US4" id="AWy-VW-pue"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="155.17241379310346"/>
         </tableViewCell>

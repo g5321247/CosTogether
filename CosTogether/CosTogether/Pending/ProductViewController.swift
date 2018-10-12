@@ -154,7 +154,7 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
 
-//        collectionView.deselectItem(at: indexPath, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
 
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
@@ -164,7 +164,7 @@ extension ProductViewController: UICollectionViewDelegateFlowLayout {
                 
         }
         
-//        controller.loadViewIfNeeded()
+        controller.loadViewIfNeeded()
 //        controller.article = articles[indexPath.row]
 
         show(controller, sender: nil)

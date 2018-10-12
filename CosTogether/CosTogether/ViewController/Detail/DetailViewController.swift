@@ -15,15 +15,35 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
     
-    var author: [UserModel] = [
-        UserModel(
-        userImage: "testUser",
-        userName: "金城武",
-        numberOfEvaluation: 2,
-        buyNumber: 3,
-        averageEvaluation: 5.0
-        )
-    ]
+    let firebaseManager = FirebaseManager()
+    
+    func updateInfo(group: Group) {
+        
+        author.append(group.owner!)
+        article.append(group.article)
+        
+        
+        
+        #warning ("放在最後")
+        
+        guard let memberIDs = group.memberID else {
+            
+            return
+        }
+        
+        for value in memberIDs {
+            
+            firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
+                
+                self.joinMember.append(users)
+
+            }
+            
+        }
+        
+    }
+    
+    var author: [UserModel] = []
     
     var article: [ArticleModel] = []
     

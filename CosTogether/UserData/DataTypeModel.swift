@@ -26,7 +26,8 @@ struct Group: DataProtocol {
     let article: ArticleModel
     let products: [ProductModel]
     let userID: String
-    var user: UserModel?
+    var owner: UserModel?
+    var memberID : [String]?
     let groupId: String?
     
     init(
@@ -34,7 +35,8 @@ struct Group: DataProtocol {
         article: ArticleModel,
         products: [ProductModel],
         userID: String,
-        user: UserModel? = nil,
+        owner: UserModel? = nil,
+        memberID: [String]? = nil,
         groupId: String? = nil
         ) {
         
@@ -42,9 +44,11 @@ struct Group: DataProtocol {
         self.article = article
         self.products = products
         self.userID = userID
-        self.user = user
+        self.owner = owner
         self.groupId = groupId
+        self.memberID = memberID
     }
+    
 }
 
 struct MainPageViewModel: DataProtocol {
