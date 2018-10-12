@@ -64,12 +64,30 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     func updateGroupInfo(productUrl: String, authorUrl: String, title: String) {
         
-        let productUrl = URL(string: productUrl)
-        let authorUrl = URL(string: authorUrl)
-
-        photoImage.sd_setImage(with: productUrl)
-        authorImage.sd_setImage(with: authorUrl)
         titleLbl.text = title
+
+        guard productUrl != "" else {
+
+            photoImage.image = #imageLiteral(resourceName: "picture")
+            
+            let authorUrl = URL(string: authorUrl)
+            authorImage.sd_setImage(with: authorUrl)
+            
+            return
+        }
+        
+        let productUrl = URL(string: productUrl)
+        photoImage.sd_setImage(with: productUrl)
+
+        guard authorUrl != "" else {
+            
+            authorImage.image = #imageLiteral(resourceName: "profile_sticker_placeholder02")
+            
+            return
+        }
+        
+        let authorUrl = URL(string: authorUrl)
+        authorImage.sd_setImage(with: authorUrl)
         
     }
     

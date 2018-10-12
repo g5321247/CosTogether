@@ -104,7 +104,7 @@ extension ShareBuyViewController: UICollectionViewDataSource {
         
         cell.updateGroupInfo(
             productUrl: group[indexPath.row].products.first?.productImage ?? "",
-            authorUrl: "",
+            authorUrl: group[indexPath.row].user?.userImage ?? "",
             title:  group[indexPath.row].article.articleTitle
         )
         
