@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleInfoView: UIView {
     
@@ -25,21 +26,28 @@ class ArticleInfoView: UIView {
         
     }
     
-    func updateArticle(article: ArticleModel) {
+    func updateArticle(groupArticle: Group) {
         
-        #warning ("用 sd 去設定 image")
-//        authorImageBot.imageView?.image
+        authorNameLbl?.text = groupArticle.owner?.userName
         
-//        authorNameLbl?.text = article.user.userName
+        postDateLbl.text = "發文日期：\n" + groupArticle.article.postDate
         
-//        postDateLbl.text = article.postDate
+        locationLbl.text = groupArticle.article.location
         
-        locationLbl.text = article.location
+        tagLbl.text = groupArticle.openType.rawValue
         
-        #warning ("改成 Array")
-//        tagLbl.text = article.productTag
+        articleTitleLbl.text = groupArticle.article.articleTitle
+
+        guard let authorUrl = groupArticle.owner?.userImage,
+            authorUrl != "" else {
+            
+                authorImageBot.imageView?.image = #imageLiteral(resourceName: "profile_sticker_placeholder02")
+            
+                return
+        }
         
-        articleTitleLbl.text = article.articleTitle
+        let url = URL(string: authorUrl)
+        authorImageBot.imageView?.sd_setImage(with: url)
         
     }
     

@@ -10,8 +10,8 @@ import Foundation
 
 enum OpenGroupType: String {
     
-    case shareBuy
-    case helpBuy
+    case shareBuy = "分購"
+    case helpBuy = "團購"
  
 //    func numberOfRow() -> Int {
 //

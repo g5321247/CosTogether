@@ -19,10 +19,9 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     func updateInfo(group: Group) {
         
-        author.append(group.owner!)
-        article.append(group.article)
-        
-        
+        productPic.append(group)
+        article.append(group)
+        products = group.products
         
         #warning ("放在最後")
         
@@ -43,43 +42,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-    var author: [UserModel] = []
+    var productPic: [Group] = []
     
-    var article: [ArticleModel] = []
+    var article: [Group] = []
     
-    var joinMember: [UserModel] = [
-        UserModel(
-            userImage: "testUser2",
-            userName: "林志玲",
-            numberOfEvaluation: 100,
-            buyNumber: 4,
-            averageEvaluation: 5.0
-        ),
-        UserModel(
-            userImage: "",
-            userName: "白目",
-            numberOfEvaluation: 1000,
-            buyNumber: 999,
-            averageEvaluation: 1.2
-            )
-    ]
+    var joinMember: [UserModel] = []
     
-    var products: [ProductModel] = [
-        ProductModel(
-            productName: "好吃的",
-            productImage: "123",
-            numberOfItem: 2,
-            price: 20,
-            updateImage: nil
-        ), ProductModel (
-            productName: "難吃的",
-            productImage: "123",
-            numberOfItem: 4,
-            price: 10,
-            updateImage: nil
-        )
-
-    ]
+    var products: [ProductModel] = []
     
     var order: [ProductModel] = []
     
@@ -97,7 +66,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     ]
     
     lazy var allData: [DataType] = [
-        DataType(dataType: .productPic, data: author),
+        DataType(dataType: .productPic, data: productPic),
         DataType(dataType: .articleInfo, data: article),
         DataType(dataType: .joinGroup, data: joinMember),
         DataType(dataType: .productItems(products.count), data: products),
@@ -210,7 +179,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 //
 //            return
 //        }
-        controller.userInfo = author.first
+//        controller.userInfo = productPic.first
         controller.userType = .otherUser
         
         controller.loadViewIfNeeded()
@@ -301,7 +270,9 @@ extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch allData[indexPath.section].dataType {
+        let allDataType = allData[indexPath.section]
+        
+        switch allDataType.dataType {
             
         case .productPic:
             
@@ -329,6 +300,8 @@ extension DetailViewController: UITableViewDataSource {
 
             }
 
+            cell.articleInfoView.updateArticle(groupArticle: allDataType.data[indexPath.row] as! Group)
+            
             cell.articleInfoView.authorImageBot?.addTarget(
                 self,
                 action: #selector (photoTapping(_:)),

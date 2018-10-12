@@ -68,7 +68,7 @@ extension DetailManager: UITableViewDataSource {
                 
             }
             
-            articleCell.articleInfoView.updateArticle(article: articleModel)
+//            articleCell.articleInfoView.updateArticle(groupArticle: articleModel)
             
         case .joinGroup:
             

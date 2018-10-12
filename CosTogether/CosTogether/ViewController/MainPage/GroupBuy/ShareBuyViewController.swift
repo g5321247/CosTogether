@@ -166,8 +166,8 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         }
 
         #warning ("傳姪過去")
-        //        controller.loadViewIfNeeded()
-        //        controller.article = articles[indexPath.row]
+                controller.loadViewIfNeeded()
+                controller.updateInfo(group: group[indexPath.row])
         
         show(controller, sender: nil)
     }
