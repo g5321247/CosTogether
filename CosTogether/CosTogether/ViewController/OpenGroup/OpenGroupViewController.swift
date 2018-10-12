@@ -51,7 +51,7 @@ class OpenGroupViewController: UIViewController {
         
         setColletionView()
         navigationBarSetup()
-//        pickerViewBackgroundView.isHidden = true
+        pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         segmentedControl.addUnderlineForSelectedSegment()
         

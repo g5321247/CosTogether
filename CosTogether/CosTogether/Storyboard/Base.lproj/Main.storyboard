@@ -113,7 +113,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hv-fi-E2j" userLabel="PickerBackground">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-AT-dxc" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
                                 <rect key="frame" x="15" y="667" width="345" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選擇城市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5V-au-hKw">
@@ -191,8 +195,10 @@
                             <constraint firstItem="dhM-0a-PqY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0h4-kT-T1W"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="bottom" secondItem="1vA-qM-eor" secondAttribute="bottom" constant="-15" id="3V7-4Z-auA"/>
                             <constraint firstItem="CD6-AT-dxc" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="280" id="7Gb-Rm-5gv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6hv-fi-E2j" secondAttribute="bottom" id="94G-j0-rMx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="25" id="9Ua-os-Xx2"/>
                             <constraint firstItem="2aD-hn-bYs" firstAttribute="trailing" secondItem="1vA-qM-eor" secondAttribute="trailing" constant="-15" id="ANW-aq-mwh"/>
+                            <constraint firstItem="6hv-fi-E2j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BWy-WT-gWP"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="top" secondItem="ty8-i3-pxS" secondAttribute="bottom" constant="10" id="Ccd-CO-q9z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dhM-0a-PqY" secondAttribute="trailing" id="GP0-6S-vse"/>
                             <constraint firstItem="ty8-i3-pxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jwq-AA-tLs"/>
@@ -200,9 +206,11 @@
                             <constraint firstItem="H7f-Ur-8EC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LiO-bE-XfZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H7f-Ur-8EC" secondAttribute="bottom" constant="25" id="Th8-dJ-OzD"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerY" secondItem="1vA-qM-eor" secondAttribute="centerY" id="V2L-0r-YXA"/>
+                            <constraint firstItem="6hv-fi-E2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W9f-A5-mjl"/>
                             <constraint firstItem="CD6-AT-dxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XDE-1g-Fls"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XRP-Jn-kI6"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="centerX" secondItem="1vA-qM-eor" secondAttribute="centerX" id="YiA-7v-gwH"/>
+                            <constraint firstItem="6hv-fi-E2j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZLT-yc-669"/>
                             <constraint firstItem="1vA-qM-eor" firstAttribute="trailing" secondItem="dx7-fe-h63" secondAttribute="trailing" constant="10" id="aID-lG-SQs"/>
                             <constraint firstItem="dx7-fe-h63" firstAttribute="leading" secondItem="1vA-qM-eor" secondAttribute="leading" constant="10" id="g9a-QC-wrr"/>
                             <constraint firstItem="CD6-AT-dxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="url-rK-O8V"/>
@@ -919,11 +927,6 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <view key="backgroundView" hidden="YES" alpha="0.5" contentMode="scaleToFill" id="6hv-fi-E2j" userLabel="PickerBackground">
-                                    <rect key="frame" x="0.0" y="-20" width="375" height="480.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MIK-D1-JMd">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>

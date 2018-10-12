@@ -43,7 +43,7 @@ class ProductSettingView: UIView {
         self.cornerSetup(
             cornerRadius: 4,
             borderWidth: 1,
-            borderColor: #colorLiteral(red: 0.6549019608, green: 0.6745098039, blue: 0.7137254902, alpha: 1) ,
+            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) ,
             maskToBounds: true
         )
     }
