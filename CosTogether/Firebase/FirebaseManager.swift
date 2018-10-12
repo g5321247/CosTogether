@@ -60,7 +60,7 @@ struct FirebaseManager {
                 
                 refrence.child("users").child(user.uid).child("userInfo").setValue(
                     [
-                    "username": userInfo.userName,
+                    "userName": userInfo.userName,
                     "userPicUrl" : userInfo.userPicUrl
                     ]
                 )
@@ -141,13 +141,15 @@ struct FirebaseManager {
             
             let value = snapshot.value as? NSDictionary
             
+            guard let groupId = value?.allKeys.first as? String else {
+                return
+            }
+            
             guard let article = value?["article"] as? NSDictionary,
             let location = article["location"] as? String,
             let postDate = article["postDate"] as? String,
                 let title = article["title"] as? String else {
                     
-                    BaseNotificationBanner.warningBanner(subtitle: "解析 article 失敗")
-
                     return
         
             }
@@ -156,6 +158,7 @@ struct FirebaseManager {
             
             guard let products = value?["products"] as? NSDictionary,
                 let productName = products.allKeys as? [String] else {
+                    
                     
                     return
             }
@@ -191,14 +194,20 @@ struct FirebaseManager {
                     return
             }
             
-           let group = Group(
-                openType: groupType,
-                article: articleModel,
-                products: productsArray,
-                userID: ownerId
-            )
-            
-            completion(group)
+            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+               
+                let group = Group(
+                    openType: groupType,
+                    article: articleModel,
+                    products: productsArray,
+                    userID: ownerId,
+                    user: userModel,
+                    groupId: groupId
+                )
+                
+                completion(group)
+
+            })
             
         }) { (error) in
             print(error.localizedDescription)
@@ -211,7 +220,7 @@ struct FirebaseManager {
 
 extension FirebaseManager {
     
-    func uploadArticle(refrence: DatabaseReference, key: String, group: Group) {
+    private func uploadArticle(refrence: DatabaseReference, key: String, group: Group) {
         
         refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("article").setValue(
             
@@ -224,7 +233,7 @@ extension FirebaseManager {
         )
     }
     
-    func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
+    private func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
         
         for value in group.products {
             
@@ -242,7 +251,7 @@ extension FirebaseManager {
         
     }
     
-    func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
+    private func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
         
         guard  let userId = Auth.auth().currentUser?.uid else {
             return
@@ -262,5 +271,32 @@ extension FirebaseManager {
 
     }
     
+    #warning ("用使用者 id 拿資料")
+    func userIdToGetUserInfo(refrence: DatabaseReference, userId: String, completion: @escaping (UserModel) -> Void) {
+        
+        refrence.child("users").child(userId).observeSingleEvent(of: .childAdded) { (snapshot) in
+           
+            let value = snapshot.value as? NSDictionary
+            
+            guard let userPicUrl = value?["userPicUrl"] as? String,
+                let userName = value?["userName"] as? String else {
+                    
+                    return
+                    
+            }
+            
+            #warning ("增加評價內容,內容如下")
+
+//            if avreage != "" {
+//
+//                avreage = 0
+//            } else {
+//                get data
+//            }
+            
+            completion(UserModel(userImage: userPicUrl, userName: userName))
+            
+        }
+    }
     
 }

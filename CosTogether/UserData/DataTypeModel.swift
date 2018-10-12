@@ -26,21 +26,24 @@ struct Group: DataProtocol {
     let article: ArticleModel
     let products: [ProductModel]
     let userID: String
-//    let groupId: String?
+    var user: UserModel?
+    let groupId: String?
     
     init(
         openType: OpenGroupType,
         article: ArticleModel,
         products: [ProductModel],
-        userID: String
-//        groupId: String? = nil
+        userID: String,
+        user: UserModel? = nil,
+        groupId: String? = nil
         ) {
         
         self.openType = openType
         self.article = article
         self.products = products
         self.userID = userID
-//        self.groupId = groupId
+        self.user = user
+        self.groupId = groupId
     }
 }
 
@@ -69,10 +72,7 @@ struct CommentModel: DataProtocol {
 }
 
 struct UserModel: DataProtocol {
-    
-    #warning ("uuid 記得加")
-//    let uuid:
-    
+        
     let userImage: String
     
     let userName: String
@@ -82,6 +82,21 @@ struct UserModel: DataProtocol {
     var buyNumber: Int?
     
     var averageEvaluation: Double?
+
+    init (
+        userImage: String,
+        userName: String,
+        numberOfEvaluation: Int? = 0,
+        buyNumber: Int? = 0,
+        averageEvaluation: Double? = 0
+        ) {
+        
+        self.userImage = userImage
+        self.userName = userName
+        self.numberOfEvaluation = numberOfEvaluation
+        self.buyNumber = buyNumber
+        self.averageEvaluation = averageEvaluation
+    }
     
     static func groupMember(image: String, name: String) -> UserModel {
         
