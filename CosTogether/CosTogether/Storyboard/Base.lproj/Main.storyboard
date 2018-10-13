@@ -53,7 +53,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-uB-8eW">
                                         <rect key="frame" x="46" y="9" width="62" height="30"/>
                                         <state key="normal" title="選擇縣市">
-                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="cityBotTapping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ji-wC-35e"/>

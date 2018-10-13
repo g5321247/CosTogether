@@ -192,27 +192,6 @@ struct FirebaseManager {
                     return
             }
             
-            guard let buyerIds = users["buyerId"] as? NSDictionary,
-                let buyerId = buyerIds.allKeys as? [String] else {
-                
-                self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-                    
-                    let group = Group(
-                        openType: groupType,
-                        article: articleModel,
-                        products: productsArray,
-                        userID: ownerId,
-                        owner: userModel,
-                        groupId: groupId
-                    )
-                    
-                    completion(group)
-                    
-                })
-                
-                return
-            }
-                        
             self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
                 
                 let group = Group(
@@ -221,7 +200,6 @@ struct FirebaseManager {
                     products: productsArray,
                     userID: ownerId,
                     owner: userModel,
-                    memberID: buyerId,
                     groupId: groupId
                 )
                 
@@ -229,15 +207,27 @@ struct FirebaseManager {
                 
             })
 
-            
-
-            
         }) { (error) in
             print(error.localizedDescription)
         }
         
     }
     
+    func downloadGroupUser(group: Group, completion: @escaping ([String]) -> Void) {
+        
+        let refrence = Database.database().reference()
+    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("users").observe(.childAdded) { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+        
+            guard let memberIds = value?.allKeys as? [String] else {
+            
+                return
+            }
+        
+            completion(memberIds)
+        }
+    }
     
 }
 
@@ -326,13 +316,13 @@ extension FirebaseManager {
         }
     }
     
-    func updateBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel, buyNumber: Int) {
+    func uploadBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel, buyNumber: Int) {
         
         let refrence = Database.database().reference()
         
         let childUpdates = [
-            "/group/分購/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
-            "/group/分購/\(groupId)/users/buyerId/\(buyerId)": buyerId,
+            "/group/\(groupType.rawValue)/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
+            "/group/\(groupType.rawValue)/\(groupId)/users/buyerId/\(buyerId)": buyerId,
             "/users/\(buyerId)/userInfo/myGroup/join/\(groupId)/\(product.productName)": [
                 "numberOfItem": buyNumber
             ]

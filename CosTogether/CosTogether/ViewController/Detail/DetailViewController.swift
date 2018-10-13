@@ -32,22 +32,20 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         #warning ("放在最後")
         
-        guard let memberIDs = group.memberID else {
-            
-            return
-        }
-        
-        for value in memberIDs {
-            
-            firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
+        firebaseManager.downloadGroupUser(group: group) { (memberIds) in
+         
+            for value in memberIds {
                 
-                self.joinMember.append(users)
+                self.firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
+                    
+                    self.joinMember.append(users)
+                }
+                
+                self.checkUser(userId: value)
             }
-            
-            checkUser(userId: value)
+                        
+            self.tableView.reloadData()
         }
-        
-        checkUser(userId: group.userID)
 
     }
     
@@ -573,7 +571,7 @@ extension DetailViewController: CellDelegate {
             
             products[index].numberOfItem -= order[index].numberOfItem
             
-            firebaseManager.updateBuyer(
+            firebaseManager.uploadBuyer(
                 buyerId: currentUser.uid,
                 groupType: article[index].openType,
                 groupId: article[index].groupId!,
@@ -586,7 +584,7 @@ extension DetailViewController: CellDelegate {
             cell.updateView(product: products[index])
 
         }
-
+        
         #warning ("更新 firebase 的資料後重新 fetch")
         joinMember.append(
             UserModel(
@@ -607,9 +605,11 @@ extension DetailViewController: CellDelegate {
         }
         
         cell.checkoutUserNumber()
+        checkUser(userId: currentUser.uid)
         
         cell.collectionView.reloadData()
         
+        tableView.reloadData()
     }
 
 }
