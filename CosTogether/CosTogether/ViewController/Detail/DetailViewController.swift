@@ -93,15 +93,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         tableViewSetup()
         topLogViewSetup()
         
-        #warning ("記得刪掉")
-        order.append(contentsOf: products)
-        
-        for (index) in order.indices {
-            
-            order[index].price = 0
-            order[index].numberOfItem = 0
-        }
-        
         Analytics.logEvent("LookProduct", parameters: nil)
 
     }
@@ -592,14 +583,6 @@ extension DetailViewController: CellDelegate {
 
         }
         
-        #warning ("更新 firebase 的資料後重新 fetch")
-        joinMember.append(
-            UserModel(
-                userImage: currentUser.photoURL!.absoluteString,
-                userName: currentUser.displayName!
-            )
-        )
-
         let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success)
         banner.show()
 
