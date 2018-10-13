@@ -31,8 +31,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
-        firebaseManager.downloadCommentUser(group: group) { (aComment) in
-            self.comments.insert(aComment, at: 0)
+        firebaseManager.downloadCommentUser(group: group) { (comments) in
+            self.comments = comments
         }
         
         #warning ("放在最後")
@@ -529,7 +529,6 @@ extension DetailViewController: CellDelegate {
             comment: text,
             userId: currentUser.uid
         )
-
         
         comments.append(comment)
         
