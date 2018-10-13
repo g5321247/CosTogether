@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
         <array key="NotoSans-Regular.ttf">
             <string>NotoSans-Regular</string>
         </array>
@@ -30,8 +33,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ora-65-4Kq">
-                        <rect key="frame" x="15" y="32" width="70" height="36"/>
-                        <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <rect key="frame" x="15" y="34.5" width="70" height="36"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="Orq-za-cae"/>
                         </constraints>
@@ -43,26 +46,36 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-YZ-tzv">
-                        <rect key="frame" x="77" y="33.5" width="329" height="33"/>
+                        <rect key="frame" x="77" y="36" width="329" height="33"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="24"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWk-eu-eUD">
+                        <rect key="frame" x="208" y="50" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="leading" constant="8" id="00m-6E-NoM"/>
+                    <constraint firstItem="EWk-eu-eUD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7YU-1b-dJ3"/>
                     <constraint firstItem="hRl-Dh-6N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Gh0-Ki-Nlk"/>
-                    <constraint firstItem="Zhr-YZ-tzv" firstAttribute="centerY" secondItem="ora-65-4Kq" secondAttribute="centerY" id="OzA-oB-BED"/>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="TB0-ZI-VxT"/>
                     <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="10" id="YPN-u8-a9C"/>
-                    <constraint firstItem="ora-65-4Kq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eEg-97-LmS"/>
+                    <constraint firstItem="Zhr-YZ-tzv" firstAttribute="top" secondItem="hRl-Dh-6N9" secondAttribute="bottom" constant="5" id="dy1-mC-FtA"/>
+                    <constraint firstItem="ora-65-4Kq" firstAttribute="centerY" secondItem="Zhr-YZ-tzv" secondAttribute="centerY" id="kkh-7K-ORN"/>
+                    <constraint firstItem="EWk-eu-eUD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kqf-Fn-9LM"/>
                     <constraint firstAttribute="trailing" secondItem="hRl-Dh-6N9" secondAttribute="trailing" constant="10" id="w5S-Hc-psm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amoutLbl" destination="Zhr-YZ-tzv" id="oXv-Ml-ucC"/>
+                <outlet property="hasJoinedLbl" destination="EWk-eu-eUD" id="76I-0e-XLM"/>
                 <outlet property="orderBot" destination="ora-65-4Kq" id="6Up-hA-VUT"/>
+                <outlet property="titleLbl" destination="hRl-Dh-6N9" id="NeQ-el-5Oq"/>
             </connections>
             <point key="canvasLocation" x="110.40000000000001" y="56.671664167916049"/>
         </tableViewCell>

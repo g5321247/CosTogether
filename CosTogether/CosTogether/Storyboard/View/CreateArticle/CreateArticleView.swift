@@ -33,7 +33,7 @@ class CreateArticleView: UIView {
         self.cornerSetup(
             cornerRadius: 4,
             borderWidth: 1,
-            borderColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1),
+            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
             maskToBounds: true
         )
     }
@@ -41,18 +41,18 @@ class CreateArticleView: UIView {
     private func textSetup() {
         
         contentTextView.cornerSetup(
-            cornerRadius: 4,
-            borderWidth: 1,
-            borderColor: UIColor.lightGray.cgColor
+            cornerRadius: 0,
+            borderWidth: 0.5,
+            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         )
         
         contentTextView.text = "請輸入揪團詳細資訊內容..."
         contentTextView.textColor = UIColor.lightGray
 
         titleTxf.cornerSetup(
-            cornerRadius: 4,
-            borderWidth: 1,
-            borderColor: UIColor.lightGray.cgColor
+            cornerRadius: 0,
+            borderWidth: 0.5,
+            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         )
         
     }

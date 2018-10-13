@@ -23,6 +23,8 @@ class OrderTableViewCell: UITableViewCell {
         
     @IBOutlet weak var orderBot: UIButton!
     @IBOutlet weak var amoutLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var hasJoinedLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,10 +63,20 @@ class OrderTableViewCell: UITableViewCell {
             return
         }
         
-        #warning ("update to the bill,扣掉原單的數量")
-        
         delegate?.cellButtonTapping(self)
         amoutLbl.text = "0 元"
+    }
+    
+    func userHasJoined(title: String) {
+        
+        orderBot.isEnabled = false
+        orderBot.isHidden = true
+        
+        amoutLbl.text = ""
+        titleLbl.text = ""
+        hasJoinedLbl.text = title
+        
+        self.contentView.backgroundColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
     }
     
 }

@@ -42,11 +42,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
                 
                 self.joinMember.append(users)
-
             }
             
+            checkUser(userId: value)
         }
         
+        checkUser(userId: group.userID)
+
     }
     
     var productPic: [Group] = []
@@ -193,6 +195,30 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         show(controller, sender: nil)
 
+    }
+    
+    func checkUser(userId: String) {
+        
+        guard userId != Auth.auth().currentUser?.uid else {
+            
+            guard let indexOfProduct = allData.firstIndex(
+                where: {$0.dataType == .productItems(products.count)}
+                ),
+                let indexOfOrder = allData.firstIndex(
+                    where: {$0.dataType == .productItems(products.count)}
+                ) else {
+                    
+                return
+                    
+            }
+            
+            allData.remove(at: indexOfProduct)
+            allData[indexOfOrder].data.removeAll()
+            
+            return
+
+        }
+        
     }
     
 }
@@ -343,8 +369,8 @@ extension DetailViewController: UITableViewDataSource {
                 
             }
             
-            cell.productModel = products[indexPath.row]
-            cell.updateView(product: products[indexPath.row])
+            cell.productModel = allDataType.data[indexPath.row] as? ProductModel
+            cell.updateView(product: allDataType.data[indexPath.row] as! ProductModel)
             
             cell.updatePurchasing { [weak self] (purchase) in
                 
@@ -380,6 +406,14 @@ extension DetailViewController: UITableViewDataSource {
                 return UITableViewCell()
                     
             }
+            
+            guard  !allDataType.data.isEmpty else {
+                
+                cell.userHasJoined(title: "已加入揪團")
+                
+                return cell
+            }
+            
             
             cell.delegate = self
             
