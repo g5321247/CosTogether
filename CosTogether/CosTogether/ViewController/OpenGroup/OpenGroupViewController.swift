@@ -199,7 +199,8 @@ class OpenGroupViewController: UIViewController {
             article: ArticleModel(
                 articleTitle: articleTitle,
                 location: city,
-                postDate: Date.getCurrentDate()
+                postDate: Date.getCurrentDate(),
+                content: articleContent
             ),
             products: products,
             userID: userId

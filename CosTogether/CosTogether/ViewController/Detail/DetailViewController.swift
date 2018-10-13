@@ -23,6 +23,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         article.append(group)
         products = group.products
         order = group.products
+        productDetail.append(group)
         
         for (index, _) in order.enumerated() {
          
@@ -60,7 +61,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     var order: [ProductModel] = []
     
-    var productDetail: [DescriptionModel] = []
+    var productDetail: [Group] = []
+    
     var comments: [CommentModel] = [
         CommentModel(
             postDate: Date(),
@@ -437,6 +439,8 @@ extension DetailViewController: UITableViewDataSource {
                     return UITableViewCell()
                     
             }
+            
+            cell.productInfoLbl.text = productDetail.first?.article.content
             
             return cell
         

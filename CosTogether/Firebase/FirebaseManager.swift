@@ -144,15 +144,21 @@ struct FirebaseManager {
             let groupId = snapshot.key
             
             guard let article = value?["article"] as? NSDictionary,
-            let location = article["location"] as? String,
-            let postDate = article["postDate"] as? String,
-                let title = article["title"] as? String else {
+                let location = article["location"] as? String,
+                let postDate = article["postDate"] as? String,
+                let title = article["title"] as? String,
+                let content = article["content"] as? String else {
                     
                     return
         
             }
             
-            let articleModel = ArticleModel(articleTitle: title, location: location,postDate: postDate)
+            let articleModel = ArticleModel(
+                articleTitle: title,
+                location: location,
+                postDate: postDate,
+                content: content
+                )
             
             guard let products = value?["products"] as? NSDictionary,
                 let productName = products.allKeys as? [String] else {
@@ -240,7 +246,8 @@ extension FirebaseManager {
             [
                 "title": group.article.articleTitle,
                 "location" : group.article.location,
-                "postDate": group.article.postDate
+                "postDate": group.article.postDate,
+                "content" : group.article.content
             ]
             
         )
@@ -255,7 +262,7 @@ extension FirebaseManager {
                 [
                     "numberOfItem": value.numberOfItem,
                     "price" : value.price,
-                    "imageUrl": value.productImage ?? ""
+                    "imageUrl": value.productImage ?? "",
                 ]
                 
             )

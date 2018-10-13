@@ -64,6 +64,8 @@ struct ArticleModel: DataProtocol {
     let location: String
     
     let postDate: String
+    
+    let content: String
         
 }
 
@@ -176,8 +178,8 @@ struct ProductModel: DataProtocol {
     }
 }
 
-struct DescriptionModel: DataProtocol {
-    
-    var description: String
-    
-}
+//struct DescriptionModel: DataProtocol {
+//    
+//    var description: String
+//    
+//}
