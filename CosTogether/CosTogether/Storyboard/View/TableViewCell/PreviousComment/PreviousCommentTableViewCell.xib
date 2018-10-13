@@ -34,13 +34,13 @@
                                 </constraints>
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
                                 <rect key="frame" x="71" y="8" width="241" height="14.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主揪很帥" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1R-0dM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1R-0dM">
                                 <rect key="frame" x="71" y="37.5" width="241" height="27"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -52,6 +52,12 @@
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-Fy-kSf">
+                                <rect key="frame" x="8" y="40" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -61,8 +67,10 @@
                             <constraint firstAttribute="trailing" secondItem="ozW-M9-c70" secondAttribute="trailing" constant="8" id="Qcr-oT-QGn"/>
                             <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="VDm-mm-2dF"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="leading" secondItem="KN6-m7-hv7" secondAttribute="trailing" constant="15" id="VsP-gc-2qt"/>
+                            <constraint firstItem="BGv-Fy-kSf" firstAttribute="centerY" secondItem="InW-Aj-RWA" secondAttribute="centerY" id="a2D-2o-kSc"/>
                             <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="15" id="d1K-cM-B0T"/>
                             <constraint firstItem="ozW-M9-c70" firstAttribute="centerY" secondItem="Fdy-ME-rVz" secondAttribute="centerY" id="eSg-ZE-YHD"/>
+                            <constraint firstItem="BGv-Fy-kSf" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="fPp-YQ-qpw"/>
                             <constraint firstItem="KN6-m7-hv7" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="8" id="fZR-n3-Xje"/>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="Fdy-ME-rVz" secondAttribute="bottom" constant="15" id="gPr-dv-Key"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="top" secondItem="KN6-m7-hv7" secondAttribute="top" id="gpI-1F-zNh"/>
@@ -83,6 +91,7 @@
                 <outlet property="commentLbl" destination="hiL-1R-0dM" id="8a9-oz-6KT"/>
                 <outlet property="commenterBot" destination="KN6-m7-hv7" id="pec-yt-z2q"/>
                 <outlet property="commenterNameLbl" destination="Fdy-ME-rVz" id="37S-8D-agp"/>
+                <outlet property="noCommentLbl" destination="BGv-Fy-kSf" id="8Zg-OF-hYK"/>
                 <outlet property="sendDataLbl" destination="ozW-M9-c70" id="TvP-fX-Tni"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>

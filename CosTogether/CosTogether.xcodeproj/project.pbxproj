@@ -586,8 +586,8 @@
 		C8C2B478215F2B130033FB28 /* PreviousComment */ = {
 			isa = PBXGroup;
 			children = (
-				C8C2B475215F2B000033FB28 /* PreviousCommentTableViewCell.xib */,
 				C8C2B474215F2B000033FB28 /* PreviousCommentTableViewCell.swift */,
+				C8C2B475215F2B000033FB28 /* PreviousCommentTableViewCell.xib */,
 			);
 			path = PreviousComment;
 			sourceTree = "<group>";

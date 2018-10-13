@@ -63,17 +63,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     var productDetail: [Group] = []
     
-    var comments: [CommentModel] = [
-        CommentModel(
-            postDate: Date(),
-            user: UserModel.groupMember(image: "123", name: "喬丹"),
-            comment: "臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州 疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之 士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開 張聖聽，以光先帝遺德，恢弘志士之氣"
-        ), CommentModel(
-            postDate: Date(),
-            user: UserModel.groupMember(image: "123", name: "王哥"),
-            comment: "嘿嘿"
-        )
-    ]
+    var comments: [CommentModel] = []
     
     lazy var allData: [DataType] = [
         DataType(dataType: .productPic, data: productPic),
@@ -464,6 +454,11 @@ extension DetailViewController: UITableViewDataSource {
                     
                     return UITableViewCell()
                     
+            }
+            
+            guard comments.count > 0 else {
+                cell.noCommentSetup(title: "目前尚無留言")
+                return cell
             }
             
             cell.updateComment(comment: comments[indexPath.row])

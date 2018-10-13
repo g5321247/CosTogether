@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PreviousCommentTableViewCell: UITableViewCell {
     
@@ -15,6 +16,7 @@ class PreviousCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLbl: UILabel!
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var commenterBot: UIButton!
+    @IBOutlet weak var noCommentLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,7 +54,21 @@ class PreviousCommentTableViewCell: UITableViewCell {
         commentLbl.text = comment.comment
         commenterNameLbl.text = comment.user.userName
         
-        #warning ("設定照片")
-//        commenterBot.imageView?.sd_setImage
+        let userUrl = comment.user.userImage
+        
+        let url = URL(string: userUrl)
+        
+        commenterBot.sd_setImage(with: url, for: .normal)
+    }
+    
+    func noCommentSetup(title: String) {
+        
+        sendDataLbl.text = ""
+        commenterNameLbl.text = ""
+        commentLbl.text = ""
+        commenterBot.isEnabled = true
+        commenterBot.isHidden = true
+        noCommentLbl.text = title
+        
     }
 }
