@@ -31,6 +31,10 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
+        firebaseManager.downloadCommentUser(group: group) { (aComment) in
+            self.comments.insert(aComment, at: 0)
+        }
+        
         #warning ("放在最後")
         
         firebaseManager.downloadGroupUser(group: group) { (memberIds) in
@@ -520,21 +524,25 @@ extension DetailViewController: CellDelegate {
             return
         }
 
-        comments.append(
-            CommentModel(
-                postDate: Date(),
-                user: UserModel.groupMember(
-                    image: "currentUser.photoURL",
-                    name: currentUser.displayName!
-                ),
-                comment: text
-            )
+        let comment = CommentModel(
+            postDate: Date.getCurrentDate(),
+            comment: text,
+            userId: currentUser.uid
         )
 
+        
+        comments.append(comment)
+        
         allData[sectionIndex] = DataType(
             dataType: .previousComments(comments.count),
             data: comments)
-
+        
+        firebaseManager.uploadComment(
+            comment: comment,
+            groupType: article.first!.openType,
+            groupId: article.first!.groupId!
+        )
+        
         self.tableView.reloadData()
     }
     

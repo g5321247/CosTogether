@@ -189,8 +189,6 @@ struct FirebaseManager {
                 )
                 
             }
-
-            #warning ("使用者 id 和加團者 id")
             
             guard let users = value?["users"] as? NSDictionary,
                 let ownerId = users["ownerId"] as? String else {
@@ -233,6 +231,27 @@ struct FirebaseManager {
         
             completion(memberIds)
         }
+    }
+    
+    func downloadCommentUser(group: Group, completion: @escaping (CommentModel) -> Void) {
+
+        let refrence = Database.database().reference()
+    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observe(.childAdded) { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+        
+            guard let comment = value?["comment"] as? String,
+                let userId = value?["userId"] as? String,
+                let postDate = value?["postDate"] as? String else {
+                        
+                return
+            }
+                
+            let aComment = CommentModel(postDate: postDate, comment: comment, userId: userId)
+            
+            completion(aComment)
+        }
+        
     }
     
 }
@@ -339,4 +358,26 @@ extension FirebaseManager {
         
     }
     
+    func uploadComment(comment: CommentModel, groupType: OpenGroupType ,groupId: String) {
+        
+        let refrence = Database.database().reference()
+        
+        guard let key = refrence.child("group").child(groupType.rawValue).child(groupId).child("comment").childByAutoId().key else {
+
+            return
+        }
+        
+        let post = [
+            "userId" : comment.userId,
+            "comment": comment.comment,
+            "postDate": comment.postDate
+            ] as [String : String]
+        
+        let childUpdates = [
+            "/group/\(groupType.rawValue)/\(groupId)/comment/\(key)": post
+        ]
+        
+        refrence.updateChildValues(childUpdates)
+        
+    }
 }

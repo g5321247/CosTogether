@@ -49,16 +49,23 @@ class PreviousCommentTableViewCell: UITableViewCell {
     }
     
     func updateComment(comment: CommentModel) {
+
+        noCommentLbl.text = ""
+        
+        commenterBot.isEnabled = true
+        commenterBot.isHidden = false
         
         sendDataLbl.text = String(describing: comment.postDate)
         commentLbl.text = comment.comment
-        commenterNameLbl.text = comment.user.userName
         
-        let userUrl = comment.user.userImage
+        #warning ("改成用 id fetch user")
+//        commenterNameLbl.text = comment.user.userName
         
-        let url = URL(string: userUrl)
+//        let userUrl = comment.user.userImage
         
-        commenterBot.sd_setImage(with: url, for: .normal)
+//        let url = URL(string: userUrl)
+        
+//        commenterBot.sd_setImage(with: url, for: .normal)
     }
     
     func noCommentSetup(title: String) {
@@ -66,7 +73,7 @@ class PreviousCommentTableViewCell: UITableViewCell {
         sendDataLbl.text = ""
         commenterNameLbl.text = ""
         commentLbl.text = ""
-        commenterBot.isEnabled = true
+        commenterBot.isEnabled = false
         commenterBot.isHidden = true
         noCommentLbl.text = title
         
