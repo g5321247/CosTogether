@@ -39,12 +39,13 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 self.firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
                     
                     self.joinMember.append(users)
+                    self.tableView.reloadData()
+
                 }
                 
                 self.checkUser(userId: value)
             }
                         
-            self.tableView.reloadData()
         }
 
     }
