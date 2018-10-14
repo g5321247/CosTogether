@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var topLogView: TopLogoView!
     
     let firebaseManager = FirebaseManager()
+    let dispatchGroup = DispatchGroup()
     
     func updateInfo(group: Group) {
         
@@ -31,11 +32,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
-        firebaseManager.downloadCommentUser(group: group) { (comments) in
-            self.comments = comments
+
+        firebaseManager.downloadCommentUser(group: group) { (comment) in
+            
+            self.comments.append(comment)
         }
-        
-        #warning ("放在最後")
         
         firebaseManager.downloadGroupUser(group: group) { (memberIds) in
          
@@ -508,30 +509,28 @@ extension DetailViewController: CellDelegate {
             
         }
         
-        #warning ("改view")
+        let comment = CommentModel(
+            postDate: Date.getCurrentDate(),
+            comment: text,
+            userId: currentUser.uid
+        )
+
+        firebaseManager.uploadComment(
+            comment: comment,
+            groupType: article.first!.openType,
+            groupId: article.first!.groupId!
+        )
         
         guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .previousComments(comments.count)}) else {
             
             return
         }
 
-        let comment = CommentModel(
-            postDate: Date.getCurrentDate(),
-            comment: text,
-            userId: currentUser.uid
-        )
-        
         comments.append(comment)
-        
+
         allData[sectionIndex] = DataType(
             dataType: .previousComments(comments.count),
             data: comments)
-        
-        firebaseManager.uploadComment(
-            comment: comment,
-            groupType: article.first!.openType,
-            groupId: article.first!.groupId!
-        )
         
         self.tableView.reloadData()
     }

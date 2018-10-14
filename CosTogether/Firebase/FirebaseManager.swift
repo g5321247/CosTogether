@@ -233,37 +233,29 @@ struct FirebaseManager {
         }
     }
     
-    func downloadCommentUser(group: Group, completion: @escaping ([CommentModel]) -> Void) {
+    func downloadCommentUser(group: Group, completion: @escaping (CommentModel) -> Void) {
 
         let refrence = Database.database().reference()
-    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observeSingleEvent(of: .value, with: { (snapshot) in
+    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observe(.childAdded) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
+        
+            guard let postDate = value?["postDate"] as? String,
+                let comment = value?["comment"] as? String,
+                let userId = value?["userId"] as? String else {
             
-            guard let commentKey = value?.allKeys as? [String] else {
-                
                 return
             }
         
-            var comments: [CommentModel] = []
+            self.userIdToGetUserInfo(userId: userId, completion: { (userModel) in
+               
+                let aComment = CommentModel(postDate: postDate, comment: comment, userId: userId, user: userModel)
+                
+                completion(aComment)
+
+            })
         
-            for key in commentKey {
-                
-                guard let commentDetail = value![key] as? NSDictionary,
-                    let comment = commentDetail["comment"] as? String,
-                    let userId = commentDetail["userId"] as? String,
-                    let postDate = commentDetail["postDate"] as? String else {
-                        
-                        return
-                }
-                
-                let aComment = CommentModel(postDate: postDate, comment: comment, userId: userId)
-                
-                comments.append(aComment)
-            }
-        
-            completion(comments)
-        })
+        }
         
     }
     

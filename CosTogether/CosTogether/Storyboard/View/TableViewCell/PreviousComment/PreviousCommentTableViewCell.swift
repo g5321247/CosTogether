@@ -57,15 +57,17 @@ class PreviousCommentTableViewCell: UITableViewCell {
         
         sendDataLbl.text = String(describing: comment.postDate)
         commentLbl.text = comment.comment
+                
+        guard let user = comment.user else {
+            return
+        }
+        commenterNameLbl.text = user.userName
         
-        #warning ("改成用 id fetch user")
-//        commenterNameLbl.text = comment.user.userName
+        let userUrl = user.userImage
         
-//        let userUrl = comment.user.userImage
+        let url = URL(string: userUrl)
         
-//        let url = URL(string: userUrl)
-        
-//        commenterBot.sd_setImage(with: url, for: .normal)
+        commenterBot.sd_setImage(with: url, for: .normal)
     }
     
     func noCommentSetup(title: String) {

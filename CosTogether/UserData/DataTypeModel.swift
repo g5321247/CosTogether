@@ -74,6 +74,16 @@ struct CommentModel: DataProtocol {
     let postDate: String
     let comment: String
     let userId: String
+    let user: UserModel?
+    
+    init(postDate: String, comment: String, userId: String, user: UserModel? = nil ) {
+        
+        self.postDate = postDate
+        self.comment = comment
+        self.userId = userId
+        self.user = user
+        
+    }
 }
 
 struct UserModel: DataProtocol {
