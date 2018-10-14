@@ -360,7 +360,6 @@
                                     <constraint firstItem="1bI-x1-ufB" firstAttribute="leading" secondItem="1qs-Lo-skD" secondAttribute="leading" id="GT1-R6-JYb"/>
                                     <constraint firstAttribute="bottom" secondItem="1bI-x1-ufB" secondAttribute="bottom" id="H94-YM-UAC"/>
                                     <constraint firstItem="1bI-x1-ufB" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="top" id="Llz-mL-n1y"/>
-                                    <constraint firstAttribute="height" constant="210" id="dan-c5-5y4"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-KR-GbR">

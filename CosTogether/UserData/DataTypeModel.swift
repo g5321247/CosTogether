@@ -97,7 +97,7 @@ struct UserModel: DataProtocol {
     var buyNumber: Int?
     
     var averageEvaluation: Double?
-
+    
     init (
         userImage: String,
         userName: String,

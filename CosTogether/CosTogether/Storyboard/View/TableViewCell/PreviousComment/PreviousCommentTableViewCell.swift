@@ -18,6 +18,8 @@ class PreviousCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var commenterBot: UIButton!
     @IBOutlet weak var noCommentLbl: UILabel!
     
+    var user: UserModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -68,6 +70,8 @@ class PreviousCommentTableViewCell: UITableViewCell {
         let url = URL(string: userUrl)
         
         commenterBot.sd_setImage(with: url, for: .normal)
+        
+        self.user = comment.user
     }
     
     func noCommentSetup(title: String) {
@@ -80,4 +84,33 @@ class PreviousCommentTableViewCell: UITableViewCell {
         noCommentLbl.text = title
         
     }
+    
+    @IBAction func clickUserPic(_ sender: UIButton) {
+        
+        guard  let user = user else {
+            return
+        }
+        
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self)
+            ) as? ProfileViewController else {
+                
+                return
+                
+        }
+        
+        controller.loadViewIfNeeded()
+        
+        controller.checkOtherUser(
+            averageEvaluation: user.averageEvaluation ?? 0,
+            userImage: user.userImage,
+            buyNumber: user.buyNumber ?? 0,
+            userName: user.userName,
+            numberOfEvaluation: user.numberOfEvaluation ?? 0,
+            userType: .otherUser
+        )
+        
+        
+    }
+    
 }

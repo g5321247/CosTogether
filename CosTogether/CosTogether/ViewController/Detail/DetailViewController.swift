@@ -53,6 +53,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             }
                         
         }
+        
+        checkUser(userId: group.userID)
 
     }
     
@@ -148,19 +150,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-//        guard let cell = tableView.dequeueReusableCell(
-//            withIdentifier: String(describing: JoinGroupTableViewCell.self)
-//            ) as? JoinGroupTableViewCell else {
-//
-//                return
-//
-//        }
-    
-//        cell.collectionView.reloadData()
-        
-    
-    
-    #warning ("如何用在同一個 function")
     @objc func photoTapping(_ sender: UIButton) {
         
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
@@ -171,14 +160,29 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-//        guard let cell = sender.superview?.superview?.superview as? ArticleInfoTableViewCell else {
-//
-//            return
-//        }
-//        controller.userInfo = productPic.first
-        controller.userType = .otherUser
+        guard productPic.first?.userID != Auth.auth().currentUser?.uid else {
+            
+            #warning ("不要用數字判斷")
+            self.tabBarController?.selectedIndex = 3
+
+            return
+        }
+        
+        guard let owner = productPic.first?.owner else {
+            return
+        }
         
         controller.loadViewIfNeeded()
+        
+        controller.checkOtherUser(
+            averageEvaluation: owner.averageEvaluation ?? 0,
+            userImage:  owner.userImage,
+            buyNumber: owner.buyNumber ?? 0,
+            userName: owner.userName,
+            numberOfEvaluation: owner.numberOfEvaluation ?? 0,
+            userType: .otherUser
+        )
+        
         
         show(controller, sender: nil)
 
@@ -550,8 +554,6 @@ extension DetailViewController: CellDelegate {
             
         }
         
-        #warning ("update 這邊 order 的 data")
-        
         guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .productItems(products.count)}) else {
                 
                 return
@@ -594,6 +596,8 @@ extension DetailViewController: CellDelegate {
         }
         
         cell.checkoutUserNumber()
+        
+        //刪掉 cell 避免 fatal error
         checkUser(userId: currentUser.uid)
         
         cell.collectionView.reloadData()
