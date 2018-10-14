@@ -58,12 +58,8 @@ struct FirebaseManager {
                 
                 let refrence = Database.database().reference()
                 
-                refrence.child("users").child(user.uid).child("userInfo").setValue(
-                    [
-                    "userName": userInfo.userName,
-                    "userPicUrl" : userInfo.userPicUrl
-                    ]
-                )
+                refrence.child("users").child(user.uid).child("userInfo").child("userName").setValue(userInfo.userName)
+                refrence.child("users").child(user.uid).child("userInfo").child("userPicUrl").setValue(userInfo.userPicUrl)
                 
                 let keychain = Keychain(service: "com.george.CosTogether")
                 keychain[FirebaseType.uuid.rawValue] = user.uid
