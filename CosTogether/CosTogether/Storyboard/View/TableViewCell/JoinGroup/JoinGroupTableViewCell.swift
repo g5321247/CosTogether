@@ -164,7 +164,6 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        #warning ("改成 user profile")
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
                     withIdentifier: String(describing: ProfileViewController.self)
                     ) as? ProfileViewController else {
@@ -180,17 +179,14 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         controller.loadViewIfNeeded()
         
-        controller.averageEvaluationLbl.text = String(delegate.joinMember[indexPath.row].averageEvaluation!)
-        
-        controller.userImage.image = UIImage(named: delegate.joinMember[indexPath.row].userImage) ?? #imageLiteral(resourceName: "profile_sticker_placeholder02")
-        
-        controller.buyNumberLbl.text = String(delegate.joinMember[indexPath.row].buyNumber!)
-        
-        controller.userNameLbl.text = delegate.joinMember[indexPath.row].userName
-        
-        controller.numberOfEvaluationLbl.text =  String(delegate.joinMember[indexPath.row].numberOfEvaluation!)
-
-        controller.userType = .otherUser
+        controller.checkOtherUser(
+            averageEvaluation: (delegate.joinMember[indexPath.row].averageEvaluation!),
+            userImage: delegate.joinMember[indexPath.row].userImage,
+            buyNumber: delegate.joinMember[indexPath.row].buyNumber!,
+            userName: delegate.joinMember[indexPath.row].userName,
+            numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation!,
+            userType: .otherUser
+        )
         
         delegate.showTheView(controller: controller)
     }

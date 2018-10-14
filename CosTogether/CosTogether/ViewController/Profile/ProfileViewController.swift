@@ -11,6 +11,7 @@ import SDWebImage
 import FirebaseAuth
 import Firebase
 import KeychainAccess
+import SDWebImage
 
 class ProfileViewController: UIViewController {
 
@@ -121,6 +122,8 @@ class ProfileViewController: UIViewController {
             
         case .otherUser:
             
+            topView.rightBot.isEnabled = false
+            topView.rightBot.isHidden = true
             topView.rightBot.setImage(#imageLiteral(resourceName: "chat"), for: UIControl.State.normal)
             
             topView.leftBot.isEnabled = true
@@ -164,6 +167,26 @@ class ProfileViewController: UIViewController {
     @IBAction func leftBotTapping(_ sender: UIButton) {
         
         navigationController?.popViewController(animated: true)       
+    }
+    
+    func checkOtherUser(
+        averageEvaluation: Double,
+        userImage: String,
+        buyNumber: Int,
+        userName: String,
+        numberOfEvaluation: Int,
+        userType: UserType
+        ) {
+        
+        averageEvaluationLbl.text = String(averageEvaluation)
+        
+        let url = URL(string: userImage + "?height=500")
+        self.userImage.sd_setImage(with: url)
+        
+        buyNumberLbl.text = String(buyNumber)
+        userNameLbl.text = userName
+        numberOfEvaluationLbl.text = String(numberOfEvaluation)
+        self.userType = userType
     }
     
 }
