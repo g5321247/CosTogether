@@ -351,7 +351,8 @@ extension FirebaseManager {
             "/group/\(groupType.rawValue)/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
             "/group/\(groupType.rawValue)/\(groupId)/users/buyerId/\(buyerId)": buyerId,
             "/users/\(buyerId)/userInfo/myGroup/join/\(groupId)/\(product.productName)": [
-                "numberOfItem": buyNumber
+                "numberOfItem": buyNumber,
+                "price": product.price
             ]
         ] as [String : Any]
         
