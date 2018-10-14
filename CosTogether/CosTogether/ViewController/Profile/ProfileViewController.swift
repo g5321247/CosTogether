@@ -16,16 +16,13 @@ import SDWebImage
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var topView: TopLogoView!
-    @IBOutlet weak var userPicBaseView: UIView!
-    
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var baseViewWidth: NSLayoutConstraint!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var buyNumberLbl: UILabel!
     @IBOutlet weak var averageEvaluationLbl: UILabel!
     @IBOutlet weak var numberOfEvaluationLbl: UILabel!
-
     @IBOutlet weak var evaluateButton: UIButton!
+    @IBOutlet weak var reportUserBot: UIButton!
     
     var userType: UserType = .currentUser
     #warning ("userInfo == current 的 uuid 時，才為 current user")
@@ -44,7 +41,6 @@ class ProfileViewController: UIViewController {
     private func setup() {
         
         userImageSetup(user: userType)
-        userPicBaseViewSetup()
         topBotSetup(user: userType)
         evaluateButtonSetup()
             
@@ -82,6 +78,10 @@ class ProfileViewController: UIViewController {
                 return
             }
             
+            reportUserBot.isHidden = false
+            reportUserBot.isEnabled = true
+
+            
             userImage.image = UIImage(named: otherUser.userImage)
             userNameLbl.text = otherUser.userName
             numberOfEvaluationLbl.text = String(otherUser.numberOfEvaluation!)
@@ -90,23 +90,17 @@ class ProfileViewController: UIViewController {
             
             return
         }
-
-        userImage.cornerSetup(cornerRadius: userImage.frame.width / 2)
-    }
-
-    private func userPicBaseViewSetup() {
         
-        baseViewWidth.constant = self.view.frame.width * (210 / 375)
+        #warning ("個人資料比例")
+//        let width = self.view.frame.width * (210 / 375)
+
+//        userImage.frame.size = CGSize(width: width, height: width)
         
-        userPicBaseView.cornerSetup(
-            cornerRadius: userPicBaseView.frame.width / 2,
+        userImage.cornerSetup(
+            cornerRadius: userImage.frame.width / 2,
             borderWidth: 0.5,
-            borderColor: UIColor.lightGray.cgColor,
-            maskToBounds: true
+            borderColor: UIColor.lightGray.cgColor
         )
-        
-        userPicBaseView.alpha = 0.9
-        
     }
     
     func topBotSetup(user: UserType) {
@@ -189,4 +183,29 @@ class ProfileViewController: UIViewController {
         self.userType = userType
     }
     
+    
+    @IBAction func reportingUser(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "檢舉使用者", message: "您將對該使用者進行檢舉，請進行確認", preferredStyle: UIAlertController.Style.alert)
+        
+        let action = UIAlertAction(title: "確認", style: .default) { (_) in
+            
+            let alert = UIAlertController(title: "檢舉使用者", message: "我們收到您的檢舉，我們會儘速確認後處理", preferredStyle: UIAlertController.Style.alert)
+            
+            let action = UIAlertAction(title: "確認", style: .default)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "取消", style: .cancel)
+        
+        alert.addAction(cancel)
+
+        alert.addAction(action)
+
+        self.present(alert, animated: true, completion: nil)
+
+    }
 }

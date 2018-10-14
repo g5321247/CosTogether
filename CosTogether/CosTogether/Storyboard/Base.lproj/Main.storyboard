@@ -345,23 +345,6 @@
                                     <outlet property="rightBot" destination="wge-wn-C1c" id="PhB-di-ZLM"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qs-Lo-skD">
-                                <rect key="frame" x="82.5" y="125" width="210" height="210"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sticker_placeholder02" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-x1-ufB">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="6aE-Wl-x9t"/>
-                                    <constraint firstAttribute="width" secondItem="1qs-Lo-skD" secondAttribute="height" multiplier="1:1" id="7Sh-RE-nrI"/>
-                                    <constraint firstAttribute="trailing" secondItem="1bI-x1-ufB" secondAttribute="trailing" id="BH2-B1-a4P"/>
-                                    <constraint firstItem="1bI-x1-ufB" firstAttribute="leading" secondItem="1qs-Lo-skD" secondAttribute="leading" id="GT1-R6-JYb"/>
-                                    <constraint firstAttribute="bottom" secondItem="1bI-x1-ufB" secondAttribute="bottom" id="H94-YM-UAC"/>
-                                    <constraint firstItem="1bI-x1-ufB" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="top" id="Llz-mL-n1y"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-KR-GbR">
                                 <rect key="frame" x="8" y="365" width="359" height="41"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="30"/>
@@ -420,7 +403,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HVK-fU-DCR" firstAttribute="leading" secondItem="wlC-rP-txr" secondAttribute="trailing" constant="50" id="82Z-es-2Ud"/>
                                     <constraint firstItem="U4L-zH-HMZ" firstAttribute="centerY" secondItem="CoW-NA-UZJ" secondAttribute="centerY" id="8j8-ur-VMz"/>
@@ -452,22 +434,41 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sticker_placeholder02" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-x1-ufB">
+                                <rect key="frame" x="82.5" y="125" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1bI-x1-ufB" secondAttribute="height" multiplier="1:1" id="Fqt-BI-XhQ"/>
+                                    <constraint firstAttribute="width" constant="210" id="gEo-c2-ICh"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiO-vh-AOU">
+                                <rect key="frame" x="279" y="105" width="94" height="30"/>
+                                <state key="normal" title="檢舉用戶">
+                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportingUser:" destination="WM1-qg-yGR" eventType="touchUpInside" id="cVs-2H-ZJQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1qs-Lo-skD" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="30" id="0z2-bw-bFK"/>
-                            <constraint firstItem="1qs-Lo-skD" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="3w8-Vy-oiG"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" constant="8" id="CP3-I1-5x3"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="top" secondItem="iOw-fz-6R9" secondAttribute="top" id="FZk-jz-QOC"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="HIi-nF-20q"/>
+                            <constraint firstItem="kpO-x4-AM6" firstAttribute="trailing" secondItem="JiO-vh-AOU" secondAttribute="trailing" constant="2" id="Id3-77-swo"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="Iqd-Te-b63"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="Jqh-8x-qd6"/>
                             <constraint firstItem="o6n-Lp-hau" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="K6p-cI-1V9"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="top" secondItem="hcm-KR-GbR" secondAttribute="bottom" constant="20" id="KhK-27-Xw2"/>
+                            <constraint firstItem="JiO-vh-AOU" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="10" id="Qy4-vx-LjT"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="U9y-2Y-7Rr"/>
+                            <constraint firstItem="JiO-vh-AOU" firstAttribute="centerX" secondItem="wge-wn-C1c" secondAttribute="centerX" id="Uwt-4T-Gce"/>
                             <constraint firstItem="lXy-qp-RJd" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="bNs-k5-ibb"/>
-                            <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1qs-Lo-skD" secondAttribute="bottom" constant="30" id="hVB-NR-CnB"/>
+                            <constraint firstItem="1bI-x1-ufB" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="d63-Wf-lNK"/>
                             <constraint firstItem="kpO-x4-AM6" firstAttribute="trailing" secondItem="hcm-KR-GbR" secondAttribute="trailing" constant="8" id="jdu-qS-FiQ"/>
+                            <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1bI-x1-ufB" secondAttribute="bottom" constant="30" id="o0z-ng-2DJ"/>
+                            <constraint firstItem="1bI-x1-ufB" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="30" id="oCc-3H-STG"/>
                             <constraint firstItem="kpO-x4-AM6" firstAttribute="bottom" secondItem="o6n-Lp-hau" secondAttribute="bottom" constant="60" id="oRB-Jt-xgB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
@@ -475,14 +476,13 @@
                     <tabBarItem key="tabBarItem" title="個人資料" image="Profile" id="jSO-JQ-WR2"/>
                     <connections>
                         <outlet property="averageEvaluationLbl" destination="lO8-Z9-yqe" id="FG0-Yb-VBa"/>
-                        <outlet property="baseViewWidth" destination="6aE-Wl-x9t" id="lbA-fv-1Im"/>
                         <outlet property="buyNumberLbl" destination="wlC-rP-txr" id="kf5-bf-4bx"/>
                         <outlet property="evaluateButton" destination="o6n-Lp-hau" id="Y3u-FM-pVs"/>
                         <outlet property="numberOfEvaluationLbl" destination="8Np-pX-ctA" id="XVD-rX-2fc"/>
+                        <outlet property="reportUserBot" destination="JiO-vh-AOU" id="8iy-Fj-mfb"/>
                         <outlet property="topView" destination="y1d-x3-swe" id="Xd8-lx-j4Q"/>
                         <outlet property="userImage" destination="1bI-x1-ufB" id="1cs-jm-OUt"/>
                         <outlet property="userNameLbl" destination="hcm-KR-GbR" id="HJR-OW-R7D"/>
-                        <outlet property="userPicBaseView" destination="1qs-Lo-skD" id="nsZ-TT-EcO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7go-Vs-SWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
