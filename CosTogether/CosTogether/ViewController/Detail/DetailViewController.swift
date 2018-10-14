@@ -42,9 +42,18 @@ class DetailViewController: UIViewController, ProductPicDelegate {
          
             for value in memberIds {
                 
-                self.firebaseManager.userIdToGetUserInfo(userId: value) { (users) in
+                self.firebaseManager.userIdToGetUserInfo(userId: value) { (user) in
                     
-                    self.joinMember.append(users)
+                    let user = UserModel(
+                        userImage: user.userImage,
+                        userName: user.userName,
+                        numberOfEvaluation: user.numberOfEvaluation,
+                        buyNumber: user.buyNumber,
+                        averageEvaluation: user.averageEvaluation,
+                        userId: value
+                    )
+                    
+                    self.joinMember.append(user)
                     self.tableView.reloadData()
 
                 }
@@ -529,12 +538,18 @@ extension DetailViewController: UITableViewDataSource {
 
 extension DetailViewController: JoinGroupDelegate {
     
-    func showTheView(controller: UIViewController) {
+    func showTheView(controller: UIViewController?) {
+        
+        guard let controller = controller else {
+            
+            self.tabBarController?.selectedIndex = 3
+            return
+        }
         
         show(controller, sender: nil)
-        
+
     }
-    
+
 }
 
 extension DetailViewController: CellDelegate {

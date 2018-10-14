@@ -73,22 +73,10 @@ class ProfileViewController: UIViewController {
             
         case .otherUser:
             
-            guard let otherUser = userInfo else {
-                
-                return
-            }
-            
             reportUserBot.isHidden = false
             reportUserBot.isEnabled = true
 
             
-            userImage.image = UIImage(named: otherUser.userImage)
-            userNameLbl.text = otherUser.userName
-            numberOfEvaluationLbl.text = String(otherUser.numberOfEvaluation!)
-            buyNumberLbl.text = String(otherUser.buyNumber!)
-            averageEvaluationLbl.text = String(otherUser.averageEvaluation!)
-            
-            return
         }
         
         #warning ("個人資料比例")
@@ -183,14 +171,13 @@ class ProfileViewController: UIViewController {
         self.userType = userType
     }
     
-    
     @IBAction func reportingUser(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "檢舉使用者", message: "您將對該使用者進行檢舉，請進行確認", preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: "確認", style: .default) { (_) in
             
-            let alert = UIAlertController(title: "檢舉使用者", message: "我們收到您的檢舉，我們會儘速確認後處理", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "已收到檢舉", message: "我們進行確認後會儘速處理", preferredStyle: UIAlertController.Style.alert)
             
             let action = UIAlertAction(title: "確認", style: .default)
             

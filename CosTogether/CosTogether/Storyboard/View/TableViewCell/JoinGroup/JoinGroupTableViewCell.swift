@@ -13,7 +13,7 @@ protocol JoinGroupDelegate: AnyObject {
     
     var joinMember: [UserModel] { get set }
     
-    func showTheView(controller: UIViewController)
+    func showTheView(controller: UIViewController?)
 }
 
 class JoinGroupTableViewCell: UITableViewCell {
@@ -179,6 +179,13 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         }
         
         controller.loadViewIfNeeded()
+        
+        guard delegate.joinMember[indexPath.row].userId != Auth.auth().currentUser?.uid else {
+            
+            delegate.showTheView(controller: nil)
+
+            return
+        }
         
         controller.checkOtherUser(
             averageEvaluation: (delegate.joinMember[indexPath.row].averageEvaluation ?? 0),
