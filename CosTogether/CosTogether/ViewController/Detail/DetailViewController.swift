@@ -150,6 +150,43 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
+    @objc func commenterPhotoTaping(_ sender: UIButton) {
+    
+        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+            withIdentifier: String(describing: ProfileViewController.self)
+            ) as? ProfileViewController else {
+                
+                return
+                
+        }
+        
+        guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
+            
+            #warning ("不要用數字判斷")
+            self.tabBarController?.selectedIndex = 3
+            
+            return
+        }
+        
+        guard let user = comments[sender.tag].user else {
+            return
+        }
+        
+        controller.loadViewIfNeeded()
+        
+        controller.checkOtherUser(
+            averageEvaluation: user.averageEvaluation ?? 0,
+            userImage: user.userImage,
+            buyNumber: user.buyNumber ?? 0,
+            userName: user.userName,
+            numberOfEvaluation: user.numberOfEvaluation ?? 0,
+            userType: .otherUser
+        )
+        
+        show(controller, sender: nil)
+
+    }
+    
     @objc func photoTapping(_ sender: UIButton) {
         
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
@@ -182,7 +219,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             numberOfEvaluation: owner.numberOfEvaluation ?? 0,
             userType: .otherUser
         )
-        
         
         show(controller, sender: nil)
 
@@ -462,6 +498,9 @@ extension DetailViewController: UITableViewDataSource {
             }
             
             cell.updateComment(comment: comments[indexPath.row])
+            
+            cell.commenterBot.tag = indexPath.row
+            cell.commenterBot.addTarget(self, action: #selector (commenterPhotoTaping), for: .touchUpInside)
             
             return cell
 

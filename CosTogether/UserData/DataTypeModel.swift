@@ -98,12 +98,15 @@ struct UserModel: DataProtocol {
     
     var averageEvaluation: Double?
     
+    var userId: String?
+    
     init (
         userImage: String,
         userName: String,
         numberOfEvaluation: Int? = 0,
         buyNumber: Int? = 0,
-        averageEvaluation: Double? = 0
+        averageEvaluation: Double? = 0,
+        userId: String? = nil
         ) {
         
         self.userImage = userImage
@@ -111,6 +114,7 @@ struct UserModel: DataProtocol {
         self.numberOfEvaluation = numberOfEvaluation
         self.buyNumber = buyNumber
         self.averageEvaluation = averageEvaluation
+        self.userId = userId
     }
     
     static func groupMember(image: String, name: String) -> UserModel {
@@ -120,7 +124,8 @@ struct UserModel: DataProtocol {
             userName: name,
             numberOfEvaluation: nil,
             buyNumber: nil,
-            averageEvaluation: nil
+            averageEvaluation: nil,
+            userId: nil
         )
         
     }

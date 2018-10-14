@@ -110,7 +110,6 @@ class PreviousCommentTableViewCell: UITableViewCell {
             userType: .otherUser
         )
         
-        
     }
     
 }
