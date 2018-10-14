@@ -21,5 +21,6 @@ target 'CosTogether' do
   pod 'KeychainAccess'
   pod 'AnimatedCollectionViewLayout'
   pod 'SVProgressHUD'
+  pod 'lottie-ios'
   
 end

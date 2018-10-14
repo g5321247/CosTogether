@@ -7,23 +7,26 @@
 //
 
 import UIKit
+import Lottie
 
 class MyGroupViewController: UIViewController {
 
     @IBOutlet weak var groupTypeSC: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyLbl: UILabel!
     
-    var group: [UIImage] = [#imageLiteral(resourceName: "test"),#imageLiteral(resourceName: "test")]
+    var group: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
-        
+
         navigationController?.navigationBar.isHidden = true
         groupTypeSC.addUnderlineForSelectedSegment()
         
     }
+    
     
     @IBAction func switchGroupType(_ sender: Any) {
         
@@ -35,6 +38,29 @@ class MyGroupViewController: UIViewController {
         
         setUpCell()
         tableViewSetup()
+        checkMyGroupIsEmpty()
+    }
+    
+    private func checkMyGroupIsEmpty() {
+        
+        guard group.count == 0 else {
+            
+            emptyLbl.isHidden = true
+            return
+        }
+        
+        let animationView = LOTAnimationView(name: "get_started_slider")
+        
+            animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+        
+            animationView.center.x = self.view.center.x
+            animationView.center.y = self.view.center.y + 40
+        
+            animationView.contentMode = .scaleAspectFill
+            
+            self.tableView.addSubview(animationView)
+        
+            animationView.play()
         
     }
     

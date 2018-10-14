@@ -664,25 +664,34 @@
                                     <constraint firstAttribute="trailing" secondItem="xby-JZ-8De" secondAttribute="trailing" id="x83-uu-BaQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未有揪團，趕快開一個吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUy-A9-JzI">
+                                <rect key="frame" x="7.5" y="257" width="360" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lXH-TL-Loy" firstAttribute="trailing" secondItem="Rjw-f9-Bgu" secondAttribute="trailing" id="FlL-zm-Qu7"/>
                             <constraint firstAttribute="bottom" secondItem="Rjw-f9-Bgu" secondAttribute="bottom" id="LCv-Nz-LoS"/>
+                            <constraint firstItem="aUy-A9-JzI" firstAttribute="centerY" secondItem="iQE-58-6PI" secondAttribute="centerY" constant="-60" id="XPR-BG-0Px"/>
                             <constraint firstItem="Rjw-f9-Bgu" firstAttribute="top" secondItem="iQE-58-6PI" secondAttribute="top" id="Xbg-CT-JRW"/>
                             <constraint firstItem="Rjw-f9-Bgu" firstAttribute="leading" secondItem="lXH-TL-Loy" secondAttribute="leading" id="lF2-IT-wOr"/>
+                            <constraint firstItem="aUy-A9-JzI" firstAttribute="centerX" secondItem="iQE-58-6PI" secondAttribute="centerX" id="lLr-yC-NkQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lXH-TL-Loy"/>
                     </view>
                     <navigationItem key="navigationItem" id="gRf-7E-ouF"/>
                     <connections>
+                        <outlet property="emptyLbl" destination="aUy-A9-JzI" id="sdf-aU-7Kk"/>
                         <outlet property="groupTypeSC" destination="Gos-Dq-aN9" id="BXT-Cp-sNP"/>
                         <outlet property="tableView" destination="xby-JZ-8De" id="0PA-8t-ufM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgm-hl-vge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="2152"/>
+            <point key="canvasLocation" x="1481" y="2260"/>
         </scene>
         <!--CosTogether-->
         <scene sceneID="FL6-6k-UE8">

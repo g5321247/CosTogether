@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
+		C80187F22173637700FAC704 /* get_started_slider.json in Resources */ = {isa = PBXBuildFile; fileRef = C80187F12173637700FAC704 /* get_started_slider.json */; };
 		C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A71E92162298D00ED4FE9 /* DetailManager.swift */; };
 		C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61EE216A10E100A59F28 /* ProductSettingView.swift */; };
 		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
@@ -96,6 +97,7 @@
 		33ED0C0E585EB4AE1778949B /* Pods-CosTogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.release.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.release.xcconfig"; sourceTree = "<group>"; };
 		69B08EB91AF6B59E4F5A2856 /* Pods-CosTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80187F12173637700FAC704 /* get_started_slider.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = get_started_slider.json; sourceTree = "<group>"; };
 		C80A71E92162298D00ED4FE9 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		C80B61EE216A10E100A59F28 /* ProductSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSettingView.swift; sourceTree = "<group>"; };
 		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C80187F02173634800FAC704 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				C80187F12173637700FAC704 /* get_started_slider.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		C80A71EB2162299300ED4FE9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +305,7 @@
 				C8F8C92C2152399200BDB0CE /* Assets.xcassets */,
 				C8215FE12151FAB8006BC7A3 /* Info.plist */,
 				C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */,
-				C8F8C9302152574A00BDB0CE /* View */,
+				C80187F02173634800FAC704 /* Lottie */,
 				C8F8C931215278E900BDB0CE /* fonts */,
 			);
 			path = CosTogether;
@@ -655,13 +665,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		C8F8C9302152574A00BDB0CE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C8F8C931215278E900BDB0CE /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +835,7 @@
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
 				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
+				C80187F22173637700FAC704 /* get_started_slider.json in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
 				C8C2B477215F2B000033FB28 /* PreviousCommentTableViewCell.xib in Resources */,
 				C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */,
@@ -907,6 +911,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -926,6 +931,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
