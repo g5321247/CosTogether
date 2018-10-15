@@ -49,30 +49,18 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CosTogether" translatesAutoresizingMaskIntoConstraints="NO" id="HYQ-NM-W1a">
-                                <rect key="frame" x="20" y="140" width="335" height="134"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="HYQ-NM-W1a" secondAttribute="height" multiplier="5:2" id="47w-t5-xc8"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gold_Star.svg" translatesAutoresizingMaskIntoConstraints="NO" id="xRo-hT-bhs">
-                                <rect key="frame" x="120" y="284" width="135" height="64.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xRo-hT-bhs" secondAttribute="height" multiplier="187:89" id="MEV-Tn-NeK"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMV-iM-ZeJ">
+                                <rect key="frame" x="50" y="145" width="68" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="46"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="dVT-PQ-BmP" secondAttribute="bottom" constant="105" id="1eX-wR-C2a"/>
-                            <constraint firstItem="xRo-hT-bhs" firstAttribute="top" secondItem="HYQ-NM-W1a" secondAttribute="bottom" constant="10" id="2Z9-K0-bkO"/>
-                            <constraint firstItem="xRo-hT-bhs" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" constant="120" id="9Xx-ad-8Hf"/>
-                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" constant="20" id="E4Z-gl-R8W"/>
-                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="top" constant="120" id="Fbq-gh-a8m"/>
-                            <constraint firstItem="xRo-hT-bhs" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="P5V-5l-vNn"/>
-                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="HYQ-NM-W1a" secondAttribute="trailing" constant="20" id="PkZ-10-qgQ"/>
                             <constraint firstItem="lY1-8c-DqD" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="RBK-WR-J3X"/>
-                            <constraint firstItem="HYQ-NM-W1a" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="aOK-gA-3gD"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="jdL-hL-SiA"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="top" secondItem="lY1-8c-DqD" secondAttribute="bottom" constant="30" id="tvf-fg-5ak"/>
                         </constraints>
@@ -88,8 +76,4 @@
             <point key="canvasLocation" x="496.80000000000001" y="-402.54872563718146"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="CosTogether" width="250" height="100"/>
-        <image name="Gold_Star.svg" width="512" height="512"/>
-    </resources>
 </document>

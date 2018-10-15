@@ -71,6 +71,9 @@ class ProfileViewController: UIViewController {
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
             
+            reportUserBot.isEnabled = false
+            reportUserBot.isHidden = true
+            
         case .otherUser:
             
             reportUserBot.isHidden = false
@@ -182,7 +185,9 @@ class ProfileViewController: UIViewController {
         buyNumberLbl.text = String(buyNumber)
         userNameLbl.text = userName
         numberOfEvaluationLbl.text = String(numberOfEvaluation)
+        
         self.userType = userType
+        
     }
     
     @IBAction func reportingUser(_ sender: UIButton) {

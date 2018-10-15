@@ -182,7 +182,16 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         guard delegate.joinMember[indexPath.row].userId != Auth.auth().currentUser?.uid else {
             
-            delegate.showTheView(controller: nil)
+            controller.checkOtherUser(
+                averageEvaluation: (delegate.joinMember[indexPath.row].averageEvaluation ?? 0),
+                userImage: delegate.joinMember[indexPath.row].userImage,
+                buyNumber: delegate.joinMember[indexPath.row].buyNumber ?? 0,
+                userName: delegate.joinMember[indexPath.row].userName,
+                numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation ?? 0,
+                userType: .currentUser
+            )
+            
+            delegate.showTheView(controller: controller)
 
             return
         }

@@ -169,19 +169,29 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
-            
-            #warning ("不要用數字判斷")
-            self.tabBarController?.selectedIndex = 3
-            
-            return
-        }
-        
         guard let user = comments[sender.tag].user else {
+
             return
         }
         
         controller.loadViewIfNeeded()
+        
+        guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
+            
+            controller.checkOtherUser(
+                averageEvaluation: user.averageEvaluation ?? 0,
+                userImage: user.userImage,
+                buyNumber: user.buyNumber ?? 0,
+                userName: user.userName,
+                numberOfEvaluation: user.numberOfEvaluation ?? 0,
+                userType: .currentUser
+            )
+            
+            show(controller, sender: nil)
+            
+            return
+        }
+
         
         controller.checkOtherUser(
             averageEvaluation: user.averageEvaluation ?? 0,
@@ -206,20 +216,28 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard productPic.first?.userID != Auth.auth().currentUser?.uid else {
-            
-            #warning ("不要用數字判斷")
-            self.tabBarController?.selectedIndex = 3
-
-            return
-        }
-        
         guard let owner = productPic.first?.owner else {
             return
         }
         
         controller.loadViewIfNeeded()
         
+        guard productPic.first?.userID != Auth.auth().currentUser?.uid else {
+            
+            controller.checkOtherUser(
+                averageEvaluation: owner.averageEvaluation ?? 0,
+                userImage: owner.userImage,
+                buyNumber: owner.buyNumber ?? 0,
+                userName: owner.userName,
+                numberOfEvaluation: owner.numberOfEvaluation ?? 0,
+                userType: .currentUser
+            )
+            
+            show(controller, sender: nil)
+
+            return
+        }
+
         controller.checkOtherUser(
             averageEvaluation: owner.averageEvaluation ?? 0,
             userImage:  owner.userImage,
