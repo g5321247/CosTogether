@@ -626,8 +626,8 @@ extension DetailViewController: CellDelegate {
             
             firebaseManager.uploadBuyer(
                 buyerId: currentUser.uid,
-                groupType: article[index].openType,
-                groupId: article[index].groupId!,
+                groupType: article.first!.openType,
+                groupId: article.first!.groupId!,
                 product: products[index],
                 buyNumber: order[index].numberOfItem
             )
