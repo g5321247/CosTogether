@@ -18,7 +18,9 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     let firebaseManager = FirebaseManager()
     var cellHeight: CGFloat = 53
     
-    func reloadData() {
+    var orderAlready: Bool = false
+    
+    func reloadData(orderAlready: Bool) {
         
         allData = [
             DataType(dataType: .productPic, data: productPic),
@@ -31,6 +33,27 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             DataType(dataType: .previousComments(comments.count), data: comments),
             DataType(dataType: .sendComment, data: [])
         ]
+        
+        guard orderAlready else {
+            
+            tableView.reloadData()
+            return
+            
+        }
+        
+        guard let indexOfProduct = allData.firstIndex(
+            where: {$0.dataType == .productItems(products.count)}
+            ),
+            let indexOfOrder = allData.firstIndex(
+                where: {$0.dataType == .productItems(products.count)}
+            ) else {
+                
+                return
+                
+        }
+        
+        allData.remove(at: indexOfProduct)
+        allData[indexOfOrder].data.removeAll()
         
         tableView.reloadData()
     }
@@ -71,7 +94,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                     )
                     
                     self.joinMember.append(user)
-                    self.reloadData()
+                    self.reloadData(orderAlready: self.orderAlready)
 
                 }
                 
@@ -144,7 +167,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         if let keyboardSize =
             (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            reloadData()
+            reloadData(orderAlready: orderAlready)
             
             let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
 
@@ -285,19 +308,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         guard userId != Auth.auth().currentUser?.uid else {
             
-            guard let indexOfProduct = allData.firstIndex(
-                where: {$0.dataType == .productItems(products.count)}
-                ),
-                let indexOfOrder = allData.firstIndex(
-                    where: {$0.dataType == .productItems(products.count)}
-                ) else {
-                    
-                return
-                    
-            }
-            
-            allData.remove(at: indexOfProduct)
-            allData[indexOfOrder].data.removeAll()
+            orderAlready = true
             
             return
 
@@ -629,7 +640,7 @@ extension DetailViewController: CellDelegate {
         
         comments.append(comment)
         
-        self.reloadData()
+        self.reloadData(orderAlready: orderAlready)
         
         let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
         
@@ -701,7 +712,7 @@ extension DetailViewController: CellDelegate {
         
         cell.collectionView.reloadData()
         
-        reloadData()
+        reloadData(orderAlready: orderAlready)
     }
 
 }
