@@ -30,3 +30,10 @@ enum OpenGroupType: String {
         
 //    }
 }
+
+enum MyGroup: String {
+    
+    case join
+    case own
+    
+}

@@ -255,6 +255,49 @@ struct FirebaseManager {
         
     }
     
+    func downloadMyGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
+        
+        let refrence = Database.database().reference()
+        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+            
+            guard let value = snapshot.value as? NSDictionary else {
+                
+                return
+            }
+            
+            guard let productsName = value.allKeys as? [String] else {
+                return
+            }
+            
+            var products: [ProductModel] = []
+
+            for key in productsName {
+                
+                guard let productDic = value[key] as? NSDictionary,
+                    let  numberOfItem = productDic["numberOfItem"] as? Int,
+                    let price =  productDic["price"] as? Int,
+                    let productImage = productDic["productPicUrl"] as? String else {
+
+                    return
+                }
+                
+                let product = ProductModel(
+                    productName: key,
+                    productImage: productImage,
+                    numberOfItem: numberOfItem,
+                    price: price
+                )
+                
+                products.append(product)
+            }
+            
+            let ownGroup = OwnGroup(articleId: snapshot.key, products: products)
+            
+            completion(ownGroup)
+        }
+    }
+
+    
 }
 
 extension FirebaseManager {
@@ -350,9 +393,10 @@ extension FirebaseManager {
         let childUpdates = [
             "/group/\(groupType.rawValue)/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
             "/group/\(groupType.rawValue)/\(groupId)/users/buyerId/\(buyerId)": buyerId,
-            "/users/\(buyerId)/userInfo/myGroup/join/\(groupId)/\(product.productName)": [
+            "/users/\(buyerId)/userInfo/myGroup/join/\(groupType.rawValue)/\(groupId)/\(product.productName)": [
                 "numberOfItem": buyNumber,
-                "price": product.price
+                "price": product.price,
+                "productPicUrl": product.productImage!
             ]
         ] as [String : Any]
         
@@ -382,4 +426,5 @@ extension FirebaseManager {
         refrence.updateChildValues(childUpdates)
         
     }
+    
 }

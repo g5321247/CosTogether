@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 
 class MyGroupViewController: UIViewController {
 
@@ -15,7 +16,13 @@ class MyGroupViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
     
-    var group: [String] = []
+    let firebaseManager = FirebaseManager()
+    
+    var groupType: OpenGroupType = .shareBuy
+    
+    var myGroup: MyGroup = .join
+    
+    var group: [OwnGroup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,29 +45,49 @@ class MyGroupViewController: UIViewController {
         
         setUpCell()
         tableViewSetup()
-        checkMyGroupIsEmpty()
+//        downloadMyGroup()
+        
+        #warning("測試用,要刪掉,因為已經放在 downloadMyGroup")
+        self.checkMyGroupIsEmpty()
+
+    }
+    
+    private func downloadMyGroup() {
+        
+        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
+            
+            self.group.append(group)
+            self.checkMyGroupIsEmpty()
+            self.tableView.reloadData()
+        }
+        
     }
     
     private func checkMyGroupIsEmpty() {
+    
+        let animationView = LOTAnimationView(name: "get_started_slider")
         
         guard group.count == 0 else {
             
             emptyLbl.isHidden = true
+            
+            self.tableView.willRemoveSubview(animationView)
+            
             return
         }
         
-        let animationView = LOTAnimationView(name: "get_started_slider")
+        animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    
+        animationView.center.x = self.view.center.x
+        animationView.center.y = self.view.center.y + 40
+    
+        animationView.contentMode = .scaleAspectFill
         
-            animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+        self.tableView.addSubview(animationView)
         
-            animationView.center.x = self.view.center.x
-            animationView.center.y = self.view.center.y + 40
+        animationView.play()
         
-            animationView.contentMode = .scaleAspectFill
-            
-            self.tableView.addSubview(animationView)
-        
-            animationView.play()
+
         
     }
     

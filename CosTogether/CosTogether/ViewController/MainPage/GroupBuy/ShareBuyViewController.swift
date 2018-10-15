@@ -141,7 +141,7 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 10
+        return 20
     }
     
     func collectionView(
