@@ -32,7 +32,7 @@ extension BaseNotificationBanner {
         
         let banner = NotificationBanner(title: title, subtitle: subtitle, style: style)
         
-        banner.duration = 1
+        banner.duration = 2
 
         banner.show()
         banner.remove()

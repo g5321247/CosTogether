@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;產品標題&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-qR-b2b">
-                                <rect key="frame" x="20" y="15" width="335" height="34.5"/>
+                                <rect key="frame" x="10" y="15" width="345" height="34.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,19 +46,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-Bb-fdz">
-                                <rect key="frame" x="92" y="74.5" width="132" height="34"/>
+                                <rect key="frame" x="82" y="74.5" width="132" height="34"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文日期：" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxi-9Y-Fi5">
-                                <rect key="frame" x="92" y="110.5" width="85" height="24"/>
+                                <rect key="frame" x="82" y="110.5" width="85" height="24"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eod-xo-0Kw">
-                                <rect key="frame" x="20" y="74.5" width="60" height="60"/>
+                                <rect key="frame" x="10" y="74.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eod-xo-0Kw" secondAttribute="height" multiplier="1:1" id="VD8-6T-rY5"/>
                                     <constraint firstAttribute="width" constant="60" id="WZn-DO-ZvT"/>
@@ -90,12 +90,12 @@
                             <constraint firstAttribute="trailing" secondItem="hCF-iM-QxS" secondAttribute="trailing" constant="10" id="RXZ-z5-Hal"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="centerY" secondItem="ELb-I3-ssh" secondAttribute="centerY" id="SSt-db-qqk"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="TNG-xw-Jlx"/>
-                            <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="Vou-hs-kT9"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="10" id="Vou-hs-kT9"/>
                             <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="eod-xo-0Kw" secondAttribute="top" id="X6V-Ym-OQv"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="leading" secondItem="kvd-G9-i3p" secondAttribute="trailing" constant="10" id="fvS-OT-HYm"/>
                             <constraint firstItem="ELb-I3-ssh" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="h4Y-IR-dtj"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" constant="29" id="jf1-Cd-oPv"/>
-                            <constraint firstItem="w2L-qR-b2b" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="20" id="r1k-TG-udC"/>
+                            <constraint firstItem="w2L-qR-b2b" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="10" id="r1k-TG-udC"/>
                             <constraint firstItem="w2L-qR-b2b" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" constant="15" id="rCK-gZ-8Xo"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
                             <constraint firstItem="kvd-G9-i3p" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="vZV-aV-ae9"/>
@@ -131,6 +131,6 @@
     <resources>
         <image name="location" width="16" height="16"/>
         <image name="profile_sticker_placeholder02" width="256" height="256"/>
-        <image name="tag" width="16" height="16"/>
+        <image name="tag" width="32" height="32"/>
     </resources>
 </document>

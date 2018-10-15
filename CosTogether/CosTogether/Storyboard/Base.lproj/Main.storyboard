@@ -168,8 +168,8 @@
                                     <constraint firstAttribute="height" constant="40" id="FKL-QJ-Oge"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="分購"/>
-                                    <segment title="代購"/>
+                                    <segment title="開分購"/>
+                                    <segment title="幫代購"/>
                                 </segments>
                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -714,7 +714,7 @@
                                 </constraints>
                                 <segments>
                                     <segment title="找分購"/>
-                                    <segment title="求代購"/>
+                                    <segment title="加代購"/>
                                 </segments>
                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -809,8 +809,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購，不如你來開一個吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
+                                <rect key="frame" x="-16.5" y="224" width="408" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -855,11 +855,11 @@
             </objects>
             <point key="canvasLocation" x="3076" y="-519.04047976011998"/>
         </scene>
-        <!--找團Go-->
+        <!--找團 Go-->
         <scene sceneID="0Wz-46-6fn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhg-G7-U6f" customClass="MainNavigationViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="找團Go" image="searching" id="LLJ-HE-Dv8"/>
+                    <tabBarItem key="tabBarItem" title="找團 Go" image="searching" id="LLJ-HE-Dv8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b8t-ex-l5u">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -920,8 +920,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關代購，不如你來開一個吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
+                                <rect key="frame" x="-16.5" y="224" width="408" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -966,11 +966,11 @@
             </objects>
             <point key="canvasLocation" x="4048.8000000000002" y="376.46176911544228"/>
         </scene>
-        <!--開團Go-->
+        <!--開團 Go-->
         <scene sceneID="C2G-dN-29E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZr-OR-9iW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="開團Go" image="open" id="JzN-U7-vR7"/>
+                    <tabBarItem key="tabBarItem" title="開團 Go" image="open" id="JzN-U7-vR7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GOk-eI-L5h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

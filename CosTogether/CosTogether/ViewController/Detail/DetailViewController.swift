@@ -445,7 +445,7 @@ extension DetailViewController: UITableViewDataSource {
             
             guard  !allDataType.data.isEmpty else {
                 
-                cell.userHasJoined(title: "已加入揪團")
+                cell.userHasJoined(title: "你已經加入此揪團")
                 
                 return cell
             }
@@ -652,6 +652,7 @@ extension DetailViewController: CellDelegate {
         cell.checkoutUserNumber()
         
         //刪掉 cell 避免 fatal error
+        
         checkUser(userId: currentUser.uid)
         
         cell.collectionView.reloadData()
