@@ -16,7 +16,24 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var topLogView: TopLogoView!
     
     let firebaseManager = FirebaseManager()
-    let dispatchGroup = DispatchGroup()
+    var cellHeight: CGFloat = 53
+    
+    func reloadData() {
+        
+        allData = [
+            DataType(dataType: .productPic, data: productPic),
+            DataType(dataType: .articleInfo, data: article),
+            DataType(dataType: .joinGroup, data: joinMember),
+            DataType(dataType: .productItems(products.count), data: products),
+            DataType(dataType: .order, data: order),
+            DataType(dataType: .productDetail, data: productDetail),
+            DataType(dataType: .commnetTitle, data: []),
+            DataType(dataType: .previousComments(comments.count), data: comments),
+            DataType(dataType: .sendComment, data: [])
+        ]
+        
+        tableView.reloadData()
+    }
     
     func updateInfo(group: Group) {
         
@@ -54,7 +71,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                     )
                     
                     self.joinMember.append(user)
-                    self.tableView.reloadData()
+                    self.reloadData()
 
                 }
                 
@@ -81,22 +98,29 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     var comments: [CommentModel] = []
     
-    lazy var allData: [DataType] = [
-        DataType(dataType: .productPic, data: productPic),
-        DataType(dataType: .articleInfo, data: article),
-        DataType(dataType: .joinGroup, data: joinMember),
-        DataType(dataType: .productItems(products.count), data: products),
-        DataType(dataType: .order, data: order),
-        DataType(dataType: .productDetail, data: productDetail),
-        DataType(dataType: .commnetTitle, data: []),
-        DataType(dataType: .previousComments(comments.count), data: comments),
-        DataType(dataType: .sendComment, data: [])
-    ]
+    lazy var allData: [DataType] = []
+    
+    var a = "test"
+    
+    var testtest: String {
+    
+        return a
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        
+        print(testtest)
+        
+        a = "george"
+        
+        print(testtest)
+        
+        withUnsafePointer(to: &allData) {
+            print(" str value \(allData) has address: \($0)")
+        }
     }
     
     private func setup() {
@@ -309,14 +333,14 @@ extension DetailViewController: UITableViewDelegate {
         
         case .commnetTitle:
             
-            return  self.view.frame.width * (35 / 375)
+            return self.view.frame.width * (35 / 375)
         
         case .previousComments:
             
             return  UITableView.automaticDimension
         case .sendComment:
             
-            return   self.view.frame.width * (53 / 375)
+            return cellHeight
 
         }
         
@@ -597,22 +621,18 @@ extension DetailViewController: CellDelegate {
             groupId: article.first!.groupId!
         )
         
-        guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .previousComments(comments.count)}) else {
-            
-            return
-        }
-
         comments.append(comment)
-
-        allData[sectionIndex] = DataType(
-            dataType: .previousComments(comments.count),
-            data: comments)
         
-        self.tableView.reloadData()
+        self.reloadData()
+        
+        let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
+        
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     func resizing(heightGap: CGFloat) {
         
+        cellHeight += heightGap
         tableView.contentInset.bottom += heightGap
         tableView.contentOffset.y += heightGap
         
@@ -675,7 +695,7 @@ extension DetailViewController: CellDelegate {
         
         cell.collectionView.reloadData()
         
-        tableView.reloadData()
+        reloadData()
     }
 
 }
