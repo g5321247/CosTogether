@@ -22,10 +22,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var averageEvaluationLbl: UILabel!
     @IBOutlet weak var numberOfEvaluationLbl: UILabel!
     @IBOutlet weak var evaluateButton: UIButton!
-    @IBOutlet weak var reportUserBot: UIButton!
     
-    var userType: UserType = .currentUser
-    #warning ("userInfo == current 的 uuid 時，才為 current user")
+    var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
     
     override func viewDidLoad() {
@@ -55,7 +53,7 @@ class ProfileViewController: UIViewController {
     private func userImageSetup(user: UserType) {
 
         switch user {
-        case .currentUser:
+        case .currentUser, .currentTabProfile:
             
             guard let currentUser = Auth.auth().currentUser else {
                 
@@ -71,14 +69,8 @@ class ProfileViewController: UIViewController {
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
             
-            reportUserBot.isEnabled = false
-            reportUserBot.isHidden = true
-            
         case .otherUser:
-            
-            reportUserBot.isHidden = false
-            reportUserBot.isEnabled = true
-
+            break
             
         }
         
@@ -97,19 +89,29 @@ class ProfileViewController: UIViewController {
     func topBotSetup(user: UserType) {
         
         switch user {
+        
+        case .currentTabProfile:
+            
+            topView.rightBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
+
+            topView.rightBot.titleLabel!.text = ""
+            
+            topView.leftBot.isEnabled = false
+            topView.leftBot.isHidden = true
             
         case .currentUser:
             
             topView.rightBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
             
-            topView.leftBot.isEnabled = false
-            topView.leftBot.isHidden = true
+            topView.rightBot.titleLabel!.text = ""
+            
+            topView.leftBot.isEnabled = true
+            topView.leftBot.isHidden = false
             
         case .otherUser:
             
-            topView.rightBot.isEnabled = false
-            topView.rightBot.isHidden = true
-            topView.rightBot.setImage(#imageLiteral(resourceName: "chat"), for: UIControl.State.normal)
+            topView.rightBot.isEnabled = true
+            topView.rightBot.isHidden = false
             
             topView.leftBot.isEnabled = true
             topView.leftBot.isHidden = false
@@ -124,7 +126,7 @@ class ProfileViewController: UIViewController {
         
         switch userType {
             
-        case .currentUser:
+        case .currentUser, .currentTabProfile:
             
             let alert = UIAlertController(title: "登出", message: "您是否要登出帳號？", preferredStyle: UIAlertController.Style.alert)
             
@@ -145,18 +147,9 @@ class ProfileViewController: UIViewController {
             
             self.present(alert, animated: true, completion: nil)
 
-        #warning ("跳到聊天頁面")
         case .otherUser:
             
-            guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
-                withIdentifier: String(describing: ChatRoomViewController.self)
-                ) as? ChatRoomViewController else {
-                    
-                    return
-                    
-            }
-            
-            show(controller, sender: nil)
+            reportingUser()
             
             return
         }
@@ -190,7 +183,7 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @IBAction func reportingUser(_ sender: UIButton) {
+    func reportingUser() {
         
         let alert = UIAlertController(title: "檢舉使用者", message: "您將對該使用者進行檢舉，請進行確認", preferredStyle: UIAlertController.Style.alert)
         

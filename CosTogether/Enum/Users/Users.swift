@@ -10,6 +10,7 @@ import Foundation
 
 enum UserType {
     
+    case currentTabProfile
     case currentUser
     case otherUser
     
