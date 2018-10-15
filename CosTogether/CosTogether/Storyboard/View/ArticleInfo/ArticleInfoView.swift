@@ -26,6 +26,21 @@ class ArticleInfoView: UIView {
         
     }
     
+    func updateGroupHistory(ownGroup: OwnGroup) {
+        
+        
+        articleTitleLbl.text = ownGroup.products.first?.productName
+        
+        guard let productUrl = ownGroup.products.first?.productImage else {
+            return
+        }
+        
+        let url = URL(string: productUrl)
+        
+        productImage?.sd_setImage(with: url)
+        
+    }
+    
     func updateArticle(groupArticle: Group) {
         
         authorNameLbl?.text = groupArticle.owner?.userName

@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import Firebase
+import SDWebImage
 
 class MyGroupViewController: UIViewController {
 
@@ -22,7 +23,7 @@ class MyGroupViewController: UIViewController {
     
     var myGroup: MyGroup = .join
     
-    var group: [OwnGroup] = []
+    var myGroups: [OwnGroup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +54,15 @@ class MyGroupViewController: UIViewController {
         
         firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
             
-            self.group.append(group)
+            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+
+            self.myGroups.append(group)
+            
             self.checkMyGroupIsEmpty()
             self.tableView.reloadData()
+
+            })
+            
         }
         
     }
@@ -64,7 +71,7 @@ class MyGroupViewController: UIViewController {
     
         let animationView = LOTAnimationView(name: "get_started_slider")
         
-        guard group.count == 0 else {
+        guard myGroups.count == 0 else {
             
             emptyLbl.isHidden = true
             
@@ -150,7 +157,7 @@ extension MyGroupViewController: UITableViewDelegate {
 extension MyGroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return group.count
+        return myGroups.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -162,6 +169,8 @@ extension MyGroupViewController: UITableViewDataSource {
                 return UITableViewCell()
                 
         }
+        
+        cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
         cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
         

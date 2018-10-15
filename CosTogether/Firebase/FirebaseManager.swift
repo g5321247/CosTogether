@@ -168,8 +168,8 @@ struct FirebaseManager {
             for value in productName {
                 
                 guard let product = products[value] as? NSDictionary,
-                let imageUrl = product["imageUrl"] as? String,
-                let numberOfItem = product["numberOfItem"] as? Int,
+                    let imageUrl = product["imageUrl"] as? String,
+                    let numberOfItem = product["numberOfItem"] as? Int,
                     let price = product["price"] as? Int else {
                         
                         return
@@ -291,7 +291,7 @@ struct FirebaseManager {
                 products.append(product)
             }
             
-            let ownGroup = OwnGroup(articleId: snapshot.key, products: products)
+            let ownGroup = OwnGroup(groupType: groupType, groupId: snapshot.key, products: products)
             
             completion(ownGroup)
         }
@@ -427,4 +427,89 @@ extension FirebaseManager {
         
     }
     
+    func getGroupInfo(ownGroup: OwnGroup, completion: @escaping (OwnGroup) -> Void) {
+        
+        let refrence = Database.database().reference()
+        refrence.child("group").child(ownGroup.groupType.rawValue).child(ownGroup.groupId).observeSingleEvent(of: .value) { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            guard let article = value?["article"] as? NSDictionary,
+                let location = article["location"] as? String,
+                let postDate = article["postDate"] as? String,
+                let title = article["title"] as? String,
+                let content = article["content"] as? String else {
+                    
+                    return
+                    
+            }
+            
+            let articleModel = ArticleModel(
+                articleTitle: title,
+                location: location,
+                postDate: postDate,
+                content: content
+            )
+            
+            guard let products = value?["products"] as? NSDictionary,
+                let productName = products.allKeys as? [String] else {
+                    
+                    
+                    return
+            }
+            
+            var productsArray: [ProductModel] = []
+            
+            for value in productName {
+                
+                guard let product = products[value] as? NSDictionary,
+                    let imageUrl = product["imageUrl"] as? String,
+                    let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int else {
+                        
+                        return
+                }
+                
+                productsArray.append(
+                    ProductModel(
+                        productName: value,
+                        productImage: imageUrl,
+                        numberOfItem: numberOfItem,
+                        price: price
+                    )
+                )
+                
+            }
+
+            guard let users = value?["users"] as? NSDictionary,
+                let ownerId = users["ownerId"] as? String else {
+                    
+                    return
+            }
+            
+            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+                
+                let group = Group(
+                    openType: ownGroup.groupType,
+                    article: articleModel,
+                    products: productsArray,
+                    userID: ownerId,
+                    owner: userModel,
+                    groupId: ownGroup.groupId
+                )
+                
+                let own = OwnGroup(
+                    groupType: ownGroup.groupType,
+                    groupId: ownGroup.groupId,
+                    products: ownGroup.products,
+                    group: group
+                )
+                
+                completion(own)
+                
+            })
+
+        
+        }
+    }
 }

@@ -22,9 +22,24 @@ protocol DataProtocol {
 
 struct OwnGroup: DataProtocol {
     
-    var articleId: String
-    var products: [ProductModel]
+    let groupType: OpenGroupType
+    let groupId: String
+    let products: [ProductModel]
+    var group: Group?
     
+    init(
+        groupType: OpenGroupType,
+        groupId: String,
+        products: [ProductModel],
+        group: Group? = nil
+        ) {
+        
+        self.groupType = groupType
+        self.groupId = groupId
+        self.products = products
+        self.group = group
+    }
+
 }
 
 struct Group: DataProtocol {
