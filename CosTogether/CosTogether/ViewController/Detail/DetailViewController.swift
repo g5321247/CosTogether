@@ -100,27 +100,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     lazy var allData: [DataType] = []
     
-    var a = "test"
-    
-    var testtest: String {
-    
-        return a
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         
-        print(testtest)
-        
-        a = "george"
-        
-        print(testtest)
-        
-        withUnsafePointer(to: &allData) {
-            print(" str value \(allData) has address: \($0)")
-        }
     }
     
     private func setup() {
@@ -129,6 +113,12 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         tableViewSetup()
         topLogViewSetup()
         
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+
         Analytics.logEvent("LookProduct", parameters: nil)
 
     }
@@ -148,6 +138,22 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             ])
         
     }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        if let keyboardSize =
+            (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            reloadData()
+            
+            let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
+
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+
+        }
+        
+    }
+
     
     private func tableViewSetup() {
         
