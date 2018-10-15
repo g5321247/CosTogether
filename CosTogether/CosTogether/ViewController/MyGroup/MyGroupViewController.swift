@@ -45,11 +45,8 @@ class MyGroupViewController: UIViewController {
         
         setUpCell()
         tableViewSetup()
-//        downloadMyGroup()
+        downloadMyGroup()
         
-        #warning("測試用,要刪掉,因為已經放在 downloadMyGroup")
-        self.checkMyGroupIsEmpty()
-
     }
     
     private func downloadMyGroup() {
@@ -86,8 +83,6 @@ class MyGroupViewController: UIViewController {
         self.tableView.addSubview(animationView)
         
         animationView.play()
-        
-
         
     }
     

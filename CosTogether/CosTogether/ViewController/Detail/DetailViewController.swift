@@ -72,10 +72,12 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
+        self.reloadData(orderAlready: self.orderAlready)
 
         firebaseManager.downloadCommentUser(group: group) { (comment) in
             
             self.comments.append(comment)
+            self.reloadData(orderAlready: self.orderAlready)
         }
         
         firebaseManager.downloadGroupUser(group: group) { (memberIds) in

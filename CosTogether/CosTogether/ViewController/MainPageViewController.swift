@@ -16,6 +16,9 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var shareBuyView: UIView!
     @IBOutlet weak var helpBuyView: UIView!
     
+    var shareBuyController: ShareBuyViewController?
+    var helpBuyController: ShareBuyViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +59,25 @@ class MainPageViewController: UIViewController {
             break
         }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToShareBuy" {
+            
+            shareBuyController = segue.destination as?  ShareBuyViewController
+            
+            shareBuyController?.loadViewIfNeeded()
+            shareBuyController?.openGroupType = .shareBuy
+
+        } else if segue.identifier == "goToHelpBuy"  {
+            
+            helpBuyController = segue.destination as? ShareBuyViewController
+            
+            helpBuyController?.loadViewIfNeeded()
+            helpBuyController?.openGroupType = .helpBuy
+        }
+        
     }
     
     #warning ("點擊地圖時")

@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HelpBuyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let firebaseManager = FirebaseManager()
+    
     var openGroupType: OpenGroupType = .helpBuy
     
-    var products: [DataProtocol] = []
-
+    var group: [Group] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +29,9 @@ class HelpBuyViewController: UIViewController {
     private func setup() {
         
         setColletionView()
+        downloadData()
+        
+        SVProgressHUD.dismiss()
         
     }
     
@@ -37,6 +43,18 @@ class HelpBuyViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        
+    }
+    
+    private func downloadData() {
+        
+        SVProgressHUD.show()
+        
+        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            self.group.append(groupData)
+            self.collectionView.reloadData()
+        }
         
     }
     
@@ -56,16 +74,17 @@ extension HelpBuyViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        guard products.count > 0 else {
+        
+        guard group.count > 0 else {
             
             collectionView.isHidden = true
             return 0
         }
         
         collectionView.isHidden = false
-
-        return products.count
+        
+        return group.count
+        
     }
     
     func collectionView(
@@ -82,6 +101,13 @@ extension HelpBuyViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
                 
         }
+        
+        cell.updateGroupInfo(
+            productUrl: group[indexPath.row].products.first?.productImage ?? "",
+            authorUrl: group[indexPath.row].owner?.userImage ?? "",
+            title:  group[indexPath.row].article.articleTitle,
+            location: group[indexPath.row].article.location
+        )
         
         return cell
     }
@@ -115,7 +141,7 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 10
+        return 20
     }
     
     func collectionView(
@@ -140,8 +166,9 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
                 
         }
         
-        //        controller.loadViewIfNeeded()
-        //        controller.article = articles[indexPath.row]
+        #warning ("傳姪過去")
+        controller.loadViewIfNeeded()
+        controller.updateInfo(group: group[indexPath.row])
         
         show(controller, sender: nil)
     }

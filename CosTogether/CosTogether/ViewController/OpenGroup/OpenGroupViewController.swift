@@ -74,9 +74,9 @@ class OpenGroupViewController: UIViewController {
             
             collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
             collectionView.cornerSetup(
-                cornerRadius: 0,
+                cornerRadius: 4 ,
                 borderWidth: 1,
-                borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
+                borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1),
                 maskToBounds: true
             )
             
