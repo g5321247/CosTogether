@@ -28,8 +28,7 @@ class OwnShareBuyViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        
-        
+    
     }
     
     private func setup() {
@@ -42,7 +41,7 @@ class OwnShareBuyViewController: UIViewController {
     
     private func downloadMyGroup() {
         
-        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
+        firebaseManager.downloadMyOwnGroup(groupType: groupType, myGroup: myGroup) { (group) in
             
             self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
                 

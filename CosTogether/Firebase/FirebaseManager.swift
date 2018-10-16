@@ -512,4 +512,108 @@ extension FirebaseManager {
         
         }
     }
+    
+    func downloadMyOwnGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
+        
+        let refrence = Database.database().reference()
+        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+            
+            guard let groupId = snapshot.value as? String else {
+                
+                return
+            }
+            
+            self.getOpenGroupInfo(groupType: groupType, groupId: groupId, completion: { (ownGroup) in
+                completion(ownGroup)
+            })
+        }
+            
+    }
+    
+    func getOpenGroupInfo(groupType: OpenGroupType, groupId: String, completion: @escaping (OwnGroup) -> Void) {
+        
+        let refrence = Database.database().reference()
+        refrence.child("group").child(groupType.rawValue).child(groupId).observeSingleEvent(of: .value) { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            guard let article = value?["article"] as? NSDictionary,
+                let location = article["location"] as? String,
+                let postDate = article["postDate"] as? String,
+                let title = article["title"] as? String,
+                let content = article["content"] as? String else {
+                    
+                    return
+                    
+            }
+            
+            let articleModel = ArticleModel(
+                articleTitle: title,
+                location: location,
+                postDate: postDate,
+                content: content
+            )
+            
+            guard let products = value?["products"] as? NSDictionary,
+                let productName = products.allKeys as? [String] else {
+                    
+                    
+                    return
+            }
+            
+            var productsArray: [ProductModel] = []
+            
+            for value in productName {
+                
+                guard let product = products[value] as? NSDictionary,
+                    let imageUrl = product["imageUrl"] as? String,
+                    let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int else {
+                        
+                        return
+                }
+                
+                productsArray.append(
+                    ProductModel(
+                        productName: value,
+                        productImage: imageUrl,
+                        numberOfItem: numberOfItem,
+                        price: price
+                    )
+                )
+                
+            }
+            
+            guard let users = value?["users"] as? NSDictionary,
+                let ownerId = users["ownerId"] as? String else {
+                    
+                    return
+            }
+            
+            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+                
+                let group = Group(
+                    openType: groupType,
+                    article: articleModel,
+                    products: productsArray,
+                    userID: Auth.auth().currentUser!.uid,
+                    owner: userModel,
+                    groupId: groupId
+                )
+
+                let own = OwnGroup(
+                    groupType: groupType,
+                    groupId: groupId,
+                    products: productsArray,
+                    group: group
+                )
+                
+                completion(own)
+                
+            })
+            
+            
+        }
+    }
+    
 }

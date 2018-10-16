@@ -52,7 +52,7 @@ class HelpBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            self.group.append(groupData)
+            self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
         }
         
