@@ -28,6 +28,25 @@ class AppendNewItemViewController: UIViewController {
         
         setup()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        CosNavigationControllerViewController.isLightStatusBar = false
+    }
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
+
+    }
     
     private func setup() {
         

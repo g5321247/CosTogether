@@ -368,7 +368,25 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-br-gNS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fST-Hd-eS4">
+                                        <rect key="frame" x="315" y="18.5" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fST-Hd-eS4" secondAttribute="height" multiplier="1:1" id="4pq-Oq-MUd"/>
+                                            <constraint firstAttribute="height" constant="36" id="MeL-Su-Lae"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="upload-button"/>
+                                        <connections>
+                                            <action selector="uploadToServer:" destination="qcn-qw-UXf" eventType="touchUpInside" id="vE5-JP-Yds"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fST-Hd-eS4" firstAttribute="width" secondItem="fST-Hd-eS4" secondAttribute="height" multiplier="1:1" id="eSw-YZ-r8S"/>
+                                    <constraint firstAttribute="trailing" secondItem="fST-Hd-eS4" secondAttribute="trailing" constant="24" id="xjl-XR-gUm"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-Oo-Lgf">
                                 <rect key="frame" x="24" y="29" width="30" height="15"/>
@@ -378,6 +396,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backToRootViw:" destination="qcn-qw-UXf" eventType="touchUpInside" id="5Q7-cq-BEd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開分購" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-vh-otM">
                                 <rect key="frame" x="151.5" y="20" width="72" height="33"/>
@@ -389,6 +410,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="trailing" secondItem="wbd-BJ-HPZ" secondAttribute="trailing" constant="25" id="0Rd-W3-3Vn"/>
+                            <constraint firstItem="fST-Hd-eS4" firstAttribute="centerY" secondItem="TYL-vh-otM" secondAttribute="centerY" id="308-5Z-at1"/>
                             <constraint firstItem="SDu-br-gNS" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" id="7mG-ZJ-f33"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="Ovl-Yu-nMA" secondAttribute="bottom" id="7uB-Ag-6G9"/>
                             <constraint firstItem="Ovl-Yu-nMA" firstAttribute="trailing" secondItem="Lak-e3-1qA" secondAttribute="trailing" id="8Pz-6F-OVG"/>
@@ -429,9 +451,6 @@
                                 <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="upload-button"/>
-                                <connections>
-                                    <action selector="uploadToServer:" destination="qcn-qw-UXf" eventType="touchUpInside" id="WKI-Jt-IfI"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

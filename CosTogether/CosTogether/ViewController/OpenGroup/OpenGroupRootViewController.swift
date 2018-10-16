@@ -81,6 +81,8 @@ class OpenGroupRootViewController: UIViewController {
             
             controller.topTitleLbl.text = "開分購"
             
+            CosNavigationControllerViewController.isLightStatusBar = true
+            
             show(controller, sender: nil)
             
         case 1:
@@ -92,8 +94,9 @@ class OpenGroupRootViewController: UIViewController {
             
             controller.loadViewIfNeeded()
 
-            
-            controller.topTitleLbl.text = "開團購"
+            CosNavigationControllerViewController.isLightStatusBar = true
+
+            controller.topTitleLbl.text = "幫團購"
             
             show(controller, sender: nil)
 

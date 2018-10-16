@@ -51,6 +51,7 @@
 		C849752B2157C25D00555855 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849752A2157C25D00555855 /* Product.swift */; };
 		C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF26A216E013B00CF5A47 /* Date+.swift */; };
 		C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */; };
+		C85151C22175D2D3007B1324 /* CosNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
 		C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */; };
 		C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786A0F216CDE1B001D2C63 /* PickerView.swift */; };
@@ -154,6 +155,7 @@
 		C849752A2157C25D00555855 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C84AF26A216E013B00CF5A47 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnShareBuyViewController.swift; sourceTree = "<group>"; };
+		C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosNavigationControllerViewController.swift; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageStoryboard.storyboard; sourceTree = "<group>"; };
 		C8786A0F216CDE1B001D2C63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */,
 				C84975242157BAF200555855 /* LogIn */,
 				C8FB98B9216103D800C78926 /* Chat */,
 				C82FA85F215A180900B75284 /* Detail */,
@@ -1002,6 +1005,7 @@
 				C823A25F21675AA60066D635 /* ShareBuyViewController.swift in Sources */,
 				C87B44722167017300283767 /* OpenGroupType.swift in Sources */,
 				C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */,
+				C85151C22175D2D3007B1324 /* CosNavigationControllerViewController.swift in Sources */,
 				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,
 				C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,

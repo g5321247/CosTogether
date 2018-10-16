@@ -49,8 +49,10 @@ class CreateGroupViewController: UIViewController {
 
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        CosNavigationControllerViewController.isLightStatusBar = false
     }
     
     private func setup() {
@@ -119,6 +121,11 @@ class CreateGroupViewController: UIViewController {
         let nibCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
         
+    }
+    
+    @IBAction func backToRootViw(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func newProductBotTapping(_ sender: UIButton) {
@@ -276,6 +283,9 @@ class CreateGroupViewController: UIViewController {
             SVProgressHUD.dismiss()
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
             self.resetViewWhenUploadSucess()
+
+            self.navigationController?.popViewController(animated: true)
+
         }
     
     }

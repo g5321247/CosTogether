@@ -652,7 +652,7 @@
         <!--我的揪團-->
         <scene sceneID="xup-TF-g87">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXb-6p-dV0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXb-6p-dV0" customClass="CosNavigationControllerViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的揪團" image="shopping" id="stK-AV-ZB2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0GW-2d-elP">
@@ -838,7 +838,7 @@
         <!--開團 Go-->
         <scene sceneID="C2G-dN-29E">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZr-OR-9iW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZr-OR-9iW" customClass="CosNavigationControllerViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="開團 Go" image="open" id="JzN-U7-vR7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GOk-eI-L5h">
