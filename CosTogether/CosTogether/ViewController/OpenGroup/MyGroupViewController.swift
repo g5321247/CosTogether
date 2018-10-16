@@ -50,21 +50,12 @@ class MyGroupViewController: UIViewController {
     private func setup() {
         
         setColletionView()
-        navigationBarSetup()
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         segmentedControl.addUnderlineForSelectedSegment()
         
     }
     
-    private func navigationBarSetup() {
-        
-        let  image = UIImage()
-
-        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.shadowImage = image
-    }
     
     private func checkoutProductNumber() {
         
