@@ -17,8 +17,8 @@ class CreateArticleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        titleTxf.delegate = self
         contentTextView.delegate = self
-        
     }
     
     override func layoutSubviews() {
@@ -70,6 +70,8 @@ extension CreateArticleView: UITextViewDelegate {
   
     func textViewDidBeginEditing(_ textView: UITextView) {
         
+        CosNavigationControllerViewController.isLightStatusBar = true
+        
         if textView.textColor == UIColor.lightGray {
             
             textView.text = nil
@@ -81,6 +83,8 @@ extension CreateArticleView: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         
+        CosNavigationControllerViewController.isLightStatusBar = true
+        
         if textView.text.isEmpty {
             
             textView.text = "請輸入揪團詳細資訊內容..."
@@ -90,4 +94,17 @@ extension CreateArticleView: UITextViewDelegate {
         
     }
 
+}
+
+extension CreateArticleView: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        CosNavigationControllerViewController.isLightStatusBar = true
+
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//        CosNavigationControllerViewController.isLightStatusBar = true
+
+    }
 }

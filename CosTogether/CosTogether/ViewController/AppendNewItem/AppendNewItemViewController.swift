@@ -35,16 +35,10 @@ class AppendNewItemViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated)
-        CosNavigationControllerViewController.isLightStatusBar = false
-    }
-
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = true
+        
 
     }
     
@@ -114,6 +108,8 @@ class AppendNewItemViewController: UIViewController {
         }
         
         passProductInfo(product)
+        
+        CosNavigationControllerViewController.isLightStatusBar = true
         
         navigationController?.popViewController(animated: true)
         

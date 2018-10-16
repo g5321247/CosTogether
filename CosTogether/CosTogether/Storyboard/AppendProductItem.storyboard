@@ -388,11 +388,10 @@
                                     <constraint firstAttribute="trailing" secondItem="fST-Hd-eS4" secondAttribute="trailing" constant="24" id="xjl-XR-gUm"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-Oo-Lgf">
-                                <rect key="frame" x="24" y="29" width="30" height="15"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-Oo-Lgf">
+                                <rect key="frame" x="24" y="21.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="G70-sY-AUN"/>
-                                    <constraint firstAttribute="width" secondItem="KLn-Oo-Lgf" secondAttribute="height" multiplier="2:1" id="KF0-v3-ocJ"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="back"/>
@@ -422,7 +421,7 @@
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="trailing" secondItem="wJd-sy-cEF" secondAttribute="trailing" constant="15" id="GO4-QT-FlE"/>
                             <constraint firstItem="wJd-sy-cEF" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="I4k-6W-KAq"/>
                             <constraint firstAttribute="trailing" secondItem="SDu-br-gNS" secondAttribute="trailing" id="IQg-MZ-Iut"/>
-                            <constraint firstItem="KLn-Oo-Lgf" firstAttribute="width" secondItem="KLn-Oo-Lgf" secondAttribute="height" multiplier="2:1" id="PmR-2F-bOr"/>
+                            <constraint firstItem="KLn-Oo-Lgf" firstAttribute="width" secondItem="KLn-Oo-Lgf" secondAttribute="height" multiplier="1:1" id="PmR-2F-bOr"/>
                             <constraint firstItem="TYL-vh-otM" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="topMargin" id="Rwb-QU-GXR"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="mvp-qs-WKh" secondAttribute="bottom" constant="25" id="VcR-0M-gB5"/>
                             <constraint firstItem="TYL-vh-otM" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="ZBc-Y5-9Yd"/>
@@ -474,7 +473,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="764" height="331"/>
+        <image name="back" width="256" height="256"/>
         <image name="default_background" width="3000" height="2000"/>
         <image name="dollar" width="256" height="256"/>
         <image name="location" width="16" height="16"/>

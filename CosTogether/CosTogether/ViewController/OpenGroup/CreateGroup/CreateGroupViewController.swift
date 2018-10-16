@@ -44,15 +44,9 @@ class CreateGroupViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         checkoutProductNumber()
 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated)
-        CosNavigationControllerViewController.isLightStatusBar = false
     }
     
     private func setup() {
@@ -125,6 +119,8 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func backToRootViw(_ sender: UIButton) {
         
+        CosNavigationControllerViewController.isLightStatusBar = false
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -145,6 +141,8 @@ class CreateGroupViewController: UIViewController {
             
         }
         
+        CosNavigationControllerViewController.isLightStatusBar = false
+
         show(controller, sender: nil)
     }
     
@@ -284,6 +282,8 @@ class CreateGroupViewController: UIViewController {
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
             
 //            self.resetViewWhenUploadSucess()
+
+            CosNavigationControllerViewController.isLightStatusBar = false
 
             self.navigationController?.popViewController(animated: true)
 

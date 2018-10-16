@@ -959,7 +959,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何分購，快來開團吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-rf-M1A">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何分購，快來開團吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-rf-M1A">
                                         <rect key="frame" x="-4.5" y="224" width="384" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -995,10 +995,10 @@
             </objects>
             <point key="canvasLocation" x="4033" y="730"/>
         </scene>
-        <!--View Controller-->
+        <!--Own Help Buy View Controller-->
         <scene sceneID="Anp-Xd-GEL">
             <objects>
-                <viewController id="1w5-gK-Lki" sceneMemberID="viewController">
+                <viewController id="1w5-gK-Lki" customClass="OwnHelpBuyViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQA-OQ-YBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1016,7 +1016,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何團購，快來開團吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-9f-LP8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何團購，快來開團吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-9f-LP8">
                                         <rect key="frame" x="-4.5" y="224" width="384" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1045,6 +1045,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hpm-5Y-M1L"/>
                     </view>
+                    <connections>
+                        <outlet property="emptyLbl" destination="kvQ-9f-LP8" id="z1n-Ht-lVF"/>
+                        <outlet property="tableView" destination="snF-9e-jNX" id="MNF-xY-EfX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meE-lS-466" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1053,7 +1057,7 @@
     </scenes>
     <resources>
         <image name="Profile" width="16" height="16"/>
-        <image name="back" width="764" height="331"/>
+        <image name="back" width="256" height="256"/>
         <image name="chat" width="32" height="32"/>
         <image name="map" width="32" height="32"/>
         <image name="open" width="16" height="16"/>

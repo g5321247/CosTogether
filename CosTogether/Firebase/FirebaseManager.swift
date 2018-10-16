@@ -346,7 +346,7 @@ extension FirebaseManager {
             ]
         )
         
-        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").child(group.openType.rawValue).setValue(
+        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").child(group.openType.rawValue).updateChildValues(
             [
                 key: key
             ]
