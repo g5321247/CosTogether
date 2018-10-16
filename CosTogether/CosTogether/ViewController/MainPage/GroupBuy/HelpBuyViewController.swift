@@ -106,7 +106,8 @@ extension HelpBuyViewController: UICollectionViewDataSource {
             productUrl: group[indexPath.row].products.first?.productImage ?? "",
             authorUrl: group[indexPath.row].owner?.userImage ?? "",
             title:  group[indexPath.row].article.articleTitle,
-            location: group[indexPath.row].article.location
+            location: group[indexPath.row].article.location,
+            postDate: group[indexPath.row].article.postDate
         )
         
         return cell

@@ -14,6 +14,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var postDateLbL: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,11 +68,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productUrl: String,
         authorUrl: String,
         title: String,
-        location: String
+        location: String,
+        postDate: String
         ) {
         
         titleLbl.text = title
         locationLbl.text = location
+        postDateLbL.text = postDate
         
         guard productUrl != "" else {
 

@@ -14,7 +14,7 @@ extension Date {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "YYYY/MM/dd"
+        dateFormatter.dateFormat = "MM/dd"
         dateFormatter.locale = Locale.current
         
         return dateFormatter.string(from: Date())

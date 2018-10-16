@@ -106,7 +106,8 @@ extension ShareBuyViewController: UICollectionViewDataSource {
             productUrl: group[indexPath.row].products.first?.productImage ?? "",
             authorUrl: group[indexPath.row].owner?.userImage ?? "",
             title:  group[indexPath.row].article.articleTitle,
-            location: group[indexPath.row].article.location
+            location: group[indexPath.row].article.location,
+            postDate:  group[indexPath.row].article.postDate
         )
         
         return cell
@@ -166,9 +167,8 @@ extension ShareBuyViewController: UICollectionViewDelegateFlowLayout {
                 
         }
 
-        #warning ("傳姪過去")
-                controller.loadViewIfNeeded()
-                controller.updateInfo(group: group[indexPath.row])
+        controller.loadViewIfNeeded()
+        controller.updateInfo(group: group[indexPath.row])
         
         show(controller, sender: nil)
     }
