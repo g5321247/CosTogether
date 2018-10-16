@@ -12,7 +12,7 @@ import Firebase
 import AnimatedCollectionViewLayout
 import SVProgressHUD
 
-class MyGroupViewController: UIViewController {
+class CreateGroupViewController: UIViewController {
 
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var inCollectionViewLbl: UILabel!
@@ -22,7 +22,6 @@ class MyGroupViewController: UIViewController {
     @IBOutlet weak var pickerViewBackgroundView: UIView!
     @IBOutlet weak var createArticle: CreateArticleView!
     @IBOutlet weak var pickerView: PickerView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let dispatchGroup = DispatchGroup()
     
@@ -52,7 +51,6 @@ class MyGroupViewController: UIViewController {
         setColletionView()
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
-        segmentedControl.addUnderlineForSelectedSegment()
         
     }
     
@@ -298,31 +296,9 @@ class MyGroupViewController: UIViewController {
         
     }
     
-    @IBAction func switchGroupType(_ sender: UISegmentedControl) {
-        
-        segmentedControl.changeUnderlinePosition()
-
-        switch segmentedControl.selectedSegmentIndex {
-            
-        case 0:
-        
-            openGroupType = .shareBuy
-            
-        case 1:
-        
-            openGroupType = .helpBuy
-            
-        default:
-            
-            openGroupType = .shareBuy
-            
-        }
-        
-    }
-    
 }
 
-extension MyGroupViewController: UICollectionViewDataSource {
+extension CreateGroupViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -356,7 +332,7 @@ extension MyGroupViewController: UICollectionViewDataSource {
     
 }
 
-extension MyGroupViewController: UICollectionViewDelegateFlowLayout {
+extension CreateGroupViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(
         _ collectionView: UICollectionView,
@@ -468,7 +444,7 @@ extension MyGroupViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
-extension MyGroupViewController: PickerViewDelegate {
+extension CreateGroupViewController: PickerViewDelegate {
    
     func passCity(city: String) {
         

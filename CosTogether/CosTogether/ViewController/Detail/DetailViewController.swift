@@ -695,7 +695,7 @@ extension DetailViewController: CellDelegate {
 
         }
         
-        let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success)
+        let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到我的家團查詢", style: .success)
         banner.show()
 
         #warning ("加團失敗的警告")
