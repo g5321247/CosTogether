@@ -98,6 +98,8 @@ class OpenGroupRootViewController: UIViewController {
 
             controller.topTitleLbl.text = "幫團購"
             
+            controller.openGroupType = .helpBuy
+            
             show(controller, sender: nil)
 
         default:
