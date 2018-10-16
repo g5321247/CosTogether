@@ -29,7 +29,7 @@ class ArticleInfoView: UIView {
     func updateGroupHistory(ownGroup: OwnGroup) {
         
         
-        articleTitleLbl.text = ownGroup.products.first?.productName
+        articleTitleLbl.text = ownGroup.group?.article.articleTitle
         
         guard let productUrl = ownGroup.products.first?.productImage else {
             return

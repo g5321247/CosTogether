@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7FB987A39C7DF7ED0D6B6105 /* Pods_CosTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */; };
 		C80187F22173637700FAC704 /* get_started_slider.json in Resources */ = {isa = PBXBuildFile; fileRef = C80187F12173637700FAC704 /* get_started_slider.json */; };
+		C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F5217576BA00FAC704 /* GroupRootViewController.swift */; };
+		C80187F8217583A000FAC704 /* OwnGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F7217583A000FAC704 /* OwnGroupViewController.swift */; };
+		C80187FB21758A5000FAC704 /* OepnGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F921758A5000FAC704 /* OepnGroupTableViewCell.swift */; };
+		C80187FC21758A5000FAC704 /* OepnGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80187FA21758A5000FAC704 /* OepnGroupTableViewCell.xib */; };
+		C80187FF21758BE100FAC704 /* OpenGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187FE21758BE100FAC704 /* OpenGroupViewController.swift */; };
 		C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A71E92162298D00ED4FE9 /* DetailManager.swift */; };
 		C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61EE216A10E100A59F28 /* ProductSettingView.swift */; };
 		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
@@ -22,7 +27,7 @@
 		C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */; };
 		C823A25F21675AA60066D635 /* ShareBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A25E21675AA60066D635 /* ShareBuyViewController.swift */; };
 		C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A26021675B1C0066D635 /* HelpBuyViewController.swift */; };
-		C823A263216768820066D635 /* OpenGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A262216768820066D635 /* OpenGroupViewController.swift */; };
+		C823A263216768820066D635 /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A262216768820066D635 /* MyGroupViewController.swift */; };
 		C823A2662168B1A50066D635 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C823A2652168B1A50066D635 /* Detail.storyboard */; };
 		C823A26A2169049D0066D635 /* CreateArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C823A2692169049D0066D635 /* CreateArticleView.swift */; };
 		C827FAD8216080DA008AB665 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827FAD7216080DA008AB665 /* Users.swift */; };
@@ -85,7 +90,7 @@
 		C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */; };
 		C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */; };
 		C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */; };
-		C8FB98C8216186F800C78926 /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C7216186F800C78926 /* MyGroupViewController.swift */; };
+		C8FB98C8216186F800C78926 /* MyJoinGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C7216186F800C78926 /* MyJoinGroupViewController.swift */; };
 		C8FB98CF2161951A00C78926 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98CD2161951A00C78926 /* GroupTableViewCell.swift */; };
 		C8FB98D02161951A00C78926 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98CE2161951A00C78926 /* GroupTableViewCell.xib */; };
 		C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */; };
@@ -98,6 +103,11 @@
 		69B08EB91AF6B59E4F5A2856 /* Pods-CosTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CosTogether/Pods-CosTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		B5257392143C21ADCF01DFB0 /* Pods_CosTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80187F12173637700FAC704 /* get_started_slider.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = get_started_slider.json; sourceTree = "<group>"; };
+		C80187F5217576BA00FAC704 /* GroupRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRootViewController.swift; sourceTree = "<group>"; };
+		C80187F7217583A000FAC704 /* OwnGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnGroupViewController.swift; sourceTree = "<group>"; };
+		C80187F921758A5000FAC704 /* OepnGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OepnGroupTableViewCell.swift; sourceTree = "<group>"; };
+		C80187FA21758A5000FAC704 /* OepnGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OepnGroupTableViewCell.xib; sourceTree = "<group>"; };
+		C80187FE21758BE100FAC704 /* OpenGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupViewController.swift; sourceTree = "<group>"; };
 		C80A71E92162298D00ED4FE9 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		C80B61EE216A10E100A59F28 /* ProductSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSettingView.swift; sourceTree = "<group>"; };
 		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
@@ -113,7 +123,7 @@
 		C8215FE72151FAC4006BC7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C823A25E21675AA60066D635 /* ShareBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBuyViewController.swift; sourceTree = "<group>"; };
 		C823A26021675B1C0066D635 /* HelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpBuyViewController.swift; sourceTree = "<group>"; };
-		C823A262216768820066D635 /* OpenGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupViewController.swift; sourceTree = "<group>"; };
+		C823A262216768820066D635 /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
 		C823A2652168B1A50066D635 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		C823A2692169049D0066D635 /* CreateArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticleView.swift; sourceTree = "<group>"; };
 		C827FAD7216080DA008AB665 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -182,7 +192,7 @@
 		C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhterMessageTableViewCell.swift; sourceTree = "<group>"; };
 		C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OhterMessageTableViewCell.xib; sourceTree = "<group>"; };
-		C8FB98C7216186F800C78926 /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
+		C8FB98C7216186F800C78926 /* MyJoinGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJoinGroupViewController.swift; sourceTree = "<group>"; };
 		C8FB98CD2161951A00C78926 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		C8FB98CE2161951A00C78926 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoView.swift; sourceTree = "<group>"; };
@@ -225,6 +235,15 @@
 				C80187F12173637700FAC704 /* get_started_slider.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		C80187FD21758A5B00FAC704 /* OpenGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C80187F921758A5000FAC704 /* OepnGroupTableViewCell.swift */,
+				C80187FA21758A5000FAC704 /* OepnGroupTableViewCell.xib */,
+			);
+			path = OpenGroup;
 			sourceTree = "<group>";
 		};
 		C80A71EB2162299300ED4FE9 /* Detail */ = {
@@ -469,7 +488,8 @@
 		C84AF269216DBCAA00CF5A47 /* OpenGroup */ = {
 			isa = PBXGroup;
 			children = (
-				C823A262216768820066D635 /* OpenGroupViewController.swift */,
+				C823A262216768820066D635 /* MyGroupViewController.swift */,
+				C80187FE21758BE100FAC704 /* OpenGroupViewController.swift */,
 			);
 			path = OpenGroup;
 			sourceTree = "<group>";
@@ -701,18 +721,20 @@
 		C8FB98C92161870100C78926 /* MyGroup */ = {
 			isa = PBXGroup;
 			children = (
-				C8FB98C7216186F800C78926 /* MyGroupViewController.swift */,
+				C8FB98C7216186F800C78926 /* MyJoinGroupViewController.swift */,
+				C80187F7217583A000FAC704 /* OwnGroupViewController.swift */,
+				C80187F5217576BA00FAC704 /* GroupRootViewController.swift */,
 			);
 			path = MyGroup;
 			sourceTree = "<group>";
 		};
-		C8FB98CC216194F800C78926 /* Group */ = {
+		C8FB98CC216194F800C78926 /* GroupHistory */ = {
 			isa = PBXGroup;
 			children = (
 				C8FB98CD2161951A00C78926 /* GroupTableViewCell.swift */,
 				C8FB98CE2161951A00C78926 /* GroupTableViewCell.xib */,
 			);
-			path = Group;
+			path = GroupHistory;
 			sourceTree = "<group>";
 		};
 		C8FCA3AD215BC557008724A3 /* ArticleInfo */ = {
@@ -736,6 +758,7 @@
 		C8FCA3B5215BCD99008724A3 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C80187FD21758A5B00FAC704 /* OpenGroup */,
 				C886097F215FA62D006B736A /* SendComment */,
 				C8C2B47D215F8BB80033FB28 /* CommonTitle */,
 				C8C2B478215F2B130033FB28 /* PreviousComment */,
@@ -747,7 +770,7 @@
 				C8BCF0E0215E9CE200A2B1B8 /* ProductDetail */,
 				C8C2B482215FA12B0033FB28 /* Segment */,
 				C8FB98C62161245300C78926 /* Message */,
-				C8FB98CC216194F800C78926 /* Group */,
+				C8FB98CC216194F800C78926 /* GroupHistory */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -834,6 +857,7 @@
 				C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
+				C80187FC21758A5000FAC704 /* OepnGroupTableViewCell.xib in Resources */,
 				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
 				C80187F22173637700FAC704 /* get_started_slider.json in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
@@ -947,7 +971,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */,
-				C8FB98C8216186F800C78926 /* MyGroupViewController.swift in Sources */,
+				C80187FB21758A5000FAC704 /* OepnGroupTableViewCell.swift in Sources */,
+				C8FB98C8216186F800C78926 /* MyJoinGroupViewController.swift in Sources */,
 				C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */,
 				C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
@@ -970,6 +995,7 @@
 				C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8FB98BB2161110E00C78926 /* UITableView+.swift in Sources */,
+				C80187F8217583A000FAC704 /* OwnGroupViewController.swift in Sources */,
 				C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,
@@ -981,11 +1007,13 @@
 				C849751A2157913E00555855 /* UISegmentedControl+.swift in Sources */,
 				C8FB98B8216103CC00C78926 /* ChatViewController.swift in Sources */,
 				C83870752153AA8200E64493 /* UIAlertController+.swift in Sources */,
+				C80187FF21758BE100FAC704 /* OpenGroupViewController.swift in Sources */,
 				C8C2B476215F2B000033FB28 /* PreviousCommentTableViewCell.swift in Sources */,
 				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView+.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
+				C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */,
 				C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */,
 				C8B77AFE2169B34F0067AC21 /* NewProductCollectionViewCell.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
@@ -993,7 +1021,7 @@
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
 				C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */,
-				C823A263216768820066D635 /* OpenGroupViewController.swift in Sources */,
+				C823A263216768820066D635 /* MyGroupViewController.swift in Sources */,
 				C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,
 				C823A26A2169049D0066D635 /* CreateArticleView.swift in Sources */,

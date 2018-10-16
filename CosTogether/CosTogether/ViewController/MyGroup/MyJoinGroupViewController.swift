@@ -11,9 +11,8 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class MyGroupViewController: UIViewController {
+class MyJoinGroupViewController: UIViewController {
 
-    @IBOutlet weak var groupTypeSC: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
     
@@ -30,15 +29,6 @@ class MyGroupViewController: UIViewController {
         
         setup()
 
-        navigationController?.navigationBar.isHidden = true
-        groupTypeSC.addUnderlineForSelectedSegment()
-        
-    }
-    
-    
-    @IBAction func switchGroupType(_ sender: Any) {
-        
-        groupTypeSC.changeUnderlinePosition()
         
     }
     
@@ -130,7 +120,7 @@ class MyGroupViewController: UIViewController {
 
 }
 
-extension MyGroupViewController: UITableViewDelegate {
+extension MyJoinGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -154,7 +144,7 @@ extension MyGroupViewController: UITableViewDelegate {
     
 }
 
-extension MyGroupViewController: UITableViewDataSource {
+extension MyJoinGroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroups.count
