@@ -29,11 +29,6 @@ class OpenGroupRootViewController: UIViewController {
         
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-    
-        return .lightContent
-    }
-    
     private func setup() {
         
         navigationBarSetup()
@@ -71,4 +66,40 @@ class OpenGroupRootViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = image
     }
     
+    @IBAction func createNewGroup(_ sender: UIButton) {
+        
+        switch groupTypeSC.selectedSegmentIndex {
+            
+        case 0:
+            
+            guard let controller = UIStoryboard.appendProductItemStoryboard().instantiateInitialViewController() as?
+                CreateGroupViewController else {
+                    return
+            }
+            
+            controller.loadViewIfNeeded()
+            
+            controller.topTitleLbl.text = "開分購"
+            
+            show(controller, sender: nil)
+            
+        case 1:
+            
+            guard let controller = UIStoryboard.appendProductItemStoryboard().instantiateInitialViewController() as?
+                CreateGroupViewController else {
+                    return
+            }
+            
+            controller.loadViewIfNeeded()
+
+            
+            controller.topTitleLbl.text = "開團購"
+            
+            show(controller, sender: nil)
+
+        default:
+            break
+        }
+        
+    }
 }

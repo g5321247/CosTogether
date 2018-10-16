@@ -19,7 +19,13 @@ class CreateArticleView: UIView {
         
         contentTextView.delegate = self
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         setup()
+
     }
 
     private func setup() {
@@ -36,6 +42,7 @@ class CreateArticleView: UIView {
             borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
             maskToBounds: true
         )
+                
     }
     
     private func textSetup() {

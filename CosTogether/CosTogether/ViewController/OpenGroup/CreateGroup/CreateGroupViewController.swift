@@ -14,6 +14,7 @@ import SVProgressHUD
 
 class CreateGroupViewController: UIViewController {
 
+    @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,6 +23,8 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var pickerViewBackgroundView: UIView!
     @IBOutlet weak var createArticle: CreateArticleView!
     @IBOutlet weak var pickerView: PickerView!
+    @IBOutlet weak var collectionBackgroundImage: UIImageView!
+    
     
     let dispatchGroup = DispatchGroup()
     
@@ -46,6 +49,10 @@ class CreateGroupViewController: UIViewController {
 
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func setup() {
         
         setColletionView()
@@ -61,6 +68,8 @@ class CreateGroupViewController: UIViewController {
             
             inCollectionViewLbl.isHidden = false
             
+            collectionBackgroundImage.isHidden = false
+            
             collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
             collectionView.cornerSetup(
                 cornerRadius: 4 ,
@@ -74,6 +83,8 @@ class CreateGroupViewController: UIViewController {
             return
         }
         
+        collectionBackgroundImage.isHidden = true
+
         inCollectionViewLbl.isHidden = true
         collectionView.backgroundColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
@@ -133,7 +144,7 @@ class CreateGroupViewController: UIViewController {
     private func goToAppendProduct() -> UIViewController? {
         
         guard let controller = UIStoryboard.appendProductItemStoryboard()
-            .instantiateInitialViewController()
+            .instantiateViewController(withIdentifier: "appendProductItem")
             as? AppendNewItemViewController else {
                 
                 return nil
