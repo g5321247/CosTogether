@@ -37,4 +37,10 @@ extension UIStoryboard {
         
         return UIStoryboard(name: "AppendProductItem", bundle: nil)
     }
+    
+    static func groupHistory() -> UIStoryboard {
+        
+        return UIStoryboard(name: "GroupHistory", bundle: nil)
+    }
+
 }

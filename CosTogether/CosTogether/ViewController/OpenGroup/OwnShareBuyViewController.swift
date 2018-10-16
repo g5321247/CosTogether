@@ -131,12 +131,13 @@ extension OwnShareBuyViewController: UITableViewDelegate {
         
         #warning ("改成到購買資訊的地方")
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
-            withIdentifier: String(describing: DetailViewController.self))
-            as? DetailViewController else {
+        guard let controller = UIStoryboard.groupHistory().instantiateInitialViewController()
+            as? HistoryViewController else {
                 
                 return
         }
+        
+        controller.loadViewIfNeeded()
         
         show(controller, sender: nil)
     }
@@ -161,9 +162,11 @@ extension OwnShareBuyViewController: UITableViewDataSource {
         
         cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
-        cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
+        cell.baseView.authorImageBot.isHidden = true
         
         cell.selectionStyle = .none
+        
+        
         
         return cell
         

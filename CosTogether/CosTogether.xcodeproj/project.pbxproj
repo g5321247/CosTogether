@@ -53,6 +53,8 @@
 		C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */; };
 		C85151C22175D2D3007B1324 /* CosNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */; };
 		C85151C42175E030007B1324 /* OwnHelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */; };
+		C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85151C52175F472007B1324 /* GroupHistory.storyboard */; };
+		C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C72175F559007B1324 /* HistoryViewController.swift */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
 		C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */; };
 		C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786A0F216CDE1B001D2C63 /* PickerView.swift */; };
@@ -158,6 +160,8 @@
 		C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnShareBuyViewController.swift; sourceTree = "<group>"; };
 		C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosNavigationControllerViewController.swift; sourceTree = "<group>"; };
 		C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnHelpBuyViewController.swift; sourceTree = "<group>"; };
+		C85151C52175F472007B1324 /* GroupHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupHistory.storyboard; sourceTree = "<group>"; };
+		C85151C72175F559007B1324 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageStoryboard.storyboard; sourceTree = "<group>"; };
 		C8786A0F216CDE1B001D2C63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -510,6 +514,14 @@
 			path = CreateGroup;
 			sourceTree = "<group>";
 		};
+		C85151C92175F63E007B1324 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				C85151C72175F559007B1324 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		C85D4F1E2154CF9800D73D8F /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */,
+				C85151C92175F63E007B1324 /* History */,
 				C84975242157BAF200555855 /* LogIn */,
 				C8FB98B9216103D800C78926 /* Chat */,
 				C82FA85F215A180900B75284 /* Detail */,
@@ -677,6 +690,7 @@
 			isa = PBXGroup;
 			children = (
 				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C85151C52175F472007B1324 /* GroupHistory.storyboard */,
 				C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */,
 				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */,
@@ -863,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */,
+				C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */,
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
 				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
@@ -1030,6 +1045,7 @@
 				C8C2B476215F2B000033FB28 /* PreviousCommentTableViewCell.swift in Sources */,
 				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
+				C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView+.swift in Sources */,
 				C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
