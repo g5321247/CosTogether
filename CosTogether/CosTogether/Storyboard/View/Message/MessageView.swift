@@ -36,7 +36,7 @@ class MessageView: UIView {
     
     @IBAction func sendCommentTappng(_ sender: Any) {
         
-        guard messgaeTxtView.text != "",
+        guard messgaeTxtView.textColor != UIColor.lightGray,
         let text = messgaeTxtView.text else {
             
             return
