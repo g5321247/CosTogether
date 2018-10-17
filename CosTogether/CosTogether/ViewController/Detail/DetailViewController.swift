@@ -41,18 +41,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
         }
         
-        guard let indexOfProduct = allData.firstIndex(
-            where: {$0.dataType == .productItems(products.count)}
-            ),
-            let indexOfOrder = allData.firstIndex(
-                where: {$0.dataType == .productItems(products.count)}
-            ) else {
-                
+        guard let indexOfOrder = allData.firstIndex(where: {$0.dataType == .order}) else {
+
                 return
-                
         }
         
-        allData.remove(at: indexOfProduct)
         allData[indexOfOrder].data.removeAll()
         
         tableView.reloadData()
@@ -244,7 +237,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             return
         }
         
-        #warning("團主才知道所有團員資料")
+        #warning("團ㄓ")
         
         controller.joinMember = joinMember
         

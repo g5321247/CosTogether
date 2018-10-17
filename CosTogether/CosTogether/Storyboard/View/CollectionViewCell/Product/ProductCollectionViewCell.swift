@@ -101,4 +101,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
     }
     
+    #warning ("統計購買的東西")
+    func updateMyProductInfo(numberOfItem: Int, productName: String, price: Int, productImage: String) {
+        
+        locationLbl.text = "數量： \(numberOfItem)"
+        titleLbl.text = productName
+        postDateLbL.text = "價格: \(price)"
+        
+        let productUrl = URL(string: productImage)
+        photoImage.sd_setImage(with: productUrl)
+        authorImage.isHidden = true
+    }
+    
 }

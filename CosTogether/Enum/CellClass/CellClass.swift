@@ -32,11 +32,6 @@ enum CellClass: Equatable {
             
         case .previousComments (let number):
             
-            guard number > 0 else {
-                
-                return 1
-            }
-            
             return number
             
         default:
