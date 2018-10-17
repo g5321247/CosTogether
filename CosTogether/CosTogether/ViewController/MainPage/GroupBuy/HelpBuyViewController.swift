@@ -26,13 +26,28 @@ class HelpBuyViewController: UIViewController {
         
     }
     
+    private func notiSetup() {
+        
+        let notificationName = Notification.Name("createNewGroup")
+        NotificationCenter.default.addObserver(self, selector: #selector (downloadFromFirebase(noti:)), name: notificationName, object: nil)
+        
+    }
+    
+    @objc func downloadFromFirebase(noti: Notification) {
+        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            self.group.insert(groupData, at: 0)
+            self.collectionView.reloadData()
+        }
+    }
+
+    
     private func setup() {
         
         setColletionView()
         downloadData()
         
         SVProgressHUD.dismiss()
-        
+        notiSetup()
     }
     
     private func setColletionView() {

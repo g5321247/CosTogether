@@ -26,7 +26,7 @@ class MainPageViewController: UIViewController {
         topView.rightBot.addTarget(self, action: #selector (mapBotTappiung(_:)), for: .touchUpInside)
         
         Analytics.logEvent("StayMainPage", parameters: nil)
-        
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {

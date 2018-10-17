@@ -25,7 +25,6 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var pickerView: PickerView!
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
     
-    
     let dispatchGroup = DispatchGroup()
     
     var products: [ProductModel] = []
@@ -142,7 +141,7 @@ class CreateGroupViewController: UIViewController {
         }
         
         CosNavigationControllerViewController.isLightStatusBar = false
-
+        
         show(controller, sender: nil)
     }
     
@@ -284,6 +283,8 @@ class CreateGroupViewController: UIViewController {
 //            self.resetViewWhenUploadSucess()
 
             CosNavigationControllerViewController.isLightStatusBar = false
+            
+            NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
 
             self.navigationController?.popViewController(animated: true)
 
