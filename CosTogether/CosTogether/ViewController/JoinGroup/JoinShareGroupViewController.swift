@@ -11,7 +11,7 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class MyJoinGroupViewController: UIViewController {
+class JoinShareGroupViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
@@ -120,7 +120,7 @@ class MyJoinGroupViewController: UIViewController {
 
 }
 
-extension MyJoinGroupViewController: UITableViewDelegate {
+extension JoinShareGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -130,21 +130,28 @@ extension MyJoinGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        #warning ("改成到購買資訊的地方")
-
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
-            withIdentifier: String(describing: DetailViewController.self))
-            as? DetailViewController else {
-            
+        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self)
+            ) as? DetailViewController else {
+                
+                return
+                
+        }
+        
+        controller.loadViewIfNeeded()
+        
+        guard let group = myGroups[indexPath.row].group else {
             return
         }
+        
+        controller.updateInfo(group: group)
         
         show(controller, sender: nil)
     }
     
 }
 
-extension MyJoinGroupViewController: UITableViewDataSource {
+extension JoinShareGroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroups.count

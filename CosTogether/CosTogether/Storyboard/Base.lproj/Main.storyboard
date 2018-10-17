@@ -858,10 +858,10 @@
             </objects>
             <point key="canvasLocation" x="1870" y="528"/>
         </scene>
-        <!--My Join Group View Controller-->
+        <!--Join Share Group View Controller-->
         <scene sceneID="qFU-Ns-1Tw">
             <objects>
-                <viewController id="unz-L3-BX5" customClass="MyJoinGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="unz-L3-BX5" customClass="JoinShareGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPh-6T-Jk2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="529.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -899,10 +899,10 @@
             </objects>
             <point key="canvasLocation" x="3415" y="3592"/>
         </scene>
-        <!--Own Group View Controller-->
+        <!--Join Help Group View Controller-->
         <scene sceneID="8ha-23-qQA">
             <objects>
-                <viewController id="fKq-iQ-0pF" customClass="OwnGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fKq-iQ-0pF" customClass="JoinHelpGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EGL-t7-wtF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="529.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -944,8 +944,8 @@
                         <viewLayoutGuide key="safeArea" id="hHH-QN-fow"/>
                     </view>
                     <connections>
-                        <outlet property="emptyLbl" destination="FnO-Et-9sJ" id="nuz-sp-spD"/>
-                        <outlet property="tableView" destination="ahJ-3a-X1i" id="bEx-oN-vSm"/>
+                        <outlet property="emptyLbl" destination="FnO-Et-9sJ" id="uQa-pe-Euj"/>
+                        <outlet property="tableView" destination="ahJ-3a-X1i" id="9Ra-J5-3kj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ft-Zo-AMx" userLabel="First Responder" sceneMemberID="firstResponder"/>

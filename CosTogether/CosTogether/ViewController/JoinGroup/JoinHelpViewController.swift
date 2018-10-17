@@ -11,16 +11,16 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class OwnGroupViewController: UIViewController {
+class JoinHelpGroupViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
     
     let firebaseManager = FirebaseManager()
     
-    var groupType: OpenGroupType = .shareBuy
+    var groupType: OpenGroupType = .helpBuy
     
-    var myGroup: MyGroup = .own
+    var myGroup: MyGroup = .join
     
     var myGroups: [OwnGroup] = []
     
@@ -120,7 +120,7 @@ class OwnGroupViewController: UIViewController {
     
 }
 
-extension OwnGroupViewController: UITableViewDelegate {
+extension JoinHelpGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -130,21 +130,28 @@ extension OwnGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        #warning ("改成到購買資訊的地方")
-        
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
-            withIdentifier: String(describing: DetailViewController.self))
-            as? DetailViewController else {
+        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self)
+            ) as? DetailViewController else {
                 
                 return
+                
         }
+        
+        controller.loadViewIfNeeded()
+        
+        guard let group = myGroups[indexPath.row].group else {
+            return
+        }
+        
+        controller.updateInfo(group: group)
         
         show(controller, sender: nil)
     }
     
 }
 
-extension OwnGroupViewController: UITableViewDataSource {
+extension JoinHelpGroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroups.count

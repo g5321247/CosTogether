@@ -133,11 +133,25 @@ class ProductSettingView: UIView {
             return
         }
         
+        guard productPrice < 100000 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得超過十萬")
+            return
+        }
+
+        
         guard productQuantity > 0 else {
             
             BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
             return
         }
+        
+        guard productQuantity < 100 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得超過一百")
+            return
+        }
+
                 
         let product = ProductModel(
             productName: productName,

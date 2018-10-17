@@ -170,14 +170,14 @@ class ProfileViewController: UIViewController {
         userType: UserType
         ) {
         
-        averageEvaluationLbl.text = String(averageEvaluation)
+//        averageEvaluationLbl.text = String(averageEvaluation)
         
         let url = URL(string: userImage + "?height=500")
         self.userImage.sd_setImage(with: url)
         
-        buyNumberLbl.text = String(buyNumber)
-        userNameLbl.text = userName
-        numberOfEvaluationLbl.text = String(numberOfEvaluation)
+//        buyNumberLbl.text = String(buyNumber)
+//        userNameLbl.text = userName
+//        numberOfEvaluationLbl.text = String(numberOfEvaluation)
         
         self.userType = userType
         
