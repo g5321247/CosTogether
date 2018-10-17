@@ -20,6 +20,12 @@ protocol DataProtocol {
     
 }
 
+struct MyProduct {
+    
+    let user: UserModel
+    var products: [ProductModel]
+}
+
 struct OwnGroup: DataProtocol {
     
     let groupType: OpenGroupType

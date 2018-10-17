@@ -11,26 +11,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JUm-V0-Oh0" userLabel="User Calculate Table View Cell" customClass="UserCalculateTableViewCell" customModule="CosTogether" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="JUm-V0-Oh0" userLabel="User Calculate Table View Cell" customClass="UserCalculateTableViewCell" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUm-V0-Oh0" id="mhH-oB-j8w">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqg-A6-JE2" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9c-gi-vQH">
-                                <rect key="frame" x="82" y="15" width="132" height="34"/>
+                                <rect key="frame" x="82" y="15" width="72" height="34"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文日期：" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZe-7E-pbe">
-                                <rect key="frame" x="82" y="51" width="85" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhW-W2-Cgf">
@@ -42,23 +36,49 @@
                                 <inset key="contentEdgeInsets" minX="-5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GOE-sg-DZx">
+                                <rect key="frame" x="0.0" y="98" width="375" height="124.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WoA-hA-OfU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="總計" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AA-Ps-lfa">
+                                <rect key="frame" x="312" y="15" width="48" height="34"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-Z9-jHm">
+                                <rect key="frame" x="312" y="54" width="48" height="34"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="o9c-gi-vQH" firstAttribute="top" secondItem="bhW-W2-Cgf" secondAttribute="top" id="B2y-u4-c3o"/>
                             <constraint firstItem="o9c-gi-vQH" firstAttribute="leading" secondItem="bhW-W2-Cgf" secondAttribute="trailing" constant="12" id="BrS-lU-t8R"/>
-                            <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xZe-7E-pbe" secondAttribute="trailing" symbolic="YES" id="EKy-G8-GK7"/>
-                            <constraint firstItem="xZe-7E-pbe" firstAttribute="leading" secondItem="o9c-gi-vQH" secondAttribute="trailing" constant="-132" id="ELD-zI-M9x"/>
+                            <constraint firstItem="GOE-sg-DZx" firstAttribute="leading" secondItem="3bg-Qk-eBE" secondAttribute="leading" id="Hg9-PL-vsd"/>
                             <constraint firstItem="bhW-W2-Cgf" firstAttribute="top" secondItem="3bg-Qk-eBE" secondAttribute="top" constant="15" id="I2T-W9-O1Z"/>
-                            <constraint firstItem="xZe-7E-pbe" firstAttribute="leading" secondItem="o9c-gi-vQH" secondAttribute="leading" id="JaI-1B-K1c"/>
-                            <constraint firstItem="xZe-7E-pbe" firstAttribute="bottom" secondItem="bhW-W2-Cgf" secondAttribute="bottom" id="OJh-QM-4Ry"/>
+                            <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" secondItem="4AA-Ps-lfa" secondAttribute="trailing" constant="15" id="Ser-fV-F3Q"/>
+                            <constraint firstItem="xeW-Z9-jHm" firstAttribute="centerX" secondItem="4AA-Ps-lfa" secondAttribute="centerX" id="WR7-lk-fwP"/>
+                            <constraint firstItem="4AA-Ps-lfa" firstAttribute="centerY" secondItem="o9c-gi-vQH" secondAttribute="centerY" id="X9S-XW-Y7Q"/>
+                            <constraint firstItem="GOE-sg-DZx" firstAttribute="top" secondItem="xeW-Z9-jHm" secondAttribute="bottom" constant="10" id="Zag-Nw-ksT"/>
+                            <constraint firstItem="xeW-Z9-jHm" firstAttribute="top" secondItem="4AA-Ps-lfa" secondAttribute="bottom" constant="5" id="Zbu-n7-m2h"/>
+                            <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" secondItem="GOE-sg-DZx" secondAttribute="trailing" id="erP-M8-xvq"/>
+                            <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" secondItem="xeW-Z9-jHm" secondAttribute="trailing" constant="15" id="hbZ-ZN-l8s"/>
+                            <constraint firstItem="3bg-Qk-eBE" firstAttribute="bottom" secondItem="GOE-sg-DZx" secondAttribute="bottom" id="lew-sG-4yF"/>
+                            <constraint firstItem="o9c-gi-vQH" firstAttribute="top" secondItem="bhW-W2-Cgf" secondAttribute="top" id="w3F-yh-Fwz"/>
                             <constraint firstItem="bhW-W2-Cgf" firstAttribute="leading" secondItem="3bg-Qk-eBE" secondAttribute="leading" constant="10" id="zeV-jb-nMm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3bg-Qk-eBE"/>
                         <connections>
                             <outlet property="authorImageBot" destination="bhW-W2-Cgf" id="BTo-1J-xiB"/>
                             <outlet property="authorNameLbl" destination="o9c-gi-vQH" id="R6t-VQ-vAd"/>
-                            <outlet property="postDateLbl" destination="xZe-7E-pbe" id="OEJ-jC-Z5g"/>
                         </connections>
                     </view>
                 </subviews>
@@ -70,7 +90,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="RN7-MQ-3pQ"/>
-            <point key="canvasLocation" x="136.80000000000001" y="129.53523238380811"/>
+            <connections>
+                <outlet property="collectionView" destination="GOE-sg-DZx" id="G0p-rP-ceU"/>
+                <outlet property="totalAmountLbl" destination="xeW-Z9-jHm" id="Tqy-Rx-PtM"/>
+                <outlet property="userImageBot" destination="bhW-W2-Cgf" id="0SG-Gq-Et4"/>
+                <outlet property="userNameLbl" destination="o9c-gi-vQH" id="m4k-wX-LsQ"/>
+            </connections>
+            <point key="canvasLocation" x="136.80000000000001" y="156.07196401799101"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -616,4 +616,38 @@ extension FirebaseManager {
         }
     }
     
+    func filterUser(userId: String, group: Group, completion: @escaping ([ProductModel]) -> Void) {
+        
+        let refrence = Database.database().reference()
+        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("join").child(group.openType.rawValue).child(group.groupId!).observeSingleEvent(of: .value) { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            guard let productNames = value?.allKeys as? [String] else {
+                return
+            }
+            
+            var products: [ProductModel] = []
+            
+            for productName in productNames {
+                
+                guard let product = value?[productName] as? NSDictionary,
+                    let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int,
+                    let image = product["productPicUrl"] as? String else {
+                        return
+                }
+                
+                let aProduct = ProductModel(productName: productName, productImage: image, numberOfItem: numberOfItem, price: price)
+                
+                products.append(aProduct)
+            }
+            
+            completion(products)
+            
+        }
+        
+    }
+    
+    
 }

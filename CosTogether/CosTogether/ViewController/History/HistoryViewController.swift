@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class HistoryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: TopLogoView!
+    
+    let firebaseManager = FirebaseManager()
+    
+    var joinMember: [UserModel] = []
+    var group: [Group] = []
+    var myProducts: [MyProduct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +31,29 @@ class HistoryViewController: UIViewController {
         tableViewSetup()
         setUpCell()
         topLogViewSetup()
+        
+        downloadData(joinMember: joinMember)
+    }
+    
+    private func downloadData(joinMember: [UserModel]) {
+        
+        for value in joinMember {
+            
+            guard let userId = value.userId,
+            let group = group.first else {
+                break
+            }
+            
+            firebaseManager.filterUser(userId: userId, group: group) { (products) in
+                
+                let myProduct = MyProduct(user: value, products: products)
+                
+                self.myProducts.append(myProduct)
+                self.tableView.reloadData()
+            }
+            
+        }
+        
     }
     
     private func topLogViewSetup() {
@@ -56,12 +86,6 @@ class HistoryViewController: UIViewController {
     }
     
     
-    lazy var allData: [DataType] = []
-    
-
-
-    
-    
 }
 
 extension HistoryViewController: UITableViewDelegate {
@@ -71,7 +95,7 @@ extension HistoryViewController: UITableViewDelegate {
 extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return myProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +104,8 @@ extension HistoryViewController: UITableViewDataSource {
             
             return UITableViewCell()
         }
+        
+        cell.selfBuyerInfoUpdate(userName: myProducts[indexPath.row].user.userName, useImage: myProducts[indexPath.row].user.userImage, pdoducts: myProducts[indexPath.row].products)
         
         return cell
     }

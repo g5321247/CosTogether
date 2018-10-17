@@ -223,6 +223,33 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
 
+        #warning ("傳值")
+
+        controller.group = article
+        
+        guard article.first?.userID == Auth.auth().currentUser?.uid else {
+            
+            guard  let userId = Auth.auth().currentUser?.uid,
+                let userImage = Auth.auth().currentUser?.photoURL?.absoluteString,
+                let userName = Auth.auth().currentUser?.displayName else {
+                return
+            }
+            
+            controller.joinMember.append(UserModel(userImage: userImage, userName: userName, userId: userId))
+            
+            controller.loadViewIfNeeded()
+
+            show(controller, sender: nil)
+
+            return
+        }
+        
+        #warning("團主才知道所有團員資料")
+        
+        controller.joinMember = joinMember
+        
+        controller.loadViewIfNeeded()
+
         show(controller, sender: nil)
         
     }

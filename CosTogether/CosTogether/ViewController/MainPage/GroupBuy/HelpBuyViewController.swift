@@ -167,7 +167,6 @@ extension HelpBuyViewController: UICollectionViewDelegateFlowLayout {
                 
         }
         
-        #warning ("傳姪過去")
         controller.loadViewIfNeeded()
         controller.updateInfo(group: group[indexPath.row])
         
