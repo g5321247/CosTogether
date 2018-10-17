@@ -69,7 +69,7 @@ class UserCalculateTableViewCell: UITableViewCell {
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .vertical
+            layout.scrollDirection = .horizontal
         }
 
     }

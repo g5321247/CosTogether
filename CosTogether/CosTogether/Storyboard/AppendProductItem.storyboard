@@ -25,8 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 選擇商品照片" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Na-89-Fim">
-                                <rect key="frame" x="105.5" y="118" width="164" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 選擇一張商品照片" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Na-89-Fim">
+                                <rect key="frame" x="40" y="118" width="295" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                     <outlet property="productQuantityLbl" destination="Tmz-eS-06l" id="Pne-Hg-RhD"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-wI-mrL">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-wI-mrL">
                                 <rect key="frame" x="25" y="31" width="325" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1PT-wI-mrL" secondAttribute="height" multiplier="69:44" id="yNG-ei-oYw"/>
@@ -167,10 +167,12 @@
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="TyJ-vj-b37" secondAttribute="trailing" constant="20" id="PcW-ZH-xeS"/>
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="1PT-wI-mrL" secondAttribute="trailing" constant="25" id="QZr-IS-3Zj"/>
                             <constraint firstItem="TyJ-vj-b37" firstAttribute="top" secondItem="Um3-qx-S8d" secondAttribute="bottom" multiplier="0.45" id="VMX-vR-mqJ"/>
+                            <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="2Na-89-Fim" secondAttribute="trailing" constant="40" id="WE2-S7-gUt"/>
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="bottom" secondItem="GpH-Ta-KGd" secondAttribute="bottom" constant="30.5" id="YfY-GA-c4g"/>
                             <constraint firstItem="GpH-Ta-KGd" firstAttribute="top" secondItem="TyJ-vj-b37" secondAttribute="bottom" constant="20" id="Zod-rC-jYN"/>
                             <constraint firstItem="8Hw-O8-Ugh" firstAttribute="trailing" secondItem="GpH-Ta-KGd" secondAttribute="trailing" constant="20" id="eWs-u2-Yfi"/>
                             <constraint firstItem="1PT-wI-mrL" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" constant="25" id="gPk-mc-px1"/>
+                            <constraint firstItem="2Na-89-Fim" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" constant="40" id="hMV-aG-ldh"/>
                             <constraint firstItem="2Na-89-Fim" firstAttribute="centerY" secondItem="1PT-wI-mrL" secondAttribute="centerY" id="mV9-ns-dqm"/>
                             <constraint firstItem="TyJ-vj-b37" firstAttribute="leading" secondItem="8Hw-O8-Ugh" secondAttribute="leading" constant="20" id="pzx-QM-ifn"/>
                         </constraints>
@@ -304,8 +306,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krU-NS-qRr">
+                                <rect key="frame" x="287" y="325" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="krU-NS-qRr" secondAttribute="height" multiplier="1:1" id="i0y-WI-QQN"/>
+                                    <constraint firstAttribute="width" constant="48" id="vQ4-i0-uj0"/>
+                                </constraints>
+                                <state key="normal" image="plus">
+                                    <color key="titleColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newProductBotTapping:" destination="qcn-qw-UXf" eventType="touchUpInside" id="ySz-D0-jXg"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovl-Yu-nMA" userLabel="PickerBackground">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-sy-cEF" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
@@ -353,19 +368,6 @@
                                     <outlet property="pickerView" destination="MIT-Ob-abS" id="27Y-UM-2FR"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krU-NS-qRr">
-                                <rect key="frame" x="287" y="325" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="krU-NS-qRr" secondAttribute="height" multiplier="1:1" id="i0y-WI-QQN"/>
-                                    <constraint firstAttribute="width" constant="48" id="vQ4-i0-uj0"/>
-                                </constraints>
-                                <state key="normal" image="plus">
-                                    <color key="titleColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="newProductBotTapping:" destination="qcn-qw-UXf" eventType="touchUpInside" id="ySz-D0-jXg"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-br-gNS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                 <subviews>
@@ -438,7 +440,7 @@
                             <constraint firstItem="V9a-2A-4Bb" firstAttribute="top" secondItem="wbd-BJ-HPZ" secondAttribute="top" constant="20" id="qe8-mR-y0d"/>
                             <constraint firstItem="mvp-qs-WKh" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" constant="25" id="s0T-qF-1hw"/>
                             <constraint firstItem="Ovl-Yu-nMA" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" id="u0k-xi-6c5"/>
-                            <constraint firstItem="Ovl-Yu-nMA" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="top" constant="100" id="xfI-v8-vMP"/>
+                            <constraint firstItem="Ovl-Yu-nMA" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="top" id="xfI-v8-vMP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lak-e3-1qA"/>
                     </view>
