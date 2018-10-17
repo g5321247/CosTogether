@@ -57,22 +57,35 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeC-aQ-dNe">
+                        <rect key="frame" x="0.0" y="11" width="396" height="78"/>
+                        <color key="backgroundColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                        <state key="normal" title="已加入此揪團，點擊確認相關資訊">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="leading" constant="8" id="00m-6E-NoM"/>
                     <constraint firstItem="EWk-eu-eUD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7YU-1b-dJ3"/>
                     <constraint firstItem="hRl-Dh-6N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Gh0-Ki-Nlk"/>
+                    <constraint firstItem="GeC-aQ-dNe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L3O-yt-idM"/>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="TB0-ZI-VxT"/>
                     <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="10" id="YPN-u8-a9C"/>
                     <constraint firstItem="Zhr-YZ-tzv" firstAttribute="top" secondItem="hRl-Dh-6N9" secondAttribute="bottom" constant="5" id="dy1-mC-FtA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GeC-aQ-dNe" secondAttribute="trailing" id="iyy-A9-VhK"/>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="centerY" secondItem="Zhr-YZ-tzv" secondAttribute="centerY" id="kkh-7K-ORN"/>
                     <constraint firstItem="EWk-eu-eUD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kqf-Fn-9LM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GeC-aQ-dNe" secondAttribute="bottom" id="rmp-et-cBh"/>
+                    <constraint firstItem="GeC-aQ-dNe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vhN-wk-GzY"/>
                     <constraint firstAttribute="trailing" secondItem="hRl-Dh-6N9" secondAttribute="trailing" constant="10" id="w5S-Hc-psm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amoutLbl" destination="Zhr-YZ-tzv" id="oXv-Ml-ucC"/>
+                <outlet property="checkOrderInfoBot" destination="GeC-aQ-dNe" id="URa-0b-l3S"/>
                 <outlet property="hasJoinedLbl" destination="EWk-eu-eUD" id="76I-0e-XLM"/>
                 <outlet property="orderBot" destination="ora-65-4Kq" id="6Up-hA-VUT"/>
                 <outlet property="titleLbl" destination="hRl-Dh-6N9" id="NeQ-el-5Oq"/>

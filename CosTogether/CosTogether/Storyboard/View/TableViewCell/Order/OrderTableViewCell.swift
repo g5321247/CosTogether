@@ -25,6 +25,8 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var amoutLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var hasJoinedLbl: UILabel!
+    @IBOutlet weak var checkOrderInfoBot: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,9 +76,12 @@ class OrderTableViewCell: UITableViewCell {
         
         amoutLbl.text = ""
         titleLbl.text = ""
-        hasJoinedLbl.text = title
         
-        self.contentView.backgroundColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
+        checkOrderInfoBot.isHidden = false
+        checkOrderInfoBot.isEnabled = true
+        
+        self.contentView.backgroundColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 1)
+
     }
     
 }

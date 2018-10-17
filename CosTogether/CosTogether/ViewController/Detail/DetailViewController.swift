@@ -214,6 +214,19 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
+    @objc func goToCheckInfo(_ sender: UIButton) {
+        
+        guard let controller = UIStoryboard.groupHistory().instantiateInitialViewController()
+            as? HistoryViewController else {
+                
+                return
+                
+        }
+
+        show(controller, sender: nil)
+        
+    }
+    
     @objc func commenterPhotoTaping(_ sender: UIButton) {
     
         guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
@@ -509,11 +522,15 @@ extension DetailViewController: UITableViewDataSource {
                 
                 cell.userHasJoined(title: "你已經加入此揪團")
                 
+                cell.checkOrderInfoBot.addTarget(self, action: #selector (goToCheckInfo(_:)), for: .touchUpInside)
+
+                
                 return cell
             }
             
             
             cell.delegate = self
+            
             
             var totalCost = 0
             

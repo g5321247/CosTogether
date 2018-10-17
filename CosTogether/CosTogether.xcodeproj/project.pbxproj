@@ -84,6 +84,8 @@
 		C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B47E215FA1240033FB28 /* SegmentTableViewCell.swift */; };
 		C8C2B481215FA1240033FB28 /* SegmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47F215FA1240033FB28 /* SegmentTableViewCell.xib */; };
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
+		C8E956B32176D2DF00473C6B /* UserCalculateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B12176D2DF00473C6B /* UserCalculateTableViewCell.swift */; };
+		C8E956B42176D2DF00473C6B /* UserCalculateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B22176D2DF00473C6B /* UserCalculateTableViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */; };
@@ -191,6 +193,8 @@
 		C8C2B47E215FA1240033FB28 /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
 		C8C2B47F215FA1240033FB28 /* SegmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentTableViewCell.xib; sourceTree = "<group>"; };
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
+		C8E956B12176D2DF00473C6B /* UserCalculateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCalculateTableViewCell.swift; sourceTree = "<group>"; };
+		C8E956B22176D2DF00473C6B /* UserCalculateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCalculateTableViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
@@ -668,6 +672,15 @@
 			path = Segment;
 			sourceTree = "<group>";
 		};
+		C8E956B52176D2E400473C6B /* UserCalculate */ = {
+			isa = PBXGroup;
+			children = (
+				C8E956B12176D2DF00473C6B /* UserCalculateTableViewCell.swift */,
+				C8E956B22176D2DF00473C6B /* UserCalculateTableViewCell.xib */,
+			);
+			path = UserCalculate;
+			sourceTree = "<group>";
+		};
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +815,7 @@
 				C8C2B482215FA12B0033FB28 /* Segment */,
 				C8FB98C62161245300C78926 /* Message */,
 				C8FB98CC216194F800C78926 /* GroupHistory */,
+				C8E956B52176D2E400473C6B /* UserCalculate */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -890,6 +904,7 @@
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
 				C80187FC21758A5000FAC704 /* OepnGroupTableViewCell.xib in Resources */,
+				C8E956B42176D2DF00473C6B /* UserCalculateTableViewCell.xib in Resources */,
 				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
 				C80187F22173637700FAC704 /* get_started_slider.json in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
@@ -1014,6 +1029,7 @@
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
+				C8E956B32176D2DF00473C6B /* UserCalculateTableViewCell.swift in Sources */,
 				C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */,
 				C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */,
 				C8B91E72215FC79200F7CA3A /* ProfileViewController.swift in Sources */,

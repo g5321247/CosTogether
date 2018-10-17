@@ -11,56 +11,56 @@ import UIKit
 class HistoryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: TopLogoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
     }
-
+    
     private func setup() {
         
         tableViewSetup()
+        setUpCell()
+        topLogViewSetup()
+    }
+    
+    private func topLogViewSetup() {
+        
+        topView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
+    }
 
+    @objc func backBotTapping(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    private func setUpCell() {
+        
+        tableView.registerTableViewCell(identifiers: [
+            String(describing: UserCalculateTableViewCell.self)
+            ])
     }
     
     private func tableViewSetup() {
         
         tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.dataSource = self
     }
     
     func reloadData() {
         
-        allData = [
-            DataType(dataType: .productPic, data: productPic),
-            DataType(dataType: .articleInfo, data: article),
-            DataType(dataType: .joinGroup, data: joinMember),
-            DataType(dataType: .productItems(products.count), data: products),
-            DataType(dataType: .productDetail, data: productDetail),
-            DataType(dataType: .commnetTitle, data: []),
-            DataType(dataType: .previousComments(comments.count), data: comments),
-            DataType(dataType: .sendComment, data: [])
-        ]
-        
         tableView.reloadData()
     }
     
-    var productPic: [Group] = []
-    
-    var article: [Group] = []
-    
-    var joinMember: [UserModel] = []
-    
-    var products: [ProductModel] = []
-    
-    var productDetail: [Group] = []
-    
-    var comments: [CommentModel] = []
     
     lazy var allData: [DataType] = []
     
 
+
+    
     
 }
 
@@ -68,7 +68,22 @@ extension HistoryViewController: UITableViewDelegate {
     
 }
 
-//extension HistoryViewController: UITableViewDataSource {
-//
-//
-//}
+extension HistoryViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UserCalculateTableViewCell.self)) as? UserCalculateTableViewCell else {
+            
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
+
+
+}
