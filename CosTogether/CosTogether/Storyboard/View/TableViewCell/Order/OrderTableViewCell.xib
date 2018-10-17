@@ -58,7 +58,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeC-aQ-dNe">
-                        <rect key="frame" x="0.0" y="11" width="396" height="78"/>
+                        <rect key="frame" x="0.0" y="11" width="416" height="78"/>
                         <color key="backgroundColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                         <state key="normal" title="已加入此揪團，點擊確認相關資訊">
@@ -74,7 +74,7 @@
                     <constraint firstItem="ora-65-4Kq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="TB0-ZI-VxT"/>
                     <constraint firstAttribute="trailing" secondItem="Zhr-YZ-tzv" secondAttribute="trailing" constant="10" id="YPN-u8-a9C"/>
                     <constraint firstItem="Zhr-YZ-tzv" firstAttribute="top" secondItem="hRl-Dh-6N9" secondAttribute="bottom" constant="5" id="dy1-mC-FtA"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GeC-aQ-dNe" secondAttribute="trailing" id="iyy-A9-VhK"/>
+                    <constraint firstAttribute="trailing" secondItem="GeC-aQ-dNe" secondAttribute="trailing" id="iyy-A9-VhK"/>
                     <constraint firstItem="ora-65-4Kq" firstAttribute="centerY" secondItem="Zhr-YZ-tzv" secondAttribute="centerY" id="kkh-7K-ORN"/>
                     <constraint firstItem="EWk-eu-eUD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kqf-Fn-9LM"/>
                     <constraint firstAttribute="bottomMargin" secondItem="GeC-aQ-dNe" secondAttribute="bottom" id="rmp-et-cBh"/>
