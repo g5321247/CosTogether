@@ -20,6 +20,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     var orderAlready: Bool = false
     
+    var isSend: Bool = false
+    
     func reloadData(orderAlready: Bool) {
         
         allData = [
@@ -71,6 +73,15 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             
             self.comments.append(comment)
             self.reloadData(orderAlready: self.orderAlready)
+            
+            if self.isSend {
+                
+                let indexPath = IndexPath(row: self.allData[self.allData.count - 1].dataType.numberOfRow() - 1, section: self.allData.count - 1)
+                
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+                
+                self.isSend = !self.isSend
+            }
         }
         
         firebaseManager.downloadGroupUser(group: group) { (memberIds) in
@@ -184,7 +195,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     private func topLogViewSetup() {
         
         topLogView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
-        topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
+//        topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
     }
     
     @objc func backBotTapping(_ sender: UIButton) {
@@ -193,19 +204,19 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
     
-    @objc func sendMessageBotTapping(_ sender: UIButton) {
-        
-        guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
-            withIdentifier: String(describing: ChatRoomViewController.self)
-            ) as? ChatRoomViewController else {
-                
-                return
-                
-        }
-        
-        show(controller, sender: nil)
-        
-    }
+//    @objc func sendMessageBotTapping(_ sender: UIButton) {
+//
+//        guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
+//            withIdentifier: String(describing: ChatRoomViewController.self)
+//            ) as? ChatRoomViewController else {
+//
+//                return
+//
+//        }
+//
+//        show(controller, sender: nil)
+//
+//    }
     
     @objc func goToCheckInfo(_ sender: UIButton) {
         
@@ -215,8 +226,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 return
                 
         }
-
-        #warning ("傳值")
 
         controller.group = article
         
@@ -236,8 +245,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
             return
         }
-        
-        #warning("團ㄓ")
         
         controller.joinMember = joinMember
         
@@ -678,11 +685,11 @@ extension DetailViewController: CellDelegate {
             groupId: article.first!.groupId!
         )
         
-        comments.append(comment)
-        
         self.reloadData(orderAlready: orderAlready)
         
         let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
+        
+        isSend = !isSend
         
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
