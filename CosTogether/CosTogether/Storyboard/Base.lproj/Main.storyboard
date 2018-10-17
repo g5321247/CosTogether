@@ -566,7 +566,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關分購" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-jv-pwh">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="20" y="224" width="335" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -595,8 +595,10 @@
                         <color key="backgroundColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ozw-mo-2p2" firstAttribute="top" secondItem="4zL-w4-dyq" secondAttribute="top" id="0fe-gI-ahh"/>
+                            <constraint firstItem="4zL-w4-dyq" firstAttribute="trailing" secondItem="DFU-jv-pwh" secondAttribute="trailing" constant="20" id="9CO-MW-hH1"/>
                             <constraint firstItem="DFU-jv-pwh" firstAttribute="centerY" secondItem="dwi-xF-pWn" secondAttribute="centerY" id="FCC-Qn-UuZ"/>
                             <constraint firstItem="4zL-w4-dyq" firstAttribute="trailing" secondItem="ozw-mo-2p2" secondAttribute="trailing" id="Sge-sc-VuZ"/>
+                            <constraint firstItem="DFU-jv-pwh" firstAttribute="leading" secondItem="4zL-w4-dyq" secondAttribute="leading" constant="20" id="mfd-02-soD"/>
                             <constraint firstItem="4zL-w4-dyq" firstAttribute="bottom" secondItem="ozw-mo-2p2" secondAttribute="bottom" id="nbx-gX-P7c"/>
                             <constraint firstItem="DFU-jv-pwh" firstAttribute="centerX" secondItem="dwi-xF-pWn" secondAttribute="centerX" id="xHc-wJ-yTc"/>
                             <constraint firstItem="ozw-mo-2p2" firstAttribute="leading" secondItem="4zL-w4-dyq" secondAttribute="leading" id="xQ4-Gy-StH"/>
@@ -790,7 +792,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有相關代購" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-sT-mDT">
-                                <rect key="frame" x="91.5" y="224" width="192" height="33"/>
+                                <rect key="frame" x="20" y="224" width="335" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -818,12 +820,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803926" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lHU-4m-l7z" firstAttribute="trailing" secondItem="T2X-sT-mDT" secondAttribute="trailing" constant="20" id="5TZ-Tz-7cJ"/>
                             <constraint firstItem="5UO-RM-ZXC" firstAttribute="top" secondItem="YAI-jh-fDG" secondAttribute="top" id="Lnm-Ha-a34"/>
                             <constraint firstItem="5UO-RM-ZXC" firstAttribute="leading" secondItem="YAI-jh-fDG" secondAttribute="leading" id="MnN-ad-IPQ"/>
                             <constraint firstAttribute="trailing" secondItem="5UO-RM-ZXC" secondAttribute="trailing" id="U1q-WU-akV"/>
                             <constraint firstAttribute="bottom" secondItem="5UO-RM-ZXC" secondAttribute="bottom" id="Won-uD-PGI"/>
                             <constraint firstItem="T2X-sT-mDT" firstAttribute="centerX" secondItem="YAI-jh-fDG" secondAttribute="centerX" id="bo9-Wh-3WM"/>
                             <constraint firstItem="T2X-sT-mDT" firstAttribute="centerY" secondItem="YAI-jh-fDG" secondAttribute="centerY" id="v6K-L9-UPj"/>
+                            <constraint firstItem="T2X-sT-mDT" firstAttribute="leading" secondItem="lHU-4m-l7z" secondAttribute="leading" constant="20" id="yDU-9r-CVK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lHU-4m-l7z"/>
                     </view>
@@ -867,7 +871,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未加任何團，快去找團加一下吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEc-yr-7yM">
-                                <rect key="frame" x="-28.5" y="248.5" width="432" height="33"/>
+                                <rect key="frame" x="20" y="232" width="335" height="65.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -877,7 +881,9 @@
                         <constraints>
                             <constraint firstItem="IEc-yr-7yM" firstAttribute="centerY" secondItem="YPh-6T-Jk2" secondAttribute="centerY" id="061-sX-9Da"/>
                             <constraint firstItem="xby-JZ-8De" firstAttribute="top" secondItem="YPh-6T-Jk2" secondAttribute="top" id="Je6-nh-Omy"/>
+                            <constraint firstAttribute="trailing" secondItem="IEc-yr-7yM" secondAttribute="trailing" constant="20" id="RDD-rL-oIo"/>
                             <constraint firstAttribute="trailing" secondItem="xby-JZ-8De" secondAttribute="trailing" id="bpo-Sj-oik"/>
+                            <constraint firstItem="IEc-yr-7yM" firstAttribute="leading" secondItem="YPh-6T-Jk2" secondAttribute="leading" constant="20" id="h90-Du-q9H"/>
                             <constraint firstItem="xby-JZ-8De" firstAttribute="leading" secondItem="YPh-6T-Jk2" secondAttribute="leading" id="hPl-do-cyR"/>
                             <constraint firstAttribute="bottom" secondItem="xby-JZ-8De" secondAttribute="bottom" id="lmi-20-DjX"/>
                             <constraint firstItem="IEc-yr-7yM" firstAttribute="centerX" secondItem="YPh-6T-Jk2" secondAttribute="centerX" id="xd8-2d-X5w"/>
@@ -909,7 +915,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何團，快來開團吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnO-Et-9sJ">
-                                        <rect key="frame" x="7.5" y="248.5" width="360" height="33"/>
+                                        <rect key="frame" x="20" y="232" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -917,6 +923,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FnO-Et-9sJ" secondAttribute="trailing" constant="20" id="EY1-mB-I2t"/>
+                                    <constraint firstItem="FnO-Et-9sJ" firstAttribute="leading" secondItem="0k4-fP-lKY" secondAttribute="leading" constant="20" id="Pet-sK-cSt"/>
                                     <constraint firstItem="FnO-Et-9sJ" firstAttribute="centerX" secondItem="0k4-fP-lKY" secondAttribute="centerX" id="THX-jR-7tm"/>
                                     <constraint firstItem="FnO-Et-9sJ" firstAttribute="centerY" secondItem="0k4-fP-lKY" secondAttribute="centerY" id="bvW-EH-77j"/>
                                     <constraint firstAttribute="bottom" secondItem="ahJ-3a-X1i" secondAttribute="bottom" id="hx2-Nc-vsw"/>
@@ -960,7 +968,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何分購，快來開團吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-rf-M1A">
-                                        <rect key="frame" x="-4.5" y="224" width="384" height="33"/>
+                                        <rect key="frame" x="20" y="207.5" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -970,10 +978,12 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="5m5-is-53J" secondAttribute="bottom" id="45t-2l-NWc"/>
                                     <constraint firstItem="Oks-rf-M1A" firstAttribute="centerX" secondItem="hQq-91-9FH" secondAttribute="centerX" id="92w-OG-hnH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oks-rf-M1A" secondAttribute="trailing" constant="20" id="AEt-Qo-cob"/>
                                     <constraint firstItem="5m5-is-53J" firstAttribute="leading" secondItem="hQq-91-9FH" secondAttribute="leading" id="FNh-7T-EpW"/>
                                     <constraint firstItem="Oks-rf-M1A" firstAttribute="centerY" secondItem="hQq-91-9FH" secondAttribute="centerY" id="THj-MC-1Kh"/>
                                     <constraint firstItem="5m5-is-53J" firstAttribute="top" secondItem="hQq-91-9FH" secondAttribute="top" id="i30-QA-xOZ"/>
                                     <constraint firstAttribute="trailing" secondItem="5m5-is-53J" secondAttribute="trailing" id="nsy-ml-VH9"/>
+                                    <constraint firstItem="Oks-rf-M1A" firstAttribute="leading" secondItem="hQq-91-9FH" secondAttribute="leading" constant="20" id="xNw-cj-ysa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1017,7 +1027,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未開任何團購，快來開團吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-9f-LP8">
-                                        <rect key="frame" x="-4.5" y="224" width="384" height="33"/>
+                                        <rect key="frame" x="20" y="207.5" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1025,8 +1035,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="kvQ-9f-LP8" firstAttribute="leading" secondItem="RDu-4y-eVM" secondAttribute="leading" constant="20" id="51M-VV-RcP"/>
                                     <constraint firstItem="snF-9e-jNX" firstAttribute="top" secondItem="RDu-4y-eVM" secondAttribute="top" id="An0-vS-FsN"/>
                                     <constraint firstAttribute="bottom" secondItem="snF-9e-jNX" secondAttribute="bottom" id="IvO-Az-Go2"/>
+                                    <constraint firstAttribute="trailing" secondItem="kvQ-9f-LP8" secondAttribute="trailing" constant="20" id="SDG-0L-XFv"/>
                                     <constraint firstItem="kvQ-9f-LP8" firstAttribute="centerX" secondItem="RDu-4y-eVM" secondAttribute="centerX" id="Wtx-9I-mzm"/>
                                     <constraint firstAttribute="trailing" secondItem="snF-9e-jNX" secondAttribute="trailing" id="aHr-i1-plz"/>
                                     <constraint firstItem="kvQ-9f-LP8" firstAttribute="centerY" secondItem="RDu-4y-eVM" secondAttribute="centerY" id="qgy-uA-v9d"/>
