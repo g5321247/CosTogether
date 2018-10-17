@@ -24,6 +24,8 @@ class JoinShareGroupViewController: UIViewController {
     
     var myGroups: [OwnGroup] = []
     
+    let animationView = LOTAnimationView(name: "get_started_slider")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,41 +47,29 @@ class JoinShareGroupViewController: UIViewController {
         firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
             
             self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
-
-            self.myGroups.append(group)
-            
-            self.checkMyGroupIsEmpty()
-            self.tableView.reloadData()
-
+                
+                self.myGroups.append(group)
+                
+                self.emptyLbl.isHidden = true
+                self.animationView.isHidden = true
+                
+                self.tableView.reloadData()
+                
             })
             
         }
         
-    }
-    
-    private func checkMyGroupIsEmpty() {
-    
-        let animationView = LOTAnimationView(name: "get_started_slider")
-        
-        guard myGroups.count == 0 else {
-            
-            emptyLbl.isHidden = true
-            
-            self.tableView.willRemoveSubview(animationView)
-            
-            return
-        }
-        
         animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-    
+        
         animationView.center.x = self.view.center.x
         animationView.center.y = self.view.center.y + 40
-    
+        
         animationView.contentMode = .scaleAspectFill
         
         self.tableView.addSubview(animationView)
         
         animationView.play()
+        
         
     }
     

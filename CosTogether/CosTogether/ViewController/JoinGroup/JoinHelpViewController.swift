@@ -24,6 +24,8 @@ class JoinHelpGroupViewController: UIViewController {
     
     var myGroups: [OwnGroup] = []
     
+    let animationView = LOTAnimationView(name: "get_started_slider")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,26 +50,13 @@ class JoinHelpGroupViewController: UIViewController {
                 
                 self.myGroups.append(group)
                 
-                self.checkMyGroupIsEmpty()
+                self.emptyLbl.isHidden = true
+                self.animationView.isHidden = true
+                
                 self.tableView.reloadData()
                 
             })
             
-        }
-        
-    }
-    
-    private func checkMyGroupIsEmpty() {
-        
-        let animationView = LOTAnimationView(name: "get_started_slider")
-        
-        guard myGroups.count == 0 else {
-            
-            emptyLbl.isHidden = true
-            
-            self.tableView.willRemoveSubview(animationView)
-            
-            return
         }
         
         animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
@@ -80,6 +69,7 @@ class JoinHelpGroupViewController: UIViewController {
         self.tableView.addSubview(animationView)
         
         animationView.play()
+        
         
     }
     
