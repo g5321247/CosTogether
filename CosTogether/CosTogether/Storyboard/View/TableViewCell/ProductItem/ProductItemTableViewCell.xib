@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生魚片" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpo-ue-tpH">
-                        <rect key="frame" x="120" y="10" width="52" height="20.5"/>
+                        <rect key="frame" x="120" y="10" width="155" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -52,7 +52,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NT 360" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-Rz-64I">
-                        <rect key="frame" x="301.5" y="10" width="58.5" height="20.5"/>
+                        <rect key="frame" x="290" y="10" width="70" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Yam-in-Jhb"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -119,6 +122,7 @@
                     <constraint firstItem="Fpo-ue-tpH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2aZ-fj-o1P"/>
                     <constraint firstItem="uoK-Va-8je" firstAttribute="centerY" secondItem="x1g-iP-407" secondAttribute="centerY" id="3Pt-ow-0XN"/>
                     <constraint firstAttribute="trailing" secondItem="rfe-Rz-64I" secondAttribute="trailing" constant="15" id="Bkn-f4-pEc"/>
+                    <constraint firstItem="rfe-Rz-64I" firstAttribute="leading" secondItem="Fpo-ue-tpH" secondAttribute="trailing" constant="15" id="D4L-4k-d9y"/>
                     <constraint firstItem="x1g-iP-407" firstAttribute="top" secondItem="Fpo-ue-tpH" secondAttribute="bottom" constant="16" id="FJh-0D-oJW"/>
                     <constraint firstItem="aNb-o4-MaA" firstAttribute="leading" secondItem="x1g-iP-407" secondAttribute="trailing" constant="30" id="KxN-X0-MUb"/>
                     <constraint firstItem="u01-Gm-JUa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="L8W-dc-0jk"/>
