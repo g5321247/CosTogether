@@ -17,7 +17,6 @@ class CreateArticleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleTxf.delegate = self
         contentTextView.delegate = self
     }
     
@@ -94,17 +93,4 @@ extension CreateArticleView: UITextViewDelegate {
         
     }
 
-}
-
-extension CreateArticleView: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        CosNavigationControllerViewController.isLightStatusBar = true
-
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        CosNavigationControllerViewController.isLightStatusBar = true
-
-    }
 }
