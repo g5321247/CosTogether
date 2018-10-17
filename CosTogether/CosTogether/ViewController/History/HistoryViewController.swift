@@ -91,7 +91,13 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDelegate {
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        
+        let width = 120 / 375.0 * Double(UIScreen.main.bounds.width)
+        
+        let height = width / 185.0 * 380
+        
+        return CGFloat(height)
+        
     }
     
 }

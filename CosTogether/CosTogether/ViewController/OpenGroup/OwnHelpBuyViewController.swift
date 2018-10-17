@@ -129,15 +129,21 @@ extension OwnHelpBuyViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        #warning ("改成到購買資訊的地方")
-        
-        guard let controller = UIStoryboard.mainStoryboard().instantiateInitialViewController()
-            as? HistoryViewController else {
+        guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self)
+            ) as? DetailViewController else {
                 
                 return
+                
         }
-
+        
         controller.loadViewIfNeeded()
+        
+        guard let group = myGroups[indexPath.row].group else {
+            return
+        }
+        
+        controller.updateInfo(group: group)
         
         show(controller, sender: nil)
     }
@@ -163,7 +169,7 @@ extension OwnHelpBuyViewController: UITableViewDataSource {
         cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
         cell.baseView.authorImageBot.isHidden = true
-
+        
         cell.selectionStyle = .none
         
         return cell

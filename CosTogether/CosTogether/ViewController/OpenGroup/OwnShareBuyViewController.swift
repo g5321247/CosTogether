@@ -128,9 +128,7 @@ extension OwnShareBuyViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        #warning ("改成到購買資訊的地方")
-        
+                
         guard let controller = UIStoryboard.detailStoryboard().instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)
             ) as? DetailViewController else {
