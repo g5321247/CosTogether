@@ -86,6 +86,8 @@
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
 		C8E956B32176D2DF00473C6B /* UserCalculateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B12176D2DF00473C6B /* UserCalculateTableViewCell.swift */; };
 		C8E956B42176D2DF00473C6B /* UserCalculateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B22176D2DF00473C6B /* UserCalculateTableViewCell.xib */; };
+		C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */; };
+		C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */; };
@@ -195,6 +197,8 @@
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
 		C8E956B12176D2DF00473C6B /* UserCalculateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCalculateTableViewCell.swift; sourceTree = "<group>"; };
 		C8E956B22176D2DF00473C6B /* UserCalculateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCalculateTableViewCell.xib; sourceTree = "<group>"; };
+		C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
@@ -681,6 +685,15 @@
 			path = UserCalculate;
 			sourceTree = "<group>";
 		};
+		C8E956BB2177249600473C6B /* MyProduct */ = {
+			isa = PBXGroup;
+			children = (
+				C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */,
+				C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */,
+			);
+			path = MyProduct;
+			sourceTree = "<group>";
+		};
 		C8F8C9272152338400BDB0CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +808,7 @@
 				C84975252157BCF600555855 /* Product */,
 				C8BCF0D9215E230F00A2B1B8 /* Member */,
 				C8B77B002169B3590067AC21 /* NewProduct */,
+				C8E956BB2177249600473C6B /* MyProduct */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -890,6 +904,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */,
 				C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */,
 				C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */,
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
@@ -1032,6 +1047,7 @@
 				C8E956B32176D2DF00473C6B /* UserCalculateTableViewCell.swift in Sources */,
 				C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */,
 				C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */,
+				C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */,
 				C8B91E72215FC79200F7CA3A /* ProfileViewController.swift in Sources */,
 				C8FB98CF2161951A00C78926 /* GroupTableViewCell.swift in Sources */,
 				C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */,

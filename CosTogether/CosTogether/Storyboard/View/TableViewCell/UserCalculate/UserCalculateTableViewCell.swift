@@ -47,6 +47,8 @@ class UserCalculateTableViewCell: UITableViewCell {
         let url = URL(string: useImage)
         
         userImageBot.sd_setImage(with: url, for: .normal)
+        
+        collectionView.reloadData()
     }
     
     private func setup() {
@@ -55,9 +57,23 @@ class UserCalculateTableViewCell: UITableViewCell {
     
     private func collectionviewSetup() {
         
+        registerTableViewCell(identifier: String(describing: MyProductCollectionViewCell.self))
+
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    private func registerTableViewCell(identifier: String) {
+        
+        let nibCell = UINib(nibName: identifier, bundle: nil)
+        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+        }
+
+    }
+
     
 }
 
@@ -70,7 +86,9 @@ extension UserCalculateTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return pdoducts.count
+        let count = pdoducts.count
+        
+        return count
         
     }
     
@@ -79,10 +97,11 @@ extension UserCalculateTableViewCell: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
         ) -> UICollectionViewCell {
         
+        print("yo")
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
+            withReuseIdentifier: String(describing: MyProductCollectionViewCell.self),
             for: indexPath
-            ) as? ProductCollectionViewCell else {
+            ) as? MyProductCollectionViewCell else {
                 
                 print("No such cell")
                 return UICollectionViewCell()
@@ -108,9 +127,9 @@ extension UserCalculateTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 162.5 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 120 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 230
+        let height = width / 185.0 * 180
         
         return CGSize(width: width, height: height)
     }
@@ -120,7 +139,7 @@ extension UserCalculateTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 15, left: 12, bottom: 10, right: 12)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     func collectionView(
@@ -128,7 +147,7 @@ extension UserCalculateTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 20
+        return 5
     }
     
     func collectionView(
@@ -136,7 +155,7 @@ extension UserCalculateTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 8
+        return 5
     }
     
 }
