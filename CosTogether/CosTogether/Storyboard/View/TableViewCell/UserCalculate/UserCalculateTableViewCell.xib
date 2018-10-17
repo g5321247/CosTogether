@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqg-A6-JE2" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                        <rect key="frame" x="10" y="10" width="355" height="202.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9c-gi-vQH">
                                 <rect key="frame" x="82" y="15" width="72" height="34"/>
@@ -37,8 +37,8 @@
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GOE-sg-DZx">
-                                <rect key="frame" x="0.0" y="98" width="375" height="124.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="98" width="355" height="104.5"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WoA-hA-OfU">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,13 +47,13 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="總計" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AA-Ps-lfa">
-                                <rect key="frame" x="312" y="15" width="48" height="34"/>
+                                <rect key="frame" x="292" y="15" width="48" height="34"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-Z9-jHm">
-                                <rect key="frame" x="312" y="54" width="48" height="34"/>
+                                <rect key="frame" x="292" y="54" width="48" height="34"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,10 +83,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Fqg-A6-JE2" secondAttribute="bottom" id="3RD-0a-d0l"/>
-                    <constraint firstItem="Fqg-A6-JE2" firstAttribute="leading" secondItem="mhH-oB-j8w" secondAttribute="leading" id="91M-AO-ZAM"/>
-                    <constraint firstItem="Fqg-A6-JE2" firstAttribute="top" secondItem="mhH-oB-j8w" secondAttribute="top" id="NiN-JF-EGZ"/>
-                    <constraint firstAttribute="trailing" secondItem="Fqg-A6-JE2" secondAttribute="trailing" id="mvb-Py-X8p"/>
+                    <constraint firstAttribute="bottom" secondItem="Fqg-A6-JE2" secondAttribute="bottom" constant="10" id="3RD-0a-d0l"/>
+                    <constraint firstItem="Fqg-A6-JE2" firstAttribute="leading" secondItem="mhH-oB-j8w" secondAttribute="leading" constant="10" id="91M-AO-ZAM"/>
+                    <constraint firstItem="Fqg-A6-JE2" firstAttribute="top" secondItem="mhH-oB-j8w" secondAttribute="top" constant="10" id="NiN-JF-EGZ"/>
+                    <constraint firstAttribute="trailing" secondItem="Fqg-A6-JE2" secondAttribute="trailing" constant="10" id="mvb-Py-X8p"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="RN7-MQ-3pQ"/>
