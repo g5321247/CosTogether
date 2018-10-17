@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-8c-DqD">
-                                <rect key="frame" x="87.5" y="442" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="413.5" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.24313725489999999" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="JhZ-DP-pAT"/>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-PQ-BmP">
-                                <rect key="frame" x="87.5" y="517" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="488.5" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.82668665210000003" green="0.82668665210000003" blue="0.82668665210000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Pd2-8H-vow"/>
@@ -49,19 +49,30 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMV-iM-ZeJ">
-                                <rect key="frame" x="50" y="145" width="68" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-v0-7VY">
+                                <rect key="frame" x="74.5" y="133.5" width="226.5" height="44"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="38"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-bag" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-fC-EHm">
+                                <rect key="frame" x="137.5" y="227.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lew-fC-EHm" secondAttribute="height" multiplier="1:1" id="OzO-LI-z8y"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zJX-vI-2kz" firstAttribute="bottom" secondItem="dVT-PQ-BmP" secondAttribute="bottom" constant="105" id="1eX-wR-C2a"/>
+                            <constraint firstItem="dVT-PQ-BmP" firstAttribute="bottom" secondItem="zJX-vI-2kz" secondAttribute="bottom" multiplier="0.8" id="1eX-wR-C2a"/>
+                            <constraint firstItem="uQ7-v0-7VY" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="bottom" multiplier="0.2" id="EsJ-LO-HGs"/>
                             <constraint firstItem="lY1-8c-DqD" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="RBK-WR-J3X"/>
+                            <constraint firstItem="uQ7-v0-7VY" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="UvL-vE-hVu"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="top" secondItem="uQ7-v0-7VY" secondAttribute="bottom" constant="50" id="Y4T-gs-59x"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="ch9-qr-LGD"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="ckF-Ht-Pof"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="jdL-hL-SiA"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="width" secondItem="zYG-cv-dFK" secondAttribute="height" multiplier="100:667" id="rfH-DG-sMM"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="top" secondItem="lY1-8c-DqD" secondAttribute="bottom" constant="30" id="tvf-fg-5ak"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zJX-vI-2kz"/>
@@ -76,4 +87,7 @@
             <point key="canvasLocation" x="496.80000000000001" y="-402.54872563718146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shopping-bag" width="256" height="256"/>
+    </resources>
 </document>

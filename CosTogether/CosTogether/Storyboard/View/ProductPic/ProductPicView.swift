@@ -56,7 +56,7 @@ class ProductPicView: UIView {
         
         self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         
-        pagerView.isInfinite = true
+        pagerView.isInfinite = false
         
         self.pagerView.transformer = FSPagerViewTransformer(type: .zoomOut)
 
