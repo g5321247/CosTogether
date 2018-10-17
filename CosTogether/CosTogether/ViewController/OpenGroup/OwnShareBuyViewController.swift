@@ -111,9 +111,7 @@ class OwnShareBuyViewController: UIViewController {
         controller.loadViewIfNeeded()
         
         controller.userType = .otherUser
-        controller.evaluateButton.isHidden = false
-        controller.evaluateButton.isEnabled = true
-        
+       
         show(controller, sender: nil)
     }
     

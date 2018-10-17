@@ -94,7 +94,7 @@ extension HistoryViewController: UITableViewDelegate {
         
         let width = 120 / 375.0 * Double(UIScreen.main.bounds.width)
         
-        let height = width / 185.0 * 380
+        let height = width / 185.0 * 410
         
         return CGFloat(height)
         

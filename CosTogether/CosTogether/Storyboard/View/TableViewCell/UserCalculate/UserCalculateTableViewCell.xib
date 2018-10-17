@@ -38,7 +38,7 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GOE-sg-DZx">
                                 <rect key="frame" x="0.0" y="98" width="355" height="104.5"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WoA-hA-OfU">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -69,9 +69,12 @@
                             <constraint firstItem="4AA-Ps-lfa" firstAttribute="centerY" secondItem="o9c-gi-vQH" secondAttribute="centerY" id="X9S-XW-Y7Q"/>
                             <constraint firstItem="GOE-sg-DZx" firstAttribute="top" secondItem="xeW-Z9-jHm" secondAttribute="bottom" constant="10" id="Zag-Nw-ksT"/>
                             <constraint firstItem="xeW-Z9-jHm" firstAttribute="top" secondItem="4AA-Ps-lfa" secondAttribute="bottom" constant="5" id="Zbu-n7-m2h"/>
+                            <constraint firstItem="GOE-sg-DZx" firstAttribute="top" secondItem="xeW-Z9-jHm" secondAttribute="bottom" constant="10" id="d2d-Pr-NEt"/>
+                            <constraint firstItem="4AA-Ps-lfa" firstAttribute="top" secondItem="3bg-Qk-eBE" secondAttribute="top" constant="15" id="dKK-Ca-8Rl"/>
                             <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" secondItem="GOE-sg-DZx" secondAttribute="trailing" id="erP-M8-xvq"/>
                             <constraint firstItem="3bg-Qk-eBE" firstAttribute="trailing" secondItem="xeW-Z9-jHm" secondAttribute="trailing" constant="15" id="hbZ-ZN-l8s"/>
                             <constraint firstItem="3bg-Qk-eBE" firstAttribute="bottom" secondItem="GOE-sg-DZx" secondAttribute="bottom" id="lew-sG-4yF"/>
+                            <constraint firstItem="GOE-sg-DZx" firstAttribute="top" secondItem="bhW-W2-Cgf" secondAttribute="bottom" constant="23" id="uJ9-XT-ef0"/>
                             <constraint firstItem="o9c-gi-vQH" firstAttribute="top" secondItem="bhW-W2-Cgf" secondAttribute="top" id="w3F-yh-Fwz"/>
                             <constraint firstItem="bhW-W2-Cgf" firstAttribute="leading" secondItem="3bg-Qk-eBE" secondAttribute="leading" constant="10" id="zeV-jb-nMm"/>
                         </constraints>

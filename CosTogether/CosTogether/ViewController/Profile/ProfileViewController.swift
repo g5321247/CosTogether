@@ -18,10 +18,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var topView: TopLogoView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
-    @IBOutlet weak var buyNumberLbl: UILabel!
-    @IBOutlet weak var averageEvaluationLbl: UILabel!
-    @IBOutlet weak var numberOfEvaluationLbl: UILabel!
-    @IBOutlet weak var evaluateButton: UIButton!
     
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
@@ -40,15 +36,9 @@ class ProfileViewController: UIViewController {
         
         userImageSetup(user: userType)
         topBotSetup(user: userType)
-        evaluateButtonSetup()
-            
+        
     }
 
-    private func evaluateButtonSetup() {
-        
-        evaluateButton.cornerSetup(cornerRadius: evaluateButton.frame.width / 2)
-        
-    }
     
     private func userImageSetup(user: UserType) {
 
@@ -73,11 +63,6 @@ class ProfileViewController: UIViewController {
             break
             
         }
-        
-        #warning ("個人資料比例")
-//        let width = self.view.frame.width * (210 / 375)
-
-//        userImage.frame.size = CGSize(width: width, height: width)
         
         userImage.cornerSetup(
             cornerRadius: userImage.frame.width / 2,

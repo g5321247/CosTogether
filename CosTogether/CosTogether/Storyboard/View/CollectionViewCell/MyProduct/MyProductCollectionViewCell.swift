@@ -57,7 +57,7 @@ class MyProductCollectionViewCell: UICollectionViewCell {
         
         locationLbl.text = "數量：\(numberOfItem)"
         titleLbl.text = productName
-        postDateLbl.text = "價格: \(price)"
+        postDateLbl.text = "$\(price)"
         
         let productUrl = URL(string: productImage)
         photoImage.sd_setImage(with: productUrl)
