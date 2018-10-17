@@ -84,12 +84,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wge-wn-C1c">
-                                        <rect key="frame" x="317" y="40" width="40" height="40"/>
+                                        <rect key="frame" x="305" y="40" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="V7Z-pZ-Khj"/>
                                             <constraint firstAttribute="width" secondItem="wge-wn-C1c" secondAttribute="height" multiplier="1:1" id="tiQ-d2-75C"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-72" maxY="0.0"/>
                                         <state key="normal" title="檢舉">
                                             <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -101,7 +102,7 @@
                                     <constraint firstItem="wge-wn-C1c" firstAttribute="centerY" secondItem="5QA-hv-jkL" secondAttribute="centerY" id="EDu-Vo-Nj8"/>
                                     <constraint firstItem="5QA-hv-jkL" firstAttribute="centerY" secondItem="hyH-zO-ZE6" secondAttribute="centerY" id="SNb-J4-9m9"/>
                                     <constraint firstItem="hyH-zO-ZE6" firstAttribute="leading" secondItem="y1d-x3-swe" secondAttribute="leading" constant="24" id="WiL-UT-Axg"/>
-                                    <constraint firstAttribute="trailing" secondItem="wge-wn-C1c" secondAttribute="trailing" constant="18" id="aKx-oU-69Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="wge-wn-C1c" secondAttribute="trailing" constant="30" id="aKx-oU-69Y"/>
                                     <constraint firstAttribute="bottom" secondItem="hyH-zO-ZE6" secondAttribute="bottom" constant="20" id="fdD-py-Eyh"/>
                                     <constraint firstAttribute="width" secondItem="y1d-x3-swe" secondAttribute="height" multiplier="75:19" id="loS-Ip-5bZ"/>
                                 </constraints>
