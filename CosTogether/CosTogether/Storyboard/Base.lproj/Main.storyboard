@@ -516,6 +516,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ozw-mo-2p2" id="Vd9-uY-Kwg"/>
+                        <outlet property="emptyTitle" destination="DFU-jv-pwh" id="Y67-W9-eZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kD1-8O-4N0" userLabel="First Responder" sceneMemberID="firstResponder"/>

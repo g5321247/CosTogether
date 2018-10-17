@@ -294,14 +294,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新增商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9a-2A-4Bb">
-                                <rect key="frame" x="35" y="134" width="96" height="33"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 樣商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4L-TBB">
-                                <rect key="frame" x="151.5" y="83" width="72" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可新增多種商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4L-TBB">
+                                <rect key="frame" x="127" y="83" width="121.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -416,7 +410,6 @@
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="Ovl-Yu-nMA" secondAttribute="bottom" id="7uB-Ag-6G9"/>
                             <constraint firstItem="Ovl-Yu-nMA" firstAttribute="trailing" secondItem="Lak-e3-1qA" secondAttribute="trailing" id="8Pz-6F-OVG"/>
                             <constraint firstItem="wJd-sy-cEF" firstAttribute="bottom" secondItem="wzD-pf-fnR" secondAttribute="bottom" constant="280" id="A9r-6W-xW0"/>
-                            <constraint firstItem="V9a-2A-4Bb" firstAttribute="leading" secondItem="wbd-BJ-HPZ" secondAttribute="leading" constant="10" id="AGZ-bd-3oF"/>
                             <constraint firstItem="wbd-BJ-HPZ" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" constant="25" id="Ey0-Qy-c8J"/>
                             <constraint firstItem="SDu-br-gNS" firstAttribute="bottom" secondItem="TYL-vh-otM" secondAttribute="bottom" constant="20" id="FcM-hQ-Z5h"/>
                             <constraint firstItem="mvp-qs-WKh" firstAttribute="top" secondItem="wbd-BJ-HPZ" secondAttribute="bottom" constant="20" id="GKC-8D-03s"/>
@@ -437,7 +430,6 @@
                             <constraint firstItem="KLn-Oo-Lgf" firstAttribute="centerY" secondItem="TYL-vh-otM" secondAttribute="centerY" id="jXM-pq-7b0"/>
                             <constraint firstItem="13S-4L-TBB" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="m0N-gE-AfP"/>
                             <constraint firstItem="wJd-sy-cEF" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" constant="15" id="oBG-Tl-7vd"/>
-                            <constraint firstItem="V9a-2A-4Bb" firstAttribute="top" secondItem="wbd-BJ-HPZ" secondAttribute="top" constant="20" id="qe8-mR-y0d"/>
                             <constraint firstItem="mvp-qs-WKh" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" constant="25" id="s0T-qF-1hw"/>
                             <constraint firstItem="Ovl-Yu-nMA" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" id="u0k-xi-6c5"/>
                             <constraint firstItem="Ovl-Yu-nMA" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="top" id="xfI-v8-vMP"/>
@@ -460,7 +452,6 @@
                         <outlet property="collectionBackgroundImage" destination="Zby-cq-PTX" id="YGg-4g-aG6"/>
                         <outlet property="collectionView" destination="wbd-BJ-HPZ" id="Su2-OU-cci"/>
                         <outlet property="createArticle" destination="mvp-qs-WKh" id="eUH-fU-Aaz"/>
-                        <outlet property="inCollectionViewLbl" destination="V9a-2A-4Bb" id="VF9-JI-izN"/>
                         <outlet property="newProductBot" destination="krU-NS-qRr" id="OMA-Up-lla"/>
                         <outlet property="numberOfProductCategoryLbl" destination="13S-4L-TBB" id="q4B-pV-JKb"/>
                         <outlet property="pickerView" destination="wJd-sy-cEF" id="Omb-zE-7gH"/>

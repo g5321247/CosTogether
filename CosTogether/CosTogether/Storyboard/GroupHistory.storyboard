@@ -63,20 +63,29 @@
                                 <rect key="frame" x="0.0" y="95" width="375" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚未有人加團" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-pm-m3Q">
+                                <rect key="frame" x="90.5" y="319" width="194.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="feb-1A-GYv" firstAttribute="trailing" secondItem="5bP-KL-Icy" secondAttribute="trailing" id="1vk-K3-VSH"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="leading" secondItem="feb-1A-GYv" secondAttribute="leading" id="M6c-qq-7Lb"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="top" secondItem="Aa4-7U-n0T" secondAttribute="top" id="PnO-mm-bF5"/>
+                            <constraint firstItem="jhw-pm-m3Q" firstAttribute="centerY" secondItem="Aa4-7U-n0T" secondAttribute="centerY" id="RZL-Fq-ug5"/>
                             <constraint firstItem="feb-1A-GYv" firstAttribute="bottom" secondItem="5bP-KL-Icy" secondAttribute="bottom" id="Xb0-co-o7Q"/>
                             <constraint firstItem="5bP-KL-Icy" firstAttribute="leading" secondItem="feb-1A-GYv" secondAttribute="leading" id="ZNR-CY-JYT"/>
                             <constraint firstAttribute="trailing" secondItem="EH0-E9-tyr" secondAttribute="trailing" id="b2j-0s-rch"/>
+                            <constraint firstItem="jhw-pm-m3Q" firstAttribute="centerX" secondItem="Aa4-7U-n0T" secondAttribute="centerX" id="fhc-1i-I3W"/>
                             <constraint firstItem="5bP-KL-Icy" firstAttribute="top" secondItem="EH0-E9-tyr" secondAttribute="bottom" id="j2D-Me-9mb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="feb-1A-GYv"/>
                     </view>
                     <connections>
+                        <outlet property="emptyTitleLbl" destination="jhw-pm-m3Q" id="Eip-FV-8Kw"/>
                         <outlet property="tableView" destination="5bP-KL-Icy" id="1sL-7m-qfL"/>
                         <outlet property="topView" destination="EH0-E9-tyr" id="skD-Ef-eZT"/>
                     </connections>

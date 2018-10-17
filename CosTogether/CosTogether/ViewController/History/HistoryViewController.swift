@@ -20,6 +20,8 @@ class HistoryViewController: UIViewController {
     var group: [Group] = []
     var myProducts: [MyProduct] = []
     
+    @IBOutlet weak var emptyTitleLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +49,8 @@ class HistoryViewController: UIViewController {
             firebaseManager.filterUser(userId: userId, group: group) { (products) in
                 
                 let myProduct = MyProduct(user: value, products: products)
+                
+                self.emptyTitleLbl.isHidden = true
                 
                 self.myProducts.append(myProduct)
                 self.tableView.reloadData()

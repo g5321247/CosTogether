@@ -73,8 +73,6 @@ class CreateGroupViewController: UIViewController {
                 maskToBounds: true
             )
             
-            numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
-
             return
         }
         
@@ -89,8 +87,6 @@ class CreateGroupViewController: UIViewController {
             borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
             maskToBounds: true
         )
-
-        numberOfProductCategoryLbl.text = "\(self.products.count) 樣商品"
 
     }
     

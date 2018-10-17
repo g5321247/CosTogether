@@ -17,6 +17,7 @@ class ShareBuyViewController: UIViewController {
     
     var openGroupType: OpenGroupType = .shareBuy
     
+    @IBOutlet weak var emptyTitle: UILabel!
     var group: [Group] = []
     
     override func viewDidLoad() {
@@ -68,6 +69,7 @@ class ShareBuyViewController: UIViewController {
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
             self.group.insert(groupData, at: 0)
+                        
             self.collectionView.reloadData()
         }
         
