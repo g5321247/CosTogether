@@ -11,7 +11,7 @@ import Foundation
 enum OpenGroupType: String {
     
     case shareBuy = "分購"
-    case helpBuy = "團購"
+    case helpBuy = "代購"
  
 //    func numberOfRow() -> Int {
 //

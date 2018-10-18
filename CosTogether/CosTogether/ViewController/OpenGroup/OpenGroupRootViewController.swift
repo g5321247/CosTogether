@@ -105,7 +105,7 @@ class OpenGroupRootViewController: UIViewController {
 
             CosNavigationControllerViewController.isLightStatusBar = true
 
-            controller.topTitleLbl.text = "幫團購"
+            controller.topTitleLbl.text = "幫代購"
             
             controller.openGroupType = .helpBuy
             
