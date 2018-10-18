@@ -135,6 +135,21 @@ extension OwnShareBuyViewController: UITableViewDelegate {
         
         show(controller, sender: nil)
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            
+            #warning("刪除後直接從抓 data 就不需要")
+            
+            myGroups.remove(at: indexPath.row)
+
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+        }
+        
+    }
     
 }
 
