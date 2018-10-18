@@ -272,7 +272,7 @@ class CreateGroupViewController: UIViewController {
             SVProgressHUD.dismiss()
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
             
-//            self.resetViewWhenUploadSucess()
+            self.resetViewWhenUploadSucess()
 
             CosNavigationControllerViewController.isLightStatusBar = false
             

@@ -133,7 +133,7 @@ struct FirebaseManager {
         
         let refrence = Database.database().reference()
         
-        refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
+        refrence.child("group").child(groupType.rawValue).observe(.childChanged, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
             
@@ -216,7 +216,7 @@ struct FirebaseManager {
     func downloadGroupUser(group: Group, completion: @escaping ([String]) -> Void) {
         
         let refrence = Database.database().reference()
-    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("users").observe(.childAdded) { (snapshot) in
+    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("users").observe(.childChanged) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
         
@@ -232,7 +232,7 @@ struct FirebaseManager {
     func downloadCommentUser(group: Group, completion: @escaping (CommentModel) -> Void) {
 
         let refrence = Database.database().reference()
-    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observe(.childAdded) { (snapshot) in
+    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observe(.childChanged) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
         
@@ -258,7 +258,7 @@ struct FirebaseManager {
     func downloadMyGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
         
         let refrence = Database.database().reference()
-        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childChanged) { (snapshot) in
             
             guard let value = snapshot.value as? NSDictionary else {
                 
@@ -361,7 +361,7 @@ extension FirebaseManager {
           completion: @escaping (UserModel) -> Void
         ) {
         
-        refrence.child("users").child(userId).observeSingleEvent(of: .childAdded) { (snapshot) in
+        refrence.child("users").child(userId).observeSingleEvent(of: .childChanged) { (snapshot) in
            
             let value = snapshot.value as? NSDictionary
             
@@ -516,7 +516,7 @@ extension FirebaseManager {
     func downloadMyOwnGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
         
         let refrence = Database.database().reference()
-        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childChanged) { (snapshot) in
             
             guard let groupId = snapshot.value as? String else {
                 
@@ -649,5 +649,25 @@ extension FirebaseManager {
         
     }
     
+    func deleteValue(group: Group) {
+        
+        let refrence = Database.database().reference()
+        
+        guard let groupId = group.groupId else {
+            return
+        }
+        
+        if let memberIds = group.memberID {
+            
+            for memberId in memberIds {
+                refrence.child("users").child(memberId).child("userInfo").child("myGroup").child("join").child(group.openType.rawValue).child(groupId).removeValue()
+                
+            }
+            
+        }
+    refrence.child("users").child(group.userID).child("userInfo").child("myGroup").child("own").child(group.openType.rawValue).child(groupId).removeValue()
+
+        refrence.child("group").child(group.openType.rawValue).child(groupId).removeValue()
+    }
     
 }

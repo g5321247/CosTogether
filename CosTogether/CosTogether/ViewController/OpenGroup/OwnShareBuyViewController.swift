@@ -50,6 +50,9 @@ class OwnShareBuyViewController: UIViewController {
         
         animationView.contentMode = .scaleAspectFill
         
+        self.emptyLbl.isHidden = false
+        self.animationView.isHidden = false
+        
         self.tableView.addSubview(animationView)
         
         animationView.play()
@@ -147,12 +150,14 @@ extension OwnShareBuyViewController: UITableViewDelegate {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             
             
-            #warning("刪除後直接從抓 data 就不需要")
+            firebaseManager.deleteValue(group: myGroups[indexPath.row].group!)
             
             myGroups.remove(at: indexPath.row)
 
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             
+            downloadMyGroup()
+            tableView.reloadData()
         }
         
     }
@@ -180,7 +185,6 @@ extension OwnShareBuyViewController: UITableViewDataSource {
         cell.baseView.authorImageBot.isHidden = true
         
         cell.selectionStyle = .none
-        
         
         
         return cell

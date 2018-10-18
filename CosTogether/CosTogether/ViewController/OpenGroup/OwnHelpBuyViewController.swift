@@ -22,7 +22,13 @@ class OwnHelpBuyViewController: UIViewController {
     
     var myGroup: MyGroup = .own
     
-    var myGroups: [OwnGroup] = []
+    var myGroups: [OwnGroup] = [] {
+        
+        didSet {
+            print("yo")
+        }
+        
+    }
     
     let animationView = LOTAnimationView(name: "get_started_slider")
     
@@ -49,6 +55,9 @@ class OwnHelpBuyViewController: UIViewController {
         animationView.center.y = self.view.center.y + 40
         
         animationView.contentMode = .scaleAspectFill
+        
+        self.emptyLbl.isHidden = false
+        self.animationView.isHidden = false
         
         self.tableView.addSubview(animationView)
         
