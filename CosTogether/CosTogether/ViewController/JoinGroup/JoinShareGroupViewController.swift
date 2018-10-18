@@ -75,6 +75,24 @@ class JoinShareGroupViewController: UIViewController {
             
         }
         
+        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
+            
+            for (index, key) in keys.enumerated() {
+                
+                for value in self.myGroups {
+                    
+                    if key == value.groupId {
+                        
+                        self.myGroups.remove(at: index)
+                        break
+                    }
+                    
+                }
+                
+            }
+            self.tableView.reloadData()
+        }
+        
     }
     
     private func setUpCell() {

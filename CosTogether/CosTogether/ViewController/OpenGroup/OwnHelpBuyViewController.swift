@@ -158,6 +158,23 @@ extension OwnHelpBuyViewController: UITableViewDataSource {
         return myGroups.count
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            
+            firebaseManager.deleteValue(group: myGroups[indexPath.row].group!)
+            
+            myGroups.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            downloadMyGroup()
+            tableView.reloadData()
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(

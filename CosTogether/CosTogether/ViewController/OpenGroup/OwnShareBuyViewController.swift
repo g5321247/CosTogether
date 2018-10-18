@@ -76,8 +76,6 @@ class OwnShareBuyViewController: UIViewController {
             
         }
         
-        
-        
     }
     
     private func setUpCell() {

@@ -670,13 +670,19 @@ extension FirebaseManager {
         refrence.child("group").child(group.openType.rawValue).child(groupId).removeValue()
     }
     
-    func detectValueChange(openGroupType: OpenGroupType) {
+    func detectChildRemove(openGroupType: OpenGroupType, completion: @escaping ([String]) -> Void) {
         
         let refrence = Database.database().reference()
         
-        refrence.child("group").child(openGroupType.rawValue).observeSingleEvent(of: .childRemoved) { (snapshot) in
+        refrence.child("group").observeSingleEvent(of: .childRemoved) { (snapshot) in
             
+            let value = snapshot.value as? NSDictionary
             
+            guard let keys = value?.allKeys as? [String] else {
+                return
+            }
+            
+            completion(keys)
         }
         
     }

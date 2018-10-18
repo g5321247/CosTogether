@@ -71,7 +71,27 @@ class HelpBuyViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        firebaseManager.detectValueChange(openGroupType: openGroupType)
+        firebaseManager.detectChildRemove(openGroupType: openGroupType) { (keys) in
+            
+            for (index, key) in keys.enumerated() {
+                
+                for value in self.group {
+                    
+                    guard let id = value.groupId else {
+                        break
+                    }
+                    
+                    if key == id {
+                        
+                        self.group.remove(at: index)
+                        break
+                    }
+                    
+                }
+                
+            }
+            self.collectionView.reloadData()
+        }
         
     }
     

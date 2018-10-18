@@ -47,8 +47,6 @@ class ShareBuyViewController: UIViewController {
         downloadData()
         notiSetup()
         
-        firebaseManager.detectValueChange(openGroupType: openGroupType)
-
         SVProgressHUD.dismiss()
 
     }
@@ -74,6 +72,29 @@ class ShareBuyViewController: UIViewController {
                         
             self.collectionView.reloadData()
         }
+        
+        firebaseManager.detectChildRemove(openGroupType: openGroupType) { (keys) in
+            
+            for (index, key) in keys.enumerated() {
+                
+                for value in self.group {
+                    
+                    guard let id = value.groupId else {
+                        break
+                    }
+                    
+                    if key == id {
+                        
+                        self.group.remove(at: index)
+                        break
+                    }
+                    
+                }
+                
+            }
+            self.collectionView.reloadData()
+        }
+
                 
     }
     
