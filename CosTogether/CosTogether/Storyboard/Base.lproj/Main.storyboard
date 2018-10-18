@@ -74,7 +74,6 @@
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zO-ZE6">
                                         <rect key="frame" x="24" y="45" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Tix-ZT-4df"/>
                                             <constraint firstAttribute="width" secondItem="hyH-zO-ZE6" secondAttribute="height" multiplier="1:1" id="X4G-dg-o9n"/>
                                         </constraints>
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -132,6 +131,7 @@
                             <constraint firstItem="y1d-x3-swe" firstAttribute="leading" secondItem="kpO-x4-AM6" secondAttribute="leading" id="HIi-nF-20q"/>
                             <constraint firstItem="y1d-x3-swe" firstAttribute="trailing" secondItem="kpO-x4-AM6" secondAttribute="trailing" id="Iqd-Te-b63"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="Jqh-8x-qd6"/>
+                            <constraint firstItem="hyH-zO-ZE6" firstAttribute="width" secondItem="iOw-fz-6R9" secondAttribute="height" multiplier="30:667" id="cv9-SZ-TiS"/>
                             <constraint firstItem="1bI-x1-ufB" firstAttribute="centerX" secondItem="iOw-fz-6R9" secondAttribute="centerX" id="d63-Wf-lNK"/>
                             <constraint firstItem="kpO-x4-AM6" firstAttribute="trailing" secondItem="hcm-KR-GbR" secondAttribute="trailing" constant="8" id="jdu-qS-FiQ"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1bI-x1-ufB" secondAttribute="bottom" constant="30" id="o0z-ng-2DJ"/>
@@ -633,10 +633,9 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-DO-g4o">
-                                        <rect key="frame" x="315" y="49.5" width="36" height="36"/>
+                                        <rect key="frame" x="321" y="52.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="i4C-DO-g4o" secondAttribute="height" multiplier="1:1" id="pvU-GH-IbR"/>
-                                            <constraint firstAttribute="height" constant="36" id="xbv-DC-jjj"/>
                                         </constraints>
                                         <state key="normal" image="plus"/>
                                         <connections>
@@ -673,6 +672,7 @@
                             <constraint firstItem="bbG-1P-STM" firstAttribute="leading" secondItem="haA-AD-qma" secondAttribute="leading" id="eme-Kf-r38"/>
                             <constraint firstItem="NTL-xK-2HS" firstAttribute="leading" secondItem="haA-AD-qma" secondAttribute="leading" id="hQ0-dA-6gO"/>
                             <constraint firstAttribute="trailing" secondItem="Vll-py-dkh" secondAttribute="trailing" id="iet-ZG-UuY"/>
+                            <constraint firstItem="i4C-DO-g4o" firstAttribute="width" secondItem="xlb-Nd-zgu" secondAttribute="height" multiplier="30:667" id="met-HL-V9e"/>
                             <constraint firstItem="haA-AD-qma" firstAttribute="bottom" secondItem="NTL-xK-2HS" secondAttribute="bottom" id="n3j-Wz-V1B"/>
                             <constraint firstItem="7Tb-87-GgO" firstAttribute="top" secondItem="Vll-py-dkh" secondAttribute="bottom" id="xPb-Lj-cDb"/>
                             <constraint firstAttribute="trailing" secondItem="7Tb-87-GgO" secondAttribute="trailing" id="zCL-pJ-gAI"/>

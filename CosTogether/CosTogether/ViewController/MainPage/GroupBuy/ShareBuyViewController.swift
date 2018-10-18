@@ -47,6 +47,8 @@ class ShareBuyViewController: UIViewController {
         downloadData()
         notiSetup()
         
+        firebaseManager.detectValueChange(openGroupType: openGroupType)
+
         SVProgressHUD.dismiss()
 
     }
@@ -72,7 +74,7 @@ class ShareBuyViewController: UIViewController {
                         
             self.collectionView.reloadData()
         }
-        
+                
     }
     
     private func registerTableViewCell(identifier: String) {

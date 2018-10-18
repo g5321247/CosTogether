@@ -38,7 +38,6 @@ class OwnShareBuyViewController: UIViewController {
         setUpCell()
         tableViewSetup()
         downloadMyGroup()
-        
     }
     
     private func downloadMyGroup() {

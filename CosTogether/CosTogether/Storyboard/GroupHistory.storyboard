@@ -21,22 +21,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCT-H4-uaK">
-                                        <rect key="frame" x="116" y="46" width="143" height="28"/>
+                                        <rect key="frame" x="116" y="51" width="143" height="28"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u8-N0-FMr">
-                                        <rect key="frame" x="24" y="45" width="30" height="30"/>
+                                        <rect key="frame" x="24" y="55" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8u8-N0-FMr" secondAttribute="height" multiplier="1:1" id="AhQ-qx-lMd"/>
-                                            <constraint firstAttribute="width" constant="30" id="RTE-P8-zjR"/>
                                         </constraints>
                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzq-Qm-glp">
-                                        <rect key="frame" x="301" y="35" width="50" height="50"/>
+                                        <rect key="frame" x="301" y="40" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Zzq-Qm-glp" secondAttribute="height" multiplier="1:1" id="IDn-8x-ZRs"/>
                                             <constraint firstAttribute="height" constant="50" id="hnA-SZ-y3c"/>
@@ -72,6 +71,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8u8-N0-FMr" firstAttribute="width" secondItem="Aa4-7U-n0T" secondAttribute="height" multiplier="20:667" id="0pB-F9-EYA"/>
                             <constraint firstItem="feb-1A-GYv" firstAttribute="trailing" secondItem="5bP-KL-Icy" secondAttribute="trailing" id="1vk-K3-VSH"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="leading" secondItem="feb-1A-GYv" secondAttribute="leading" id="M6c-qq-7Lb"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="top" secondItem="Aa4-7U-n0T" secondAttribute="top" id="PnO-mm-bF5"/>

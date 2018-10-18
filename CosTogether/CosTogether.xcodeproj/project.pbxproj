@@ -56,7 +56,6 @@
 		C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85151C52175F472007B1324 /* GroupHistory.storyboard */; };
 		C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C72175F559007B1324 /* HistoryViewController.swift */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
-		C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */; };
 		C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786A0F216CDE1B001D2C63 /* PickerView.swift */; };
 		C87B44722167017300283767 /* OpenGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B44712167017300283767 /* OpenGroupType.swift */; };
 		C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B08215D235A0060EA72 /* TopLogoView.swift */; };
@@ -168,7 +167,6 @@
 		C85151C52175F472007B1324 /* GroupHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupHistory.storyboard; sourceTree = "<group>"; };
 		C85151C72175F559007B1324 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageStoryboard.storyboard; sourceTree = "<group>"; };
 		C8786A0F216CDE1B001D2C63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		C87B44712167017300283767 /* OpenGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupType.swift; sourceTree = "<group>"; };
 		C87F8B08215D235A0060EA72 /* TopLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoView.swift; sourceTree = "<group>"; };
@@ -724,7 +722,6 @@
 				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */,
 				C8F8C923215227FA00BDB0CE /* LogIn.storyboard */,
-				C85D4F1C2154CEAC00D73D8F /* StartPageStoryboard.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -911,7 +908,6 @@
 				C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */,
 				C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */,
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
-				C85D4F1D2154CEAC00D73D8F /* StartPageStoryboard.storyboard in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,

@@ -17,7 +17,6 @@ class CreateArticleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        contentTextView.delegate = self
     }
     
     override func layoutSubviews() {
@@ -52,9 +51,6 @@ class CreateArticleView: UIView {
             borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         )
         
-        contentTextView.text = "請輸入揪團詳細資訊內容..."
-        contentTextView.textColor = UIColor.lightGray
-
         titleTxf.cornerSetup(
             cornerRadius: 0,
             borderWidth: 0.5,
@@ -63,34 +59,4 @@ class CreateArticleView: UIView {
         
     }
     
-}
-
-extension CreateArticleView: UITextViewDelegate {
-  
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        CosNavigationControllerViewController.isLightStatusBar = true
-        
-        if textView.textColor == UIColor.lightGray {
-            
-            textView.text = nil
-            textView.textColor = UIColor.black
-            
-        }
-        
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        
-        CosNavigationControllerViewController.isLightStatusBar = true
-        
-        if textView.text.isEmpty {
-            
-            textView.text = "請輸入揪團詳細資訊內容..."
-            textView.textColor = UIColor.lightGray
-            
-        }
-        
-    }
-
 }

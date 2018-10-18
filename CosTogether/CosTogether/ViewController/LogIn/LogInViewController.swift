@@ -26,12 +26,8 @@ class LogInViewController: UIViewController {
     func setImage() {
         
         facebookLoginBot.layer.cornerRadius = 10
-        facebookLoginBot.layer.borderWidth = 1
-        facebookLoginBot.layer.borderColor = UIColor.lightGray.cgColor
         
         anonymousLogInBot.layer.cornerRadius = 10
-        anonymousLogInBot.layer.borderWidth = 1
-        anonymousLogInBot.layer.borderColor = UIColor.lightGray.cgColor
         
     }
     

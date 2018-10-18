@@ -71,6 +71,8 @@ class HelpBuyViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
+        firebaseManager.detectValueChange(openGroupType: openGroupType)
+        
     }
     
     private func registerTableViewCell(identifier: String) {

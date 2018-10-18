@@ -167,8 +167,7 @@ class CreateGroupViewController: UIViewController {
 
         }
         
-        guard let articleContent = createArticle.contentTextView.text,
-            createArticle.contentTextView.textColor != UIColor.lightGray else {
+        guard let articleContent = createArticle.contentTextView.text else {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入詳細資訊內容")
                 
