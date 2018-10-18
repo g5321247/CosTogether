@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let keychain = Keychain(service: "com.george.CosTogether")
 
-        guard keychain[FirebaseType.uuid.rawValue] != nil else {
+        guard keychain[FirebaseType.uuid.rawValue] != nil || keychain["anonymous"] == "anonymous" else {
 
             switchLogIn()
             
@@ -49,6 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switchMainPage()
 
         return true
+    }
+    
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+        ) -> Bool {
+        
+        // FBSDK
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(
+            app,
+            open: url,
+            options: options
+        )
+        
+        return handled
     }
     
     // MARK: Facebook Setting

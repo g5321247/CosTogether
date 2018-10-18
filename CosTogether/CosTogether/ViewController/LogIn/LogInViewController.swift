@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class LogInViewController: UIViewController {
 
@@ -90,4 +91,12 @@ class LogInViewController: UIViewController {
         
     }
     
+    @IBAction func anonymousLogin(_ sender: UIButton) {
+        
+        let keychain = Keychain(service: "com.george.CosTogether")
+        keychain["anonymous"] = "anonymous"
+        
+        AppDelegate.shared.switchMainPage()
+
+    }
 }

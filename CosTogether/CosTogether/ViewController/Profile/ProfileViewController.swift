@@ -118,9 +118,21 @@ class ProfileViewController: UIViewController {
             let action = UIAlertAction(title: "確認", style: .default) { (_) in
                 
                 let keychain = Keychain(service: "com.george.CosTogether")
-                keychain[FirebaseType.uuid.rawValue] = nil
+               
+                do  {
+                    
+                    try keychain.remove(FirebaseType.uuid.rawValue)
+                    
+                    try Auth.auth().signOut()
+                    
+                    AppDelegate.shared.switchLogIn()
+
+                } catch {
+                    
+                    print("登出失敗")
+                    return
+                }
                 
-                AppDelegate.shared.switchLogIn()
                 
             }
             

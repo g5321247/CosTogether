@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-fC-EHm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-8c-DqD">
                                 <rect key="frame" x="87.5" y="413.5" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.24313725489999999" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,32 +51,39 @@
                                 <state key="normal" title="匿名登入">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="anonymousLogin:" destination="m6h-1e-t91" eventType="touchUpInside" id="XBV-vW-q2s"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-v0-7VY">
                                 <rect key="frame" x="74.5" y="133.5" width="226.5" height="44"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="38"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-bag" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-fC-EHm">
-                                <rect key="frame" x="137.5" y="227.5" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lew-fC-EHm" secondAttribute="height" multiplier="1:1" id="OzO-LI-z8y"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買太多，找分購？賺紅利，幫代購？快用 Cos 購一下吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-eN-do9">
+                                <rect key="frame" x="15" y="207.5" width="345" height="54.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5TE-eN-do9" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" constant="15" id="0ZF-US-5sV"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="bottom" secondItem="zJX-vI-2kz" secondAttribute="bottom" multiplier="0.8" id="1eX-wR-C2a"/>
                             <constraint firstItem="uQ7-v0-7VY" firstAttribute="top" secondItem="zJX-vI-2kz" secondAttribute="bottom" multiplier="0.2" id="EsJ-LO-HGs"/>
                             <constraint firstItem="lY1-8c-DqD" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="RBK-WR-J3X"/>
                             <constraint firstItem="uQ7-v0-7VY" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="UvL-vE-hVu"/>
-                            <constraint firstItem="Lew-fC-EHm" firstAttribute="top" secondItem="uQ7-v0-7VY" secondAttribute="bottom" constant="50" id="Y4T-gs-59x"/>
-                            <constraint firstItem="Lew-fC-EHm" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="ch9-qr-LGD"/>
-                            <constraint firstItem="Lew-fC-EHm" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="ckF-Ht-Pof"/>
+                            <constraint firstAttribute="top" secondItem="Lew-fC-EHm" secondAttribute="top" id="b4h-Ii-Fz0"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="bottom" secondItem="zYG-cv-dFK" secondAttribute="bottom" id="iy7-Kx-tap"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="jdL-hL-SiA"/>
-                            <constraint firstItem="Lew-fC-EHm" firstAttribute="width" secondItem="zYG-cv-dFK" secondAttribute="height" multiplier="100:667" id="rfH-DG-sMM"/>
+                            <constraint firstItem="5TE-eN-do9" firstAttribute="top" secondItem="uQ7-v0-7VY" secondAttribute="bottom" constant="30" id="p42-MQ-Lsx"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="Lew-fC-EHm" secondAttribute="trailing" id="pXs-FM-NRd"/>
                             <constraint firstItem="dVT-PQ-BmP" firstAttribute="top" secondItem="lY1-8c-DqD" secondAttribute="bottom" constant="30" id="tvf-fg-5ak"/>
+                            <constraint firstItem="zJX-vI-2kz" firstAttribute="trailing" secondItem="5TE-eN-do9" secondAttribute="trailing" constant="15" id="vqM-Rc-WMr"/>
+                            <constraint firstItem="5TE-eN-do9" firstAttribute="centerX" secondItem="zYG-cv-dFK" secondAttribute="centerX" id="wik-sN-r8r"/>
+                            <constraint firstItem="Lew-fC-EHm" firstAttribute="leading" secondItem="zJX-vI-2kz" secondAttribute="leading" id="xF1-QU-faf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zJX-vI-2kz"/>
                     </view>
@@ -88,6 +98,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="shopping-bag" width="256" height="256"/>
+        <image name="cover" width="3008" height="2008"/>
     </resources>
 </document>
