@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import NotificationBannerSwift
+import Firebase
 
 class OpenGroupRootViewController: UIViewController {
 
@@ -68,6 +70,13 @@ class OpenGroupRootViewController: UIViewController {
     
     @IBAction func createNewGroup(_ sender: UIButton) {
         
+        guard Auth.auth().currentUser?.uid != nil else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法開團，請用 FB 登入")
+
+            return
+        }
+
         switch groupTypeSC.selectedSegmentIndex {
             
         case 0:

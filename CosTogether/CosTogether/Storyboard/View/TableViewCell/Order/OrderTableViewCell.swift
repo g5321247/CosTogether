@@ -58,6 +58,12 @@ class OrderTableViewCell: UITableViewCell {
     
     @IBAction func orderTapping(_ sender: UIButton) {
         
+        guard Auth.auth().currentUser?.uid != nil else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法下單，請用 FB 登入")
+            return
+        }
+        
         guard Int.parse(from: amoutLbl.text!) != 0 else {
             
             BaseNotificationBanner.warningBanner(subtitle: "您未加入任何商品")

@@ -43,6 +43,22 @@ class OwnHelpBuyViewController: UIViewController {
     
     private func downloadMyGroup() {
         
+        animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+        
+        animationView.center.x = self.view.center.x
+        animationView.center.y = self.view.center.y + 40
+        
+        animationView.contentMode = .scaleAspectFill
+        
+        self.tableView.addSubview(animationView)
+        
+        animationView.play()
+        
+        guard Auth.auth().currentUser?.uid != nil else {
+            
+            return
+        }
+        
         firebaseManager.downloadMyOwnGroup(groupType: groupType, myGroup: myGroup) { (group) in
             
             self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
@@ -58,17 +74,6 @@ class OwnHelpBuyViewController: UIViewController {
             
         }
         
-        animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-        
-        animationView.center.x = self.view.center.x
-        animationView.center.y = self.view.center.y + 40
-        
-        animationView.contentMode = .scaleAspectFill
-        
-        self.tableView.addSubview(animationView)
-        
-        animationView.play()
-
         
     }
     

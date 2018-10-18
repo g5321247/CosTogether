@@ -16,7 +16,6 @@ class CreateGroupViewController: UIViewController {
 
     @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var newProductBot: UIButton!
-    @IBOutlet weak var inCollectionViewLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
@@ -61,8 +60,6 @@ class CreateGroupViewController: UIViewController {
         
         guard products.count > 0 else {
             
-            inCollectionViewLbl.isHidden = false
-            
             collectionBackgroundImage.isHidden = false
             
             collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
@@ -78,7 +75,6 @@ class CreateGroupViewController: UIViewController {
         
         collectionBackgroundImage.isHidden = true
 
-        inCollectionViewLbl.isHidden = true
         collectionView.backgroundColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         collectionView.cornerSetup(

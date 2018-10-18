@@ -12,6 +12,7 @@ import FirebaseAuth
 import Firebase
 import KeychainAccess
 import SDWebImage
+import NotificationBannerSwift
 
 class ProfileViewController: UIViewController {
 
@@ -129,7 +130,7 @@ class ProfileViewController: UIViewController {
 
                 } catch {
                     
-                    print("登出失敗")
+                    BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
                     return
                 }
                 
@@ -181,6 +182,13 @@ class ProfileViewController: UIViewController {
     }
     
     func reportingUser() {
+        
+        guard Auth.auth().currentUser?.uid != nil else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法檢舉其他使用者")
+            
+            return
+        }
         
         let alert = UIAlertController(title: "檢舉使用者", message: "您將對該使用者進行檢舉，請進行確認", preferredStyle: UIAlertController.Style.alert)
         
