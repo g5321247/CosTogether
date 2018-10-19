@@ -133,7 +133,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-Pe-wW7">
-                                        <rect key="frame" x="8" y="37" width="339" height="120"/>
+                                        <rect key="frame" x="8" y="39" width="339" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -159,8 +159,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="5Ax-xn-lgJ" secondAttribute="trailing" constant="8" id="74S-Pt-W0u"/>
                                     <constraint firstItem="Lz9-zi-iCl" firstAttribute="leading" secondItem="XFb-ZA-Qao" secondAttribute="leading" constant="8" id="8A2-qJ-yGe"/>
-                                    <constraint firstItem="MEB-Pe-wW7" firstAttribute="top" secondItem="Lz9-zi-iCl" secondAttribute="bottom" constant="8" id="JoK-h0-ohR"/>
-                                    <constraint firstItem="DJd-R8-glH" firstAttribute="top" secondItem="MEB-Pe-wW7" secondAttribute="bottom" constant="20" id="SZX-kC-B4O"/>
+                                    <constraint firstItem="MEB-Pe-wW7" firstAttribute="top" secondItem="Lz9-zi-iCl" secondAttribute="bottom" constant="10" id="JoK-h0-ohR"/>
+                                    <constraint firstItem="DJd-R8-glH" firstAttribute="top" secondItem="MEB-Pe-wW7" secondAttribute="bottom" constant="10" id="SZX-kC-B4O"/>
                                     <constraint firstItem="Lz9-zi-iCl" firstAttribute="top" secondItem="XFb-ZA-Qao" secondAttribute="top" constant="8" id="Ud8-Y0-Fhk"/>
                                     <constraint firstAttribute="trailing" secondItem="MEB-Pe-wW7" secondAttribute="trailing" constant="8" id="bsi-sJ-f8J"/>
                                     <constraint firstItem="MEB-Pe-wW7" firstAttribute="leading" secondItem="XFb-ZA-Qao" secondAttribute="leading" constant="8" id="eso-lt-sa4"/>
