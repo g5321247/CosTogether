@@ -34,6 +34,9 @@ class HelpBuyViewController: UIViewController {
     }
     
     @objc func downloadFromFirebase(noti: Notification) {
+        
+        group.removeAll()
+
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
