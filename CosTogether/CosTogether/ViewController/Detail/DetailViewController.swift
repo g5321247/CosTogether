@@ -280,6 +280,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 buyNumber: user.buyNumber ?? 0,
                 userName: user.userName,
                 numberOfEvaluation: user.numberOfEvaluation ?? 0,
+                aboutSelf: user.aboutSelf ?? "",
                 userType: .currentUser
             )
             
@@ -295,6 +296,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             buyNumber: user.buyNumber ?? 0,
             userName: user.userName,
             numberOfEvaluation: user.numberOfEvaluation ?? 0,
+            aboutSelf: user.aboutSelf ?? "",
             userType: .otherUser
         )
         
@@ -326,6 +328,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 buyNumber: owner.buyNumber ?? 0,
                 userName: owner.userName,
                 numberOfEvaluation: owner.numberOfEvaluation ?? 0,
+                aboutSelf: owner.aboutSelf ?? "",
                 userType: .currentUser
             )
             
@@ -340,6 +343,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             buyNumber: owner.buyNumber ?? 0,
             userName: owner.userName,
             numberOfEvaluation: owner.numberOfEvaluation ?? 0,
+            aboutSelf: owner.aboutSelf ?? "",
             userType: .otherUser
         )
         

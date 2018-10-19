@@ -26,13 +26,9 @@ class ProfileViewController: UIViewController {
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
     
+    let firebaseManager = FirebaseManager()
     
-    
-    
-    
-    
-    
-    
+    var currentUserModel: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +44,20 @@ class ProfileViewController: UIViewController {
 
         userImageSetup(user: userType)
         topBotSetup(user: userType)
+        
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            
+            return
+        }
+        
+        firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+            
+            self.currentUserModel = userModel
+            
+        }
         
     }
 
@@ -90,7 +98,8 @@ class ProfileViewController: UIViewController {
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
             
-            guard  != "" else {
+            guard let aboutSelf = currentUserModel?.aboutSelf,
+                aboutSelf != "" else {
                 
                 self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
                 

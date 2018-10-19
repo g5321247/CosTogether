@@ -188,6 +188,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
                 buyNumber: delegate.joinMember[indexPath.row].buyNumber ?? 0,
                 userName: delegate.joinMember[indexPath.row].userName,
                 numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation ?? 0,
+                aboutSelf: delegate.joinMember[indexPath.row].aboutSelf ?? "",
                 userType: .currentUser
             )
             
@@ -202,6 +203,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
             buyNumber: delegate.joinMember[indexPath.row].buyNumber ?? 0,
             userName: delegate.joinMember[indexPath.row].userName,
             numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation ?? 0,
+            aboutSelf: delegate.joinMember[indexPath.row].aboutSelf ?? "",
             userType: .otherUser
         )
         

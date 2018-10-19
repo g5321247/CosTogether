@@ -107,6 +107,7 @@ class PreviousCommentTableViewCell: UITableViewCell {
             buyNumber: user.buyNumber ?? 0,
             userName: user.userName,
             numberOfEvaluation: user.numberOfEvaluation ?? 0,
+            aboutSelf: user.aboutSelf ?? "",
             userType: .otherUser
         )
         
