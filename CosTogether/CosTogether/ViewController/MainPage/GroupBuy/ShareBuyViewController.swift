@@ -43,6 +43,8 @@ class ShareBuyViewController: UIViewController {
     
     @objc func downloadFromFirebase(noti: Notification) {
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            
             self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
         }

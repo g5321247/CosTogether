@@ -146,15 +146,12 @@ extension OwnShareBuyViewController: UITableViewDelegate {
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
             
-            
             firebaseManager.deleteValue(group: myGroups[indexPath.row].group!)
             
             myGroups.remove(at: indexPath.row)
 
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             
-            downloadMyGroup()
-            tableView.reloadData()
         }
         
     }

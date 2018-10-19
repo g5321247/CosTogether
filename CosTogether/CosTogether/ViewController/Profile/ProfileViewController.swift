@@ -69,18 +69,25 @@ class ProfileViewController: UIViewController {
     
     private func aboutMyselfSetup() {
         
+        editBot.cornerSetup(cornerRadius: 4)
+        sendBot.cornerSetup(cornerRadius: 4)
+
         aboutMyselfTextView.cornerSetup(
             cornerRadius: 0,
             borderWidth: 0.5,
             borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         )
         
-        editBot.cornerSetup(cornerRadius: 4)
-        sendBot.cornerSetup(cornerRadius: 4)
     }
     
     private func userImageSetup(user: UserType) {
 
+        userImage.cornerSetup(
+            cornerRadius: userImage.frame.width / 2,
+            borderWidth: 0.5,
+            borderColor: UIColor.lightGray.cgColor
+        )
+        
         switch user {
         case .currentUser, .currentTabProfile:
             
@@ -113,11 +120,6 @@ class ProfileViewController: UIViewController {
             
         }
         
-        userImage.cornerSetup(
-            cornerRadius: userImage.frame.width / 2,
-            borderWidth: 0.5,
-            borderColor: UIColor.lightGray.cgColor
-        )
     }
     
     func topBotSetup(user: UserType) {

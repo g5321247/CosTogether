@@ -233,24 +233,26 @@ class CreateGroupViewController: UIViewController {
             
                     self.dispatchGroup.leave()
                     
-                    self.dispatchGroup.notify(queue: .main) {
-                        
-                        completion(
-                            Group(
-                            openType: group.openType,
-                            article: group.article,
-                            products: self.products,
-                            userID: group.userID
-                            )
-                        )
-                    }
-                    
             }) { (error) in
                 
                 SVProgressHUD.dismiss()
 
                 #warning ("TODO")
+                
+                self.dispatchGroup.leave()
 
+            }
+            
+            self.dispatchGroup.notify(queue: .main) {
+                
+                completion(
+                    Group(
+                        openType: group.openType,
+                        article: group.article,
+                        products: self.products,
+                        userID: group.userID
+                    )
+                )
             }
         }
         

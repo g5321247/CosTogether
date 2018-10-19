@@ -686,6 +686,5 @@ extension FirebaseManager {
         }
         
     }
-
     
 }
