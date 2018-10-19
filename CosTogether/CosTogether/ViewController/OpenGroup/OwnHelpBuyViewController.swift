@@ -167,10 +167,10 @@ extension OwnHelpBuyViewController: UITableViewDataSource {
             
             myGroups.remove(at: indexPath.row)
             
+            NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
+            
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             
-            downloadMyGroup()
-            tableView.reloadData()
         }
         
     }
