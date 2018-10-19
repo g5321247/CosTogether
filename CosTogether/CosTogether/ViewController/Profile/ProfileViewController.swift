@@ -19,9 +19,20 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var topView: TopLogoView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var aboutMyselfTextView: UITextView!
+    @IBOutlet weak var editBot: UIButton!
+    @IBOutlet weak var sendBot: UIButton!
     
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +45,31 @@ class ProfileViewController: UIViewController {
     }
     
     private func setup() {
-        
+
         userImageSetup(user: userType)
         topBotSetup(user: userType)
+        aboutMyselfSetup()
+        aboutMyselfEditable(editable: false)
         
     }
 
+    func aboutMyselfEditable(editable: Bool) {
+        
+        aboutMyselfTextView.isEditable = editable
+        
+    }
+    
+    private func aboutMyselfSetup() {
+        
+        aboutMyselfTextView.cornerSetup(
+            cornerRadius: 0,
+            borderWidth: 0.5,
+            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        )
+        
+        editBot.cornerSetup(cornerRadius: 4)
+        sendBot.cornerSetup(cornerRadius: 4)
+    }
     
     private func userImageSetup(user: UserType) {
 
@@ -59,6 +89,15 @@ class ProfileViewController: UIViewController {
             
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
+            
+            guard  != "" else {
+                
+                self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
+                
+                return
+            }
+            
+            self.aboutMyselfTextView.text = aboutSelf
             
         case .otherUser:
             break
@@ -165,6 +204,7 @@ class ProfileViewController: UIViewController {
         buyNumber: Int,
         userName: String,
         numberOfEvaluation: Int,
+        aboutSelf: String,
         userType: UserType
         ) {
         
@@ -173,12 +213,22 @@ class ProfileViewController: UIViewController {
         let url = URL(string: userImage + "?height=500")
         self.userImage.sd_setImage(with: url)
         
+        
 //        buyNumberLbl.text = String(buyNumber)
 //        userNameLbl.text = userName
 //        numberOfEvaluationLbl.text = String(numberOfEvaluation)
         
         self.userType = userType
+
+        guard aboutSelf != "" else {
+            
+            self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
+            
+            return
+        }
         
+        self.aboutMyselfTextView.text = aboutSelf
+
     }
     
     func reportingUser() {

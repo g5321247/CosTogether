@@ -96,6 +96,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                         numberOfEvaluation: user.numberOfEvaluation,
                         buyNumber: user.buyNumber,
                         averageEvaluation: user.averageEvaluation,
+                        aboutSelf: user.aboutSelf,
                         userId: value
                     )
                     

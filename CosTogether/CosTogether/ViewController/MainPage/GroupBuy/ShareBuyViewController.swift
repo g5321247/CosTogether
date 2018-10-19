@@ -18,7 +18,14 @@ class ShareBuyViewController: UIViewController {
     var openGroupType: OpenGroupType = .shareBuy
     
     @IBOutlet weak var emptyTitle: UILabel!
-    var group: [Group] = []
+
+    var group: [Group] = [] {
+        
+        didSet {
+            print("no")
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

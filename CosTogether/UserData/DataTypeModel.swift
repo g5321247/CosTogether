@@ -126,6 +126,8 @@ struct UserModel: DataProtocol {
     
     var averageEvaluation: Double?
     
+    var aboutSelf: String?
+    
     var userId: String?
     
     init (
@@ -134,6 +136,7 @@ struct UserModel: DataProtocol {
         numberOfEvaluation: Int? = 0,
         buyNumber: Int? = 0,
         averageEvaluation: Double? = 0,
+        aboutSelf: String? = nil,
         userId: String? = nil
         ) {
         
@@ -142,6 +145,7 @@ struct UserModel: DataProtocol {
         self.numberOfEvaluation = numberOfEvaluation
         self.buyNumber = buyNumber
         self.averageEvaluation = averageEvaluation
+        self.aboutSelf = aboutSelf
         self.userId = userId
     }
     
