@@ -82,7 +82,6 @@ class ShareBuyViewController: UIViewController {
         
         SVProgressHUD.show()
         
-        
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
             self.userDefault.removeObject(forKey: groupData.userID)

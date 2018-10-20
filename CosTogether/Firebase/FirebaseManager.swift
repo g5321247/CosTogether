@@ -363,6 +363,8 @@ extension FirebaseManager {
                     
             }
             
+            let aboutMyself = value?["aboutMyself"] as? String
+            
             #warning ("增加評價內容,內容如下")
 
 //            if avreage != "" {
@@ -372,7 +374,7 @@ extension FirebaseManager {
 //                get data
 //            }
             
-            completion(UserModel(userImage: userPicUrl, userName: userName))
+            completion(UserModel(userImage: userPicUrl, userName: userName, aboutSelf: aboutMyself ?? ""))
             
         }
     }
@@ -676,6 +678,18 @@ extension FirebaseManager {
             completion(keys)
         }
         
+    }
+    
+    func updateAboutMyself(description: String) {
+        
+        let refrence = Database.database().reference()
+        
+        let childUpdates = [
+            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself": description
+        ]
+        
+        refrence.updateChildValues(childUpdates)
+
     }
     
 }

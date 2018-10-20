@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import SVProgressHUD
 import FirebaseAuth
 import Firebase
 import KeychainAccess
@@ -24,6 +24,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var cancelEditBot: UIButton!
     
     var temAboutMyself: String?
+    
+    let dispatchGroup = DispatchGroup()
     
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
@@ -66,18 +68,25 @@ class ProfileViewController: UIViewController {
             guard userModel.aboutSelf != "" else {
                 return
             }
+            
+            self.dispatchGroup.enter()
             self.temAboutMyself = userModel.aboutSelf
+            self.dispatchGroup.leave()
         }
         
     }
     
     @objc func sendingAboutMyself(_ sender: UIButton) {
         
-        #warning("這邊寫送出的 function")
+        SVProgressHUD.show()
+        
+        firebaseManager.updateAboutMyself(description: aboutMyselfTextView.text)
+        
+        temAboutMyself = aboutMyselfTextView.text
         
         editing(false)
         
-        
+        SVProgressHUD.dismiss()
     }
     
     @objc func cancelEditing(_ sender: UIButton) {
@@ -122,7 +131,8 @@ class ProfileViewController: UIViewController {
     private func aboutMyselfSetup() {
         
         updateAboutMyselfBot.cornerSetup(cornerRadius: 4)
-
+        cancelEditBot.cornerSetup(cornerRadius: 4)
+        
         aboutMyselfTextView.cornerSetup(
             cornerRadius: 0,
             borderWidth: 0.5,
@@ -156,6 +166,16 @@ class ProfileViewController: UIViewController {
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
             
+            dispatchGroup.notify(queue: .main) {
+                
+                guard let temAboutMyself = self.temAboutMyself else {
+                    return
+                }
+                
+                self.aboutMyselfTextView.text = temAboutMyself
+
+            }
+
             guard let aboutSelf = currentUserModel?.aboutSelf,
                 aboutSelf != "" else {
                 

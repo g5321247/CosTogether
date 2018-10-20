@@ -19,7 +19,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     var cellHeight: CGFloat = 53
     let userDefault = UserDefaults.standard
 
-    
     var orderAlready: Bool = false
     
     var isSend: Bool = false
