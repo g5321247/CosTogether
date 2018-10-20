@@ -19,6 +19,7 @@
 		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
 		C810BB3521592A3D0064A656 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB3421592A3D0064A656 /* UIView+.swift */; };
 		C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810BB382159E4630064A656 /* MainNavigationViewController.swift */; };
+		C8138EE4217B38AF0073D259 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8138EE3217B38AF0073D259 /* AgreementViewController.swift */; };
 		C8154385215340A800B3446D /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154384215340A800B3446D /* FacebookManager.swift */; };
 		C8154387215352A500B3446D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8154386215352A500B3446D /* FirebaseManager.swift */; };
 		C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8215FD52151FAB6006BC7A3 /* AppDelegate.swift */; };
@@ -122,6 +123,7 @@
 		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
 		C810BB3421592A3D0064A656 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C810BB382159E4630064A656 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		C8138EE3217B38AF0073D259 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		C8154384215340A800B3446D /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		C8154386215352A500B3446D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C8215FD22151FAB6006BC7A3 /* CosTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,14 @@
 				C80B61EE216A10E100A59F28 /* ProductSettingView.swift */,
 			);
 			path = ProductSetting;
+			sourceTree = "<group>";
+		};
+		C8138EE5217B38C10073D259 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				C8138EE3217B38AF0073D259 /* AgreementViewController.swift */,
+			);
+			path = Agreement;
 			sourceTree = "<group>";
 		};
 		C81543822153406700B3446D /* Model */ = {
@@ -699,6 +709,7 @@
 			isa = PBXGroup;
 			children = (
 				C85151C12175D2D3007B1324 /* CosNavigationControllerViewController.swift */,
+				C8138EE5217B38C10073D259 /* Agreement */,
 				C85151C92175F63E007B1324 /* History */,
 				C84975242157BAF200555855 /* LogIn */,
 				C8FB98B9216103D800C78926 /* Chat */,
@@ -1061,6 +1072,7 @@
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
 				C8FB98BB2161110E00C78926 /* UITableView+.swift in Sources */,
 				C80187F8217583A000FAC704 /* JoinHelpViewController.swift in Sources */,
+				C8138EE4217B38AF0073D259 /* AgreementViewController.swift in Sources */,
 				C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
 				C849752B2157C25D00555855 /* Product.swift in Sources */,
