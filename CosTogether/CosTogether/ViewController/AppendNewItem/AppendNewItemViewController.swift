@@ -63,6 +63,8 @@ class AppendNewItemViewController: UIViewController {
         newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.7126446366, green: 0.731051445, blue: 0.764359653, alpha: 1), lineWidth: 3)
         appendProductBot.cornerSetup(cornerRadius: 2.5)
         appendProductBot.shadowSetup()
+        
+        appendProductBot.imageView?.contentMode = .scaleAspectFill
     }
     
     private func pictureIsExsist() {

@@ -799,6 +799,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="5UO-RM-ZXC" id="kno-Dv-sRe"/>
+                        <outlet property="emptyTitle" destination="T2X-sT-mDT" id="y9v-qz-btF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKI-xZ-Tfu" userLabel="First Responder" sceneMemberID="firstResponder"/>

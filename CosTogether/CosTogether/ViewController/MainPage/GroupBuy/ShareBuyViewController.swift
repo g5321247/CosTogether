@@ -12,13 +12,16 @@ import SVProgressHUD
 class ShareBuyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyTitle: UILabel!
+    
+    var refreshControl: UIRefreshControl!
     
     let firebaseManager = FirebaseManager()
     
     var openGroupType: OpenGroupType = .shareBuy
+    
     let userDefault = UserDefaults.standard
     
-    @IBOutlet weak var emptyTitle: UILabel!
 
     var group: [Group] = [] {
         
@@ -42,7 +45,27 @@ class ShareBuyViewController: UIViewController {
         
     }
     
-    @objc func downloadFromFirebase(noti: Notification) {
+    @objc func downloadFromFirebase(noti: Notification?) {
+        
+        group.removeAll()
+
+        self.refreshControl.beginRefreshing()
+
+        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+                return
+            }
+            
+            self.group.insert(groupData, at: 0)
+            
+            self.collectionView.reloadData()
+            
+            
+        }
+    }
+    
+    @objc func refresh(_ sender: UIButton) {
         
         group.removeAll()
         
@@ -53,9 +76,14 @@ class ShareBuyViewController: UIViewController {
             }
             
             self.group.insert(groupData, at: 0)
+            
             self.collectionView.reloadData()
+            
+            self.refreshControl.endRefreshing()
+
         }
     }
+
     
     private func setup() {
         
@@ -75,7 +103,17 @@ class ShareBuyViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+
+        refreshControl = UIRefreshControl()
         
+        collectionView.alwaysBounceVertical = true
+
+        refreshControl.attributedTitle = NSAttributedString(string: "更新資料中...")
+
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        
+        collectionView.addSubview(refreshControl)
+
     }
     
     private func downloadData() {

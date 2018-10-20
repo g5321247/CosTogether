@@ -12,6 +12,9 @@ import SVProgressHUD
 class HelpBuyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyTitle: UILabel!
+    
+    var refreshControl: UIRefreshControl!
     
     let firebaseManager = FirebaseManager()
     
@@ -35,10 +38,10 @@ class HelpBuyViewController: UIViewController {
         
     }
     
-    @objc func downloadFromFirebase(noti: Notification) {
+    @objc func downloadFromFirebase(noti: Notification?) {
         
         group.removeAll()
-
+        
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
             guard self.userDefault.data(forKey: groupData.userID) == nil else {
@@ -46,6 +49,9 @@ class HelpBuyViewController: UIViewController {
             }
             
             self.group.insert(groupData, at: 0)
+            
+            self.refreshControl.endRefreshing()
+
             self.collectionView.reloadData()
         }
     }
@@ -69,6 +75,33 @@ class HelpBuyViewController: UIViewController {
         
         collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         
+        refreshControl = UIRefreshControl()
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "更新資料中...")
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        
+        collectionView.addSubview(refreshControl)
+
+        collectionView.alwaysBounceVertical = true
+    }
+    
+    @objc func refresh(_ sender: UIButton) {
+        
+        group.removeAll()
+        
+        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+                return
+            }
+            
+            self.group.insert(groupData, at: 0)
+            
+            self.collectionView.reloadData()
+            
+            self.refreshControl.endRefreshing()
+            
+        }
     }
     
     private func downloadData() {

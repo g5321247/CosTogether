@@ -14,7 +14,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
-    
+        
     let firebaseManager = FirebaseManager()
     var cellHeight: CGFloat = 53
     let userDefault = UserDefaults.standard
@@ -196,6 +196,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         tableView.allowsSelection = false
+        
     }
     
     private func topLogViewSetup() {
