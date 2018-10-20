@@ -138,15 +138,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ax-xn-lgJ">
-                                        <rect key="frame" x="277" y="4.5" width="70" height="28"/>
-                                        <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="編輯">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-R8-glH">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-R8-glH">
                                         <rect key="frame" x="277" y="177" width="70" height="28"/>
                                         <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -157,16 +149,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5Ax-xn-lgJ" secondAttribute="trailing" constant="8" id="74S-Pt-W0u"/>
                                     <constraint firstItem="Lz9-zi-iCl" firstAttribute="leading" secondItem="XFb-ZA-Qao" secondAttribute="leading" constant="8" id="8A2-qJ-yGe"/>
                                     <constraint firstItem="MEB-Pe-wW7" firstAttribute="top" secondItem="Lz9-zi-iCl" secondAttribute="bottom" constant="10" id="JoK-h0-ohR"/>
                                     <constraint firstItem="DJd-R8-glH" firstAttribute="top" secondItem="MEB-Pe-wW7" secondAttribute="bottom" constant="10" id="SZX-kC-B4O"/>
                                     <constraint firstItem="Lz9-zi-iCl" firstAttribute="top" secondItem="XFb-ZA-Qao" secondAttribute="top" constant="8" id="Ud8-Y0-Fhk"/>
                                     <constraint firstAttribute="trailing" secondItem="MEB-Pe-wW7" secondAttribute="trailing" constant="8" id="bsi-sJ-f8J"/>
                                     <constraint firstItem="MEB-Pe-wW7" firstAttribute="leading" secondItem="XFb-ZA-Qao" secondAttribute="leading" constant="8" id="eso-lt-sa4"/>
-                                    <constraint firstItem="5Ax-xn-lgJ" firstAttribute="centerY" secondItem="Lz9-zi-iCl" secondAttribute="centerY" id="fYz-ZR-46Z"/>
                                     <constraint firstAttribute="bottom" secondItem="DJd-R8-glH" secondAttribute="bottom" constant="15" id="nLb-lf-EaO"/>
-                                    <constraint firstItem="DJd-R8-glH" firstAttribute="centerX" secondItem="5Ax-xn-lgJ" secondAttribute="centerX" id="nqA-af-pug"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -188,14 +177,12 @@
                             <constraint firstItem="DJd-R8-glH" firstAttribute="width" secondItem="iOw-fz-6R9" secondAttribute="height" multiplier="70:667" id="nDL-jr-R5B"/>
                             <constraint firstItem="hcm-KR-GbR" firstAttribute="top" secondItem="1bI-x1-ufB" secondAttribute="bottom" constant="30" id="o0z-ng-2DJ"/>
                             <constraint firstItem="1bI-x1-ufB" firstAttribute="top" secondItem="y1d-x3-swe" secondAttribute="bottom" constant="20" id="oCc-3H-STG"/>
-                            <constraint firstItem="5Ax-xn-lgJ" firstAttribute="width" secondItem="iOw-fz-6R9" secondAttribute="height" multiplier="70:667" id="oLx-NZ-DYv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpO-x4-AM6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="個人資料" image="Profile" id="jSO-JQ-WR2"/>
                     <connections>
                         <outlet property="aboutMyselfTextView" destination="MEB-Pe-wW7" id="y4X-TV-XDN"/>
-                        <outlet property="editBot" destination="5Ax-xn-lgJ" id="ZcH-Qw-dbW"/>
                         <outlet property="sendBot" destination="DJd-R8-glH" id="H25-AC-uqw"/>
                         <outlet property="topView" destination="y1d-x3-swe" id="Xd8-lx-j4Q"/>
                         <outlet property="userImage" destination="1bI-x1-ufB" id="1cs-jm-OUt"/>

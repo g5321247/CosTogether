@@ -113,16 +113,7 @@ struct FirebaseManager {
         
     }
     
-    func uploadGroup(group: Group) {
-        
-        let refrence = Database.database().reference()
-        
-        guard let key = refrence.child("group").child(group.openType.rawValue).childByAutoId().key else {
-            
-            #warning ("上傳失敗警告")
-            
-            return
-        }
+    func uploadGroup(refrence: DatabaseReference, group: Group, key: String) {
         
         uploadArticle(refrence: refrence, key: key, group: group)
         uploadProduct(refrence: refrence, key: key, group: group)

@@ -24,7 +24,11 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var pickerView: PickerView!
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
     
+    let refrence = Database.database().reference()
+
     let dispatchGroup = DispatchGroup()
+    
+    var key: String?
     
     var products: [ProductModel] = []
     
@@ -53,8 +57,20 @@ class CreateGroupViewController: UIViewController {
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         
+        makeKey()
     }
     
+    private func makeKey() {
+        
+        guard let autoKey = refrence.childByAutoId().key else {
+            
+            #warning ("上傳失敗警告")
+            
+            return
+        }
+        
+        key = autoKey
+    }
     
     private func checkoutProductNumber() {
         
@@ -260,7 +276,8 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func uploadToServer(_ sender: UIButton) {
         
-        guard let group = checkProductContent() else {
+        guard let group = checkProductContent(),
+            let key = key else {
             return
         }
         
@@ -268,7 +285,7 @@ class CreateGroupViewController: UIViewController {
         
         translateProductPicsToUrl(group: group) { (uploadGroup) in
             
-            self.firebaseManager.uploadGroup(group: uploadGroup)
+            self.firebaseManager.uploadGroup(refrence: self.refrence, group: uploadGroup, key: key)
             
             SVProgressHUD.dismiss()
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
