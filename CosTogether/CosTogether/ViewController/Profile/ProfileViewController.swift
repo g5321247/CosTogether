@@ -281,7 +281,7 @@ class ProfileViewController: UIViewController {
         
         let blockUser = UIAlertAction(title: "封鎖用戶", style: .default) { (_) in
             
-            let alert = UIAlertController(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文和留言", preferredStyle: UIAlertController.Style.alert)
             
             let action = UIAlertAction(title: "確認", style: .default)
             

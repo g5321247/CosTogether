@@ -17,6 +17,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     let firebaseManager = FirebaseManager()
     var cellHeight: CGFloat = 53
+    let userDefault = UserDefaults.standard
+
     
     var orderAlready: Bool = false
     
@@ -71,6 +73,10 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
         firebaseManager.downloadCommentUser(group: group) { (comment) in
             
+            guard self.userDefault.integer(forKey: comment.userId) != 1 else {
+                return
+            }
+
             self.comments.append(comment)
             self.reloadData(orderAlready: self.orderAlready)
             
@@ -281,7 +287,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 userName: user.userName,
                 numberOfEvaluation: user.numberOfEvaluation ?? 0,
                 aboutSelf: user.aboutSelf ?? "",
-                userId: user.userId ?? "",
+                userId: comments[sender.tag].userId,
                 userType: .currentUser
             )
             
@@ -298,7 +304,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             userName: user.userName,
             numberOfEvaluation: user.numberOfEvaluation ?? 0,
             aboutSelf: user.aboutSelf ?? "",
-            userId: user.userId ?? "",
+            userId: comments[sender.tag].userId,
             userType: .otherUser
         )
         
