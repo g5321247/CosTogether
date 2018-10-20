@@ -281,6 +281,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 userName: user.userName,
                 numberOfEvaluation: user.numberOfEvaluation ?? 0,
                 aboutSelf: user.aboutSelf ?? "",
+                userId: user.userId ?? "",
                 userType: .currentUser
             )
             
@@ -297,6 +298,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             userName: user.userName,
             numberOfEvaluation: user.numberOfEvaluation ?? 0,
             aboutSelf: user.aboutSelf ?? "",
+            userId: user.userId ?? "",
             userType: .otherUser
         )
         
@@ -314,13 +316,14 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard let owner = productPic.first?.owner else {
+        guard let owner = productPic.first?.owner,
+            let ownerId = productPic.first?.userID else {
             return
         }
         
         controller.loadViewIfNeeded()
         
-        guard productPic.first?.userID != Auth.auth().currentUser?.uid else {
+        guard ownerId != Auth.auth().currentUser?.uid else {
             
             controller.checkOtherUser(
                 averageEvaluation: owner.averageEvaluation ?? 0,
@@ -329,6 +332,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 userName: owner.userName,
                 numberOfEvaluation: owner.numberOfEvaluation ?? 0,
                 aboutSelf: owner.aboutSelf ?? "",
+                userId: ownerId,
                 userType: .currentUser
             )
             
@@ -344,6 +348,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             userName: owner.userName,
             numberOfEvaluation: owner.numberOfEvaluation ?? 0,
             aboutSelf: owner.aboutSelf ?? "",
+            userId: ownerId,
             userType: .otherUser
         )
         

@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var aboutMyselfTextView: UITextView!
-    @IBOutlet weak var editBot: UIButton!
     @IBOutlet weak var sendBot: UIButton!
     
     var userType: UserType = .currentTabProfile
@@ -69,7 +68,6 @@ class ProfileViewController: UIViewController {
     
     private func aboutMyselfSetup() {
         
-        editBot.cornerSetup(cornerRadius: 4)
         sendBot.cornerSetup(cornerRadius: 4)
 
         aboutMyselfTextView.cornerSetup(
@@ -143,7 +141,7 @@ class ProfileViewController: UIViewController {
             
             topView.leftBot.isEnabled = true
             topView.leftBot.isHidden = false
-            
+
         case .otherUser:
             
             topView.rightBot.isEnabled = true
@@ -156,6 +154,12 @@ class ProfileViewController: UIViewController {
         
         topView.rightBot.addTarget(self, action: #selector (self.topRigthBotTapping(_:)), for: .touchUpInside)
 
+    }
+    
+    @objc func topLeftBotTapping(_ sender: UIButton) {
+        
+        
+        
     }
     
     @objc func topRigthBotTapping(_ sender: UIButton) {
@@ -216,17 +220,28 @@ class ProfileViewController: UIViewController {
         userName: String,
         numberOfEvaluation: Int,
         aboutSelf: String,
+        userId: String,
         userType: UserType
         ) {
         
 //        averageEvaluationLbl.text = String(averageEvaluation)
         
+        userInfo = UserModel(
+            userImage: userImage,
+            userName: userName,
+            numberOfEvaluation: numberOfEvaluation,
+            buyNumber: buyNumber,
+            averageEvaluation: averageEvaluation,
+            aboutSelf: aboutSelf,
+            userId: userId
+        )
+        
         let url = URL(string: userImage + "?height=500")
         self.userImage.sd_setImage(with: url)
         
+        userNameLbl.text = userName
         
 //        buyNumberLbl.text = String(buyNumber)
-//        userNameLbl.text = userName
 //        numberOfEvaluationLbl.text = String(numberOfEvaluation)
         
         self.userType = userType
@@ -251,11 +266,11 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        let alert = UIAlertController(title: "檢舉使用者", message: "您將對該使用者進行檢舉，請進行確認", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
-        let action = UIAlertAction(title: "確認", style: .default) { (_) in
+        let report = UIAlertAction(title: "檢舉用戶", style: .default) { (_) in
             
-            let alert = UIAlertController(title: "已收到檢舉", message: "我們進行確認後會儘速處理", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "已收到檢舉", message: "我們確認後會在 24 小時內進行處理", preferredStyle: UIAlertController.Style.alert)
             
             let action = UIAlertAction(title: "確認", style: .default)
             
@@ -264,12 +279,33 @@ class ProfileViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+        let blockUser = UIAlertAction(title: "封鎖用戶", style: .default) { (_) in
+            
+            let alert = UIAlertController(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文", preferredStyle: UIAlertController.Style.alert)
+            
+            let action = UIAlertAction(title: "確認", style: .default)
+            
+            guard let userId = self.userInfo?.userId else {
+                return
+            }
+            
+            let userDefault = UserDefaults.standard
+            userDefault.set(1, forKey: userId)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        
         let cancel = UIAlertAction(title: "取消", style: .cancel)
         
         alert.addAction(cancel)
 
-        alert.addAction(action)
-
+        alert.addAction(report)
+        
+        alert.addAction(blockUser)
+        
         self.present(alert, animated: true, completion: nil)
 
     }

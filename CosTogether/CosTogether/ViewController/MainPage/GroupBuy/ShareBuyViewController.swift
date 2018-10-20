@@ -16,6 +16,7 @@ class ShareBuyViewController: UIViewController {
     let firebaseManager = FirebaseManager()
     
     var openGroupType: OpenGroupType = .shareBuy
+    let userDefault = UserDefaults.standard
     
     @IBOutlet weak var emptyTitle: UILabel!
 
@@ -46,6 +47,10 @@ class ShareBuyViewController: UIViewController {
         group.removeAll()
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+                return
+            }
             
             self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
@@ -79,6 +84,10 @@ class ShareBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
+            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+                return
+            }
+        
             self.group.insert(groupData, at: 0)
                         
             self.collectionView.reloadData()

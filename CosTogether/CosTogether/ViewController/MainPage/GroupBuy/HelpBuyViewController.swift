@@ -19,6 +19,8 @@ class HelpBuyViewController: UIViewController {
     
     var group: [Group] = []
     
+    let userDefault = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,11 @@ class HelpBuyViewController: UIViewController {
         group.removeAll()
 
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+            
+            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+                return
+            }
+            
             self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
         }
@@ -70,6 +77,10 @@ class HelpBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
+            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+                return
+            }
+
             self.group.insert(groupData, at: 0)
             self.collectionView.reloadData()
         }
