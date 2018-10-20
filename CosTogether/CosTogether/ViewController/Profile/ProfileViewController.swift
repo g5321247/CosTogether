@@ -20,7 +20,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var aboutMyselfTextView: UITextView!
-    @IBOutlet weak var sendBot: UIButton!
+    @IBOutlet weak var updateAboutMyselfBot: UIButton!
+    @IBOutlet weak var cancelEditBot: UIButton!
+    
+    var temAboutMyself: String?
     
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
@@ -47,6 +50,10 @@ class ProfileViewController: UIViewController {
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
         
+        updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
+        
+        cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
+        
         guard let userId = Auth.auth().currentUser?.uid else {
             
             return
@@ -56,8 +63,54 @@ class ProfileViewController: UIViewController {
             
             self.currentUserModel = userModel
             
+            guard userModel.aboutSelf != "" else {
+                return
+            }
+            self.temAboutMyself = userModel.aboutSelf
         }
         
+    }
+    
+    @objc func sendingAboutMyself(_ sender: UIButton) {
+        
+        #warning("這邊寫送出的 function")
+        
+        editing(false)
+        
+        
+    }
+    
+    @objc func cancelEditing(_ sender: UIButton) {
+        
+        editing(false)
+        
+        aboutMyselfTextView.text = temAboutMyself ?? "目前使用者沒有任何相關資料"
+        
+    }
+    
+    private func editing(_ isEditing: Bool) {
+        
+        guard isEditing else {
+            
+            updateAboutMyselfBot.isHidden = true
+            updateAboutMyselfBot.isEnabled = false
+            
+            cancelEditBot.isHidden = true
+            cancelEditBot.isEnabled = false
+            
+            self.aboutMyselfEditable(editable: false)
+            
+            return
+        }
+        
+        updateAboutMyselfBot.isHidden = false
+        updateAboutMyselfBot.isEnabled = true
+        
+        cancelEditBot.isHidden = false
+        cancelEditBot.isEnabled = true
+        
+        self.aboutMyselfEditable(editable: true)
+
     }
 
     func aboutMyselfEditable(editable: Bool) {
@@ -68,7 +121,7 @@ class ProfileViewController: UIViewController {
     
     private func aboutMyselfSetup() {
         
-        sendBot.cornerSetup(cornerRadius: 4)
+        updateAboutMyselfBot.cornerSetup(cornerRadius: 4)
 
         aboutMyselfTextView.cornerSetup(
             cornerRadius: 0,
@@ -126,7 +179,7 @@ class ProfileViewController: UIViewController {
         
         case .currentTabProfile:
             
-            topView.rightBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
+            topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
 
             topView.rightBot.titleLabel!.text = ""
             
@@ -156,51 +209,66 @@ class ProfileViewController: UIViewController {
 
     }
     
-    @objc func topLeftBotTapping(_ sender: UIButton) {
-        
-        
-        
-    }
-    
     @objc func topRigthBotTapping(_ sender: UIButton) {
         
         switch userType {
             
         case .currentUser, .currentTabProfile:
             
-            let alert = UIAlertController(title: "登出", message: "您是否要登出帳號？", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
             
-            let action = UIAlertAction(title: "確認", style: .default) { (_) in
+            let logOut = UIAlertAction(title: "登出", style: .default) { (_) in
                 
-                let keychain = Keychain(service: "com.george.CosTogether")
-               
-                do  {
+                let logoutAlert = UIAlertController(title: "登出", message: "您是否要登出帳號？", preferredStyle: UIAlertController.Style.alert)
+                
+                let action = UIAlertAction(title: "確認", style: .default) { (_) in
                     
-                    try keychain.remove(FirebaseType.uuid.rawValue)
+                    let keychain = Keychain(service: "com.george.CosTogether")
                     
-                    try keychain.remove("anonymous")
+                    do  {
+                        
+                        try keychain.remove(FirebaseType.uuid.rawValue)
+                        
+                        try keychain.remove("anonymous")
+                        
+                        try Auth.auth().signOut()
+                        
+                        AppDelegate.shared.switchLogIn()
+                        
+                    } catch {
+                        
+                        BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
+                        return
+                    }
                     
-                    try Auth.auth().signOut()
                     
-                    AppDelegate.shared.switchLogIn()
-
-                } catch {
-                    
-                    BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
-                    return
                 }
                 
+                let cancel = UIAlertAction(title: "取消", style: .cancel)
                 
+                logoutAlert.addAction(cancel)
+                
+                logoutAlert.addAction(action)
+                
+                self.present(logoutAlert, animated: true, completion: nil)
+
+            }
+            
+            let editAboutMyself = UIAlertAction(title: "編輯關於我", style: .default) { (_) in
+                
+                self.editing(true)
+
             }
             
             let cancel = UIAlertAction(title: "取消", style: .cancel)
             
+            alert.addAction(editAboutMyself)
+            alert.addAction(logOut)
             alert.addAction(cancel)
-            
-            alert.addAction(action)
             
             self.present(alert, animated: true, completion: nil)
 
+            
         case .otherUser:
             
             reportingUser()
