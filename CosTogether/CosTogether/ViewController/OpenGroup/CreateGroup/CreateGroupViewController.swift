@@ -23,6 +23,8 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var createArticle: CreateArticleView!
     @IBOutlet weak var pickerView: PickerView!
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
+    @IBOutlet weak var cancelBot: UIButton!
+    @IBOutlet weak var sendBot: UIButton!
     
     let refrence = Database.database().reference()
 
@@ -57,6 +59,8 @@ class CreateGroupViewController: UIViewController {
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         
+        createGroupBotSetup()
+
         makeKey()
     }
     
@@ -326,6 +330,19 @@ class CreateGroupViewController: UIViewController {
             self.view.layoutIfNeeded()
             
         }
+        
+    }
+    
+    @IBAction func cancelBotTapping(_ sender: UIButton) {
+        
+        self.resetViewWhenUploadSucess()
+        
+    }
+    
+    private func createGroupBotSetup() {
+        
+        sendBot.cornerSetup(cornerRadius: 4)
+        cancelBot.cornerSetup(cornerRadius: 4)
         
     }
     

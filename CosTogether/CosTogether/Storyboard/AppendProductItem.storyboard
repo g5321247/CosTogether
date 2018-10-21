@@ -252,8 +252,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLE-C7-1HX">
-                                        <rect key="frame" x="20" y="221.5" width="285" height="36"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="135" y="222.5" width="70" height="34"/>
+                                        <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="開團">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -261,22 +261,33 @@
                                             <action selector="uploadToServer:" destination="qcn-qw-UXf" eventType="touchUpInside" id="CBI-wD-IVl"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-VV-w7D">
+                                        <rect key="frame" x="235" y="222.5" width="70" height="34"/>
+                                        <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBotTapping:" destination="qcn-qw-UXf" eventType="touchUpInside" id="dn7-TB-NmH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="J4j-L9-04F" firstAttribute="leading" secondItem="mvp-qs-WKh" secondAttribute="leading" constant="20" id="121-um-ywV"/>
-                                    <constraint firstAttribute="bottom" secondItem="wLE-C7-1HX" secondAttribute="bottom" constant="20" id="4oz-Jo-Gmt"/>
-                                    <constraint firstItem="wLE-C7-1HX" firstAttribute="trailing" secondItem="J4j-L9-04F" secondAttribute="trailing" id="CyX-YI-CEb"/>
+                                    <constraint firstItem="wLE-C7-1HX" firstAttribute="centerY" secondItem="bzv-VV-w7D" secondAttribute="centerY" id="1L5-2w-RoY"/>
                                     <constraint firstItem="e7N-X7-wD5" firstAttribute="leading" secondItem="fJ9-z7-aPC" secondAttribute="leading" id="DF2-D8-41O"/>
                                     <constraint firstItem="fJ9-z7-aPC" firstAttribute="top" secondItem="Z3j-r0-koW" secondAttribute="bottom" constant="7" id="E03-qQ-GVh"/>
+                                    <constraint firstItem="bzv-VV-w7D" firstAttribute="leading" secondItem="wLE-C7-1HX" secondAttribute="trailing" constant="30" id="E1p-dp-Ka4"/>
                                     <constraint firstItem="e7N-X7-wD5" firstAttribute="top" secondItem="mvp-qs-WKh" secondAttribute="top" constant="8" id="E66-NL-4KH"/>
+                                    <constraint firstItem="bzv-VV-w7D" firstAttribute="top" secondItem="J4j-L9-04F" secondAttribute="bottom" constant="21" id="ECh-kq-Nd4"/>
                                     <constraint firstItem="fJ9-z7-aPC" firstAttribute="leading" secondItem="mvp-qs-WKh" secondAttribute="leading" constant="20" id="K7v-EC-qq9"/>
+                                    <constraint firstItem="bzv-VV-w7D" firstAttribute="trailing" secondItem="J4j-L9-04F" secondAttribute="trailing" id="NY9-mF-xcj"/>
                                     <constraint firstItem="Gin-aQ-v8k" firstAttribute="leading" secondItem="fJ9-z7-aPC" secondAttribute="leading" id="O7o-Km-FwX"/>
-                                    <constraint firstItem="wLE-C7-1HX" firstAttribute="top" secondItem="J4j-L9-04F" secondAttribute="bottom" constant="20" id="U1r-kJ-XOg"/>
+                                    <constraint firstAttribute="bottom" secondItem="bzv-VV-w7D" secondAttribute="bottom" constant="21" id="OzZ-4q-I0f"/>
                                     <constraint firstAttribute="trailing" secondItem="fJ9-z7-aPC" secondAttribute="trailing" constant="20" id="VPb-WB-ws4"/>
                                     <constraint firstAttribute="width" secondItem="mvp-qs-WKh" secondAttribute="height" multiplier="375:320" id="WWO-yA-cXW"/>
                                     <constraint firstItem="Z3j-r0-koW" firstAttribute="leading" secondItem="e7N-X7-wD5" secondAttribute="trailing" constant="8" id="axY-OB-hoH"/>
-                                    <constraint firstItem="wLE-C7-1HX" firstAttribute="leading" secondItem="J4j-L9-04F" secondAttribute="leading" id="b5n-ua-LMb"/>
                                     <constraint firstItem="Gin-aQ-v8k" firstAttribute="top" secondItem="fJ9-z7-aPC" secondAttribute="bottom" constant="8" id="mHN-ef-bYk"/>
                                     <constraint firstItem="Z3j-r0-koW" firstAttribute="centerY" secondItem="e7N-X7-wD5" secondAttribute="centerY" id="sgN-ia-Ygf"/>
                                     <constraint firstItem="J4j-L9-04F" firstAttribute="top" secondItem="Gin-aQ-v8k" secondAttribute="bottom" constant="8" id="vzj-7u-nuH"/>
@@ -330,8 +341,8 @@
                                     <action selector="newProductBotTapping:" destination="qcn-qw-UXf" eventType="touchUpInside" id="ySz-D0-jXg"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ovl-Yu-nMA" userLabel="PickerBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="544"/>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovl-Yu-nMA" userLabel="PickerBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-sy-cEF" customClass="PickerView" customModule="CosTogether" customModuleProvider="target">
@@ -414,10 +425,11 @@
                             <constraint firstItem="SDu-br-gNS" firstAttribute="bottom" secondItem="TYL-vh-otM" secondAttribute="bottom" constant="20" id="FcM-hQ-Z5h"/>
                             <constraint firstItem="mvp-qs-WKh" firstAttribute="top" secondItem="wbd-BJ-HPZ" secondAttribute="bottom" constant="20" id="GKC-8D-03s"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="trailing" secondItem="wJd-sy-cEF" secondAttribute="trailing" constant="15" id="GO4-QT-FlE"/>
+                            <constraint firstItem="wLE-C7-1HX" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="70:667" id="HYk-uz-DIY"/>
                             <constraint firstItem="wJd-sy-cEF" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="I4k-6W-KAq"/>
                             <constraint firstAttribute="trailing" secondItem="SDu-br-gNS" secondAttribute="trailing" id="IQg-MZ-Iut"/>
                             <constraint firstItem="KLn-Oo-Lgf" firstAttribute="width" secondItem="KLn-Oo-Lgf" secondAttribute="height" multiplier="1:1" id="PmR-2F-bOr"/>
-                            <constraint firstItem="wLE-C7-1HX" firstAttribute="height" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="36:667" id="QU2-3K-H1r"/>
+                            <constraint firstItem="bzv-VV-w7D" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="70:667" id="Rdr-SJ-RdI"/>
                             <constraint firstItem="TYL-vh-otM" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="topMargin" id="Rwb-QU-GXR"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="mvp-qs-WKh" secondAttribute="bottom" constant="25" id="VcR-0M-gB5"/>
                             <constraint firstItem="TYL-vh-otM" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="ZBc-Y5-9Yd"/>
@@ -452,6 +464,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomConstriant" destination="A9r-6W-xW0" id="9Tv-1f-3UQ"/>
+                        <outlet property="cancelBot" destination="bzv-VV-w7D" id="591-sg-F7t"/>
                         <outlet property="collectionBackgroundImage" destination="Zby-cq-PTX" id="YGg-4g-aG6"/>
                         <outlet property="collectionView" destination="wbd-BJ-HPZ" id="Su2-OU-cci"/>
                         <outlet property="createArticle" destination="mvp-qs-WKh" id="eUH-fU-Aaz"/>
@@ -459,6 +472,7 @@
                         <outlet property="numberOfProductCategoryLbl" destination="13S-4L-TBB" id="q4B-pV-JKb"/>
                         <outlet property="pickerView" destination="wJd-sy-cEF" id="Omb-zE-7gH"/>
                         <outlet property="pickerViewBackgroundView" destination="Ovl-Yu-nMA" id="c8w-YZ-Rkg"/>
+                        <outlet property="sendBot" destination="wLE-C7-1HX" id="mBp-tb-wo6"/>
                         <outlet property="topTitleLbl" destination="TYL-vh-otM" id="nTS-HV-NNG"/>
                         <segue destination="VDK-Ou-W6Z" kind="show" id="qPG-kx-URR"/>
                     </connections>
