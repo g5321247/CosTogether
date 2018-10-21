@@ -208,7 +208,7 @@ class ProfileViewController: UIViewController {
             
         case .currentUser:
             
-            topView.rightBot.setImage(#imageLiteral(resourceName: "logout"), for: UIControl.State.normal)
+            topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
             
             topView.rightBot.titleLabel!.text = ""
             
