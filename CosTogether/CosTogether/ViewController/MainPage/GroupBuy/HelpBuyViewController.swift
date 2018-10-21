@@ -38,7 +38,7 @@ class HelpBuyViewController: UIViewController {
         
     }
     
-    @objc func downloadFromFirebase(noti: Notification?) {
+    @objc func downloadFromFirebase(noti: Notification) {
         
         group.removeAll()
         
@@ -50,8 +50,6 @@ class HelpBuyViewController: UIViewController {
             
             self.group.insert(groupData, at: 0)
             
-            self.refreshControl.endRefreshing()
-
             self.collectionView.reloadData()
         }
     }
@@ -88,6 +86,8 @@ class HelpBuyViewController: UIViewController {
     @objc func refresh(_ sender: UIButton) {
         
         group.removeAll()
+        
+        self.refreshControl.beginRefreshing()
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             

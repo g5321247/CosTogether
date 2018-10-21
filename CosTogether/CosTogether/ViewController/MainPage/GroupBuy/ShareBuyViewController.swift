@@ -49,8 +49,6 @@ class ShareBuyViewController: UIViewController {
         
         group.removeAll()
 
-        self.refreshControl.beginRefreshing()
-
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
             guard self.userDefault.data(forKey: groupData.userID) == nil else {
@@ -68,6 +66,8 @@ class ShareBuyViewController: UIViewController {
     @objc func refresh(_ sender: UIButton) {
         
         group.removeAll()
+        
+        self.refreshControl.beginRefreshing()
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
