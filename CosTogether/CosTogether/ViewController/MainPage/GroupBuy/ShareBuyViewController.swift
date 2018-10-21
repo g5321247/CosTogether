@@ -22,7 +22,6 @@ class ShareBuyViewController: UIViewController {
     
     let userDefault = UserDefaults.standard
     
-
     var group: [Group] = [] {
         
         didSet {
@@ -121,8 +120,6 @@ class ShareBuyViewController: UIViewController {
         SVProgressHUD.show()
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
-            
-            self.userDefault.removeObject(forKey: groupData.userID)
             
             guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
                 return
