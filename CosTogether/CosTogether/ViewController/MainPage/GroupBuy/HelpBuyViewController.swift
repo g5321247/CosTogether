@@ -44,10 +44,10 @@ class HelpBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
                 return
             }
-            
+
             self.group.insert(groupData, at: 0)
             
             self.collectionView.reloadData()
@@ -91,10 +91,15 @@ class HelpBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+                
+                self.collectionView.reloadData()
+                
+                self.refreshControl.endRefreshing()
+                
                 return
             }
-            
+
             self.group.insert(groupData, at: 0)
             
             self.collectionView.reloadData()
@@ -110,8 +115,14 @@ class HelpBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.data(forKey: groupData.userID) == nil else {
+            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+                
+                self.collectionView.reloadData()
+                
+                self.refreshControl.endRefreshing()
+                
                 return
+
             }
 
             self.group.insert(groupData, at: 0)
