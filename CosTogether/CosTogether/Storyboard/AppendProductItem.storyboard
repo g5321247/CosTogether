@@ -300,7 +300,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999998807907104" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wbd-BJ-HPZ">
-                                <rect key="frame" x="25" y="136" width="325" height="208.5"/>
+                                <rect key="frame" x="25" y="116" width="325" height="228.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0hO-BC-sbN">
                                     <size key="itemSize" width="50" height="50"/>
@@ -309,7 +309,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_background" id="Zby-cq-PTX">
-                                    <rect key="frame" x="0.0" y="0.0" width="325" height="208.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="325" height="228.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells>
@@ -324,7 +324,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊按鈕來新增多種商品吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4L-TBB">
-                                <rect key="frame" x="10" y="105" width="355" height="21"/>
+                                <rect key="frame" x="10" y="85" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -391,16 +391,16 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-br-gNS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開分購" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-vh-otM">
-                                        <rect key="frame" x="151.5" y="46.5" width="72" height="33"/>
+                                        <rect key="frame" x="151.5" y="28.5" width="72" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-Oo-Lgf">
-                                        <rect key="frame" x="24" y="51" width="24" height="24"/>
+                                        <rect key="frame" x="24" y="35" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KLn-Oo-Lgf" secondAttribute="height" multiplier="1:1" id="Tha-py-lbp"/>
                                         </constraints>
@@ -413,7 +413,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SDu-br-gNS" secondAttribute="height" multiplier="75:19" id="4py-O6-dlz"/>
+                                    <constraint firstAttribute="width" secondItem="SDu-br-gNS" secondAttribute="height" multiplier="75:15" id="4py-O6-dlz"/>
                                     <constraint firstItem="TYL-vh-otM" firstAttribute="centerX" secondItem="SDu-br-gNS" secondAttribute="centerX" id="5ct-Fo-fmy"/>
                                     <constraint firstItem="TYL-vh-otM" firstAttribute="centerY" secondItem="KLn-Oo-Lgf" secondAttribute="centerY" id="H37-bE-oZC"/>
                                     <constraint firstItem="KLn-Oo-Lgf" firstAttribute="leading" secondItem="SDu-br-gNS" secondAttribute="leading" constant="24" id="T4b-wl-ITa"/>
@@ -436,7 +436,7 @@
                             <constraint firstItem="wLE-C7-1HX" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="70:667" id="HYk-uz-DIY"/>
                             <constraint firstItem="wJd-sy-cEF" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="I4k-6W-KAq"/>
                             <constraint firstAttribute="trailing" secondItem="SDu-br-gNS" secondAttribute="trailing" id="IQg-MZ-Iut"/>
-                            <constraint firstItem="KLn-Oo-Lgf" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="24:667" id="KGU-lv-rZR"/>
+                            <constraint firstItem="KLn-Oo-Lgf" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="20:667" id="KGU-lv-rZR"/>
                             <constraint firstItem="bzv-VV-w7D" firstAttribute="width" secondItem="wzD-pf-fnR" secondAttribute="height" multiplier="70:667" id="Rdr-SJ-RdI"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="mvp-qs-WKh" secondAttribute="bottom" constant="25" id="VcR-0M-gB5"/>
                             <constraint firstItem="wbd-BJ-HPZ" firstAttribute="top" secondItem="13S-4L-TBB" secondAttribute="bottom" constant="10" id="aKi-yg-bwj"/>
