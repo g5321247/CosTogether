@@ -31,7 +31,7 @@ class AppendNewItemViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
 
     }
     
@@ -44,7 +44,7 @@ class AppendNewItemViewController: UIViewController {
     
     private func setup() {
         
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         prodctSettingView.delegate = self
         imagePicker.delegate = self
@@ -153,6 +153,12 @@ class AppendNewItemViewController: UIViewController {
         passProductInfo = product
         
     }
+    
+    @IBAction func backBotTapping(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 
