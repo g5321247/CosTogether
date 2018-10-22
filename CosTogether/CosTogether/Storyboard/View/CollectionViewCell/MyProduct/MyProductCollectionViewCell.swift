@@ -10,7 +10,6 @@ import UIKit
 
 class MyProductCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var postDateLbl: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
@@ -56,7 +55,6 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     func updateMyProductInfo(numberOfItem: Int, productName: String, price: Int, productImage: String) {
         
         locationLbl.text = "數量：\(numberOfItem)"
-        titleLbl.text = productName
         postDateLbl.text = "$\(price)"
         
         let productUrl = URL(string: productImage)

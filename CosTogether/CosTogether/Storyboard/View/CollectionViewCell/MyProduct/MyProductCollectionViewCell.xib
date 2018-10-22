@@ -44,26 +44,17 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqp-Os-Hr6">
-                                <rect key="frame" x="8" y="8" width="154" height="0.0"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5rG-e9-w2q" firstAttribute="top" secondItem="h8W-ML-JeH" secondAttribute="bottom" constant="8" id="0mg-Kz-eNk"/>
                             <constraint firstItem="h8W-ML-JeH" firstAttribute="leading" secondItem="9Dt-3N-y87" secondAttribute="leading" constant="8" id="5e8-XX-ali"/>
-                            <constraint firstItem="jqp-Os-Hr6" firstAttribute="leading" secondItem="h8W-ML-JeH" secondAttribute="leading" id="5hp-2u-Al4"/>
                             <constraint firstAttribute="trailing" secondItem="h8W-ML-JeH" secondAttribute="trailing" constant="8" id="7ir-KF-uae"/>
                             <constraint firstAttribute="bottom" secondItem="5rG-e9-w2q" secondAttribute="bottom" constant="8" id="9gN-eE-Ta5"/>
                             <constraint firstItem="456-Bt-5sj" firstAttribute="top" secondItem="h8W-ML-JeH" secondAttribute="bottom" constant="-23" id="JRy-5J-QRC"/>
                             <constraint firstItem="456-Bt-5sj" firstAttribute="trailing" secondItem="h8W-ML-JeH" secondAttribute="trailing" id="SqR-a8-x6y"/>
-                            <constraint firstItem="h8W-ML-JeH" firstAttribute="trailing" secondItem="jqp-Os-Hr6" secondAttribute="trailing" id="ZES-gT-LMK"/>
                             <constraint firstItem="h8W-ML-JeH" firstAttribute="top" secondItem="9Dt-3N-y87" secondAttribute="top" constant="8" id="aNY-xO-9ak"/>
                             <constraint firstAttribute="trailing" secondItem="5rG-e9-w2q" secondAttribute="trailing" constant="8" id="ccu-5R-Atc"/>
-                            <constraint firstItem="jqp-Os-Hr6" firstAttribute="top" secondItem="9Dt-3N-y87" secondAttribute="top" constant="8" id="j9d-B0-koh"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,7 +71,6 @@
                 <outlet property="locationLbl" destination="5rG-e9-w2q" id="ehC-Hc-gLH"/>
                 <outlet property="photoImage" destination="h8W-ML-JeH" id="YLJ-mC-byw"/>
                 <outlet property="postDateLbl" destination="456-Bt-5sj" id="mTD-CD-KJb"/>
-                <outlet property="titleLbl" destination="jqp-Os-Hr6" id="9nR-gw-TBQ"/>
             </connections>
             <point key="canvasLocation" x="-171.19999999999999" y="56.671664167916049"/>
         </collectionViewCell>

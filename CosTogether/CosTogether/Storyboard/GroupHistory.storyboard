@@ -18,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EH0-E9-tyr" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCT-H4-uaK">
-                                        <rect key="frame" x="116" y="49" width="143" height="28"/>
+                                        <rect key="frame" x="116" y="31" width="143" height="28"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u8-N0-FMr">
-                                        <rect key="frame" x="24" y="51" width="24" height="24"/>
+                                        <rect key="frame" x="24" y="35" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8u8-N0-FMr" secondAttribute="height" multiplier="1:1" id="AhQ-qx-lMd"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzq-Qm-glp">
-                                        <rect key="frame" x="301" y="38" width="50" height="50"/>
+                                        <rect key="frame" x="301" y="20" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Zzq-Qm-glp" secondAttribute="height" multiplier="1:1" id="IDn-8x-ZRs"/>
                                             <constraint firstAttribute="height" constant="50" id="hnA-SZ-y3c"/>
@@ -43,11 +43,11 @@
                                         <state key="normal" image="chat"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hCT-H4-uaK" firstAttribute="centerX" secondItem="EH0-E9-tyr" secondAttribute="centerX" id="4Hh-UT-OeL"/>
                                     <constraint firstItem="hCT-H4-uaK" firstAttribute="centerY" secondItem="8u8-N0-FMr" secondAttribute="centerY" id="7U0-Bk-2hd"/>
-                                    <constraint firstAttribute="width" secondItem="EH0-E9-tyr" secondAttribute="height" multiplier="75:19" id="8p7-uD-JPn"/>
+                                    <constraint firstAttribute="width" secondItem="EH0-E9-tyr" secondAttribute="height" multiplier="75:15" id="8p7-uD-JPn"/>
                                     <constraint firstAttribute="trailing" secondItem="Zzq-Qm-glp" secondAttribute="trailing" constant="24" id="Hls-fP-wxU"/>
                                     <constraint firstItem="Zzq-Qm-glp" firstAttribute="centerY" secondItem="hCT-H4-uaK" secondAttribute="centerY" id="LNc-7m-mpU"/>
                                     <constraint firstAttribute="bottom" secondItem="8u8-N0-FMr" secondAttribute="bottom" constant="20" id="yo9-69-rnr"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-KL-Icy">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚未有人加團" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-pm-m3Q">
@@ -71,7 +71,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8u8-N0-FMr" firstAttribute="width" secondItem="Aa4-7U-n0T" secondAttribute="height" multiplier="24:667" id="0pB-F9-EYA"/>
+                            <constraint firstItem="8u8-N0-FMr" firstAttribute="width" secondItem="Aa4-7U-n0T" secondAttribute="height" multiplier="20:667" id="0pB-F9-EYA"/>
                             <constraint firstItem="feb-1A-GYv" firstAttribute="trailing" secondItem="5bP-KL-Icy" secondAttribute="trailing" id="1vk-K3-VSH"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="leading" secondItem="feb-1A-GYv" secondAttribute="leading" id="M6c-qq-7Lb"/>
                             <constraint firstItem="EH0-E9-tyr" firstAttribute="top" secondItem="Aa4-7U-n0T" secondAttribute="top" id="PnO-mm-bF5"/>
