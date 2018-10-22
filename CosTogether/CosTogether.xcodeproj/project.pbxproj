@@ -728,9 +728,9 @@
 			isa = PBXGroup;
 			children = (
 				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C85151C52175F472007B1324 /* GroupHistory.storyboard */,
 				C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */,
-				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C8FB98BC2161175B00C78926 /* ChatRoom.storyboard */,
 				C8F8C923215227FA00BDB0CE /* LogIn.storyboard */,
 			);
