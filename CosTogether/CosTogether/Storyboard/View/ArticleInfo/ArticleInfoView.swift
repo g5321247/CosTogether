@@ -73,7 +73,6 @@ class ArticleInfoView: UIView {
     private func setup() {
         
         setupImageView()
-        setupView()
     }
     
     private func setupImageView() {
@@ -81,22 +80,6 @@ class ArticleInfoView: UIView {
         authorImageBot.imageView?.layer.cornerRadius = authorImageBot.imageView!.frame.width / 2
         
         authorImageBot.imageView?.contentMode = .scaleAspectFill
-    }
-    
-    private func setupView() {
-        
-        self.shadowSetup()
-    }
-    
-    override func setNeedsLayout() {
-        super.setNeedsLayout()
-        setupImageView()
-    }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        setupImageView()
-
     }
     
     override func layoutSubviews() {

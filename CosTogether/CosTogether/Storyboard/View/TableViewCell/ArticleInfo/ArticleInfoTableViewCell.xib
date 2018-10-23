@@ -9,85 +9,97 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ArticleInfoTableViewCell" customModule="CosTogether" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="98" id="KGk-i7-Jjw" customClass="ArticleInfoTableViewCell" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0h-Gt-4L9" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-I3-ssh">
-                                <rect key="frame" x="297" y="82.5" width="18" height="18"/>
+                                <rect key="frame" x="281.5" y="24" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ELb-I3-ssh" secondAttribute="height" multiplier="1:1" id="88e-BG-LPi"/>
                                     <constraint firstAttribute="height" constant="18" id="bnI-Uu-l6Q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f44-xr-eaN">
-                                <rect key="frame" x="325" y="77.5" width="40" height="28"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="309.5" y="23" width="28" height="20"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-Bb-fdz">
-                                <rect key="frame" x="82" y="74.5" width="132" height="34"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="112" y="21" width="132" height="24"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文日期：" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxi-9Y-Fi5">
-                                <rect key="frame" x="82" y="110.5" width="85" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <rect key="frame" x="112" y="44" width="70" height="20"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eod-xo-0Kw">
-                                <rect key="frame" x="10" y="74.5" width="60" height="60"/>
+                                <rect key="frame" x="30" y="0.0" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eod-xo-0Kw" secondAttribute="height" multiplier="1:1" id="VD8-6T-rY5"/>
-                                    <constraint firstAttribute="width" constant="60" id="WZn-DO-ZvT"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="-5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分購" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-iM-QxS">
-                                <rect key="frame" x="325" y="108.5" width="40" height="28"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="309.5" y="44" width="28" height="20"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-G9-i3p">
-                                <rect key="frame" x="299" y="114.5" width="16" height="16"/>
+                                <rect key="frame" x="283.5" y="46" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="NMH-Iw-6L2"/>
                                     <constraint firstAttribute="height" constant="16" id="c4r-ce-9Je"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHC-Ly-th5">
+                                <rect key="frame" x="26.5" y="89" width="322.5" height="2"/>
+                                <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="HnB-6E-ITx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" id="6QO-0u-Ybd"/>
+                            <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" multiplier="0.8" id="6QO-0u-Ybd"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="leading" secondItem="ELb-I3-ssh" secondAttribute="trailing" constant="10" id="GBb-fr-CIb"/>
-                            <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="f44-xr-eaN" secondAttribute="trailing" constant="10" id="LS2-Y4-JQf"/>
+                            <constraint firstItem="f44-xr-eaN" firstAttribute="trailing" secondItem="ZQg-8P-u8I" secondAttribute="trailing" multiplier="0.9" id="LS2-Y4-JQf"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="leading" id="NO1-5q-qsr"/>
-                            <constraint firstAttribute="trailing" secondItem="hCF-iM-QxS" secondAttribute="trailing" constant="10" id="RXZ-z5-Hal"/>
+                            <constraint firstItem="hCF-iM-QxS" firstAttribute="trailing" secondItem="f44-xr-eaN" secondAttribute="trailing" id="S1s-vD-JF2"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="centerY" secondItem="ELb-I3-ssh" secondAttribute="centerY" id="SSt-db-qqk"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="TNG-xw-Jlx"/>
-                            <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="10" id="Vou-hs-kT9"/>
-                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="eod-xo-0Kw" secondAttribute="top" id="X6V-Ym-OQv"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="leading" secondItem="T0h-Gt-4L9" secondAttribute="trailing" multiplier="0.08" id="Vou-hs-kT9"/>
+                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="top" secondItem="eod-xo-0Kw" secondAttribute="bottom" multiplier="0.26" id="X6V-Ym-OQv"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="width" secondItem="T0h-Gt-4L9" secondAttribute="width" multiplier="80:375" id="Xhz-Vd-45e"/>
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="leading" secondItem="kvd-G9-i3p" secondAttribute="trailing" constant="10" id="fvS-OT-HYm"/>
                             <constraint firstItem="ELb-I3-ssh" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="h4Y-IR-dtj"/>
-                            <constraint firstItem="ZQg-8P-u8I" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" constant="29" id="jf1-Cd-oPv"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
                             <constraint firstItem="kvd-G9-i3p" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="vZV-aV-ae9"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="trailing" constant="-132" id="xQ8-ir-C0P"/>
-                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="eod-xo-0Kw" secondAttribute="trailing" constant="12" id="zhr-vC-Bfg"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" id="yxe-mZ-dUk"/>
+                            <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="eod-xo-0Kw" secondAttribute="trailing" constant="2" id="zhr-vC-Bfg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZQg-8P-u8I"/>
                         <connections>
@@ -107,11 +119,16 @@
                     <constraint firstAttribute="trailing" secondItem="T0h-Gt-4L9" secondAttribute="trailing" id="urK-HJ-wl6"/>
                 </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="FHC-Ly-th5" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="trailing" multiplier="0.07" id="3gM-cD-n7p"/>
+                <constraint firstItem="FHC-Ly-th5" firstAttribute="trailing" secondItem="njF-e1-oar" secondAttribute="trailing" multiplier="0.93" id="RdJ-AF-olL"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="FHC-Ly-th5" secondAttribute="bottom" constant="7" id="a4n-SM-bvo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="articleInfoView" destination="T0h-Gt-4L9" id="Sdo-9C-HIV"/>
             </connections>
-            <point key="canvasLocation" x="136.80000000000001" y="129.53523238380811"/>
+            <point key="canvasLocation" x="136.80000000000001" y="99.850074962518747"/>
         </tableViewCell>
     </objects>
     <resources>

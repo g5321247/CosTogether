@@ -39,7 +39,6 @@ class JoinGroupTableViewCell: UITableViewCell {
     private func setup() {
         
         setColletionView()
-        setupBaseView()
     }
     
     func checkoutUserNumber() {
@@ -63,20 +62,12 @@ class JoinGroupTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-        
     }
     
     private func registerTableViewCell(identifier: String) {
         
         let nibCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
-        
-    }
-    
-    private func setupBaseView() {
-        
-        baseView.shadowSetup(cgSize: CGSize(width: 0.5, height: 0.5), shadowRadius: 2, shadowOpacity: 0.2)
         
     }
     
@@ -128,7 +119,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = 45 / 375.0 * Double(UIScreen.main.bounds.width)
+        let width = 50 / 375.0 * Double(UIScreen.main.bounds.width)
         
         let height = width
         

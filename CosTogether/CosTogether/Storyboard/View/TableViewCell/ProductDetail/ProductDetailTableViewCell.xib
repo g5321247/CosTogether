@@ -37,13 +37,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物品資訊描述" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-PN-3tU">
-                                <rect key="frame" x="22.5" y="65" width="273" height="2.5"/>
+                                <rect key="frame" x="22.5" y="65" width="273" height="12.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccu-pr-cCL">
-                                <rect key="frame" x="22.5" y="82.5" width="273" height="2"/>
+                                <rect key="frame" x="22.5" y="96" width="273" height="2"/>
                                 <color key="backgroundColor" red="0.75518626658753119" green="0.77592652159290465" blue="0.82132905124651157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="f4c-dt-cm8"/>
@@ -52,11 +52,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ccu-pr-cCL" firstAttribute="top" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="15" id="7Q1-4F-Mao"/>
                             <constraint firstItem="lAq-PN-3tU" firstAttribute="top" secondItem="d1C-cK-ord" secondAttribute="top" constant="65" id="IvR-E4-gqI"/>
                             <constraint firstItem="Ccu-pr-cCL" firstAttribute="trailing" secondItem="lAq-PN-3tU" secondAttribute="trailing" id="LE1-gH-BzI"/>
                             <constraint firstItem="Ccu-pr-cCL" firstAttribute="leading" secondItem="lAq-PN-3tU" secondAttribute="leading" id="ZX4-IC-wy1"/>
-                            <constraint firstAttribute="bottom" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="30" id="bhK-GV-M3s"/>
+                            <constraint firstAttribute="bottom" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="20" id="bhK-GV-M3s"/>
                             <constraint firstItem="Yf6-Be-LxA" firstAttribute="leading" secondItem="d1C-cK-ord" secondAttribute="trailing" multiplier="0.07" id="fXm-EL-bHC"/>
                             <constraint firstItem="lAq-PN-3tU" firstAttribute="leading" secondItem="Yf6-Be-LxA" secondAttribute="leading" id="gPS-A9-NqP"/>
                             <constraint firstItem="lAq-PN-3tU" firstAttribute="top" secondItem="Yf6-Be-LxA" secondAttribute="bottom" constant="10" id="wnT-MT-EA1"/>
@@ -82,6 +81,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="Ccu-pr-cCL" secondAttribute="bottom" id="3bn-Sh-hro"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="baseView" destination="d1C-cK-ord" id="YxB-fI-XcM"/>

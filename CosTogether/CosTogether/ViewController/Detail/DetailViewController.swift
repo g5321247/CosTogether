@@ -389,7 +389,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .articleInfo:
             
-            return self.view.frame.width * (6 / 15)
+            return self.view.frame.width * (85 / 375)
             
         case .productItems:
             
@@ -401,7 +401,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .joinGroup:
             
-            return  self.view.frame.width * (100 / 375)
+            return  self.view.frame.width * (105 / 375)
         
         case .productDetail:
             
