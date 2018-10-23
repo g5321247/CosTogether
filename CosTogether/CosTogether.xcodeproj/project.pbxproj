@@ -816,9 +816,9 @@
 		C8FCA3B4215BCD75008724A3 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C8B77B002169B3590067AC21 /* NewProduct */,
 				C84975252157BCF600555855 /* Product */,
 				C8BCF0D9215E230F00A2B1B8 /* Member */,
-				C8B77B002169B3590067AC21 /* NewProduct */,
 				C8E956BB2177249600473C6B /* MyProduct */,
 			);
 			path = CollectionViewCell;

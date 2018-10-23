@@ -16,7 +16,6 @@ class ProductItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var amoutQuantity: UILabel!
     
-    @IBOutlet weak var totalPriceLbl: UILabel!
     @IBOutlet weak var buyNumberLbl: UILabel!
     
     @IBOutlet weak var decreaseNumBot: UIButton!
@@ -28,11 +27,16 @@ class ProductItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
 
     }
     
@@ -50,32 +54,10 @@ class ProductItemTableViewCell: UITableViewCell {
         
         productImage.sd_setImage(with: url)
         productNameLbl.text = product.productName
-        itemPrice.text = String(product.price)
+        itemPrice.text = "單價 $" + String(product.price)
         amoutQuantity.text = "總數 \(product.numberOfItem)"
         
         buyNumberLbl.text = "0"
-    }
-    
-    private func setup() {
-        
-        setButtonView()
-        
-    }
-    
-    private func setButtonView() {
-        
-        decreaseNumBot.cornerSetup(
-            cornerRadius: decreaseNumBot.frame.width / 2,
-            borderWidth: 2,
-            borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
-        )
-        
-        increaseNumBot.cornerSetup(
-            cornerRadius: decreaseNumBot.frame.width / 2,
-            borderWidth: 2,
-            borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
-        )
-        
     }
     
     private func caculation(
@@ -93,8 +75,6 @@ class ProductItemTableViewCell: UITableViewCell {
                 totalCost: price
                 )
         )
-
-        totalPriceLbl.text = "$\(price * quantity)"
         
     }
     

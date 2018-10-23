@@ -393,7 +393,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .productItems:
             
-            return  self.view.frame.width * (120 / 375)
+            return  self.view.frame.width * (90 / 375)
         
         case .order:
             
