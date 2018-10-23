@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,17 +28,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoF-Ja-dsa">
-                                <rect key="frame" x="8" y="5" width="304" height="33.5"/>
+                                <rect key="frame" x="30.5" y="5" width="34" height="33.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HoF-Ja-dsa" secondAttribute="trailing" constant="8" id="4dx-JM-FbM"/>
                             <constraint firstItem="HoF-Ja-dsa" firstAttribute="top" secondItem="vNe-kr-t2W" secondAttribute="top" constant="5" id="8RX-aR-fPq"/>
-                            <constraint firstItem="HoF-Ja-dsa" firstAttribute="leading" secondItem="vNe-kr-t2W" secondAttribute="leading" constant="8" id="JhE-4C-cqn"/>
+                            <constraint firstItem="HoF-Ja-dsa" firstAttribute="leading" secondItem="vNe-kr-t2W" secondAttribute="trailing" multiplier="0.07" constant="8" id="JhE-4C-cqn"/>
                             <constraint firstAttribute="bottom" secondItem="HoF-Ja-dsa" secondAttribute="bottom" constant="5" id="plQ-tn-v9p"/>
                         </constraints>
                     </view>

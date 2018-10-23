@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN6-m7-hv7">
-                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <rect key="frame" x="22.5" y="8" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KN6-m7-hv7" secondAttribute="height" multiplier="1:1" id="0TK-ka-W2g"/>
                                     <constraint firstAttribute="width" constant="48" id="ESf-AF-hx8"/>
@@ -35,21 +36,21 @@
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
-                                <rect key="frame" x="71" y="8" width="241" height="14.5"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="85.5" y="6.5" width="212" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="15"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1R-0dM">
-                                <rect key="frame" x="71" y="37.5" width="241" height="27"/>
+                                <rect key="frame" x="85.5" y="32" width="212" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7月14日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozW-M9-c70">
-                                <rect key="frame" x="249" y="5" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="242" y="8" width="55.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-Fy-kSf">
@@ -62,19 +63,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="leading" secondItem="Fdy-ME-rVz" secondAttribute="leading" id="97B-xH-Why"/>
-                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="37.5" id="GyR-Ks-qL9"/>
-                            <constraint firstAttribute="trailing" secondItem="hiL-1R-0dM" secondAttribute="trailing" constant="8" id="OzR-fe-bx0"/>
-                            <constraint firstAttribute="trailing" secondItem="ozW-M9-c70" secondAttribute="trailing" constant="8" id="Qcr-oT-QGn"/>
-                            <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="VDm-mm-2dF"/>
+                            <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="24" id="J7H-8P-efR"/>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="trailing" secondItem="ozW-M9-c70" secondAttribute="trailing" id="MfE-6N-ZPM"/>
+                            <constraint firstItem="ozW-M9-c70" firstAttribute="trailing" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.93" id="Qcr-oT-QGn"/>
+                            <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.07" id="VDm-mm-2dF"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="leading" secondItem="KN6-m7-hv7" secondAttribute="trailing" constant="15" id="VsP-gc-2qt"/>
+                            <constraint firstItem="Fdy-ME-rVz" firstAttribute="centerY" secondItem="KN6-m7-hv7" secondAttribute="bottom" multiplier="0.3" id="WKP-Rz-pRp"/>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="32" id="Y79-YL-rIP"/>
                             <constraint firstItem="BGv-Fy-kSf" firstAttribute="centerY" secondItem="InW-Aj-RWA" secondAttribute="centerY" id="a2D-2o-kSc"/>
-                            <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="15" id="d1K-cM-B0T"/>
                             <constraint firstItem="ozW-M9-c70" firstAttribute="centerY" secondItem="Fdy-ME-rVz" secondAttribute="centerY" id="eSg-ZE-YHD"/>
                             <constraint firstItem="BGv-Fy-kSf" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="leading" constant="8" id="fPp-YQ-qpw"/>
                             <constraint firstItem="KN6-m7-hv7" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="8" id="fZR-n3-Xje"/>
-                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="Fdy-ME-rVz" secondAttribute="bottom" constant="15" id="gPr-dv-Key"/>
-                            <constraint firstItem="Fdy-ME-rVz" firstAttribute="top" secondItem="KN6-m7-hv7" secondAttribute="top" id="gpI-1F-zNh"/>
-                            <constraint firstAttribute="trailing" secondItem="Fdy-ME-rVz" secondAttribute="trailing" constant="8" id="rAy-XJ-bjU"/>
+                            <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="Fdy-ME-rVz" secondAttribute="bottom" constant="5" id="gPr-dv-Key"/>
+                            <constraint firstItem="Fdy-ME-rVz" firstAttribute="trailing" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.93" id="rAy-XJ-bjU"/>
                         </constraints>
                     </view>
                 </subviews>

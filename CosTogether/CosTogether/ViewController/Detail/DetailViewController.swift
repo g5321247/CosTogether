@@ -397,7 +397,7 @@ extension DetailViewController: UITableViewDelegate {
         
         case .order:
             
-            return  self.view.frame.width * (75 / 375)
+            return  self.view.frame.width * (85 / 375)
             
         case .joinGroup:
             
@@ -422,20 +422,6 @@ extension DetailViewController: UITableViewDelegate {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        switch allData[section].dataType {
-            
-        case .commnetTitle:
-
-            return self.view.frame.width * (15 / 375)
-            
-        default:
-            return 0
-        }
-        
-    }
-            
 }
 
 extension DetailViewController: UITableViewDataSource {
