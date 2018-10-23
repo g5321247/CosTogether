@@ -28,7 +28,13 @@ class MessageView: UIView {
     
     private func setupImageView() {
         
-        messgaeTxtView.cornerSetup(cornerRadius: 4)
+        messgaeTxtView.cornerSetup(
+            cornerRadius: 2,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 0.6549019608, green: 0.6745098039, blue: 0.7137254902, alpha: 1),
+            maskToBounds: true
+        )
+        
         messgaeTxtView.text = "跟主揪說點什麼吧..."
         messgaeTxtView.textColor = UIColor.lightGray
         
