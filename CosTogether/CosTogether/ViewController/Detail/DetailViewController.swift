@@ -397,7 +397,7 @@ extension DetailViewController: UITableViewDelegate {
         
         case .order:
             
-            return  self.view.frame.width * (85 / 375)
+            return  self.view.frame.width * (75 / 375)
             
         case .joinGroup:
             

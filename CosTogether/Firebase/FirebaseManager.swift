@@ -585,11 +585,15 @@ extension FirebaseManager {
             
             self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
                 
+                guard let userId = Auth.auth().currentUser?.uid else {
+                    return
+                }
+                
                 let group = Group(
                     openType: groupType,
                     article: articleModel,
                     products: productsArray,
-                    userID: Auth.auth().currentUser!.uid,
+                    userID: userId,
                     owner: userModel,
                     groupId: groupId
                 )

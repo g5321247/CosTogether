@@ -86,8 +86,6 @@ class OrderTableViewCell: UITableViewCell {
         checkOrderInfoBot.isHidden = false
         checkOrderInfoBot.isEnabled = true
         
-        self.contentView.backgroundColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 1)
-
     }
     
 }
