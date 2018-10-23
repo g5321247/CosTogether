@@ -11,7 +11,8 @@ import AVFoundation
 import NotificationBannerSwift
 
 class AppendNewItemViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var prodctSettingView: ProductSettingView!
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
@@ -46,27 +47,32 @@ class AppendNewItemViewController: UIViewController {
         
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        prodctSettingView.delegate = self
+//        prodctSettingView.delegate = self
         imagePicker.delegate = self
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        bottnSetup()
-
+        setUpCell()
     }
     
+    #warning ("搬到 cell 去")
     private func bottnSetup() {
         
-        newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 1), lineWidth: 3)
         appendProductBot.cornerSetup(cornerRadius: 2.5)
         appendProductBot.shadowSetup()
         
         appendProductBot.imageView?.contentMode = .scaleAspectFill
     }
     
+    private func setUpCell() {
+        
+        tableView.registerTableViewCell(identifiers: [
+            String(describing: ImageTableViewCell.self),
+            String(describing: ProductInfoTableViewCell.self)
+            ])
+    }
+
     private func pictureIsExsist() {
         
         newProductPicBot.cornerSetup(
@@ -159,6 +165,74 @@ class AppendNewItemViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+}
+
+extension AppendNewItemViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            return self.view.frame.width * (165 / 375)
+            
+        case 1:
+            
+            return self.view.frame.width * (200 / 375)
+            
+        default:
+            return 0
+        }
+    }
+
+    
+}
+
+extension AppendNewItemViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            return cell
+            
+        case 1:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductInfoTableViewCell.self)) as? ProductInfoTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            return  cell
+            
+            
+        default:
+            
+            return UITableViewCell()
+            
+        }
+        
+    }
+
     
 }
 

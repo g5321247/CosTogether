@@ -700,7 +700,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="MEJ-oN-wdP" firstAttribute="leading" secondItem="Vll-py-dkh" secondAttribute="leading" constant="24" id="1o5-TH-hqv"/>
                                     <constraint firstAttribute="trailing" secondItem="i4C-DO-g4o" secondAttribute="trailing" constant="24" id="BKX-sw-Tgu"/>

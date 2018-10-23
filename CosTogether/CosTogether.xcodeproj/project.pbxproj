@@ -56,6 +56,10 @@
 		C85151C42175E030007B1324 /* OwnHelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */; };
 		C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85151C52175F472007B1324 /* GroupHistory.storyboard */; };
 		C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C72175F559007B1324 /* HistoryViewController.swift */; };
+		C859E28C217FBCF000C2AF8F /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859E28A217FBCF000C2AF8F /* ImageTableViewCell.swift */; };
+		C859E28D217FBCF100C2AF8F /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C859E28B217FBCF000C2AF8F /* ImageTableViewCell.xib */; };
+		C859E292217FCCE900C2AF8F /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */; };
+		C859E293217FCCE900C2AF8F /* ProductInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
 		C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786A0F216CDE1B001D2C63 /* PickerView.swift */; };
 		C87B44722167017300283767 /* OpenGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B44712167017300283767 /* OpenGroupType.swift */; };
@@ -168,6 +172,10 @@
 		C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnHelpBuyViewController.swift; sourceTree = "<group>"; };
 		C85151C52175F472007B1324 /* GroupHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupHistory.storyboard; sourceTree = "<group>"; };
 		C85151C72175F559007B1324 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		C859E28A217FBCF000C2AF8F /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		C859E28B217FBCF000C2AF8F /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C8786A0F216CDE1B001D2C63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		C87B44712167017300283767 /* OpenGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupType.swift; sourceTree = "<group>"; };
@@ -541,6 +549,15 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		C859E294217FCDA300C2AF8F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				C859E28A217FBCF000C2AF8F /* ImageTableViewCell.swift */,
+				C859E28B217FBCF000C2AF8F /* ImageTableViewCell.xib */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		C85D4F1E2154CF9800D73D8F /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +858,9 @@
 				C8C2B482215FA12B0033FB28 /* Segment */,
 				C8FB98CC216194F800C78926 /* GroupHistory */,
 				C8E956B52176D2E400473C6B /* UserCalculate */,
+				C859E294217FCDA300C2AF8F /* Image */,
+				C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */,
+				C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -930,6 +950,7 @@
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
 				C80187FC21758A5000FAC704 /* OepnGroupTableViewCell.xib in Resources */,
 				C8E956B42176D2DF00473C6B /* UserCalculateTableViewCell.xib in Resources */,
+				C859E28D217FBCF100C2AF8F /* ImageTableViewCell.xib in Resources */,
 				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
 				C80187F22173637700FAC704 /* get_started_slider.json in Resources */,
 				C82BA999215C891E00996B11 /* ProductPicTableViewCell.xib in Resources */,
@@ -937,6 +958,7 @@
 				C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */,
 				C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
+				C859E293217FCCE900C2AF8F /* ProductInfoTableViewCell.xib in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
 				C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */,
 				C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */,
@@ -1049,6 +1071,7 @@
 				C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,
 				C84975212157BAB100555855 /* ProductViewController.swift in Sources */,
+				C859E28C217FBCF000C2AF8F /* ImageTableViewCell.swift in Sources */,
 				C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */,
 				C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
@@ -1067,6 +1090,7 @@
 				C87B44722167017300283767 /* OpenGroupType.swift in Sources */,
 				C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */,
 				C85151C22175D2D3007B1324 /* CosNavigationControllerViewController.swift in Sources */,
+				C859E292217FCCE900C2AF8F /* ProductInfoTableViewCell.swift in Sources */,
 				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,
 				C823A26121675B1C0066D635 /* HelpBuyViewController.swift in Sources */,
 				C84975142157742A00555855 /* MainPageViewController.swift in Sources */,
