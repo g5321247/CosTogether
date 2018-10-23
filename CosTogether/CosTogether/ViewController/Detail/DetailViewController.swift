@@ -27,11 +27,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         allData = [
             DataType(dataType: .productPic, data: productPic),
+            DataType(dataType: .productDetail, data: productDetail),
             DataType(dataType: .articleInfo, data: article),
             DataType(dataType: .joinGroup, data: joinMember),
             DataType(dataType: .productItems(products.count), data: products),
             DataType(dataType: .order, data: order),
-            DataType(dataType: .productDetail, data: productDetail),
             DataType(dataType: .commnetTitle, data: []),
             DataType(dataType: .previousComments(comments.count), data: comments),
             DataType(dataType: .sendComment, data: [])
@@ -426,10 +426,6 @@ extension DetailViewController: UITableViewDelegate {
         
         switch allData[section].dataType {
             
-        case .productDetail:
-
-            return self.view.frame.width * (15 / 375)
-            
         case .commnetTitle:
 
             return self.view.frame.width * (15 / 375)
@@ -597,7 +593,14 @@ extension DetailViewController: UITableViewDataSource {
                     
             }
             
-            cell.productInfoLbl.text = productDetail.first?.article.content
+            guard let article = productDetail.first?.article else {
+                return UITableViewCell()
+            }
+            
+            cell.updateGroupDetail(
+                title: article.articleTitle ,
+                productInfo: article.content
+            )
             
             return cell
         

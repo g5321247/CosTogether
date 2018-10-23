@@ -43,9 +43,15 @@ class ProductSettingView: UIView {
         self.cornerSetup(
             cornerRadius: 4,
             borderWidth: 1,
-            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) ,
+            borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) ,
             maskToBounds: true
         )
+        
+        productNameTxf.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        productNameTxf.layer.borderWidth = 1
+        
+        productPriceTxf.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        productPriceTxf.layer.borderWidth = 1
     }
     
     private func setButton() {

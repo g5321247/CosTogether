@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,8 +60,9 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zI4-01-1FE">
-                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +74,7 @@
                             <constraint firstItem="Nle-6R-9cu" firstAttribute="trailing" secondItem="zI4-01-1FE" secondAttribute="trailing" id="bza-BA-zCM"/>
                             <constraint firstItem="Nle-6R-9cu" firstAttribute="bottom" secondItem="zI4-01-1FE" secondAttribute="bottom" id="e65-Uo-gUi"/>
                             <constraint firstItem="LY2-O3-h5M" firstAttribute="trailing" secondItem="Nle-6R-9cu" secondAttribute="trailing" id="pqr-df-DhP"/>
-                            <constraint firstItem="zI4-01-1FE" firstAttribute="top" secondItem="LY2-O3-h5M" secondAttribute="bottom" constant="10" id="zWI-Dx-1TV"/>
+                            <constraint firstItem="LY2-O3-h5M" firstAttribute="bottom" secondItem="zI4-01-1FE" secondAttribute="top" constant="-20" id="zWI-Dx-1TV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nle-6R-9cu"/>
                     </view>

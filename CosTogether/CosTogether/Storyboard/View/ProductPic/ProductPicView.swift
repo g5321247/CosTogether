@@ -46,7 +46,7 @@ class ProductPicView: UIView {
     private func setupBackgroundImageView() {
         
         self.cornerSetup(cornerRadius: 4,
-                         borderWidth: 1,
+                         borderWidth: 0,
                          borderColor: UIColor.gray.cgColor,
                          maskToBounds: false)
         

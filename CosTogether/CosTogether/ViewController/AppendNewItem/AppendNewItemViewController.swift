@@ -60,7 +60,7 @@ class AppendNewItemViewController: UIViewController {
     
     private func bottnSetup() {
         
-        newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.7126446366, green: 0.731051445, blue: 0.764359653, alpha: 1), lineWidth: 3)
+        newProductPicBot.addDashdeBorderLayer(color: #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 1), lineWidth: 3)
         appendProductBot.cornerSetup(cornerRadius: 2.5)
         appendProductBot.shadowSetup()
         

@@ -11,6 +11,7 @@ import UIKit
 class ProductDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var productInfoLbl: UILabel!
+    @IBOutlet weak var groupTitle: UILabel!
     @IBOutlet weak var baseView: UIView!
     
     override func awakeFromNib() {
@@ -24,15 +25,13 @@ class ProductDetailTableViewCell: UITableViewCell {
     
     private func setup() {
         
-        baseViewSetup()
         
     }
     
-    private func baseViewSetup() {
+    func updateGroupDetail(title: String, productInfo: String) {
         
-        baseView.cornerSetup(cornerRadius: 3, borderWidth: 0.6, borderColor: UIColor.black.cgColor, maskToBounds: false)
-        baseView.shadowSetup()
-        
+        groupTitle.text = title
+        productInfoLbl.text = productInfo
     }
     
 }

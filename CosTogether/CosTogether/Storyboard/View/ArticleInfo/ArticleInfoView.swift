@@ -51,8 +51,6 @@ class ArticleInfoView: UIView {
         
         tagLbl.text = groupArticle.openType.rawValue
         
-        articleTitleLbl.text = groupArticle.article.articleTitle
-
         guard let authorUrl = groupArticle.owner?.userImage,
             authorUrl != "" else {
             

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,6 @@
         <!--View Controller-->
         <scene sceneID="Vv8-FZ-UcB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iaQ-Ec-75F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gtT-K3-PCA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ERd-vn-Pww">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -29,6 +29,7 @@
                         <viewLayoutGuide key="safeArea" id="gQz-zu-Hd4"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaQ-Ec-75F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2735" y="2635"/>
         </scene>
@@ -699,7 +700,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="MEJ-oN-wdP" firstAttribute="leading" secondItem="Vll-py-dkh" secondAttribute="leading" constant="24" id="1o5-TH-hqv"/>
                                     <constraint firstAttribute="trailing" secondItem="i4C-DO-g4o" secondAttribute="trailing" constant="24" id="BKX-sw-Tgu"/>

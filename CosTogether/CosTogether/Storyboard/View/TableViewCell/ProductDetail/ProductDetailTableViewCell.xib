@@ -4,11 +4,15 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
         <array key="NotoSans-Regular.ttf">
             <string>NotoSans-Regular</string>
         </array>
@@ -24,43 +28,64 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1C-cK-ord">
-                        <rect key="frame" x="10" y="0.0" width="298" height="97.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="318" height="97.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物品資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf6-Be-LxA">
-                                <rect key="frame" x="8" y="1.5" width="68" height="23.5"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
+                                <rect key="frame" x="22.5" y="34.5" width="60" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="15"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物品資訊描述" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-PN-3tU">
-                                <rect key="frame" x="8" y="35" width="282" height="47.5"/>
+                                <rect key="frame" x="22.5" y="65" width="273" height="2.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccu-pr-cCL">
+                                <rect key="frame" x="22.5" y="82.5" width="273" height="2"/>
+                                <color key="backgroundColor" red="0.75518626658753119" green="0.77592652159290465" blue="0.82132905124651157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="f4c-dt-cm8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lAq-PN-3tU" firstAttribute="leading" secondItem="d1C-cK-ord" secondAttribute="leading" constant="8" id="1bc-0X-60h"/>
-                            <constraint firstItem="lAq-PN-3tU" firstAttribute="top" secondItem="d1C-cK-ord" secondAttribute="top" constant="35" id="IvR-E4-gqI"/>
-                            <constraint firstAttribute="bottom" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="15" id="bhK-GV-M3s"/>
-                            <constraint firstItem="Yf6-Be-LxA" firstAttribute="leading" secondItem="d1C-cK-ord" secondAttribute="leading" constant="8" id="fXm-EL-bHC"/>
-                            <constraint firstAttribute="trailing" secondItem="lAq-PN-3tU" secondAttribute="trailing" constant="8" id="my6-gB-l7F"/>
+                            <constraint firstItem="Ccu-pr-cCL" firstAttribute="top" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="15" id="7Q1-4F-Mao"/>
+                            <constraint firstItem="lAq-PN-3tU" firstAttribute="top" secondItem="d1C-cK-ord" secondAttribute="top" constant="65" id="IvR-E4-gqI"/>
+                            <constraint firstItem="Ccu-pr-cCL" firstAttribute="trailing" secondItem="lAq-PN-3tU" secondAttribute="trailing" id="LE1-gH-BzI"/>
+                            <constraint firstItem="Ccu-pr-cCL" firstAttribute="leading" secondItem="lAq-PN-3tU" secondAttribute="leading" id="ZX4-IC-wy1"/>
+                            <constraint firstAttribute="bottom" secondItem="lAq-PN-3tU" secondAttribute="bottom" constant="30" id="bhK-GV-M3s"/>
+                            <constraint firstItem="Yf6-Be-LxA" firstAttribute="leading" secondItem="d1C-cK-ord" secondAttribute="trailing" multiplier="0.07" id="fXm-EL-bHC"/>
+                            <constraint firstItem="lAq-PN-3tU" firstAttribute="leading" secondItem="Yf6-Be-LxA" secondAttribute="leading" id="gPS-A9-NqP"/>
                             <constraint firstItem="lAq-PN-3tU" firstAttribute="top" secondItem="Yf6-Be-LxA" secondAttribute="bottom" constant="10" id="wnT-MT-EA1"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;產品標題&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-Hp-fh3">
+                        <rect key="frame" x="22.5" y="0.0" width="273" height="27.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="d1C-cK-ord" secondAttribute="bottom" id="1Uf-x6-ct6"/>
-                    <constraint firstAttribute="trailing" secondItem="d1C-cK-ord" secondAttribute="trailing" constant="10" id="7oV-ni-K9J"/>
+                    <constraint firstAttribute="trailing" secondItem="d1C-cK-ord" secondAttribute="trailing" id="7oV-ni-K9J"/>
+                    <constraint firstItem="WlK-Hp-fh3" firstAttribute="leading" secondItem="Yf6-Be-LxA" secondAttribute="leading" id="8qR-8J-LRy"/>
+                    <constraint firstItem="WlK-Hp-fh3" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="AiT-N9-o4F"/>
                     <constraint firstItem="d1C-cK-ord" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K2p-yb-wBM"/>
-                    <constraint firstItem="d1C-cK-ord" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="a3S-ip-veu"/>
+                    <constraint firstItem="d1C-cK-ord" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="a3S-ip-veu"/>
+                    <constraint firstItem="WlK-Hp-fh3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cSa-eR-wqx"/>
+                    <constraint firstItem="WlK-Hp-fh3" firstAttribute="trailing" secondItem="lAq-PN-3tU" secondAttribute="trailing" id="fAV-5W-Ckh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="baseView" destination="d1C-cK-ord" id="YxB-fI-XcM"/>
+                <outlet property="groupTitle" destination="WlK-Hp-fh3" id="LeG-jo-Yfy"/>
                 <outlet property="productInfoLbl" destination="lAq-PN-3tU" id="JvQ-fd-AQy"/>
             </connections>
             <point key="canvasLocation" x="51.200000000000003" y="82.758620689655174"/>

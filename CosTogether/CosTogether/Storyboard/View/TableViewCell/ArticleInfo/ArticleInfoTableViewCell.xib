@@ -4,15 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NotoSans-Regular.ttf">
-            <string>NotoSans-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,12 +22,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0h-Gt-4L9" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;產品標題&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-qR-b2b">
-                                <rect key="frame" x="10" y="15" width="345" height="34.5"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-I3-ssh">
                                 <rect key="frame" x="297" y="82.5" width="18" height="18"/>
                                 <constraints>
@@ -82,10 +72,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="w2L-qR-b2b" secondAttribute="bottom" constant="25" id="1Q5-6m-oyX"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" id="6QO-0u-Ybd"/>
                             <constraint firstItem="f44-xr-eaN" firstAttribute="leading" secondItem="ELb-I3-ssh" secondAttribute="trailing" constant="10" id="GBb-fr-CIb"/>
-                            <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="w2L-qR-b2b" secondAttribute="trailing" constant="20" id="L1i-om-leX"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" secondItem="f44-xr-eaN" secondAttribute="trailing" constant="10" id="LS2-Y4-JQf"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="leading" id="NO1-5q-qsr"/>
                             <constraint firstAttribute="trailing" secondItem="hCF-iM-QxS" secondAttribute="trailing" constant="10" id="RXZ-z5-Hal"/>
@@ -96,8 +84,6 @@
                             <constraint firstItem="hCF-iM-QxS" firstAttribute="leading" secondItem="kvd-G9-i3p" secondAttribute="trailing" constant="10" id="fvS-OT-HYm"/>
                             <constraint firstItem="ELb-I3-ssh" firstAttribute="centerY" secondItem="HkW-Bb-fdz" secondAttribute="centerY" id="h4Y-IR-dtj"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="bottom" secondItem="eod-xo-0Kw" secondAttribute="bottom" constant="29" id="jf1-Cd-oPv"/>
-                            <constraint firstItem="w2L-qR-b2b" firstAttribute="leading" secondItem="ZQg-8P-u8I" secondAttribute="leading" constant="10" id="r1k-TG-udC"/>
-                            <constraint firstItem="w2L-qR-b2b" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" constant="15" id="rCK-gZ-8Xo"/>
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
                             <constraint firstItem="kvd-G9-i3p" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="vZV-aV-ae9"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="trailing" constant="-132" id="xQ8-ir-C0P"/>
@@ -105,7 +91,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZQg-8P-u8I"/>
                         <connections>
-                            <outlet property="articleTitleLbl" destination="w2L-qR-b2b" id="LAT-uZ-57C"/>
                             <outlet property="authorImageBot" destination="eod-xo-0Kw" id="lPr-X6-U1z"/>
                             <outlet property="authorNameLbl" destination="HkW-Bb-fdz" id="dmE-wb-SlB"/>
                             <outlet property="locationLbl" destination="f44-xr-eaN" id="M5T-3b-9TU"/>

@@ -19,16 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rx-2b-ST4" customClass="ProductPicView" customModule="CosTogether" customModuleProvider="target">
-                        <rect key="frame" x="10" y="0.0" width="360" height="269.5"/>
+                        <rect key="frame" x="26.5" y="0.0" width="327" height="269.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNc-2p-mlF" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="269.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="327" height="269.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-32-DYO" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="160" y="229.5" width="40" height="30"/>
+                                        <rect key="frame" x="148" y="236" width="31" height="23.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="ffG-Kg-Odb"/>
-                                            <constraint firstAttribute="height" constant="30" id="oQW-cO-rhm"/>
+                                            <constraint firstAttribute="width" secondItem="Qjo-32-DYO" secondAttribute="height" multiplier="4:3" id="wk8-oB-Okb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -45,9 +44,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aNc-2p-mlF" secondAttribute="trailing" id="19D-cQ-O02"/>
+                            <constraint firstItem="aNc-2p-mlF" firstAttribute="top" secondItem="eYY-yD-tcT" secondAttribute="top" id="C92-sf-eug"/>
                             <constraint firstItem="aNc-2p-mlF" firstAttribute="leading" secondItem="0Rx-2b-ST4" secondAttribute="leading" id="SBm-uU-RUr"/>
                             <constraint firstAttribute="bottom" secondItem="aNc-2p-mlF" secondAttribute="bottom" id="k7p-HM-eXf"/>
-                            <constraint firstItem="aNc-2p-mlF" firstAttribute="top" secondItem="0Rx-2b-ST4" secondAttribute="top" id="wHS-1x-ZL2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eYY-yD-tcT"/>
                         <connections>
@@ -58,12 +57,15 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="0Rx-2b-ST4" secondAttribute="trailing" constant="10" id="Buz-dP-Oxh"/>
-                    <constraint firstItem="0Rx-2b-ST4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="DvU-pC-IRo"/>
+                    <constraint firstItem="0Rx-2b-ST4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="Buz-dP-Oxh"/>
+                    <constraint firstItem="0Rx-2b-ST4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="DvU-pC-IRo"/>
                     <constraint firstItem="0Rx-2b-ST4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SwW-xb-Uhu"/>
                     <constraint firstAttribute="bottom" secondItem="0Rx-2b-ST4" secondAttribute="bottom" constant="10" id="pbl-jK-CRq"/>
                 </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="Qjo-32-DYO" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="1:9" id="Oh1-g9-ogd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="view" destination="0Rx-2b-ST4" id="wrX-mM-ldg"/>
