@@ -16,7 +16,6 @@ class CreateGroupViewController: UIViewController {
 
     @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var newProductBot: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
     @IBOutlet weak var pickerViewBackgroundView: UIView!
@@ -25,6 +24,8 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
     @IBOutlet weak var cancelBot: UIButton!
     @IBOutlet weak var sendBot: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     let refrence = Database.database().reference()
 
@@ -53,15 +54,33 @@ class CreateGroupViewController: UIViewController {
 
     }
     
+    private func tableViewSetup() {
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        setUpCell()
+    }
+    
+    private func setUpCell() {
+        
+        tableView.registerTableViewCell(identifiers: [
+            String(describing: ImageTableViewCell.self),
+            String(describing: ProductInfoTableViewCell.self)
+            ])
+    }
+
+    
     private func setup() {
         
-        setColletionView()
+//        setColletionView()
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         
         createGroupBotSetup()
 
         makeKey()
+        
+        tableViewSetup()
     }
     
     private func makeKey() {
@@ -80,52 +99,11 @@ class CreateGroupViewController: UIViewController {
         
         guard products.count > 0 else {
             
-            collectionBackgroundImage.isHidden = false
-            
-            collectionView.backgroundColor =  #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-            collectionView.cornerSetup(
-                cornerRadius: 4 ,
-                borderWidth: 1,
-                borderColor: #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1),
-                maskToBounds: true
-            )
             
             return
         }
         
-        collectionBackgroundImage.isHidden = true
 
-        collectionView.backgroundColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        collectionView.cornerSetup(
-            cornerRadius: 0,
-            borderWidth: 0,
-            borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-            maskToBounds: true
-        )
-
-    }
-    
-    private func setColletionView() {
-        
-        registerTableViewCell(identifier: String(describing: NewProductCollectionViewCell.self))
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        
-        let layout = AnimatedCollectionViewLayout()
-        layout.animator = LinearCardAttributesAnimator()
-        layout.scrollDirection = .horizontal
-        
-        collectionView.collectionViewLayout = layout
-    }
-    
-    private func registerTableViewCell(identifier: String) {
-        
-        let nibCell = UINib(nibName: identifier, bundle: nil)
-        collectionView.register(nibCell, forCellWithReuseIdentifier: identifier)
-        
     }
     
     @IBAction func backToRootViw(_ sender: UIButton) {
@@ -147,7 +125,7 @@ class CreateGroupViewController: UIViewController {
             self.products.append(product)
             BaseNotificationBanner.sucessBanner(subtitle: "商品新增成功")
 
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
             self.checkoutProductNumber()
             
         }
@@ -316,7 +294,7 @@ class CreateGroupViewController: UIViewController {
         createArticle.contentTextView.text = ""
         createArticle.titleTxf.text = ""
         
-        collectionView.reloadData()
+        tableView.reloadData()
         
     }
     
@@ -341,158 +319,125 @@ class CreateGroupViewController: UIViewController {
     
     private func createGroupBotSetup() {
         
-        sendBot.cornerSetup(cornerRadius: 4)
-        cancelBot.cornerSetup(cornerRadius: 4)
+//        sendBot.cornerSetup(cornerRadius: 4)
+//        cancelBot.cornerSetup(cornerRadius: 4)
         
     }
     
 }
 
-extension CreateGroupViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                
-        return products.count
-        
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-        ) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: NewProductCollectionViewCell.self),
-            for: indexPath
-            ) as? NewProductCollectionViewCell else {
-                
-                print("No such cell")
-                return UICollectionViewCell()
-                
-        }
-        
-        cell.newProductView.updateProductDetail(product: products[indexPath.row])
-        
-        return cell
-    }
-    
-}
-
-extension CreateGroupViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = collectionView.frame.size.width
-        
-        let height = collectionView.frame.size.height
-        
-        return CGSize(width: width, height: height)
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 15
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 8
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath) {
-        
-        collectionView.deselectItem(at: indexPath, animated: true)
-        
-        guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
-            
-            return
-        }
-        
-        controller.loadViewIfNeeded()
-        
-       let sheet = alertSheet(
-            controller: controller,
-            product: products[indexPath.row],
-            indexPath: indexPath
-        )
-        
-        self.present(sheet, animated: true, completion: nil)
-    }
-    
-    private func alertSheet(
-        controller: AppendNewItemViewController,
-        product: ProductModel,
-        indexPath: IndexPath
-        ) -> UIAlertController {
-    
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-        let editAction = UIAlertAction(title: "編輯商品", style: .default) { (_) in
-            
-            controller.editProductDetail(product: product)
-            
-            controller.appendProduct(product: { [weak self] (product) in
-                
-                self?.products[indexPath.row] = product
-                
-                BaseNotificationBanner.sucessBanner(
-                    subtitle: "商品修改成功",
-                    style: .info
-                )
-                
-                self?.collectionView.reloadData()
-            })
-            
-            self.show(controller, sender: nil)
-        }
-
-        let deleteAction = UIAlertAction(title: "刪除商品", style: .default) { (_) in
-
-            self.products.remove(at: indexPath.row)
-            self.collectionView.reloadData()
-            
-            BaseNotificationBanner.sucessBanner(
-                subtitle: "商品刪除成功",
-                style: .info
-            )
-
-            self.checkoutProductNumber()
-
-        }
-
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-
-        alertController.addAction(editAction)
-        alertController.addAction(deleteAction)
-        alertController.addAction(cancelAction)
-
-        return alertController
-    }
-
-}
+//
+//extension CreateGroupViewController: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let width = collectionView.frame.size.width
+//
+//        let height = collectionView.frame.size.height
+//
+//        return CGSize(width: width, height: height)
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 15
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 8
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        didSelectItemAt indexPath: IndexPath) {
+//
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//
+//        guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
+//
+//            return
+//        }
+//
+//        controller.loadViewIfNeeded()
+//
+//       let sheet = alertSheet(
+//            controller: controller,
+//            product: products[indexPath.row],
+//            indexPath: indexPath
+//        )
+//
+//        self.present(sheet, animated: true, completion: nil)
+//    }
+//
+//    private func alertSheet(
+//        controller: AppendNewItemViewController,
+//        product: ProductModel,
+//        indexPath: IndexPath
+//        ) -> UIAlertController {
+//
+//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//
+//        let editAction = UIAlertAction(title: "編輯商品", style: .default) { (_) in
+//
+//            controller.editProductDetail(product: product)
+//
+//            controller.appendProduct(product: { [weak self] (product) in
+//
+//                self?.products[indexPath.row] = product
+//
+//                BaseNotificationBanner.sucessBanner(
+//                    subtitle: "商品修改成功",
+//                    style: .info
+//                )
+//
+//                self?.collectionView.reloadData()
+//            })
+//
+//            self.show(controller, sender: nil)
+//        }
+//
+//        let deleteAction = UIAlertAction(title: "刪除商品", style: .default) { (_) in
+//
+//            self.products.remove(at: indexPath.row)
+//            self.collectionView.reloadData()
+//
+//            BaseNotificationBanner.sucessBanner(
+//                subtitle: "商品刪除成功",
+//                style: .info
+//            )
+//
+//            self.checkoutProductNumber()
+//
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//
+//        alertController.addAction(editAction)
+//        alertController.addAction(deleteAction)
+//        alertController.addAction(cancelAction)
+//
+//        return alertController
+//    }
+//
+//}
 
 extension CreateGroupViewController: PickerViewDelegate {
    
@@ -510,5 +455,73 @@ extension CreateGroupViewController: PickerViewDelegate {
         self.city = city
         createArticle.choseCityBot.setTitle(city, for: .normal)
     }
+    
+}
+
+extension CreateGroupViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            return self.view.frame.width * (165 / 375)
+            
+        case 1:
+            
+            return self.view.frame.width * (200 / 375)
+            
+        default:
+            return 0
+        }
+    }
+    
+    
+}
+
+extension CreateGroupViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            return cell
+            
+        case 1:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductInfoTableViewCell.self)) as? ProductInfoTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            return  cell
+            
+            
+        default:
+            
+            return UITableViewCell()
+            
+        }
+        
+    }
+    
     
 }

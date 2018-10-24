@@ -651,7 +651,7 @@
                                 </constraints>
                                 <segments>
                                     <segment title="開分購"/>
-                                    <segment title="開代購"/>
+                                    <segment title="幫代購"/>
                                 </segments>
                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>

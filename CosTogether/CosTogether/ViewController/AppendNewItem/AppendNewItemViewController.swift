@@ -20,6 +20,8 @@ class AppendNewItemViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
+    var cell : ImageTableViewCell?
+    
     var product: ProductModel?
     var passProductInfo: ((ProductModel) -> Void)?
     var productImage: UIImage?
@@ -30,18 +32,6 @@ class AppendNewItemViewController: UIViewController {
         setup()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = true
-        
-
-    }
     
     private func setup() {
         
@@ -49,11 +39,17 @@ class AppendNewItemViewController: UIViewController {
         
 //        prodctSettingView.delegate = self
         imagePicker.delegate = self
+    
+        tableViewSetup()
+        setUpCell()
+    }
+    
+    private func tableViewSetup() {
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        setUpCell()
+        tableView.allowsSelection = false
     }
     
     #warning ("搬到 cell 去")
@@ -75,26 +71,25 @@ class AppendNewItemViewController: UIViewController {
 
     private func pictureIsExsist() {
         
-        newProductPicBot.cornerSetup(
-            cornerRadius: 1,
-            borderWidth: 4,
-            borderColor: UIColor.white.cgColor,
-            maskToBounds: true
-        )
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
+            
+            return
+            
+        }
         
-        remindChosePicLbl.isHidden = true
+        cell.picIconImage.isHidden = true
     }
     
-    @IBAction func chosePicBotTapping(_ sender: UIButton) {
+    @objc func choseProductImage(_ sender: UIButton) {
         
         self.present(
             alertSheet(),
             animated: true,
             completion: nil
         )
-
+        
     }
-    
+
     func editProductDetail(product: ProductModel) {
         
         pictureIsExsist()
@@ -121,37 +116,6 @@ class AppendNewItemViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
         
-    }
-    
-    private func alertSheet() -> UIAlertController {
-        
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
-            
-            self.imagePicker.sourceType = .camera
-            self.imagePicker.modalPresentationStyle = .fullScreen
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-        
-        let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
-            
-            self.imagePicker.sourceType = .photoLibrary
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-
-        }
-        
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        
-        cameraAction.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
-        chosePicAction.setValue(#imageLiteral(resourceName: "picture"), forKey: "image")
-        
-        alertController.addAction(cameraAction)
-        alertController.addAction(chosePicAction)
-        alertController.addAction(cancelAction)
-        
-        return alertController
     }
     
     func appendProduct(product: @escaping (ProductModel) -> Void) {
@@ -187,7 +151,6 @@ extension AppendNewItemViewController: UITableViewDelegate {
         }
     }
 
-    
 }
 
 extension AppendNewItemViewController: UITableViewDataSource {
@@ -211,6 +174,10 @@ extension AppendNewItemViewController: UITableViewDataSource {
                 return UITableViewCell()
                 
             }
+            
+            self.cell = cell
+            
+            cell.productImageBot.addTarget(self, action: #selector (choseProductImage(_:)), for: .touchUpInside)
             
             return cell
             
@@ -271,11 +238,48 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
         
         productImage = tempImage
         
-        newProductPicBot.setImage(tempImage, for: .normal)
-        newProductPicBot.imageView?.contentMode = .scaleAspectFill
-        newProductPicBot.imageView?.cornerSetup(cornerRadius: 20)
+        guard  let cell = cell as? ImageTableViewCell else {
+            return
+        }
+        
+        cell.updateProductImage(image: tempImage)
         
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension AppendNewItemViewController {
+    
+    private func alertSheet() -> UIAlertController {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
+            
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.modalPresentationStyle = .fullScreen
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
+            
+            self.imagePicker.sourceType = .photoLibrary
+            
+            self.present(self.imagePicker, animated: true, completion: nil)
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        cameraAction.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
+        chosePicAction.setValue(#imageLiteral(resourceName: "picture"), forKey: "image")
+        
+        alertController.addAction(cameraAction)
+        alertController.addAction(chosePicAction)
+        alertController.addAction(cancelAction)
+        
+        return alertController
     }
     
 }

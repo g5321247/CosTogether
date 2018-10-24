@@ -27,6 +27,33 @@
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-fR-cJc">
+                        <rect key="frame" x="31.5" y="95" width="69.5" height="60.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAc-68-r4J">
+                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數量：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-lo-1if">
+                                <rect key="frame" x="0.0" y="22.5" width="69.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單價：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-sq-Bs9">
+                                <rect key="frame" x="0.0" y="42.5" width="69.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-plus" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-jD-Lm0">
+                        <rect key="frame" x="284.5" y="133.5" width="20" height="20"/>
+                        <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="tce-DE-avW">
                         <rect key="frame" x="155.5" y="68" width="27" height="27.5"/>
                         <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,18 +64,33 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerX" secondItem="dBC-EV-hDs" secondAttribute="centerX" id="OMo-E8-HVI"/>
+                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="trailing" secondItem="dBC-EV-hDs" secondAttribute="trailing" constant="-10" id="b6X-RU-EI1"/>
+                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" constant="-10" id="d4l-ch-X8k"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="fAB-xb-MyY"/>
+                    <constraint firstItem="YFV-fR-cJc" firstAttribute="leading" secondItem="dBC-EV-hDs" secondAttribute="trailing" multiplier="0.1" id="hqa-hu-iKC"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jTF-Ch-kln"/>
+                    <constraint firstItem="YFV-fR-cJc" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" multiplier="0.95" id="lNu-Ay-NYF"/>
+                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="width" secondItem="tOc-jD-Lm0" secondAttribute="height" multiplier="1:1" id="mLR-bJ-eLk"/>
+                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="20:163" id="o6l-KH-PAs"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="27:163" id="qMe-ri-NGL"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerY" secondItem="dBC-EV-hDs" secondAttribute="centerY" id="uUr-dk-aBf"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="vVD-wz-AlZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addImage" destination="tOc-jD-Lm0" id="aO4-dn-Soy"/>
+                <outlet property="picIconImage" destination="tce-DE-avW" id="dXP-RY-FRo"/>
+                <outlet property="productImageBot" destination="dBC-EV-hDs" id="fFy-u0-aDS"/>
+                <outlet property="productNameLbl" destination="sAc-68-r4J" id="c7R-V6-1yU"/>
+                <outlet property="productNumberLbl" destination="L4U-lo-1if" id="xEg-rv-wUv"/>
+                <outlet property="productPriceLbl" destination="eAG-sq-Bs9" id="t61-8C-yBT"/>
+            </connections>
             <point key="canvasLocation" x="67.200000000000003" y="124.13793103448276"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="big-plus" width="32" height="32"/>
         <image name="picture" width="32" height="32"/>
     </resources>
 </document>

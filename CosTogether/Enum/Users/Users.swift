@@ -15,3 +15,11 @@ enum UserType {
     case otherUser
     
 }
+
+enum CreateType: String {
+    
+    case openGroup = "CosTogether"
+    case groupBuy = "開團購"
+    case shareBuy = "開分購"
+    
+}
