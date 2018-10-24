@@ -22,20 +22,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-Ry-Stz">
-                                        <rect key="frame" x="116" y="31" width="143" height="28"/>
+                                        <rect key="frame" x="116" y="36" width="143" height="28"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-PA-pVd">
-                                        <rect key="frame" x="24" y="35" width="20" height="20"/>
+                                        <rect key="frame" x="24" y="40" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CbF-PA-pVd" secondAttribute="height" multiplier="1:1" id="5SK-sF-pnA"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="back"/>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBu-dO-D1O">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBu-dO-D1O">
                                         <rect key="frame" x="301" y="20" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="P5b-VC-a8A"/>
@@ -46,12 +46,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="nBu-dO-D1O" firstAttribute="centerY" secondItem="iBO-Ry-Stz" secondAttribute="centerY" id="5Rn-r3-UXy"/>
                                     <constraint firstItem="iBO-Ry-Stz" firstAttribute="centerX" secondItem="LY2-O3-h5M" secondAttribute="centerX" id="DpE-nn-5Sp"/>
+                                    <constraint firstItem="iBO-Ry-Stz" firstAttribute="bottom" secondItem="LY2-O3-h5M" secondAttribute="bottom" multiplier="0.85" id="Fdb-ge-Sdv"/>
                                     <constraint firstAttribute="trailing" secondItem="nBu-dO-D1O" secondAttribute="trailing" constant="24" id="Pbx-45-QZS"/>
                                     <constraint firstItem="CbF-PA-pVd" firstAttribute="leading" secondItem="LY2-O3-h5M" secondAttribute="leading" constant="24" id="Uqt-to-Ed3"/>
                                     <constraint firstAttribute="width" secondItem="LY2-O3-h5M" secondAttribute="height" multiplier="75:15" id="YRM-W9-ceS"/>
-                                    <constraint firstAttribute="bottom" secondItem="CbF-PA-pVd" secondAttribute="bottom" constant="20" id="jkK-MF-H2z"/>
                                     <constraint firstItem="iBO-Ry-Stz" firstAttribute="centerY" secondItem="CbF-PA-pVd" secondAttribute="centerY" id="ycY-hb-D72"/>
                                 </constraints>
                                 <connections>

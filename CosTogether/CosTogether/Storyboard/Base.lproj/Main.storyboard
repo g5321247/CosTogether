@@ -674,7 +674,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開團 Go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L08-jN-tCi">
-                                        <rect key="frame" x="144" y="33.5" width="87" height="28"/>
+                                        <rect key="frame" x="144" y="36" width="87" height="28"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -689,7 +689,7 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-DO-g4o">
-                                        <rect key="frame" x="331" y="37.5" width="20" height="20"/>
+                                        <rect key="frame" x="331" y="40" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="i4C-DO-g4o" secondAttribute="height" multiplier="1:1" id="pvU-GH-IbR"/>
                                         </constraints>
@@ -700,14 +700,14 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="MEJ-oN-wdP" firstAttribute="leading" secondItem="Vll-py-dkh" secondAttribute="leading" constant="24" id="1o5-TH-hqv"/>
+                                    <constraint firstItem="L08-jN-tCi" firstAttribute="bottom" secondItem="Vll-py-dkh" secondAttribute="bottom" multiplier="0.85" id="5E4-TL-ENR"/>
+                                    <constraint firstItem="i4C-DO-g4o" firstAttribute="centerY" secondItem="L08-jN-tCi" secondAttribute="centerY" id="7ui-I8-hWe"/>
                                     <constraint firstAttribute="trailing" secondItem="i4C-DO-g4o" secondAttribute="trailing" constant="24" id="BKX-sw-Tgu"/>
-                                    <constraint firstItem="i4C-DO-g4o" firstAttribute="centerY" secondItem="L08-jN-tCi" secondAttribute="centerY" id="JQF-e5-hc2"/>
                                     <constraint firstItem="L08-jN-tCi" firstAttribute="centerX" secondItem="Vll-py-dkh" secondAttribute="centerX" id="dg8-ZB-vbW"/>
                                     <constraint firstAttribute="bottom" secondItem="MEJ-oN-wdP" secondAttribute="bottom" constant="20" id="fM5-S6-sCL"/>
-                                    <constraint firstItem="L08-jN-tCi" firstAttribute="centerY" secondItem="MEJ-oN-wdP" secondAttribute="centerY" id="hJP-DH-xZC"/>
                                     <constraint firstAttribute="width" secondItem="Vll-py-dkh" secondAttribute="height" multiplier="75:15" id="ny6-Ot-YAc"/>
                                 </constraints>
                                 <connections>
