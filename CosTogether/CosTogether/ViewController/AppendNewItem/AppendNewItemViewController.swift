@@ -13,10 +13,14 @@ import NotificationBannerSwift
 class AppendNewItemViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var prodctSettingView: ProductSettingView!
+//    @IBOutlet weak var prodctSettingView: ProductSettingView!
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     @IBOutlet weak var appendProductBot: UIButton!
+    
+    var productName: String?
+    var productPrice: Int?
+    var numberOfProduct: Int?
     
     let imagePicker = UIImagePickerController()
     
@@ -94,14 +98,14 @@ class AppendNewItemViewController: UIViewController {
         
         pictureIsExsist()
         
-        prodctSettingView.updateProductDetail(product: product)
+//        prodctSettingView.updateProductDetail(product: product)
         
         newProductPicBot.setImage(product.updateImage, for: .normal)
     }
     
     @IBAction func appendNewProduct(_ sender: UIButton) {
         
-        prodctSettingView.updateProductInfo()
+//        prodctSettingView.updateProductInfo()
         
         guard let product = product,
         product.updateImage != nil,
@@ -189,6 +193,8 @@ extension AppendNewItemViewController: UITableViewDataSource {
                 
             }
             
+            cell.delegate = self
+            
             return  cell
             
             
@@ -204,6 +210,13 @@ extension AppendNewItemViewController: UITableViewDataSource {
 }
 
 extension AppendNewItemViewController: ProductSettingDelegate {
+    
+    func getProductSetting(name: String?, price: String?, number: String?) {
+        print(name)
+        print(price)
+        print(number)
+    }
+    
     
     func getProductSetting(product: ProductModel) {
         

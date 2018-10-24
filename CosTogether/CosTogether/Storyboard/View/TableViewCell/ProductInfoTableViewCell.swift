@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import NotificationBannerSwift
+
+protocol ProductSettingDelegate: AnyObject {
+    
+    func getProductSetting(name: String?, price: String?, number: String?)
+    
+}
 
 class ProductInfoTableViewCell: UITableViewCell {
     
@@ -14,6 +21,9 @@ class ProductInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var productNameTxf: UITextField!
     @IBOutlet weak var numberOfProductTxf: UITextField!
     @IBOutlet weak var productPriceTxf: UITextField!
+    
+    weak var delegate: ProductSettingDelegate?
+    var productQuantity: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +39,16 @@ class ProductInfoTableViewCell: UITableViewCell {
     private func setup() {
         
         viewSetup()
+        textfieldDelegateSet()
+    }
+    
+    private func textfieldDelegateSet() {
+        
+        productNameTxf.delegate = self
+        numberOfProductTxf.delegate = self
+        productPriceTxf.delegate = self
+        
+    
     }
     
     private func viewSetup() {
@@ -56,4 +76,77 @@ class ProductInfoTableViewCell: UITableViewCell {
         )
 
     }
+    
+    @IBAction func appendProductBotTapping(_ sender: UIButton) {
+        
+        
+        guard let productName = productNameTxf.text,
+            productName != "" else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "請輸入商品名稱")
+                return
+        }
+        
+        guard let productPrice = Int(productPriceTxf.text!) else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
+            return
+        }
+        
+        guard productPrice > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得為零")
+            return
+        }
+        
+        guard productPrice < 100000 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得超過十萬")
+            return
+        }
+        
+        
+        guard productQuantity > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
+            return
+        }
+        
+        guard productQuantity < 100 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得超過一百")
+            return
+        }
+        
+        
+        let product = ProductModel(
+            productName: productName,
+            productImage: "",
+            numberOfItem: productQuantity,
+            price: productPrice,
+            updateImage: nil
+        )
+
+        
+    }
+    
+    
+}
+
+extension ProductInfoTableViewCell: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard  let delegate = delegate else {
+            return
+        }
+        
+        delegate.getProductSetting(
+            name: productNameTxf.text ?? "",
+            price: productPriceTxf.text ?? "",
+            number: numberOfProductTxf.text ?? ""
+        )
+        
+    }
+    
 }

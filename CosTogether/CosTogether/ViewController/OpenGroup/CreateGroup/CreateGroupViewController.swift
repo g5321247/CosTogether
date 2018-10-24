@@ -58,6 +58,8 @@ class CreateGroupViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.allowsSelection = false
         setUpCell()
     }
     
@@ -65,7 +67,7 @@ class CreateGroupViewController: UIViewController {
         
         tableView.registerTableViewCell(identifiers: [
             String(describing: ImageTableViewCell.self),
-            String(describing: ProductInfoTableViewCell.self)
+            String(describing: GroupInfoTableViewCell.self)
             ])
     }
 
@@ -506,7 +508,7 @@ extension CreateGroupViewController: UITableViewDataSource {
             
         case 1:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductInfoTableViewCell.self)) as? ProductInfoTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupInfoTableViewCell.self)) as? GroupInfoTableViewCell else {
                 
                 return UITableViewCell()
                 

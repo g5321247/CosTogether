@@ -93,6 +93,8 @@
 		C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */; };
 		C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */; };
 		C8E956BD2177449C00473C6B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956BC2177449C00473C6B /* Notification.swift */; };
+		C8EAD96121809348009E8823 /* GroupInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAD95F21809348009E8823 /* GroupInfoTableViewCell.swift */; };
+		C8EAD96221809348009E8823 /* GroupInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8EAD96021809348009E8823 /* GroupInfoTableViewCell.xib */; };
 		C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F8C923215227FA00BDB0CE /* LogIn.storyboard */; };
 		C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C92521522AC200BDB0CE /* LogInViewController.swift */; };
 		C8F8C92A2152375900BDB0CE /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */; };
@@ -209,6 +211,8 @@
 		C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8E956BC2177449C00473C6B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C8EAD95F21809348009E8823 /* GroupInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C8EAD96021809348009E8823 /* GroupInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C8F8C923215227FA00BDB0CE /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		C8F8C92521522AC200BDB0CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C8F8C9292152375900BDB0CE /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
@@ -861,6 +865,8 @@
 				C859E294217FCDA300C2AF8F /* Image */,
 				C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */,
 				C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */,
+				C8EAD95F21809348009E8823 /* GroupInfoTableViewCell.swift */,
+				C8EAD96021809348009E8823 /* GroupInfoTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -942,6 +948,7 @@
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
+				C8EAD96221809348009E8823 /* GroupInfoTableViewCell.xib in Resources */,
 				C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */,
 				C823A2662168B1A50066D635 /* Detail.storyboard in Resources */,
 				C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */,
@@ -1115,6 +1122,7 @@
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
 				C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView+.swift in Sources */,
+				C8EAD96121809348009E8823 /* GroupInfoTableViewCell.swift in Sources */,
 				C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
 				C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */,

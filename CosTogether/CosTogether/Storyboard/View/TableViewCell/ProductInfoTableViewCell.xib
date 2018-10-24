@@ -76,6 +76,9 @@
                         <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="新增商品"/>
+                        <connections>
+                            <action selector="appendProductBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ky3-n2-uTL"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
