@@ -51,6 +51,11 @@ class ImageTableViewCell: UITableViewCell {
         
         productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        let addImageWithTem = #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysTemplate)
+        
+        addImage.image = addImageWithTem
+        addImage.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     @objc func choseProductImage(_ sender: UIButton) {

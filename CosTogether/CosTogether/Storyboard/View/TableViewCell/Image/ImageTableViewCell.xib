@@ -50,7 +50,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-plus" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-jD-Lm0">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-jD-Lm0">
                         <rect key="frame" x="284.5" y="133.5" width="20" height="20"/>
                         <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
@@ -90,7 +90,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="big-plus" width="32" height="32"/>
         <image name="picture" width="32" height="32"/>
+        <image name="plus" width="32" height="32"/>
     </resources>
 </document>
