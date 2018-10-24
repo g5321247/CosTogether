@@ -94,22 +94,61 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UITableViewDelegate {
  
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return self.view.frame.width / 375 * 80
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let headercell =  Bundle.main.loadNibNamed(
+            String(String(describing: UserCalculateHeader.self)),
+            owner: self,
+            options: nil
+            )?.first as? UserCalculateHeader else {
+                
+                return nil
+        }
+        
+//        headercell.selfBuyerInfoUpdate(userName: myProducts[section].user.userName, useImage: myProducts[section].user.userImage, pdoducts: myProducts[section].products)
+        
+        return headercell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+       
+        return self.view.frame.width / 375 * 50
+
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+       
+        guard let footerCell =  Bundle.main.loadNibNamed(
+            String(String(describing: UserCalculateFooter.self)),
+            owner: self,
+            options: nil
+            )?.first as? UserCalculateFooter else {
+                
+                return nil
+        }
+        
+        //        headercell.selfBuyerInfoUpdate(userName: myProducts[section].user.userName, useImage: myProducts[section].user.userImage, pdoducts: myProducts[section].products)
+        
+        return footerCell
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let width = 120 / 375.0 * Double(UIScreen.main.bounds.width)
-        
-        let height = width / 185.0 * 410
-        
-        return CGFloat(height)
-        
+        return 25
     }
+    
     
 }
 
 extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myProducts.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,7 +158,7 @@ extension HistoryViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.selfBuyerInfoUpdate(userName: myProducts[indexPath.row].user.userName, useImage: myProducts[indexPath.row].user.userImage, pdoducts: myProducts[indexPath.row].products)
+//        cell.selfBuyerInfoUpdate(userName: myProducts[indexPath.row].user.userName, useImage: myProducts[indexPath.row].user.userImage, pdoducts: myProducts[indexPath.row].products)
         
         return cell
     }

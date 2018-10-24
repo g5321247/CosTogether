@@ -131,7 +131,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 10)
     }
     
     func collectionView(

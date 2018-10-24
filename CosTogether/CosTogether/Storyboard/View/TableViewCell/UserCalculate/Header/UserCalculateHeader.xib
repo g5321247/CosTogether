@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserCalculateHeader" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-Hv-q81" customClass="ArticleInfoView" customModule="CosTogether" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-1T-bMX">
+                            <rect key="frame" x="97.5" y="22" width="72" height="34"/>
+                            <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojd-lp-AhQ">
+                            <rect key="frame" x="26.5" y="15" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Ojd-lp-AhQ" secondAttribute="height" multiplier="1:1" id="y7M-Wa-Y9I"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="-5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" image="profile_sticker_placeholder02"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="LOR-1T-bMX" firstAttribute="centerY" secondItem="Ojd-lp-AhQ" secondAttribute="centerY" id="18h-Rg-vx6"/>
+                        <constraint firstItem="Ojd-lp-AhQ" firstAttribute="top" secondItem="HDb-iI-W2X" secondAttribute="top" constant="15" id="4Sk-2B-Q7V"/>
+                        <constraint firstItem="Ojd-lp-AhQ" firstAttribute="width" secondItem="tiz-Hv-q81" secondAttribute="width" multiplier="48:375" id="ajH-ix-nRG"/>
+                        <constraint firstItem="Ojd-lp-AhQ" firstAttribute="leading" secondItem="tiz-Hv-q81" secondAttribute="trailing" multiplier="0.07" id="i9d-ki-7Jj"/>
+                        <constraint firstItem="LOR-1T-bMX" firstAttribute="leading" secondItem="tiz-Hv-q81" secondAttribute="trailing" multiplier="0.26" id="s8v-eQ-sz6"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="HDb-iI-W2X"/>
+                    <connections>
+                        <outlet property="authorImageBot" destination="Ojd-lp-AhQ" id="EVZ-Oi-gSQ"/>
+                        <outlet property="authorNameLbl" destination="LOR-1T-bMX" id="ecd-Cn-bMO"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tiz-Hv-q81" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0rr-EG-bE9"/>
+                <constraint firstItem="tiz-Hv-q81" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FAn-Sb-tNZ"/>
+                <constraint firstAttribute="bottom" secondItem="tiz-Hv-q81" secondAttribute="bottom" id="ZAd-KP-YAE"/>
+                <constraint firstItem="tiz-Hv-q81" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ui3-bc-tou"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="128.80000000000001" y="-250.52473763118442"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profile_sticker_placeholder02" width="256" height="256"/>
+    </resources>
+</document>

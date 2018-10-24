@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserCalculateFooter" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-yV-YAN">
+                    <rect key="frame" x="308" y="15" width="41" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總計" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhD-Fl-dH8">
+                    <rect key="frame" x="227.5" y="15" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zL-Cz-2u0">
+                    <rect key="frame" x="26.5" y="38" width="322.5" height="2"/>
+                    <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="hoX-OR-f4X"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1zL-Cz-2u0" secondAttribute="bottom" id="FeJ-Ou-doj"/>
+                <constraint firstItem="zhD-Fl-dH8" firstAttribute="centerY" secondItem="2Kt-yV-YAN" secondAttribute="centerY" id="IgI-j8-6bN"/>
+                <constraint firstItem="zhD-Fl-dH8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="USR-lA-pdp"/>
+                <constraint firstItem="2Kt-yV-YAN" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="0.93" id="X6x-gg-jQd"/>
+                <constraint firstItem="1zL-Cz-2u0" firstAttribute="trailing" secondItem="2Kt-yV-YAN" secondAttribute="trailing" id="aab-HD-Zh4"/>
+                <constraint firstItem="1zL-Cz-2u0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="trailing" multiplier="0.07" id="pts-53-43I"/>
+                <constraint firstItem="zhD-Fl-dH8" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="0.7" id="zqv-IF-H6W"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>
