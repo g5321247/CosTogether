@@ -125,8 +125,8 @@ extension OwnHelpBuyViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 130
-        
+        return self.view.frame.width / 16 * 9 + 50
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -185,9 +185,9 @@ extension OwnHelpBuyViewController: UITableViewDataSource {
                 
         }
         
-        cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
+        cell.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
-        cell.baseView.authorImageBot.isHidden = true
+//        cell.baseView.authorImageBot.isHidden = true
         
         cell.selectionStyle = .none
         

@@ -135,7 +135,7 @@ extension JoinShareGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 130
+        return self.view.frame.width / 16 * 9 + 50
 
     }
     
@@ -171,16 +171,16 @@ extension JoinShareGroupViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: GroupTableViewCell.self)
+            withIdentifier: String(describing: GroupTableViewCell.self), for: indexPath
             ) as? GroupTableViewCell else {
                 
                 return UITableViewCell()
                 
         }
         
-        cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
+        cell.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
-        cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
+//        cell.baseView.authorImageBot?.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
         
         cell.selectionStyle = .none
 

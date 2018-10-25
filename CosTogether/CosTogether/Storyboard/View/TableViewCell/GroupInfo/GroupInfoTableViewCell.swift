@@ -16,7 +16,6 @@ class GroupInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var createGroupBot: UIButton!
     @IBOutlet weak var cancelBot: UIButton!
 
-    
     @IBAction func cancelBotTapping(_ sender: UIButton) {
         
         

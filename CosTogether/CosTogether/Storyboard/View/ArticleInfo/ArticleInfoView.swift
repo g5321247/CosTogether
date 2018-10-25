@@ -26,30 +26,15 @@ class ArticleInfoView: UIView {
         
     }
     
-    func updateGroupHistory(ownGroup: OwnGroup) {
-        
-        
-        articleTitleLbl.text = ownGroup.group?.article.articleTitle
-        
-        guard let productUrl = ownGroup.products.first?.productImage else {
-            return
-        }
-        
-        let url = URL(string: productUrl)
-        
-        productImage?.sd_setImage(with: url)
-        
-    }
-    
     func updateArticle(groupArticle: Group) {
         
         authorNameLbl?.text = groupArticle.owner?.userName
         
         postDateLbl.text = groupArticle.article.postDate
         
-        locationLbl.text = groupArticle.article.location
+        locationLbl?.text = groupArticle.article.location
         
-        tagLbl.text = groupArticle.openType.rawValue
+        tagLbl?.text = groupArticle.openType.rawValue
         
         guard let authorUrl = groupArticle.owner?.userImage,
             authorUrl != "" else {

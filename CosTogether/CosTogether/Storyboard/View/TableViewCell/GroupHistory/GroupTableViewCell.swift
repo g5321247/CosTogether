@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GroupTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var baseView: ArticleInfoView!
-    @IBOutlet weak var shadowView: UIView!
+    
+    @IBOutlet weak var postDateLbl: UILabel!
+    @IBOutlet weak var articleTitleLbl: UILabel!
+    @IBOutlet weak var productImage: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,26 +24,20 @@ class GroupTableViewCell: UITableViewCell {
         
     }
     
-    private func setup() {
-        cornerCell()
-        setShadow()
+    func updateGroupHistory(ownGroup: OwnGroup) {
+        
+        articleTitleLbl.text = ownGroup.group?.article.articleTitle
+        
+        postDateLbl.text = ownGroup.group?.article.postDate
+        
+        guard let productUrl = ownGroup.products.first?.productImage else {
+            return
+        }
+        
+        let url = URL(string: productUrl)
+        
+        productImage?.sd_setImage(with: url)
+        
     }
-    
-    private func cornerCell() {
-        
-        baseView.cornerup()
-        
-    }
-    
-    private func setShadow() {
-        
-        shadowView.shadowSetup()
-        
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        setup()
-    }
+
 }

@@ -134,7 +134,7 @@ extension JoinHelpGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 130
+        return self.view.frame.width / 16 * 9 + 50
         
     }
     
@@ -177,9 +177,9 @@ extension JoinHelpGroupViewController: UITableViewDataSource {
                 
         }
         
-        cell.baseView.updateGroupHistory(ownGroup: myGroups[indexPath.row])
+        cell.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         
-        cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
+//        cell.baseView.authorImageBot.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
         
         cell.selectionStyle = .none
         
