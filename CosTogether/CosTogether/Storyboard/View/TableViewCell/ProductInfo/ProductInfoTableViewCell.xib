@@ -68,10 +68,10 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xp-wV-5Gu">
-                        <rect key="frame" x="189.5" y="348" width="108" height="36"/>
-                        <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="202" y="348" width="95.5" height="36"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="5xp-wV-5Gu" secondAttribute="height" multiplier="60:20" id="Q4Z-PR-NcU"/>
+                            <constraint firstAttribute="width" secondItem="5xp-wV-5Gu" secondAttribute="height" multiplier="53:20" id="Q4Z-PR-NcU"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

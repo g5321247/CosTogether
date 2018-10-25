@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var aboutMyselfTextView: UITextView!
     @IBOutlet weak var updateAboutMyselfBot: UIButton!
     @IBOutlet weak var cancelEditBot: UIButton!
+    @IBOutlet weak var editBot: UIButton!
+    @IBOutlet weak var phoneTxf: UITextField!
     
     var temAboutMyself: String?
     
@@ -132,11 +134,18 @@ class ProfileViewController: UIViewController {
         
         updateAboutMyselfBot.cornerSetup(cornerRadius: 4)
         cancelEditBot.cornerSetup(cornerRadius: 4)
+        editBot.cornerSetup(cornerRadius: 4)
+        
+        phoneTxf.cornerSetup(
+            cornerRadius: 4,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        )
         
         aboutMyselfTextView.cornerSetup(
-            cornerRadius: 0,
-            borderWidth: 0.5,
-            borderColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cornerRadius: 4,
+            borderWidth: 1,
+            borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         )
         
     }

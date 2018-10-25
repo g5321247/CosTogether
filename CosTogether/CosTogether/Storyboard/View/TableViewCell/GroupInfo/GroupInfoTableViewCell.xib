@@ -25,47 +25,47 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqP-Le-gCe">
-                        <rect key="frame" x="22.5" y="113.5" width="275" height="1"/>
+                        <rect key="frame" x="22.5" y="113.5" width="275" height="2"/>
                         <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="Aqc-qL-lQJ"/>
+                            <constraint firstAttribute="height" constant="2" id="Aqc-qL-lQJ"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="揪團地點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-OP-xIx">
-                        <rect key="frame" x="22.5" y="134.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="135.5" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="台北市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-zv-W6T">
-                        <rect key="frame" x="22.5" y="163.5" width="275" height="30"/>
+                        <rect key="frame" x="22.5" y="164.5" width="275" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="揪團標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRr-YM-jcL">
-                        <rect key="frame" x="22.5" y="208.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="209.5" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYk-3h-fNX">
-                        <rect key="frame" x="22.5" y="237.5" width="275" height="30"/>
+                        <rect key="frame" x="22.5" y="238.5" width="275" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9b-Bs-E1V">
-                        <rect key="frame" x="22.5" y="282.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="283.5" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35n-mc-0a1">
-                        <rect key="frame" x="189.5" y="471.5" width="108" height="36"/>
+                        <rect key="frame" x="202" y="472.5" width="95.5" height="36"/>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="35n-mc-0a1" secondAttribute="height" multiplier="60:20" id="FMk-9l-7gN"/>
+                            <constraint firstAttribute="width" secondItem="35n-mc-0a1" secondAttribute="height" multiplier="53:20" id="FMk-9l-7gN"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +75,7 @@
                         </connections>
                     </button>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Gm-GS-sh4">
-                        <rect key="frame" x="22.5" y="311.5" width="275" height="120"/>
+                        <rect key="frame" x="22.5" y="312.5" width="275" height="120"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="a6T-Bi-wEB"/>
@@ -84,7 +84,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glg-zK-aKr">
-                        <rect key="frame" x="61.5" y="471.5" width="108" height="36"/>
+                        <rect key="frame" x="87" y="472.5" width="95" height="36"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +113,7 @@
                     <constraint firstItem="35n-mc-0a1" firstAttribute="leading" secondItem="glg-zK-aKr" secondAttribute="trailing" constant="20" id="las-JM-KvA"/>
                     <constraint firstItem="n9b-Bs-E1V" firstAttribute="top" secondItem="WYk-3h-fNX" secondAttribute="bottom" constant="15" id="okb-x5-vEm"/>
                     <constraint firstItem="WYk-3h-fNX" firstAttribute="top" secondItem="FRr-YM-jcL" secondAttribute="bottom" constant="5" id="rQJ-Ed-fJS"/>
-                    <constraint firstItem="glg-zK-aKr" firstAttribute="width" secondItem="glg-zK-aKr" secondAttribute="height" multiplier="60:20" id="toe-Pm-qdv"/>
+                    <constraint firstItem="glg-zK-aKr" firstAttribute="width" secondItem="glg-zK-aKr" secondAttribute="height" multiplier="53:20" id="toe-Pm-qdv"/>
                     <constraint firstItem="WYk-3h-fNX" firstAttribute="leading" secondItem="FRr-YM-jcL" secondAttribute="leading" id="uQD-qd-ONA"/>
                 </constraints>
             </tableViewCellContentView>
