@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,6 +39,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55B-pt-l8n">
+                                <rect key="frame" x="12" y="12" width="146" height="140"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sticker_placeholder02" translatesAutoresizingMaskIntoConstraints="NO" id="aHq-gz-Ghy">
                                 <rect key="frame" x="6" y="132" width="32" height="32"/>
                                 <constraints>
@@ -69,9 +74,14 @@
                             <constraint firstItem="aHq-gz-Ghy" firstAttribute="height" secondItem="ymq-zH-kFH" secondAttribute="height" multiplier="8:35" id="UH4-Ud-c7y"/>
                             <constraint firstItem="aHq-gz-Ghy" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="-20" id="W0f-oi-xBc"/>
                             <constraint firstItem="x8d-ly-8bu" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="bottom" constant="20" id="WY5-lm-hht"/>
+                            <constraint firstItem="55B-pt-l8n" firstAttribute="top" secondItem="ymq-zH-kFH" secondAttribute="top" id="aQN-L2-mNs"/>
+                            <constraint firstItem="55B-pt-l8n" firstAttribute="width" secondItem="ymq-zH-kFH" secondAttribute="width" id="aQz-Yr-yj5"/>
+                            <constraint firstItem="55B-pt-l8n" firstAttribute="leading" secondItem="ymq-zH-kFH" secondAttribute="leading" id="jJe-1r-qkH"/>
                             <constraint firstAttribute="trailing" secondItem="x8d-ly-8bu" secondAttribute="trailing" constant="12" id="mnx-PI-SnO"/>
+                            <constraint firstItem="55B-pt-l8n" firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" id="n6j-vK-EJq"/>
                             <constraint firstItem="ymq-zH-kFH" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="12" id="pf8-BM-j0P"/>
                             <constraint firstItem="aHq-gz-Ghy" firstAttribute="leading" secondItem="T36-zE-wgs" secondAttribute="leading" constant="6" id="rc4-dE-qOt"/>
+                            <constraint firstItem="55B-pt-l8n" firstAttribute="height" secondItem="ymq-zH-kFH" secondAttribute="height" id="sE8-a3-KYE"/>
                             <constraint firstAttribute="bottom" secondItem="x8d-ly-8bu" secondAttribute="bottom" constant="4.5" id="tta-Po-z4x"/>
                             <constraint firstAttribute="trailing" secondItem="ymq-zH-kFH" secondAttribute="trailing" constant="12" id="ykg-oR-Oxb"/>
                         </constraints>

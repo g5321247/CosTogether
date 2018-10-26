@@ -83,8 +83,6 @@
 		C8C2B477215F2B000033FB28 /* PreviousCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B475215F2B000033FB28 /* PreviousCommentTableViewCell.xib */; };
 		C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */; };
 		C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */; };
-		C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B47E215FA1240033FB28 /* SegmentTableViewCell.swift */; };
-		C8C2B481215FA1240033FB28 /* SegmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47F215FA1240033FB28 /* SegmentTableViewCell.xib */; };
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
 		C8E956B32176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B12176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift */; };
 		C8E956B42176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B22176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib */; };
@@ -205,8 +203,6 @@
 		C8C2B475215F2B000033FB28 /* PreviousCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTitleTableViewCell.xib; sourceTree = "<group>"; };
-		C8C2B47E215FA1240033FB28 /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
-		C8C2B47F215FA1240033FB28 /* SegmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentTableViewCell.xib; sourceTree = "<group>"; };
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
 		C8E956B12176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCalculateHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		C8E956B22176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCalculateHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -698,15 +694,6 @@
 			path = CommonTitle;
 			sourceTree = "<group>";
 		};
-		C8C2B482215FA12B0033FB28 /* Segment */ = {
-			isa = PBXGroup;
-			children = (
-				C8C2B47E215FA1240033FB28 /* SegmentTableViewCell.swift */,
-				C8C2B47F215FA1240033FB28 /* SegmentTableViewCell.xib */,
-			);
-			path = Segment;
-			sourceTree = "<group>";
-		};
 		C8E956B52176D2E400473C6B /* UserCalculate */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,7 +892,6 @@
 				C8FB98C62161245300C78926 /* Message */,
 				C87F8B16215DD22D0060EA72 /* JoinGroup */,
 				C8BCF0E0215E9CE200A2B1B8 /* ProductDetail */,
-				C8C2B482215FA12B0033FB28 /* Segment */,
 				C8FB98CC216194F800C78926 /* GroupHistory */,
 				C8E956B52176D2E400473C6B /* UserCalculate */,
 				C859E294217FCDA300C2AF8F /* Image */,
@@ -1018,7 +1004,6 @@
 				C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */,
 				C8FB98D02161951A00C78926 /* GroupTableViewCell.xib in Resources */,
 				C8F8C92D2152399200BDB0CE /* Assets.xcassets in Resources */,
-				C8C2B481215FA1240033FB28 /* SegmentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,7 +1126,6 @@
 				C8EAD9732180B848009E8823 /* UserCalculateHeader.swift in Sources */,
 				C823A25F21675AA60066D635 /* ShareBuyViewController.swift in Sources */,
 				C87B44722167017300283767 /* OpenGroupType.swift in Sources */,
-				C8C2B480215FA1240033FB28 /* SegmentTableViewCell.swift in Sources */,
 				C85151C22175D2D3007B1324 /* CosNavigationControllerViewController.swift in Sources */,
 				C859E292217FCCE900C2AF8F /* ProductInfoTableViewCell.swift in Sources */,
 				C8BCF0D7215E10A500A2B1B8 /* MemberCollectionViewCell.swift in Sources */,

@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var phoneTxf: UITextField!
     
     var temAboutMyself: String?
+    var temPhone: String?
     
     let dispatchGroup = DispatchGroup()
     
@@ -39,42 +40,58 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+        downloadUserData()
+        
     }
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setup()
+        
+        userImageSetup(user: userType)
+
     }
     
     private func setup() {
 
-        userImageSetup(user: userType)
         topBotSetup(user: userType)
         
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
         
+        editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
+        
         updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
         
         cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
+        
+    }
+        
+    private func downloadUserData() {
         
         guard let userId = Auth.auth().currentUser?.uid else {
             
             return
         }
         
-        firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+        firebaseManager.userIdToGetUserInfo(userId: userId) { [weak self] (userModel) in
             
-            self.currentUserModel = userModel
+            self?.currentUserModel = userModel
             
             guard userModel.aboutSelf != "" else {
                 return
             }
             
-            self.dispatchGroup.enter()
-            self.temAboutMyself = userModel.aboutSelf
-            self.dispatchGroup.leave()
+            self?.dispatchGroup.enter()
+            self?.temAboutMyself = userModel.aboutSelf
+            self?.dispatchGroup.leave()
         }
+
+        
+    }
+    
+    @objc func editBotTapping(_ sender: UIButton) {
+        
+        editing(true)
         
     }
     
@@ -109,7 +126,9 @@ class ProfileViewController: UIViewController {
             cancelEditBot.isHidden = true
             cancelEditBot.isEnabled = false
             
-            self.aboutMyselfEditable(editable: false)
+            phoneTxf.isEnabled = false
+            
+            aboutMyselfEditable(editable: false)
             
             return
         }
@@ -120,13 +139,25 @@ class ProfileViewController: UIViewController {
         cancelEditBot.isHidden = false
         cancelEditBot.isEnabled = true
         
-        self.aboutMyselfEditable(editable: true)
+        aboutMyselfEditable(editable: true)
 
     }
 
     func aboutMyselfEditable(editable: Bool) {
         
         aboutMyselfTextView.isEditable = editable
+        phoneTxf.isEnabled = editable
+        
+        guard editable else {
+            
+            phoneTxf.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            aboutMyselfTextView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            return
+        }
+        
+        phoneTxf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        aboutMyselfTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
     }
     
@@ -141,6 +172,7 @@ class ProfileViewController: UIViewController {
             borderWidth: 1,
             borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         )
+        
         
         aboutMyselfTextView.cornerSetup(
             cornerRadius: 4,
@@ -159,6 +191,7 @@ class ProfileViewController: UIViewController {
         )
         
         switch user {
+            
         case .currentUser, .currentTabProfile:
             
             guard let currentUser = Auth.auth().currentUser else {

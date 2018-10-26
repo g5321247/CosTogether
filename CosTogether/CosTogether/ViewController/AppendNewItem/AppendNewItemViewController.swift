@@ -144,11 +144,10 @@ extension AppendNewItemViewController: UITableViewDelegate {
             
         case 0:
             
-            return self.view.frame.width * (165 / 375)
-            
+            return 165
         case 1:
             
-            return self.view.frame.width * (200 / 375)
+            return 200
             
         default:
             return 0

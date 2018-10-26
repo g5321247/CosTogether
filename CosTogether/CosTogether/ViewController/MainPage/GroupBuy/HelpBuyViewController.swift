@@ -78,7 +78,7 @@ class HelpBuyViewController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "更新資料中...")
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         
-        collectionView.addSubview(refreshControl)
+        collectionView.insertSubview(refreshControl, at: 0)
 
         collectionView.alwaysBounceVertical = true
     }
@@ -95,8 +95,6 @@ class HelpBuyViewController: UIViewController {
                 
                 self.collectionView.reloadData()
                 
-                self.refreshControl.endRefreshing()
-                
                 return
             }
 
@@ -104,7 +102,6 @@ class HelpBuyViewController: UIViewController {
             
             self.collectionView.reloadData()
             
-            self.refreshControl.endRefreshing()
             
         }
     }
@@ -118,9 +115,7 @@ class HelpBuyViewController: UIViewController {
             guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
                 
                 self.collectionView.reloadData()
-                
-                self.refreshControl.endRefreshing()
-                
+                                
                 return
 
             }
@@ -173,10 +168,23 @@ extension HelpBuyViewController: UICollectionViewDataSource {
         guard group.count > 0 else {
             
             collectionView.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                
+                self.refreshControl.endRefreshing()
+                
+            }
+            
             return 0
         }
         
         collectionView.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            
+            self.refreshControl.endRefreshing()
+            
+        }
         
         return group.count
         
