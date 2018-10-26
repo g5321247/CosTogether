@@ -28,25 +28,24 @@ class ProfileViewController: UIViewController {
     var temAboutMyself: String?
     var temPhone: String?
     
-    let dispatchGroup = DispatchGroup()
-    
+    let firebaseManager = FirebaseManager()
+
     var userType: UserType = .currentTabProfile
     var userInfo: UserModel?
-    
-    let firebaseManager = FirebaseManager()
-    
     var currentUserModel: UserModel?
+
+    let dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
         downloadUserData()
         
     }
     
     override func viewDidLayoutSubviews() {
         
+        setup()
         userImageSetup(user: userType)
 
     }
@@ -54,18 +53,13 @@ class ProfileViewController: UIViewController {
     private func setup() {
 
         topBotSetup(user: userType)
+        contentBotSetup(user: userType)
         
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
         
-        editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
-        
-        updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
-        
-        cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
-        
     }
-        
+    
     private func downloadUserData() {
         
         guard let userId = Auth.auth().currentUser?.uid else {
@@ -86,6 +80,40 @@ class ProfileViewController: UIViewController {
             self?.dispatchGroup.leave()
         }
 
+        
+    }
+    
+    private func contentBotSetup(user: UserType) {
+        
+        switch user {
+            
+        case .currentTabProfile, .currentUser:
+            
+            editBot.titleLabel?.text = "編輯資料"
+            
+            editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
+            
+            updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
+            
+            cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
+            
+        case .otherUser:
+            
+            editBot.titleLabel?.text = "電話聯絡"
+
+        }
+        
+    }
+    
+    @objc func callUser(_ sender: UIButton) {
+        
+        guard let phoneNumber = Int(phoneTxf.text!),
+           let url = URL(string: "tel://\(phoneNumber)") else {
+            
+            return
+        }
+        
+        UIApplication.shared.open(url)
         
     }
     
@@ -143,7 +171,7 @@ class ProfileViewController: UIViewController {
 
     }
 
-    func aboutMyselfEditable(editable: Bool) {
+    private func aboutMyselfEditable(editable: Bool) {
         
         aboutMyselfTextView.isEditable = editable
         phoneTxf.isEnabled = editable
@@ -307,7 +335,8 @@ class ProfileViewController: UIViewController {
                 }
                 
                 let cancel = UIAlertAction(title: "取消", style: .cancel)
-                
+                cancel.setValue(UIColor.red, forKey: "titleTextColor")
+
                 logoutAlert.addAction(cancel)
                 
                 logoutAlert.addAction(action)
@@ -316,15 +345,9 @@ class ProfileViewController: UIViewController {
 
             }
             
-            let editAboutMyself = UIAlertAction(title: "編輯關於我", style: .default) { (_) in
-                
-                self.editing(true)
-
-            }
-            
             let cancel = UIAlertAction(title: "取消", style: .cancel)
+            cancel.setValue(UIColor.red, forKey: "titleTextColor")
             
-            alert.addAction(editAboutMyself)
             alert.addAction(logOut)
             alert.addAction(cancel)
             
@@ -356,8 +379,6 @@ class ProfileViewController: UIViewController {
         userType: UserType
         ) {
         
-//        averageEvaluationLbl.text = String(averageEvaluation)
-        
         userInfo = UserModel(
             userImage: userImage,
             userName: userName,
@@ -372,9 +393,6 @@ class ProfileViewController: UIViewController {
         self.userImage.sd_setImage(with: url)
         
         userNameLbl.text = userName
-        
-//        buyNumberLbl.text = String(buyNumber)
-//        numberOfEvaluationLbl.text = String(numberOfEvaluation)
         
         self.userType = userType
 
@@ -431,9 +449,9 @@ class ProfileViewController: UIViewController {
 
         
         let cancel = UIAlertAction(title: "取消", style: .cancel)
-        
-        alert.addAction(cancel)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
 
+        alert.addAction(cancel)
         alert.addAction(report)
         
         alert.addAction(blockUser)
