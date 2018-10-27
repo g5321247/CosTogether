@@ -35,4 +35,42 @@ extension UIAlertController {
         return alertMessage(title: title, message: message)
     }
     
+    static func showActionSheet(
+        defaultOption: [String],
+        defalutCompletion: @escaping (UIAlertAction) -> Void
+        ) -> UIAlertController {
+        
+        let alerController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let action = UIAlertAction(
+            title: "取消",
+            style: .cancel,
+            handler: nil
+        )
+        
+        alerController.addAction(action)
+        
+        action.setValue(UIColor.red, forKey: "titleTextColor")
+        
+        for item in defaultOption {
+            
+            let action = UIAlertAction(
+                title: item,
+                style: .default) { (action) in
+                
+                    defalutCompletion(action)
+                
+            }
+            
+            alerController.addAction(action)
+            
+        }
+
+        return alerController
+    }
+    
 }
