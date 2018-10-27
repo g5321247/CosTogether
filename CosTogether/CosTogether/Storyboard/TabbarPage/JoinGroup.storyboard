@@ -100,16 +100,16 @@
                                             <action selector="switchGroupType:" destination="Z0o-Yx-6We" eventType="valueChanged" id="OIe-sg-dGe"/>
                                         </connections>
                                     </segmentedControl>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-gM-d2W">
-                                        <rect key="frame" x="0.0" y="125" width="375" height="542"/>
-                                        <connections>
-                                            <segue destination="2H9-RX-3Id" kind="embed" id="FMI-xc-RLa"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c20-LT-ZPQ">
                                         <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                         <connections>
-                                            <segue destination="iiw-hD-z1Q" kind="embed" id="XYg-Qr-nRB"/>
+                                            <segue destination="2H9-RX-3Id" kind="embed" id="e72-xp-P6K"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-gM-d2W">
+                                        <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                        <connections>
+                                            <segue destination="iiw-hD-z1Q" kind="embed" id="e7e-Pa-Brj"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
