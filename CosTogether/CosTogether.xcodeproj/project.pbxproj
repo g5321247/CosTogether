@@ -59,6 +59,10 @@
 		C859E292217FCCE900C2AF8F /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */; };
 		C859E293217FCCE900C2AF8F /* ProductInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */; };
 		C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D4F1A2154B22400D73D8F /* ErrorManager.swift */; };
+		C8693A9A21846D40000250EF /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8693A9921846D40000250EF /* MainPage.storyboard */; };
+		C8693A9D21846E84000250EF /* CreateGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8693A9C21846E84000250EF /* CreateGroup.storyboard */; };
+		C8693A9F21846FD6000250EF /* JoinGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8693A9E21846FD6000250EF /* JoinGroup.storyboard */; };
+		C8693AA121847144000250EF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8693AA021847144000250EF /* Profile.storyboard */; };
 		C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786A0F216CDE1B001D2C63 /* PickerView.swift */; };
 		C87B44722167017300283767 /* OpenGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B44712167017300283767 /* OpenGroupType.swift */; };
 		C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F8B08215D235A0060EA72 /* TopLogoView.swift */; };
@@ -179,6 +183,10 @@
 		C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C85D4F1A2154B22400D73D8F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		C8693A9921846D40000250EF /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		C8693A9C21846E84000250EF /* CreateGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateGroup.storyboard; sourceTree = "<group>"; };
+		C8693A9E21846FD6000250EF /* JoinGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinGroup.storyboard; sourceTree = "<group>"; };
+		C8693AA021847144000250EF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C8786A0F216CDE1B001D2C63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		C87B44712167017300283767 /* OpenGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupType.swift; sourceTree = "<group>"; };
 		C87F8B08215D235A0060EA72 /* TopLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoView.swift; sourceTree = "<group>"; };
@@ -565,6 +573,18 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		C8693A9B21846E40000250EF /* TabbarPage */ = {
+			isa = PBXGroup;
+			children = (
+				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C8693A9921846D40000250EF /* MainPage.storyboard */,
+				C8693A9C21846E84000250EF /* CreateGroup.storyboard */,
+				C8693A9E21846FD6000250EF /* JoinGroup.storyboard */,
+				C8693AA021847144000250EF /* Profile.storyboard */,
+			);
+			path = TabbarPage;
+			sourceTree = "<group>";
+		};
 		C8786A11216CDE36001D2C63 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,7 +802,7 @@
 		C8F8C928215233A700BDB0CE /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				C8215FD92151FAB6006BC7A3 /* Main.storyboard */,
+				C8693A9B21846E40000250EF /* TabbarPage */,
 				C823A2652168B1A50066D635 /* Detail.storyboard */,
 				C85151C52175F472007B1324 /* GroupHistory.storyboard */,
 				C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */,
@@ -975,12 +995,14 @@
 				C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */,
 				C8BCF0D8215E10A500A2B1B8 /* MemberCollectionViewCell.xib in Resources */,
 				C85151C62175F472007B1324 /* GroupHistory.storyboard in Resources */,
+				C8693A9D21846E84000250EF /* CreateGroup.storyboard in Resources */,
 				C82BA9A4215CD76000996B11 /* ArticleInfoTableViewCell.xib in Resources */,
 				C8F8C933215279F600BDB0CE /* FuturaExtraBlackItalic.ttf in Resources */,
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8EAD96221809348009E8823 /* GroupInfoTableViewCell.xib in Resources */,
 				C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */,
+				C8693A9A21846D40000250EF /* MainPage.storyboard in Resources */,
 				C823A2662168B1A50066D635 /* Detail.storyboard in Resources */,
 				C8EAD9772180DE35009E8823 /* UserCalculateFooter.xib in Resources */,
 				C8BCF0DF215E9CDD00A2B1B8 /* ProductDetailTableViewCell.xib in Resources */,
@@ -997,6 +1019,8 @@
 				C8FB98BD2161175B00C78926 /* ChatRoom.storyboard in Resources */,
 				C87F8B0E215D42BA0060EA72 /* OrderTableViewCell.xib in Resources */,
 				C8215FDB2151FAB6006BC7A3 /* Main.storyboard in Resources */,
+				C8693A9F21846FD6000250EF /* JoinGroup.storyboard in Resources */,
+				C8693AA121847144000250EF /* Profile.storyboard in Resources */,
 				C859E293217FCCE900C2AF8F /* ProductInfoTableViewCell.xib in Resources */,
 				C8F8C924215227FA00BDB0CE /* LogIn.storyboard in Resources */,
 				C8FCA3B3215BCD61008724A3 /* ProductItemTableViewCell.xib in Resources */,

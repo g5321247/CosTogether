@@ -18,21 +18,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Vv8-FZ-UcB">
-            <objects>
-                <viewController id="gtT-K3-PCA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ERd-vn-Pww">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gQz-zu-Hd4"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iaQ-Ec-75F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2735" y="2635"/>
-        </scene>
         <!--Tab View Controller-->
         <scene sceneID="dh7-Ci-ZNo">
             <objects>
@@ -633,6 +618,7 @@
         <!--找團 Go-->
         <scene sceneID="0Wz-46-6fn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLg-tc-eKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhg-G7-U6f" customClass="MainNavigationViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="找團 Go" image="searching" id="LLJ-HE-Dv8"/>
                     <toolbarItems/>
@@ -645,7 +631,6 @@
                         <segue destination="Njm-Dt-Z2Y" kind="relationship" relationship="rootViewController" id="hyQ-pb-nEj"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hLg-tc-eKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-297.30134932533736"/>
         </scene>

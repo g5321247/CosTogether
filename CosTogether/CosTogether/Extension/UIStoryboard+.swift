@@ -55,7 +55,7 @@ extension UIStoryboard {
     
     static func joinGroup() -> UIStoryboard {
         
-        return UIStoryboard(name: "JoinStory", bundle: nil)
+        return UIStoryboard(name: "JoinGroup", bundle: nil)
     }
     
     static func profile() -> UIStoryboard {
