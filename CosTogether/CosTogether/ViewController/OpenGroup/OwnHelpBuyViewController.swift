@@ -105,7 +105,7 @@ class OwnHelpBuyViewController: UIViewController {
     
     @objc func evaluateUser(_ sender: UIButton) {
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.profile().instantiateViewController(
             withIdentifier: String(describing: ProfileViewController.self))
             as? ProfileViewController else {
                 

@@ -156,7 +156,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.profile().instantiateViewController(
                     withIdentifier: String(describing: ProfileViewController.self)
                     ) as? ProfileViewController else {
                         

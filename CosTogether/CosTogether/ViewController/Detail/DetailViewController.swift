@@ -263,7 +263,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     @objc func commenterPhotoTaping(_ sender: UIButton) {
     
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.profile().instantiateViewController(
             withIdentifier: String(describing: ProfileViewController.self)
             ) as? ProfileViewController else {
                 
@@ -314,7 +314,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     @objc func photoTapping(_ sender: UIButton) {
         
-        guard let controller = UIStoryboard.mainStoryboard().instantiateViewController(
+        guard let controller = UIStoryboard.profile().instantiateViewController(
             withIdentifier: String(describing: ProfileViewController.self)
             ) as? ProfileViewController else {
                 
