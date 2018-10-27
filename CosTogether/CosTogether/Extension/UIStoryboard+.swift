@@ -42,5 +42,24 @@ extension UIStoryboard {
         
         return UIStoryboard(name: "GroupHistory", bundle: nil)
     }
-
+    
+    static func mainPage() -> UIStoryboard {
+        
+        return UIStoryboard(name: "MainPage", bundle: nil)
+    }
+    
+    static func createGroup() -> UIStoryboard {
+        
+        return UIStoryboard(name: "CreateGroup", bundle: nil)
+    }
+    
+    static func joinGroup() -> UIStoryboard {
+        
+        return UIStoryboard(name: "JoinStory", bundle: nil)
+    }
+    
+    static func profile() -> UIStoryboard {
+        
+        return UIStoryboard(name: "Profile", bundle: nil)
+    }
 }
