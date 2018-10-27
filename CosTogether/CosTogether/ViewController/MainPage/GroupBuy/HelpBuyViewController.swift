@@ -104,6 +104,9 @@ class HelpBuyViewController: UIViewController {
             
             
         }
+        
+        self.collectionView.reloadData()
+
     }
     
     private func downloadData() {
@@ -166,13 +169,11 @@ extension HelpBuyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         guard group.count > 0 else {
-            
-            collectionView.isHidden = true
-            
+                        
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                 
                 self.refreshControl.endRefreshing()
-                
+//                collectionView.reloadData()
             }
             
             return 0

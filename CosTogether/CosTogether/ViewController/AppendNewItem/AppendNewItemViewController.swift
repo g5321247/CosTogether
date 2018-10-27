@@ -283,6 +283,8 @@ extension AppendNewItemViewController {
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
+
         
         cameraAction.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
         chosePicAction.setValue(#imageLiteral(resourceName: "picture"), forKey: "image")

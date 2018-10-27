@@ -39,22 +39,24 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        phoneTxf.delegate = self
         downloadUserData()
         
+        setup()
+
     }
     
     override func viewDidLayoutSubviews() {
         
-        setup()
+        topBotSetup(user: userType)
+        contentBotSetup(user: userType)
+        
         userImageSetup(user: userType)
 
     }
     
     private func setup() {
 
-        topBotSetup(user: userType)
-        contentBotSetup(user: userType)
-        
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
         
@@ -100,6 +102,7 @@ class ProfileViewController: UIViewController {
         case .otherUser:
             
             editBot.titleLabel?.text = "電話聯絡"
+            editBot.addTarget(self, action: #selector (callUser(_:)), for: .touchUpInside)
 
         }
         
@@ -154,9 +157,8 @@ class ProfileViewController: UIViewController {
             cancelEditBot.isHidden = true
             cancelEditBot.isEnabled = false
             
-            phoneTxf.isEnabled = false
-            
             aboutMyselfEditable(editable: false)
+            editBot.isHidden = false
             
             return
         }
@@ -166,6 +168,8 @@ class ProfileViewController: UIViewController {
         
         cancelEditBot.isHidden = false
         cancelEditBot.isEnabled = true
+        
+        editBot.isHidden = true
         
         aboutMyselfEditable(editable: true)
 
@@ -334,10 +338,10 @@ class ProfileViewController: UIViewController {
                     
                 }
                 
-                let cancel = UIAlertAction(title: "取消", style: .cancel)
-                cancel.setValue(UIColor.red, forKey: "titleTextColor")
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+                cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
 
-                logoutAlert.addAction(cancel)
+                logoutAlert.addAction(cancelAction)
                 
                 logoutAlert.addAction(action)
                 
@@ -345,11 +349,11 @@ class ProfileViewController: UIViewController {
 
             }
             
-            let cancel = UIAlertAction(title: "取消", style: .cancel)
-            cancel.setValue(UIColor.red, forKey: "titleTextColor")
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+            cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
             
             alert.addAction(logOut)
-            alert.addAction(cancel)
+            alert.addAction(cancelAction)
             
             self.present(alert, animated: true, completion: nil)
 
@@ -403,8 +407,15 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        self.aboutMyselfTextView.text = aboutSelf
-
+        #warning ("電話設定")
+//        self.aboutMyselfTextView.text = aboutSelf
+//
+//        guard phoneNumber != "" else {
+//            self.phoneTxf.text = "請設定電話"
+//            return
+//        }
+//
+//        self.phoneTxf.text = phoneNumber
     }
     
     func reportingUser() {
@@ -448,10 +459,10 @@ class ProfileViewController: UIViewController {
         }
 
         
-        let cancel = UIAlertAction(title: "取消", style: .cancel)
-        cancel.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
 
-        alert.addAction(cancel)
+        alert.addAction(cancelAction)
         alert.addAction(report)
         
         alert.addAction(blockUser)
@@ -459,4 +470,24 @@ class ProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
 
     }
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else {
+            
+            return true
+            
+        }
+        
+        let count = text.count + string.count - range.length
+        
+        return count <= 10
+        
+    }
+    
+    
+    
 }

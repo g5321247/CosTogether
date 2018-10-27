@@ -156,7 +156,8 @@ class ShareBuyViewController: UIViewController {
             self.collectionView.reloadData()
         }
 
-                
+        self.collectionView.reloadData()
+
     }
     
     private func registerTableViewCell(identifier: String) {
@@ -177,9 +178,7 @@ extension ShareBuyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         guard group.count > 0 else {
-            
-            collectionView.isHidden = true
-            
+                        
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                 
                 self.refreshControl.endRefreshing()
