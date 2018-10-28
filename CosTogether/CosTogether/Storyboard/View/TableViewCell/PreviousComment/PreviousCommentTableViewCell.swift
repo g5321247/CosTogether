@@ -101,17 +101,7 @@ class PreviousCommentTableViewCell: UITableViewCell {
         
         controller.loadViewIfNeeded()
         
-        controller.checkOtherUser(
-            averageEvaluation: user.averageEvaluation ?? 0,
-            userImage: user.userImage,
-            buyNumber: user.buyNumber ?? 0,
-            userName: user.userName,
-            numberOfEvaluation: user.numberOfEvaluation ?? 0,
-            aboutSelf: user.aboutSelf,
-            userId: user.userId ?? "",
-            userType: .otherUser
-        )
-        
+        controller.downloadUserData(user: .otherUser, otherUserId: user.userId)
     }
     
 }

@@ -39,16 +39,8 @@ class ProfileViewController: UIViewController {
         
         phoneTxf.delegate = self
         
+        downloadUserData(user: userType, otherUserId: nil)
         setup()
-        
-        downloadUserData(user: userType)
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        userInfoSetup(user: userType)
 
     }
     
@@ -67,26 +59,13 @@ class ProfileViewController: UIViewController {
         
     }
     
-    private func contentBotSetup(user: UserType) {
+    // MARK: User Information
+    
+    private func userInfoSetup(user: UserType) {
         
-        switch user {
-            
-        case .currentTabProfile, .currentUser:
-            
-            editBot.titleLabel?.text = "編輯資料"
-            
-            editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
-            
-            updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
-            
-            cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
-            
-        case .otherUser:
-            
-            editBot.titleLabel?.text = "電話聯絡"
-            editBot.addTarget(self, action: #selector (callUser(_:)), for: .touchUpInside)
-
-        }
+        userInfoUpdate()
+        descriptionSetup()
+        phoneSetup()
         
     }
     
@@ -117,47 +96,16 @@ class ProfileViewController: UIViewController {
         
     }
     
-    private func userInfoSetup(user: UserType) {
-        
-        userInfoUpdate()
-        descriptionSetup()
-        phoneSetup()
-        
-    }
     
     @objc func callUser(_ sender: UIButton) {
         
-        guard let phoneNumber = Int(phoneTxf.text!),
+        guard let phoneNumber = phoneTxf.text,
            let url = URL(string: "tel://\(phoneNumber)") else {
             
             return
         }
         
         UIApplication.shared.open(url)
-        
-    }
-    
-    @objc func editBotTapping(_ sender: UIButton) {
-        
-        editing(true)
-        
-    }
-    
-    private func aboutMyselfEditable(editable: Bool) {
-        
-        aboutMyselfTextView.isEditable = editable
-        phoneTxf.isEnabled = editable
-        
-        guard editable else {
-            
-            phoneTxf.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            aboutMyselfTextView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            
-            return
-        }
-        
-        phoneTxf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        aboutMyselfTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
     }
     
@@ -182,6 +130,17 @@ class ProfileViewController: UIViewController {
         
     }
     
+    private func userInfoUpdate() {
+        
+        guard let currentUser = currentUserModel else {
+            
+            return
+        }
+        
+        userSetUp(userModel: currentUser)
+        
+    }
+    
     private func userImageSetup(user: UserType) {
 
         userImage.cornerSetup(
@@ -202,42 +161,49 @@ class ProfileViewController: UIViewController {
         temAboutMyself = userModel.aboutSelf
     }
     
-    private func userInfoUpdate() {
+    // MARK: Button Setup
+    
+    private func contentBotSetup(user: UserType) {
         
-        guard let currentUser = currentUserModel else {
+        switch user {
             
-            return
+        case .currentTabProfile, .currentUser:
+            
+            editBot.titleLabel?.text = "編輯資料"
+            
+            editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
+            
+            updateAboutMyselfBot.addTarget(self, action: #selector (sendingAboutMyself(_:)), for: .touchUpInside)
+            
+            cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
+            
+        case .otherUser:
+            
+            editBot.titleLabel?.text = "電話聯絡"
+            editBot.addTarget(self, action: #selector (callUser(_:)), for: .touchUpInside)
+            
         }
-        
-        userSetUp(userModel: currentUser)
         
     }
     
-    func topBotSetup(user: UserType) {
+    private func topButton(leftIsHidden: Bool) {
+        
+        topView.leftBot.isHidden = leftIsHidden
+        topView.leftBot.isEnabled = !leftIsHidden
+        
+    }
+    
+    private func topBotSetup(user: UserType) {
         
         switch user {
         
         case .currentTabProfile:
             
-            topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
+            topButton(leftIsHidden: true)
             
-            topView.leftBot.isEnabled = false
-            topView.leftBot.isHidden = true
+        case .currentUser, .otherUser:
             
-        case .currentUser:
-            
-            topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
-            
-            topView.leftBot.isEnabled = true
-            topView.leftBot.isHidden = false
-
-        case .otherUser:
-            
-            topView.rightBot.isEnabled = true
-            topView.rightBot.isHidden = false
-            
-            topView.leftBot.isEnabled = true
-            topView.leftBot.isHidden = false
+            topButton(leftIsHidden: false)
 
         }
         
@@ -268,6 +234,24 @@ extension ProfileViewController: UITextFieldDelegate {
 // MARK: Edit About Myself
 
 extension ProfileViewController {
+    
+    private func aboutMyselfEditable(editable: Bool) {
+        
+        aboutMyselfTextView.isEditable = editable
+        phoneTxf.isEnabled = editable
+        
+        guard editable else {
+            
+            phoneTxf.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            aboutMyselfTextView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            return
+        }
+        
+        phoneTxf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        aboutMyselfTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+    }
     
     private func aboutMyselfButton(isHidden: Bool) {
         
@@ -335,6 +319,12 @@ extension ProfileViewController {
         phoneTxf.text = temAboutMyself?.phoneNumber ?? "請設定電話"
     }
 
+    @objc func editBotTapping(_ sender: UIButton) {
+        
+        editing(true)
+        
+    }
+    
 }
 
 // MARK: Fetch User Info
@@ -343,6 +333,8 @@ extension ProfileViewController {
     
     func downloadUserData(user: UserType, otherUserId: String?) {
         
+        userType = user
+    
         switch user {
             
         case .currentTabProfile, .currentUser:
@@ -355,7 +347,8 @@ extension ProfileViewController {
             firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
                 
                 self.currentUserModel = userModel
-                
+                self.userInfoSetup(user: user)
+
             }
 
         case .otherUser:
@@ -369,11 +362,11 @@ extension ProfileViewController {
             firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
                 
                 self.currentUserModel = userModel
-                
+                self.userInfoSetup(user: user)
+
             }
             
         }
-        
         
     }
     
@@ -410,7 +403,7 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     
-    func logOut() {
+    private func logOut() {
         
          let alertController =  UIAlertController.showActionSheet(
          defaultOption: ["登出"]) { (action) in
@@ -447,7 +440,7 @@ extension ProfileViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func reportingUser() {
+    private func reportingUser() {
         
         guard Auth.auth().currentUser?.uid != nil else {
             

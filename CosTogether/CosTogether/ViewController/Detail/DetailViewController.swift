@@ -280,16 +280,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
             
-            controller.checkOtherUser(
-                averageEvaluation: user.averageEvaluation ?? 0,
-                userImage: user.userImage,
-                buyNumber: user.buyNumber ?? 0,
-                userName: user.userName,
-                numberOfEvaluation: user.numberOfEvaluation ?? 0,
-                aboutSelf: user.aboutSelf,
-                userId: comments[sender.tag].userId,
-                userType: .currentUser
-            )
+            controller.downloadUserData(user: .otherUser, otherUserId: comments[sender.tag].userId)
             
             show(controller, sender: nil)
             
@@ -297,17 +288,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         }
 
         
-        controller.checkOtherUser(
-            averageEvaluation: user.averageEvaluation ?? 0,
-            userImage: user.userImage,
-            buyNumber: user.buyNumber ?? 0,
-            userName: user.userName,
-            numberOfEvaluation: user.numberOfEvaluation ?? 0,
-            aboutSelf: user.aboutSelf,
-            userId: comments[sender.tag].userId,
-            userType: .otherUser
-        )
-        
+        controller.downloadUserData(user: .currentUser, otherUserId: nil)
         show(controller, sender: nil)
 
     }
@@ -331,33 +312,15 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         guard ownerId != Auth.auth().currentUser?.uid else {
             
-            controller.checkOtherUser(
-                averageEvaluation: owner.averageEvaluation ?? 0,
-                userImage: owner.userImage,
-                buyNumber: owner.buyNumber ?? 0,
-                userName: owner.userName,
-                numberOfEvaluation: owner.numberOfEvaluation ?? 0,
-                aboutSelf: owner.aboutSelf,
-                userId: ownerId,
-                userType: .currentUser
-            )
+            controller.downloadUserData(user: .currentUser, otherUserId: nil)
             
             show(controller, sender: nil)
 
             return
         }
 
-        controller.checkOtherUser(
-            averageEvaluation: owner.averageEvaluation ?? 0,
-            userImage:  owner.userImage,
-            buyNumber: owner.buyNumber ?? 0,
-            userName: owner.userName,
-            numberOfEvaluation: owner.numberOfEvaluation ?? 0,
-            aboutSelf: owner.aboutSelf,
-            userId: ownerId,
-            userType: .otherUser
-        )
-        
+        controller.downloadUserData(user: .otherUser, otherUserId: ownerId)
+
         show(controller, sender: nil)
 
     }

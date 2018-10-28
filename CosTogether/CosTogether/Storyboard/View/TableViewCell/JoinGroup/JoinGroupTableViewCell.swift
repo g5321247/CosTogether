@@ -173,32 +173,14 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         guard delegate.joinMember[indexPath.row].userId != Auth.auth().currentUser?.uid else {
             
-            controller.checkOtherUser(
-                averageEvaluation: (delegate.joinMember[indexPath.row].averageEvaluation ?? 0),
-                userImage: delegate.joinMember[indexPath.row].userImage,
-                buyNumber: delegate.joinMember[indexPath.row].buyNumber ?? 0,
-                userName: delegate.joinMember[indexPath.row].userName,
-                numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation ?? 0,
-                aboutSelf: delegate.joinMember[indexPath.row].aboutSelf,
-                userId: delegate.joinMember[indexPath.row].userId ?? "",
-                userType: .currentUser
-            )
+            controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId ?? "")
             
             delegate.showTheView(controller: controller)
 
             return
         }
         
-        controller.checkOtherUser(
-            averageEvaluation: (delegate.joinMember[indexPath.row].averageEvaluation ?? 0),
-            userImage: delegate.joinMember[indexPath.row].userImage,
-            buyNumber: delegate.joinMember[indexPath.row].buyNumber ?? 0,
-            userName: delegate.joinMember[indexPath.row].userName,
-            numberOfEvaluation: delegate.joinMember[indexPath.row].numberOfEvaluation ?? 0,
-            aboutSelf: delegate.joinMember[indexPath.row].aboutSelf,
-            userId: delegate.joinMember[indexPath.row].userId ?? "",
-            userType: .otherUser
-        )
+        controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId ?? "")
         
         delegate.showTheView(controller: controller)
     }
