@@ -114,6 +114,13 @@ struct CommentModel: DataProtocol {
     }
 }
 
+struct AboutMyself {
+    
+    var phoneNumber: String?
+    var description: String?
+    
+}
+
 struct UserModel: DataProtocol {
         
     let userImage: String
@@ -126,7 +133,7 @@ struct UserModel: DataProtocol {
     
     var averageEvaluation: Double?
     
-    var aboutSelf: String?
+    var aboutSelf: AboutMyself?
     
     var userId: String?
     
@@ -136,7 +143,7 @@ struct UserModel: DataProtocol {
         numberOfEvaluation: Int? = 0,
         buyNumber: Int? = 0,
         averageEvaluation: Double? = 0,
-        aboutSelf: String? = nil,
+        aboutSelf: AboutMyself? = nil,
         userId: String? = nil
         ) {
         

@@ -363,18 +363,15 @@ extension FirebaseManager {
                     
             }
             
-            let aboutMyself = value?["aboutMyself"] as? String
+            let aboutMyselfDic = value?["aboutMyself"] as? NSDictionary
             
-            #warning ("增加評價內容,內容如下")
-
-//            if avreage != "" {
-//
-//                avreage = 0
-//            } else {
-//                get data
-//            }
+            let description = aboutMyselfDic?["description"] as? String
             
-            completion(UserModel(userImage: userPicUrl, userName: userName, aboutSelf: aboutMyself ?? ""))
+            let phoneNumber = aboutMyselfDic?["phoneNumber"] as? String
+            
+            let aboutMyself = AboutMyself(phoneNumber: phoneNumber, description: description)
+            
+            completion(UserModel(userImage: userPicUrl, userName: userName, aboutSelf: aboutMyself))
             
         }
     }
@@ -684,13 +681,14 @@ extension FirebaseManager {
         
     }
     
-    func updateAboutMyself(description: String) {
+    func updateAboutMyself(description: String?, phoneNumber: String?) {
         
         let refrence = Database.database().reference()
         
         let childUpdates = [
-            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself": description
-        ]
+            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself/description": description,
+            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself/phoneNumber": phoneNumber
+            ]
         
         refrence.updateChildValues(childUpdates)
 

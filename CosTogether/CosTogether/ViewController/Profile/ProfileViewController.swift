@@ -25,8 +25,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editBot: UIButton!
     @IBOutlet weak var phoneTxf: UITextField!
     
-    var temAboutMyself: String?
-    var temPhone: String?
+    var temAboutMyself: AboutMyself?
     
     let firebaseManager = FirebaseManager()
 
@@ -42,18 +41,23 @@ class ProfileViewController: UIViewController {
         phoneTxf.delegate = self
         downloadUserData()
         
-        contentBotSetup(user: userType)
-
         setup()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        userInfoSetup(user: userType)
 
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         topBotSetup(user: userType)
-        
         userImageSetup(user: userType)
-
+        contentBotSetup(user: userType)
     }
     
     private func setup() {
@@ -86,6 +90,55 @@ class ProfileViewController: UIViewController {
         
     }
     
+    private func descriptionSetup() {
+        
+        guard let description = temAboutMyself?.description,
+            description != "" else {
+            
+            aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
+            
+            return
+        }
+        
+        aboutMyselfTextView.text = description
+        
+    }
+    
+    private func phoneSetup() {
+        
+        guard let phoneNumber = temAboutMyself?.phoneNumber else {
+            
+                phoneTxf.text = "請設定電話"
+            
+                return
+        }
+        
+        phoneTxf.text = "\(phoneNumber)"
+        
+    }
+    
+    private func userInfoSetup(user: UserType) {
+        
+        switch user {
+            
+        case .currentUser, .currentTabProfile:
+
+            guard let currentUser = Auth.auth().currentUser else {
+                
+                print("user invaild")
+                return
+                
+            }
+            
+            descriptionSetup()
+            phoneSetup()
+            
+        default:
+            break
+        }
+        
+    }
+    
     @objc func callUser(_ sender: UIButton) {
         
         guard let phoneNumber = Int(phoneTxf.text!),
@@ -104,54 +157,6 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @objc func sendingAboutMyself(_ sender: UIButton) {
-        
-        SVProgressHUD.show()
-        
-        firebaseManager.updateAboutMyself(description: aboutMyselfTextView.text)
-        
-        temAboutMyself = aboutMyselfTextView.text
-        
-        editing(false)
-        
-        SVProgressHUD.dismiss()
-    }
-    
-    @objc func cancelEditing(_ sender: UIButton) {
-        
-        editing(false)
-        
-        aboutMyselfTextView.text = temAboutMyself ?? "目前使用者沒有任何相關資料"
-        
-    }
-    
-    private func aboutMyselfButton(isHidden: Bool) {
-        
-        updateAboutMyselfBot.isHidden = isHidden
-        updateAboutMyselfBot.isEnabled = !isHidden
-        
-        cancelEditBot.isHidden = isHidden
-        cancelEditBot.isEnabled = !isHidden
-        
-        aboutMyselfEditable(editable: !isHidden)
-
-        editBot.isHidden = !isHidden
-
-    }
-    
-    private func editing(_ isEditing: Bool) {
-        
-        guard isEditing else {
-            
-            aboutMyselfButton(isHidden: true)
-            
-            return
-        }
-        
-        aboutMyselfButton(isHidden: false)
-        
-    }
-
     private func aboutMyselfEditable(editable: Bool) {
         
         aboutMyselfTextView.isEditable = editable
@@ -217,26 +222,6 @@ class ProfileViewController: UIViewController {
             userImage.sd_setImage(with: url)
             userNameLbl.text = currentUser.displayName
             
-            dispatchGroup.notify(queue: .main) {
-                
-                guard let temAboutMyself = self.temAboutMyself else {
-                    return
-                }
-                
-                self.aboutMyselfTextView.text = temAboutMyself
-
-            }
-
-            guard let aboutSelf = currentUserModel?.aboutSelf,
-                aboutSelf != "" else {
-                
-                self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
-                
-                return
-            }
-            
-            self.aboutMyselfTextView.text = aboutSelf
-            
         case .otherUser:
             break
             
@@ -296,6 +281,78 @@ extension ProfileViewController: UITextFieldDelegate {
     
 }
 
+// MARK: Edit About Myself
+
+extension ProfileViewController {
+    
+    private func aboutMyselfButton(isHidden: Bool) {
+        
+        updateAboutMyselfBot.isHidden = isHidden
+        updateAboutMyselfBot.isEnabled = !isHidden
+        
+        cancelEditBot.isHidden = isHidden
+        cancelEditBot.isEnabled = !isHidden
+        
+        aboutMyselfEditable(editable: !isHidden)
+        
+        editBot.isHidden = !isHidden
+        
+    }
+    
+    private func editing(_ isEditing: Bool) {
+        
+        guard isEditing else {
+            
+            aboutMyselfButton(isHidden: true)
+            
+            return
+        }
+        
+        aboutMyselfButton(isHidden: false)
+        
+    }
+    
+    @objc func sendingAboutMyself(_ sender: UIButton) {
+        
+        SVProgressHUD.show()
+        
+        firebaseManager.updateAboutMyself(
+            description: aboutMyselfTextView.text,
+            phoneNumber: nil
+        )
+        
+        temAboutMyself?.description = aboutMyselfTextView.text
+        temAboutMyself?.phoneNumber = phoneTxf.text
+        
+        editing(false)
+        
+        guard let phoneNumber = Int(phoneTxf.text!) else {
+
+            NotificationBanner.warningBanner(subtitle: "請輸入有效電話")
+            
+            SVProgressHUD.dismiss()
+
+            return
+        }
+        
+        firebaseManager.updateAboutMyself(
+            description: aboutMyselfTextView.text,
+            phoneNumber: phoneTxf.text
+        )
+        
+        SVProgressHUD.dismiss()
+    }
+    
+    @objc func cancelEditing(_ sender: UIButton) {
+        
+        editing(false)
+        
+        aboutMyselfTextView.text = temAboutMyself?.description ?? "目前使用者沒有任何相關資料"
+        phoneTxf.text = String(describing: temAboutMyself?.phoneNumber) ?? "請設定電話"
+    }
+
+}
+
 // MARK: Fetch User Info
 
 extension ProfileViewController {
@@ -307,17 +364,16 @@ extension ProfileViewController {
             return
         }
         
-        firebaseManager.userIdToGetUserInfo(userId: userId) { [weak self] (userModel) in
+        firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
             
-            self?.currentUserModel = userModel
+            self.currentUserModel = userModel
             
-            guard userModel.aboutSelf != "" else {
+            guard userModel.aboutSelf != nil else {
                 return
             }
             
-            self?.dispatchGroup.enter()
-            self?.temAboutMyself = userModel.aboutSelf
-            self?.dispatchGroup.leave()
+            self.temAboutMyself = userModel.aboutSelf
+            
         }
         
     }
@@ -328,7 +384,7 @@ extension ProfileViewController {
         buyNumber: Int,
         userName: String,
         numberOfEvaluation: Int,
-        aboutSelf: String,
+        aboutSelf: AboutMyself?,
         userId: String,
         userType: UserType
         ) {
@@ -350,7 +406,7 @@ extension ProfileViewController {
         
         self.userType = userType
         
-        guard aboutSelf != "" else {
+        guard aboutSelf != nil else {
             
             self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
             

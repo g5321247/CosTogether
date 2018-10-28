@@ -286,7 +286,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 buyNumber: user.buyNumber ?? 0,
                 userName: user.userName,
                 numberOfEvaluation: user.numberOfEvaluation ?? 0,
-                aboutSelf: user.aboutSelf ?? "",
+                aboutSelf: user.aboutSelf,
                 userId: comments[sender.tag].userId,
                 userType: .currentUser
             )
@@ -303,7 +303,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             buyNumber: user.buyNumber ?? 0,
             userName: user.userName,
             numberOfEvaluation: user.numberOfEvaluation ?? 0,
-            aboutSelf: user.aboutSelf ?? "",
+            aboutSelf: user.aboutSelf,
             userId: comments[sender.tag].userId,
             userType: .otherUser
         )
@@ -337,7 +337,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 buyNumber: owner.buyNumber ?? 0,
                 userName: owner.userName,
                 numberOfEvaluation: owner.numberOfEvaluation ?? 0,
-                aboutSelf: owner.aboutSelf ?? "",
+                aboutSelf: owner.aboutSelf,
                 userId: ownerId,
                 userType: .currentUser
             )
@@ -353,7 +353,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             buyNumber: owner.buyNumber ?? 0,
             userName: owner.userName,
             numberOfEvaluation: owner.numberOfEvaluation ?? 0,
-            aboutSelf: owner.aboutSelf ?? "",
+            aboutSelf: owner.aboutSelf,
             userId: ownerId,
             userType: .otherUser
         )
