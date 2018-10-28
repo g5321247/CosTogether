@@ -42,6 +42,8 @@ class ProfileViewController: UIViewController {
         phoneTxf.delegate = self
         downloadUserData()
         
+        contentBotSetup(user: userType)
+
         setup()
 
     }
@@ -49,7 +51,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         
         topBotSetup(user: userType)
-        contentBotSetup(user: userType)
         
         userImageSetup(user: userType)
 
@@ -59,29 +60,6 @@ class ProfileViewController: UIViewController {
 
         aboutMyselfSetup()
         aboutMyselfEditable(editable: false)
-        
-    }
-    
-    private func downloadUserData() {
-        
-        guard let userId = Auth.auth().currentUser?.uid else {
-            
-            return
-        }
-        
-        firebaseManager.userIdToGetUserInfo(userId: userId) { [weak self] (userModel) in
-            
-            self?.currentUserModel = userModel
-            
-            guard userModel.aboutSelf != "" else {
-                return
-            }
-            
-            self?.dispatchGroup.enter()
-            self?.temAboutMyself = userModel.aboutSelf
-            self?.dispatchGroup.leave()
-        }
-
         
     }
     
@@ -147,32 +125,31 @@ class ProfileViewController: UIViewController {
         
     }
     
+    private func aboutMyselfButton(isHidden: Bool) {
+        
+        updateAboutMyselfBot.isHidden = isHidden
+        updateAboutMyselfBot.isEnabled = !isHidden
+        
+        cancelEditBot.isHidden = isHidden
+        cancelEditBot.isEnabled = !isHidden
+        
+        aboutMyselfEditable(editable: !isHidden)
+
+        editBot.isHidden = !isHidden
+
+    }
+    
     private func editing(_ isEditing: Bool) {
         
         guard isEditing else {
             
-            updateAboutMyselfBot.isHidden = true
-            updateAboutMyselfBot.isEnabled = false
-            
-            cancelEditBot.isHidden = true
-            cancelEditBot.isEnabled = false
-            
-            aboutMyselfEditable(editable: false)
-            editBot.isHidden = false
+            aboutMyselfButton(isHidden: true)
             
             return
         }
         
-        updateAboutMyselfBot.isHidden = false
-        updateAboutMyselfBot.isEnabled = true
+        aboutMyselfButton(isHidden: false)
         
-        cancelEditBot.isHidden = false
-        cancelEditBot.isEnabled = true
-        
-        editBot.isHidden = true
-        
-        aboutMyselfEditable(editable: true)
-
     }
 
     private func aboutMyselfEditable(editable: Bool) {
@@ -274,8 +251,6 @@ class ProfileViewController: UIViewController {
         case .currentTabProfile:
             
             topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
-
-            topView.rightBot.titleLabel!.text = ""
             
             topView.leftBot.isEnabled = false
             topView.leftBot.isHidden = true
@@ -283,8 +258,6 @@ class ProfileViewController: UIViewController {
         case .currentUser:
             
             topView.rightBot.setImage(#imageLiteral(resourceName: "menu"), for: UIControl.State.normal)
-            
-            topView.rightBot.titleLabel!.text = ""
             
             topView.leftBot.isEnabled = true
             topView.leftBot.isHidden = false
@@ -303,73 +276,50 @@ class ProfileViewController: UIViewController {
 
     }
     
-    @objc func topRigthBotTapping(_ sender: UIButton) {
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        switch userType {
+        guard let text = textField.text else {
             
-        case .currentUser, .currentTabProfile:
+            return true
             
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-            
-            let logOut = UIAlertAction(title: "登出", style: .default) { (_) in
-                
-                let logoutAlert = UIAlertController(title: "登出", message: "您是否要登出帳號？", preferredStyle: UIAlertController.Style.alert)
-                
-                let action = UIAlertAction(title: "確認", style: .default) { (_) in
-                    
-                    let keychain = Keychain(service: "com.george.CosTogether")
-                    
-                    do  {
-                        
-                        try keychain.remove(FirebaseType.uuid.rawValue)
-                        
-                        try keychain.remove("anonymous")
-                        
-                        try Auth.auth().signOut()
-                        
-                        AppDelegate.shared.switchLogIn()
-                        
-                    } catch {
-                        
-                        BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
-                        return
-                    }
-                    
-                    
-                }
-                
-                let cancelAction = UIAlertAction(title: "取消", style: .cancel)
-                cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
+        }
+        
+        let count = text.count + string.count - range.length
+        
+        return count <= 10
+        
+    }
+    
+}
 
-                logoutAlert.addAction(cancelAction)
-                
-                logoutAlert.addAction(action)
-                
-                self.present(logoutAlert, animated: true, completion: nil)
+// MARK: Fetch User Info
 
-            }
-            
-            let cancelAction = UIAlertAction(title: "取消", style: .cancel)
-            cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
-            
-            alert.addAction(logOut)
-            alert.addAction(cancelAction)
-            
-            self.present(alert, animated: true, completion: nil)
-
-            
-        case .otherUser:
-            
-            reportingUser()
+extension ProfileViewController {
+    
+    private func downloadUserData() {
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
             
             return
         }
         
-    }
-    
-    @IBAction func leftBotTapping(_ sender: UIButton) {
+        firebaseManager.userIdToGetUserInfo(userId: userId) { [weak self] (userModel) in
+            
+            self?.currentUserModel = userModel
+            
+            guard userModel.aboutSelf != "" else {
+                return
+            }
+            
+            self?.dispatchGroup.enter()
+            self?.temAboutMyself = userModel.aboutSelf
+            self?.dispatchGroup.leave()
+        }
         
-        navigationController?.popViewController(animated: true)       
     }
     
     func checkOtherUser(
@@ -399,23 +349,104 @@ class ProfileViewController: UIViewController {
         userNameLbl.text = userName
         
         self.userType = userType
-
+        
         guard aboutSelf != "" else {
             
             self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
+            
+            //        self.aboutMyselfTextView.text = aboutSelf
+            //
+            //        guard phoneNumber != "" else {
+            //            self.phoneTxf.text = "請設定電話"
+            //            return
+            //        }
+            //
+            //        self.phoneTxf.text = phoneNumber
+
             
             return
         }
         
         #warning ("電話設定")
-//        self.aboutMyselfTextView.text = aboutSelf
-//
-//        guard phoneNumber != "" else {
-//            self.phoneTxf.text = "請設定電話"
-//            return
-//        }
-//
-//        self.phoneTxf.text = phoneNumber
+        //        self.aboutMyselfTextView.text = aboutSelf
+        //
+        //        guard phoneNumber != "" else {
+        //            self.phoneTxf.text = "請設定電話"
+        //            return
+        //        }
+        //
+        //        self.phoneTxf.text = phoneNumber
+    }
+    
+
+}
+
+// MARK: Top Button Action
+
+extension ProfileViewController {
+    
+    @objc func topRigthBotTapping(_ sender: UIButton) {
+        
+        switch userType {
+            
+        case .currentUser, .currentTabProfile:
+            
+            logOut()
+            
+        case .otherUser:
+            
+            reportingUser()
+            
+        }
+        
+    }
+    
+    @IBAction func leftBotTapping(_ sender: UIButton) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: Alert Action
+
+extension ProfileViewController {
+    
+    func logOut() {
+        
+         let alertController =  UIAlertController.showActionSheet(
+         defaultOption: ["登出"]) { (action) in
+            
+             let alert = UIAlertController.showAlert(
+                title: "登出",
+                message: "您是否要登出帳號？",
+                defaultOption: ["確定"]) { (action) in
+                    
+                    let keychain = Keychain(service: "com.george.CosTogether")
+                    
+                    do  {
+                        
+                        try keychain.remove(FirebaseType.uuid.rawValue)
+                        
+                        try keychain.remove("anonymous")
+                        
+                        try Auth.auth().signOut()
+                        
+                        AppDelegate.shared.switchLogIn()
+                        
+                    } catch {
+                        
+                        BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
+                        return
+                    }
+                    
+                }
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            }
+    
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func reportingUser() {
@@ -427,27 +458,21 @@ class ProfileViewController: UIViewController {
             return
         }
         
-      let alertController =  UIAlertController.showActionSheet(
+        let alertController =  UIAlertController.showActionSheet(
         defaultOption: ["檢舉用戶", "封鎖用戶"]) { [weak self] (action) in
             
             switch action.title {
                 
             case "檢舉用戶":
-            
-                let alert = UIAlertController(title: "已收到檢舉", message: "我們確認後會在 24 小時內進行處理", preferredStyle: UIAlertController.Style.alert)
                 
-                let action = UIAlertAction(title: "確認", style: .default)
-                
-                alert.addAction(action)
+                let alert = UIAlertController.alertMessage(title: "已收到檢舉", message: "我們確認後會在 24 小時內進行處理")
                 
                 self?.present(alert, animated: true, completion: nil)
                 
             case "封鎖用戶":
                 
-                let alert = UIAlertController(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文和留言", preferredStyle: UIAlertController.Style.alert)
-                
-                let action = UIAlertAction(title: "確認", style: .default)
-                
+                let alert = UIAlertController.alertMessage(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文和留言")
+
                 guard let userId = self?.userInfo?.userId else {
                     return
                 }
@@ -455,34 +480,15 @@ class ProfileViewController: UIViewController {
                 let userDefault = UserDefaults.standard
                 userDefault.set(1, forKey: userId)
                 
-                alert.addAction(action)
-                
                 self?.present(alert, animated: true, completion: nil)
-            
+                
             default:
                 break
                 
             }
         }
-            
+        
         self.present(alertController, animated: true, completion: nil)
     }
-}
 
-extension ProfileViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        guard let text = textField.text else {
-            
-            return true
-            
-        }
-        
-        let count = text.count + string.count - range.length
-        
-        return count <= 10
-        
-    }
-    
 }

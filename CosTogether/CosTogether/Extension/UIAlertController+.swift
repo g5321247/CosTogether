@@ -10,7 +10,7 @@ import UIKit
 
 extension UIAlertController {
     
-    private static func alertMessage(
+    static func alertMessage(
         title: String? = "錯誤",
         message: String
         ) -> UIAlertController {
@@ -35,6 +35,45 @@ extension UIAlertController {
         return alertMessage(title: title, message: message)
     }
     
+    static func showAlert(
+        title: String?,
+        message: String?,
+        defaultOption: [String],
+        defalutCompletion: @escaping (UIAlertAction) -> Void
+        ) -> UIAlertController {
+        
+        let alerController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        let action = UIAlertAction(
+            title: "取消",
+            style: .cancel,
+            handler: nil
+        )
+        
+        alerController.addAction(action)
+        
+        action.setValue(UIColor.red, forKey: "titleTextColor")
+        
+        for item in defaultOption {
+            
+            let action = UIAlertAction(
+                title: item,
+                style: .default) { (action) in
+                    
+                    defalutCompletion(action)
+                    
+            }
+            
+            alerController.addAction(action)
+            
+        }
+        
+        return alerController
+    }
     static func showActionSheet(
         defaultOption: [String],
         defalutCompletion: @escaping (UIAlertAction) -> Void
