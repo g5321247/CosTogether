@@ -30,7 +30,6 @@ class ProfileViewController: UIViewController {
     let firebaseManager = FirebaseManager()
 
     var userType: UserType = .currentTabProfile
-    var userInfo: UserModel?
     var currentUserModel: UserModel?
 
     let dispatchGroup = DispatchGroup()
@@ -39,9 +38,10 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         phoneTxf.delegate = self
-        downloadUserData()
         
         setup()
+        
+        downloadUserData(user: userType)
         
     }
     
@@ -119,23 +119,9 @@ class ProfileViewController: UIViewController {
     
     private func userInfoSetup(user: UserType) {
         
-        switch user {
-            
-        case .currentUser, .currentTabProfile:
-
-            guard let currentUser = Auth.auth().currentUser else {
-                
-                print("user invaild")
-                return
-                
-            }
-            
-            descriptionSetup()
-            phoneSetup()
-            
-        default:
-            break
-        }
+        userInfoUpdate()
+        descriptionSetup()
+        phoneSetup()
         
     }
     
@@ -203,29 +189,27 @@ class ProfileViewController: UIViewController {
             borderWidth: 0.5,
             borderColor: UIColor.lightGray.cgColor
         )
+    }
+    
+    private func userSetUp(userModel: UserModel) {
         
-        switch user {
+        let stringUrl = userModel.userImage
+        let url = URL(string: stringUrl + "?height=500")
+
+        userImage.sd_setImage(with: url)
+        userNameLbl.text = userModel.userName
+        
+        temAboutMyself = userModel.aboutSelf
+    }
+    
+    private func userInfoUpdate() {
+        
+        guard let currentUser = currentUserModel else {
             
-        case .currentUser, .currentTabProfile:
-            
-            guard let currentUser = Auth.auth().currentUser else {
-                
-                print("user invaild")
-                return
-                
-            }
-            
-            let stringUrl = currentUser.photoURL?.absoluteString ?? ""
-            
-            let url = URL(string: stringUrl + "?height=500")
-            
-            userImage.sd_setImage(with: url)
-            userNameLbl.text = currentUser.displayName
-            
-        case .otherUser:
-            break
-            
+            return
         }
+        
+        userSetUp(userModel: currentUser)
         
     }
     
@@ -326,7 +310,7 @@ extension ProfileViewController {
         
         editing(false)
         
-        guard let phoneNumber = Int(phoneTxf.text!) else {
+        guard Int(phoneTxf.text!) != nil else {
 
             NotificationBanner.warningBanner(subtitle: "請輸入有效電話")
             
@@ -348,7 +332,7 @@ extension ProfileViewController {
         editing(false)
         
         aboutMyselfTextView.text = temAboutMyself?.description ?? "目前使用者沒有任何相關資料"
-        phoneTxf.text = String(describing: temAboutMyself?.phoneNumber) ?? "請設定電話"
+        phoneTxf.text = temAboutMyself?.phoneNumber ?? "請設定電話"
     }
 
 }
@@ -357,84 +341,42 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     
-    private func downloadUserData() {
+    func downloadUserData(user: UserType, otherUserId: String?) {
         
-        guard let userId = Auth.auth().currentUser?.uid else {
+        switch user {
             
-            return
-        }
-        
-        firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+        case .currentTabProfile, .currentUser:
             
-            self.currentUserModel = userModel
-            
-            guard userModel.aboutSelf != nil else {
+            guard let userId = Auth.auth().currentUser?.uid else {
+                
                 return
             }
             
-            self.temAboutMyself = userModel.aboutSelf
+            firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+                
+                self.currentUserModel = userModel
+                
+            }
+
+        case .otherUser:
+            
+            guard let userId = otherUserId else {
+
+                return
+                
+            }
+            
+            firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+                
+                self.currentUserModel = userModel
+                
+            }
             
         }
         
+        
     }
     
-    func checkOtherUser(
-        averageEvaluation: Double,
-        userImage: String,
-        buyNumber: Int,
-        userName: String,
-        numberOfEvaluation: Int,
-        aboutSelf: AboutMyself?,
-        userId: String,
-        userType: UserType
-        ) {
-        
-        userInfo = UserModel(
-            userImage: userImage,
-            userName: userName,
-            numberOfEvaluation: numberOfEvaluation,
-            buyNumber: buyNumber,
-            averageEvaluation: averageEvaluation,
-            aboutSelf: aboutSelf,
-            userId: userId
-        )
-        
-        let url = URL(string: userImage + "?height=500")
-        self.userImage.sd_setImage(with: url)
-        
-        userNameLbl.text = userName
-        
-        self.userType = userType
-        
-        guard aboutSelf != nil else {
-            
-            self.aboutMyselfTextView.text = "目前使用者沒有任何相關資料"
-            
-            //        self.aboutMyselfTextView.text = aboutSelf
-            //
-            //        guard phoneNumber != "" else {
-            //            self.phoneTxf.text = "請設定電話"
-            //            return
-            //        }
-            //
-            //        self.phoneTxf.text = phoneNumber
-
-            
-            return
-        }
-        
-        #warning ("電話設定")
-        //        self.aboutMyselfTextView.text = aboutSelf
-        //
-        //        guard phoneNumber != "" else {
-        //            self.phoneTxf.text = "請設定電話"
-        //            return
-        //        }
-        //
-        //        self.phoneTxf.text = phoneNumber
-    }
-    
-
 }
 
 // MARK: Top Button Action
@@ -529,7 +471,7 @@ extension ProfileViewController {
                 
                 let alert = UIAlertController.alertMessage(title: "成功封鎖", message: "您已封鎖該用戶，未來將不會再看到該用戶的發文和留言")
 
-                guard let userId = self?.userInfo?.userId else {
+                guard let userId = self?.currentUserModel?.userId else {
                     return
                 }
                 
