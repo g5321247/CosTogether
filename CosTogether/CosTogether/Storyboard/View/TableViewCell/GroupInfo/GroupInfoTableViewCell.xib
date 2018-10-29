@@ -17,52 +17,52 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="569" id="Log-8I-weV" customClass="GroupInfoTableViewCell" customModule="CosTogether" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="432" id="Log-8I-weV" customClass="GroupInfoTableViewCell" customModule="CosTogether" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="432"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Log-8I-weV" id="PL2-wa-2Gz">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="568.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="431.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqP-Le-gCe">
-                        <rect key="frame" x="22.5" y="113.5" width="275" height="2"/>
+                        <rect key="frame" x="22.5" y="15" width="275" height="1"/>
                         <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="2" id="Aqc-qL-lQJ"/>
+                            <constraint firstAttribute="height" constant="1" id="Aqc-qL-lQJ"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="揪團地點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-OP-xIx">
-                        <rect key="frame" x="22.5" y="135.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="36" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="台北市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-zv-W6T">
-                        <rect key="frame" x="22.5" y="164.5" width="275" height="30"/>
+                        <rect key="frame" x="22.5" y="65" width="275" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="揪團標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRr-YM-jcL">
-                        <rect key="frame" x="22.5" y="209.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="110" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYk-3h-fNX">
-                        <rect key="frame" x="22.5" y="238.5" width="275" height="30"/>
+                        <rect key="frame" x="22.5" y="139" width="275" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9b-Bs-E1V">
-                        <rect key="frame" x="22.5" y="283.5" width="68" height="24"/>
+                        <rect key="frame" x="22.5" y="184" width="68" height="24"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35n-mc-0a1">
-                        <rect key="frame" x="202" y="472.5" width="95.5" height="36"/>
+                        <rect key="frame" x="202" y="373" width="95.5" height="36"/>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="35n-mc-0a1" secondAttribute="height" multiplier="53:20" id="FMk-9l-7gN"/>
@@ -75,7 +75,7 @@
                         </connections>
                     </button>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Gm-GS-sh4">
-                        <rect key="frame" x="22.5" y="312.5" width="275" height="120"/>
+                        <rect key="frame" x="22.5" y="213" width="275" height="120"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="a6T-Bi-wEB"/>
@@ -84,7 +84,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glg-zK-aKr">
-                        <rect key="frame" x="87" y="472.5" width="95" height="36"/>
+                        <rect key="frame" x="87" y="373" width="95" height="36"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +93,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="2Gm-GS-sh4" firstAttribute="trailing" secondItem="WYk-3h-fNX" secondAttribute="trailing" id="3eK-eI-Rhm"/>
+                    <constraint firstItem="LqP-Le-gCe" firstAttribute="top" secondItem="PL2-wa-2Gz" secondAttribute="top" constant="15" id="3jQ-xI-AyV"/>
                     <constraint firstItem="glg-zK-aKr" firstAttribute="centerY" secondItem="35n-mc-0a1" secondAttribute="centerY" id="5dE-mj-WNR"/>
                     <constraint firstItem="uxE-OP-xIx" firstAttribute="top" secondItem="LqP-Le-gCe" secondAttribute="bottom" constant="20" id="7BN-fE-d1s"/>
                     <constraint firstItem="cVz-zv-W6T" firstAttribute="trailing" secondItem="LqP-Le-gCe" secondAttribute="trailing" id="BPs-pC-mDb"/>
@@ -108,7 +109,6 @@
                     <constraint firstItem="cVz-zv-W6T" firstAttribute="leading" secondItem="uxE-OP-xIx" secondAttribute="leading" id="gBY-AM-DMu"/>
                     <constraint firstItem="35n-mc-0a1" firstAttribute="top" secondItem="2Gm-GS-sh4" secondAttribute="bottom" constant="40" id="i9j-KJ-ID6"/>
                     <constraint firstItem="cVz-zv-W6T" firstAttribute="top" secondItem="uxE-OP-xIx" secondAttribute="bottom" constant="5" id="iVN-qQ-rJc"/>
-                    <constraint firstItem="LqP-Le-gCe" firstAttribute="top" secondItem="PL2-wa-2Gz" secondAttribute="bottom" multiplier="0.2" id="j6f-VC-F6h"/>
                     <constraint firstItem="WYk-3h-fNX" firstAttribute="leading" secondItem="uxE-OP-xIx" secondAttribute="leading" id="lPU-ei-Wml"/>
                     <constraint firstItem="35n-mc-0a1" firstAttribute="leading" secondItem="glg-zK-aKr" secondAttribute="trailing" constant="20" id="las-JM-KvA"/>
                     <constraint firstItem="n9b-Bs-E1V" firstAttribute="top" secondItem="WYk-3h-fNX" secondAttribute="bottom" constant="15" id="okb-x5-vEm"/>
@@ -125,7 +125,7 @@
                 <outlet property="otherInfoTextView" destination="2Gm-GS-sh4" id="dnh-wY-RBC"/>
                 <outlet property="titleTxf" destination="WYk-3h-fNX" id="eR7-0k-dZ5"/>
             </connections>
-            <point key="canvasLocation" x="52.799999999999997" y="315.29235382308849"/>
+            <point key="canvasLocation" x="52.799999999999997" y="313.04347826086956"/>
         </tableViewCell>
     </objects>
 </document>

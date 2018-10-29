@@ -462,11 +462,11 @@ extension CreateGroupViewController: UITableViewDelegate {
             
         case 0:
             
-            return self.view.frame.width * (165 / 375)
+            return 212
             
         case 1:
             
-            return self.view.frame.width * (200 / 375)
+            return 430
             
         default:
             return 0

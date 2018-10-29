@@ -173,9 +173,10 @@ extension HelpBuyViewController: UICollectionViewDataSource {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                 
                 self.refreshControl.endRefreshing()
-//                collectionView.reloadData()
             }
             
+            emptyTitle.isHidden = false
+
             return 0
         }
         
@@ -187,6 +188,8 @@ extension HelpBuyViewController: UICollectionViewDataSource {
             
         }
         
+        emptyTitle.isHidden = true
+
         return group.count
         
     }

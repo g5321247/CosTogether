@@ -185,6 +185,8 @@ extension ShareBuyViewController: UICollectionViewDataSource {
                 
             }
             
+            emptyTitle.isHidden = false
+            
             return 0
 
         }
@@ -197,6 +199,8 @@ extension ShareBuyViewController: UICollectionViewDataSource {
             
         }
         
+        emptyTitle.isHidden = true
+
         return group.count
 
     }
