@@ -38,8 +38,6 @@ class PreviousCommentTableViewCell: UITableViewCell {
         
         commenterBot.cornerSetup(
             cornerRadius: CGFloat(commenterBot.frame.width / 2),
-            borderWidth: 0.5,
-            borderColor: UIColor.black.cgColor,
             maskToBounds: true
         )
         

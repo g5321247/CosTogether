@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN6-m7-hv7">
-                                <rect key="frame" x="22.5" y="8" width="48" height="48"/>
+                                <rect key="frame" x="25.5" y="8" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KN6-m7-hv7" secondAttribute="height" multiplier="1:1" id="0TK-ka-W2g"/>
                                     <constraint firstAttribute="width" constant="48" id="ESf-AF-hx8"/>
@@ -36,13 +36,13 @@
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ME-rVz">
-                                <rect key="frame" x="85.5" y="6.5" width="212" height="20.5"/>
+                                <rect key="frame" x="88.5" y="6.5" width="209" height="20.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="15"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1R-0dM">
-                                <rect key="frame" x="85.5" y="32" width="212" height="23.5"/>
+                                <rect key="frame" x="88.5" y="32" width="209" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                             <constraint firstAttribute="bottom" secondItem="hiL-1R-0dM" secondAttribute="bottom" constant="24" id="J7H-8P-efR"/>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="trailing" secondItem="ozW-M9-c70" secondAttribute="trailing" id="MfE-6N-ZPM"/>
                             <constraint firstItem="ozW-M9-c70" firstAttribute="trailing" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.93" id="Qcr-oT-QGn"/>
-                            <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.07" id="VDm-mm-2dF"/>
+                            <constraint firstItem="KN6-m7-hv7" firstAttribute="leading" secondItem="InW-Aj-RWA" secondAttribute="trailing" multiplier="0.08" id="VDm-mm-2dF"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="leading" secondItem="KN6-m7-hv7" secondAttribute="trailing" constant="15" id="VsP-gc-2qt"/>
                             <constraint firstItem="Fdy-ME-rVz" firstAttribute="centerY" secondItem="KN6-m7-hv7" secondAttribute="bottom" multiplier="0.3" id="WKP-Rz-pRp"/>
                             <constraint firstItem="hiL-1R-0dM" firstAttribute="top" secondItem="InW-Aj-RWA" secondAttribute="top" constant="32" id="Y79-YL-rIP"/>

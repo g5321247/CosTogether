@@ -69,8 +69,8 @@ class JoinShareGroupViewController: UIViewController {
                 self.emptyLbl.isHidden = true
                 self.animationView.isHidden = true
                 
-                self.tableView.reloadData()
-                
+                self.reloadData()
+
             })
             
         }
@@ -90,7 +90,7 @@ class JoinShareGroupViewController: UIViewController {
                 }
                 
             }
-            self.tableView.reloadData()
+            self.reloadData()
         }
         
     }
@@ -103,13 +103,26 @@ class JoinShareGroupViewController: UIViewController {
         
     }
     
-    private func tableViewSetup() {
+    private func reloadData() {
         
-        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+        guard myGroups.count > 0 else {
+            
+            tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+
+            return
+        }
+        
+        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        tableView.reloadData()
+        
+    }
+    
+    private func tableViewSetup() {
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
     }
 
 }
