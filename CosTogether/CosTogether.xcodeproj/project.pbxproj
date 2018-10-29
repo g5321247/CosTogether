@@ -71,8 +71,6 @@
 		C87F8B15215DD2230060EA72 /* JoinGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */; };
 		C882442D2186FF5D000D6C03 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882442B2186FF5D000D6C03 /* ButtonTableViewCell.swift */; };
 		C882442E2186FF5D000D6C03 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C882442C2186FF5D000D6C03 /* ButtonTableViewCell.xib */; };
-		C88244312187058F000D6C03 /* ProductInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88244302187058F000D6C03 /* ProductInfoHeader.swift */; };
-		C8824433218705D7000D6C03 /* ProductInfoHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8824432218705D7000D6C03 /* ProductInfoHeader.xib */; };
 		C8860982215FA649006B736A /* SendCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8860980215FA649006B736A /* SendCommentTableViewCell.swift */; };
 		C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8860981215FA649006B736A /* SendCommentTableViewCell.xib */; };
 		C888DB28216619010091F6F0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C888DB27216619010091F6F0 /* UIImage+.swift */; };
@@ -195,8 +193,6 @@
 		C87F8B13215DD2230060EA72 /* JoinGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinGroupTableViewCell.xib; sourceTree = "<group>"; };
 		C882442B2186FF5D000D6C03 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		C882442C2186FF5D000D6C03 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
-		C88244302187058F000D6C03 /* ProductInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoHeader.swift; sourceTree = "<group>"; };
-		C8824432218705D7000D6C03 /* ProductInfoHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoHeader.xib; sourceTree = "<group>"; };
 		C8860980215FA649006B736A /* SendCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C8860981215FA649006B736A /* SendCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C888DB27216619010091F6F0 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -627,15 +623,6 @@
 			path = JoinGroup;
 			sourceTree = "<group>";
 		};
-		C882442F21870517000D6C03 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				C88244302187058F000D6C03 /* ProductInfoHeader.swift */,
-				C8824432218705D7000D6C03 /* ProductInfoHeader.xib */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		C886097F215FA62D006B736A /* SendComment */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,7 +741,6 @@
 		C8EAD9642180A4C3009E8823 /* ProductInfo */ = {
 			isa = PBXGroup;
 			children = (
-				C882442F21870517000D6C03 /* Header */,
 				C859E290217FCCE900C2AF8F /* ProductInfoTableViewCell.swift */,
 				C859E291217FCCE900C2AF8F /* ProductInfoTableViewCell.xib */,
 				C882442B2186FF5D000D6C03 /* ButtonTableViewCell.swift */,
@@ -1009,7 +995,6 @@
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8EAD96221809348009E8823 /* GroupInfoTableViewCell.xib in Resources */,
-				C8824433218705D7000D6C03 /* ProductInfoHeader.xib in Resources */,
 				C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */,
 				C8693A9A21846D40000250EF /* MainPage.storyboard in Resources */,
 				C823A2662168B1A50066D635 /* Detail.storyboard in Resources */,
@@ -1173,7 +1158,6 @@
 				C8F8C92A2152375900BDB0CE /* UIStoryboard+.swift in Sources */,
 				C82BA998215C891E00996B11 /* ProductPicTableViewCell.swift in Sources */,
 				C85D4F1B2154B22400D73D8F /* ErrorManager.swift in Sources */,
-				C88244312187058F000D6C03 /* ProductInfoHeader.swift in Sources */,
 				C849751A2157913E00555855 /* UISegmentedControl+.swift in Sources */,
 				C8FB98B8216103CC00C78926 /* ChatViewController.swift in Sources */,
 				C85151C42175E030007B1324 /* OwnHelpBuyViewController.swift in Sources */,

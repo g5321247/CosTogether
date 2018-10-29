@@ -76,60 +76,6 @@ class ProductInfoTableViewCell: UITableViewCell {
 
     }
     
-    @IBAction func appendProductBotTapping(_ sender: UIButton) {
-        
-        
-        guard let productName = productNameTxf.text,
-            productName != "" else {
-                
-                BaseNotificationBanner.warningBanner(subtitle: "請輸入商品名稱")
-                return
-        }
-        
-        guard let productPrice = Int(productPriceTxf.text!) else {
-            
-            BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
-            return
-        }
-        
-        guard productPrice > 0 else {
-            
-            BaseNotificationBanner.warningBanner(subtitle: "金額不得為零")
-            return
-        }
-        
-        guard productPrice < 100000 else {
-            
-            BaseNotificationBanner.warningBanner(subtitle: "金額不得超過十萬")
-            return
-        }
-        
-        
-        guard productQuantity > 0 else {
-            
-            BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
-            return
-        }
-        
-        guard productQuantity < 100 else {
-            
-            BaseNotificationBanner.warningBanner(subtitle: "數量不得超過一百")
-            return
-        }
-        
-        
-        let product = ProductModel(
-            productName: productName,
-            productImage: "",
-            numberOfItem: productQuantity,
-            price: productPrice,
-            updateImage: nil
-        )
-
-        
-    }
-    
-    
 }
 
 extension ProductInfoTableViewCell: UITextFieldDelegate {
