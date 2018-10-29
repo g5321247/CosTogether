@@ -106,8 +106,6 @@ class AppendNewItemViewController: UIViewController {
         
         passProductInfo(product)
         
-        CosNavigationControllerViewController.isLightStatusBar = true
-        
         navigationController?.popViewController(animated: true)
         
     }
@@ -200,12 +198,21 @@ extension AppendNewItemViewController: UITableViewDataSource {
 
 extension AppendNewItemViewController: ProductSettingDelegate {
     
-    func getProductSetting(name: String?, price: String?, number: String?) {
-        print(name)
-        print(price)
-        print(number)
+    func getProductName(name: String?) {
+        
+        productName = name
     }
     
+    func getProductPrice(price: Int?) {
+        
+        productPrice = price
+    }
+    
+    func getProductNumber(number: Int?) {
+        
+        numberOfProduct = number
+        
+    }
     
     func getProductSetting(product: ProductModel) {
         

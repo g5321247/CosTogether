@@ -50,10 +50,6 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-jD-Lm0">
-                        <rect key="frame" x="284.5" y="133.5" width="20" height="20"/>
-                        <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="tce-DE-avW">
                         <rect key="frame" x="155.5" y="68" width="27" height="27.5"/>
                         <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,14 +60,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerX" secondItem="dBC-EV-hDs" secondAttribute="centerX" id="OMo-E8-HVI"/>
-                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="trailing" secondItem="dBC-EV-hDs" secondAttribute="trailing" constant="-10" id="b6X-RU-EI1"/>
-                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" constant="-10" id="d4l-ch-X8k"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="fAB-xb-MyY"/>
                     <constraint firstItem="YFV-fR-cJc" firstAttribute="leading" secondItem="dBC-EV-hDs" secondAttribute="trailing" multiplier="0.1" id="hqa-hu-iKC"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jTF-Ch-kln"/>
                     <constraint firstItem="YFV-fR-cJc" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" multiplier="0.95" id="lNu-Ay-NYF"/>
-                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="width" secondItem="tOc-jD-Lm0" secondAttribute="height" multiplier="1:1" id="mLR-bJ-eLk"/>
-                    <constraint firstItem="tOc-jD-Lm0" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="20:163" id="o6l-KH-PAs"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="27:163" id="qMe-ri-NGL"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerY" secondItem="dBC-EV-hDs" secondAttribute="centerY" id="uUr-dk-aBf"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="vVD-wz-AlZ"/>
@@ -79,7 +71,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="addImage" destination="tOc-jD-Lm0" id="aO4-dn-Soy"/>
                 <outlet property="picIconImage" destination="tce-DE-avW" id="dXP-RY-FRo"/>
                 <outlet property="productImageBot" destination="dBC-EV-hDs" id="fFy-u0-aDS"/>
                 <outlet property="productNameLbl" destination="sAc-68-r4J" id="c7R-V6-1yU"/>
@@ -91,6 +82,5 @@
     </objects>
     <resources>
         <image name="picture" width="32" height="32"/>
-        <image name="plus" width="32" height="32"/>
     </resources>
 </document>

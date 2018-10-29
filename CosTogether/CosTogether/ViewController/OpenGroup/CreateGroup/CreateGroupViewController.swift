@@ -110,8 +110,6 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func backToRootViw(_ sender: UIButton) {
         
-        CosNavigationControllerViewController.isLightStatusBar = false
-        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -131,8 +129,6 @@ class CreateGroupViewController: UIViewController {
             self.checkoutProductNumber()
             
         }
-        
-        CosNavigationControllerViewController.isLightStatusBar = false
         
         show(controller, sender: nil)
     }
@@ -275,8 +271,6 @@ class CreateGroupViewController: UIViewController {
             BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
             
             self.resetViewWhenUploadSucess()
-
-            CosNavigationControllerViewController.isLightStatusBar = false
             
             NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
 

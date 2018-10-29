@@ -11,7 +11,9 @@ import NotificationBannerSwift
 
 protocol ProductSettingDelegate: AnyObject {
     
-    func getProductSetting(name: String?, price: String?, number: String?)
+    func getProductName(name: String?)
+    func getProductPrice(price: Int?)
+    func getProductNumber(number: Int?)
     
 }
 
@@ -47,7 +49,6 @@ class ProductInfoTableViewCell: UITableViewCell {
         productNameTxf.delegate = self
         numberOfProductTxf.delegate = self
         productPriceTxf.delegate = self
-        
     
     }
     
@@ -135,17 +136,53 @@ class ProductInfoTableViewCell: UITableViewCell {
 
 extension ProductInfoTableViewCell: UITextFieldDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard  let delegate = delegate else {
-            return
+            return true
         }
         
-        delegate.getProductSetting(
-            name: productNameTxf.text ?? "",
-            price: productPriceTxf.text ?? "",
-            number: numberOfProductTxf.text ?? ""
-        )
+        switch textField {
+            
+        case productNameTxf:
+            
+            if let text = textField.text,
+                let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                
+                delegate.getProductName(name: updatedText)
+            }
+            
+        case numberOfProductTxf:
+            
+            if let text = textField.text,
+                let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                
+                delegate.getProductPrice(price: Int(updatedText))
+
+            }
+
+            
+        case productPriceTxf:
+            
+            if let text = textField.text,
+                let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                
+                delegate.getProductNumber(number: Int(updatedText))
+
+            }
+
+        default:
+            break
+        }
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
         
     }
     

@@ -90,8 +90,6 @@ class OpenGroupRootViewController: UIViewController {
             
             controller.topTitleLbl.text = "開分購"
             
-            CosNavigationControllerViewController.isLightStatusBar = true
-            
             show(controller, sender: nil)
             
         case 1:
@@ -102,8 +100,6 @@ class OpenGroupRootViewController: UIViewController {
             }
             
             controller.loadViewIfNeeded()
-
-            CosNavigationControllerViewController.isLightStatusBar = true
 
             controller.topTitleLbl.text = "幫代購"
             

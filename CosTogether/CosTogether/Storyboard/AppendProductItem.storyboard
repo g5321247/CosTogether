@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyJ-vj-b37" customClass="ProductSettingView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="20" y="333.5" width="335" height="243"/>
+                                <rect key="frame" x="20" y="327.5" width="335" height="243"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AUQ-FF-xzV">
                                         <rect key="frame" x="15" y="20" width="45" height="203"/>
@@ -81,7 +81,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmz-eS-06l">
-                                                <rect key="frame" x="90" y="5" width="10.5" height="20.5"/>
+                                                <rect key="frame" x="90" y="4.5" width="10.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpH-Ta-KGd">
-                                <rect key="frame" x="214" y="596.5" width="141" height="40"/>
+                                <rect key="frame" x="236" y="590.5" width="119" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GpH-Ta-KGd" secondAttribute="height" multiplier="140:40" id="88y-9J-gYV"/>
@@ -353,7 +353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊按鈕來新增多種商品吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4L-TBB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊右上按鈕來新增多種商品吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4L-TBB">
                                 <rect key="frame" x="10" y="95" width="355" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="bsr-zd-Hd6"/>
