@@ -28,12 +28,32 @@ class ImageTableViewCell: UITableViewCell {
 
     }
     
-    func updateCell(type: CreateType,name: String, number: Int, price: Int, image: UIImage) {
+    func updateProduct(product: ProductModel) {
      
-        productNameLbl.text = name
-        productNumberLbl.text = "數量： \(number)"
-        productPriceLbl.text = "單價： \(price)"
+        productIsExsit()
         
+        productNameLbl.text = product.productName
+        productNumberLbl.text = "數量： \(product.numberOfItem)"
+        productPriceLbl.text = "單價： \(product.price)"
+        
+        guard let image = product.updateImage else {
+            return
+        }
+        
+        productImageBot.setImage(image, for: .normal)
+        
+    }
+    
+    private func productIsExsit() {
+        
+        addBot.isHidden = true
+        picIconImage.isHidden = true
+        
+        productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        productImageBot.imageView?.contentMode = .scaleAspectFill
+
     }
     
     func updateName(name: String) {
@@ -62,14 +82,8 @@ class ImageTableViewCell: UITableViewCell {
         }
         
         productImageBot.setImage(image, for: .normal)
-        picIconImage.isHidden = true
-        productImageBot.imageView?.contentMode = .scaleAspectFill
         
-        addBot.isHidden = true
-        
-        productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        productIsExsit()
     }
 
 }

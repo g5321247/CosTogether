@@ -22,9 +22,6 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var createArticle: CreateArticleView!
     @IBOutlet weak var pickerView: PickerView!
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
-    @IBOutlet weak var cancelBot: UIButton!
-    @IBOutlet weak var sendBot: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
     
     let refrence = Database.database().reference()
@@ -74,12 +71,9 @@ class CreateGroupViewController: UIViewController {
     
     private func setup() {
         
-//        setColletionView()
         pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         
-        createGroupBotSetup()
-
         makeKey()
         
         tableViewSetup()
@@ -101,7 +95,6 @@ class CreateGroupViewController: UIViewController {
         
         guard products.count > 0 else {
             
-            
             return
         }
         
@@ -113,7 +106,7 @@ class CreateGroupViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func newProductBotTapping(_ sender: UIButton) {
+    @objc func appendProductBotTapping(_ sender: UIButton) {
         
         guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
             
@@ -199,87 +192,7 @@ class CreateGroupViewController: UIViewController {
         
         return group
     }
-    
-    func translateProductPicsToUrl(group: Group, completion: @escaping (Group) -> Void) {
-        
-        for (index, value) in group.products.enumerated() {
-            
-            SVProgressHUD.show()
-
-            guard let imageData = value.updateImage?.jpeg(.medium) else {
-                
-                BaseNotificationBanner.warningBanner(subtitle: "照片轉檔失敗")
-                
-                SVProgressHUD.dismiss()
-
-                return
-            }
-            
-            dispatchGroup.enter()
-            
-            firebaseManager.uploadProductPics(
-                
-                articleTitle: group.article.articleTitle,
-                productName: value.productName,
-                picture: imageData,
-                sucess: { (url) in
-                    
-                    self.products[index].updateImage = nil
-                    self.products[index].productImage = url.absoluteString
-            
-                    self.dispatchGroup.leave()
-                    
-            }) { (error) in
-                
-                SVProgressHUD.dismiss()
-
-                #warning ("TODO")
-                
-                self.dispatchGroup.leave()
-
-            }
-            
-            self.dispatchGroup.notify(queue: .main) {
-                
-                completion(
-                    Group(
-                        openType: group.openType,
-                        article: group.article,
-                        products: self.products,
-                        userID: group.userID
-                    )
-                )
-            }
-        }
-        
-    }
-    
-    @IBAction func uploadToServer(_ sender: UIButton) {
-        
-        guard let group = checkProductContent(),
-            let key = key else {
-            return
-        }
-        
-        SVProgressHUD.show()
-        
-        translateProductPicsToUrl(group: group) { (uploadGroup) in
-            
-            self.firebaseManager.uploadGroup(refrence: self.refrence, group: uploadGroup, key: key)
-            
-            SVProgressHUD.dismiss()
-            BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
-            
-            self.resetViewWhenUploadSucess()
-            
-            NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
-
-            self.navigationController?.popViewController(animated: true)
-
-        }
-    
-    }
-    
+   
     func resetViewWhenUploadSucess() {
         
         products.removeAll()
@@ -307,16 +220,9 @@ class CreateGroupViewController: UIViewController {
         
     }
     
-    @IBAction func cancelBotTapping(_ sender: UIButton) {
+    @objc func cancelBotTapping(_ sender: UIButton) {
         
         self.resetViewWhenUploadSucess()
-        
-    }
-    
-    private func createGroupBotSetup() {
-        
-//        sendBot.cornerSetup(cornerRadius: 4)
-//        cancelBot.cornerSetup(cornerRadius: 4)
         
     }
     
@@ -463,8 +369,12 @@ extension CreateGroupViewController: UITableViewDelegate {
         case 0:
             
             return 212
-            
+        
         case 1:
+            
+            return 212
+        
+        case 2:
             
             return 430
             
@@ -479,11 +389,29 @@ extension CreateGroupViewController: UITableViewDelegate {
 extension CreateGroupViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        switch section {
+        
+        case 0:
+            
+            return products.count
+        
+        case 1:
+            
+            return 1
+        
+        case 2:
+            
+            return 1
+        
+        default:
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -498,15 +426,32 @@ extension CreateGroupViewController: UITableViewDataSource {
                 
             }
             
-            return cell
+            cell.updateProduct(product: products[indexPath.row])
             
+            return cell
+        
         case 1:
+        
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            cell.addBot.addTarget(self, action: #selector (appendProductBotTapping(_:)), for: .touchUpInside)
+            
+            return cell
+
+        case 2:
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupInfoTableViewCell.self)) as? GroupInfoTableViewCell else {
                 
                 return UITableViewCell()
                 
             }
+            
+            cell.createGroupBot.addTarget(self, action: #selector(uploadNewGroup(_:)), for: .touchUpInside)
+            cell.cancelBot.addTarget(self, action: #selector (cancelBotTapping(_:)), for: .touchUpInside)
             
             return  cell
             
@@ -520,4 +465,90 @@ extension CreateGroupViewController: UITableViewDataSource {
     }
     
     
+}
+
+// MARK: Create a Group
+
+extension CreateGroupViewController {
+
+    func translateProductPicsToUrl(group: Group, completion: @escaping (Group) -> Void) {
+        
+        for (index, value) in group.products.enumerated() {
+            
+            SVProgressHUD.show()
+            
+            guard let imageData = value.updateImage?.jpeg(.medium) else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "照片轉檔失敗")
+                
+                SVProgressHUD.dismiss()
+                
+                return
+            }
+            
+            dispatchGroup.enter()
+            
+            firebaseManager.uploadProductPics(
+                
+                articleTitle: group.article.articleTitle,
+                productName: value.productName,
+                picture: imageData,
+                sucess: { (url) in
+                    
+                    self.products[index].updateImage = nil
+                    self.products[index].productImage = url.absoluteString
+                    
+                    self.dispatchGroup.leave()
+                    
+            }) { (error) in
+                
+                SVProgressHUD.dismiss()
+                
+                #warning ("TODO")
+                
+                self.dispatchGroup.leave()
+                
+            }
+            
+            self.dispatchGroup.notify(queue: .main) {
+                
+                completion(
+                    Group(
+                        openType: group.openType,
+                        article: group.article,
+                        products: self.products,
+                        userID: group.userID
+                    )
+                )
+            }
+        }
+        
+    }
+    
+    @objc func uploadNewGroup(_ sender: UIButton) {
+        
+        guard let group = checkProductContent(),
+            let key = key else {
+                return
+        }
+        
+        SVProgressHUD.show()
+        
+        translateProductPicsToUrl(group: group) { (uploadGroup) in
+            
+            self.firebaseManager.uploadGroup(refrence: self.refrence, group: uploadGroup, key: key)
+            
+            SVProgressHUD.dismiss()
+            BaseNotificationBanner.sucessBanner(subtitle: "上傳商品成功")
+            
+            self.resetViewWhenUploadSucess()
+            
+            NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        }
+        
+    }
+
 }
