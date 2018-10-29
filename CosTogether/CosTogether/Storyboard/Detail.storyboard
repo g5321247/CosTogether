@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-PA-pVd">
-                                        <rect key="frame" x="24" y="40" width="20" height="20"/>
+                                        <rect key="frame" x="24" y="42" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CbF-PA-pVd" secondAttribute="height" multiplier="1:1" id="5SK-sF-pnA"/>
                                         </constraints>
@@ -67,7 +67,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LY2-O3-h5M" firstAttribute="top" secondItem="Ida-mf-6LP" secondAttribute="top" id="KtS-Dk-n8y"/>
-                            <constraint firstItem="CbF-PA-pVd" firstAttribute="width" secondItem="Ida-mf-6LP" secondAttribute="height" multiplier="20:667" id="MPI-Np-g5n"/>
+                            <constraint firstItem="CbF-PA-pVd" firstAttribute="width" secondItem="Ida-mf-6LP" secondAttribute="height" multiplier="16:667" id="MPI-Np-g5n"/>
                             <constraint firstItem="LY2-O3-h5M" firstAttribute="leading" secondItem="Nle-6R-9cu" secondAttribute="leading" id="U43-Ni-XIE"/>
                             <constraint firstItem="zI4-01-1FE" firstAttribute="leading" secondItem="Nle-6R-9cu" secondAttribute="leading" id="ZCf-On-FGs"/>
                             <constraint firstItem="Nle-6R-9cu" firstAttribute="trailing" secondItem="zI4-01-1FE" secondAttribute="trailing" id="bza-BA-zCM"/>

@@ -109,8 +109,8 @@ extension HistoryViewController: UITableViewDelegate {
                 
                 return nil
         }
-        
-//        headercell.selfBuyerInfoUpdate(userName: myProducts[section].user.userName, useImage: myProducts[section].user.userImage, pdoducts: myProducts[section].products)
+    
+        headercell.selfBuyerInfoUpdate(userName: joinMember[section].userName, useImage: joinMember[section].userImage)
         
         return headercell
     }
@@ -131,6 +131,8 @@ extension HistoryViewController: UITableViewDelegate {
                 
                 return nil
         }
+        
+        
         
         //        headercell.selfBuyerInfoUpdate(userName: myProducts[section].user.userName, useImage: myProducts[section].user.userImage, pdoducts: myProducts[section].products)
         

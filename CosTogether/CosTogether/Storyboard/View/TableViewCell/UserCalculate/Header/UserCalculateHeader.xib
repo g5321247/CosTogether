@@ -59,6 +59,10 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="userImageBot" destination="Ojd-lp-AhQ" id="YgQ-5m-z0y"/>
+                <outlet property="userNameLbl" destination="LOR-1T-bMX" id="ybo-8y-6m7"/>
+            </connections>
             <point key="canvasLocation" x="128.80000000000001" y="-250.52473763118442"/>
         </view>
     </objects>

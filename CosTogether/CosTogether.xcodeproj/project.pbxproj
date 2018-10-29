@@ -717,6 +717,7 @@
 		C8E956B52176D2E400473C6B /* UserCalculate */ = {
 			isa = PBXGroup;
 			children = (
+				C8EAD97A2180DE55009E8823 /* Footer */,
 				C8EAD96A2180AE9E009E8823 /* Header */,
 				C8EAD96F2180AEC0009E8823 /* Content */,
 			);
@@ -766,7 +767,6 @@
 			children = (
 				C8EAD96B2180AEBC009E8823 /* UserCalculateTableViewCell.swift */,
 				C8EAD96C2180AEBC009E8823 /* UserCalculateTableViewCell.xib */,
-				C8EAD97A2180DE55009E8823 /* Footer */,
 			);
 			path = Content;
 			sourceTree = "<group>";

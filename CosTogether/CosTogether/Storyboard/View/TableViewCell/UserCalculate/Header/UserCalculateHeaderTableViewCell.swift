@@ -50,18 +50,10 @@ class UserCalculateHeaderTableViewCell: UITableViewCell {
     }
     
     private func collectionviewSetup() {
-        
-        registerTableViewCell(identifier: String(describing: MyProductCollectionViewCell.self))
+
 
       
     }
     
-    private func registerTableViewCell(identifier: String) {
-    
-        
-
-
-    }
-
     
 }
