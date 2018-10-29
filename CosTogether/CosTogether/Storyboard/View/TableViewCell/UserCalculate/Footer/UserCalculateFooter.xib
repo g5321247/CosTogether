@@ -49,6 +49,9 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="amountLbl" destination="2Kt-yV-YAN" id="syt-Oj-SHU"/>
+            </connections>
         </view>
     </objects>
 </document>

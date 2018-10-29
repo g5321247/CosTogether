@@ -17,10 +17,6 @@ class UserCalculateHeader: UIView {
         super.awakeFromNib()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     func selfBuyerInfoUpdate(userName: String, useImage: String) {
         
         userNameLbl?.text = userName

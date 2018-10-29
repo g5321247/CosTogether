@@ -132,9 +132,12 @@ extension HistoryViewController: UITableViewDelegate {
                 return nil
         }
         
+        guard myProducts.count > 0 else {
+            
+            return footerCell
+        }
         
-        
-        //        headercell.selfBuyerInfoUpdate(userName: myProducts[section].user.userName, useImage: myProducts[section].user.userImage, pdoducts: myProducts[section].products)
+        footerCell.selfBuyerInfoUpdate(products: myProducts[section].products)
         
         return footerCell
     }
@@ -168,8 +171,6 @@ extension HistoryViewController: UITableViewDataSource {
         }
         
         cell.selfBuyerInfoUpdate(pdoduct: myProducts[indexPath.section].products[indexPath.row])
-        
-//        cell.selfBuyerInfoUpdate(userName: myProducts[indexPath.row].user.userName, useImage: myProducts[indexPath.row].user.userImage, pdoducts: myProducts[indexPath.row].products)
         
         return cell
     }
