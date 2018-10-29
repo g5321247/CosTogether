@@ -57,7 +57,7 @@ class AppendNewItemViewController: UIViewController {
     private func setUpCell() {
         
         tableView.registerTableViewCell(identifiers: [
-              String(describing: ImageTableViewCell.self),
+            String(describing: ImageTableViewCell.self),
             String(describing: ProductInfoTableViewCell.self),
             String(describing: ButtonTableViewCell.self)
             ])
@@ -65,7 +65,7 @@ class AppendNewItemViewController: UIViewController {
 
     private func pictureIsExsist() {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
+        guard let cell = cell else {
             
             return
             
@@ -74,31 +74,29 @@ class AppendNewItemViewController: UIViewController {
         cell.picIconImage.isHidden = true
     }
     
-    func editProductDetail(product: ProductModel) {
-        
-        pictureIsExsist()
-        
-//        prodctSettingView.updateProductDetail(product: product)
-        
-        newProductPicBot.setImage(product.updateImage, for: .normal)
-    }
+//    func editProductDetail(product: ProductModel) {
+//        
+//        pictureIsExsist()
+//        
+//        newProductPicBot.setImage(product.updateImage, for: .normal)
+//    }
     
-    @IBAction func appendNewProduct(_ sender: UIButton) {
-        
-//        prodctSettingView.updateProductInfo()
-        
-        guard let product = product,
-        product.updateImage != nil,
-        let passProductInfo = passProductInfo else {
-            
-            return
-        }
-        
-        passProductInfo(product)
-        
-        navigationController?.popViewController(animated: true)
-        
-    }
+//    @IBAction func appendNewProduct(_ sender: UIButton) {
+//
+////        prodctSettingView.updateProductInfo()
+//
+//        guard let product = product,
+//        product.updateImage != nil,
+//        let passProductInfo = passProductInfo else {
+//
+//            return
+//        }
+//
+//        passProductInfo(product)
+//
+//        navigationController?.popViewController(animated: true)
+//
+//    }
     
     func appendProduct(product: @escaping (ProductModel) -> Void) {
         

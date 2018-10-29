@@ -142,6 +142,8 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
             return true
         }
         
+        let count = text.count + string.count - range.length
+        
         switch textField {
             
         case productNameTxf:
@@ -149,6 +151,8 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             
             delegate.getProductName(name: updatedText)
+            
+            return count <= 6
             
         case numberOfProductTxf:
             
@@ -158,11 +162,12 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入正確數量")
 
-                return true
+                return count < 3
             }
             
             delegate.getProductNumber(number: number)
 
+            return count < 3
  
         case productPriceTxf:
             
@@ -172,11 +177,12 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
 
-                return true
+                return count < 6
             }
             
             delegate.getProductPrice(price: price)
-
+            
+            return count < 6
 
         default:
             break
@@ -184,5 +190,5 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
         
         return true
     }
-
+    
 }
