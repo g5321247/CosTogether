@@ -23,7 +23,7 @@ class UserCalculateTableViewCell: UITableViewCell {
     
     func selfBuyerInfoUpdate(pdoduct: ProductModel) {
         
-        productDetailLbl.text = "\(pdoduct.productName) x \(pdoduct.numberOfItem)"
+        productDetailLbl.text = "\(pdoduct.productName) $\(pdoduct.price)   x \(pdoduct.numberOfItem)"
         
     }
     
