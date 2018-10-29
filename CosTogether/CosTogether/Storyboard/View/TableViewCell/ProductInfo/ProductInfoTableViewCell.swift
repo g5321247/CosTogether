@@ -136,7 +136,9 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard  let delegate = delegate else {
+        guard  let delegate = delegate,
+            let text = textField.text,
+            let textRange = Range(range, in: text) else {
             return true
         }
         
@@ -144,33 +146,37 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
             
         case productNameTxf:
             
-            if let text = textField.text,
-                let textRange = Range(range, in: text) {
-                let updatedText = text.replacingCharacters(in: textRange, with: string)
-                
-                delegate.getProductName(name: updatedText)
-            }
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            
+            delegate.getProductName(name: updatedText)
             
         case numberOfProductTxf:
             
-            if let text = textField.text,
-                let textRange = Range(range, in: text) {
-                let updatedText = text.replacingCharacters(in: textRange, with: string)
-                
-                delegate.getProductPrice(price: Int(updatedText))
-
-            }
-
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
             
+            guard let number = Int(updatedText) else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "請輸入正確數量")
+
+                return true
+            }
+            
+            delegate.getProductNumber(number: number)
+
+ 
         case productPriceTxf:
             
-            if let text = textField.text,
-                let textRange = Range(range, in: text) {
-                let updatedText = text.replacingCharacters(in: textRange, with: string)
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            
+            guard let price = Int(updatedText) else {
                 
-                delegate.getProductNumber(number: Int(updatedText))
+                BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
 
+                return true
             }
+            
+            delegate.getProductPrice(price: price)
+
 
         default:
             break

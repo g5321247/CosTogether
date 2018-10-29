@@ -15,6 +15,7 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var productNumberLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var productImageBot: UIButton!
+    @IBOutlet weak var addBot: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,20 +31,45 @@ class ImageTableViewCell: UITableViewCell {
     func updateCell(type: CreateType,name: String, number: Int, price: Int, image: UIImage) {
      
         productNameLbl.text = name
-        productPriceLbl.text = "\(number)"
-        productNumberLbl.text = "\(price)"
+        productNumberLbl.text = "數量： \(number)"
+        productPriceLbl.text = "單價： \(price)"
         
     }
     
-    func updateProductImage(image: UIImage) {
+    func updateName(name: String) {
+        
+        productNameLbl.text = name
+
+    }
+    
+    func updateNumber(number: Int) {
+        
+        productNumberLbl.text = "數量： \(number)"
+        
+    }
+    
+    func updatePrice(price: Int) {
+        
+        productPriceLbl.text = "單價： \(price)"
+        
+    }
+    
+    func updateProductImage(image: UIImage?) {
+        
+        guard let image = image else {
+            
+            return
+        }
         
         productImageBot.setImage(image, for: .normal)
         picIconImage.isHidden = true
         productImageBot.imageView?.contentMode = .scaleAspectFill
         
+        addBot.isHidden = true
+        
         productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
     }
-    
+
 }

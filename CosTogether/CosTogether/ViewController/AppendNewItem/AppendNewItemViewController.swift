@@ -165,6 +165,8 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
             cell.productImageBot.addTarget(self, action: #selector (choseProductImage(_:)), for: .touchUpInside)
             
+            cell.addBot.addTarget(self, action: #selector (choseProductImage(_:)), for: .touchUpInside)
+            
             return cell
             
         case 1:
@@ -187,6 +189,7 @@ extension AppendNewItemViewController: UITableViewDataSource {
                 
             }
             
+            cell.appendBot.addTarget(self, action: #selector (appendProduct(_:)), for: .touchUpInside)
             
             return  cell
             
@@ -198,7 +201,6 @@ extension AppendNewItemViewController: UITableViewDataSource {
         
     }
 
-    
 }
 
 extension AppendNewItemViewController: ProductSettingDelegate {
@@ -206,17 +208,23 @@ extension AppendNewItemViewController: ProductSettingDelegate {
     func getProductName(name: String?) {
         
         productName = name
+        
+        cell?.updateName(name: name ?? "")
     }
     
     func getProductPrice(price: Int?) {
         
         productPrice = price
+        
+        cell?.updatePrice(price: price ?? 0)
     }
     
     func getProductNumber(number: Int?) {
         
         numberOfProduct = number
         
+        cell?.updateNumber(number: number ?? 0)
+
     }
     
     func getProductSetting(product: ProductModel) {
@@ -305,4 +313,80 @@ extension AppendNewItemViewController {
 
     }
     
+}
+
+extension AppendNewItemViewController {
+    
+    @objc func appendProduct(_ sender: UIButton) {
+        
+        guard let productImage = productImage else {
+
+            BaseNotificationBanner.warningBanner(subtitle: "請上傳商品照片")
+            return
+            
+        }
+        
+        guard let productName = productName,
+            productName != "" else {
+                
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入商品名稱")
+            return
+        }
+        
+        guard let productPrice = productPrice else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
+            return
+        }
+        
+        guard productPrice > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得為零")
+            return
+        }
+        
+        guard productPrice < 100000 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "金額不得大於十萬")
+            return
+        }
+        
+        guard let numberOfProduct = numberOfProduct else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "請輸入正確數量")
+            return
+        }
+
+        
+        guard numberOfProduct > 0 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得為零")
+            return
+        }
+        
+        guard numberOfProduct < 100 else {
+            
+            BaseNotificationBanner.warningBanner(subtitle: "數量不得大於一百")
+            return
+        }
+        
+        
+        let product = ProductModel(
+            productName: productName,
+            productImage: "",
+            numberOfItem: numberOfProduct,
+            price: productPrice,
+            updateImage: productImage
+        )
+
+        guard let passProductInfo = passProductInfo else {
+            
+            return
+        }
+        
+        passProductInfo(product)
+        
+        navigationController?.popViewController(animated: true)
+    }
+
 }

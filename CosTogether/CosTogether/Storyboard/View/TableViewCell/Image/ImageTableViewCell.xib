@@ -36,13 +36,13 @@
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數量：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-lo-1if">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數量： 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-lo-1if">
                                 <rect key="frame" x="0.0" y="22.5" width="69.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單價：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-sq-Bs9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單價： 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-sq-Bs9">
                                 <rect key="frame" x="0.0" y="42.5" width="69.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -57,13 +57,23 @@
                             <constraint firstAttribute="width" secondItem="tce-DE-avW" secondAttribute="height" multiplier="1:1" id="O8n-so-WGB"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QN-hG-EYF">
+                        <rect key="frame" x="325" y="143.5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3QN-hG-EYF" secondAttribute="height" multiplier="1:1" id="fEU-ZN-pqq"/>
+                        </constraints>
+                        <state key="normal" image="big-plus"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="3QN-hG-EYF" firstAttribute="trailing" secondItem="dBC-EV-hDs" secondAttribute="trailing" constant="-15" id="7eE-iN-KBd"/>
                     <constraint firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" constant="30" id="O7O-jR-37o"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerX" secondItem="dBC-EV-hDs" secondAttribute="centerX" id="OMo-E8-HVI"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="fAB-xb-MyY"/>
+                    <constraint firstItem="3QN-hG-EYF" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="16:95" id="gsi-Gw-hbA"/>
                     <constraint firstItem="YFV-fR-cJc" firstAttribute="leading" secondItem="dBC-EV-hDs" secondAttribute="trailing" multiplier="0.1" id="hqa-hu-iKC"/>
                     <constraint firstItem="dBC-EV-hDs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jTF-Ch-kln"/>
+                    <constraint firstItem="3QN-hG-EYF" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" constant="-15" id="jWv-dx-Wqx"/>
                     <constraint firstItem="YFV-fR-cJc" firstAttribute="bottom" secondItem="dBC-EV-hDs" secondAttribute="bottom" multiplier="0.95" id="lNu-Ay-NYF"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="width" secondItem="dBC-EV-hDs" secondAttribute="height" multiplier="27:163" id="qMe-ri-NGL"/>
                     <constraint firstItem="tce-DE-avW" firstAttribute="centerY" secondItem="dBC-EV-hDs" secondAttribute="centerY" id="uUr-dk-aBf"/>
@@ -72,6 +82,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addBot" destination="3QN-hG-EYF" id="co3-AF-C5a"/>
                 <outlet property="picIconImage" destination="tce-DE-avW" id="dXP-RY-FRo"/>
                 <outlet property="productImageBot" destination="dBC-EV-hDs" id="fFy-u0-aDS"/>
                 <outlet property="productNameLbl" destination="sAc-68-r4J" id="c7R-V6-1yU"/>
@@ -82,6 +93,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="big-plus" width="32" height="32"/>
         <image name="picture" width="32" height="32"/>
     </resources>
 </document>
