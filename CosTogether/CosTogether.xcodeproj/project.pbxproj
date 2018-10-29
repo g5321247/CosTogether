@@ -88,8 +88,6 @@
 		C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */; };
 		C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */; };
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
-		C8E956B32176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B12176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift */; };
-		C8E956B42176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B22176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib */; };
 		C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */; };
 		C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */; };
 		C8E956BD2177449C00473C6B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956BC2177449C00473C6B /* Notification.swift */; };
@@ -212,8 +210,6 @@
 		C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTitleTableViewCell.xib; sourceTree = "<group>"; };
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
-		C8E956B12176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCalculateHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		C8E956B22176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCalculateHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8E956BC2177449C00473C6B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -754,8 +750,6 @@
 		C8EAD96A2180AE9E009E8823 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				C8E956B12176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift */,
-				C8E956B22176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib */,
 				C8EAD9722180B848009E8823 /* UserCalculateHeader.swift */,
 				C8EAD9742180B856009E8823 /* UserCalculateHeader.xib */,
 			);
@@ -1009,7 +1003,6 @@
 				C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */,
 				C8215FE82151FAC4006BC7A3 /* GoogleService-Info.plist in Resources */,
 				C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */,
-				C8E956B42176D2DF00473C6B /* UserCalculateHeaderTableViewCell.xib in Resources */,
 				C859E28D217FBCF100C2AF8F /* ImageTableViewCell.xib in Resources */,
 				C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */,
 				C80187F22173637700FAC704 /* get_started_slider.json in Resources */,
@@ -1138,7 +1131,6 @@
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
-				C8E956B32176D2DF00473C6B /* UserCalculateHeaderTableViewCell.swift in Sources */,
 				C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */,
 				C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */,
 				C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */,
