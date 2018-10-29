@@ -9,7 +9,9 @@
 import UIKit
 
 class UserCalculateTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var productDetailLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -17,6 +19,12 @@ class UserCalculateTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    
+    func selfBuyerInfoUpdate(pdoduct: ProductModel) {
+        
+        productDetailLbl.text = "\(pdoduct.productName) x \(pdoduct.numberOfItem)"
+        
     }
     
 }

@@ -149,8 +149,15 @@ extension HistoryViewController: UITableViewDelegate {
 
 extension HistoryViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return joinMember.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        return myProducts.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -159,6 +166,8 @@ extension HistoryViewController: UITableViewDataSource {
             
             return UITableViewCell()
         }
+        
+        cell.selfBuyerInfoUpdate(pdoduct: myProducts[indexPath.section].products[indexPath.row])
         
 //        cell.selfBuyerInfoUpdate(userName: myProducts[indexPath.row].user.userName, useImage: myProducts[indexPath.row].user.userImage, pdoducts: myProducts[indexPath.row].products)
         
