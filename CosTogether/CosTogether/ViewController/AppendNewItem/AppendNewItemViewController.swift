@@ -13,7 +13,6 @@ import NotificationBannerSwift
 class AppendNewItemViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var prodctSettingView: ProductSettingView!
     @IBOutlet weak var newProductPicBot: UIButton!
     @IBOutlet weak var remindChosePicLbl: UILabel!
     @IBOutlet weak var appendProductBot: UIButton!
@@ -25,7 +24,7 @@ class AppendNewItemViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     
     var cell : ImageTableViewCell?
-    
+
     var product: ProductModel?
     var passProductInfo: ((ProductModel) -> Void)?
     var productImage: UIImage?
@@ -41,7 +40,6 @@ class AppendNewItemViewController: UIViewController {
         
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-//        prodctSettingView.delegate = self
         imagePicker.delegate = self
     
         tableViewSetup()
@@ -56,20 +54,12 @@ class AppendNewItemViewController: UIViewController {
         tableView.allowsSelection = false
     }
     
-    #warning ("搬到 cell 去")
-    private func bottnSetup() {
-        
-        appendProductBot.cornerSetup(cornerRadius: 2.5)
-        appendProductBot.shadowSetup()
-        
-        appendProductBot.imageView?.contentMode = .scaleAspectFill
-    }
-    
     private func setUpCell() {
         
         tableView.registerTableViewCell(identifiers: [
-            String(describing: ImageTableViewCell.self),
-            String(describing: ProductInfoTableViewCell.self)
+              String(describing: ImageTableViewCell.self),
+            String(describing: ProductInfoTableViewCell.self),
+            String(describing: ButtonTableViewCell.self)
             ])
     }
 
@@ -132,10 +122,15 @@ extension AppendNewItemViewController: UITableViewDelegate {
             
         case 0:
             
-            return 165
+            return 212
+            
         case 1:
             
-            return 200
+            return 270
+
+        case 2:
+            
+            return 80
             
         default:
             return 0
@@ -147,7 +142,7 @@ extension AppendNewItemViewController: UITableViewDelegate {
 extension AppendNewItemViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -184,6 +179,16 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
             return  cell
             
+        case 2:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ButtonTableViewCell.self)) as? ButtonTableViewCell else {
+                
+                return UITableViewCell()
+                
+            }
+            
+            
+            return  cell
             
         default:
             
@@ -252,7 +257,7 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
         }
         
         cell.updateProductImage(image: tempImage)
-        
+
         dismiss(animated: true, completion: nil)
     }
     
@@ -263,6 +268,7 @@ extension AppendNewItemViewController {
     @objc func choseProductImage(_ sender: UIButton) {
         
         alertSheet()
+        
     }
     
     private func alertSheet() {

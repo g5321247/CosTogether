@@ -19,7 +19,6 @@ protocol ProductSettingDelegate: AnyObject {
 
 class ProductInfoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var appendBot: UIButton!
     @IBOutlet weak var productNameTxf: UITextField!
     @IBOutlet weak var numberOfProductTxf: UITextField!
     @IBOutlet weak var productPriceTxf: UITextField!
@@ -54,7 +53,6 @@ class ProductInfoTableViewCell: UITableViewCell {
     
     private func viewSetup() {
         
-        appendBot.cornerSetup(cornerRadius: 4)
         productNameTxf.cornerSetup(
             cornerRadius: 4,
             borderWidth: 1,
@@ -180,10 +178,5 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
         
         return true
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        
-    }
-    
+
 }
