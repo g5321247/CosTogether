@@ -28,32 +28,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-I3-ssh">
-                                <rect key="frame" x="281.5" y="24" width="18" height="18"/>
+                                <rect key="frame" x="281.5" y="25" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ELb-I3-ssh" secondAttribute="height" multiplier="1:1" id="88e-BG-LPi"/>
                                     <constraint firstAttribute="height" constant="18" id="bnI-Uu-l6Q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f44-xr-eaN">
-                                <rect key="frame" x="309.5" y="23" width="28" height="20"/>
+                                <rect key="frame" x="309.5" y="24" width="28" height="20"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="使用者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-Bb-fdz">
-                                <rect key="frame" x="112" y="21" width="132" height="24"/>
+                                <rect key="frame" x="112" y="22" width="132" height="24"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發文日期：" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxi-9Y-Fi5">
-                                <rect key="frame" x="112" y="44" width="70" height="20"/>
+                                <rect key="frame" x="112" y="48" width="70" height="20"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eod-xo-0Kw">
-                                <rect key="frame" x="30" y="0.0" width="80" height="80"/>
+                                <rect key="frame" x="30" y="5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eod-xo-0Kw" secondAttribute="height" multiplier="1:1" id="VD8-6T-rY5"/>
                                 </constraints>
@@ -61,23 +61,23 @@
                                 <state key="normal" image="profile_sticker_placeholder02"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分購" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-iM-QxS">
-                                <rect key="frame" x="309.5" y="44" width="28" height="20"/>
+                                <rect key="frame" x="309.5" y="48" width="28" height="20"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-G9-i3p">
-                                <rect key="frame" x="283.5" y="46" width="16" height="16"/>
+                                <rect key="frame" x="283.5" y="50" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="NMH-Iw-6L2"/>
                                     <constraint firstAttribute="height" constant="16" id="c4r-ce-9Je"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHC-Ly-th5">
-                                <rect key="frame" x="26.5" y="89" width="322.5" height="2"/>
+                                <rect key="frame" x="26.5" y="90" width="322.5" height="1"/>
                                 <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="HnB-6E-ITx"/>
+                                    <constraint firstAttribute="height" constant="1" id="HnB-6E-ITx"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -98,7 +98,7 @@
                             <constraint firstItem="ZQg-8P-u8I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxi-9Y-Fi5" secondAttribute="trailing" symbolic="YES" id="sEH-LC-Lkm"/>
                             <constraint firstItem="kvd-G9-i3p" firstAttribute="centerY" secondItem="mxi-9Y-Fi5" secondAttribute="centerY" id="vZV-aV-ae9"/>
                             <constraint firstItem="mxi-9Y-Fi5" firstAttribute="leading" secondItem="HkW-Bb-fdz" secondAttribute="trailing" constant="-132" id="xQ8-ir-C0P"/>
-                            <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" id="yxe-mZ-dUk"/>
+                            <constraint firstItem="eod-xo-0Kw" firstAttribute="top" secondItem="ZQg-8P-u8I" secondAttribute="top" constant="5" id="yxe-mZ-dUk"/>
                             <constraint firstItem="HkW-Bb-fdz" firstAttribute="leading" secondItem="eod-xo-0Kw" secondAttribute="trailing" constant="2" id="zhr-vC-Bfg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZQg-8P-u8I"/>

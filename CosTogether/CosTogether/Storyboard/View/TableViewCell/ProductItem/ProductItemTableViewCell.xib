@@ -25,28 +25,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="4V1-dM-19Y">
-                        <rect key="frame" x="26.5" y="10" width="159" height="119.5"/>
+                        <rect key="frame" x="26.5" y="15" width="146" height="109.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="4V1-dM-19Y" secondAttribute="height" multiplier="4:3" id="Swj-2o-URK"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="yFF-te-sCc">
-                        <rect key="frame" x="195.5" y="38.5" width="63.5" height="59"/>
+                        <rect key="frame" x="182.5" y="33.5" width="64" height="68.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生魚片" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpo-ue-tpH">
-                                <rect key="frame" x="0.0" y="0.0" width="51" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="51" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單價 $360" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-Rz-64I">
-                                <rect key="frame" x="0.0" y="23" width="63.5" height="16.5"/>
+                                <rect key="frame" x="0.0" y="26.5" width="64" height="19.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="14"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總數 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymf-Yc-6lN">
-                                <rect key="frame" x="0.0" y="42.5" width="47.5" height="16.5"/>
+                                <rect key="frame" x="0.0" y="49" width="48" height="19.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aNb-o4-MaA">
-                        <rect key="frame" x="245" y="63" width="100" height="20"/>
+                        <rect key="frame" x="245" y="63.5" width="100" height="20"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-Va-8je">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -98,7 +98,7 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1g-iP-407">
-                        <rect key="frame" x="281" y="5" width="28" height="53"/>
+                        <rect key="frame" x="281" y="5" width="28" height="53.5"/>
                         <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -110,9 +110,9 @@
                     <constraint firstItem="x1g-iP-407" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6QQ-BP-eg9"/>
                     <constraint firstItem="aNb-o4-MaA" firstAttribute="centerY" secondItem="rfe-Rz-64I" secondAttribute="centerY" multiplier="1.1" id="97O-IX-p4C"/>
                     <constraint firstItem="aNb-o4-MaA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.92" id="JHP-qP-ITi"/>
-                    <constraint firstAttribute="bottom" secondItem="4V1-dM-19Y" secondAttribute="bottom" constant="10" id="OW3-e6-DDv"/>
+                    <constraint firstAttribute="bottom" secondItem="4V1-dM-19Y" secondAttribute="bottom" constant="15" id="OW3-e6-DDv"/>
                     <constraint firstItem="x1g-iP-407" firstAttribute="centerX" secondItem="7JN-su-Cf7" secondAttribute="centerX" id="TtK-DB-rsJ"/>
-                    <constraint firstItem="4V1-dM-19Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hfB-jg-reF"/>
+                    <constraint firstItem="4V1-dM-19Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hfB-jg-reF"/>
                     <constraint firstItem="rfe-Rz-64I" firstAttribute="centerY" secondItem="4V1-dM-19Y" secondAttribute="centerY" id="lgs-hK-gdz"/>
                     <constraint firstItem="4V1-dM-19Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="vHY-nu-jxl"/>
                 </constraints>

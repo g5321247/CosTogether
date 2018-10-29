@@ -34,9 +34,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jIH-K7-15d">
-                                <rect key="frame" x="0.0" y="36.5" width="275" height="99"/>
+                                <rect key="frame" x="0.0" y="36.5" width="275" height="94"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ffv-uO-e5J">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ffv-uO-e5J">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -44,16 +44,16 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚無人加入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg3-bg-US4">
-                                <rect key="frame" x="76.5" y="75.5" width="122" height="21"/>
+                                <rect key="frame" x="76.5" y="73" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.61176470589999998" green="0.62745098040000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-1h-diY">
-                                <rect key="frame" x="0.0" y="138.5" width="275" height="2"/>
+                                <rect key="frame" x="0.0" y="139.5" width="275" height="1"/>
                                 <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="cX0-Ge-XUf"/>
+                                    <constraint firstAttribute="height" constant="1" id="cX0-Ge-XUf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -61,7 +61,7 @@
                         <constraints>
                             <constraint firstItem="4lQ-1h-diY" firstAttribute="leading" secondItem="D75-aG-TaZ" secondAttribute="leading" id="0qz-9j-9cd"/>
                             <constraint firstAttribute="bottom" secondItem="4lQ-1h-diY" secondAttribute="bottom" id="6NT-PA-O6F"/>
-                            <constraint firstAttribute="bottom" secondItem="jIH-K7-15d" secondAttribute="bottom" constant="5" id="HBx-dC-oyv"/>
+                            <constraint firstAttribute="bottom" secondItem="jIH-K7-15d" secondAttribute="bottom" constant="10" id="HBx-dC-oyv"/>
                             <constraint firstItem="Sg3-bg-US4" firstAttribute="centerX" secondItem="jIH-K7-15d" secondAttribute="centerX" id="Kgb-sa-Efb"/>
                             <constraint firstAttribute="trailing" secondItem="4lQ-1h-diY" secondAttribute="trailing" id="MK6-vm-LkO"/>
                             <constraint firstItem="Sg3-bg-US4" firstAttribute="centerY" secondItem="jIH-K7-15d" secondAttribute="centerY" id="OLs-95-0r6"/>

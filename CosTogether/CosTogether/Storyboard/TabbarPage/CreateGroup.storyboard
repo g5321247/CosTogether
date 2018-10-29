@@ -164,7 +164,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東西買太多怕過期嗎？快開分購跟人分享吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rks-ip-rY6">
-                                        <rect key="frame" x="20" y="238.5" width="335" height="65.5"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Rks-ip-rY6" firstAttribute="centerY" secondItem="0No-7W-xum" secondAttribute="centerY" id="2Aa-Ch-XaX"/>
+                                    <constraint firstItem="Rks-ip-rY6" firstAttribute="top" secondItem="0No-7W-xum" secondAttribute="top" constant="40" id="1El-HI-bvU"/>
                                     <constraint firstItem="Rks-ip-rY6" firstAttribute="centerX" secondItem="0No-7W-xum" secondAttribute="centerX" id="B7f-j7-JOd"/>
                                     <constraint firstAttribute="bottom" secondItem="s89-Ow-hZy" secondAttribute="bottom" id="DE3-Wt-Z48"/>
                                     <constraint firstItem="Rks-ip-rY6" firstAttribute="leading" secondItem="0No-7W-xum" secondAttribute="leading" constant="20" id="KKA-VE-haN"/>
@@ -223,7 +223,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想快速累積紅利點數嗎？快開代購幫人購買吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unu-rW-Uct">
-                                        <rect key="frame" x="20" y="238.5" width="335" height="65.5"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -232,11 +232,11 @@
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="HaD-1f-fgK" firstAttribute="leading" secondItem="gdC-rR-UER" secondAttribute="leading" id="7td-D9-mJx"/>
-                                    <constraint firstItem="Unu-rW-Uct" firstAttribute="centerY" secondItem="gdC-rR-UER" secondAttribute="centerY" id="Axy-ml-RBW"/>
                                     <constraint firstItem="HaD-1f-fgK" firstAttribute="top" secondItem="gdC-rR-UER" secondAttribute="top" id="Cbm-Yn-BAQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Unu-rW-Uct" secondAttribute="trailing" constant="20" id="FLm-Fh-jX1"/>
                                     <constraint firstItem="Unu-rW-Uct" firstAttribute="centerX" secondItem="gdC-rR-UER" secondAttribute="centerX" id="FxF-S8-qHF"/>
                                     <constraint firstItem="Unu-rW-Uct" firstAttribute="leading" secondItem="gdC-rR-UER" secondAttribute="leading" constant="20" id="gua-bE-vJS"/>
+                                    <constraint firstItem="Unu-rW-Uct" firstAttribute="top" secondItem="gdC-rR-UER" secondAttribute="top" constant="40" id="h17-rf-mQ8"/>
                                     <constraint firstAttribute="bottom" secondItem="HaD-1f-fgK" secondAttribute="bottom" id="sfq-hQ-dqS"/>
                                     <constraint firstAttribute="trailing" secondItem="HaD-1f-fgK" secondAttribute="trailing" id="tZW-5f-qTz"/>
                                     <constraint firstItem="Unu-rW-Uct" firstAttribute="centerX" secondItem="gdC-rR-UER" secondAttribute="centerX" id="wjR-qn-8DL"/>

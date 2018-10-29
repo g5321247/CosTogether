@@ -139,7 +139,7 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 0
+        return 10
     }
     
     func collectionView(

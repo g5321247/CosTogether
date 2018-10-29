@@ -202,7 +202,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     private func topLogViewSetup() {
         
         topLogView.leftBot.addTarget(self, action: #selector(backBotTapping(_:)), for: .touchUpInside)
-//        topLogView.rightBot.addTarget(self, action: #selector(sendMessageBotTapping(_:)), for: .touchUpInside)
+        
     }
     
     @objc func backBotTapping(_ sender: UIButton) {
@@ -210,20 +210,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         self.navigationController?.popToRootViewController(animated: true)
         
     }
-    
-//    @objc func sendMessageBotTapping(_ sender: UIButton) {
-//
-//        guard let controller = UIStoryboard.chatRoomStoryboard().instantiateViewController(
-//            withIdentifier: String(describing: ChatRoomViewController.self)
-//            ) as? ChatRoomViewController else {
-//
-//                return
-//
-//        }
-//
-//        show(controller, sender: nil)
-//
-//    }
     
     @objc func goToCheckInfo(_ sender: UIButton) {
         
@@ -271,11 +257,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard let user = comments[sender.tag].user else {
-
-            return
-        }
-        
         controller.loadViewIfNeeded()
         
         guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
@@ -303,8 +284,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard let owner = productPic.first?.owner,
-            let ownerId = productPic.first?.userID else {
+        guard let ownerId = productPic.first?.userID else {
             return
         }
         
@@ -352,7 +332,7 @@ extension DetailViewController: UITableViewDelegate {
             
         case .articleInfo:
             
-            return self.view.frame.width * (85 / 375)
+            return self.view.frame.width * (100 / 375)
             
         case .productItems:
             
