@@ -98,6 +98,14 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
             
             delegate.getProductName(name: updatedText)
             
+            guard count <= 6 else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "商品名稱不得超過 6 字")
+                
+                return count <= 6
+                
+            }
+            
             return count <= 6
             
         case numberOfProductTxf:
@@ -110,6 +118,15 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
 
                 return count < 3
             }
+            
+            guard count < 3 else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "數量不得大於一百")
+                
+                return count < 3
+                
+            }
+
             
             delegate.getProductNumber(number: number)
 
@@ -124,6 +141,14 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入正確金額")
 
                 return count < 6
+            }
+            
+            guard count < 6 else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "金額不得大於十萬")
+                
+                return count < 6
+                
             }
             
             delegate.getProductPrice(price: price)
