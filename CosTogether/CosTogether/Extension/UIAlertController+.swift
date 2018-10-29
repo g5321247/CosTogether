@@ -76,6 +76,7 @@ extension UIAlertController {
     }
     static func showActionSheet(
         defaultOption: [String],
+        images: [UIImage]? = nil,
         defalutCompletion: @escaping (UIAlertAction) -> Void
         ) -> UIAlertController {
         
@@ -95,7 +96,7 @@ extension UIAlertController {
         
         action.setValue(UIColor.red, forKey: "titleTextColor")
         
-        for item in defaultOption {
+        for (index, item) in defaultOption.enumerated() {
             
             let action = UIAlertAction(
                 title: item,
@@ -103,6 +104,11 @@ extension UIAlertController {
                 
                     defalutCompletion(action)
                 
+            }
+            
+            if images?[index] != nil {
+                
+                action.setValue(images![index], forKey: "image")
             }
             
             alerController.addAction(action)

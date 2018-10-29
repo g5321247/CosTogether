@@ -84,16 +84,6 @@ class AppendNewItemViewController: UIViewController {
         cell.picIconImage.isHidden = true
     }
     
-    @objc func choseProductImage(_ sender: UIButton) {
-        
-        self.present(
-            alertSheet(),
-            animated: true,
-            completion: nil
-        )
-        
-    }
-
     func editProductDetail(product: ProductModel) {
         
         pictureIsExsist()
@@ -250,7 +240,7 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
         
         productImage = tempImage
         
-        guard  let cell = cell as? ImageTableViewCell else {
+        guard  let cell = cell else {
             return
         }
         
@@ -263,37 +253,43 @@ extension AppendNewItemViewController: UIImagePickerControllerDelegate, UINaviga
 
 extension AppendNewItemViewController {
     
-    private func alertSheet() -> UIAlertController {
+    @objc func choseProductImage(_ sender: UIButton) {
         
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertSheet()
+    }
+    
+    private func alertSheet() {
         
-        let cameraAction = UIAlertAction(title: "拍照", style: .default) { (_) in
+        let alertController = UIAlertController.showActionSheet(
+        defaultOption: ["拍照","從照片庫選取"],
+        images: [#imageLiteral(resourceName: "camera"), #imageLiteral(resourceName: "picture")]) { (action) in
             
-            self.imagePicker.sourceType = .camera
-            self.imagePicker.modalPresentationStyle = .fullScreen
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-        
-        let chosePicAction = UIAlertAction(title: "從照片庫選取", style: .default) { (_) in
+            switch action.title {
+                
+            case "拍照":
             
-            self.imagePicker.sourceType = .photoLibrary
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.modalPresentationStyle = .fullScreen
+                
+                action.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
+                
+                self.present(self.imagePicker, animated: true, completion: nil)
 
+            case "從照片庫選取":
+                
+                self.imagePicker.sourceType = .photoLibrary
+                
+                self.present(self.imagePicker, animated: true, completion: nil)
+            
+            default:
+                
+                break
+            }
+            
+        }
         
-        cameraAction.setValue(#imageLiteral(resourceName: "camera"), forKey: "image")
-        chosePicAction.setValue(#imageLiteral(resourceName: "picture"), forKey: "image")
-        
-        alertController.addAction(cameraAction)
-        alertController.addAction(chosePicAction)
-        alertController.addAction(cancelAction)
-        
-        return alertController
+        self.present(alertController, animated: true,completion: nil)
+
     }
     
 }
