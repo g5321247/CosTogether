@@ -112,23 +112,6 @@ class JoinShareGroupViewController: UIViewController {
 
     }
 
-    @objc func evaluateUser(_ sender: UIButton) {
-        
-        guard let controller = UIStoryboard.profile().instantiateViewController(
-            withIdentifier: String(describing: ProfileViewController.self))
-            as? ProfileViewController else {
-                
-                return
-        }
-        
-        controller.loadViewIfNeeded()
-        
-        controller.userType = .otherUser
-      
-        
-        show(controller, sender: nil)
-    }
-
 }
 
 extension JoinShareGroupViewController: UITableViewDelegate {
@@ -179,8 +162,6 @@ extension JoinShareGroupViewController: UITableViewDataSource {
         }
         
         cell.updateGroupHistory(ownGroup: myGroups[indexPath.row])
-        
-//        cell.baseView.authorImageBot?.addTarget(self, action: #selector (evaluateUser(_:)), for: .touchUpInside)
         
         cell.selectionStyle = .none
 
