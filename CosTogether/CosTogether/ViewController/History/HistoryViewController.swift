@@ -132,11 +132,6 @@ extension HistoryViewController: UITableViewDelegate {
                 return nil
         }
         
-        guard myProducts.count > 0 else {
-            
-            return footerCell
-        }
-        
         footerCell.selfBuyerInfoUpdate(products: myProducts[section].products)
         
         return footerCell
@@ -154,12 +149,12 @@ extension HistoryViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return joinMember.count
+        return myProducts.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return myProducts.count
+        return myProducts[section].products.count
         
     }
     
