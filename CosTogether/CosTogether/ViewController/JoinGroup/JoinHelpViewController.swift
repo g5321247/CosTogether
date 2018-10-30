@@ -130,8 +130,8 @@ extension JoinHelpGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 310
-        
+        return self.view.frame.width / 16 * 9 + 50
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

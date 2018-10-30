@@ -131,7 +131,7 @@ extension JoinShareGroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 310
+        return self.view.frame.width / 16 * 9 + 50
 
     }
     
