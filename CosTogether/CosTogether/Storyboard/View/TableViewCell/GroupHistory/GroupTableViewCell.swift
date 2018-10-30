@@ -17,11 +17,18 @@ class GroupTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewSetup()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+    }
+    
+    private func viewSetup() {
+    
+        productImage?.cornerSetup(cornerRadius: 4)
+    
     }
     
     func updateGroupHistory(ownGroup: OwnGroup) {

@@ -77,12 +77,27 @@ class OwnHelpBuyViewController: UIViewController {
                 self.emptyLbl.isHidden = true
                 self.animationView.isHidden = true
                 
-                self.tableView.reloadData()
+                self.reloadData()
                 
             })
             
         }
         
+        
+    }
+    
+    private func reloadData() {
+        
+        guard myGroups.count > 0 else {
+            
+            tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+            
+            return
+        }
+        
+        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        tableView.reloadData()
         
     }
     
@@ -95,8 +110,6 @@ class OwnHelpBuyViewController: UIViewController {
     }
     
     private func tableViewSetup() {
-        
-        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
         
         tableView.delegate = self
         tableView.dataSource = self

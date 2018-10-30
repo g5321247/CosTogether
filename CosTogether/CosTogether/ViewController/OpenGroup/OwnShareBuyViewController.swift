@@ -70,7 +70,7 @@ class OwnShareBuyViewController: UIViewController {
                 self.emptyLbl.isHidden = true
                 self.animationView.isHidden = true
                 
-                self.tableView.reloadData()
+                self.reloadData()
                 
             })
             
@@ -88,13 +88,26 @@ class OwnShareBuyViewController: UIViewController {
     
     private func tableViewSetup() {
         
-        tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
-        
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
+    private func reloadData() {
+        
+        guard myGroups.count > 0 else {
+            
+            tableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9607843137, blue: 0.9803921569, alpha: 1)
+            
+            return
+        }
+        
+        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        tableView.reloadData()
+        
+    }
+
     @objc func evaluateUser(_ sender: UIButton) {
         
         guard let controller = UIStoryboard.profile().instantiateViewController(
@@ -163,6 +176,7 @@ extension OwnShareBuyViewController: UITableViewDelegate {
 extension OwnShareBuyViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return myGroups.count
     }
     

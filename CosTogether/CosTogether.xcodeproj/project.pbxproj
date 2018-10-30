@@ -74,8 +74,6 @@
 		C8860982215FA649006B736A /* SendCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8860980215FA649006B736A /* SendCommentTableViewCell.swift */; };
 		C8860983215FA649006B736A /* SendCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8860981215FA649006B736A /* SendCommentTableViewCell.xib */; };
 		C888DB28216619010091F6F0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C888DB27216619010091F6F0 /* UIImage+.swift */; };
-		C8B77AFE2169B34F0067AC21 /* NewProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */; };
-		C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */; };
 		C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77B012169BDA70067AC21 /* NewProductView.swift */; };
 		C8B77B042169DD850067AC21 /* AppendProductItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */; };
 		C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B77B052169DDEC0067AC21 /* AppendNewItemViewController.swift */; };
@@ -196,8 +194,6 @@
 		C8860980215FA649006B736A /* SendCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C8860981215FA649006B736A /* SendCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C888DB27216619010091F6F0 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8B77B012169BDA70067AC21 /* NewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductView.swift; sourceTree = "<group>"; };
 		C8B77B032169DD850067AC21 /* AppendProductItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppendProductItem.storyboard; sourceTree = "<group>"; };
 		C8B77B052169DDEC0067AC21 /* AppendNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendNewItemViewController.swift; sourceTree = "<group>"; };
@@ -649,15 +645,6 @@
 			path = UserData;
 			sourceTree = "<group>";
 		};
-		C8B77B002169B3590067AC21 /* NewProduct */ = {
-			isa = PBXGroup;
-			children = (
-				C8B77AFC2169B34F0067AC21 /* NewProductCollectionViewCell.swift */,
-				C8B77AFD2169B34F0067AC21 /* NewProductCollectionViewCell.xib */,
-			);
-			path = NewProduct;
-			sourceTree = "<group>";
-		};
 		C8B77B072169DDF00067AC21 /* AppendNewItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -885,7 +872,6 @@
 		C8FCA3B4215BCD75008724A3 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C8B77B002169B3590067AC21 /* NewProduct */,
 				C84975252157BCF600555855 /* Product */,
 				C8BCF0D9215E230F00A2B1B8 /* Member */,
 				C8E956BB2177249600473C6B /* MyProduct */,
@@ -995,7 +981,6 @@
 				C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */,
 				C8215FE02151FAB8006BC7A3 /* LaunchScreen.storyboard in Resources */,
 				C8EAD96221809348009E8823 /* GroupInfoTableViewCell.xib in Resources */,
-				C8B77AFF2169B34F0067AC21 /* NewProductCollectionViewCell.xib in Resources */,
 				C8693A9A21846D40000250EF /* MainPage.storyboard in Resources */,
 				C823A2662168B1A50066D635 /* Detail.storyboard in Resources */,
 				C8EAD9772180DE35009E8823 /* UserCalculateFooter.xib in Resources */,
@@ -1174,7 +1159,6 @@
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
 				C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */,
 				C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */,
-				C8B77AFE2169B34F0067AC21 /* NewProductCollectionViewCell.swift in Sources */,
 				C8154385215340A800B3446D /* FacebookManager.swift in Sources */,
 				C8497505215670AF00555855 /* TabViewController.swift in Sources */,
 				C8215FD62151FAB6006BC7A3 /* AppDelegate.swift in Sources */,

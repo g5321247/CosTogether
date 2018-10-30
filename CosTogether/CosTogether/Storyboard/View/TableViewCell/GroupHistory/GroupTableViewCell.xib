@@ -20,44 +20,44 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dq6-sH-BZP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="226.5"/>
+                        <rect key="frame" x="26.5" y="15" width="322.5" height="211.5"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-co-x2v">
-                        <rect key="frame" x="7.5" y="298" width="360" height="1"/>
+                        <rect key="frame" x="26.5" y="298" width="322.5" height="1"/>
                         <color key="backgroundColor" red="0.75518626659999999" green="0.77592652159999997" blue="0.82132905119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="G6r-cw-mAf"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nA-ub-zJQ">
-                        <rect key="frame" x="7.5" y="241.5" width="341.5" height="20.5"/>
+                        <rect key="frame" x="26.5" y="241.5" width="322.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9J3-gL-gjb">
-                        <rect key="frame" x="303" y="179" width="46" height="30"/>
+                        <rect key="frame" x="277" y="179" width="46" height="30"/>
                         <state key="normal" title="Button"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWp-Kg-ZEg">
-                        <rect key="frame" x="7.5" y="267" width="341.5" height="21"/>
+                        <rect key="frame" x="26.5" y="267" width="322.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GOo-co-x2v" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.98" id="6Fe-V9-4BI"/>
-                    <constraint firstItem="Dq6-sH-BZP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7pi-Nu-Wjd"/>
+                    <constraint firstItem="GOo-co-x2v" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="6Fe-V9-4BI"/>
+                    <constraint firstItem="Dq6-sH-BZP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="7pi-Nu-Wjd"/>
                     <constraint firstItem="TWp-Kg-ZEg" firstAttribute="leading" secondItem="2nA-ub-zJQ" secondAttribute="leading" id="HBF-au-WQn"/>
                     <constraint firstItem="9J3-gL-gjb" firstAttribute="trailing" secondItem="Dq6-sH-BZP" secondAttribute="trailing" constant="-26" id="KsV-Jc-lD0"/>
                     <constraint firstItem="GOo-co-x2v" firstAttribute="top" secondItem="TWp-Kg-ZEg" secondAttribute="bottom" constant="10" id="Ldc-tR-iXc"/>
-                    <constraint firstAttribute="trailing" secondItem="Dq6-sH-BZP" secondAttribute="trailing" id="RIj-ks-epz"/>
+                    <constraint firstItem="Dq6-sH-BZP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="RIj-ks-epz"/>
                     <constraint firstItem="2nA-ub-zJQ" firstAttribute="top" secondItem="Dq6-sH-BZP" secondAttribute="bottom" constant="15" id="S4Y-3V-1Xm"/>
                     <constraint firstItem="TWp-Kg-ZEg" firstAttribute="trailing" secondItem="2nA-ub-zJQ" secondAttribute="trailing" id="Zoq-by-sYC"/>
                     <constraint firstItem="9J3-gL-gjb" firstAttribute="bottom" secondItem="Dq6-sH-BZP" secondAttribute="bottom" constant="-17.5" id="e4T-JH-MUz"/>
-                    <constraint firstItem="GOo-co-x2v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.02" id="eYm-DI-p1M"/>
-                    <constraint firstItem="Dq6-sH-BZP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="erL-dn-dte"/>
+                    <constraint firstItem="GOo-co-x2v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.07" id="eYm-DI-p1M"/>
+                    <constraint firstItem="Dq6-sH-BZP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="erL-dn-dte"/>
                     <constraint firstItem="2nA-ub-zJQ" firstAttribute="leading" secondItem="GOo-co-x2v" secondAttribute="leading" id="gna-xp-0zF"/>
                     <constraint firstItem="2nA-ub-zJQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.93" id="mj7-pe-X1a"/>
                     <constraint firstAttribute="bottom" secondItem="Dq6-sH-BZP" secondAttribute="bottom" constant="80" id="pjB-Wx-SNo"/>
