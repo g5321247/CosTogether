@@ -13,9 +13,6 @@ import NotificationBannerSwift
 class AppendNewItemViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var newProductPicBot: UIButton!
-    @IBOutlet weak var remindChosePicLbl: UILabel!
-    @IBOutlet weak var appendProductBot: UIButton!
     
     var productName: String?
     var productPrice: Int?
@@ -74,29 +71,22 @@ class AppendNewItemViewController: UIViewController {
         cell.picIconImage.isHidden = true
     }
     
-//    func editProductDetail(product: ProductModel) {
-//        
-//        pictureIsExsist()
-//        
-//        newProductPicBot.setImage(product.updateImage, for: .normal)
-//    }
+    func editProductDetail(product: ProductModel) {
+
+        self.product = product
+        
+        changeProductInfo(product: product)
+        tableView.reloadData()
+        
+        pictureIsExsist()
+
+    }
     
-//    @IBAction func appendNewProduct(_ sender: UIButton) {
-//
-////        prodctSettingView.updateProductInfo()
-//
-//        guard let product = product,
-//        product.updateImage != nil,
-//        let passProductInfo = passProductInfo else {
-//
-//            return
-//        }
-//
-//        passProductInfo(product)
-//
-//        navigationController?.popViewController(animated: true)
-//
-//    }
+    private func changeProductInfo(product: ProductModel) {
+        
+        
+        
+    }
     
     func appendProduct(product: @escaping (ProductModel) -> Void) {
         
@@ -165,6 +155,13 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
             cell.addBot.addTarget(self, action: #selector (choseProductImage(_:)), for: .touchUpInside)
             
+            
+            if let product = product {
+                
+                cell.updateProduct(product: product)
+                
+            }
+            
             return cell
             
         case 1:
@@ -177,6 +174,12 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
             cell.delegate = self
             
+            if let product = product {
+                
+                cell.updateProduct(product: product)
+                
+            }
+
             return  cell
             
         case 2:
@@ -226,15 +229,15 @@ extension AppendNewItemViewController: ProductSettingDelegate {
     }
     
     func getProductSetting(product: ProductModel) {
-        
+
         self.product = product
-        
-        guard let productImage = newProductPicBot.imageView?.image else {
-            
+
+        guard let productImage = cell?.productImageBot.imageView?.image else {
+
             BaseNotificationBanner.warningBanner(subtitle: "請上傳商品照片")
             return
         }
-        
+
         self.product!.updateImage = productImage
     }
     

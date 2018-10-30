@@ -87,7 +87,7 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwI-pd-l7d">
-                                        <rect key="frame" x="331" y="42" width="20" height="20"/>
+                                        <rect key="frame" x="335" y="44" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jwI-pd-l7d" secondAttribute="height" multiplier="1:1" id="Qcm-UN-9BW"/>
                                         </constraints>
@@ -118,7 +118,7 @@
                         <constraints>
                             <constraint firstItem="pnF-FA-sJe" firstAttribute="leading" secondItem="3wH-zl-jcH" secondAttribute="leading" id="2Fg-6T-AgO"/>
                             <constraint firstItem="LZk-1D-eEt" firstAttribute="leading" secondItem="3wH-zl-jcH" secondAttribute="leading" id="Q9z-e8-OCn"/>
-                            <constraint firstItem="jwI-pd-l7d" firstAttribute="width" secondItem="y2I-jc-0KC" secondAttribute="height" multiplier="20:667" id="WTH-uj-RPs"/>
+                            <constraint firstItem="jwI-pd-l7d" firstAttribute="width" secondItem="y2I-jc-0KC" secondAttribute="height" multiplier="16:667" id="WTH-uj-RPs"/>
                             <constraint firstItem="pnF-FA-sJe" firstAttribute="top" secondItem="LZk-1D-eEt" secondAttribute="bottom" constant="10" id="XAI-ES-Z5s"/>
                             <constraint firstItem="uYH-K9-bsj" firstAttribute="top" secondItem="LZk-1D-eEt" secondAttribute="bottom" constant="10" id="aGH-8G-MIC"/>
                             <constraint firstItem="uYH-K9-bsj" firstAttribute="leading" secondItem="3wH-zl-jcH" secondAttribute="leading" id="aoc-F8-NEO"/>

@@ -18,9 +18,7 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
     @IBOutlet weak var pickerViewBackgroundView: UIView!
-    @IBOutlet weak var createArticle: CreateArticleView!
     @IBOutlet var pickerView: PickerView!
-    @IBOutlet weak var collectionBackgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     var cell: GroupInfoTableViewCell?
@@ -59,7 +57,7 @@ class CreateGroupViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
         setUpCell()
     }
     
@@ -213,15 +211,6 @@ class CreateGroupViewController: UIViewController {
         tableView.reloadData()
         
     }
-    
-//    @objc func cityTxfTapping(_ textField: UITextField) {
-//
-//        UIView.animate(withDuration: 0.5) {
-//            self.view.layoutIfNeeded()
-//
-//        }
-//
-//    }
     
     @objc func cancelBotTapping(_ sender: UIButton) {
         
@@ -390,6 +379,33 @@ extension CreateGroupViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            guard let controller = goToAppendProduct() as? AppendNewItemViewController else {
+    
+                return
+            }
+    
+            controller.loadViewIfNeeded()
+    
+           let sheet = editProduct(
+                controller: controller,
+                product: products[indexPath.row],
+                indexPath: indexPath
+            )
+    
+            self.present(sheet, animated: true, completion: nil)
+        
+        default:
+            break
+        }
+    }
     
 }
 
@@ -434,6 +450,7 @@ extension CreateGroupViewController: UITableViewDataSource {
             }
             
             cell.updateProduct(product: products[indexPath.row])
+            cell.productImageBot.isEnabled = false
             
             return cell
         
@@ -444,6 +461,8 @@ extension CreateGroupViewController: UITableViewDataSource {
                 return UITableViewCell()
                 
             }
+            
+            cell.clear()
             
             cell.addBot.addTarget(self, action: #selector (appendProductBotTapping(_:)), for: .touchUpInside)
             
@@ -579,4 +598,58 @@ extension CreateGroupViewController: GroupSettingDelegate {
         groupInfo = info
     }
     
+}
+
+extension CreateGroupViewController {
+
+    private func editProduct(
+        controller: AppendNewItemViewController,
+        product: ProductModel,
+        indexPath: IndexPath
+        ) -> UIAlertController {
+        
+        let alertController = UIAlertController.showActionSheet(
+        defaultOption: ["編輯商品", "刪除商品"]) { [weak self] (action) in
+            
+            switch action.title {
+                
+            case "編輯商品":
+                
+                controller.editProductDetail(product: product)
+                
+                controller.appendProduct(product: { [weak self] (product) in
+                    
+                    self?.products[indexPath.row] = product
+                    
+                    BaseNotificationBanner.sucessBanner(
+                        subtitle: "商品修改成功",
+                        style: .info
+                    )
+                    
+                    self?.tableView.reloadData()
+                })
+                
+                self?.show(controller, sender: nil)
+            
+            case "刪除商品":
+                
+                self?.products.remove(at: indexPath.row)
+                self?.tableView.reloadData()
+                
+                BaseNotificationBanner.sucessBanner(
+                    subtitle: "商品刪除成功",
+                    style: .info
+                )
+                
+                self?.checkoutProductNumber()
+                
+            default:
+                break
+            }
+            
+        }
+        
+        return alertController
+    }
+
 }

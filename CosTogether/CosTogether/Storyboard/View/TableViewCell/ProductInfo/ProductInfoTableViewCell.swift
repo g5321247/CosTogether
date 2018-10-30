@@ -76,6 +76,14 @@ class ProductInfoTableViewCell: UITableViewCell {
 
     }
     
+    func updateProduct(product: ProductModel) {
+        
+        productNameTxf.text = product.productName
+        numberOfProductTxf.text = "\(product.numberOfItem)"
+        productPriceTxf.text = "\(product.price)"
+        
+    }
+
 }
 
 extension ProductInfoTableViewCell: UITextFieldDelegate {
