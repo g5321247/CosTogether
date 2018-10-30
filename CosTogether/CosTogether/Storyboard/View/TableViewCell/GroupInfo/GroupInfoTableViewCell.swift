@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol GroupSettingDelegate: AnyObject {
+    
+    func getGroupTitle(title: String?)
+    func getGroupInfo(info: String?)
+    
+}
+
 class GroupInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var locationTxf: UITextField!
@@ -15,12 +22,8 @@ class GroupInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var otherInfoTextView: UITextView!
     @IBOutlet weak var createGroupBot: UIButton!
     @IBOutlet weak var cancelBot: UIButton!
-
-    @IBAction func cancelBotTapping(_ sender: UIButton) {
-        
-        
-        
-    }
+    
+    weak var delegate: GroupSettingDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +35,18 @@ class GroupInfoTableViewCell: UITableViewCell {
 
     }
  
+    private func textfieldDelegateSet() {
+        
+        otherInfoTextView.delegate = self
+        titleTxf.delegate = self
+        locationTxf.delegate = self
+        
+    }
+    
     private func setup() {
         
-         viewSetup()
-        
+        viewSetup()
+        textfieldDelegateSet()
     }
     
     private func viewSetup() {
@@ -66,7 +77,50 @@ class GroupInfoTableViewCell: UITableViewCell {
         
     }
     
-  
+}
+
+extension GroupInfoTableViewCell: UITextFieldDelegate {
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard  let delegate = delegate,
+            let text = textField.text,
+            let textRange = Range(range, in: text) else {
+                return true
+        }
+        
+        switch textField {
+            
+        case titleTxf:
+            
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            
+            delegate.getGroupTitle(title: updatedText)
+
+        default:
+            break
+        }
+        
+        return true
+    }
+    
+}
+
+extension GroupInfoTableViewCell: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        guard let delegate = delegate,
+            let text = textView.text,
+            let textRange = Range(range, in: text) else {
+                return true
+        }
+
+        let updatedText = text.replacingCharacters(in: textRange, with: text)
+
+        delegate.getGroupInfo(info: updatedText)
+        
+        return true
+    }
     
 }

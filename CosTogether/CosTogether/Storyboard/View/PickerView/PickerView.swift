@@ -15,7 +15,6 @@ protocol PickerViewDelegate: AnyObject {
 class PickerView: UIView {
 
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var confirmBot: UIButton!
     
     weak var delegate: PickerViewDelegate?
     var cityRow: Int = 0
@@ -37,18 +36,11 @@ class PickerView: UIView {
         viewSetup()
         pickerViewSetup()
         
-        confirmBot.addTarget(self, action: #selector (conformBotTapping(_:)), for: .touchUpInside)
     }
     
     private func viewSetup() {
         
         self.cornerSetup(cornerRadius: 20)
-        confirmBot.cornerSetup(
-            cornerRadius: 0,
-            borderWidth: 1,
-            borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
-            maskToBounds: true
-        )
     }
     
     private func pickerViewSetup() {
@@ -57,13 +49,7 @@ class PickerView: UIView {
         pickerView.dataSource = self
 
     }
-    
-    @objc func conformBotTapping(_ sender: UIButton) {
-                
-        delegate?.passCity(city: city[cityRow])
         
-    }
-    
 }
 
 extension PickerView: UIPickerViewDelegate {
@@ -98,7 +84,8 @@ extension PickerView: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-            cityRow = row
+        delegate?.passCity(city: city[row])
+
     }
     
     // swiftlint:enable identifier_name

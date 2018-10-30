@@ -17,12 +17,13 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
-    @IBOutlet weak var bottomConstriant: NSLayoutConstraint!
     @IBOutlet weak var pickerViewBackgroundView: UIView!
     @IBOutlet weak var createArticle: CreateArticleView!
-    @IBOutlet weak var pickerView: PickerView!
+    @IBOutlet var pickerView: PickerView!
     @IBOutlet weak var collectionBackgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var cell: GroupInfoTableViewCell?
     
     let refrence = Database.database().reference()
 
@@ -34,7 +35,9 @@ class CreateGroupViewController: UIViewController {
     
     var openGroupType: OpenGroupType = .shareBuy
 
+    var groupTitle: String?
     var city: String?
+    var groupInfo: String?
     
     let firebaseManager = FirebaseManager()
     
@@ -75,7 +78,6 @@ class CreateGroupViewController: UIViewController {
         pickerView.delegate = self
         
         makeKey()
-        
         tableViewSetup()
     }
     
@@ -140,7 +142,7 @@ class CreateGroupViewController: UIViewController {
 
     func checkProductContent() -> Group? {
         
-        guard let articleTitle = createArticle.titleTxf.text,
+        guard let articleTitle = groupTitle,
             articleTitle != "" else {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入標題")
@@ -156,7 +158,7 @@ class CreateGroupViewController: UIViewController {
 
         }
         
-        guard let articleContent = createArticle.contentTextView.text else {
+        guard let articleContent = groupInfo else {
                 
                 BaseNotificationBanner.warningBanner(subtitle: "請輸入詳細資訊內容")
                 
@@ -200,25 +202,26 @@ class CreateGroupViewController: UIViewController {
         checkoutProductNumber()
         passCity(city: "選擇縣市")
         
-        createArticle.contentTextView.text = ""
-        createArticle.titleTxf.text = ""
+        guard let cell = cell else {
+            return
+        }
+        
+        cell.locationTxf.text = ""
+        cell.otherInfoTextView.text = ""
+        cell.titleTxf.text = ""
         
         tableView.reloadData()
         
     }
     
-    @IBAction func cityBotTapping(_ sender: UIButton) {
-        
-        pickerViewBackgroundView.isHidden = false
-
-        bottomConstriant.constant = -100
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-            
-        }
-        
-    }
+//    @objc func cityTxfTapping(_ textField: UITextField) {
+//
+//        UIView.animate(withDuration: 0.5) {
+//            self.view.layoutIfNeeded()
+//
+//        }
+//
+//    }
     
     @objc func cancelBotTapping(_ sender: UIButton) {
         
@@ -347,15 +350,19 @@ extension CreateGroupViewController: PickerViewDelegate {
         
         pickerViewBackgroundView.isHidden = true
         
-        bottomConstriant.constant = 280
-
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
             
         }
         
         self.city = city
-        createArticle.choseCityBot.setTitle(city, for: .normal)
+        
+        guard let cell = cell else {
+            
+            return
+        }
+        
+        cell.locationTxf.text = city
     }
     
 }
@@ -450,7 +457,14 @@ extension CreateGroupViewController: UITableViewDataSource {
                 
             }
             
+            self.cell = cell
+            
+            cell.delegate = self
+            
+            cell.locationTxf.inputView = pickerView
+            
             cell.createGroupBot.addTarget(self, action: #selector(uploadNewGroup(_:)), for: .touchUpInside)
+            
             cell.cancelBot.addTarget(self, action: #selector (cancelBotTapping(_:)), for: .touchUpInside)
             
             return  cell
@@ -463,7 +477,6 @@ extension CreateGroupViewController: UITableViewDataSource {
         }
         
     }
-    
     
 }
 
@@ -551,4 +564,19 @@ extension CreateGroupViewController {
         
     }
 
+}
+
+extension CreateGroupViewController: GroupSettingDelegate {
+   
+    func getGroupTitle(title: String?) {
+        
+        groupTitle = title
+        
+    }
+    
+    func getGroupInfo(info: String?) {
+        
+        groupInfo = info
+    }
+    
 }
