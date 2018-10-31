@@ -8,30 +8,21 @@
 
 import Foundation
 
-enum OpenGroupType: String {
+enum OpenGroupType: String, Codable{
     
     case shareBuy = "分購"
     case helpBuy = "代購"
  
-//    func numberOfRow() -> Int {
-//
-//        switch self {
-//
-//        case .shareBuy(let number):
-//
-//            return number
-//
-//        case .helpBuy(let number):
-//
-//            return number
-//
-//        }
-    
+    enum CodingKeys: String, CodingKey {
         
-//    }
+        case shareBuy = "分購"
+        case helpBuy = "代購"
+
+    }
+    
 }
 
-enum MyGroup: String {
+enum MyGroup: String, Codable {
     
     case join
     case own

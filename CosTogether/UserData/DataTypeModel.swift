@@ -16,17 +16,17 @@ struct DataType {
     
 }
 
-protocol DataProtocol {
+protocol DataProtocol: Codable {
     
 }
 
-struct MyProduct {
+struct MyProduct: Codable {
     
     let user: UserModel
     var products: [ProductModel]
 }
 
-struct OwnGroup: DataProtocol {
+struct OwnGroup: DataProtocol, Codable {
     
     let groupType: OpenGroupType
     let groupId: String
@@ -48,7 +48,7 @@ struct OwnGroup: DataProtocol {
 
 }
 
-struct Group: DataProtocol {
+struct Group: DataProtocol, Codable {
     
     let openType: OpenGroupType
     let article: ArticleModel
@@ -79,13 +79,13 @@ struct Group: DataProtocol {
     
 }
 
-struct MainPageViewModel: DataProtocol {
+struct MainPageViewModel: DataProtocol, Codable {
     
     let user: UserModel
     let producet: ProductModel
 }
 
-struct ArticleModel: DataProtocol {
+struct ArticleModel: DataProtocol, Codable {
     
     let articleTitle: String
     
@@ -97,7 +97,7 @@ struct ArticleModel: DataProtocol {
         
 }
 
-struct CommentModel: DataProtocol {
+struct CommentModel: DataProtocol, Codable {
     
     let postDate: String
     let comment: String
@@ -114,14 +114,14 @@ struct CommentModel: DataProtocol {
     }
 }
 
-struct AboutMyself {
+struct AboutMyself: Codable {
     
     var phoneNumber: String?
     var description: String?
     
 }
 
-struct UserModel: DataProtocol {
+struct UserModel: DataProtocol, Codable {
         
     let userImage: String
     
@@ -229,4 +229,52 @@ struct ProductModel: DataProtocol {
         )
 
     }
+}
+
+extension ProductModel: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case productName
+        
+        case productImage
+        
+        case numberOfItem
+        
+        case price
+        
+        case updateImage
+    }
+    
+    init(from decoder: Decoder) throws {
+        
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        productName = try values.decode(String.self, forKey: .productName)
+        productImage = try values.decode(String.self, forKey: .productImage)
+        numberOfItem = try values.decode(Int.self, forKey: .numberOfItem)
+        
+        price = try values.decode(Int.self, forKey: .price)
+        
+        let imageDataBase64String = try values.decode(String.self, forKey: .updateImage)
+        if let data = Data(base64Encoded: imageDataBase64String) {
+            updateImage = UIImage(data: data)
+        } else {
+            updateImage = nil
+        }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(productName, forKey: .productName)
+        try container.encode(productImage, forKey: .productImage)
+        try container.encode(numberOfItem, forKey: .numberOfItem)
+        
+        if let updateImage = updateImage, let imageData = updateImage.pngData() {
+            let imageDataBase64String = imageData.base64EncodedString()
+            try container.encode(imageDataBase64String, forKey: .updateImage)
+        }
+    }
+
+    
 }
