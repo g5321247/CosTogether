@@ -9,9 +9,7 @@
 import UIKit
 
 enum CellClass: Equatable {
-    
-    #warning ("把 comment 弄回來")
-    
+        
     case productPic
     case articleInfo
     case productItems(Int)

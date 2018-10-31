@@ -298,6 +298,11 @@ extension ProfileViewController {
 
             NotificationBanner.warningBanner(subtitle: "請輸入有效電話")
             
+            firebaseManager.updateAboutMyself(
+                description: aboutMyselfTextView.text,
+                phoneNumber: phoneTxf.text
+            )
+
             SVProgressHUD.dismiss()
 
             return

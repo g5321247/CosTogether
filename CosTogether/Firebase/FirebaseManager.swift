@@ -690,7 +690,7 @@ extension FirebaseManager {
             "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself/phoneNumber": phoneNumber
             ]
         
-        refrence.updateChildValues(childUpdates)
+        refrence.updateChildValues(childUpdates as [AnyHashable : Any])
 
     }
     
