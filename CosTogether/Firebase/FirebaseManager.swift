@@ -26,6 +26,9 @@ enum FirebaseType: String {
 
 struct FirebaseManager {
     
+    let decoder = JSONDecoder()
+    let encoder = JSONEncoder()
+    
     func logInFirebase(
         token: String,
         sucess: @escaping (UserInfo) -> Void,
@@ -126,77 +129,92 @@ struct FirebaseManager {
         
         refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
             
-            let value = snapshot.value as? NSDictionary
+            guard let value = snapshot.value as? NSDictionary else {
+                
+                return
+            }
+            
             
             let groupId = snapshot.key
             
-            guard let article = value?["article"] as? NSDictionary,
-                let location = article["location"] as? String,
-                let postDate = article["postDate"] as? String,
-                let title = article["title"] as? String,
-                let content = article["content"] as? String else {
-                    
-                    return
-        
+            do {
+
+                let data = try JSONSerialization.data(withJSONObject: value)
+
+                let article = try self.decoder.decode(ArticleModel.self, from: data)
+                
+            } catch {
+                
+                
             }
             
-            let articleModel = ArticleModel(
-                articleTitle: title,
-                location: location,
-                postDate: postDate,
-                content: content
-                )
+//            guard let article = value?["article"] as? NSDictionary,
+//                let location = article["location"] as? String,
+//                let postDate = article["postDate"] as? String,
+//                let title = article["title"] as? String,
+//                let content = article["content"] as? String else {
+//
+//                    return
+//
+//            }
             
-            guard let products = value?["products"] as? NSDictionary,
-                let productName = products.allKeys as? [String] else {
-                    
-                    
-                    return
-            }
+//            let articleModel = ArticleModel(
+//                articleTitle: title,
+//                location: location,
+//                postDate: postDate,
+//                content: content
+//                )
+//
+//            guard let products = value?["products"] as? NSDictionary,
+//                let productName = products.allKeys as? [String] else {
+//
+//
+//                    return
+//            }
             
             var productsArray: [ProductModel] = []
             
-            for value in productName {
-                
-                guard let product = products[value] as? NSDictionary,
-                    let imageUrl = product["imageUrl"] as? String,
-                    let numberOfItem = product["numberOfItem"] as? Int,
-                    let price = product["price"] as? Int else {
-                        
-                        return
-                }
-                
-                productsArray.append(
-                    ProductModel(
-                        productName: value,
-                        productImage: imageUrl,
-                        numberOfItem: numberOfItem,
-                        price: price
-                    )
-                )
-                
-            }
+//            for value in productName {
+//
+//                guard let product = products[value] as? NSDictionary,
+//                    let imageUrl = product["imageUrl"] as? String,
+//                    let numberOfItem = product["numberOfItem"] as? Int,
+//                    let price = product["price"] as? Int else {
+//
+//                        return
+//                }
             
-            guard let users = value?["users"] as? NSDictionary,
-                let ownerId = users["ownerId"] as? String else {
-                    
-                    return
-            }
+//                productsArray.append(
+//                    ProductModel(
+//                        productName: value,
+//                        productImage: imageUrl,
+//                        numberOfItem: numberOfItem,
+//                        price: price
+//                    )
+//                )
+//
+//            }
             
-            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-                
-                let group = Group(
-                    openType: groupType,
-                    article: articleModel,
-                    products: productsArray,
-                    userID: ownerId,
-                    owner: userModel,
-                    groupId: groupId
-                )
-                
-                completion(group)
-                
-            })
+//            guard let users = value?["users"] as? NSDictionary,
+//                let ownerId = users["ownerId"] as? String else {
+//
+//                    return
+//            }
+            
+//            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+//
+//                let group = Group(
+//                    openType: groupType,
+//                    article: articleModel,
+//                    products: productsArray,
+//                    userID: ownerId,
+//                    owner: userModel,
+//                    groupId: groupId
+//                )
+//
+//                completion(group)
+//
+//            })
 
         }) { (error) in
             print(error.localizedDescription)
@@ -207,7 +225,11 @@ struct FirebaseManager {
     func downloadGroupUser(group: Group, completion: @escaping ([String]) -> Void) {
         
         let refrence = Database.database().reference()
-    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("users").observe(.childAdded) { (snapshot) in
+        
+        guard let openType = group.openType else {
+            return
+        }
+    refrence.child("group").child(openType.rawValue).child(group.groupId!).child("users").observe(.childAdded) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
         
@@ -223,7 +245,11 @@ struct FirebaseManager {
     func downloadCommentUser(group: Group, completion: @escaping (CommentModel) -> Void) {
 
         let refrence = Database.database().reference()
-    refrence.child("group").child(group.openType.rawValue).child(group.groupId!).child("comment").observe(.childAdded) { (snapshot) in
+        
+        guard let openType = group.openType else {
+            return
+        }
+    refrence.child("group").child(openType.rawValue).child(group.groupId!).child("comment").observe(.childAdded) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
         
@@ -294,8 +320,12 @@ struct FirebaseManager {
 extension FirebaseManager {
     
     private func uploadArticle(refrence: DatabaseReference, key: String, group: Group) {
+    
+        guard let openType = group.openType else {
+            return
+        }
         
-        refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("article").setValue(
+        refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("article").setValue(
             
             [
                 "title": group.article.articleTitle,
@@ -309,9 +339,13 @@ extension FirebaseManager {
     
     private func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
         
+        guard let openType = group.openType else {
+            return
+        }
+        
         for value in group.products {
             
-            refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("products").child(value.productName).setValue(
+            refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("products").child(value.productName).setValue(
                 
                 [
                     "productName": value.productName,
@@ -331,14 +365,19 @@ extension FirebaseManager {
         guard  let userId = Auth.auth().currentUser?.uid else {
             return
         }
+        
+        guard let openType = group.openType else {
+            return
+        }
 
-        refrence.child("group").child(group.openType.rawValue).child(key).child("users").setValue(
+
+        refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
             [
                 "ownerId": group.userID,
             ]
         )
         
-        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").child(group.openType.rawValue).updateChildValues(
+        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).updateChildValues(
             [
                 key: key
             ]
@@ -613,8 +652,13 @@ extension FirebaseManager {
     
     func filterUser(userId: String, group: Group, completion: @escaping ([ProductModel]) -> Void) {
         
+        guard let openType = group.openType else {
+            return
+        }
+
+        
         let refrence = Database.database().reference()
-        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("join").child(group.openType.rawValue).child(group.groupId!).observeSingleEvent(of: .value) { (snapshot) in
+        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("join").child(openType.rawValue).child(group.groupId!).observeSingleEvent(of: .value) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
             
@@ -652,17 +696,22 @@ extension FirebaseManager {
             return
         }
         
+        guard let openType = group.openType else {
+            return
+        }
+
+        
         if let memberIds = group.memberID {
             
             for memberId in memberIds {
-                refrence.child("users").child(memberId).child("userInfo").child("myGroup").child("join").child(group.openType.rawValue).child(groupId).removeValue()
+                refrence.child("users").child(memberId).child("userInfo").child("myGroup").child("join").child(openType.rawValue).child(groupId).removeValue()
                 
             }
             
         }
-    refrence.child("users").child(group.userID).child("userInfo").child("myGroup").child("own").child(group.openType.rawValue).child(groupId).removeValue()
+    refrence.child("users").child(group.userID).child("userInfo").child("myGroup").child("own").child(openType.rawValue).child(groupId).removeValue()
 
-        refrence.child("group").child(group.openType.rawValue).child(groupId).removeValue()
+        refrence.child("group").child(openType.rawValue).child(groupId).removeValue()
     }
     
     func detectChildRemove(openGroupType: OpenGroupType, completion: @escaping ([String]) -> Void) {

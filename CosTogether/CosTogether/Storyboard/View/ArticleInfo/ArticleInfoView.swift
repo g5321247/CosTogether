@@ -26,17 +26,21 @@ class ArticleInfoView: UIView {
         
     }
     
-    func updateArticle(groupArticle: Group) {
+    func updateArticle(group: Group) {
         
-        authorNameLbl?.text = groupArticle.owner?.userName
+        authorNameLbl?.text = group.owner?.userName
         
-        postDateLbl.text = groupArticle.article.postDate
+        postDateLbl.text = group.article.postDate
         
-        locationLbl?.text = groupArticle.article.location
+        locationLbl?.text = group.article.location
         
-        tagLbl?.text = groupArticle.openType.rawValue
+        guard let openType = group.openType else {
+            return
+        }
+
+        tagLbl?.text = openType.rawValue
         
-        guard let authorUrl = groupArticle.owner?.userImage,
+        guard let authorUrl = group.owner?.userImage,
             authorUrl != "" else {
             
                 authorImageBot.imageView?.image = #imageLiteral(resourceName: "profile_sticker_placeholder02")

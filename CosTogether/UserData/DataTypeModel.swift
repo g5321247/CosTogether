@@ -50,7 +50,7 @@ struct OwnGroup: DataProtocol, Codable {
 
 struct Group: DataProtocol, Codable {
     
-    let openType: OpenGroupType
+    let openType: OpenGroupType?
     let article: ArticleModel
     let products: [ProductModel]
     let userID: String

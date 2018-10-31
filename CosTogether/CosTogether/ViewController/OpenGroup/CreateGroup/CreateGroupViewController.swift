@@ -17,7 +17,6 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var newProductBot: UIButton!
     @IBOutlet weak var numberOfProductCategoryLbl: UILabel!
-    @IBOutlet weak var pickerViewBackgroundView: UIView!
     @IBOutlet var pickerView: PickerView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -72,7 +71,6 @@ class CreateGroupViewController: UIViewController {
     
     private func setup() {
         
-        pickerViewBackgroundView.isHidden = true
         pickerView.delegate = self
         
         makeKey()
@@ -223,13 +221,6 @@ class CreateGroupViewController: UIViewController {
 extension CreateGroupViewController: PickerViewDelegate {
    
     func passCity(city: String) {
-        
-        pickerViewBackgroundView.isHidden = true
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-            
-        }
         
         self.city = city
         
@@ -433,9 +424,13 @@ extension CreateGroupViewController {
             
             self.dispatchGroup.notify(queue: .main) {
                 
+                guard let openType = group.openType else {
+                    return
+                }
+
                 completion(
                     Group(
-                        openType: group.openType,
+                        openType: openType,
                         article: group.article,
                         products: self.products,
                         userID: group.userID

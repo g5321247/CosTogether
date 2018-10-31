@@ -14,7 +14,15 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productNumberLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
-    @IBOutlet weak var productImageBot: UIButton!
+    
+    @IBOutlet weak var productImageBot: UIButton! {
+        
+        didSet {
+            print("yes")
+        }
+        
+    }
+    
     @IBOutlet weak var addBot: UIButton!
     
     override func awakeFromNib() {
@@ -58,7 +66,7 @@ class ImageTableViewCell: UITableViewCell {
         }
         
         productImageBot.setImage(image, for: .normal)
-        
+    
     }
     
     private func productIsExsit(flag: Bool) {
@@ -77,7 +85,6 @@ class ImageTableViewCell: UITableViewCell {
         productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-
     }
     
     func updateName(name: String) {

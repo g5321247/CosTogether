@@ -107,10 +107,6 @@
                                 <rect key="frame" x="0.0" y="135" width="375" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovl-Yu-nMA" userLabel="PickerBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-br-gNS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
@@ -157,8 +153,6 @@
                         <constraints>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="trailing" secondItem="13S-4L-TBB" secondAttribute="trailing" constant="10" id="6f8-H8-4aS"/>
                             <constraint firstItem="SDu-br-gNS" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" id="7mG-ZJ-f33"/>
-                            <constraint firstItem="Lak-e3-1qA" firstAttribute="bottom" secondItem="Ovl-Yu-nMA" secondAttribute="bottom" constant="-1" id="7uB-Ag-6G9"/>
-                            <constraint firstItem="Ovl-Yu-nMA" firstAttribute="trailing" secondItem="Lak-e3-1qA" secondAttribute="trailing" id="8Pz-6F-OVG"/>
                             <constraint firstAttribute="trailing" secondItem="SDu-br-gNS" secondAttribute="trailing" id="IQg-MZ-Iut"/>
                             <constraint firstItem="H5s-Ch-kHY" firstAttribute="top" secondItem="13S-4L-TBB" secondAttribute="bottom" constant="20" id="MdX-xK-2Is"/>
                             <constraint firstItem="Lak-e3-1qA" firstAttribute="trailing" secondItem="H5s-Ch-kHY" secondAttribute="trailing" id="V6I-xH-ZZ9"/>
@@ -169,8 +163,6 @@
                             <constraint firstItem="H5s-Ch-kHY" firstAttribute="leading" secondItem="wzD-pf-fnR" secondAttribute="leading" id="huB-9x-LFX"/>
                             <constraint firstItem="13S-4L-TBB" firstAttribute="centerX" secondItem="wzD-pf-fnR" secondAttribute="centerX" id="m0N-gE-AfP"/>
                             <constraint firstItem="13S-4L-TBB" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" constant="10" id="seC-EL-z58"/>
-                            <constraint firstItem="Ovl-Yu-nMA" firstAttribute="leading" secondItem="Lak-e3-1qA" secondAttribute="leading" id="u0k-xi-6c5"/>
-                            <constraint firstItem="Ovl-Yu-nMA" firstAttribute="top" secondItem="wzD-pf-fnR" secondAttribute="top" id="xfI-v8-vMP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lak-e3-1qA"/>
                     </view>
@@ -189,7 +181,6 @@
                         <outlet property="newProductBot" destination="krU-NS-qRr" id="OMA-Up-lla"/>
                         <outlet property="numberOfProductCategoryLbl" destination="13S-4L-TBB" id="q4B-pV-JKb"/>
                         <outlet property="pickerView" destination="wJd-sy-cEF" id="Oqv-vm-zA8"/>
-                        <outlet property="pickerViewBackgroundView" destination="Ovl-Yu-nMA" id="c8w-YZ-Rkg"/>
                         <outlet property="tableView" destination="H5s-Ch-kHY" id="4pY-Gu-TEM"/>
                         <outlet property="topTitleLbl" destination="TYL-vh-otM" id="nTS-HV-NNG"/>
                         <segue destination="kpK-9x-ted" kind="show" id="f5b-oA-Uac"/>

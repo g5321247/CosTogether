@@ -412,7 +412,7 @@ extension DetailViewController: UITableViewDataSource {
 
             }
 
-            cell.articleInfoView.updateArticle(groupArticle: allDataType.data[indexPath.row] as! Group)
+            cell.articleInfoView.updateArticle(group: allDataType.data[indexPath.row] as! Group)
             
             cell.articleInfoView.authorImageBot?.addTarget(
                 self,
@@ -629,7 +629,7 @@ extension DetailViewController: CellDelegate {
 
         firebaseManager.uploadComment(
             comment: comment,
-            groupType: article.first!.openType,
+            groupType: article.first!.openType!,
             groupId: article.first!.groupId!
         )
         
@@ -676,7 +676,7 @@ extension DetailViewController: CellDelegate {
             
             firebaseManager.uploadBuyer(
                 buyerId: currentUser.uid,
-                groupType: article.first!.openType,
+                groupType: article.first!.openType!,
                 groupId: article.first!.groupId!,
                 product: products[index],
                 buyNumber: order[index].numberOfItem
