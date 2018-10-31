@@ -84,7 +84,10 @@ class AppendNewItemViewController: UIViewController {
     
     private func changeProductInfo(product: ProductModel) {
         
-        
+        productImage = product.updateImage
+        productName = product.productName
+        productPrice = product.price
+        numberOfProduct = product.numberOfItem
         
     }
     

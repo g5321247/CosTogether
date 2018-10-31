@@ -353,6 +353,8 @@ extension CreateGroupViewController: UITableViewDataSource {
             
             cell.addBot.addTarget(self, action: #selector (appendProductBotTapping(_:)), for: .touchUpInside)
             
+            cell.productImageBot.addTarget(self, action: #selector (appendProductBotTapping(_:)), for: .touchUpInside)
+            
             return cell
 
         case 2:
