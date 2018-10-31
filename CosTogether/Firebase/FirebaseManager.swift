@@ -314,6 +314,7 @@ extension FirebaseManager {
             refrence.child("group").child("\(group.openType.rawValue)").child("\(key)").child("products").child(value.productName).setValue(
                 
                 [
+                    "productName": value.productName,
                     "numberOfItem": value.numberOfItem,
                     "price" : value.price,
                     "imageUrl": value.productImage ?? "",

@@ -22,6 +22,12 @@ class ImageTableViewCell: UITableViewCell {
         
        
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        productImageBot.imageView?.contentMode = .scaleAspectFill
+
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -71,7 +77,6 @@ class ImageTableViewCell: UITableViewCell {
         productNumberLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         productPriceLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        productImageBot.imageView?.contentMode = .scaleAspectFill
 
     }
     
