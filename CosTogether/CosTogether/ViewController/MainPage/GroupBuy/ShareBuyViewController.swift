@@ -50,7 +50,7 @@ class ShareBuyViewController: UIViewController {
 
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+            guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 
                 self.collectionView.reloadData()
                 
@@ -73,7 +73,7 @@ class ShareBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+            guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 
                 self.collectionView.reloadData()
                 
@@ -125,7 +125,7 @@ class ShareBuyViewController: UIViewController {
         
         firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
             
-            guard self.userDefault.integer(forKey: groupData.userID) != 1 else {
+            guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 return
             }
         

@@ -329,6 +329,7 @@ extension CreateGroupViewController: UITableViewDataSource {
             
             cell.updateProduct(product: products[indexPath.row])
             cell.productImageBot.isEnabled = false
+            cell.productImageBot.adjustsImageWhenDisabled = false
             
             return cell
         
@@ -424,7 +425,8 @@ extension CreateGroupViewController {
             
             self.dispatchGroup.notify(queue: .main) {
                 
-                guard let openType = group.openType else {
+                guard let openType = group.openType,
+                    let owner = group.owner else {
                     return
                 }
 
@@ -433,7 +435,7 @@ extension CreateGroupViewController {
                         openType: openType,
                         article: group.article,
                         products: self.products,
-                        userID: group.userID
+                        userID: owner.userId
                     )
                 )
             }

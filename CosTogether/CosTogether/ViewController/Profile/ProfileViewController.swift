@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
         
         downloadUserData(user: userType, otherUserId: nil)
         setup()
-
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,7 +49,6 @@ class ProfileViewController: UIViewController {
         
         topBotSetup(user: userType)
         userImageSetup(user: userType)
-        contentBotSetup(user: userType)
     }
     
     private func setup() {
@@ -169,7 +168,7 @@ class ProfileViewController: UIViewController {
             
         case .currentTabProfile, .currentUser:
             
-            editBot.titleLabel?.text = "編輯資料"
+            editBot.setTitle("資料", for: .normal)
             
             editBot.addTarget(self, action: #selector (editBotTapping(_:)), for: .touchUpInside)
             
@@ -179,7 +178,7 @@ class ProfileViewController: UIViewController {
             
         case .otherUser:
             
-            editBot.titleLabel?.text = "電話聯絡"
+            editBot.setTitle("電話聯絡", for: .normal)
             editBot.addTarget(self, action: #selector (callUser(_:)), for: .touchUpInside)
             
         }
@@ -353,6 +352,8 @@ extension ProfileViewController {
                 
                 self.currentUserModel = userModel
                 self.userInfoSetup(user: user)
+                
+                self.contentBotSetup(user: self.userType)
 
             }
 
@@ -368,6 +369,8 @@ extension ProfileViewController {
                 
                 self.currentUserModel = userModel
                 self.userInfoSetup(user: user)
+                
+                self.contentBotSetup(user: self.userType)
 
             }
             

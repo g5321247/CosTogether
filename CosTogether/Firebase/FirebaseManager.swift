@@ -148,73 +148,73 @@ struct FirebaseManager {
                 
             }
             
-//            guard let article = value?["article"] as? NSDictionary,
-//                let location = article["location"] as? String,
-//                let postDate = article["postDate"] as? String,
-//                let title = article["title"] as? String,
-//                let content = article["content"] as? String else {
-//
-//                    return
-//
-//            }
+            guard let article = value["article"] as? NSDictionary,
+                let location = article["location"] as? String,
+                let postDate = article["postDate"] as? String,
+                let title = article["title"] as? String,
+                let content = article["content"] as? String else {
+
+                    return
+
+            }
             
-//            let articleModel = ArticleModel(
-//                articleTitle: title,
-//                location: location,
-//                postDate: postDate,
-//                content: content
-//                )
-//
-//            guard let products = value?["products"] as? NSDictionary,
-//                let productName = products.allKeys as? [String] else {
-//
-//
-//                    return
-//            }
+            let articleModel = ArticleModel(
+                articleTitle: title,
+                location: location,
+                postDate: postDate,
+                content: content
+                )
+
+            guard let products = value["products"] as? NSDictionary,
+                let productName = products.allKeys as? [String] else {
+
+
+                    return
+            }
             
             var productsArray: [ProductModel] = []
             
-//            for value in productName {
-//
-//                guard let product = products[value] as? NSDictionary,
-//                    let imageUrl = product["imageUrl"] as? String,
-//                    let numberOfItem = product["numberOfItem"] as? Int,
-//                    let price = product["price"] as? Int else {
-//
-//                        return
-//                }
+            for value in productName {
+
+                guard let product = products[value] as? NSDictionary,
+                    let imageUrl = product["imageUrl"] as? String,
+                    let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int else {
+
+                        return
+                }
             
-//                productsArray.append(
-//                    ProductModel(
-//                        productName: value,
-//                        productImage: imageUrl,
-//                        numberOfItem: numberOfItem,
-//                        price: price
-//                    )
-//                )
-//
-//            }
+                productsArray.append(
+                    ProductModel(
+                        productName: value,
+                        productImage: imageUrl,
+                        numberOfItem: numberOfItem,
+                        price: price
+                    )
+                )
+
+            }
             
-//            guard let users = value?["users"] as? NSDictionary,
-//                let ownerId = users["ownerId"] as? String else {
-//
-//                    return
-//            }
+            guard let users = value["users"] as? NSDictionary,
+                let ownerId = users["ownerId"] as? String else {
+
+                    return
+            }
             
-//            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-//
-//                let group = Group(
-//                    openType: groupType,
-//                    article: articleModel,
-//                    products: productsArray,
-//                    userID: ownerId,
-//                    owner: userModel,
-//                    groupId: groupId
-//                )
-//
-//                completion(group)
-//
-//            })
+            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+
+                let group = Group(
+                    openType: groupType,
+                    article: articleModel,
+                    products: productsArray,
+                    userID: ownerId,
+                    owner: userModel,
+                    groupId: groupId
+                )
+
+                completion(group)
+
+            })
 
         }) { (error) in
             print(error.localizedDescription)
@@ -373,7 +373,7 @@ extension FirebaseManager {
 
         refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
             [
-                "ownerId": group.userID,
+                "ownerId": group.owner!.userId,
             ]
         )
         
@@ -411,7 +411,14 @@ extension FirebaseManager {
             
             let aboutMyself = AboutMyself(phoneNumber: phoneNumber, description: description)
             
-            completion(UserModel(userImage: userPicUrl, userName: userName, aboutSelf: aboutMyself))
+            completion(
+                UserModel(
+                userImage: userPicUrl,
+                userName: userName,
+                aboutSelf: aboutMyself,
+                userId: userId
+                )
+            )
             
         }
     }
@@ -709,7 +716,7 @@ extension FirebaseManager {
             }
             
         }
-    refrence.child("users").child(group.userID).child("userInfo").child("myGroup").child("own").child(openType.rawValue).child(groupId).removeValue()
+    refrence.child("users").child(group.owner!.userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).child(groupId).removeValue()
 
         refrence.child("group").child(openType.rawValue).child(groupId).removeValue()
     }

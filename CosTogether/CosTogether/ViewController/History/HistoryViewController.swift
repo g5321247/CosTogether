@@ -41,12 +41,11 @@ class HistoryViewController: UIViewController {
         
         for value in joinMember {
             
-            guard let userId = value.userId,
-            let group = group.first else {
+            guard let group = group.first else {
                 break
             }
             
-            firebaseManager.filterUser(userId: userId, group: group) { (products) in
+            firebaseManager.filterUser(userId: value.userId, group: group) { (products) in
                 
                 let myProduct = MyProduct(user: value, products: products)
                 

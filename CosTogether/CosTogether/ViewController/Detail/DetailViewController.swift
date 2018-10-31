@@ -98,9 +98,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                     let user = UserModel(
                         userImage: user.userImage,
                         userName: user.userName,
-                        numberOfEvaluation: user.numberOfEvaluation,
-                        buyNumber: user.buyNumber,
-                        averageEvaluation: user.averageEvaluation,
                         aboutSelf: user.aboutSelf,
                         userId: value
                     )
@@ -115,7 +112,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                         
         }
         
-        checkUser(userId: group.userID)
+        checkUser(userId: group.owner!.userId)
 
     }
     
@@ -222,7 +219,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
         controller.group = article
         
-        guard article.first?.userID == Auth.auth().currentUser?.uid else {
+        guard article.first?.owner?.userId == Auth.auth().currentUser?.uid else {
             
             guard  let userId = Auth.auth().currentUser?.uid,
                 let userImage = Auth.auth().currentUser?.photoURL?.absoluteString,
@@ -284,7 +281,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
                 
         }
         
-        guard let ownerId = productPic.first?.userID else {
+        guard let ownerId = productPic.first?.owner?.userId else {
             return
         }
         

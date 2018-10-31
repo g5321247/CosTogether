@@ -53,7 +53,6 @@ struct Group: DataProtocol, Codable {
     let openType: OpenGroupType?
     let article: ArticleModel
     let products: [ProductModel]
-    let userID: String
     var owner: UserModel?
     var memberID : [String]?
     let groupId: String?
@@ -71,7 +70,6 @@ struct Group: DataProtocol, Codable {
         self.openType = openType
         self.article = article
         self.products = products
-        self.userID = userID
         self.owner = owner
         self.groupId = groupId
         self.memberID = memberID
@@ -127,48 +125,23 @@ struct UserModel: DataProtocol, Codable {
     
     let userName: String
     
-    var numberOfEvaluation: Int?
-    
-    var buyNumber: Int?
-    
-    var averageEvaluation: Double?
-    
     var aboutSelf: AboutMyself?
     
-    var userId: String?
+    var userId: String
     
     init (
         userImage: String,
         userName: String,
-        numberOfEvaluation: Int? = 0,
-        buyNumber: Int? = 0,
-        averageEvaluation: Double? = 0,
         aboutSelf: AboutMyself? = nil,
-        userId: String? = nil
+        userId: String
         ) {
         
         self.userImage = userImage
         self.userName = userName
-        self.numberOfEvaluation = numberOfEvaluation
-        self.buyNumber = buyNumber
-        self.averageEvaluation = averageEvaluation
         self.aboutSelf = aboutSelf
         self.userId = userId
     }
-    
-    static func groupMember(image: String, name: String) -> UserModel {
         
-        return UserModel(
-            userImage: image,
-            userName: name,
-            numberOfEvaluation: nil,
-            buyNumber: nil,
-            averageEvaluation: nil,
-            userId: nil
-        )
-        
-    }
-    
 }
 
 struct ProductModel: DataProtocol {

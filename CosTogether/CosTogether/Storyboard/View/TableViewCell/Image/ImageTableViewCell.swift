@@ -61,12 +61,8 @@ class ImageTableViewCell: UITableViewCell {
         productNumberLbl.text = "數量： \(product.numberOfItem)"
         productPriceLbl.text = "單價： \(product.price)"
         
-        guard let image = product.updateImage else {
-            return
-        }
-        
-        productImageBot.setImage(image, for: .normal)
-    
+        updateProductImage(image: product.updateImage)
+      
     }
     
     private func productIsExsit(flag: Bool) {
