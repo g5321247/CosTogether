@@ -22,13 +22,7 @@ class OwnHelpBuyViewController: UIViewController {
     
     var myGroup: MyGroup = .own
     
-    var myGroups: [OwnGroup] = [] {
-        
-        didSet {
-            print("yo")
-        }
-        
-    }
+    var myGroups: [OwnGroup] = []
     
     let animationView = LOTAnimationView(name: "get_started_slider")
     

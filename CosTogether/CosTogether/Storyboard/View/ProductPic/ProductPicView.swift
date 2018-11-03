@@ -59,7 +59,8 @@ class ProductPicView: UIView {
         pagerView.isInfinite = false
         
         self.pagerView.transformer = FSPagerViewTransformer(type: .zoomOut)
-
+        
+        pagerView.cornerSetup(cornerRadius: 4)
     }
     
     private func setPageControl() {

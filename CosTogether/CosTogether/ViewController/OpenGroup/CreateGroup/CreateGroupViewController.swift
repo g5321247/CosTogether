@@ -179,7 +179,7 @@ class CreateGroupViewController: UIViewController {
         let group = Group(
             openType: openGroupType,
             article: ArticleModel(
-                articleTitle: articleTitle,
+                title: articleTitle,
                 location: city,
                 postDate: Date.getCurrentDate(),
                 content: articleContent
@@ -403,7 +403,7 @@ extension CreateGroupViewController {
             
             firebaseManager.uploadProductPics(
                 
-                articleTitle: group.article.articleTitle,
+                articleTitle: group.article.title,
                 productName: value.productName,
                 picture: imageData,
                 sucess: { (url) in

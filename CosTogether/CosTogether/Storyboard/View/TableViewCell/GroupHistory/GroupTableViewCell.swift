@@ -33,7 +33,7 @@ class GroupTableViewCell: UITableViewCell {
     
     func updateGroupHistory(ownGroup: OwnGroup) {
         
-        articleTitleLbl.text = ownGroup.group?.article.articleTitle
+        articleTitleLbl.text = ownGroup.group?.article.title
         
         postDateLbl.text = ownGroup.group?.article.postDate
         

@@ -212,7 +212,7 @@ extension HelpBuyViewController: UICollectionViewDataSource {
         cell.updateGroupInfo(
             productUrl: group[indexPath.row].products.first?.productImage ?? "",
             authorUrl: group[indexPath.row].owner?.userImage ?? "",
-            title:  group[indexPath.row].article.articleTitle,
+            title:  group[indexPath.row].article.title,
             location: group[indexPath.row].article.location,
             postDate: group[indexPath.row].article.postDate
         )

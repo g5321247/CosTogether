@@ -129,11 +129,10 @@ struct FirebaseManager {
         
         refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
             
-            guard let value = snapshot.value as? NSDictionary else {
+            guard var value = snapshot.value as? NSDictionary else {
                 
                 return
             }
-            
             
             let groupId = snapshot.key
             
@@ -141,11 +140,13 @@ struct FirebaseManager {
 
                 let data = try JSONSerialization.data(withJSONObject: value)
 
-                let article = try self.decoder.decode(ArticleModel.self, from: data)
+                let group = try self.decoder.decode(Group.self, from: data)
+                
+                print(group)
                 
             } catch {
                 
-                
+                print(error)
             }
             
             guard let article = value["article"] as? NSDictionary,
@@ -159,7 +160,7 @@ struct FirebaseManager {
             }
             
             let articleModel = ArticleModel(
-                articleTitle: title,
+                title: title,
                 location: location,
                 postDate: postDate,
                 content: content
@@ -328,7 +329,7 @@ extension FirebaseManager {
         refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("article").setValue(
             
             [
-                "title": group.article.articleTitle,
+                "title": group.article.title,
                 "location" : group.article.location,
                 "postDate": group.article.postDate,
                 "content" : group.article.content
@@ -482,7 +483,7 @@ extension FirebaseManager {
             }
             
             let articleModel = ArticleModel(
-                articleTitle: title,
+                title: title,
                 location: location,
                 postDate: postDate,
                 content: content
@@ -585,7 +586,7 @@ extension FirebaseManager {
             }
             
             let articleModel = ArticleModel(
-                articleTitle: title,
+                title: title,
                 location: location,
                 postDate: postDate,
                 content: content

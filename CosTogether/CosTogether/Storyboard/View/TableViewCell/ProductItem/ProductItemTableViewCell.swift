@@ -37,7 +37,13 @@ class ProductItemTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-
+        setup()
+    }
+    
+    private func setup() {
+        
+        productImage.cornerSetup(cornerRadius: 4)
+        
     }
     
     func updateView(product: ProductModel) {

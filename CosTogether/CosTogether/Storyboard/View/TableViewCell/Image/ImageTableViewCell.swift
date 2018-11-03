@@ -15,14 +15,7 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var productNumberLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
     
-    @IBOutlet weak var productImageBot: UIButton! {
-        
-        didSet {
-            print("yes")
-        }
-        
-    }
-    
+    @IBOutlet weak var productImageBot: UIButton!
     @IBOutlet weak var addBot: UIButton!
     
     override func awakeFromNib() {

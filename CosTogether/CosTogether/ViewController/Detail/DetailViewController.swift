@@ -524,7 +524,7 @@ extension DetailViewController: UITableViewDataSource {
             }
             
             cell.updateGroupDetail(
-                title: article.articleTitle ,
+                title: article.title ,
                 productInfo: article.content
             )
             

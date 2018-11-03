@@ -48,7 +48,7 @@ struct OwnGroup: DataProtocol, Codable {
 
 }
 
-struct Group: DataProtocol, Codable {
+struct Group: DataProtocol {
     
     let openType: OpenGroupType?
     let article: ArticleModel
@@ -58,7 +58,7 @@ struct Group: DataProtocol, Codable {
     let groupId: String?
     
     init(
-        openType: OpenGroupType,
+        openType: OpenGroupType? = nil,
         article: ArticleModel,
         products: [ProductModel],
         userID: String,
@@ -77,6 +77,59 @@ struct Group: DataProtocol, Codable {
     
 }
 
+extension Group: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case openType
+        case article
+        case products
+        case owner
+        case memberID
+        case groupId
+
+    }
+    
+    init(from decoder: Decoder) throws {
+
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        openType = try values.decodeIfPresent(OpenGroupType.self, forKey: .openType)
+        article = try values.decode(ArticleModel.self, forKey: .article)
+        owner = try values.decodeIfPresent(UserModel.self, forKey: .owner)
+        memberID = try values.decodeIfPresent([String].self, forKey: .memberID)
+        groupId = try values.decodeIfPresent(String.self, forKey: .groupId)
+
+
+        let productsDic = try values.decode([String: [String: ProductModel]].self, forKey: .products)
+        
+        var productArray: [ProductModel] = []
+        
+        do {
+            
+            let productDic =  try productsDic["products"]
+            
+            for key in productDic!.keys {
+                
+                guard let product = productDic?[key] else {
+                    break
+                }
+                
+                productArray.append(product)
+                
+            }
+            
+            products = productArray
+            
+        } catch {
+            
+            
+            
+        }
+        
+     
+    }
+}
+
 struct MainPageViewModel: DataProtocol, Codable {
     
     let user: UserModel
@@ -85,7 +138,7 @@ struct MainPageViewModel: DataProtocol, Codable {
 
 struct ArticleModel: DataProtocol, Codable {
     
-    let articleTitle: String
+    let title: String
     
     let location: String
     
@@ -225,7 +278,6 @@ extension ProductModel: Codable {
         productName = try values.decode(String.self, forKey: .productName)
         productImage = try values.decode(String.self, forKey: .productImage)
         numberOfItem = try values.decode(Int.self, forKey: .numberOfItem)
-        
         price = try values.decode(Int.self, forKey: .price)
         
         let imageDataBase64String = try values.decode(String.self, forKey: .updateImage)
