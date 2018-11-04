@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var cancelEditBot: UIButton!
     @IBOutlet weak var editBot: UIButton!
     @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var phoneLbl: UILabel!
     
     var temAboutMyself: AboutMyself?
     
@@ -176,13 +177,24 @@ class ProfileViewController: UIViewController {
             
             cancelEditBot.addTarget(self, action: #selector (cancelEditing(_:)), for: .touchUpInside)
             
+            phoneSetup(isHidden: false)
+            
         case .otherUser:
             
             editBot.setTitle("電話聯絡", for: .normal)
             editBot.addTarget(self, action: #selector (callUser(_:)), for: .touchUpInside)
             
+            phoneSetup(isHidden: true)
+
         }
         
+    }
+    
+    private func phoneSetup(isHidden: Bool) {
+        
+        phoneTxf.isHidden = isHidden
+        phoneLbl.isHidden = isHidden
+
     }
     
     private func topButton(leftIsHidden: Bool) {

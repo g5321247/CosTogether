@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2xn-G6-KWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2xn-G6-KWx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -212,6 +212,7 @@
                         <outlet property="aboutMyselfTextView" destination="h7k-gh-gyP" id="9Sf-Ko-EL6"/>
                         <outlet property="cancelEditBot" destination="aGZ-nl-xfm" id="Vkc-qb-eBm"/>
                         <outlet property="editBot" destination="Xrn-5d-oK9" id="pa8-WQ-FF8"/>
+                        <outlet property="phoneLbl" destination="axB-6X-JtS" id="roF-mh-UQo"/>
                         <outlet property="phoneTxf" destination="fet-m0-3hi" id="7Pw-pt-bLk"/>
                         <outlet property="topView" destination="IqG-j3-JOy" id="8A9-Ka-mh8"/>
                         <outlet property="updateAboutMyselfBot" destination="nJs-1n-jSi" id="IBy-Cl-qzF"/>
@@ -225,9 +226,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Profile" width="16" height="16"/>
-        <image name="back" width="256" height="256"/>
-        <image name="menu" width="32" height="32"/>
-        <image name="profile_sticker_placeholder02" width="256" height="256"/>
+        <image name="Profile" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="back" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="menu" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="profile_sticker_placeholder02" width="42.421173095703125" height="42.421173095703125"/>
     </resources>
 </document>
