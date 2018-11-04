@@ -106,15 +106,7 @@ extension ProductInfoTableViewCell: UITextFieldDelegate {
             
             delegate.getProductName(name: updatedText)
             
-            guard count <= 6 else {
-                
-                BaseNotificationBanner.warningBanner(subtitle: "商品名稱不得超過 6 字")
-                
-                return count <= 6
-                
-            }
-            
-            return count <= 6
+            return true
             
         case numberOfProductTxf:
             

@@ -208,7 +208,6 @@ struct FirebaseManager {
                     openType: groupType,
                     article: articleModel,
                     products: productsArray,
-                    userID: ownerId,
                     owner: userModel,
                     groupId: groupId
                 )
@@ -531,7 +530,6 @@ extension FirebaseManager {
                     openType: ownGroup.groupType,
                     article: articleModel,
                     products: productsArray,
-                    userID: ownerId,
                     owner: userModel,
                     groupId: ownGroup.groupId
                 )
@@ -630,15 +628,10 @@ extension FirebaseManager {
             
             self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
                 
-                guard let userId = Auth.auth().currentUser?.uid else {
-                    return
-                }
-                
                 let group = Group(
                     openType: groupType,
                     article: articleModel,
                     products: productsArray,
-                    userID: userId,
                     owner: userModel,
                     groupId: groupId
                 )

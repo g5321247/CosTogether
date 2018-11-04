@@ -176,6 +176,18 @@ class CreateGroupViewController: UIViewController {
             return nil
         }
         
+        guard let userImage = Auth.auth().currentUser?.photoURL?.absoluteString,
+            let userName = Auth.auth().currentUser?.displayName else {
+                return nil
+        }
+
+        
+        let owner = UserModel(
+            userImage: userImage,
+            userName: userName,
+            userId: userId
+            )
+        
         let group = Group(
             openType: openGroupType,
             article: ArticleModel(
@@ -185,7 +197,7 @@ class CreateGroupViewController: UIViewController {
                 content: articleContent
             ),
             products: products,
-            userID: userId
+            owner: owner
             )
         
         return group
@@ -435,7 +447,7 @@ extension CreateGroupViewController {
                         openType: openType,
                         article: group.article,
                         products: self.products,
-                        userID: owner.userId
+                        owner: owner
                     )
                 )
             }

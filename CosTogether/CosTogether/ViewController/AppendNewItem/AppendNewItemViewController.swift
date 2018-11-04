@@ -380,10 +380,9 @@ extension AppendNewItemViewController {
             productImage: "",
             numberOfItem: numberOfProduct,
             price: productPrice,
-            updateImage: #imageLiteral(resourceName: "default_background")
+            updateImage: productImage
         )
 
-//        productImage
         guard let passProductInfo = passProductInfo else {
             
             return

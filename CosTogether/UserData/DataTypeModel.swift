@@ -61,7 +61,6 @@ struct Group: DataProtocol {
         openType: OpenGroupType? = nil,
         article: ArticleModel,
         products: [ProductModel],
-        userID: String,
         owner: UserModel? = nil,
         memberID: [String]? = nil,
         groupId: String? = nil
