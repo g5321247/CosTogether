@@ -354,6 +354,7 @@ extension DetailViewController: UITableViewDelegate {
         case .previousComments:
             
             return  UITableView.automaticDimension
+            
         case .sendComment:
             
             return cellHeight
@@ -630,6 +631,7 @@ extension DetailViewController: CellDelegate {
             groupId: article.first!.groupId!
         )
         
+        cellHeight = 53
         self.reloadData(orderAlready: orderAlready)
         
         let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
