@@ -181,7 +181,6 @@ class CreateGroupViewController: UIViewController {
                 return nil
         }
 
-        
         let owner = UserModel(
             userImage: userImage,
             userName: userName,
@@ -434,23 +433,23 @@ extension CreateGroupViewController {
                 self.dispatchGroup.leave()
                 
             }
+        }
+        
+        self.dispatchGroup.notify(queue: .main) {
             
-            self.dispatchGroup.notify(queue: .main) {
-                
-                guard let openType = group.openType,
-                    let owner = group.owner else {
+            guard let openType = group.openType,
+                let owner = group.owner else {
                     return
-                }
-
-                completion(
-                    Group(
-                        openType: openType,
-                        article: group.article,
-                        products: self.products,
-                        owner: owner
-                    )
-                )
             }
+            
+            completion(
+                Group(
+                    openType: openType,
+                    article: group.article,
+                    products: self.products,
+                    owner: owner
+                )
+            )
         }
         
     }

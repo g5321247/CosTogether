@@ -99,33 +99,33 @@ extension Group: Codable {
         groupId = try values.decodeIfPresent(String.self, forKey: .groupId)
 
 
-        let productsDic = try values.decode([String: [String: ProductModel]].self, forKey: .products)
+        let productsDic = try values.decode([String: [String: [String: String]]].self, forKey: .products)
         
         var productArray: [ProductModel] = []
         
         do {
-            
+
             let productDic =  try productsDic["products"]
-            
+
             for key in productDic!.keys {
-                
+
                 guard let product = productDic?[key] else {
                     break
                 }
-                
-                productArray.append(product)
-                
+
+//                productArray.append(product)
+
             }
-            
+
             products = productArray
-            
+
         } catch {
-            
-            
-            
+
+
+            print("")
         }
         
-     
+      
     }
 }
 
