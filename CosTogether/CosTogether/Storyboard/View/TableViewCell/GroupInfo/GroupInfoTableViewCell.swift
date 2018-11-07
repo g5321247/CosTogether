@@ -81,6 +81,20 @@ class GroupInfoTableViewCell: UITableViewCell {
 
 extension GroupInfoTableViewCell: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        switch textField {
+            
+        case locationTxf:
+            
+            textField.text = "台北"
+            
+        default:
+            break
+        }
+        
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard  let delegate = delegate,

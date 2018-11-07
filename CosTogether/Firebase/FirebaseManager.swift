@@ -24,7 +24,7 @@ enum FirebaseType: String {
     
 }
 
-struct FirebaseManager {
+class FirebaseManager {
     
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
@@ -80,36 +80,36 @@ struct FirebaseManager {
         faliure: @escaping (Error) -> Void
         ) {
 
-        guard  let userId = Auth.auth().currentUser?.uid else {
-            return
-        }
-        
-        let storageRef =  Storage.storage().reference().child("group").child(userId).child(articleTitle).child(productName)
-        
-        storageRef.putData(picture, metadata: nil) { (data, error) in
-            
-            guard error == nil else {
-
-                faliure((FirebaseError.system(error!.localizedDescription)))
+            guard let userId = Auth.auth().currentUser?.uid else {
                 return
             }
-            
-            storageRef.downloadURL(completion: { (url, error) in
+        
+            let storageRef =  Storage.storage().reference().child("group").child(userId).child(articleTitle).child(productName)
+        
+            storageRef.putData(picture, metadata: nil) { (data, error) in
                 
                 guard error == nil else {
-                    
+
                     faliure((FirebaseError.system(error!.localizedDescription)))
                     return
                 }
-
-                guard let url = url else {
+                
+                storageRef.downloadURL(completion: { (url, error) in
                     
-                    faliure((FirebaseError.uploadPicFail("上傳照片失敗")))
-                    return
-                }
-                
-                sucess(url)
-                
+                    guard error == nil else {
+                        
+                        faliure((FirebaseError.system(error!.localizedDescription)))
+                        return
+                    }
+
+                    guard let url = url else {
+                        
+                        faliure((FirebaseError.uploadPicFail("上傳照片失敗")))
+                        return
+                    }
+                    
+                    sucess(url)
+                    
             })
             
         }
