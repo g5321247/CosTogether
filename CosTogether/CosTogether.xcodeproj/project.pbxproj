@@ -87,6 +87,7 @@
 		C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */; };
 		C8C6B6262193177E00F1FBC4 /* BaseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B6252193177E00F1FBC4 /* BaseHistoryViewController.swift */; };
 		C8C6B62821934C7800F1FBC4 /* BaseOwnHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B62721934C7800F1FBC4 /* BaseOwnHistoryViewController.swift */; };
+		C8C6B62C2193A16D00F1FBC4 /* ProductBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B62B2193A16D00F1FBC4 /* ProductBaseViewController.swift */; };
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
 		C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */; };
 		C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */; };
@@ -206,6 +207,7 @@
 		C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTitleTableViewCell.xib; sourceTree = "<group>"; };
 		C8C6B6252193177E00F1FBC4 /* BaseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHistoryViewController.swift; sourceTree = "<group>"; };
 		C8C6B62721934C7800F1FBC4 /* BaseOwnHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOwnHistoryViewController.swift; sourceTree = "<group>"; };
+		C8C6B62B2193A16D00F1FBC4 /* ProductBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBaseViewController.swift; sourceTree = "<group>"; };
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
 		C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 		C84975222157BABC00555855 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				C8C6B62B2193A16D00F1FBC4 /* ProductBaseViewController.swift */,
 				C823A25D21675A770066D635 /* GroupBuy */,
 				C84975132157742A00555855 /* MainPageViewController.swift */,
 				C810BB382159E4630064A656 /* MainNavigationViewController.swift */,
@@ -1150,6 +1153,7 @@
 				C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */,
 				C82FA861215A3CED00B75284 /* MessageView.swift in Sources */,
 				C85151C82175F559007B1324 /* HistoryViewController.swift in Sources */,
+				C8C6B62C2193A16D00F1FBC4 /* ProductBaseViewController.swift in Sources */,
 				C810BB3521592A3D0064A656 /* UIView+.swift in Sources */,
 				C8EAD96121809348009E8823 /* GroupInfoTableViewCell.swift in Sources */,
 				C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */,
