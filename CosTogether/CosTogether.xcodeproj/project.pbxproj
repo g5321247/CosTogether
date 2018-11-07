@@ -109,7 +109,7 @@
 		C8FB98C1216118D300C78926 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */; };
 		C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */; };
 		C8FB98C52161244F00C78926 /* OhterMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */; };
-		C8FB98C8216186F800C78926 /* JoinShareGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C7216186F800C78926 /* JoinShareGroupViewController.swift */; };
+		C8FB98C8216186F800C78926 /* JoinShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98C7216186F800C78926 /* JoinShareViewController.swift */; };
 		C8FB98CF2161951A00C78926 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FB98CD2161951A00C78926 /* GroupTableViewCell.swift */; };
 		C8FB98D02161951A00C78926 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8FB98CE2161951A00C78926 /* GroupTableViewCell.xib */; };
 		C8FCA3AF215BC5AB008724A3 /* ArticleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */; };
@@ -230,7 +230,7 @@
 		C8FB98C0216118D300C78926 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		C8FB98C22161244F00C78926 /* OhterMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhterMessageTableViewCell.swift; sourceTree = "<group>"; };
 		C8FB98C32161244F00C78926 /* OhterMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OhterMessageTableViewCell.xib; sourceTree = "<group>"; };
-		C8FB98C7216186F800C78926 /* JoinShareGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinShareGroupViewController.swift; sourceTree = "<group>"; };
+		C8FB98C7216186F800C78926 /* JoinShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinShareViewController.swift; sourceTree = "<group>"; };
 		C8FB98CD2161951A00C78926 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		C8FB98CE2161951A00C78926 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		C8FCA3AE215BC5AB008724A3 /* ArticleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInfoView.swift; sourceTree = "<group>"; };
@@ -850,7 +850,7 @@
 			children = (
 				C80187F5217576BA00FAC704 /* GroupRootViewController.swift */,
 				C80187F7217583A000FAC704 /* JoinHelpViewController.swift */,
-				C8FB98C7216186F800C78926 /* JoinShareGroupViewController.swift */,
+				C8FB98C7216186F800C78926 /* JoinShareViewController.swift */,
 			);
 			path = JoinGroup;
 			sourceTree = "<group>";
@@ -1108,7 +1108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8B77B062169DDEC0067AC21 /* AppendNewItemViewController.swift in Sources */,
-				C8FB98C8216186F800C78926 /* JoinShareGroupViewController.swift in Sources */,
+				C8FB98C8216186F800C78926 /* JoinShareViewController.swift in Sources */,
 				C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */,
 				C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */,
 				C849751F21579BFE00555855 /* Fonts.swift in Sources */,

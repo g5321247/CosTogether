@@ -31,7 +31,6 @@ class BaseHistoryViewController: UIViewController {
         
         setup()
         
-        
     }
     
     private func setup() {

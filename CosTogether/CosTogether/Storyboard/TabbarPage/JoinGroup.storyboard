@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wt5-W4-iBw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wt5-W4-iBw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="2423" y="1470"/>
         </scene>
-        <!--Join Help Group View Controller-->
+        <!--Join Help View Controller-->
         <scene sceneID="adP-7c-thJ">
             <objects>
-                <viewController id="2H9-RX-3Id" customClass="JoinHelpGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2H9-RX-3Id" customClass="JoinHelpViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RMf-qp-PzM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,20 +206,20 @@
             </objects>
             <point key="canvasLocation" x="3665" y="1275"/>
         </scene>
-        <!--Join Share Group View Controller-->
+        <!--Join Share View Controller-->
         <scene sceneID="wHc-TV-c9g">
             <objects>
-                <viewController id="iiw-hD-z1Q" customClass="JoinShareGroupViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iiw-hD-z1Q" customClass="JoinShareViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8dM-MN-Ad1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GZV-LK-slD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未加入任何分購，快去加一下吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2A-cB-LO4">
-                                <rect key="frame" x="20" y="60" width="335" height="65.5"/>
+                                <rect key="frame" x="20" y="40" width="560" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -239,8 +239,8 @@
                         <viewLayoutGuide key="safeArea" id="F7v-4C-bZd"/>
                     </view>
                     <connections>
-                        <outlet property="emptyLbl" destination="P2A-cB-LO4" id="WSJ-8I-KYh"/>
-                        <outlet property="tableView" destination="GZV-LK-slD" id="Bmx-GJ-OEr"/>
+                        <outlet property="emptyLbl" destination="P2A-cB-LO4" id="HeQ-ED-F9u"/>
+                        <outlet property="tableView" destination="GZV-LK-slD" id="cpu-cO-6Hb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb8-Al-PTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,8 +249,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="256" height="256"/>
-        <image name="plus" width="32" height="32"/>
-        <image name="shopping" width="16" height="16"/>
+        <image name="back" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="plus" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="shopping" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
 </document>

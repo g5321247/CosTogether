@@ -11,6 +11,26 @@ import Lottie
 import Firebase
 import SDWebImage
 
+//class OwnShareBuyViewController: BaseHistoryViewController {
+//    
+//    override func viewDidLoad() {
+//        
+//        groupType = .shareBuy
+//        myGroup = .own
+//        
+//        super.viewDidLoad()
+//        
+//    }
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        tableView.reloadData()
+//        
+//    }
+//    
+//}
+
 class OwnShareBuyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
