@@ -87,6 +87,7 @@
 		C8C2B47B215F8BB00033FB28 /* CommonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */; };
 		C8C2B47C215F8BB00033FB28 /* CommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */; };
 		C8C6B6262193177E00F1FBC4 /* BaseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B6252193177E00F1FBC4 /* BaseHistoryViewController.swift */; };
+		C8C6B62821934C7800F1FBC4 /* BaseOwnHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B62721934C7800F1FBC4 /* BaseOwnHistoryViewController.swift */; };
 		C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D240972160D7EE00268F67 /* DataTypeModel.swift */; };
 		C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */; };
 		C8E956B92177247600473C6B /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */; };
@@ -208,6 +209,7 @@
 		C8C2B479215F8BB00033FB28 /* CommonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C8C2B47A215F8BB00033FB28 /* CommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTitleTableViewCell.xib; sourceTree = "<group>"; };
 		C8C6B6252193177E00F1FBC4 /* BaseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHistoryViewController.swift; sourceTree = "<group>"; };
+		C8C6B62721934C7800F1FBC4 /* BaseOwnHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOwnHistoryViewController.swift; sourceTree = "<group>"; };
 		C8D240972160D7EE00268F67 /* DataTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeModel.swift; sourceTree = "<group>"; };
 		C8E956B62177247600473C6B /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8E956B72177247600473C6B /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C6B6252193177E00F1FBC4 /* BaseHistoryViewController.swift */,
+				C8C6B62721934C7800F1FBC4 /* BaseOwnHistoryViewController.swift */,
 				C8138EE5217B38C10073D259 /* Agreement */,
 				C85151C92175F63E007B1324 /* History */,
 				C84975242157BAF200555855 /* LogIn */,
@@ -1116,6 +1119,7 @@
 				C859E28C217FBCF000C2AF8F /* ImageTableViewCell.swift in Sources */,
 				C8B77B022169BDA70067AC21 /* NewProductView.swift in Sources */,
 				C8FB98C42161244F00C78926 /* OhterMessageTableViewCell.swift in Sources */,
+				C8C6B62821934C7800F1FBC4 /* BaseOwnHistoryViewController.swift in Sources */,
 				C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */,
 				C82BA9A3215CD76000996B11 /* ArticleInfoTableViewCell.swift in Sources */,
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,

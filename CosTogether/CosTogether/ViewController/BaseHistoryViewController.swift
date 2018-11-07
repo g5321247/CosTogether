@@ -37,11 +37,11 @@ class BaseHistoryViewController: UIViewController {
         
         setUpCell()
         tableViewSetup()
-        downloadMyGroup()
-        
+        emptyViewIsHidden(isHidden: false)
+        downloadGroupList()
     }
     
-    private func downloadMyGroup() {
+    internal func emptyViewIsHidden(isHidden: Bool) {
         
         animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         
@@ -52,7 +52,19 @@ class BaseHistoryViewController: UIViewController {
         
         self.tableView.addSubview(animationView)
         
+        self.emptyLbl.isHidden = isHidden
+        self.animationView.isHidden = isHidden
+        
+        guard !isHidden else {
+            
+            return
+        }
+        
         animationView.play()
+
+    }
+    
+    func downloadGroupList() {
         
         guard Auth.auth().currentUser?.uid != nil else {
             
@@ -68,6 +80,8 @@ class BaseHistoryViewController: UIViewController {
                 self.emptyLbl.isHidden = true
                 self.animationView.isHidden = true
                 
+                self.emptyViewIsHidden(isHidden: true)
+
                 self.reloadData()
                 
             })
@@ -102,7 +116,7 @@ class BaseHistoryViewController: UIViewController {
         
     }
     
-    private func reloadData() {
+    internal func reloadData() {
         
         guard myGroups.count > 0 else {
             
