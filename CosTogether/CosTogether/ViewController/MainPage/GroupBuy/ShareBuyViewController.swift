@@ -135,13 +135,13 @@ class ShareBuyViewController: UIViewController {
                 for value in self.group {
                     
                     guard let id = value.groupId else {
-                        break
+                        continue
                     }
                     
                     if key == id {
                         
                         self.group.remove(at: index)
-                        break
+                        continue
                     }
                     
                 }
