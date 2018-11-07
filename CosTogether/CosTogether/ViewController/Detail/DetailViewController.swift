@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     let firebaseManager = FirebaseManager()
     var cellHeight: CGFloat = 53
     let userDefault = UserDefaults.standard
-
+    
     var orderAlready: Bool = false
     
     var isSend: Bool = false
@@ -256,7 +256,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         controller.loadViewIfNeeded()
         
-        guard comments[sender.tag].userId != Auth.auth().currentUser?.uid else {
+        guard comments[sender.tag].userId == Auth.auth().currentUser?.uid else {
             
             controller.downloadUserData(user: .otherUser, otherUserId: comments[sender.tag].userId)
             

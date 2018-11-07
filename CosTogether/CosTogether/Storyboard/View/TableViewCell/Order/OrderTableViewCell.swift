@@ -80,8 +80,8 @@ class OrderTableViewCell: UITableViewCell {
         orderBot.isEnabled = false
         orderBot.isHidden = true
         
-        amoutLbl.text = ""
-        titleLbl.text = ""
+        amoutLbl.isHidden = true
+        titleLbl.isHidden = true
         
         checkOrderInfoBot.isHidden = false
         checkOrderInfoBot.isEnabled = true
