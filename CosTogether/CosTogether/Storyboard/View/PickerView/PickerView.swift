@@ -14,12 +14,12 @@ protocol PickerViewDelegate: AnyObject {
 
 class PickerView: UIView {
 
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet fileprivate weak var pickerView: UIPickerView!
     
     weak var delegate: PickerViewDelegate?
-    var cityRow: Int = 0
+    fileprivate var cityRow: Int = 0
     
-    var city = [
+    private var city = [
         "台北", "新北", "桃園", "新竹",
         "苗栗", "台中", "彰化", "雲林",
         "嘉義", "台南", "高雄"
@@ -56,7 +56,7 @@ extension PickerView: UIPickerViewDelegate {
     
     // swiftlint:disable identifier_name
 
-    func pickerView(
+     func pickerView(
         _ pickerView: UIPickerView,
         titleForRow row: Int,
         forComponent component: Int

@@ -47,7 +47,6 @@
 		C84975212157BAB100555855 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975202157BAB100555855 /* ProductViewController.swift */; };
 		C84975282157BD1F00555855 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */; };
 		C84975292157BD1F00555855 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */; };
-		C849752B2157C25D00555855 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849752A2157C25D00555855 /* Product.swift */; };
 		C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF26A216E013B00CF5A47 /* Date+.swift */; };
 		C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */; };
 		C85151C42175E030007B1324 /* OwnHelpBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */; };
@@ -167,7 +166,6 @@
 		C84975202157BAB100555855 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
-		C849752A2157C25D00555855 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C84AF26A216E013B00CF5A47 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		C85151A02175B2B9007B1324 /* OwnShareBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnShareBuyViewController.swift; sourceTree = "<group>"; };
 		C85151C32175E030007B1324 /* OwnHelpBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnHelpBuyViewController.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 				C81543832153409100B3446D /* Facebook */,
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
-				C849752C2157C27000555855 /* Product */,
 			);
 			name = Model;
 			path = ..;
@@ -509,14 +506,6 @@
 			children = (
 				C84975262157BD1F00555855 /* ProductCollectionViewCell.swift */,
 				C84975272157BD1F00555855 /* ProductCollectionViewCell.xib */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
-		C849752C2157C27000555855 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				C849752A2157C25D00555855 /* Product.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -1146,7 +1135,6 @@
 				C8138EE4217B38AF0073D259 /* AgreementViewController.swift in Sources */,
 				C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */,
 				C8154387215352A500B3446D /* FirebaseManager.swift in Sources */,
-				C849752B2157C25D00555855 /* Product.swift in Sources */,
 				C82FA85E215A17D000B75284 /* DetailViewController.swift in Sources */,
 				C888DB28216619010091F6F0 /* UIImage+.swift in Sources */,
 				C8F8C92A2152375900BDB0CE /* UIStoryboard+.swift in Sources */,
