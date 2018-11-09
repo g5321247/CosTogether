@@ -7,7 +7,6 @@
 
 import UIKit
 import FSPagerView
-import Firebase
 import NotificationBannerSwift
 
 class DetailViewController: UIViewController, ProductPicDelegate {
@@ -17,8 +16,10 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     let firebaseManager = FirebaseManager()
     var cellHeight: CGFloat = 53
-    let userDefault = UserDefaults.standard
     
+    let userDefault = UserDefaults.standard
+    let user = UserManager.shared
+
     var orderAlready: Bool = false
     
     var isSend: Bool = false
@@ -151,8 +152,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             object: nil
         )
 
-        Analytics.logEvent("LookProduct", parameters: nil)
-
     }
     
     private func setUpCell() {
@@ -219,15 +218,14 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
         controller.group = article
         
-        guard article.first?.owner?.userId == Auth.auth().currentUser?.uid else {
+        guard article.first?.owner?.userId == user.userInfo()?.userId else {
             
-            guard  let userId = Auth.auth().currentUser?.uid,
-                let userImage = Auth.auth().currentUser?.photoURL?.absoluteString,
-                let userName = Auth.auth().currentUser?.displayName else {
+            guard  let userInfo = user.userInfo() else {
+                
                 return
             }
             
-            controller.joinMember.append(UserModel(userImage: userImage, userName: userName, userId: userId))
+            controller.joinMember.append(UserModel(userImage: userInfo.userPicURL, userName: userInfo.userName, userId: userInfo.userId))
             
             controller.loadViewIfNeeded()
 
@@ -256,7 +254,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         controller.loadViewIfNeeded()
         
-        guard comments[sender.tag].userId == Auth.auth().currentUser?.uid else {
+        guard comments[sender.tag].userId == user.userInfo()?.userId else {
             
             controller.downloadUserData(user: .otherUser, otherUserId: comments[sender.tag].userId)
             
@@ -287,7 +285,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         controller.loadViewIfNeeded()
         
-        guard ownerId != Auth.auth().currentUser?.uid else {
+        guard ownerId != user.userInfo()?.userId else {
             
             controller.downloadUserData(user: .currentUser, otherUserId: nil)
             
@@ -304,7 +302,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     func checkUser(userId: String) {
         
-        guard userId != Auth.auth().currentUser?.uid else {
+        guard userId != user.userInfo()?.userId else {
             
             orderAlready = true
             reloadData(orderAlready: orderAlready)
@@ -613,16 +611,15 @@ extension DetailViewController: CellDelegate {
             return
         }
         
-        guard let currentUser =  Auth.auth().currentUser else {
+        guard let currentUserInfo =  user.userInfo() else {
             
             return
-            
         }
         
         let comment = CommentModel(
             postDate: Date.getCurrentDate(),
             comment: text,
-            userId: currentUser.uid
+            userId: currentUserInfo.userId
         )
 
         firebaseManager.uploadComment(
@@ -651,12 +648,11 @@ extension DetailViewController: CellDelegate {
     
     func cellButtonTapping(_ cell: UITableViewCell) {
         
-        guard let currentUser =  Auth.auth().currentUser else {
+        guard let currentUserInfo =  user.userInfo() else {
             
             return
-            
         }
-        
+
         guard let sectionIndex = allData.firstIndex(where: {$0.dataType == .productItems(products.count)}) else {
                 
                 return
@@ -674,7 +670,7 @@ extension DetailViewController: CellDelegate {
             products[index].numberOfItem -= order[index].numberOfItem
             
             firebaseManager.uploadBuyer(
-                buyerId: currentUser.uid,
+                buyerId: currentUserInfo.userId,
                 groupType: article.first!.openType!,
                 groupId: article.first!.groupId!,
                 product: products[index],
@@ -702,7 +698,7 @@ extension DetailViewController: CellDelegate {
         
         //刪掉 cell 避免 fatal error
         
-        checkUser(userId: currentUser.uid)
+        checkUser(userId: currentUserInfo.userId)
         
         cell.collectionView.reloadData()
         
