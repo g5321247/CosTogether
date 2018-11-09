@@ -43,7 +43,7 @@ class FirebaseManager {
                     
                 }
                 
-                guard let firebaseResult = authResult else {
+                guard authResult != nil else {
                     
                     faliure(FirebaseError.unrecognized("No Firebase Data"))
                     
@@ -75,11 +75,11 @@ class FirebaseManager {
         faliure: @escaping (Error) -> Void
         ) {
 
-            guard let userId = Auth.auth().currentUser?.uid else {
+            guard let userInfo = self.user.userInfo() else {
                 return
             }
-        
-            let storageRef =  Storage.storage().reference().child("group").child(userId).child(articleTitle).child(productName)
+
+            let storageRef =  Storage.storage().reference().child("group").child(userInfo.userId).child(articleTitle).child(productName)
         
             storageRef.putData(picture, metadata: nil) { (data, error) in
                 
@@ -250,9 +250,13 @@ class FirebaseManager {
     }
     
     func downloadMyGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
+       
+        guard let userInfo = self.user.userInfo() else {
+            return
+        }
         
         let refrence = Database.database().reference()
-        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+        refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
             
             guard let value = snapshot.value as? NSDictionary else {
                 
@@ -339,22 +343,19 @@ extension FirebaseManager {
     
     private func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
         
-        guard  let userId = Auth.auth().currentUser?.uid else {
+        guard let userInfo = self.user.userInfo() else {
             return
         }
         
         guard let openType = group.openType else {
             return
         }
-
-
         refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
             [
                 "ownerId": group.owner!.userId,
             ]
         )
-        
-        refrence.child("users").child(userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).updateChildValues(
+        refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).updateChildValues(
             [
                 key: key
             ]
@@ -528,8 +529,12 @@ extension FirebaseManager {
     
     func downloadMyOwnGroup(groupType: OpenGroupType, myGroup: MyGroup, completion: @escaping (OwnGroup) -> Void) {
         
+        guard let userInfo = self.user.userInfo() else {
+            return
+        }
+        
         let refrence = Database.database().reference()
-        refrence.child("users").child(Auth.auth().currentUser!.uid).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
+        refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
             
             guard let groupId = snapshot.value as? String else {
                 
@@ -634,7 +639,6 @@ extension FirebaseManager {
             return
         }
 
-        
         let refrence = Database.database().reference()
         refrence.child("users").child(userId).child("userInfo").child("myGroup").child("join").child(openType.rawValue).child(group.groupId!).observeSingleEvent(of: .value) { (snapshot) in
             
@@ -711,11 +715,15 @@ extension FirebaseManager {
     
     func updateAboutMyself(description: String?, phoneNumber: String?) {
         
+        guard let userInfo = self.user.userInfo() else {
+            return
+        }
+        
         let refrence = Database.database().reference()
         
         let childUpdates = [
-            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself/description": description,
-            "/users/\(Auth.auth().currentUser!.uid)/userInfo/aboutMyself/phoneNumber": phoneNumber
+            "/users/\(userInfo.userId)/userInfo/aboutMyself/description": description,
+            "/users/\(userInfo.userId)/userInfo/aboutMyself/phoneNumber": phoneNumber
             ]
         
         refrence.updateChildValues(childUpdates as [AnyHashable : Any])
