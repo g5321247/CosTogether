@@ -62,7 +62,7 @@ class LogInViewController: UIViewController {
         
         firebaseManager.logInFirebase(
             token: token,
-            sucess: { (_) in
+            sucess: {
             
             DispatchQueue.main.async {
                 AppDelegate.shared.switchMainPage()
@@ -90,7 +90,7 @@ class LogInViewController: UIViewController {
     @IBAction func anonymousLogin(_ sender: UIButton) {
         
         let keychain = Keychain(service: "com.george.CosTogether")
-        keychain["anonymous"] = "anonymous"
+        keychain[FirebaseType.uuid.rawValue] = "anonymous"
         
         AppDelegate.shared.switchMainPage()
 

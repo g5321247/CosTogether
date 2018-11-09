@@ -11,13 +11,6 @@ import Firebase
 import KeychainAccess
 import NotificationBannerSwift
 
-struct UserInfo {
-    
-    var userName: String
-    var userPicUrl: String
-
-}
-
 enum FirebaseType: String {
     
     case uuid
@@ -29,9 +22,11 @@ class FirebaseManager {
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
     
+    let user = UserManager.shared
+    
     func logInFirebase(
         token: String,
-        sucess: @escaping (UserInfo) -> Void,
+        sucess: @escaping () -> Void,
         faliure: @escaping (Error) -> Void
         ) {
         
@@ -55,19 +50,19 @@ class FirebaseManager {
                     return
                     
                 }
-                
-                let user = firebaseResult.user
-                let userInfo = UserInfo(userName: user.displayName!, userPicUrl: user.photoURL!.absoluteString)
+           
+                guard let userInfo = self.user.userInfo() else {
+                    return
+                }
                 
                 let refrence = Database.database().reference()
                 
-                refrence.child("users").child(user.uid).child("userInfo").child("userName").setValue(userInfo.userName)
-                refrence.child("users").child(user.uid).child("userInfo").child("userPicUrl").setValue(userInfo.userPicUrl)
-                
                 let keychain = Keychain(service: "com.george.CosTogether")
-                keychain[FirebaseType.uuid.rawValue] = user.uid
+                keychain[FirebaseType.uuid.rawValue] = userInfo.userId
+            refrence.child("users").child(userInfo.userId).child("userInfo").child("userName").setValue(userInfo.userName)
+            refrence.child("users").child(userInfo.userId).child("userInfo").child("userPicUrl").setValue(userInfo.userPicURL)
                 
-                sucess(userInfo)
+                sucess()
                 
         }
     }
@@ -129,7 +124,7 @@ class FirebaseManager {
         
         refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
             
-            guard var value = snapshot.value as? NSDictionary else {
+            guard let value = snapshot.value as? NSDictionary else {
                 
                 return
             }
@@ -138,83 +133,65 @@ class FirebaseManager {
             
             do {
 
-                let data = try JSONSerialization.data(withJSONObject: value)
-
-                let group = try self.decoder.decode(Group.self, from: data)
+                let articleData = try JSONSerialization.data(withJSONObject: value["article"] as Any)
                 
-                print(group)
+                let article = try self.decoder.decode(ArticleModel.self, from: articleData)
+                
+                guard let products = value["products"] as? NSDictionary,
+                    let productName = products.allKeys as? [String] else {
+                        
+                        return
+                }
+                
+                var productsArray: [ProductModel] = []
+                
+                for value in productName {
+                    
+                    guard let product = products[value] as? NSDictionary,
+                        let imageUrl = product["imageUrl"] as? String,
+                        let numberOfItem = product["numberOfItem"] as? Int,
+                        let price = product["price"] as? Int else {
+                            
+                            return
+                    }
+                    
+                    productsArray.append(
+                        ProductModel(
+                            productName: value,
+                            productImage: imageUrl,
+                            numberOfItem: numberOfItem,
+                            price: price
+                        )
+                    )
+                    
+                }
+                
+                guard let users = value["users"] as? NSDictionary,
+                    let ownerId = users["ownerId"] as? String else {
+                        
+                        return
+                }
+                
+                self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+                    
+                    let group = Group(
+                        openType: groupType,
+                        article: article,
+                        products: productsArray,
+                        owner: userModel,
+                        groupId: groupId
+                    )
+                    
+                    completion(group)
+                    
+                })
+
                 
             } catch {
                 
                 print(error)
             }
             
-            guard let article = value["article"] as? NSDictionary,
-                let location = article["location"] as? String,
-                let postDate = article["postDate"] as? String,
-                let title = article["title"] as? String,
-                let content = article["content"] as? String else {
-
-                    return
-
-            }
-            
-            let articleModel = ArticleModel(
-                title: title,
-                location: location,
-                postDate: postDate,
-                content: content
-                )
-
-            guard let products = value["products"] as? NSDictionary,
-                let productName = products.allKeys as? [String] else {
-
-
-                    return
-            }
-            
-            var productsArray: [ProductModel] = []
-            
-            for value in productName {
-
-                guard let product = products[value] as? NSDictionary,
-                    let imageUrl = product["imageUrl"] as? String,
-                    let numberOfItem = product["numberOfItem"] as? Int,
-                    let price = product["price"] as? Int else {
-
-                        return
-                }
-            
-                productsArray.append(
-                    ProductModel(
-                        productName: value,
-                        productImage: imageUrl,
-                        numberOfItem: numberOfItem,
-                        price: price
-                    )
-                )
-
-            }
-            
-            guard let users = value["users"] as? NSDictionary,
-                let ownerId = users["ownerId"] as? String else {
-
-                    return
-            }
-            
-            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-
-                let group = Group(
-                    openType: groupType,
-                    article: articleModel,
-                    products: productsArray,
-                    owner: userModel,
-                    groupId: groupId
-                )
-
-                completion(group)
-
-            })
 
         }) { (error) in
             print(error.localizedDescription)

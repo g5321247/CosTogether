@@ -56,7 +56,6 @@ class JoinGroupTableViewCell: UITableViewCell {
     
     private func setColletionView() {
         
-        #warning ("改 cell")
         registerTableViewCell(identifier: String(describing: MemberCollectionViewCell.self))
         
         collectionView.delegate = self

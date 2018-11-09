@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let keychain = Keychain(service: "com.george.CosTogether")
 
-        guard keychain[FirebaseType.uuid.rawValue] != nil || keychain["anonymous"] == "anonymous" else {
+        guard keychain[FirebaseType.uuid.rawValue] != nil else {
 
             switchLogIn()
             

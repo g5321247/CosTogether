@@ -23,7 +23,6 @@ class MainPageViewController: UIViewController {
         helpBuyView.isHidden = true
 
         segmentedControl.addUnderlineForSelectedSegment()
-        topView.rightBot.addTarget(self, action: #selector (mapBotTappiung(_:)), for: .touchUpInside)
         
         Analytics.logEvent("StayMainPage", parameters: nil)
                 
@@ -57,10 +56,5 @@ class MainPageViewController: UIViewController {
         }
 
     }
-    
-    #warning ("點擊地圖時")
-    @objc func mapBotTappiung(_ sender: UIButton) {
         
-    }
-    
 }

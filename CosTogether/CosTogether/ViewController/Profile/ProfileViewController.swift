@@ -438,9 +438,7 @@ extension ProfileViewController {
                     do  {
                         
                         try keychain.remove(FirebaseType.uuid.rawValue)
-                        
-                        try keychain.remove("anonymous")
-                        
+                                                
                         try Auth.auth().signOut()
                         
                         AppDelegate.shared.switchLogIn()
