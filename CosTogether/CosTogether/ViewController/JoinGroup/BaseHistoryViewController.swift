@@ -8,7 +8,6 @@
 
 import UIKit
 import Lottie
-import Firebase
 import SDWebImage
 
 class BaseHistoryViewController: UIViewController {
@@ -66,7 +65,7 @@ class BaseHistoryViewController: UIViewController {
     
     func downloadGroupList() {
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        guard UserManager.shared.userInfo() != nil else {
             
             return
         }

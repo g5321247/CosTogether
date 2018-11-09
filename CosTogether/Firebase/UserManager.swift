@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import KeychainAccess
 
 struct UserInfo {
     
@@ -36,6 +37,25 @@ class UserManager {
  
         return UserInfo(userId: user.uid, userName: userName, userPicURL: userPicURL)
         
+    }
+    
+    func signOut(sucess: () -> Void, failure: () -> Void) {
+        
+        do  {
+            
+            try Auth.auth().signOut()
+
+            let keychain = Keychain(service: "com.george.CosTogether")
+            try keychain.remove(FirebaseType.uuid.rawValue)
+
+            sucess()
+            
+        } catch {
+            
+            failure()
+            
+        }
+
     }
     
 }

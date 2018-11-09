@@ -8,9 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import FirebaseAuth
-import Firebase
-import KeychainAccess
 import SDWebImage
 import NotificationBannerSwift
 
@@ -34,6 +31,8 @@ class ProfileViewController: UIViewController {
     var currentUserModel: UserModel?
 
     let dispatchGroup = DispatchGroup()
+    
+    let user = UserManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -355,12 +354,12 @@ extension ProfileViewController {
             
         case .currentTabProfile, .currentUser:
             
-            guard let userId = Auth.auth().currentUser?.uid else {
+            guard let userInfo = self.user.userInfo()  else {
                 
                 return
             }
             
-            firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+            firebaseManager.userIdToGetUserInfo(userId: userInfo.userId) { (userModel) in
                 
                 self.currentUserModel = userModel
                 self.userInfoSetup(user: user)
@@ -433,21 +432,15 @@ extension ProfileViewController {
                 message: "您是否要登出帳號？",
                 defaultOption: ["確定"]) { (action) in
                     
-                    let keychain = Keychain(service: "com.george.CosTogether")
                     
-                    do  {
-                        
-                        try keychain.remove(FirebaseType.uuid.rawValue)
-                                                
-                        try Auth.auth().signOut()
+                    self.user.signOut(sucess: {
                         
                         AppDelegate.shared.switchLogIn()
                         
-                    } catch {
+                    }, failure: {
                         
                         BaseNotificationBanner.warningBanner(subtitle: "登出失敗，請確認網路")
-                        return
-                    }
+                    })
                     
                 }
                 
@@ -460,7 +453,7 @@ extension ProfileViewController {
     
     private func reportingUser() {
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        guard user.userInfo() != nil else {
             
             BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法檢舉其他使用者")
             

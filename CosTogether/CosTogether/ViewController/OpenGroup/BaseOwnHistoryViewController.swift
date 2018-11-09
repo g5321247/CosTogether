@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class BaseOwnHistoryViewController: BaseHistoryViewController {
 
@@ -18,7 +17,7 @@ class BaseOwnHistoryViewController: BaseHistoryViewController {
     
     override func downloadGroupList() {
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        guard UserManager.shared.userInfo() != nil else {
             
             return
         }
