@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableViewCell {
     
-    static func createCell<T : UITableViewCell>(tableView: UITableView, indexPath: IndexPath) -> T {
+    static func createCell<T: UITableViewCell>(tableView: UITableView, indexPath: IndexPath) -> T {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath)
         

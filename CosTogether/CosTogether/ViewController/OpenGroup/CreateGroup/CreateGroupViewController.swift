@@ -327,11 +327,7 @@ extension CreateGroupViewController: UITableViewDataSource {
             
         case 0:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
+            let cell: ImageTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             cell.updateProduct(product: products[indexPath.row])
             cell.productImageBot.isEnabled = false
@@ -341,12 +337,8 @@ extension CreateGroupViewController: UITableViewDataSource {
         
         case 1:
         
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
-            
+            let cell: ImageTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+
             cell.clear()
             
             cell.addBot.addTarget(self, action: #selector (appendProductBotTapping(_:)), for: .touchUpInside)
@@ -357,11 +349,7 @@ extension CreateGroupViewController: UITableViewDataSource {
 
         case 2:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupInfoTableViewCell.self)) as? GroupInfoTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
+            let cell: GroupInfoTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             self.cell = cell
             

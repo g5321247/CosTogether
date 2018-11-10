@@ -176,14 +176,8 @@ extension BaseHistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: GroupTableViewCell.self)
-            ) as? GroupTableViewCell else {
                 
-                return UITableViewCell()
-                
-        }
+        let cell: GroupTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
         
         cell.updateGroupHistory(ownGroup: myGroups[indexPath.row])
         

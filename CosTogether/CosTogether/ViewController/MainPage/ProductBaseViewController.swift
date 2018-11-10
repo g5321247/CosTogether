@@ -204,15 +204,8 @@ extension ProductBaseViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
         ) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: ProductCollectionViewCell.self),
-            for: indexPath
-            ) as? ProductCollectionViewCell else {
-                
-                print("No such cell")
-                return UICollectionViewCell()
-                
-        }
+        
+        let cell: ProductCollectionViewCell = UICollectionViewCell.createCell(collectionView: collectionView, indexPath: indexPath)
         
         cell.updateGroupInfo(
             productUrl: group[indexPath.row].products.first?.productImage ?? "",

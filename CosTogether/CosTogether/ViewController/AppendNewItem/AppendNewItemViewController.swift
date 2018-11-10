@@ -146,11 +146,7 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
         case 0:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageTableViewCell.self)) as? ImageTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
+            let cell: ImageTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             self.cell = cell
             
@@ -169,11 +165,7 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
         case 1:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductInfoTableViewCell.self)) as? ProductInfoTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
+             let cell: ProductInfoTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             cell.delegate = self
             
@@ -187,12 +179,8 @@ extension AppendNewItemViewController: UITableViewDataSource {
             
         case 2:
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ButtonTableViewCell.self)) as? ButtonTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
-            
+            let cell: ButtonTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+
             cell.appendBot.addTarget(self, action: #selector (appendProduct(_:)), for: .touchUpInside)
             
             return  cell

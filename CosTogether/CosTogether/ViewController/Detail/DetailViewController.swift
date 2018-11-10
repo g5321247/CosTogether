@@ -54,22 +54,22 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             DataType(dataType: .sendComment, data: [])
         ]
         
-        guard orderAlready else {
+        // MARK: 確認是否下單，假如有就會將原本的 order cell 換掉
+        
+        guard orderAlready,
+         let indexOfOrder = allData.firstIndex(where: {$0.dataType == .order}) else {
             
             tableView.reloadData()
             return
             
         }
         
-        guard let indexOfOrder = allData.firstIndex(where: {$0.dataType == .order}) else {
-
-                return
-        }
-        
         allData[indexOfOrder].data.removeAll()
         
         tableView.reloadData()
     }
+    
+    // MARK: 將前一頁的資料更新至這一頁
     
     func updateInfo(group: Group) {
         
@@ -165,8 +165,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     @objc func keyboardWillHide(notification: Notification) {
         
-        if let keyboardSize =
-            (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             
             reloadData(orderAlready: orderAlready)
             
@@ -329,7 +328,6 @@ extension DetailViewController: UITableViewDataSource {
 
     // swiftlint:disable cyclomatic_complexity
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let allDataType = allData[indexPath.section]

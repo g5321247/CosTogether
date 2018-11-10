@@ -159,10 +159,7 @@ extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UserCalculateTableViewCell.self)) as? UserCalculateTableViewCell else {
-            
-            return UITableViewCell()
-        }
+        let cell: UserCalculateTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
         
         cell.selfBuyerInfoUpdate(pdoduct: myProducts[indexPath.section].products[indexPath.row])
         
