@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import NotificationBannerSwift
 
 class SendCommentTableViewCell: UITableViewCell {
@@ -21,7 +20,16 @@ class SendCommentTableViewCell: UITableViewCell {
         
         baseView.messgaeTxtView.delegate = self
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        setup()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    private func setup() {
+        
+        guard UserManager.shared.userInfo() != nil else {
             
             baseView.sendMessageBot.isEnabled = false
             
@@ -29,11 +37,7 @@ class SendCommentTableViewCell: UITableViewCell {
         }
         
         baseView.sendMessageBot.isEnabled = true
-        
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     func resizeTextView(heightGap: CGFloat) {
@@ -55,7 +59,7 @@ extension SendCommentTableViewCell: UITextViewDelegate {
 
         }
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        guard UserManager.shared.userInfo() != nil else {
             BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法送出留言，請用 FB 登入")
             
             return

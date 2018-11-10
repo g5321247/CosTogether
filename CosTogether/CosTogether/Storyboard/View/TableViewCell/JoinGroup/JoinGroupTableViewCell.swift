@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 protocol JoinGroupDelegate: AnyObject {
     
@@ -170,16 +169,16 @@ extension JoinGroupTableViewCell: UICollectionViewDelegateFlowLayout {
         
         controller.loadViewIfNeeded()
         
-        guard delegate.joinMember[indexPath.row].userId != Auth.auth().currentUser?.uid else {
+        guard delegate.joinMember[indexPath.row].userId != UserManager.shared.userInfo()?.userId else {
             
-            controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId ?? "")
+            controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId)
             
             delegate.showTheView(controller: controller)
 
             return
         }
         
-        controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId ?? "")
+        controller.downloadUserData(user: .otherUser, otherUserId: delegate.joinMember[indexPath.row].userId)
         
         delegate.showTheView(controller: controller)
     }

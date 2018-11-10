@@ -383,8 +383,9 @@ extension FirebaseManager {
         )
 
     }
+
+    // MARK: 用使用者 id 去拿資料
     
-    #warning ("用使用者 id 拿資料")
     func userIdToGetUserInfo(
         refrence: DatabaseReference = Database.database().reference()
         , userId: String,

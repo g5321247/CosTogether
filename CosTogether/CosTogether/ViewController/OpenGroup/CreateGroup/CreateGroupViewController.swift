@@ -169,22 +169,17 @@ class CreateGroupViewController: UIViewController {
 
         }
         
-        guard let userId = Auth.auth().currentUser?.uid else {
+        guard let user = UserManager.shared.userInfo() else {
             
-            BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無發文權利")
+            BaseNotificationBanner.warningBanner(subtitle: "使用者無發文權利")
             
             return nil
         }
         
-        guard let userImage = Auth.auth().currentUser?.photoURL?.absoluteString,
-            let userName = Auth.auth().currentUser?.displayName else {
-                return nil
-        }
-
         let owner = UserModel(
-            userImage: userImage,
-            userName: userName,
-            userId: userId
+            userImage: user.userPicURL,
+            userName: user.userName,
+            userId: user.userId
             )
         
         let group = Group(

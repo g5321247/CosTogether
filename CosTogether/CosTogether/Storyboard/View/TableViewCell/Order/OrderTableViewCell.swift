@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import NotificationBannerSwift
 
 protocol CellDelegate: AnyObject {
@@ -58,7 +57,7 @@ class OrderTableViewCell: UITableViewCell {
     
     @IBAction func orderTapping(_ sender: UIButton) {
         
-        guard Auth.auth().currentUser?.uid != nil else {
+        guard UserManager.shared.userInfo() != nil else {
             
             BaseNotificationBanner.warningBanner(subtitle: "匿名使用者無法下單，請用 FB 登入")
             return
