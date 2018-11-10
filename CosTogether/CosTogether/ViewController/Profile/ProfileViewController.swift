@@ -29,8 +29,6 @@ class ProfileViewController: UIViewController {
 
     var userType: UserType = .currentTabProfile
     var currentUserModel: UserModel?
-
-    let dispatchGroup = DispatchGroup()
     
     let user = UserManager.shared
     

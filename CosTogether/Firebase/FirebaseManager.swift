@@ -133,9 +133,34 @@ class FirebaseManager {
             
             do {
 
-                let articleData = try JSONSerialization.data(withJSONObject: value["article"] as Any)
+                #warning ("轉成 swift data 失敗")
                 
-                let article = try self.decoder.decode(ArticleModel.self, from: articleData)
+//                let articleData = try JSONSerialization.data(withJSONObject: value["article"])
+//
+//                let article = try self.decoder.decode(ArticleModel.self, from: articleData)
+             
+            } catch {
+                
+                print(error)
+            }
+
+                guard let articles = value["article"] as? NSDictionary,
+                    let location = articles["location"] as? String,
+                    let postDate = articles["postDate"] as? String,
+                    let title = articles["title"] as? String,
+                    let content = articles["content"] as? String else {
+                        
+                        return
+                        
+                }
+                
+                let article = ArticleModel(
+                    title: title,
+                    location: location,
+                    postDate: postDate,
+                    content: content
+                )
+
                 
                 guard let products = value["products"] as? NSDictionary,
                     let productName = products.allKeys as? [String] else {
@@ -187,10 +212,6 @@ class FirebaseManager {
                 })
 
                 
-            } catch {
-                
-                print(error)
-            }
             
 
         }) { (error) in
