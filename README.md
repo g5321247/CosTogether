@@ -34,12 +34,6 @@
 
 ## Screen Shots
 
-### 登入畫面
-
-* 可使用 Facebook 帳號或匿名登入（匿名帳號僅能查看，無法進行發文、留言等其他動作）
-
-<img src="https://imgur.com/kXDZh4O.jpg" width="200"></a>
-
 ### 最近的開團
 
 * 顯示最新分購或團購商品，讓使用者可以立即加團購買
