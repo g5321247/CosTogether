@@ -319,46 +319,7 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch  allData[indexPath.section].dataType {
-            
-        case .productPic:
-
-            return self.view.frame.width * (3 / 5)
-            
-        case .articleInfo:
-            
-            return self.view.frame.width * (100 / 375)
-            
-        case .productItems:
-            
-            return  self.view.frame.width * (90 / 375)
-        
-        case .order:
-            
-            return  self.view.frame.width * (85 / 375)
-            
-        case .joinGroup:
-            
-            return  self.view.frame.width * (105 / 375)
-        
-        case .productDetail:
-            
-            return UITableView.automaticDimension
-        
-        case .commnetTitle:
-            
-            return self.view.frame.width * (35 / 375)
-        
-        case .previousComments:
-            
-            return  UITableView.automaticDimension
-            
-        case .sendComment:
-            
-            return cellHeight
-
-        }
-        
+        return allData[indexPath.section].dataType.tableView(self, sendCommentHeight: cellHeight)
     }
     
 }

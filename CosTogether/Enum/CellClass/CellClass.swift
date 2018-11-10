@@ -38,6 +38,50 @@ enum CellClass: Equatable {
         }
     }
     
+    func tableView(_ controller: UIViewController, sendCommentHeight: CGFloat) -> CGFloat {
+        
+        switch  self {
+            
+        case .productPic:
+            
+            return controller.view.frame.width * (3 / 5)
+            
+        case .articleInfo:
+            
+            return controller.view.frame.width * (100 / 375)
+            
+        case .productItems:
+            
+            return  controller.view.frame.width * (90 / 375)
+            
+        case .order:
+            
+            return  controller.view.frame.width * (85 / 375)
+            
+        case .joinGroup:
+            
+            return  controller.view.frame.width * (105 / 375)
+            
+        case .productDetail:
+            
+            return UITableView.automaticDimension
+            
+        case .commnetTitle:
+            
+            return controller.view.frame.width * (35 / 375)
+            
+        case .previousComments:
+            
+            return  UITableView.automaticDimension
+            
+        case .sendComment:
+            
+            return sendCommentHeight
+            
+        }
+
+    }
+    
     func cellForTableView(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         
         switch self {
