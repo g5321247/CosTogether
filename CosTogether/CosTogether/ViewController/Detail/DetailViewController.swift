@@ -329,6 +329,7 @@ extension DetailViewController: UITableViewDataSource {
 
     // swiftlint:disable cyclomatic_complexity
 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let allDataType = allData[indexPath.section]
@@ -337,13 +338,7 @@ extension DetailViewController: UITableViewDataSource {
             
         case .productPic:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: ProductPicTableViewCell.self)
-                ) as? ProductPicTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
+            let cell: ProductPicTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             cell.view.delegate = self
 
@@ -353,13 +348,7 @@ extension DetailViewController: UITableViewDataSource {
             
         case .articleInfo:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: ArticleInfoTableViewCell.self)
-                ) as? ArticleInfoTableViewCell else {
-
-                    return UITableViewCell()
-
-            }
+            let cell: ArticleInfoTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
 
             cell.articleInfoView.updateArticle(group: allDataType.data[indexPath.row] as! Group)
             
@@ -372,15 +361,9 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         
         case .joinGroup:
-
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: JoinGroupTableViewCell.self)
-                ) as? JoinGroupTableViewCell else {
-
-                    return UITableViewCell()
-
-            }
-
+            
+            let cell: JoinGroupTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+            
             cell.delegate = self
             cell.checkoutUserNumber()
             cell.collectionView.reloadData()
@@ -388,15 +371,9 @@ extension DetailViewController: UITableViewDataSource {
             return cell
 
         case .productItems:
-        
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: ProductItemTableViewCell.self)
-                ) as? ProductItemTableViewCell else {
-                
-                return UITableViewCell()
-                
-            }
             
+            let cell: ProductItemTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+                        
             cell.productModel = allDataType.data[indexPath.row] as? ProductModel
             cell.updateView(product: allDataType.data[indexPath.row] as! ProductModel)
             
@@ -426,15 +403,9 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         
         case .order:
-        
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: OrderTableViewCell.self)
-                ) as? OrderTableViewCell else {
-                    
-                return UITableViewCell()
-                    
-            }
             
+            let cell: OrderTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+
             guard  !allDataType.data.isEmpty else {
                 
                 cell.userHasJoined(title: "你已經加入此揪團")
@@ -445,9 +416,7 @@ extension DetailViewController: UITableViewDataSource {
                 return cell
             }
             
-            
             cell.delegate = self
-            
             
             var totalCost = 0
             
@@ -463,13 +432,7 @@ extension DetailViewController: UITableViewDataSource {
             
         case .productDetail:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: ProductDetailTableViewCell.self)
-                ) as? ProductDetailTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
+            let cell: ProductDetailTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             guard let article = productDetail.first?.article else {
                 return UITableViewCell()
@@ -483,26 +446,14 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         
         case .commnetTitle:
-
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: CommonTitleTableViewCell.self)
-                ) as? CommonTitleTableViewCell else {
-
-                    return UITableViewCell()
-
-            }
+            
+            let cell: CommonTitleTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
 
             return cell
 
         case .previousComments:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: PreviousCommentTableViewCell.self)
-                ) as? PreviousCommentTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
+            let cell: PreviousCommentTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
             
             guard comments.count > 0 else {
                 cell.noCommentSetup(title: "目前尚無留言")
@@ -518,14 +469,8 @@ extension DetailViewController: UITableViewDataSource {
 
         case .sendComment:
             
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: SendCommentTableViewCell.self)
-                ) as? SendCommentTableViewCell else {
-                    
-                    return UITableViewCell()
-                    
-            }
-            
+            let cell: SendCommentTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+
             cell.delegate = self
             cell.baseView.delegate = self
             

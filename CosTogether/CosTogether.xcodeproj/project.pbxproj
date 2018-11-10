@@ -40,6 +40,7 @@
 		C82FA861215A3CED00B75284 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FA860215A3CED00B75284 /* MessageView.swift */; };
 		C8378BCF215B60F700CBAA51 /* ProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8378BCE215B60F700CBAA51 /* ProductPicView.swift */; };
 		C83870752153AA8200E64493 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83870742153AA8200E64493 /* UIAlertController+.swift */; };
+		C846B2DC2196F189001A116C /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846B2DB2196F188001A116C /* UITableViewCell+.swift */; };
 		C84853ED2163BA5300EBCDFB /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84853EC2163BA5300EBCDFB /* Int+.swift */; };
 		C8497505215670AF00555855 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8497504215670AF00555855 /* TabViewController.swift */; };
 		C84975142157742A00555855 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84975132157742A00555855 /* MainPageViewController.swift */; };
@@ -157,6 +158,7 @@
 		C82FA860215A3CED00B75284 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C8378BCE215B60F700CBAA51 /* ProductPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPicView.swift; sourceTree = "<group>"; };
 		C83870742153AA8200E64493 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
+		C846B2DB2196F188001A116C /* UITableViewCell+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		C84853EC2163BA5300EBCDFB /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		C8497504215670AF00555855 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		C849750621567C1B00555855 /* 中文仿宋體.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "中文仿宋體.ttf"; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 		C8F8C92B2152387100BDB0CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C846B2DB2196F188001A116C /* UITableViewCell+.swift */,
 				C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */,
 				C888DB27216619010091F6F0 /* UIImage+.swift */,
 				C84853EC2163BA5300EBCDFB /* Int+.swift */,
@@ -1161,6 +1164,7 @@
 				C8EAD96121809348009E8823 /* GroupInfoTableViewCell.swift in Sources */,
 				C85151A12175B2B9007B1324 /* OwnShareBuyViewController.swift in Sources */,
 				C827FAD8216080DA008AB665 /* Users.swift in Sources */,
+				C846B2DC2196F189001A116C /* UITableViewCell+.swift in Sources */,
 				C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */,
 				C811A67C219544B400D21195 /* UserManager.swift in Sources */,
 				C8D240982160D7EE00268F67 /* DataTypeModel.swift in Sources */,

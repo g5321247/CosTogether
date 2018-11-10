@@ -26,4 +26,8 @@ class ProductPicTableViewCell: UITableViewCell {
         
     }
     
+    
+    func doSomethingElse() {
+        
+    }
 }
