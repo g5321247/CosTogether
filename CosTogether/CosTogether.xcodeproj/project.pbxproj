@@ -367,13 +367,13 @@
 			path = CosTogether;
 			sourceTree = "<group>";
 		};
-		C823A25D21675A770066D635 /* GroupBuy */ = {
+		C823A25D21675A770066D635 /* All Group */ = {
 			isa = PBXGroup;
 			children = (
 				C823A25E21675AA60066D635 /* ShareBuyViewController.swift */,
 				C823A26021675B1C0066D635 /* HelpBuyViewController.swift */,
 			);
-			path = GroupBuy;
+			path = "All Group";
 			sourceTree = "<group>";
 		};
 		C823A26B216904D40066D635 /* CreateArticle */ = {
@@ -484,9 +484,9 @@
 			isa = PBXGroup;
 			children = (
 				C8C6B62B2193A16D00F1FBC4 /* ProductBaseViewController.swift */,
-				C823A25D21675A770066D635 /* GroupBuy */,
 				C84975132157742A00555855 /* MainPageViewController.swift */,
 				C810BB382159E4630064A656 /* MainNavigationViewController.swift */,
+				C823A25D21675A770066D635 /* All Group */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";

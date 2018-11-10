@@ -62,14 +62,14 @@ class LogInViewController: UIViewController {
         
         firebaseManager.logInFirebase(
             token: token,
-            sucess: {
+            success: {
             
             DispatchQueue.main.async {
                 AppDelegate.shared.switchMainPage()
             }
         
         },
-            faliure: { [weak self ] (error) in
+            failure: { [weak self ] (error) in
             
                 guard let error = error as? FBError else {
                     

@@ -13,16 +13,32 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topLogView: TopLogoView!
-        
-    let firebaseManager = FirebaseManager()
-    var cellHeight: CGFloat = 53
     
     let userDefault = UserDefaults.standard
+    let firebaseManager = FirebaseManager()
     let user = UserManager.shared
 
-    var orderAlready: Bool = false
+    var sendCommentCellHeight: CGFloat = 53
     
+    var orderAlready: Bool = false
     var isSend: Bool = false
+    
+    lazy var allData: [DataType] = []
+
+    var productPic: [Group] = []
+    var article: [Group] = []
+    var joinMember: [UserModel] = []
+    var products: [ProductModel] = []
+    var order: [ProductModel] = []
+    var productDetail: [Group] = []
+    var comments: [CommentModel] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+        
+    }
     
     func reloadData(orderAlready: Bool) {
         
@@ -117,29 +133,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 
     }
     
-    var productPic: [Group] = []
-    
-    var article: [Group] = []
-    
-    var joinMember: [UserModel] = []
-    
-    var products: [ProductModel] = []
-    
-    var order: [ProductModel] = []
-    
-    var productDetail: [Group] = []
-    
-    var comments: [CommentModel] = []
-    
-    lazy var allData: [DataType] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setup()
-        
-    }
-    
     private func setup() {
         
         setUpCell()
@@ -185,7 +178,6 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
     }
 
-    
     private func tableViewSetup() {
         
         tableView.delegate = self
@@ -319,7 +311,7 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return allData[indexPath.section].dataType.tableView(self, sendCommentHeight: cellHeight)
+        return allData[indexPath.section].dataType.tableView(self, sendCommentHeight: sendCommentCellHeight)
     }
     
 }
@@ -589,7 +581,7 @@ extension DetailViewController: CellDelegate {
             groupId: article.first!.groupId!
         )
         
-        cellHeight = 53
+        sendCommentCellHeight = 53
         self.reloadData(orderAlready: orderAlready)
         
         let indexPath = IndexPath(row: allData[allData.count - 1].dataType.numberOfRow() - 1, section: allData.count - 1)
@@ -601,7 +593,7 @@ extension DetailViewController: CellDelegate {
     
     func resizing(heightGap: CGFloat) {
         
-        cellHeight += heightGap
+        sendCommentCellHeight += heightGap
         tableView.contentInset.bottom += heightGap
         tableView.contentOffset.y += heightGap
         

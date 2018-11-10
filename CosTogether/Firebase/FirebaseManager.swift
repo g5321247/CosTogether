@@ -26,8 +26,8 @@ class FirebaseManager {
     
     func logInFirebase(
         token: String,
-        sucess: @escaping () -> Void,
-        faliure: @escaping (Error) -> Void
+        success: @escaping () -> Void,
+        failure: @escaping (Error) -> Void
         ) {
         
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
@@ -37,7 +37,7 @@ class FirebaseManager {
             
                 guard error == nil else {
                     
-                    faliure(FirebaseError.system(error!.localizedDescription))
+                    failure(FirebaseError.system(error!.localizedDescription))
                     
                     return
                     
@@ -45,7 +45,7 @@ class FirebaseManager {
                 
                 guard authResult != nil else {
                     
-                    faliure(FirebaseError.unrecognized("No Firebase Data"))
+                    failure(FirebaseError.unrecognized("No Firebase Data"))
                     
                     return
                     
@@ -55,14 +55,14 @@ class FirebaseManager {
                     return
                 }
                 
-                let refrence = Database.database().reference()
+                let reference = Database.database().reference()
                 
                 let keychain = Keychain(service: "com.george.CosTogether")
                 keychain[FirebaseType.uuid.rawValue] = userInfo.userId
-            refrence.child("users").child(userInfo.userId).child("userInfo").child("userName").setValue(userInfo.userName)
-            refrence.child("users").child(userInfo.userId).child("userInfo").child("userPicUrl").setValue(userInfo.userPicURL)
+            reference.child("users").child(userInfo.userId).child("userInfo").child("userName").setValue(userInfo.userName)
+            reference.child("users").child(userInfo.userId).child("userInfo").child("userPicUrl").setValue(userInfo.userPicURL)
                 
-                sucess()
+                success()
                 
         }
     }
@@ -131,7 +131,7 @@ class FirebaseManager {
             
             let groupId = snapshot.key
             
-            do {
+//            do {
 
                 #warning ("轉成 swift data 失敗")
                 
@@ -139,10 +139,10 @@ class FirebaseManager {
 //
 //                let article = try self.decoder.decode(ArticleModel.self, from: articleData)
              
-            } catch {
-                
-                print(error)
-            }
+//            } catch {
+//
+//                print(error)
+//            }
 
                 guard let articles = value["article"] as? NSDictionary,
                     let location = articles["location"] as? String,

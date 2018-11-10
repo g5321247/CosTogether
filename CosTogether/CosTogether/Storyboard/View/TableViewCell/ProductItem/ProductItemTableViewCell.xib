@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -65,7 +65,7 @@
                                     <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="decreaseBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qG2-Cd-u6V"/>
+                                    <action selector="numberOfBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qG2-Cd-u6V"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JN-su-Cf7">
@@ -89,7 +89,7 @@
                                     <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="increaseBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zda-7x-O9i"/>
+                                    <action selector="numberOfBotTapping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GuR-E4-8ox"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -131,8 +131,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="minus" width="16" height="16"/>
-        <image name="small-plus" width="16" height="16"/>
+        <image name="minus" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="small-plus" width="25.600000381469727" height="25.600000381469727"/>
         <image name="test" width="554" height="739"/>
     </resources>
 </document>

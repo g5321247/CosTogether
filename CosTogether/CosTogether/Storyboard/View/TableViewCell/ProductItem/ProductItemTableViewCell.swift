@@ -11,15 +11,15 @@ import NotificationBannerSwift
 
 class ProductItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var productNameLbl: UILabel!
-    @IBOutlet weak var itemPrice: UILabel!
-    @IBOutlet weak var amoutQuantity: UILabel!
+    @IBOutlet fileprivate weak var productImage: UIImageView!
+    @IBOutlet fileprivate weak var productNameLbl: UILabel!
+    @IBOutlet fileprivate weak var itemPrice: UILabel!
+    @IBOutlet fileprivate weak var amoutQuantity: UILabel!
     
-    @IBOutlet weak var buyNumberLbl: UILabel!
+    @IBOutlet fileprivate weak var buyNumberLbl: UILabel!
     
-    @IBOutlet weak var decreaseNumBot: UIButton!
-    @IBOutlet weak var increaseNumBot: UIButton!
+    @IBOutlet fileprivate weak var decreaseNumBot: UIButton!
+    @IBOutlet fileprivate weak var increaseNumBot: UIButton!
     
     var productModel: ProductModel?
     
@@ -66,7 +66,7 @@ class ProductItemTableViewCell: UITableViewCell {
         buyNumberLbl.text = "0"
     }
     
-    private func caculation(
+    fileprivate func caculation(
         price: Int,
         quantity: Int,
         productName: String
@@ -84,50 +84,57 @@ class ProductItemTableViewCell: UITableViewCell {
         
     }
     
-    @IBAction func increaseBotTapping(_ sender: UIButton) {
-        
-        guard let productModel = productModel,
-            let number = Int(buyNumberLbl.text!),
-            number < (productModel.numberOfItem) else {
-                
-                BaseNotificationBanner.warningBanner(subtitle: "數量已達上限")
-
-                return
-        }
-        
-        buyNumberLbl.text = "\(number + 1)"
-        
-        caculation(
-            price: productModel.price,
-            quantity: number + 1,
-            productName: productModel.productName
-        )
-        
-    }
-    
-    @IBAction func decreaseBotTapping(_ sender: UIButton) {
+    @IBAction func numberOfBotTapping(_ sender: UIButton) {
         
         guard let productModel = productModel else {
             return
         }
-        guard let number = Int(buyNumberLbl.text!),
-            number > 0 else {
+        
+        switch sender {
             
-                caculation(
-                    price: 0,
-                    quantity: 0,
-                    productName: ""
-                )
+        case increaseNumBot:
+            
+            guard let number = Int(buyNumberLbl.text!),
+            number < (productModel.numberOfItem) else {
+                
+                BaseNotificationBanner.warningBanner(subtitle: "數量已達上限")
+                
+                return
+            }
+            
+            buyNumberLbl.text = "\(number + 1)"
+            
+            caculation(
+                price: productModel.price,
+                quantity: number + 1,
+                productName: productModel.productName
+            )
+        
+        case decreaseNumBot:
+            
+            guard let number = Int(buyNumberLbl.text!),
+                number > 0 else {
+                    
+                    caculation(
+                        price: 0,
+                        quantity: 0,
+                        productName: ""
+                    )
+                    
+                    return
+            }
+            
+            buyNumberLbl.text = "\(number - 1)"
+            caculation(
+                price: productModel.price,
+                quantity: number - 1,
+                productName: productModel.productName
+            )
 
-            return
+        default:
+            break
         }
         
-        buyNumberLbl.text = "\(number - 1)"
-        caculation(
-            price: productModel.price,
-            quantity: number - 1,
-            productName: productModel.productName
-        )
         
     }
     
