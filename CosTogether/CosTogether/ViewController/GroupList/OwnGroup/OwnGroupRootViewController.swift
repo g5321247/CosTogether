@@ -9,7 +9,7 @@
 import UIKit
 import NotificationBannerSwift
 
-class OpenGroupRootViewController: UIViewController {
+class OwnGroupRootViewController: UIViewController {
 
     @IBOutlet weak var groupTypeSC: UISegmentedControl!
     @IBOutlet weak var shareBuyView: UIView!

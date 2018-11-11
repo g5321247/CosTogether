@@ -11,12 +11,14 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class OwnHelpBuyViewController: BaseOwnHistoryViewController {
+class OwnHelpBuyViewController: BaseHistoryViewController, OwnGroupDownloading {
     
     override func viewDidLoad() {
         
         groupType = .helpBuy
         myGroup = .own
+        
+        downloadGroupList()
         
         super.viewDidLoad()
         

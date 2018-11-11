@@ -11,12 +11,14 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class JoinHelpViewController: BaseHistoryViewController {
+class JoinShareViewController: BaseHistoryViewController, JoinGroupDownloading {
     
     override func viewDidLoad() {
         
-        groupType = .helpBuy
+        groupType = .shareBuy
         myGroup = .join
+        
+        downloadGroupList()
         
         super.viewDidLoad()
         

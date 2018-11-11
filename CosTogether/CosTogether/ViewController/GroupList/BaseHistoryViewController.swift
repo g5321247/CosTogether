@@ -10,8 +10,91 @@ import UIKit
 import Lottie
 import SDWebImage
 
-class BaseHistoryViewController: UIViewController {
+protocol GroupDownloading where Self: BaseHistoryViewController {}
 
+protocol JoinGroupDownloading: GroupDownloading {}
+
+extension JoinGroupDownloading {
+    
+    func downloadGroupList() {
+        
+        guard UserManager.shared.userInfo() != nil else {
+            
+            return
+        }
+        
+        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
+            
+            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+                
+                self.myGroups.append(group)
+                
+                self.emptyLbl.isHidden = true
+                self.animationView.isHidden = true
+                
+                self.emptyViewIsHidden(isHidden: true)
+                
+                self.reloadData()
+                
+            })
+            
+        }
+        
+        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
+            
+            for (index, key) in keys.enumerated() {
+                
+                for value in self.myGroups {
+                    
+                    if key == value.groupId {
+                        
+                        self.myGroups.remove(at: index)
+                        break
+                    }
+                    
+                }
+                
+            }
+            self.reloadData()
+        }
+
+    }
+
+}
+
+protocol OwnGroupDownloading: GroupDownloading {}
+
+extension OwnGroupDownloading {
+    
+    func downloadGroupList() {
+    
+    guard UserManager.shared.userInfo() != nil else {
+    
+        return
+    }
+    
+    firebaseManager.downloadMyOwnGroup(groupType: groupType, myGroup: myGroup) { (group) in
+    
+        self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+    
+                self.myGroups.append(group)
+            
+                self.emptyLbl.isHidden = true
+                self.animationView.isHidden = true
+            
+                self.emptyViewIsHidden(isHidden: true)
+            
+                self.reloadData()
+        
+            })
+        }
+    }
+    
+}
+
+
+class BaseHistoryViewController: UIViewController, GroupDownloading {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
     
@@ -37,7 +120,7 @@ class BaseHistoryViewController: UIViewController {
         setUpCell()
         tableViewSetup()
         emptyViewIsHidden(isHidden: false)
-        downloadGroupList()
+        
     }
     
     internal func emptyViewIsHidden(isHidden: Bool) {
@@ -63,49 +146,49 @@ class BaseHistoryViewController: UIViewController {
 
     }
     
-    func downloadGroupList() {
-        
-        guard UserManager.shared.userInfo() != nil else {
-            
-            return
-        }
-        
-        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
-            
-            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
-                
-                self.myGroups.append(group)
-                
-                self.emptyLbl.isHidden = true
-                self.animationView.isHidden = true
-                
-                self.emptyViewIsHidden(isHidden: true)
-
-                self.reloadData()
-                
-            })
-            
-        }
-        
-        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
-            
-            for (index, key) in keys.enumerated() {
-                
-                for value in self.myGroups {
-                    
-                    if key == value.groupId {
-                        
-                        self.myGroups.remove(at: index)
-                        break
-                    }
-                    
-                }
-                
-            }
-            self.reloadData()
-        }
-        
-    }
+//    func downloadGroupList() {
+//
+//        guard UserManager.shared.userInfo() != nil else {
+//
+//            return
+//        }
+//
+//        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
+//
+//            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+//
+//                self.myGroups.append(group)
+//
+//                self.emptyLbl.isHidden = true
+//                self.animationView.isHidden = true
+//
+//                self.emptyViewIsHidden(isHidden: true)
+//
+//                self.reloadData()
+//
+//            })
+//
+//        }
+//
+//        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
+//
+//            for (index, key) in keys.enumerated() {
+//
+//                for value in self.myGroups {
+//
+//                    if key == value.groupId {
+//
+//                        self.myGroups.remove(at: index)
+//                        break
+//                    }
+//
+//                }
+//
+//            }
+//            self.reloadData()
+//        }
+//
+//    }
     
     private func setUpCell() {
         

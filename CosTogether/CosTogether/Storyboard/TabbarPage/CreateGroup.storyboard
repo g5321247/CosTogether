@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucu-yX-HzK">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucu-yX-HzK">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,16 +30,16 @@
             </objects>
             <point key="canvasLocation" x="1870" y="528"/>
         </scene>
-        <!--Open Group Root View Controller-->
+        <!--Own Group Root View Controller-->
         <scene sceneID="CfY-II-Srn">
             <objects>
-                <viewController id="2pM-1z-vj8" customClass="OpenGroupRootViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2pM-1z-vj8" customClass="OwnGroupRootViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y2I-jc-0KC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-1D-eEt">
-                                <rect key="frame" x="0.0" y="75" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="APm-nC-U0W"/>
                                 </constraints>
@@ -57,28 +53,28 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-FA-sJe">
-                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <connections>
                                     <segue destination="yO2-5O-cIh" kind="embed" id="c2B-hk-6Er"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYH-K9-bsj">
-                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <connections>
                                     <segue destination="fPO-HO-x0M" kind="embed" id="Guh-IT-EOs"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-bD-FHi" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開團 Go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRI-vk-Zld">
-                                        <rect key="frame" x="151.5" y="40.5" width="72.5" height="23.5"/>
+                                        <rect key="frame" x="264" y="78.5" width="72.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciZ-uz-e6m">
-                                        <rect key="frame" x="24" y="44.5" width="30" height="15"/>
+                                        <rect key="frame" x="24" y="83" width="30" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="HJv-eZ-lek"/>
                                             <constraint firstAttribute="width" secondItem="ciZ-uz-e6m" secondAttribute="height" multiplier="2:1" id="zkB-6P-ut8"/>
@@ -87,7 +83,7 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwI-pd-l7d">
-                                        <rect key="frame" x="335" y="44" width="16" height="16"/>
+                                        <rect key="frame" x="561.5" y="83" width="14.5" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jwI-pd-l7d" secondAttribute="height" multiplier="1:1" id="Qcm-UN-9BW"/>
                                         </constraints>
@@ -164,7 +160,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東西買太多怕過期嗎？快開分購跟人分享吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rks-ip-rY6">
-                                        <rect key="frame" x="20" y="40" width="335" height="65.5"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="56"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -210,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開代購" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxT-Ml-cld">
-                                <rect key="frame" x="151.5" y="20" width="72" height="33"/>
+                                <rect key="frame" x="151.5" y="20" width="72" height="28"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -223,7 +219,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想快速累積紅利點數嗎？快開代購幫人購買吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unu-rW-Uct">
-                                        <rect key="frame" x="20" y="40" width="335" height="65.5"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="56"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>

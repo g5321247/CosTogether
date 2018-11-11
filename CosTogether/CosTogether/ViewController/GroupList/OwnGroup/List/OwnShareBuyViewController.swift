@@ -11,12 +11,14 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class OwnShareBuyViewController: BaseOwnHistoryViewController {
+class OwnShareBuyViewController: BaseHistoryViewController, OwnGroupDownloading {
     
     override func viewDidLoad() {
         
         groupType = .shareBuy
         myGroup = .own
+        
+        downloadGroupList()
         
         super.viewDidLoad()
         
