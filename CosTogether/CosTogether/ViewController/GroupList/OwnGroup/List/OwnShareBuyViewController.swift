@@ -8,7 +8,6 @@
 
 import UIKit
 import Lottie
-import Firebase
 import SDWebImage
 
 class OwnShareBuyViewController: BaseHistoryViewController, OwnGroupDownloading {
