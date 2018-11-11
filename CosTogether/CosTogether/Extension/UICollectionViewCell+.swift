@@ -12,9 +12,12 @@ extension UICollectionViewCell {
     
     static func createCell<T: UICollectionViewCell>(collectionView: UICollectionView, indexPath: IndexPath) -> T {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath) as? T else {
+            
+            fatalError("Missing \(String(describing: T.self)) in Storyboard")
+        }
         
-        return cell as! T
+        return cell
         
     }
     
