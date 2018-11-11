@@ -11,9 +11,12 @@ extension UITableViewCell {
     
     static func createCell<T: UITableViewCell>(tableView: UITableView, indexPath: IndexPath) -> T {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T else {
+            
+            fatalError("Missing \(String(describing: T.self)) in Storyboard")
+        }
         
-        return cell as! T
+        return cell
         
     }
 
