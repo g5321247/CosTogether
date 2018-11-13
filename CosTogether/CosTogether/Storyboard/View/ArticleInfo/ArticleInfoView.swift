@@ -9,6 +9,17 @@
 import UIKit
 import SDWebImage
 
+protocol GroupManagerProtocol {
+    
+    var openType: OpenGroupType? { get set }
+    var article: ArticleModel { get set }
+    var products: [ProductModel] { get set }
+    var owner: UserModel? { get set }
+    var memberID : [String]? { get set }
+    var groupId: String? { get set }
+    
+}
+
 class ArticleInfoView: UIView {
     
     @IBOutlet weak var authorImageBot: UIButton!
@@ -26,7 +37,7 @@ class ArticleInfoView: UIView {
         
     }
     
-    func updateArticle(group: Group) {
+    func updateArticle(group: GroupManagerProtocol) {
         
         authorNameLbl?.text = group.owner?.userName
         

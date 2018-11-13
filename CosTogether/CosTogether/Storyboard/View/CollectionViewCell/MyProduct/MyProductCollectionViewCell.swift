@@ -51,7 +51,6 @@ class MyProductCollectionViewCell: UICollectionViewCell {
         
     }
 
-    #warning ("統計購買的東西")
     func updateMyProductInfo(numberOfItem: Int, productName: String, price: Int, productImage: String) {
         
         locationLbl.text = "數量：\(numberOfItem)"

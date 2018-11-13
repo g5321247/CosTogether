@@ -348,7 +348,12 @@ extension DetailViewController: UITableViewDataSource {
             
             let cell: ArticleInfoTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
 
-            cell.articleInfoView.updateArticle(group: allDataType.data[indexPath.row] as! Group)
+            cell.articleInfoView.updateArticle(
+                
+                group: GroupManager.initWith(
+                    group: allDataType.data[indexPath.row] as! Group
+                )
+            )
             
             cell.articleInfoView.authorImageBot?.addTarget(
                 self,
@@ -381,7 +386,7 @@ extension DetailViewController: UITableViewDataSource {
             
                 guard let index = self?.allData.firstIndex(where: {$0.dataType == .order}),
                     let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? OrderTableViewCell,
-                let order = self?.order else {
+                    let order = self?.order else {
                     
                     return
                 }
@@ -580,6 +585,7 @@ extension DetailViewController: CellDelegate {
         }
         
         let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success)
+        
         banner.show()
 
         guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
@@ -590,7 +596,7 @@ extension DetailViewController: CellDelegate {
         
         cell.checkoutUserNumber()
         
-        //刪掉 cell 避免 fatal error
+        //MARK: 刪掉 cell 避免 fatal error
         
         checkUser(userId: currentUserInfo.userId)
         
