@@ -87,7 +87,6 @@ class HistoryViewController: UIViewController {
         tableView.reloadData()
     }
     
-    
 }
 
 extension HistoryViewController: UITableViewDelegate {
@@ -137,9 +136,8 @@ extension HistoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 25
+        return 35
     }
-    
     
 }
 
@@ -164,7 +162,5 @@ extension HistoryViewController: UITableViewDataSource {
         
         return cell
     }
-    
-
 
 }

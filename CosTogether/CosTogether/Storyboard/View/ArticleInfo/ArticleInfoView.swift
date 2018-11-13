@@ -63,13 +63,7 @@ class ArticleInfoView: UIView {
         
         authorImageBot.sd_setImage(with: url, for: .normal)
     }
-    
-    func cornerup() {
         
-        self.cornerSetup(cornerRadius: 8)
-        
-    }
-    
     private func setup() {
         
         setupImageView()

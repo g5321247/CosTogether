@@ -310,7 +310,6 @@
 				C81543832153409100B3446D /* Facebook */,
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
-				C8063A6C219B123600B897BB /* GroupManager.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -627,6 +626,7 @@
 		C8B1F4D12160BB9E0080926C /* UserData */ = {
 			isa = PBXGroup;
 			children = (
+				C8063A6C219B123600B897BB /* GroupManager.swift */,
 				C8D240972160D7EE00268F67 /* DataTypeModel.swift */,
 			);
 			path = UserData;
