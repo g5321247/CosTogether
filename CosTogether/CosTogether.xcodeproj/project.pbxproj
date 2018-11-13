@@ -12,6 +12,7 @@
 		C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F5217576BA00FAC704 /* GroupRootViewController.swift */; };
 		C80187F8217583A000FAC704 /* JoinHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F7217583A000FAC704 /* JoinHelpViewController.swift */; };
 		C80187FF21758BE100FAC704 /* OpenGroupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187FE21758BE100FAC704 /* OpenGroupRootViewController.swift */; };
+		C8063A61219AB2F400B897BB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8063A60219AB2F400B897BB /* Reachability.swift */; };
 		C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A71E92162298D00ED4FE9 /* DetailManager.swift */; };
 		C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61EE216A10E100A59F28 /* ProductSettingView.swift */; };
 		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
@@ -124,6 +125,7 @@
 		C80187F5217576BA00FAC704 /* GroupRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRootViewController.swift; sourceTree = "<group>"; };
 		C80187F7217583A000FAC704 /* JoinHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinHelpViewController.swift; sourceTree = "<group>"; };
 		C80187FE21758BE100FAC704 /* OpenGroupRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupRootViewController.swift; sourceTree = "<group>"; };
+		C8063A60219AB2F400B897BB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C80A71E92162298D00ED4FE9 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		C80B61EE216A10E100A59F28 /* ProductSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSettingView.swift; sourceTree = "<group>"; };
 		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
@@ -273,6 +275,14 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		C8063A62219AB41700B897BB /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C8063A60219AB2F400B897BB /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		C80A71EB2162299300ED4FE9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +316,7 @@
 				C85D4F1E2154CF9800D73D8F /* Error */,
 				C8154388215352AC00B3446D /* Firebase */,
 				C849752C2157C27000555855 /* Product */,
+				C8063A62219AB41700B897BB /* Reachability */,
 			);
 			name = Model;
 			path = ..;
@@ -1118,6 +1129,7 @@
 				C810BB392159E4630064A656 /* MainNavigationViewController.swift in Sources */,
 				C8786A10216CDE1B001D2C63 /* PickerView.swift in Sources */,
 				C84AF26B216E013B00CF5A47 /* Date+.swift in Sources */,
+				C8063A61219AB2F400B897BB /* Reachability.swift in Sources */,
 				C8E956B82177247600473C6B /* MyProductCollectionViewCell.swift in Sources */,
 				C8E956BD2177449C00473C6B /* Notification.swift in Sources */,
 				C8B91E72215FC79200F7CA3A /* ProfileViewController.swift in Sources */,

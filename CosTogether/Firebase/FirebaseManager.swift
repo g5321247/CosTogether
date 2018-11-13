@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import KeychainAccess
 import NotificationBannerSwift
+import SVProgressHUD
 
 struct UserInfo {
     
@@ -35,6 +36,9 @@ struct FirebaseManager {
         faliure: @escaping (Error) -> Void
         ) {
         
+            SVProgressHUD.show()
+            SVProgressHUD.setDefaultMaskType(.black)
+        
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
         
             Auth.auth().signInAndRetrieveData(
@@ -42,6 +46,8 @@ struct FirebaseManager {
             
                 guard error == nil else {
                     
+                    SVProgressHUD.dismiss()
+
                     faliure(FirebaseError.system(error!.localizedDescription))
                     
                     return
@@ -50,6 +56,8 @@ struct FirebaseManager {
                 
                 guard let firebaseResult = authResult else {
                     
+                    SVProgressHUD.dismiss()
+
                     faliure(FirebaseError.unrecognized("No Firebase Data"))
                     
                     return
