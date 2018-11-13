@@ -98,7 +98,7 @@ class BaseHistoryViewController: UIViewController, GroupDownloading {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLbl: UILabel!
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     var groupType: OpenGroupType = .helpBuy
     

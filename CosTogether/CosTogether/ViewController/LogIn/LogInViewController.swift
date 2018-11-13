@@ -16,7 +16,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var anonymousLogInBot: UIButton!
     
     private let fbManager = FacebookManager()
-    private let firebaseManager = FirebaseManager()
+    private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

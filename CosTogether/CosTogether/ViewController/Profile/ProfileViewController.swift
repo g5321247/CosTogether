@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     
     var temAboutMyself: AboutMyself?
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
 
     var userType: UserType = .currentTabProfile
     var currentUserModel: UserModel?

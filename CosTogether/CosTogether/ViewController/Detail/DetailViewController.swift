@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
     @IBOutlet weak var topLogView: TopLogoView!
     
     let userDefault = UserDefaults.standard
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     let user = UserManager.shared
 
     var sendCommentCellHeight: CGFloat = 53
@@ -581,8 +581,6 @@ extension DetailViewController: CellDelegate {
         
         let banner = NotificationBanner(title: "加團成功", subtitle: "詳細資訊請到歷史紀錄區查詢", style: .success)
         banner.show()
-
-        #warning ("加團失敗的警告")
 
         guard let index = allData.firstIndex(where: {$0.dataType == .joinGroup}),
             let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? JoinGroupTableViewCell else {

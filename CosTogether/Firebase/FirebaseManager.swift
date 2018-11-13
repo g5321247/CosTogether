@@ -20,9 +20,13 @@ enum FirebaseType: String {
 
 class FirebaseManager {
     
+    static let shared = FirebaseManager()
+    
+    private init() {}
+    
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
-    
+
     let user = UserManager.shared
     
     func logInFirebase(

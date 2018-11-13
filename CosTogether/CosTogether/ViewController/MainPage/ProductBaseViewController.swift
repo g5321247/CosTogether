@@ -16,7 +16,7 @@ class ProductBaseViewController: UIViewController {
     
     var refreshControl: UIRefreshControl!
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     var openGroupType: OpenGroupType = .shareBuy
     

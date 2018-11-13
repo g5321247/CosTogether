@@ -13,7 +13,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: TopLogoView!
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     var joinMember: [UserModel] = []
     var group: [Group] = []

@@ -36,7 +36,7 @@ class CreateGroupViewController: UIViewController {
     var city: String?
     var groupInfo: String?
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +80,6 @@ class CreateGroupViewController: UIViewController {
     private func makeKey() {
         
         guard let autoKey = refrence.childByAutoId().key else {
-            
-            #warning ("上傳失敗警告")
             
             return
         }
@@ -410,9 +408,7 @@ extension CreateGroupViewController {
             }) { (error) in
                 
                 SVProgressHUD.dismiss()
-                
-                #warning ("TODO")
-                
+                                
                 self.dispatchGroup.leave()
                 
             }
