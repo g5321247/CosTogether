@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import KeychainAccess
+import SVProgressHUD
 import NotificationBannerSwift
 
 enum FirebaseType: String {
@@ -32,6 +33,9 @@ class FirebaseManager {
         
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
         
+            SVProgressHUD.show()
+            SVProgressHUD.setDefaultMaskType(.black)
+        
             Auth.auth().signInAndRetrieveData(
             with: credential) { (authResult, error) in
             
@@ -52,6 +56,9 @@ class FirebaseManager {
                 }
            
                 guard let userInfo = self.user.userInfo() else {
+                    
+                    failure(FirebaseError.unrecognized("No User Data"))
+
                     return
                 }
                 
@@ -131,88 +138,72 @@ class FirebaseManager {
             
             let groupId = snapshot.key
             
-//            do {
+            guard let articles = value["article"] as? NSDictionary,
+                let location = articles["location"] as? String,
+                let postDate = articles["postDate"] as? String,
+                let title = articles["title"] as? String,
+                let content = articles["content"] as? String else {
+                    
+                    return
+                    
+            }
+                
+            let article = ArticleModel(
+                title: title,
+                location: location,
+                postDate: postDate,
+                content: content
+            )
 
-                #warning ("轉成 swift data 失敗")
-                
-//                let articleData = try JSONSerialization.data(withJSONObject: value["article"])
-//
-//                let article = try self.decoder.decode(ArticleModel.self, from: articleData)
-             
-//            } catch {
-//
-//                print(error)
-//            }
-
-                guard let articles = value["article"] as? NSDictionary,
-                    let location = articles["location"] as? String,
-                    let postDate = articles["postDate"] as? String,
-                    let title = articles["title"] as? String,
-                    let content = articles["content"] as? String else {
-                        
-                        return
-                        
-                }
-                
-                let article = ArticleModel(
-                    title: title,
-                    location: location,
-                    postDate: postDate,
-                    content: content
-                )
-
-                
-                guard let products = value["products"] as? NSDictionary,
-                    let productName = products.allKeys as? [String] else {
-                        
-                        return
-                }
-                
-                var productsArray: [ProductModel] = []
-                
-                for value in productName {
-                    
-                    guard let product = products[value] as? NSDictionary,
-                        let imageUrl = product["imageUrl"] as? String,
-                        let numberOfItem = product["numberOfItem"] as? Int,
-                        let price = product["price"] as? Int else {
-                            
-                            return
-                    }
-                    
-                    productsArray.append(
-                        ProductModel(
-                            productName: value,
-                            productImage: imageUrl,
-                            numberOfItem: numberOfItem,
-                            price: price
-                        )
-                    )
-                    
-                }
-                
-                guard let users = value["users"] as? NSDictionary,
-                    let ownerId = users["ownerId"] as? String else {
-                        
-                        return
-                }
-                
-                self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
-                    
-                    let group = Group(
-                        openType: groupType,
-                        article: article,
-                        products: productsArray,
-                        owner: userModel,
-                        groupId: groupId
-                    )
-                    
-                    completion(group)
-                    
-                })
-
-                
             
+            guard let products = value["products"] as? NSDictionary,
+                let productName = products.allKeys as? [String] else {
+                    
+                    return
+            }
+            
+            var productsArray: [ProductModel] = []
+            
+            for value in productName {
+                
+                guard let product = products[value] as? NSDictionary,
+                    let imageUrl = product["imageUrl"] as? String,
+                    let numberOfItem = product["numberOfItem"] as? Int,
+                    let price = product["price"] as? Int else {
+                        
+                        return
+                }
+                
+                productsArray.append(
+                    ProductModel(
+                        productName: value,
+                        productImage: imageUrl,
+                        numberOfItem: numberOfItem,
+                        price: price
+                    )
+                )
+                
+            }
+            
+            guard let users = value["users"] as? NSDictionary,
+                let ownerId = users["ownerId"] as? String else {
+                    
+                    return
+            }
+            
+            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+                
+                let group = Group(
+                    openType: groupType,
+                    article: article,
+                    products: productsArray,
+                    owner: userModel,
+                    groupId: groupId
+                )
+                
+                completion(group)
+                
+            })
 
         }) { (error) in
             print(error.localizedDescription)

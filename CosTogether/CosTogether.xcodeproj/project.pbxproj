@@ -12,6 +12,7 @@
 		C80187F6217576BA00FAC704 /* GroupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F5217576BA00FAC704 /* GroupRootViewController.swift */; };
 		C80187F8217583A000FAC704 /* JoinHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187F7217583A000FAC704 /* JoinHelpViewController.swift */; };
 		C80187FF21758BE100FAC704 /* OwnGroupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80187FE21758BE100FAC704 /* OwnGroupRootViewController.swift */; };
+		C8063A6A219AEAE700B897BB /* Reachability copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8063A69219AEAE700B897BB /* Reachability copy.swift */; };
 		C80A71EA2162298D00ED4FE9 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A71E92162298D00ED4FE9 /* DetailManager.swift */; };
 		C80B61EF216A10E100A59F28 /* ProductSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61EE216A10E100A59F28 /* ProductSettingView.swift */; };
 		C80B61F2216A43B700A59F28 /* BaseNotificationBanner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */; };
@@ -126,6 +127,7 @@
 		C80187F5217576BA00FAC704 /* GroupRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRootViewController.swift; sourceTree = "<group>"; };
 		C80187F7217583A000FAC704 /* JoinHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinHelpViewController.swift; sourceTree = "<group>"; };
 		C80187FE21758BE100FAC704 /* OwnGroupRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnGroupRootViewController.swift; sourceTree = "<group>"; };
+		C8063A69219AEAE700B897BB /* Reachability copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability copy.swift"; sourceTree = "<group>"; };
 		C80A71E92162298D00ED4FE9 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		C80B61EE216A10E100A59F28 /* ProductSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSettingView.swift; sourceTree = "<group>"; };
 		C80B61F1216A43B700A59F28 /* BaseNotificationBanner+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationBanner+.swift"; sourceTree = "<group>"; };
@@ -277,6 +279,14 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		C8063A6B219AEAF600B897BB /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C8063A69219AEAE700B897BB /* Reachability copy.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		C80A71EB2162299300ED4FE9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +314,7 @@
 		C81543822153406700B3446D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8063A6B219AEAF600B897BB /* Reachability */,
 				C8B1F4D12160BB9E0080926C /* UserData */,
 				C82BA99E215CB06A00996B11 /* Enum */,
 				C81543832153409100B3446D /* Facebook */,
@@ -1182,6 +1193,7 @@
 				C8F8C92621522AC200BDB0CE /* LogInViewController.swift in Sources */,
 				C87F8B09215D235A0060EA72 /* TopLogoView.swift in Sources */,
 				C823A263216768820066D635 /* CreateGroupViewController.swift in Sources */,
+				C8063A6A219AEAE700B897BB /* Reachability copy.swift in Sources */,
 				C846B2DE21972632001A116C /* UICollectionViewCell+.swift in Sources */,
 				C8BCF0DE215E9CDD00A2B1B8 /* ProductDetailTableViewCell.swift in Sources */,
 				C87F8B0D215D42BA0060EA72 /* OrderTableViewCell.swift in Sources */,

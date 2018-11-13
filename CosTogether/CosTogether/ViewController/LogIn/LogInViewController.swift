@@ -8,6 +8,7 @@
 
 import UIKit
 import KeychainAccess
+import SVProgressHUD
 
 class LogInViewController: UIViewController {
 
@@ -21,78 +22,102 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         
         setImage()
+        
     }
     
-    func setImage() {
+    private func setImage() {
         
         facebookLoginBot.layer.cornerRadius = 10
-        
         anonymousLogInBot.layer.cornerRadius = 10
         
     }
     
     @IBAction func logInFB(_ sender: UIButton) {
         
-        fbManager.facebookLogIn(
-            fromController: self,
-            sucess: { [weak self ] (token) in
-                
-                self?.signInFirebase(token: token)
-                
-        },
-            failure: { [weak self ] (error) in
-                
-                guard let error = error as? FBError else {
+        if let alertController = Reachability.connectionWarning() {
+            
+            present(alertController, animated: true, completion: nil)
+
+        } else {
+            
+            fbManager.facebookLogIn(
+                fromController: self,
+                sucess: { [weak self] (token) in
                     
-                    return
+                    self?.signInFirebase(token: token)
                     
-                }
-                
-                self?.present(
-                    UIAlertController.errorMessage(errorType: error),
-                    animated: true,
-                    completion: nil
-                )
-                                
-        })
-        
+            },
+                failure: { [weak self] (error) in
+                    
+                    SVProgressHUD.dismiss()
+                    
+                    guard let error = error as? FBError else {
+                        return
+                    }
+                    
+                    self?.present(
+                        UIAlertController.errorMessage(errorType: error),
+                        animated: true,
+                        completion: nil
+                    )
+                    
+            })
+        }
     }
     
     private func signInFirebase(token: String) {
         
-        firebaseManager.logInFirebase(
-            token: token,
-            success: {
+        if let alertController = Reachability.connectionWarning() {
             
-            DispatchQueue.main.async {
-                AppDelegate.shared.switchMainPage()
-            }
-        
-        },
-            failure: { [weak self ] (error) in
+            present(alertController, animated: true, completion: nil)
             
-                guard let error = error as? FBError else {
+        } else {
+            
+            firebaseManager.logInFirebase(
+                token: token,
+                success: {
                     
-                    return
+                    DispatchQueue.main.async {
+                        AppDelegate.shared.switchMainPage()
+                    }
                     
-                }
-                
-                self?.present(
-                    UIAlertController.errorMessage(errorType: error),
-                    animated: true,
-                    completion: nil
-                )
+                    SVProgressHUD.dismiss()
+                    
+            },
+                failure: { [weak self ] (error) in
+                    
+                    SVProgressHUD.dismiss()
 
-        })
-        
+                    guard let error = error as? FBError else {
+                        
+                        return
+                        
+                    }
+                    
+                    self?.present(
+                        UIAlertController.errorMessage(errorType: error),
+                        animated: true,
+                        completion: nil
+                    )
+                    
+            })
+        }
     }
     
     @IBAction func anonymousLogin(_ sender: UIButton) {
         
-        let keychain = Keychain(service: "com.george.CosTogether")
-        keychain[FirebaseType.uuid.rawValue] = "anonymous"
+        if let alertController = Reachability.connectionWarning() {
+            
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            
+            let keychain = Keychain(service: "com.george.CosTogether")
+            keychain[FirebaseType.uuid.rawValue] = "anonymous"
+            
+            AppDelegate.shared.switchMainPage()
+            
+        }
         
-        AppDelegate.shared.switchMainPage()
-
     }
 }
