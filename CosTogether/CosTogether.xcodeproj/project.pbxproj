@@ -304,6 +304,7 @@
 		C81543822153406700B3446D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8230FED219BCC88004D2D80 /* User */,
 				C8063A6B219AEAF600B897BB /* Reachability */,
 				C8B1F4D12160BB9E0080926C /* UserData */,
 				C82BA99E215CB06A00996B11 /* Enum */,
@@ -327,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				C8154386215352A500B3446D /* FirebaseManager.swift */,
-				C811A67B219544B400D21195 /* UserManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -367,6 +367,14 @@
 				C8F8C931215278E900BDB0CE /* fonts */,
 			);
 			path = CosTogether;
+			sourceTree = "<group>";
+		};
+		C8230FED219BCC88004D2D80 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C811A67B219544B400D21195 /* UserManager.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		C823A25D21675A770066D635 /* All Group */ = {

@@ -505,6 +505,8 @@ extension DetailViewController: JoinGroupDelegate {
 
 extension DetailViewController: CellDelegate {
     
+    
+    
     func updateLocalData(data: Any) {
         
         guard let text = data as? String else {

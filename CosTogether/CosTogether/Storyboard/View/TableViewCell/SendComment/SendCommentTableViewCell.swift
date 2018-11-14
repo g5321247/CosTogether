@@ -29,7 +29,7 @@ class SendCommentTableViewCell: UITableViewCell {
     
     private func setup() {
         
-        guard UserManager.shared.userInfo() != nil else {
+        guard UserManager.shared.user != nil else {
             
             baseView.sendMessageBot.isEnabled = false
             
@@ -102,7 +102,6 @@ extension SendCommentTableViewCell: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        
         
         self.adjustTextViewHeight()
         

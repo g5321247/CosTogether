@@ -23,20 +23,34 @@ class UserManager {
     
     static let shared = UserManager()
     
-    private init() {}
-    
-    func userInfo() -> UserInfo? {
+    lazy var user: UserInfo? = {
         
         guard let user = Auth.auth().currentUser,
             let userName = user.displayName,
             let userPicURL = user.photoURL?.absoluteString else {
-                
+            
                 return nil
-                
-        }
- 
-        return UserInfo(userId: user.uid, userName: userName, userPicURL: userPicURL)
+            
+            }
         
+            return UserInfo(userId: user.uid, userName: userName, userPicURL: userPicURL)
+
+    }()
+    
+    private init() {}
+    
+    func userInfo() -> UserInfo? {
+
+        guard let user = Auth.auth().currentUser,
+            let userName = user.displayName,
+            let userPicURL = user.photoURL?.absoluteString else {
+
+                return nil
+
+        }
+
+        return UserInfo(userId: user.uid, userName: userName, userPicURL: userPicURL)
+
     }
     
     func signOut(sucess: () -> Void, failure: () -> Void) {
