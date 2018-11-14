@@ -44,18 +44,21 @@ class HistoryViewController: UIViewController {
                 break
             }
             
-            firebaseManager.filterUser(userId: value.userId, group: group) { (products) in
+            firebaseManager.filterUser(userId: value.userId, group: group) { [weak self] (products) in
                 
                 let myProduct = MyProduct(user: value, products: products)
+                
+                guard let self = self else {
+                    return
+                }
                 
                 self.emptyTitleLbl.isHidden = true
                 
                 self.myProducts.append(myProduct)
                 self.tableView.reloadData()
+                
             }
-            
         }
-        
     }
     
     private func topLogViewSetup() {

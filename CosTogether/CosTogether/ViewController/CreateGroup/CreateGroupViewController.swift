@@ -398,14 +398,22 @@ extension CreateGroupViewController {
                 articleTitle: group.article.title,
                 productName: value.productName,
                 picture: imageData,
-                sucess: { (url) in
+                sucess: { [weak self] (url) in
+                    
+                    guard let self = self else {
+                        return
+                    }
                     
                     self.products[index].updateImage = nil
                     self.products[index].productImage = url.absoluteString
                     
                     self.dispatchGroup.leave()
                     
-            }) { (error) in
+            }) { [weak self] (error) in
+                
+                guard let self = self else {
+                    return
+                }
                 
                 SVProgressHUD.dismiss()
                                 

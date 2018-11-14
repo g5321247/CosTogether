@@ -23,9 +23,17 @@ extension JoinGroupDownloading {
             return
         }
         
-        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
+        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { [weak self] (group) in
             
-            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+            guard let self = self else {
+                return
+            }
+            
+            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { [weak self] (group) in
+                
+                guard let self = self else {
+                    return
+                }
                 
                 self.myGroups.append(group)
                 
@@ -40,7 +48,11 @@ extension JoinGroupDownloading {
             
         }
         
-        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
+        firebaseManager.detectChildRemove(openGroupType: groupType) { [weak self] (keys) in
+            
+            guard let self = self else {
+                return
+            }
             
             for (index, key) in keys.enumerated() {
                 
@@ -55,11 +67,11 @@ extension JoinGroupDownloading {
                 }
                 
             }
+            
             self.reloadData()
+            
         }
-
     }
-
 }
 
 protocol OwnGroupDownloading: GroupDownloading {}
@@ -69,27 +81,33 @@ extension OwnGroupDownloading {
     func downloadGroupList() {
     
     guard UserManager.shared.userInfo() != nil else {
-    
         return
     }
     
-    firebaseManager.downloadMyOwnGroup(groupType: groupType, myGroup: myGroup) { (group) in
+    firebaseManager.downloadMyOwnGroup(groupType: groupType, myGroup: myGroup) { [weak self] (group) in
     
-        self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
+        guard let self = self else {
+            return
+        }
+        
+        self.firebaseManager.getGroupInfo(ownGroup: group, completion: { [weak self] (group) in
     
-                self.myGroups.append(group)
+            guard let self = self else {
+                return
+            }
             
-                self.emptyLbl.isHidden = true
-                self.animationView.isHidden = true
-            
-                self.emptyViewIsHidden(isHidden: true)
-            
-                self.reloadData()
+            self.myGroups.append(group)
+        
+            self.emptyLbl.isHidden = true
+            self.animationView.isHidden = true
+        
+            self.emptyViewIsHidden(isHidden: true)
+        
+            self.reloadData()
         
             })
         }
     }
-    
 }
 
 
@@ -138,57 +156,12 @@ class BaseHistoryViewController: UIViewController, GroupDownloading {
         self.animationView.isHidden = isHidden
         
         guard !isHidden else {
-            
             return
         }
         
         animationView.play()
 
     }
-    
-//    func downloadGroupList() {
-//
-//        guard UserManager.shared.userInfo() != nil else {
-//
-//            return
-//        }
-//
-//        firebaseManager.downloadMyGroup(groupType: groupType, myGroup: myGroup) { (group) in
-//
-//            self.firebaseManager.getGroupInfo(ownGroup: group, completion: { (group) in
-//
-//                self.myGroups.append(group)
-//
-//                self.emptyLbl.isHidden = true
-//                self.animationView.isHidden = true
-//
-//                self.emptyViewIsHidden(isHidden: true)
-//
-//                self.reloadData()
-//
-//            })
-//
-//        }
-//
-//        firebaseManager.detectChildRemove(openGroupType: groupType) { (keys) in
-//
-//            for (index, key) in keys.enumerated() {
-//
-//                for value in self.myGroups {
-//
-//                    if key == value.groupId {
-//
-//                        self.myGroups.remove(at: index)
-//                        break
-//                    }
-//
-//                }
-//
-//            }
-//            self.reloadData()
-//        }
-//
-//    }
     
     private func setUpCell() {
         
@@ -248,8 +221,8 @@ extension BaseHistoryViewController: UITableViewDelegate {
         controller.updateInfo(group: group)
         
         show(controller, sender: nil)
+        
     }
-    
 }
 
 extension BaseHistoryViewController: UITableViewDataSource {
@@ -269,6 +242,5 @@ extension BaseHistoryViewController: UITableViewDataSource {
         return cell
         
     }
-    
 }
 

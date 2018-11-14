@@ -87,7 +87,11 @@ class DetailViewController: UIViewController, ProductPicDelegate {
         
         self.reloadData(orderAlready: self.orderAlready)
 
-        firebaseManager.downloadCommentUser(group: group) { (comment) in
+        firebaseManager.downloadCommentUser(group: group) { [weak self] (comment) in
+            
+            guard let self = self else {
+                return
+            }
             
             guard self.userDefault.integer(forKey: comment.userId) != 1 else {
                 return
@@ -106,11 +110,19 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             }
         }
         
-        firebaseManager.downloadGroupUser(group: group) { (memberIds) in
+        firebaseManager.downloadGroupUser(group: group) { [weak self] (memberIds) in
          
+            guard let self = self else {
+                return
+            }
+            
             for value in memberIds {
                 
-                self.firebaseManager.userIdToGetUserInfo(userId: value) { (user) in
+                self.firebaseManager.userIdToGetUserInfo(userId: value) { [weak self] (user) in
+                    
+                    guard let self = self else {
+                        return
+                    }
                     
                     let user = UserModel(
                         userImage: user.userImage,

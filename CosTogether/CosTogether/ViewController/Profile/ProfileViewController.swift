@@ -357,7 +357,11 @@ extension ProfileViewController {
                 return
             }
             
-            firebaseManager.userIdToGetUserInfo(userId: userInfo.userId) { (userModel) in
+            firebaseManager.userIdToGetUserInfo(userId: userInfo.userId) { [weak self] (userModel) in
+                
+                guard let self = self else {
+                    return
+                }
                 
                 self.currentUserModel = userModel
                 self.userInfoSetup(user: user)
@@ -374,7 +378,11 @@ extension ProfileViewController {
                 
             }
             
-            firebaseManager.userIdToGetUserInfo(userId: userId) { (userModel) in
+            firebaseManager.userIdToGetUserInfo(userId: userId) { [weak self] (userModel) in
+                
+                guard let self = self else {
+                    return
+                }
                 
                 self.currentUserModel = userModel
                 self.userInfoSetup(user: user)

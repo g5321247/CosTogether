@@ -42,7 +42,11 @@ class ProductBaseViewController: UIViewController {
         
         group.removeAll()
         
-        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+        firebaseManager.downloadGroup(groupType: openGroupType) { [weak self] (groupData) in
+            
+            guard let self = self else {
+                return
+            }
             
             guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 
@@ -65,7 +69,11 @@ class ProductBaseViewController: UIViewController {
         
         self.refreshControl.beginRefreshing()
         
-        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+        firebaseManager.downloadGroup(groupType: openGroupType) { [weak self] (groupData) in
+            
+            guard let self = self else {
+                return
+            }
             
             guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 
@@ -117,7 +125,11 @@ class ProductBaseViewController: UIViewController {
         
         SVProgressHUD.show()
         
-        firebaseManager.downloadGroup(groupType: openGroupType) { (groupData) in
+        firebaseManager.downloadGroup(groupType: openGroupType) { [weak self] (groupData) in
+            
+            guard let self = self else {
+                return
+            }
             
             guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
                 return
@@ -128,7 +140,11 @@ class ProductBaseViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        firebaseManager.detectChildRemove(openGroupType: openGroupType) { (keys) in
+        firebaseManager.detectChildRemove(openGroupType: openGroupType) { [weak self] (keys) in
+            
+            guard let self = self else {
+                return
+            }
             
             for (index, key) in keys.enumerated() {
                 
