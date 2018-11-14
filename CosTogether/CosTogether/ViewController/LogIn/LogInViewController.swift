@@ -15,7 +15,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var facebookLoginBot: UIButton!
     @IBOutlet weak var anonymousLogInBot: UIButton!
     
-    private let fbManager = FacebookManager()
+    private let fbManager = FacebookManager.shared
     private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
@@ -33,6 +33,8 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logInFB(_ sender: UIButton) {
+        
+        fbManager.facebookLogOut()
         
         if let alertController = Reachability.connectionWarning() {
             

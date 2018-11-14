@@ -313,9 +313,8 @@ class DetailViewController: UIViewController, ProductPicDelegate {
             return
 
         }
-        
-    }
     
+    }
 }
 
 extension DetailViewController: UITableViewDelegate {
@@ -517,8 +516,6 @@ extension DetailViewController: JoinGroupDelegate {
 
 extension DetailViewController: CellDelegate {
     
-    
-    
     func updateLocalData(data: Any) {
         
         guard let text = data as? String else {
@@ -580,6 +577,11 @@ extension DetailViewController: CellDelegate {
                 ) as? ProductItemTableViewCell else {
                 
                 return
+            }
+            
+            guard order[index].numberOfItem != 0 else {
+                
+                continue
             }
             
             products[index].numberOfItem -= order[index].numberOfItem

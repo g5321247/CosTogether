@@ -135,7 +135,6 @@ class ProductItemTableViewCell: UITableViewCell {
             break
         }
         
-        
     }
     
     func updatePurchasing(purchasing: @escaping (ProductModel) -> Void) {

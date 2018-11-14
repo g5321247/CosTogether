@@ -19,6 +19,7 @@ class MemberCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUp() {
+        
          viewSetup()
          memberSetup()
     }
@@ -43,4 +44,5 @@ class MemberCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         setUp()
     }
+    
 }

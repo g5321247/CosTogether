@@ -16,9 +16,13 @@ enum PermissionKey: String {
     
 }
 
-struct FacebookManager {
+class FacebookManager {
+    
+    static let shared = FacebookManager()
     
     let facebookManager = FBSDKLoginManager()
+    
+    private init() {}
     
     func facebookLogIn(
         fromController: UIViewController? = nil,
@@ -67,4 +71,10 @@ struct FacebookManager {
         
     }
     
+    func facebookLogOut() {
+        
+        facebookManager.logOut()
+        
+    }
+
 }

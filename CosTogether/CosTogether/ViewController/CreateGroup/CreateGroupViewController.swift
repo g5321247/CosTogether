@@ -466,7 +466,6 @@ extension CreateGroupViewController {
         }
         
     }
-
 }
 
 extension CreateGroupViewController: GroupSettingDelegate {
