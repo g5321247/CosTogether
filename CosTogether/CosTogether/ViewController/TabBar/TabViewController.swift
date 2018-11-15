@@ -11,11 +11,8 @@ import UIKit
 private enum Tab {
     
     case mainPage
-    
     case createGroup
-    
     case joinGroup
-    
     case profile
     
     func controller() -> UIViewController {
@@ -29,7 +26,7 @@ private enum Tab {
         case .createGroup:
             
             return UIStoryboard.createGroup().instantiateInitialViewController()!
-        
+            
         case .joinGroup:
             
             return UIStoryboard.joinGroup().instantiateInitialViewController()!

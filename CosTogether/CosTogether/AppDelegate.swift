@@ -16,7 +16,7 @@ import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
     // swiftlint:disable force_cast
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
-            
+        
         FBSDKApplicationDelegate.sharedInstance().application(
             application,
             didFinishLaunchingWithOptions: launchOptions

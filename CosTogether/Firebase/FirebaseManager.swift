@@ -125,7 +125,7 @@ class FirebaseManager {
     func uploadGroup(refrence: DatabaseReference, group: Group, key: String) {
         
         uploadArticle(refrence: refrence, key: key, group: group)
-        uploadProduct(refrence: refrence, key: key, group: group)
+//        uploadProduct(refrence: refrence, key: key, group: group)
         uploadUser(refrence: refrence, key: key, group: group)
     }
     
@@ -322,16 +322,53 @@ extension FirebaseManager {
             return
         }
         
-        refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("article").setValue(
+        let article =  [
             
-            [
-                "title": group.article.title,
-                "location" : group.article.location,
-                "postDate": group.article.postDate,
-                "content" : group.article.content
-            ]
+            "title": group.article.title,
+            "location" : group.article.location,
+            "postDate": group.article.postDate,
+            "content" : group.article.content
+        ]
+        
+        var products: [String: Any] = [:]
+        
+        for value in group.products {
             
-        )
+            let product = [
+                "productName": value.productName,
+                "numberOfItem": value.numberOfItem,
+                "price" : value.price,
+                "imageUrl": value.productImage ?? "",
+                ] as [String : Any]
+
+            
+            products.updateValue(product, forKey: value.productName)
+            
+        }
+        
+        let user = ["ownerId": group.owner!.userId]
+        
+        let updateGroup = ["article": article, "products": products, "users": user]
+        
+        let childUpdates = ["/group/\(openType.rawValue)/\(key)": updateGroup]
+
+//        let childUpdates = [
+//            "/group/\(openType.rawValue)/\(key)/products": products,
+//            "/group/\(openType.rawValue)/\(key)/users": user,
+//            "/group/\(openType.rawValue)/\(key)/article": article
+//        ]
+        
+        refrence.updateChildValues(childUpdates)
+        
+//        refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("article").setValue(
+//
+//            [
+//                "title": group.article.title,
+//                "location" : group.article.location,
+//                "postDate": group.article.postDate,
+//                "content" : group.article.content
+//            ]
+//        )
     }
     
     private func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
@@ -352,9 +389,7 @@ extension FirebaseManager {
                 ]
                 
             )
-            
         }
-        
     }
     
     private func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
@@ -366,11 +401,11 @@ extension FirebaseManager {
         guard let openType = group.openType else {
             return
         }
-        refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
-            [
-                "ownerId": group.owner!.userId,
-            ]
-        )
+//        refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
+//            [
+//                "ownerId": group.owner!.userId,
+//            ]
+//        )
         refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).updateChildValues(
             [
                 key: key
@@ -486,8 +521,8 @@ extension FirebaseManager {
             guard let products = value?["products"] as? NSDictionary,
                 let productName = products.allKeys as? [String] else {
                     
-                    
                     return
+                    
             }
             
             var productsArray: [ProductModel] = []
