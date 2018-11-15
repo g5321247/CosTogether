@@ -29,5 +29,4 @@ class OwnHelpBuyViewController: BaseHistoryViewController, OwnGroupDownloading {
         tableView.reloadData()
         
     }
-    
 }

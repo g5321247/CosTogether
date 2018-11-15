@@ -30,4 +30,18 @@ class OwnShareBuyViewController: BaseHistoryViewController, OwnGroupDownloading 
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            firebaseManager.deleteValue(group: myGroups[indexPath.row].group!)
+            
+            myGroups.remove(at: indexPath.row)
+            
+            NotificationCenter.default.post(name: .createNewGroup, object: nil, userInfo: nil)
+            
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+        }
+    }
 }
