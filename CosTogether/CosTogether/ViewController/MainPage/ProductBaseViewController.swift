@@ -31,38 +31,6 @@ class ProductBaseViewController: UIViewController {
         
     }
     
-    private func notiSetup() {
-        
-        let notificationName = Notification.Name("createNewGroup")
-        NotificationCenter.default.addObserver(self, selector: #selector (downloadFromFirebase(noti:)), name: notificationName, object: nil)
-        
-    }
-    
-    @objc func downloadFromFirebase(noti: Notification?) {
-        
-        group.removeAll()
-        
-        firebaseManager.downloadGroup(groupType: openGroupType) { [weak self] (groupData) in
-            
-            guard let self = self else {
-                return
-            }
-            
-            guard self.userDefault.integer(forKey: groupData.owner!.userId) != 1 else {
-                
-                self.collectionView.reloadData()
-                
-                return
-            }
-            
-            self.group.insert(groupData, at: 0)
-            
-            self.collectionView.reloadData()
-            
-            
-        }
-    }
-    
     @objc func refresh(_ sender: UIButton) {
         
         group.removeAll()
@@ -94,7 +62,6 @@ class ProductBaseViewController: UIViewController {
         
         setColletionView()
         downloadData()
-        notiSetup()
         
         SVProgressHUD.dismiss()
         

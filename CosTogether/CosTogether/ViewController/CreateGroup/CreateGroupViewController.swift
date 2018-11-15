@@ -401,6 +401,7 @@ extension CreateGroupViewController {
                 sucess: { [weak self] (url) in
                     
                     guard let self = self else {
+                        
                         return
                     }
                     
@@ -449,6 +450,7 @@ extension CreateGroupViewController {
         }
         
         SVProgressHUD.show()
+        SVProgressHUD.setDefaultMaskType(.black)
         
         translateProductPicsToUrl(group: group) { (uploadGroup) in
             

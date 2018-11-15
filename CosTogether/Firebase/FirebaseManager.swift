@@ -125,7 +125,6 @@ class FirebaseManager {
     func uploadGroup(refrence: DatabaseReference, group: Group, key: String) {
         
         uploadArticle(refrence: refrence, key: key, group: group)
-//        uploadProduct(refrence: refrence, key: key, group: group)
         uploadUser(refrence: refrence, key: key, group: group)
     }
     
@@ -352,44 +351,8 @@ extension FirebaseManager {
         
         let childUpdates = ["/group/\(openType.rawValue)/\(key)": updateGroup]
 
-//        let childUpdates = [
-//            "/group/\(openType.rawValue)/\(key)/products": products,
-//            "/group/\(openType.rawValue)/\(key)/users": user,
-//            "/group/\(openType.rawValue)/\(key)/article": article
-//        ]
-        
         refrence.updateChildValues(childUpdates)
         
-//        refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("article").setValue(
-//
-//            [
-//                "title": group.article.title,
-//                "location" : group.article.location,
-//                "postDate": group.article.postDate,
-//                "content" : group.article.content
-//            ]
-//        )
-    }
-    
-    private func uploadProduct(refrence: DatabaseReference, key: String, group: Group) {
-        
-        guard let openType = group.openType else {
-            return
-        }
-        
-        for value in group.products {
-            
-            refrence.child("group").child("\(openType.rawValue)").child("\(key)").child("products").child(value.productName).setValue(
-                
-                [
-                    "productName": value.productName,
-                    "numberOfItem": value.numberOfItem,
-                    "price" : value.price,
-                    "imageUrl": value.productImage ?? "",
-                ]
-                
-            )
-        }
     }
     
     private func uploadUser(refrence: DatabaseReference, key: String, group: Group) {
@@ -401,17 +364,11 @@ extension FirebaseManager {
         guard let openType = group.openType else {
             return
         }
-//        refrence.child("group").child(openType.rawValue).child(key).child("users").setValue(
-//            [
-//                "ownerId": group.owner!.userId,
-//            ]
-//        )
         refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child("own").child(openType.rawValue).updateChildValues(
             [
                 key: key
             ]
         )
-
     }
 
     // MARK: 用使用者 id 去拿資料
@@ -781,5 +738,4 @@ extension FirebaseManager {
         refrence.updateChildValues(childUpdates as [AnyHashable : Any])
 
     }
-    
 }
