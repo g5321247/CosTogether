@@ -22,7 +22,13 @@ class FirebaseManager {
     
     static let shared = FirebaseManager()
     
-    private init() {}
+    var refrence: DatabaseReference!
+    
+    private init() {
+        
+        refrence = Database.database().reference()
+    
+    }
     
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
@@ -130,8 +136,6 @@ class FirebaseManager {
     
     func downloadGroup(groupType: OpenGroupType, completion: @escaping (Group) -> Void) {
         
-        let refrence = Database.database().reference()
-        
         refrence.child("group").child(groupType.rawValue).observe(.childAdded, with: { (snapshot) in
             
             guard let value = snapshot.value as? NSDictionary else {
@@ -194,7 +198,7 @@ class FirebaseManager {
                     return
             }
             
-            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+            self.userIdToGetUserInfo(userId: ownerId, completion: { (userModel) in
                 
                 let group = Group(
                     openType: groupType,
@@ -216,8 +220,6 @@ class FirebaseManager {
     
     func downloadGroupUser(group: Group, completion: @escaping ([String]) -> Void) {
         
-        let refrence = Database.database().reference()
-        
         guard let openType = group.openType else {
             return
         }
@@ -235,8 +237,6 @@ class FirebaseManager {
     }
     
     func downloadCommentUser(group: Group, completion: @escaping (CommentModel) -> Void) {
-
-        let refrence = Database.database().reference()
         
         guard let openType = group.openType else {
             return
@@ -269,8 +269,6 @@ class FirebaseManager {
         guard let userInfo = self.user.userInfo() else {
             return
         }
-        
-        let refrence = Database.database().reference()
         refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
             
             guard let value = snapshot.value as? NSDictionary else {
@@ -412,8 +410,6 @@ extension FirebaseManager {
     
     func uploadBuyer(buyerId: String, groupType: OpenGroupType ,groupId: String, product: ProductModel, buyNumber: Int) {
         
-        let refrence = Database.database().reference()
-        
         let childUpdates = [
             "/group/\(groupType.rawValue)/\(groupId)/products/\(product.productName)/numberOfItem": product.numberOfItem,
             "/group/\(groupType.rawValue)/\(groupId)/users/buyerId/\(buyerId)": buyerId,
@@ -429,8 +425,6 @@ extension FirebaseManager {
     }
     
     func uploadComment(comment: CommentModel, groupType: OpenGroupType ,groupId: String) {
-        
-        let refrence = Database.database().reference()
         
         guard let key = refrence.child("group").child(groupType.rawValue).child(groupId).child("comment").childByAutoId().key else {
 
@@ -452,8 +446,6 @@ extension FirebaseManager {
     }
     
     func getGroupInfo(ownGroup: OwnGroup, completion: @escaping (OwnGroup) -> Void) {
-        
-        let refrence = Database.database().reference()
         refrence.child("group").child(ownGroup.groupType.rawValue).child(ownGroup.groupId).observeSingleEvent(of: .value) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -511,7 +503,7 @@ extension FirebaseManager {
                     return
             }
             
-            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+            self.userIdToGetUserInfo(userId: ownerId, completion: { (userModel) in
                 
                 let group = Group(
                     openType: ownGroup.groupType,
@@ -541,14 +533,9 @@ extension FirebaseManager {
         guard let userInfo = self.user.userInfo() else {
             return
         }
-        
-        let refrence = Database.database().reference()
         refrence.child("users").child(userInfo.userId).child("userInfo").child("myGroup").child(myGroup.rawValue).child(groupType.rawValue).observe(.childAdded) { (snapshot) in
             
-            guard let groupId = snapshot.value as? String else {
-                
-                return
-            }
+            let groupId = snapshot.key
             
             self.getOpenGroupInfo(groupType: groupType, groupId: groupId, completion: { (ownGroup) in
                 completion(ownGroup)
@@ -558,8 +545,6 @@ extension FirebaseManager {
     }
     
     func getOpenGroupInfo(groupType: OpenGroupType, groupId: String, completion: @escaping (OwnGroup) -> Void) {
-        
-        let refrence = Database.database().reference()
         refrence.child("group").child(groupType.rawValue).child(groupId).observeSingleEvent(of: .value) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -617,7 +602,7 @@ extension FirebaseManager {
                     return
             }
             
-            self.userIdToGetUserInfo(refrence: refrence, userId: ownerId, completion: { (userModel) in
+            self.userIdToGetUserInfo(userId: ownerId, completion: { (userModel) in
                 
                 let group = Group(
                     openType: groupType,
@@ -647,8 +632,6 @@ extension FirebaseManager {
         guard let openType = group.openType else {
             return
         }
-
-        let refrence = Database.database().reference()
         refrence.child("users").child(userId).child("userInfo").child("myGroup").child("join").child(openType.rawValue).child(group.groupId!).observeSingleEvent(of: .value) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -681,8 +664,6 @@ extension FirebaseManager {
     
     func deleteValue(group: Group) {
         
-        let refrence = Database.database().reference()
-        
         guard let groupId = group.groupId else {
             return
         }
@@ -707,8 +688,6 @@ extension FirebaseManager {
     
     func detectChildRemove(openGroupType: OpenGroupType, completion: @escaping ([String]) -> Void) {
         
-        let refrence = Database.database().reference()
-        
         refrence.child("group").observeSingleEvent(of: .childRemoved) { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -727,8 +706,6 @@ extension FirebaseManager {
         guard let userInfo = self.user.userInfo() else {
             return
         }
-        
-        let refrence = Database.database().reference()
         
         let childUpdates = [
             "/users/\(userInfo.userId)/userInfo/aboutMyself/description": description,

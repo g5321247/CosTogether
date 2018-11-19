@@ -107,6 +107,29 @@ extension OwnGroupDownloading {
         
             })
         }
+        
+        firebaseManager.detectChildRemove(openGroupType: groupType) { [weak self] (keys) in
+            
+            guard let self = self else {
+                return
+            }
+            
+            for (index, key) in keys.enumerated() {
+                
+                for value in self.myGroups {
+                    
+                    if key == value.groupId {
+                        
+                        self.myGroups.remove(at: index)
+                        break
+                    }
+                    
+                }
+            }
+            
+            self.reloadData()
+            
+        }
     }
 }
 

@@ -11,7 +11,7 @@ import Lottie
 import Firebase
 import SDWebImage
 
-class JoinShareViewController: BaseHistoryViewController, JoinGroupDownloading {
+class JoinShareViewController: BaseHistoryViewController, OwnGroupDownloading {
     
     override func viewDidLoad() {
         
