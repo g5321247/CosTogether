@@ -103,13 +103,13 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c20-LT-ZPQ">
                                         <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                         <connections>
-                                            <segue destination="2H9-RX-3Id" kind="embed" id="e72-xp-P6K"/>
+                                            <segue destination="2H9-RX-3Id" kind="embed" identifier="shareBuy" id="e72-xp-P6K"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-gM-d2W">
                                         <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                         <connections>
-                                            <segue destination="iiw-hD-z1Q" kind="embed" id="e7e-Pa-Brj"/>
+                                            <segue destination="iiw-hD-z1Q" kind="embed" identifier="helpBuy" id="e7e-Pa-Brj"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -145,18 +145,18 @@
                     <navigationItem key="navigationItem" id="OZM-i6-DEg"/>
                     <connections>
                         <outlet property="groupTypeSC" destination="vfZ-bM-SvZ" id="byf-TL-db3"/>
-                        <outlet property="joinGroupView" destination="ff9-gM-d2W" id="Q0f-aa-hMb"/>
-                        <outlet property="ownGroupView" destination="c20-LT-ZPQ" id="ECZ-f3-kr5"/>
+                        <outlet property="helpGroupView" destination="c20-LT-ZPQ" id="ECZ-f3-kr5"/>
+                        <outlet property="shareGroupView" destination="ff9-gM-d2W" id="Q0f-aa-hMb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ub-6M-H1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2423" y="1470"/>
         </scene>
-        <!--Join Help View Controller-->
+        <!--Base History View Controller-->
         <scene sceneID="adP-7c-thJ">
             <objects>
-                <viewController id="2H9-RX-3Id" customClass="JoinHelpViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2H9-RX-3Id" customClass="BaseHistoryViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RMf-qp-PzM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,20 +206,20 @@
             </objects>
             <point key="canvasLocation" x="3665" y="1275"/>
         </scene>
-        <!--Join Share View Controller-->
+        <!--Base History View Controller-->
         <scene sceneID="wHc-TV-c9g">
             <objects>
-                <viewController id="iiw-hD-z1Q" customClass="JoinShareViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iiw-hD-z1Q" customClass="BaseHistoryViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8dM-MN-Ad1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GZV-LK-slD">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前你尚未加入任何分購，快去加一下吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2A-cB-LO4">
-                                <rect key="frame" x="20" y="40" width="560" height="28"/>
+                                <rect key="frame" x="20" y="60" width="335" height="65.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

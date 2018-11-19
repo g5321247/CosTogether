@@ -11,16 +11,16 @@ import UIKit
 class GroupRootViewController: UIViewController {
     
     @IBOutlet weak var groupTypeSC: UISegmentedControl!
-    @IBOutlet weak var joinGroupView: UIView!
-    @IBOutlet weak var ownGroupView: UIView!
+    @IBOutlet weak var shareGroupView: UIView!
+    @IBOutlet weak var helpGroupView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         groupTypeSC.addUnderlineForSelectedSegment()
 
-        joinGroupView.isHidden = false
-        ownGroupView.isHidden = true
+        shareGroupView.isHidden = false
+        helpGroupView.isHidden = true
         
         navigationController?.navigationBar.isHidden = true
 
@@ -34,20 +34,52 @@ class GroupRootViewController: UIViewController {
             
         case 0:
             
-            joinGroupView.isHidden = false
-            ownGroupView.isHidden = true
+            shareGroupView.isHidden = false
+            
+            helpGroupView.isHidden = true
             
         case 1:
             
-            joinGroupView.isHidden = true
-            ownGroupView.isHidden = false
+            shareGroupView.isHidden = true
+            helpGroupView.isHidden = false
             
         default:
             break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+            
+        case "helpBuy":
+            
+            guard let helpGroupController = segue.destination as?BaseHistoryViewController else {
+                
+                return
+                
+            }
+            
+            helpGroupController.loadViewIfNeeded()
+            
+            helpGroupController.downloadGroupList(groupType: .shareBuy, myGroup: .join)
+            
+        case "shareBuy":
 
+            guard let shareGroupController = segue.destination as?BaseHistoryViewController else {
+                
+                return
+                
+            }
+            
+            shareGroupController.loadViewIfNeeded()
+            
+            shareGroupController.downloadGroupList(groupType: .helpBuy, myGroup: .join)
+            
+        default:
+            return
+        }
         
     }
-
     
 }

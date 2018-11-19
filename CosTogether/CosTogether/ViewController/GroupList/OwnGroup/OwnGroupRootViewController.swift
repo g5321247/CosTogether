@@ -109,6 +109,41 @@ class OwnGroupRootViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+            
+        case "shareBuy":
+            
+            guard let shareGroupController = segue.destination as?BaseHistoryViewController else {
+                
+                return
+                
+            }
+            
+            shareGroupController.loadViewIfNeeded()
+            
+            shareGroupController.downloadGroupList(groupType: .shareBuy, myGroup: .own)
+            
+        case "helpBuy":
+            
+            guard let helpGroupController = segue.destination as?BaseHistoryViewController else {
+                
+                return
+                
+            }
+            
+            helpGroupController.loadViewIfNeeded()
+            
+            helpGroupController.downloadGroupList(groupType: .helpBuy, myGroup: .own)
+            
+        default:
+            return
+        }
         
     }
+
+    
 }

@@ -59,13 +59,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-FA-sJe">
                                 <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                 <connections>
-                                    <segue destination="yO2-5O-cIh" kind="embed" id="c2B-hk-6Er"/>
+                                    <segue destination="yO2-5O-cIh" kind="embed" identifier="shareBuy" id="c2B-hk-6Er"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYH-K9-bsj">
                                 <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                 <connections>
-                                    <segue destination="fPO-HO-x0M" kind="embed" id="Guh-IT-EOs"/>
+                                    <segue destination="fPO-HO-x0M" kind="embed" identifier="helpBuy" id="Guh-IT-EOs"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-bD-FHi" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
@@ -148,23 +148,23 @@
             </objects>
             <point key="canvasLocation" x="2662" y="528"/>
         </scene>
-        <!--Own Share Buy View Controller-->
+        <!--Base History View Controller-->
         <scene sceneID="QBh-aI-cz2">
             <objects>
-                <viewController id="yO2-5O-cIh" customClass="OwnShareBuyViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yO2-5O-cIh" customClass="BaseHistoryViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfM-HT-xro">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0No-7W-xum">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s89-Ow-hZy">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東西買太多怕過期嗎？快開分購跟人分享吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rks-ip-rY6">
-                                        <rect key="frame" x="20" y="40" width="560" height="28"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="65.5"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="24"/>
                                         <color key="textColor" red="0.65490196079999996" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -201,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="3799" y="442"/>
         </scene>
-        <!--Own Help Buy View Controller-->
+        <!--Base History View Controller-->
         <scene sceneID="Pvw-rw-a30">
             <objects>
-                <viewController id="fPO-HO-x0M" customClass="OwnHelpBuyViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fPO-HO-x0M" customClass="BaseHistoryViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a36-wy-fbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
