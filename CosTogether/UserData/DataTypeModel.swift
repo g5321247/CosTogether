@@ -10,7 +10,7 @@ import UIKit
 
 struct DataType {
     
-    var dataType: CellClass
+    var dataType: SectionType
     
     var data: [DataProtocol]
     

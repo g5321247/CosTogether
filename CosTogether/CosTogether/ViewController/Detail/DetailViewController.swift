@@ -320,7 +320,7 @@ class DetailViewController: UIViewController, ProductPicDelegate {
 extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         return allData[indexPath.section].dataType.tableView(self, sendCommentHeight: sendCommentCellHeight)
     }
     

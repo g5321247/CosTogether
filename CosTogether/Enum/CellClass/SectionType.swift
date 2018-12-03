@@ -8,7 +8,30 @@
 
 import UIKit
 
-enum CellClass: Equatable {
+enum RefactorSection: Equatable {
+    
+    case productPic
+    case articleInfo
+    case productItems
+    case joinGroup
+    case order
+    case productDetail
+    case commnetTitle
+    case previousComments
+    case sendComment
+    
+    func numberOfRow() -> Int {
+        
+        switch self {
+                        
+        default:
+            
+            return 1
+        }
+    }
+}
+
+enum SectionType: Equatable {
         
     case productPic
     case articleInfo

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FwP-DW-G61">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FwP-DW-G61">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +14,7 @@
         <!--找團 Go-->
         <scene sceneID="C7d-ga-xCp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJO-kE-EU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FwP-DW-G61" customClass="MainNavigationViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FwP-DW-G61" customClass="MainNavigationController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="找團 Go" image="searching" id="oDh-aP-biD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="krE-Tr-d80">
@@ -31,6 +26,7 @@
                         <segue destination="TSv-IR-EhM" kind="relationship" relationship="rootViewController" id="Aet-ko-bc1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJO-kE-EU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-297.30134932533736"/>
         </scene>
@@ -39,17 +35,17 @@
             <objects>
                 <viewController storyboardIdentifier="FindGroup" id="TSv-IR-EhM" customClass="MainPageViewController" customModule="CosTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d30-Mh-sU3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4A-ro-dyw" userLabel="Container View1">
-                                <rect key="frame" x="0.0" y="117.5" width="375" height="549.5"/>
+                                <rect key="frame" x="0.0" y="162.5" width="600" height="437.5"/>
                                 <connections>
                                     <segue destination="vbV-Cd-QuU" kind="embed" id="2lM-N0-LPL"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-VA-QEk">
-                                <rect key="frame" x="0.0" y="75" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="snl-V8-n3U"/>
                                 </constraints>
@@ -63,16 +59,16 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-RY-AnI" userLabel="TopView" customClass="TopLogoView" customModule="CosTogether" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CosTogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HH-Jf-Ji2">
-                                        <rect key="frame" x="116" y="33.5" width="143" height="28"/>
+                                        <rect key="frame" x="228.5" y="78.5" width="143" height="28"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-KF-GiG">
-                                        <rect key="frame" x="24" y="40" width="30" height="15"/>
+                                        <rect key="frame" x="24" y="85" width="30" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GzB-Av-dOk"/>
                                             <constraint firstAttribute="width" secondItem="oYT-KF-GiG" secondAttribute="height" multiplier="2:1" id="sLI-NE-CJe"/>
@@ -81,7 +77,7 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXI-RB-V5b">
-                                        <rect key="frame" x="301" y="22.5" width="50" height="50"/>
+                                        <rect key="frame" x="526" y="67.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Dxi-cf-THQ"/>
                                             <constraint firstAttribute="width" secondItem="lXI-RB-V5b" secondAttribute="height" multiplier="1:1" id="z13-ey-d3Y"/>
@@ -105,7 +101,7 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj5-Ek-K9u">
-                                <rect key="frame" x="0.0" y="117.5" width="375" height="549.5"/>
+                                <rect key="frame" x="0.0" y="162.5" width="600" height="437.5"/>
                                 <connections>
                                     <segue destination="wXB-Qe-eMy" kind="embed" id="3Cv-VA-n9r"/>
                                 </connections>
