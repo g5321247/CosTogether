@@ -12,8 +12,7 @@
 ### Note:
   
 ```
-  如果要下載專案，請自行申請 Google MAP API 金鑰，並在依照 AppDelegate 使用的參數名稱加入金鑰的值。
-  另外請自行下載 Firebase 的 GoogleService-Info.plist。
+  如果要下載專案，請自行下載 Firebase 的 GoogleService-Info.plist。
 ```
   
 ## Libraries
